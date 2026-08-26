@@ -1,0 +1,168 @@
+{
+ "Diffuser": {
+  "included:main": 9,
+  "included:phase23 ddim-2": 3,
+  "included:phase23 ddim-5": 3,
+  "included:phase23 ddim-10": 3,
+  "included:phase23 ddim-20": 3,
+  "included:phase23 ddpm-20": 3
+ },
+ "DecisionDiffuser": {
+  "included:main": 9,
+  "excluded:alpha=0": 1,
+  "excluded:alpha=1.0": 1
+ },
+ "AdaptDiffuser": {
+  "included:main": 9,
+  "excluded:iterative_phase=1": 6
+ },
+ "HierarchicalDiffuser": {
+  "included:main": 9,
+  "excluded:K=1": 9,
+  "excluded:K=8": 9
+ },
+ "DiffusionQL": {
+  "included:main": 9,
+  "included:online_selection": 9,
+  "excluded:main (Table 2 ablation column)": 3
+ },
+ "IDQL": {
+  "included:IDQL-A": 9,
+  "included:IDQL-1": 9
+ },
+ "SfBC": {
+  "included:main": 9
+ },
+ "QGPO": {
+  "included:main": 9
+ },
+ "EDP": {
+  "included:dql_OMS": 9,
+  "excluded:OMS, K=100, action approximation": 3,
+  "included:td3_RAT": 9,
+  "included:td3_OMS": 9,
+  "included:crr_RAT": 9,
+  "included:crr_OMS": 9,
+  "included:iql_RAT": 9,
+  "included:iql_OMS": 9
+ },
+ "SRPO": {
+  "included:main": 9
+ },
+ "CQL": {
+  "included:main": 15,
+  "excluded:main": 10,
+  "excluded:w/ Equation 1 (no dataset Q-value maximization term)": 3,
+  "excluded:alpha=5.0 (fixed, non-Lagrange)": 4
+ },
+ "IQL": {
+  "included:main": 9
+ },
+ "TD3+BC": {
+  "included:main_v0": 15,
+  "included:main_v2": 15
+ },
+ "ReBRAC": {
+  "included:main": 18,
+  "excluded:normalization=FeatureNorm (ReBRAC + FN)": 18,
+  "included:no_layernorm": 18,
+  "included:layers_2": 18,
+  "excluded:actor_penalty=off (beta1=0)": 18,
+  "excluded:critic_penalty=off (beta2=0)": 18,
+  "included:batch_256": 18,
+  "excluded:main (4 unseen training seeds, Appendix G rerun)": 18
+ },
+ "FisherBRC": {
+  "included:main": 15
+ },
+ "PLAS": {
+  "included:main": 11,
+  "excluded:main": 2
+ },
+ "OneStepRL": {
+  "included:easy_bcq": 12,
+  "included:rev_kl": 12,
+  "included:exp_weight": 12
+ },
+ "EDAC": {
+  "included:SAC-N_eta0": 18,
+  "included:EDAC": 18,
+  "excluded:eta=0.0, N=50": 6,
+  "excluded:eta=0.5, N=50": 5,
+  "excluded:eta=1.0, N=50": 5,
+  "excluded:eta=2.0, N=50": 6,
+  "excluded:eta=5.0, N=50": 6
+ },
+ "MOPO": {
+  "included:main": 12,
+  "excluded:main (Table 3 raw return)": 2,
+  "excluded:ens. pen. (ensemble disagreement penalty)": 2,
+  "excluded:no pen. (no reward penalty)": 2,
+  "excluded:true pen. (oracle uncertainty penalty)": 1
+ },
+ "MOReL": {
+  "included:main": 12
+ },
+ "COMBO": {
+  "included:main": 12,
+  "excluded:beta=0.5": 9,
+  "excluded:beta=5.0": 9,
+  "excluded:mu=Unif(a)": 2,
+  "excluded:mu=pi(a|s)": 2,
+  "excluded:rho(s)=d^pi_Mhat": 2,
+  "excluded:rho(s)=d_f": 2
+ },
+ "DecisionTransformer": {
+  "included:main": 9,
+  "excluded:delayed (sparse) reward": 3
+ },
+ "DecisionConvFormer": {
+  "included:main": 9,
+  "included:embed_128": 2,
+  "excluded:action information included (action O)": 1,
+  "excluded:1-filter DC": 4,
+  "excluded:K=8, L=3": 1,
+  "excluded:K=20, L=3": 1,
+  "included:context_20": 1,
+  "excluded:K=20, L=30": 1
+ },
+ "QDT": {
+  "included:main": 6,
+  "excluded:delayed (sparse) reward": 6,
+  "excluded:delayed (sparse) reward, alpha=100": 1,
+  "excluded:alpha=10.0": 3,
+  "excluded:alpha=5.0": 6,
+  "excluded:alpha=2.5": 6,
+  "excluded:alpha=1.25": 3
+ },
+ "RvS": {
+  "included:main": 12
+ },
+ "TrajectoryTransformer": {
+  "included:uniform": 9,
+  "included:quantile": 9
+ },
+ "TAP": {
+  "included:main": 9,
+  "included:horizon_3": 9,
+  "included:horizon_9": 9,
+  "excluded:horizon=15": 9,
+  "included:horizon_21": 9,
+  "excluded:beta=1e-5": 9,
+  "excluded:beta=0.002": 9,
+  "excluded:beta=0.01": 9,
+  "excluded:beta=0.05": 9,
+  "excluded:beta=0.1": 9,
+  "excluded:beta=0.5": 9,
+  "excluded:L=1": 9,
+  "excluded:L=2": 9,
+  "excluded:L=3": 9,
+  "excluded:L=4": 9,
+  "excluded:sample prior (N=2048, no beam search)": 9,
+  "excluded:sample uniform (N=2048, no beam search)": 9,
+  "excluded:attention bottleneck, sample": 9,
+  "excluded:unconditional decoder, L=1": 9,
+  "excluded:unconditional decoder, L=2": 9,
+  "excluded:unconditional decoder, L=3": 9
+ }
+}

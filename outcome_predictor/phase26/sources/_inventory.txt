@@ -1,0 +1,671 @@
+
+## 1903.00374 Model-Based Reinforcement Learning for Atari (SimP
+   refscores: 36 [('Alien', {'random': 184.8, 'human': 7128.0, 'line_quote': 'Alien              378.3   (85.5)        321.7   (50.7)         616.9   (252.2)       405.2   (130.8)       413.0   (89.7)        590.2   (57.8)        435.6   (78.9)        534.8   (166.2)      184.8     7128.0', 'table': 'Table 2'})]
+   SimPLe rows=288 configs={'Ours, deterministic': 36, 'Ours, det. recurrent': 36, 'main (Ours, SD long)': 36, 'Ours, SD': 36, 'Ours, SD γ = 0.90': 36, 'Ours, SD γ = 0.95': 36, 'Ours, SD 100 steps': 36, 'Ours, SD 25 steps': 36}
+   proto: {'seeds': '5 training runs per configuration', 'episodes_per_seed': 'not stated', 'checkpoint_selection': 'final learnt policy (softmax with temperature T=0.5)', 'location': 'Appendix D / Table 2 caption'} | ver: 100K agent steps = 400K frames (102,400 interactions / 409,600 frames incl. pre-
+   G environment_steps = 102,400 (6400*16)
+   G frames = 409,600
+   G frame_skip = 4
+   G frame_downscale = factor of 2
+   G training_loop_iterations = 15
+   G interactions_per_iteration = 6400
+   G policy_algorithm = PPO
+   G discount = 0.99 unless specified otherwise (Section 5 says γ=0.95 for PPO — confl
+   G rollout_length_N = 50
+   G world_model_training_steps = 45K first iteration, 15K each following
+   G ppo_parallel_agents = 16
+   G ppo_epochs = z*1000, z=1 except last (3) and passes 8,12 (2)
+   G simulated_interactions_per_iteration = 800K*z
+   G total_simulated_interactions = 15.2M
+   G world_model_parameters = ~74M
+   G world_model_dropout = 0.15, layer normalization
+   G latent_bits = 128 bits, chunks of 8
+   G eval_policy_temperature = T = 0.5
+   G input_frames = 4
+   games: 36 ['Alien', 'Amidar', 'Assault', 'Asterix', 'Asteroids', 'Atlantis', 'BankHeist', 'BattleZone', 'BeamRider', 'Bowling', 'Boxing', 'Breakout', 'ChopperCommand', 'CrazyClimber', 'DemonAttack', 'FishingDerby', 'Freeway', 'Frostbite', 'Gopher', 'Gravitar', 'Hero', 'IceHockey', 'Jamesbond', 'Kangaroo', 'Krull', 'KungFuMaster']
+   C Ours, deterministic: ({'world_model': 'deterministic', 'world_model_training': 'short', 'gamma': '0.99', 'rollout_length_N': '50'}, "raw score; mean (std) over 5 training runs; Table 3 'SimPLe'")
+   C Ours, det. recurrent: ({'world_model': 'deterministic recurrent', 'world_model_training': 'short', 'gamma': '0.99', 'rollout_length_N': '50'}, "raw score; mean (std) over 5 training runs; Table 3 'SimPLe'")
+   C main (Ours, SD long): ({'world_model': 'stochastic discrete', 'world_model_training': 'long (5x longer than other ablations)', 'gamma': '0.99', 'rollout_length_N': '50'}, "raw score; mean (std) over 5 training runs; Table 3 'SimPLe'")
+   C Ours, SD: ({'world_model': 'stochastic discrete', 'world_model_training': 'short', 'gamma': '0.99', 'rollout_length_N': '50'}, "raw score; mean (std) over 5 training runs; Table 3 'SimPLe'")
+   C Ours, SD γ = 0.90: ({'world_model': 'stochastic discrete', 'world_model_training': 'short', 'gamma': '0.90', 'rollout_length_N': '50'}, "raw score; mean (std) over 5 training runs; Table 3 'SimPLe'")
+   C Ours, SD γ = 0.95: ({'world_model': 'stochastic discrete', 'world_model_training': 'short', 'gamma': '0.95', 'rollout_length_N': '50'}, "raw score; mean (std) over 5 training runs; Table 3 'SimPLe'")
+   C Ours, SD 100 steps: ({'world_model': 'stochastic discrete', 'world_model_training': 'short', 'gamma': '0.99', 'rollout_length_N': '100'}, "raw score; mean (std) over 5 training runs; Table 3 'SimPLe'")
+   C Ours, SD 25 steps: ({'world_model': 'stochastic discrete', 'world_model_training': 'short', 'gamma': '0.99', 'rollout_length_N': '25'}, "raw score; mean (std) over 5 training runs; Table 3 'SimPLe'")
+
+## 1906.05243 When to use parametric models in reinforcement lea
+   refscores: 26 [('alien', {'human': 7127.7, 'random': 227.8, 'line_quote': 'alien                       7127.7         227.8       405.2           739.9', 'table': 'Table 1'})]
+   Data-efficient Rainbow (DER) rows=26 configs={'main': 26}
+   proto: {'seeds': '5', 'episodes_per_seed': 'not stated', 'checkpoint_selection': 'end of training (last)', 'location': 'Table 1 caption'} | ver: 100K interactions = 400,000 training frames (action repeat 4); sticky actions no
+   G training_frames = 400,000
+   G environment_steps = K = 100,000, M = 1, P = 32
+   G min_replay_size = 1600
+   G memory_size = unbounded
+   G replay_period = every 1 step
+   G multi_step_return_length = 20
+   G q_network_channels = 32, 64
+   G q_network_filter_size = 5x5, 5x5
+   G q_network_stride = 5, 5
+   G q_network_hidden_units = 256
+   G learning_rate = 0.0001
+   G grey_scaling = True
+   G observation_downsampling = (84, 84)
+   G frames_stacked = 4
+   G action_repetitions = 4
+   G reward_clipping = [-1, 1]
+   G terminal_on_loss_of_life = True
+   G max_frames_per_episode = 108K
+   G update = Distributional Double Q
+   G target_network_update_period = every 2000 updates
+   G q_distribution_support = 51 bins
+   G discount = 0.99
+   G batch_size = 32
+   G optimizer = Adam
+   G adam_beta1 = 0.9
+   G adam_beta2 = 0.999
+   G adam_epsilon = 0.00015
+   G max_gradient_norm = 10
+   G priority_exponent = 0.5
+   G priority_correction = 0.4 -> 1 (linearly annealed, max_step = 100K)
+   G hardware = CPU
+   G noisy_nets_parameter = 0.1
+   G replayed_samples_total = 3.2 million
+   games: 26 ['alien', 'amidar', 'assault', 'asterix', 'bank_heist', 'battle_zone', 'boxing', 'breakout', 'chopper_command', 'crazy_climber', 'demon_attack', 'freeway', 'frostbite', 'gopher', 'hero', 'jamesbond', 'kangaroo', 'krull', 'kung_fu_master', 'ms_pacman', 'pong', 'private_eye', 'qbert', 'road_runner', 'seaquest', 'up_n_down']
+
+## 2003.10181 Importance of using appropriate baselines for eval
+   refscores: 26 [('Alien', {'human': 6875.0, 'random': 184.8, 'line_quote': 'Alien                     824.7           616.9          290.6      318.7      6875      184.8', 'table': 'Table 1', 'notes': 'Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values'})]
+   OTRainbow (Overtrained Rainbow) rows=26 configs={'main': 26}
+   proto: {'seeds': 'not stated', 'episodes_per_seed': 'not stated', 'checkpoint_selection': 'after 100k interactions', 'location': 'Table 1 caption'} | ver: 100k interactions with real environment; sticky actions not mentioned; eval epis
+   G update_period_tau_u = 1
+   G updates_per_period_k = 8 (replay ratio r = 8)
+   G epsilon_decay_period = 50K steps
+   G target_network_update_period = 500
+   G min_replay_history = 20K
+   G base_hyperparameters = Rainbow, Hessel et al. (2018) unless stated otherwise
+   G codebase = Dopamine (modified)
+   G environment_steps = 100k interactions
+   games: 26 ['Alien', 'Amidar', 'Assault', 'Asterix', 'BankHeist', 'BattleZone', 'Boxing', 'Breakout', 'ChopperCommand', 'CrazyClimber', 'DemonAttack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'Jamesbond', 'Kangaroo', 'Krull', 'KungFuMaster', 'MsPacman', 'Pong', 'PrivateEye', 'Qbert', 'RoadRunner', 'Seaquest', 'UpNDown']
+
+## 2004.04136 CURL: Contrastive Unsupervised Representations for
+   refscores: 26 [('Alien', {'human': 7127.7, 'random': 227.8, 'line_quote': 'A LIEN                      7127.7        227.8        318.7         616.9           824.7             739.9           558.2', 'table': 'Table 2'})]
+   CURL (on Efficient Rainbow) rows=26 configs={'main': 26}
+   proto: {'seeds': '20', 'episodes_per_seed': "not stated for Atari (Table 3 'Evaluation episodes 10' is the DMControl table)", 'checkpoint_selection': 'after 100K interaction steps', 'location': 'Appendix B / Table 2 caption'} | ver: 100K interaction steps = 400K frames, frame skip 4; sticky actions not mentioned
+   G random_crop = True
+   G image_size = (84, 84)
+   G data_augmentation = Random Crop (Train)
+   G replay_buffer_size = 100000
+   G training_frames = 400000
+   G training_steps = 100000
+   G frame_skip = 4
+   G stacked_frames = 4
+   G action_repeat = 4
+   G replay_period = every 1
+   G q_network_channels = 32, 64
+   G q_network_filter_size = 5x5, 5x5
+   G q_network_stride = 5, 5
+   G q_network_hidden_units = 256
+   G encoder_momentum_ema_tau = 0.001
+   G non_linearity = ReLU
+   G reward_clipping = [-1, 1]
+   G multi_step_return = 20
+   G min_replay_size = 1600
+   G max_frames_per_episode = 108K
+   G update = Distributional Double Q
+   G target_network_update_period = every 2000 updates
+   G q_distribution_support = 51 bins
+   G discount = 0.99
+   G batch_size = 32
+   G optimizer = Adam
+   G learning_rate = 0.0001
+   G adam_beta1 = 0.9
+   G adam_beta2 = 0.999
+   G adam_epsilon = 0.000015 (row label garbled: 'Optimizer 0.000015')
+   G max_gradient_norm = 10
+   G exploration = Noisy Nets
+   G noisy_nets_parameter = 0.1
+   G priority_exponent = 0.5
+   G priority_correction = 0.4 -> 1
+   G hardware = CPU
+   G codebase = Kaixhin/Rainbow (Efficient Rainbow reproduction)
+   G observations = grayscale, random crop of frame stack
+   P Pong: contrastive_loss_coefficient=0.05
+   P Freeway: contrastive_loss_coefficient=0.05
+   P Boxing: contrastive_loss_coefficient=0.05
+   P PrivateEye: contrastive_loss_coefficient=0.05
+   games: 26 ['Alien', 'Amidar', 'Assault', 'Asterix', 'BankHeist', 'BattleZone', 'Boxing', 'Breakout', 'ChopperCommand', 'CrazyClimber', 'DemonAttack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'JamesBond', 'Kangaroo', 'Krull', 'KungFuMaster', 'MsPacman', 'Pong', 'PrivateEye', 'Qbert', 'RoadRunner', 'Seaquest', 'UpNDown']
+
+## 2004.13649 Image Augmentation Is All You Need: Regularizing D
+   refscores: 26 [('Alien', {'random': 227.8, 'human': 7127.7, 'line_quote': '    Alien                      7127.7     227.8    616.9       824.7        739.9          1148.2          558.1        771.2'})]
+   DrQ (Eff. DQN + DrQ) rows=26 configs={'main': 26}
+   proto: {'seeds': '5', 'episodes_per_seed': 'not fixed: evaluated for 125k environment steps at end of training', 'checkpoint_selection': 'last (end of training)', 'location': 'Table 5 caption; Appendix C'} | ver: Atari 100k: 100k agent steps (action repeat 4 -> 400k frames); eval 125k env ste
+   G data_augmentation = Random shifts and Intensity
+   G grey_scaling = True
+   G observation_down_sampling = 84 × 84
+   G frames_stacked = 4
+   G action_repetitions = 4
+   G reward_clipping = [−1, 1]
+   G terminal_on_loss_of_life = True
+   G max_frames_per_episode = 108k
+   G update = Double Q
+   G dueling = True
+   G target_network_update_period = 1
+   G discount_factor = 0.99
+   G minibatch_size = 32
+   G optimizer = Adam
+   G optimizer_learning_rate = 0.0001
+   G optimizer_beta1 = 0.9
+   G optimizer_beta2 = 0.999
+   G optimizer_epsilon = 0.00015
+   G max_gradient_norm = 10
+   G training_steps = 100k
+   G evaluation_steps = 125k environment steps at end of training
+   G min_replay_size_for_sampling = 1600
+   G memory_size = Unbounded
+   G replay_period_every = 1 step
+   G multi_step_return_length = 10
+   G q_network_channels = 32, 64, 64
+   G q_network_filter_size = 8 × 8, 4 × 4, 3 × 3
+   G q_network_stride = 4, 2, 1
+   G q_network_hidden_units = 512
+   G non_linearity = ReLU
+   G exploration = epsilon-greedy
+   G epsilon_decay = 5000
+   G K_target_q_augmentations = 1
+   G M_q_augmentations = 1
+   G base_agent = DQN + double Q-learning + n-step returns + dueling ('Efficient DQN')
+   G seeds = 5
+   games: 26 ['Alien', 'Amidar', 'Assault', 'Asterix', 'BankHeist', 'BattleZone', 'Boxing', 'Breakout', 'ChopperCommand', 'CrazyClimber', 'DemonAttack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'Jamesbond', 'Kangaroo', 'Krull', 'KungFuMaster', 'MsPacman', 'Pong', 'PrivateEye', 'Qbert', 'RoadRunner', 'Seaquest', 'UpNDown']
+
+## 2007.05929 Data-Efficient Reinforcement Learning with Self-Pr
+   refscores: 26 [('Alien', {'random': 227.8, 'human': 7127.7, 'line_quote': ' Alien                        227.8    7127.7     616.9    739.9      824.7      558.2     771.2       847.2          801.5'})]
+   SPR rows=52 configs={'main': 26, 'no_aug': 26}
+   proto: {'seeds': '10', 'episodes_per_seed': '100 evaluation trajectories', 'checkpoint_selection': 'last (end of training)', 'location': 'Table 4 caption; Table 3; Section 4.1'} | ver: Atari 100k: 100k environment steps = 400k frames (action repeat 4); 100 evaluati
+   G gray_scaling = True
+   G observation_down_sampling = 84x84
+   G frames_stacked = 4
+   G action_repetitions = 4
+   G reward_clipping = [-1, 1]
+   G terminal_on_loss_of_life = True
+   G max_frames_per_episode = 108K
+   G update = Distributional Q
+   G dueling = True
+   G support_of_q_distribution = 51
+   G discount_factor = 0.99
+   G minibatch_size = 32
+   G optimizer = Adam
+   G optimizer_learning_rate = 0.0001
+   G optimizer_beta1 = 0.9
+   G optimizer_beta2 = 0.999
+   G optimizer_epsilon = 0.00015
+   G max_gradient_norm = 10
+   G priority_exponent = 0.5
+   G priority_correction = 0.4 → 1
+   G exploration = Noisy nets
+   G noisy_nets_parameter = 0.5
+   G training_steps = 100K
+   G evaluation_trajectories = 100
+   G min_replay_size_for_sampling = 2000
+   G replay_period_every = 1 step
+   G updates_per_step = 2
+   G multi_step_return_length = 10
+   G q_network_channels = 32, 64, 64
+   G q_network_filter_size = 8 × 8, 4 × 4, 3 × 3
+   G q_network_stride = 4, 2, 1
+   G data_augmentation_with_aug = Random shifts (±4 pixels) & Intensity(scale=0.05)
+   G data_augmentation_without_aug = None
+   G dropout = 0 (with aug) / 0.5 (without aug)
+   G tau_ema_coefficient = 0 (with aug) / 0.99 (without aug)
+   G seeds = 10
+   G encoder = 3-layer convolutional encoder from Mnih et al. (2015)
+   G gradient_steps_per_env_step = 2
+   G lambda_spr_loss = 2
+   G predictor_q = linear layer
+   games: 26 ['Alien', 'Amidar', 'Assault', 'Asterix', 'Bank Heist', 'BattleZone', 'Boxing', 'Breakout', 'ChopperCommand', 'Crazy Climber', 'Demon Attack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'Jamesbond', 'Kangaroo', 'Krull', 'Kung Fu Master', 'Ms Pacman', 'Pong', 'Private Eye', 'Qbert', 'Road Runner', 'Seaquest', 'Up N Down']
+   C no_aug: ({'data_augmentation': 'None', 'dropout': '0.5', 'tau_ema': '0.99'}, "raw mean episodic return; column 'SPR (no Aug)'; no per-game")
+
+## 2106.04152 PlayVirtual: Augmenting Cycle-Consistent Virtual T
+   refscores: 26 [('Alien', {'random': 227.8, 'human': 7127.7, 'line_quote': ' Alien             7127.7     227.8      616.9        739.9     824.7     558.2      771.2     801.5      947.8'})]
+   PlayVirtual rows=26 configs={'main': 26}
+   proto: {'seeds': '15', 'episodes_per_seed': '100 evaluation trajectories', 'checkpoint_selection': 'last (100K training steps; not otherwise stated)', 'location': 'Table 1 caption; Table 15; Table 8 caption'} | ver: Atari-100k: 100K training steps, action repeat 4; 100 evaluation trajectories; s
+   G gray_scaling = True
+   G frame_stack = 4
+   G observation_downsampling = (84, 84)
+   G augmentation = Random shift & intensity
+   G action_repeat = 4
+   G training_steps = 100K
+   G max_frames_per_episode = 108K
+   G reply_buffer_size = 100K
+   G minimum_replay_size_for_sampling = 2000
+   G mini_batch_size = 32
+   G optimizer = Adam
+   G optimizer_learning_rate = 0.0001
+   G optimizer_beta1 = 0.9
+   G optimizer_beta2 = 0.999
+   G optimizer_epsilon = 0.00015
+   G max_gradient_norm = 10
+   G update = Distributional Q
+   G dueling = True
+   G support_of_q_distribution = 51 bins
+   G discount_factor = 0.99
+   G reward_clipping = [-1, 1]
+   G priority_exponent = 0.5
+   G priority_correction = 0.4 → 1
+   G exploration = Noisy nets
+   G noisy_nets_parameter = 0.5
+   G evaluation_trajectories = 100
+   G replay_period_every = 1 step
+   G updates_per_step = 2
+   G multi_step_return_length = 10
+   G q_network_channels = 32, 64, 64
+   G q_network_filter_size = 8 × 8, 4 × 4, 3 × 3
+   G q_network_stride = 4, 2, 1
+   G q_network_hidden_units = 256
+   G target_network_update_period = 1
+   G tau_ema_coefficient = 0
+   G k_number_of_prediction_steps = 9
+   G m_number_of_virtual_trajectories = 2|A| (two times of action space size)
+   G lambda_pred = 1
+   G lambda_cyc_max = 1
+   G warmup = Gaussian ramp-up (iend =50K)
+   G seeds = 15
+   G base_agent = SPR (Rainbow-based) for Atari
+   games: 26 ['Alien', 'Amidar', 'Assault', 'Asterix', 'Bank Heist', 'Battle Zone', 'Boxing', 'Breakout', 'Chopper Command', 'Crazy Climber', 'Demon Attack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'Jamesbond', 'Kangaroo', 'Krull', 'Kung Fu Master', 'Ms Pacman', 'Pong', 'Private Eye', 'Qbert', 'Road Runner', 'Seaquest', 'Up N Down']
+
+## 2111.00210 Mastering Atari Games with Limited Data
+   refscores: 26 [('Alien', {'random': 227.8, 'human': 7127.7, 'line_quote': '  Alien                 227.8    7127.7      616.9        824.7       558.2     771.2        801.5     530.0       808.5'})]
+   EfficientZero rows=152 configs={'main': 26, 'w.o. consistency': 26, 'w.o. value prefix': 26, 'w.o. off-policy correction': 26, 'Table 8/9 Full (separate run)': 8, 'Table 8 w.o. consistency': 8, 'w.o. data augmentation': 8, 'Table 9 w.o. off-policy correction': 8, 'w.o. dynamic horizon': 8, 'w.o. MCTS root value': 8}
+   proto: {'seeds': '3 runs (training seeds)', 'episodes_per_seed': '32 evaluation seeds/episodes per run', 'checkpoint_selection': 'not stated', 'location': 'Table 1 caption; Table 10 caption (Appendix A.5)'} | ver: Atari 100k: 100k agent steps = 400k frames, frameskip 4; terminal on loss of lif
+   G environment_steps = 100k (400k frames)
+   G training_steps = 120K
+   G observation_down_sampling = 96 x 96
+   G frames_stacked = 4
+   G frame_skip = 4
+   G reward_clipping = True
+   G terminal_on_loss_of_life = True
+   G max_frames_per_episode = 108K
+   G discount = 0.9974
+   G batch_size = 256
+   G optimizer = SGD, momentum 0.9, weight decay 0.0001
+   G learning_rate = 0.2 -> 0.02 (drop at 100k training steps)
+   G max_gradient_norm = 5
+   G priority_exponent_alpha = 0.6
+   G priority_correction_beta = 0.4 -> 1
+   G evaluation_episodes = 32
+   G min_replay_size = 2000
+   G self_play_network_update_interval = 100
+   G target_network_update_interval = 200
+   G unroll_steps = 5
+   G td_steps = 5
+   G policy_loss_coefficient = 1
+   G value_loss_coefficient = 0.25
+   G consistency_loss_coefficient = 2
+   G lstm_horizontal_length = 5
+   G dirichlet_noise_ratio = 0.3
+   G num_simulations_mcts = 50
+   G reanalyzed_policy_ratio = 0.99
+   G representation_network = conv stride2 32 planes -> res block 32 -> res downsample 64 -> res 64 
+   G dynamics_network = 1 residual block with 64 planes (MuZero reduced from 16 to 1), extra r
+   G value_prefix_lstm_hidden_size = 512
+   G value_reward_output_dims = 601
+   G consistency_projector = P1 3-layer MLP, P2 2-layer MLP, hidden 512, output 1024, BN
+   G data_augmentation = random shift 0-4 pixels + intensity change
+   G compute = 4 GPUs, 7 hours per Atari agent
+   games: 27 ['Alien', 'Amidar', 'Assault', 'Asterix', 'Bank Heist', 'BattleZone', 'Boxing', 'Breakout', 'ChopperCmd', 'ChopperCommand', 'Crazy Climber', 'Demon Attack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'Jamesbond', 'Kangaroo', 'Krull', 'Kung Fu Master', 'Ms Pacman', 'Pong', 'Private Eye', 'Qbert', 'Road Runner', 'Seaquest']
+   C w.o. consistency: ({'self_supervised_consistency': 'removed'}, "raw score; one component removed; 'Full' column equals Table")
+   C w.o. value prefix: ({'end_to_end_value_prefix': 'removed'}, "raw score; one component removed; 'Full' column equals Table")
+   C w.o. off-policy correction: ({'model_based_off_policy_correction': 'removed'}, "raw score; one component removed; 'Full' column equals Table")
+   C Table 8/9 Full (separate run): ({}, "raw score; 'Full' column of Table 8 (same values printed in ")
+   C Table 8 w.o. consistency: ({'self_supervised_consistency': 'removed'}, "raw score; differs from Table 7 'w.o. consistency' for same ")
+   C w.o. data augmentation: ({'data_augmentation': 'removed'}, 'raw score; seeds not stated')
+   C Table 9 w.o. off-policy correction: ({'model_based_off_policy_correction': 'removed'}, "raw score; differs from Table 7 'w.o. off-policy correction'")
+   C w.o. dynamic horizon: ({'dynamic_horizon': 'removed'}, 'raw score; seeds not stated')
+   C w.o. MCTS root value: ({'mcts_root_value': 'removed'}, 'raw score; seeds not stated')
+
+## 2201.12096 Mask-based Latent Reconstruction for Reinforcement
+   refscores: 26 [('Alien', {'random': 227.8, 'human': 7127.7, 'line_quote': ' Alien                                            7127.7      227.8      802.3    570.8     711.0          734.1     841.9        947.8             678.5      990.1'})]
+   MLR rows=26 configs={'main': 26}
+   proto: {'seeds': '3', 'episodes_per_seed': '100', 'checkpoint_selection': 'last (100K training steps; not otherwise stated)', 'location': 'Appendix C.1; Section 4.1'} | ver: Atari-100k: 100k interaction steps = 400k environment steps with action repeat 4
+   G gray_scaling = True
+   G frame_stack = 4
+   G observation_downsampling = (84, 84)
+   G augmentation = Random crop and random intensity
+   G action_repeat = 4
+   G training_steps = 100K
+   G max_frames_per_episode = 108K
+   G reply_buffer_size = 100K
+   G minimum_replay_size_for_sampling = 2000
+   G mini_batch_size = 32
+   G optimizer = Adam
+   G optimizer_learning_rate = 0.0001
+   G optimizer_beta1 = 0.9
+   G optimizer_beta2 = 0.999
+   G optimizer_epsilon = 0.00015
+   G max_gradient_norm = 10
+   G update = Distributional Q
+   G dueling = True
+   G support_of_q_distribution = 51 bins
+   G discount_factor = 0.99
+   G reward_clipping = [-1, 1]
+   G priority_exponent = 0.5
+   G priority_correction = 0.4 → 1
+   G exploration = Noisy nets
+   G noisy_nets_parameter = 0.5
+   G evaluation_trajectories = 100
+   G replay_period_every = 1 step
+   G updates_per_step = 2
+   G multi_step_return_length = 10
+   G q_network_channels = 32, 64, 64
+   G q_network_filter_size = 8 × 8, 4 × 4, 3 × 3
+   G q_network_stride = 4, 2, 1
+   G q_network_hidden_units = 256
+   G target_network_update_period = 1
+   G tau_ema_coefficient = 0
+   G weight_of_mlr_loss = 1 (5 for Pong and Up N Down)
+   G mask_ratio = 50%
+   G sequence_length_k = 16
+   G cube_spatial_size_h_w = 12 × 12
+   G cube_depth_k = 8
+   G decoder_depth_l_number_of_attention_layers = 2
+   G seeds = 3
+   G base_agent = Rainbow with data augmentation (random crop and random intensity)
+   P Pong: weight_of_mlr_loss=5
+   P Up N Down: weight_of_mlr_loss=5
+   games: 26 ['Alien', 'Amidar', 'Assault', 'Asterix', 'Bank Heist', 'Battle Zone', 'Boxing', 'Breakout', 'Chopper Cmd', 'Crazy Climber', 'Demon Attack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'Jamesbond', 'Kangaroo', 'Krull', 'Kung Fu Master', 'Ms Pacman', 'Pong', 'Private Eye', 'Qbert', 'Road Runner', 'Seaquest', 'Up N Down']
+
+## 2209.00588 Transformers are Sample-Efficient World Models
+   refscores: 26 [('Alien', {'random': 227.8, 'human': 7127.7, 'line_quote': '  Alien                  227.8    7127.7     530.0          808.5      616.9    711.0     865.2     841.9       420.0'})]
+   IRIS rows=29 configs={'main': 26, '64 tokens per frame': 3}
+   proto: {'seeds': '5 runs', 'episodes_per_seed': '100 episodes at end of training', 'checkpoint_selection': 'last (end of training)', 'location': 'Section 3.2'} | ver: Atari 100k: 100k actions per environment; eval 100 episodes at end of training, 
+   G environment_steps = 100k actions (500 collection epochs x 200 env steps)
+   G environment_steps_per_epoch = 200
+   G epochs = 600
+   G collection_epsilon_greedy = 0.01
+   G eval_sampling_temperature = 0.5
+   G start_autoencoder_after_epochs = 5
+   G start_transformer_after_epochs = 25
+   G start_actor_critic_after_epochs = 50
+   G autoencoder_batch_size = 256
+   G transformer_batch_size = 64
+   G actor_critic_batch_size = 64
+   G training_steps_per_epoch = 200
+   G learning_rate = 1e-4
+   G optimizer = Adam beta1 0.9 beta2 0.999
+   G max_gradient_norm = 10.0
+   G frame_dimensions = 64 x 64
+   G encoder_layers = 4
+   G encoder_residual_blocks_per_layer = 2
+   G encoder_conv_channels = 64
+   G vocabulary_size = 512
+   G tokens_per_frame = 16
+   G token_embedding_dimension = 512
+   G transformer_timesteps = 20
+   G transformer_embedding_dimension = 256
+   G transformer_layers = 10
+   G transformer_attention_heads = 4
+   G weight_decay = 0.01
+   G dropout = 0.1 (embedding, attention, residual)
+   G actor_critic_lstm_hidden = 512
+   G burn_in_frames = 20
+   G imagination_horizon = 20
+   G discount = 0.995
+   G lambda = 0.95
+   G entropy_coefficient_eta = 0.001
+   G compute = 8x A100 40GB; ~3.5 GPU-days per environment
+   P Freeway: sampling_temperature=0.01
+   games: 26 ['Alien', 'Amidar', 'Assault', 'Asterix', 'BankHeist', 'BattleZone', 'Boxing', 'Breakout', 'ChopperCommand', 'CrazyClimber', 'DemonAttack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'Jamesbond', 'Kangaroo', 'Krull', 'KungFuMaster', 'MsPacman', 'Pong', 'PrivateEye', 'Qbert', 'RoadRunner', 'Seaquest', 'UpNDown']
+   C 64 tokens per frame: ({'tokens_per_frame': 64}, 'raw return; IRIS trained with 64 tokens per frame instead of')
+
+## 2301.04104 Mastering Diverse Domains through World Models
+   refscores: 26 [('Alien', {'random': 228.0, 'human': 7128.0, 'line_quote': ' Alien                      228   7128      276       617      842        675      420     1118'})]
+   DreamerV3 (printed as 'Dreamer' in Table 9) rows=26 configs={'main': 26}
+   proto: {'seeds': '5 seeds', 'episodes_per_seed': "not stated; Table 10 marks 'Separate eval episodes' as '—' for Dreamer", 'checkpoint_selection': 'score at 400K env steps (end of budget)', 'location': 'Benchmarks section (p.19); Table 10'} | ver: Atari100k: 400K env steps = 100K agent steps, action repeat 4, single env instan
+   G environment_steps = 400K env steps = 100K agent steps (action repeat 4)
+   G action_repeat = 4
+   G env_instances = 1
+   G replay_ratio = 128
+   G gpu_days = 0.1
+   G model_size = 200M
+   G hidden_size = 1024
+   G recurrent_units = 8192
+   G base_cnn_channels = 64
+   G codes_per_latent = 64
+   G replay_capacity = 5e6
+   G batch_size = 16
+   G batch_length = 64
+   G activation = RMSNorm + SiLU
+   G learning_rate = 4e-5
+   G gradient_clipping = AGC(0.3)
+   G optimizer = LaProp (eps=1e-20)
+   G reconstruction_loss_scale = 1
+   G dynamics_loss_scale = 1
+   G representation_loss_scale = 0.1
+   G latent_unimix = 1%
+   G free_nats = 1
+   G imagination_horizon = 15
+   G discount_horizon = 333 (1/(1-gamma))
+   G return_lambda = 0.95
+   G critic_loss_scale = 1
+   G critic_replay_loss_scale = 0.3
+   G critic_ema_regularizer = 1
+   G critic_ema_decay = 0.98
+   G actor_loss_scale = 1
+   G actor_entropy_regularizer = 3e-4
+   G actor_unimix = 1%
+   G actor_retnorm_scale = Per(R,95) - Per(R,5)
+   G actor_retnorm_limit = 1
+   G actor_retnorm_decay = 0.99
+   G no_annealing_prioritized_replay_weight_decay_dropout = none used
+   G compute = single Nvidia A100 GPU
+   games: 26 ['Alien', 'Amidar', 'Assault', 'Asterix', 'Bank Heist', 'Battle Zone', 'Boxing', 'Breakout', 'Chopper Command', 'Crazy Climber', 'Demon Attack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'Jamesbond', 'Kangaroo', 'Krull', 'Kung Fu Master', 'Ms Pacman', 'Pong', 'Private Eye', 'Qbert', 'Road Runner', 'Seaquest', 'Up N Down']
+
+## 2303.07109 Transformer-based World Models Are Happy With 100k
+   refscores: 26 [('Alien', {'random': 227.8, 'human': 7127.7, 'line_quote': '                              Alien                  227.8       7127.7     802.3    711.0        865.2         841.9     616.9        674.6'})]
+   TWM rows=26 configs={'main': 26}
+   proto: {'seeds': '5 runs per game', 'episodes_per_seed': '100 episodes at end of training', 'checkpoint_selection': 'last (end of training)', 'location': 'Table 1 caption; Section 3.1'} | ver: Atari 100k: 100K interactions = 400K frames (frame skip 4); max no-ops 30; termi
+   G dataset_sampling_temperature = 20
+   G discount = 0.99
+   G gae_lambda = 0.95
+   G world_model_batch_size = 100
+   G history_length = 16
+   G imagination_batch_size = 400
+   G imagination_horizon = 15
+   G encoder_entropy_coefficient = 5.0
+   G consistency_loss_coefficient = 0.01
+   G reward_coefficient = 10.0
+   G discount_coefficient = 50.0
+   G actor_entropy_coefficient = 0.01
+   G actor_entropy_threshold = 0.1
+   G environment_steps = 100K
+   G frame_skip = 4
+   G frame_down_sampling = 64 x 64
+   G frame_gray_scaling = True
+   G frame_stack = 4
+   G terminate_on_life_loss = True
+   G max_frames_per_episode = 108K
+   G max_no_ops = 30
+   G observation_learning_rate = 0.0001
+   G dynamics_learning_rate = 0.0001
+   G actor_learning_rate = 0.0001
+   G critic_learning_rate = 1e-05
+   G transformer_embedding_size = 256
+   G transformer_layers = 10
+   G transformer_heads = 4 x 64
+   G transformer_feedforward_size = 1024
+   G latent_state_predictor_units = 4 x 512
+   G reward_predictor_units = 4 x 256
+   G discount_predictor_units = 4 x 256
+   G actor_units = 4 x 512
+   G critic_units = 4 x 512
+   G activation = SiLU
+   G total_parameters = 21.6M (world model 19M, actor-critic 2.6M)
+   G compute = ~10 hours on one A100 per run (training + evaluation)
+   games: 26 ['Alien', 'Amidar', 'Assault', 'Asterix', 'BankHeist', 'BattleZone', 'Boxing', 'Breakout', 'ChopperCommand', 'CrazyClimber', 'DemonAttack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'Jamesbond', 'Kangaroo', 'Krull', 'KungFuMaster', 'MsPacman', 'Pong', 'PrivateEye', 'Qbert', 'RoadRunner', 'Seaquest', 'UpNDown']
+
+## 2305.19452 Bigger, Better, Faster: Human-level Atari with hum
+   refscores: 26 [('Alien', {'random': 227.8, 'human': 7127.7, 'line_quote': 'Alien                227.8      7127.7    802.3     865.2        841.9     420.0     1107.8     808.5           1173.2'})]
+   BBF rows=26 configs={'main': 26}
+   proto: {'seeds': '50', 'episodes_per_seed': 'not stated', 'checkpoint_selection': 'end of training (last)', 'location': 'Table A.1 caption (layout l.966-967); Figure 4 caption (layout l.266)'} | ver: Atari 100k: 100k agent steps = 400k frames; no sticky actions (standard Atari 10
+   G replay_ratio = 8
+   G encoder = Impala-CNN 15-layer ResNet, width scaled 4x
+   G width_scale = 4
+   G n_step_schedule = 10 -> 3, exponential over first 10K gradient steps after each reset
+   G reset_interval_gradient_steps = 40k
+   G discount_schedule = 0.97 -> 0.997
+   G reset_perturbation = 50% toward random target (conv layers)
+   G optimizer = AdamW
+   G weight_decay = 0.1
+   G noisy_nets = removed
+   G target_network = EMA target network
+   G environment_steps = 100k (400k frames)
+   G base_agent = SR-SPR (Dopamine)
+   games: 26 ['Alien', 'Amidar', 'Assault', 'Asterix', 'BankHeist', 'BattleZone', 'Boxing', 'Breakout', 'ChopperCommand', 'CrazyClimber', 'DemonAttack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'Jamesbond', 'Kangaroo', 'Krull', 'KungFuMaster', 'MsPacman', 'Pong', 'PrivateEye', 'Qbert', 'Roadrunner', 'Seaquest', 'UpNDown']
+
+## 2310.09615 STORM: Efficient Stochastic Transformer based Worl
+   refscores: 26 [('Alien', {'random': 228, 'human': 7128, 'line_quote': 'Alien                 228     7128          617          675        420              959             984'})]
+   STORM rows=27 configs={'main': 26, 'w/o demonstration trajectory': 1}
+   proto: {'seeds': '5', 'episodes_per_seed': '20 per checkpoint', 'checkpoint_selection': 'final checkpoint', 'location': 'Section 4.2, layout l.405-408'} | ver: Atari 100k: 100k agent steps = 400k frames, frame skip 4; sticky actions not sta
+   G transformer_layers = 2
+   G transformer_feature_dimension = 512
+   G transformer_heads = 8
+   G dropout = 0.1
+   G world_model_batch_size = 16
+   G world_model_batch_length = 64
+   G imagination_batch_size = 1024
+   G imagination_context_length = 8
+   G imagination_horizon = 16
+   G world_model_updates_per_env_step = 1
+   G agent_updates_per_env_step = 1
+   G environment_context_length = 16
+   G discount = 0.985
+   G lambda = 0.95
+   G entropy_coefficient = 3e-4
+   G critic_ema_decay = 0.98
+   G optimizer = Adam
+   G world_model_learning_rate = 1.0e-4
+   G world_model_gradient_clipping = 1000
+   G actor_critic_learning_rate = 3.0e-5
+   G actor_critic_gradient_clipping = 100
+   G gray_scale_input = False
+   G frame_stacking = False
+   G frame_skip = 4 (max over last 2 frames)
+   G use_life_information = True
+   G environment_steps = 100k (400k frames)
+   G demonstration_trajectory = single DQN trajectory for Freeway (return 27, 2048x4 frames); also lis
+   P Freeway: demonstration_trajectory=1 DQN trajectory, re
+   games: 26 ['Alien', 'Amidar', 'Assault', 'Asterix', 'Bank Heist', 'Battle Zone', 'Boxing', 'Breakout', 'Chopper Command', 'Crazy Climber', 'Demon Attack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'James Bond', 'Kangaroo', 'Krull', 'Kung Fu Master', 'Ms Pacman', 'Pong', 'Private Eye', 'Qbert', 'Road Runner', 'Seaquest', 'Up N Down']
+   C w/o demonstration trajectory: ({'demonstration_trajectory': 'none'}, "Printed as row 'Freeway w/o traj'; main Freeway row includes")
+
+## 2403.00564 EfficientZero V2: Mastering Discrete and Continuou
+   refscores: 26 [('Alien', {'random': 227.8, 'human': 7127.7, 'line_quote': 'Alien             227.8     7127.7    616.9     558.2     771.2      801.5    530.0        808.5           959      1173.2         1557.7'})]
+   EZ-V2 rows=32 configs={'main': 26, 'value_target=multi-step TD': 3, 'value_target=GAE': 3}
+   proto: {'seeds': 'not stated for Atari (3 seeds stated for DMControl only)', 'episodes_per_seed': 'not stated', 'checkpoint_selection': 'not stated', 'location': 'Table 2 caption, layout l.521'} | ver: Atari 100k: 400k frames = 100k steps with action repeat 4; sticky actions not st
+   G replay_capacity = 1e6 (FIFO)
+   G batch_size = 256
+   G discount = 0.997
+   G update_to_data_ratio = 1
+   G unroll_steps = 5
+   G td_steps = 5
+   G num_simulations = 16 (Atari 100k)
+   G num_sampled_actions = 8 (Atari 100k)
+   G self_play_network_update_interval = 100
+   G target_network_update_interval = 400
+   G sve_start_steps_T1 = 4e4
+   G sve_buffer_index_threshold_T2 = 2e4
+   G priority_exponent = 1
+   G priority_correction = 1
+   G reward_loss_coefficient = 1.0
+   G policy_loss_coefficient = 1.0
+   G value_loss_coefficient = 0.25
+   G consistency_loss_coefficient = 2.0
+   G policy_entropy_loss_coefficient = 5e-3
+   G optimizer = SGD
+   G learning_rate = 0.2
+   G weight_decay = 1e-4
+   G momentum = 0.9
+   G environment_steps = 100k steps = 400k frames, action repeat 4
+   games: 27 ['Alien', 'Amidar', 'Assault', 'Asterix', 'Bank Heist', 'BattleZone', 'Boxing', 'Breakout', 'ChopperCmd', 'Crazy Climber', 'Demon Attack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'Jamesbond', 'Kangaroo', 'Krull', 'Kung Fu Master', 'Ms Pacman', 'Pong', 'Private Eye', 'Qbert', 'Road Runner', 'Seaquest', 'Up N Down']
+   C value_target=multi-step TD: ({'value_target': 'multi-step TD target (instead of mixed value target)'}, "ablation row printed as 'W/ Multi-step TD Target'; game name")
+   C value_target=GAE: ({'value_target': 'GAE (instead of mixed value target)'}, "ablation row printed as 'W/ GAE'; game name as printed in Ta")
+
+## 2405.12399 Diffusion for World Modeling: Visual Details Matte
+   refscores: 26 [('Alien', {'random': 227.8, 'human': 7127.7, 'line_quote': 'Alien               227.8    7127.7     616.9     674.6     420.0       959.0     983.6            744.1'})]
+   DIAMOND rows=36 configs={'main': 26, 'denoising_steps=1': 10}
+   proto: {'seeds': '5', 'episodes_per_seed': 'not stated', 'checkpoint_selection': 'not stated (after 100k actions / end of training)', 'location': 'Section 4.1 layout l.299-300; Table 1 caption layout l.336'} | ver: Atari 100k: 100k actions, frameskip 4, max noop 30, termination on life loss; st
+   G epochs = 1000
+   G training_steps_per_epoch = 400
+   G batch_size = 32
+   G environment_steps_per_epoch = 100
+   G collection_epsilon_greedy = 0.01
+   G imagination_horizon = 15
+   G discount = 0.985
+   G entropy_weight = 0.001
+   G lambda = 0.95
+   G conditioning_observations_L = 4
+   G reward_model_burn_in = 4
+   G reward_model_training_sequence_length = 19
+   G actor_critic_burn_in = 4
+   G optimizer = AdamW
+   G learning_rate = 1e-4
+   G adam_epsilon = 1e-8
+   G weight_decay_diffusion = 1e-2
+   G weight_decay_reward_model = 1e-2
+   G weight_decay_actor_critic = 0
+   G diffusion_sampler = Euler
+   G denoising_steps = 3
+   G image_observation_dimensions = 64x64x3
+   G frame_skip = 4
+   G max_noop = 30
+   G termination_on_life_loss = True
+   G reward_clipping = {-1, 0, 1}
+   G diffusion_residual_block_layers = [2, 2, 2, 2]
+   G diffusion_residual_block_channels = [64, 64, 64, 64]
+   G diffusion_conditioning_dimension = 256
+   G reward_model_residual_block_channels = [32, 32, 32, 32]
+   G reward_model_lstm_dimension = 512
+   G actor_critic_residual_block_channels = [32, 32, 64, 64]
+   G actor_critic_lstm_dimension = 512
+   G environment_steps = 100k
+   games: 26 ['Alien', 'Amidar', 'Assault', 'Asterix', 'BankHeist', 'BattleZone', 'Boxing', 'Breakout', 'ChopperCommand', 'CrazyClimber', 'DemonAttack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'Jamesbond', 'Kangaroo', 'Krull', 'KungFuMaster', 'MsPacman', 'Pong', 'PrivateEye', 'Qbert', 'RoadRunner', 'Seaquest', 'UpNDown']
+   C denoising_steps=1: ({'denoising_steps': '1'}, "single seed only ('Note that the 1-step results correspond t")
+
+## 2406.19320 Efficient World Models with Context-Aware Tokeniza
+   refscores: 26 [('Alien', {'random': 228, 'human': 7128, 'line_quote': 'Alien                       228       7128         617              959        984       420               391'})]
+   ∆-IRIS rows=26 configs={'main': 26}
+   proto: {'seeds': '5', 'episodes_per_seed': '100', 'checkpoint_selection': 'end of training (last)', 'location': 'Appendix C, layout l.819-820'} | ver: Atari 100k: 100k interactions per environment (2 hours real-time); sticky action
+   G encoder_layers = 5
+   G encoder_residual_blocks_per_layer = 2
+   G encoder_channels_per_layer = [64, 64, 128, 128, 256]
+   G frame_dimensions = 64 x 64
+   G l1_loss_weight = 0.1
+   G l2_loss_weight = 1.0
+   G max_pixel_loss_weight = 0.01
+   G commitment_loss_weight = 0.02
+   G vocabulary_size = 1024
+   G tokens_per_frame = 4
+   G token_embedding_dimension = 64
+   G codebook_ema_coefficient = 0.99
+   G transformer_timesteps = 21
+   G transformer_embedding_dimension = 512
+   G transformer_layers = 3
+   G transformer_attention_heads = 8
+   G transformer_weight_decay = 0.01
+   G actor_critic_lstm_dimension = 512
+   G imagination_horizon = 15
+   G burn_in_frames = 5
+   G discount = 0.997
+   G lambda = 0.95
+   G entropy_coefficient = 0.001
+   G critic_target_ema = 0.995
+   G epochs = 1000
+   G environment_steps_first_epoch = 100000
+   G environment_steps_per_epoch = 10000
+   G collection_epochs = 990
+   G collection_epsilon_greedy = 0.01
+   G training_steps_per_epoch = 500
+   G autoencoder_batch_size = 32
+   G transformer_batch_size = 32
+   G actor_critic_batch_size = 86
+   G learning_rate = 1e-4
+   G optimizer = Adam
+   G max_gradient_norm = 10.0
+   G environment_steps = 100k
+   games: 26 ['Alien', 'Amidar', 'Assault', 'Asterix', 'BankHeist', 'BattleZone', 'Boxing', 'Breakout', 'ChopperCommand', 'CrazyClimber', 'DemonAttack', 'Freeway', 'Frostbite', 'Gopher', 'Hero', 'Jamesbond', 'Kangaroo', 'Krull', 'KungFuMaster', 'MsPacman', 'Pong', 'PrivateEye', 'Qbert', 'RoadRunner', 'Seaquest', 'UpNDown']

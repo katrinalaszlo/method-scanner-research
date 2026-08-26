@@ -1,0 +1,51 @@
+Phase 21 — delta-paper test: base Algorithm 1 injected before DDQN / TD3 / Rainbow sections (2026-08-25)
+Script phase21_inject.py. Sections: predictions/phase21_sections/{1509.06461,1802.09477,1710.02298}.txt (~1400 words each: base pseudocode + the paper's pinned delta section, 1200w cap).
+Phase 20 records -> results_phase20_snapshot/. Matrices matrices/phase21_*.csv; RL sub-matrix matrices/phase21_rl_submatrix_strict_v2.csv.
+
+1. TUPLES BEFORE (Phase 20, pinned section only) vs AFTER (base loop + delta), v2 post-guard
+  DDQN    before  select action@value, evaluate value@value, update network@parameter, copy target network@parameter
+          after   store transition@sample*, sample minibatch@sample*, compute target@value, update network@parameter      (* guard: state->sample)
+  TD3     before  update@value, estimate@value, minimize@error
+          after   update critic@value, update actor@policy, update target networks@parameter
+  Rainbow before  contract/shift/softmax@distribution, aggregate@value, replace@parameter
+          after   store@other, sample@sample, compute@error, update@parameter
+  The loop appears in all three. Cost: each paper's delta shrank to one op (DDQN compute target@value; Rainbow compute@error; TD3 none — its
+  clipped-double-Q target is gone). Rainbow's store@other is a typing miss (should be sample) and costs one match per pair.
+
+2. RL SUB-MATRIX (strict v2) — before -> after
+              TD3          DDPG         DDQN         DQN          Rainbow
+  TD3         —            0.00->0.10   0.00->0.17   0.00->0.08   0.00->0.17
+  DDPG                     —            0.09->0.20   0.36->0.36   0.00->0.20
+  DDQN                                  —            0.07->0.15   0.00->0.33
+  DQN                                                —            0.00->0.15
+  On-policy trio unchanged (0.40/0.50/0.40). DDQN x PPO/TRPO 0.17 -> 0.00 (its evaluate@value delta is gone). A3C now 0.14-0.17 with TD3/Rainbow on update@parameter.
+
+3. REPLAY-OFF-POLICY WITHIN-FAMILY
+                    before   after    target
+  strict v2         0.05     0.19     >0.20   just missed
+  relaxed v2        0.05     0.19
+  lexical           0.28     0.63
+  on-policy x replay-off-policy: 0.03 -> 0.00 (cleaner split; DDQN's on-policy-looking tuple was the only bridge)
+
+4. VERDICT — did base-loop injection work?
+  Yes, with a caveat that matters.
+  Supported: every pair among the five went from ~0 to 0.08-0.36; the family went 0.05 -> 0.19, one pair short of target. The pipeline sees the loop
+  when the text carries it. Delta papers were the bottleneck, not section choice (Phase 20) and not the ontology.
+  Residual (the 0.01 gap): Rainbow store@other (typing), TD3 compressing store/sample/select into three update@ ops (extractor summarised the
+  injected pseudocode instead of listing it). Both are noise, not structure.
+  Caveat: the score is partly by construction. Prepending DQN's loop to DDQN then measuring DDQN x DQN measures text we inserted. Lexical 0.63 is
+  close to DQN-vs-itself. What the test legitimately shows: (a) the extractor recovers the loop from pseudocode in one pass, (b) the delta papers'
+  own text does not carry it, (c) after injection the delta signal is mostly lost, so injected records are "base + one op". A record that is base
+  loop plus delta needs both kept: the fair design is two records per delta paper (base-inherited ops flagged, delta ops own) or a union at compare time.
+
+ANSWERS
+  Q1 replay-off-policy >0.20?          0.19. No, by one pair. Four-fold rise from 0.05.
+  Q2 which pairs rose most?            DDQN x Rainbow 0.00->0.33 (both DQN-based), DDPG x DDQN 0.09->0.20, DDPG x Rainbow 0.00->0.20, TD3 x DDQN/Rainbow 0.00->0.17.
+                                       DQN x DDPG stayed 0.36 (both already had the loop). DDPG x TD3 only 0.10 — TD3 lost the loop verbs to "update".
+  Q3 is delta-paper the true bottleneck?  Yes for RL. It explains 0.05 -> 0.19; typing noise explains the rest. It does not apply to jepa / pc-learning /
+                                       on-policy, whose members each restate their loop — which is why those families cohered without help.
+
+NEXT (candidates)
+  - Keep both: store `inherited_ops` (from injected base) separately from own ops; compare on own, own+inherited, and report both. Removes the by-construction caveat.
+  - Apply the same test outside RL: pick one delta paper per family (e.g. DDIM on DDPM, Reptile on MAML) and check whether injection changes its family score. If not, delta-paper is an RL-lineage property (Atari/MuJoCo papers assume the DQN/DDPG loop), not general.
+  - Typing: `store@other` -> guard `store` to sample regardless of typed object (NEVER_STATE already maps head verb; extend to `other`).

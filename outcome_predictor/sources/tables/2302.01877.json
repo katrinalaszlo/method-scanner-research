@@ -1,0 +1,472 @@
+{
+ "arxiv_id": "2302.01877",
+ "title": "AdaptDiffuser: Diffusion Models as Adaptive Self-evolving Planners",
+ "methods": [
+  {
+   "method_name": "AdaptDiffuser",
+   "is_own_method": true,
+   "one_paragraph_description": "AdaptDiffuser starts from a Diffuser-style trajectory diffusion planner and iteratively self-evolves it: it generates a large number of synthetic trajectories with reward-gradient guidance, filters them with a reward discriminator (a per-dataset return threshold for MuJoCo, Table 7) and dynamics-consistency constraints, adds the surviving trajectories to the training set as synthetic expert data, and fine-tunes the diffusion model (warm-started from a pre-trained Diffuser, with 1/4 the training steps); this is repeated for several phases. At runtime it plans like Diffuser: guided reverse diffusion over a horizon-T trajectory conditioned on the current state, executing the resulting action sequence with reward-gradient guidance.",
+   "conventional_lineage_hint": "diffusion-based planning for offline RL: 'Diffusion models have demonstrated their powerful generative capability in many tasks, with great potential to serve as a paradigm for offline reinforcement learning' ; 'an evolutionary planning method with diffusion'",
+   "global_conditions": {
+    "architecture": {
+     "value": "temporal U-Net with 6 repeated residual blocks (two temporal convs + group norm + Mish per block)",
+     "quote": "A temporal U-Net (Ronneberger et al., 2015) with 6 repeated residual blocks is employed to model the noise θ of the",
+     "location": "Appendix C.4 item 1"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "The diffusion model is trained using the Adam optimizer (Kingma & Ba, 2015) with a learning rate of 2 × 10−4 and",
+     "location": "Appendix C.4 item 2"
+    },
+    "learning_rate": {
+     "value": "2e-4",
+     "quote": "The diffusion model is trained using the Adam optimizer (Kingma & Ba, 2015) with a learning rate of 2 × 10−4 and",
+     "location": "Appendix C.4 item 2"
+    },
+    "batch_size": {
+     "value": "32",
+     "quote": "batch size of 32.",
+     "location": "Appendix C.4 item 2"
+    },
+    "training_steps": {
+     "value": "1M (MuJoCo locomotion)",
+     "quote": "The training steps of the diffusion model are 1M for MuJoCo locomotion task, 2M for tasks on Maze2D and 0.7M",
+     "location": "Appendix C.4 item 3"
+    },
+    "planning_horizon": {
+     "value": "T = 32 (locomotion)",
+     "quote": "The planning horizon T is set as 32 in all locomotion tasks, 128 for KUKA pick-and-place, 128 in Maze2D-UMaze,",
+     "location": "Appendix C.4 item 4"
+    },
+    "diffusion_steps": {
+     "value": "K = 100 (locomotion)",
+     "quote": "We use K = 100 diffusion steps for all locomotion tasks, 1000 for KUKA robot arm tasks, 64 for Maze2D-UMaze,",
+     "location": "Appendix C.4 item 5"
+    },
+    "guidance_scale": {
+     "value": "alpha in {1, 5, 10, 50, 100}, exact choice task-dependent (stated for the auxiliary 2-norm guide of Sec 4.3)",
+     "quote": "α ∈ {1, 5, 10, 50, 100} of which the exact choice depends on the specific task.",
+     "location": "Appendix C.4 item 6"
+    },
+    "synthetic_data_per_iteration": {
+     "value": "50000 (MuJoCo locomotion); expert data 10^6, 2x10^6",
+     "quote": "                       MuJoCo             Locomotion                   10 , 2 × 10              50000",
+     "location": "Table 8 (superscripts 6 garbled in layout)"
+    },
+    "fine_tuning_steps_fraction": {
+     "value": "1/4 of training steps, warm-started from pre-trained Diffuser",
+     "quote": "basis of AdaptDiffuser, and then performs fine-tuning on new generated data with fewer training steps (1/4 in actual use).",
+     "location": "Appendix D.2"
+    },
+    "model_size": {
+     "value": "3.96 M parameters (MuJoCo)",
+     "quote": "        MuJoCo                      3.96 M",
+     "location": "Table 6"
+    },
+    "inference_time": {
+     "value": "~1.5 s per action (MuJoCo)",
+     "quote": "For MuJoCo, the inference time of an action is approximately 1.5s, while for Maze2D the inference time is about 1.6s",
+     "location": "Appendix D.1"
+    }
+   },
+   "per_dataset_conditions": {
+    "halfcheetah-medium-expert": {
+     "reward_discriminator_threshold_phase1": {
+      "value": "10840",
+      "quote": "                                     Med-Expert     HalfCheetah      10840       10867",
+      "location": "Table 7"
+     },
+     "reward_discriminator_threshold_phase2": {
+      "value": "10867",
+      "quote": "                                     Med-Expert     HalfCheetah      10840       10867",
+      "location": "Table 7"
+     }
+    },
+    "hopper-medium-expert": {
+     "reward_discriminator_threshold_phase1": {
+      "value": "3639",
+      "quote": "                                     Med-Expert       Hopper          3639        3681",
+      "location": "Table 7"
+     },
+     "reward_discriminator_threshold_phase2": {
+      "value": "3681",
+      "quote": "                                     Med-Expert       Hopper          3639        3681",
+      "location": "Table 7"
+     }
+    },
+    "walker2d-medium-expert": {
+     "reward_discriminator_threshold_phase1": {
+      "value": "4900",
+      "quote": "                                     Med-Expert      Walker2d         4900        4950",
+      "location": "Table 7"
+     },
+     "reward_discriminator_threshold_phase2": {
+      "value": "4950",
+      "quote": "                                     Med-Expert      Walker2d         4900        4950",
+      "location": "Table 7"
+     }
+    },
+    "halfcheetah-medium": {
+     "reward_discriminator_threshold_phase1": {
+      "value": "5005",
+      "quote": "                                      Medium        HalfCheetah      5005         5150",
+      "location": "Table 7"
+     },
+     "reward_discriminator_threshold_phase2": {
+      "value": "5150",
+      "quote": "                                      Medium        HalfCheetah      5005         5150",
+      "location": "Table 7"
+     }
+    },
+    "hopper-medium": {
+     "reward_discriminator_threshold_phase1": {
+      "value": "3211",
+      "quote": "                                      Medium          Hopper         3211         3225",
+      "location": "Table 7"
+     },
+     "reward_discriminator_threshold_phase2": {
+      "value": "3225",
+      "quote": "                                      Medium          Hopper         3211         3225",
+      "location": "Table 7"
+     }
+    },
+    "walker2d-medium": {
+     "reward_discriminator_threshold_phase1": {
+      "value": "3700",
+      "quote": "                                      Medium         Walker2d       3700         3843",
+      "location": "Table 7"
+     },
+     "reward_discriminator_threshold_phase2": {
+      "value": "3843",
+      "quote": "                                      Medium         Walker2d       3700         3843",
+      "location": "Table 7"
+     }
+    },
+    "halfcheetah-medium-replay": {
+     "reward_discriminator_threshold_phase1": {
+      "value": "4600",
+      "quote": "                                     Med-Replay     HalfCheetah      4600         4800",
+      "location": "Table 7"
+     },
+     "reward_discriminator_threshold_phase2": {
+      "value": "4800",
+      "quote": "                                     Med-Replay     HalfCheetah      4600         4800",
+      "location": "Table 7"
+     }
+    },
+    "hopper-medium-replay": {
+     "reward_discriminator_threshold_phase1": {
+      "value": "3100",
+      "quote": "                                     Med-Replay       Hopper          3100        3136",
+      "location": "Table 7"
+     },
+     "reward_discriminator_threshold_phase2": {
+      "value": "3136",
+      "quote": "                                     Med-Replay       Hopper          3100        3136",
+      "location": "Table 7"
+     }
+    },
+    "walker2d-medium-replay": {
+     "reward_discriminator_threshold_phase1": {
+      "value": "3900",
+      "quote": "                                     Med-Replay      Walker2d        3900        3920",
+      "location": "Table 7"
+     },
+     "reward_discriminator_threshold_phase2": {
+      "value": "3920",
+      "quote": "                                     Med-Replay      Walker2d        3900        3920",
+      "location": "Table 7"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "3 random seeds",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated",
+    "quote": "tasks (Fu et al., 2020) in the table. And the mean and the standard error are calculated over 3 random seeds.",
+    "location": "Table 2 caption"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "Table 2. Offline Reinforcement Learning Performance in MuJoCo Environment. We report normalized average returns of D4RL (no -v0/-v2 suffix anywhere in text)",
+    "location": "Table 2 caption"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 89.6,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "2 (matches Table 4 '2nd Phase' column)",
+      "reward_discriminator_threshold_phase2": "10867"
+     },
+     "table": "Table 2",
+     "line_quote": "  Med-Expert    HalfCheetah    55.2 91.6       86.7 86.8    95.0           63.3          53.3        105.9      88.9          89.6 ±0.8",
+     "notes": "std is standard error over 3 random seeds (Table 2 caption). Same values repeated in Table 4 '2nd Phase' (6 datasets) and Table 12; not re-emitted. Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 111.6,
+     "std": 2.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "2 (matches Table 4 '2nd Phase' column)",
+      "reward_discriminator_threshold_phase2": "3681"
+     },
+     "table": "Table 2",
+     "line_quote": "  Med-Expert      Hopper       52.5 105.4      91.5 107.6 110.0            23.7         108.7        55.1      103.3          111.6 ±2.0",
+     "notes": "std is standard error over 3 random seeds (Table 2 caption). Same values repeated in Table 4 '2nd Phase' (6 datasets) and Table 12; not re-emitted. Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 108.2,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "2 (matches Table 4 '2nd Phase' column)",
+      "reward_discriminator_threshold_phase2": "4950"
+     },
+     "table": "Table 2",
+     "line_quote": "  Med-Expert     Walker2d      107.5 108.8     109.6 108.1 101.9           44.6          95.6        70.2      106.9          108.2 ±0.8",
+     "notes": "std is standard error over 3 random seeds (Table 2 caption). Same values repeated in Table 4 '2nd Phase' (6 datasets) and Table 12; not re-emitted. Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 44.2,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "2 (matches Table 4 '2nd Phase' column)",
+      "reward_discriminator_threshold_phase2": "5150"
+     },
+     "table": "Table 2",
+     "line_quote": "   Medium       HalfCheetah     42.6   44.0    47.4    42.6      46.9      42.3         42.1          44.6      42.8           44.2 ±0.6",
+     "notes": "std is standard error over 3 random seeds (Table 2 caption). Same values repeated in Table 4 '2nd Phase' (6 datasets) and Table 12; not re-emitted. Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 96.6,
+     "std": 2.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "2 (matches Table 4 '2nd Phase' column)",
+      "reward_discriminator_threshold_phase2": "3225"
+     },
+     "table": "Table 2",
+     "line_quote": "   Medium         Hopper        52.9   58.5    66.3    67.6      61.1      28.0         95.4          48.8      74.3           96.6 ±2.7",
+     "notes": "std is standard error over 3 random seeds (Table 2 caption). Same values repeated in Table 4 '2nd Phase' (6 datasets) and Table 12; not re-emitted. Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 84.4,
+     "std": 2.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "2 (matches Table 4 '2nd Phase' column)",
+      "reward_discriminator_threshold_phase2": "3843"
+     },
+     "table": "Table 2",
+     "line_quote": "   Medium        Walker2d       75.3   72.5    78.3    74.0      79.0      17.8         77.8          41.0      79.6           84.4 ±2.6",
+     "notes": "std is standard error over 3 random seeds (Table 2 caption). Same values repeated in Table 4 '2nd Phase' (6 datasets) and Table 12; not re-emitted. Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 38.3,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "2 (matches Table 4 '2nd Phase' column)",
+      "reward_discriminator_threshold_phase2": "4800"
+     },
+     "table": "Table 2",
+     "line_quote": " Med-Replay     HalfCheetah     36.6   45.5    44.2    36.6      41.9      53.1         40.2          42.3      37.7           38.3 ±0.9",
+     "notes": "std is standard error over 3 random seeds (Table 2 caption). Same values repeated in Table 4 '2nd Phase' (6 datasets) and Table 12; not re-emitted. Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 92.2,
+     "std": 1.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "2 (matches Table 4 '2nd Phase' column)",
+      "reward_discriminator_threshold_phase2": "3136"
+     },
+     "table": "Table 2",
+     "line_quote": " Med-Replay       Hopper        18.1   95.0    94.7    82.7      91.5      67.5         93.6          12.4      93.6           92.2 ±1.5",
+     "notes": "std is standard error over 3 random seeds (Table 2 caption). Same values repeated in Table 4 '2nd Phase' (6 datasets) and Table 12; not re-emitted. Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 84.7,
+     "std": 3.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "2 (matches Table 4 '2nd Phase' column)",
+      "reward_discriminator_threshold_phase2": "3920"
+     },
+     "table": "Table 2",
+     "line_quote": " Med-Replay      Walker2d      26.0   77.2    73.9    66.6      82.6      39.0         49.8           9.7      70.6           84.7 ±3.1",
+     "notes": "std is standard error over 3 random seeds (Table 2 caption). Same values repeated in Table 4 '2nd Phase' (6 datasets) and Table 12; not re-emitted. Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 89.3,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "iterative_phase=1",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "1",
+      "reward_discriminator_threshold_phase1": "10840"
+     },
+     "table": "Table 4",
+     "line_quote": "                                                                             Medium-Expert        HalfCheetah      89.3 ±0.6      89.6 ±0.8",
+     "notes": "ablation on number of iterative self-evolution phases; 3 random seeds (Table 4 caption)."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 110.7,
+     "std": 3.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "iterative_phase=1",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "1",
+      "reward_discriminator_threshold_phase1": "3639"
+     },
+     "table": "Table 4",
+     "line_quote": "                                                                             Medium-Expert          Hopper        110.7 ±3.2     111.6 ±2.0",
+     "notes": "ablation on number of iterative self-evolution phases; 3 random seeds (Table 4 caption)."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 107.7,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "iterative_phase=1",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "1",
+      "reward_discriminator_threshold_phase1": "4900"
+     },
+     "table": "Table 4",
+     "line_quote": "                                                                             Medium-Expert         Walker2d       107.7 ±0.9     108.2 ±0.8",
+     "notes": "ablation on number of iterative self-evolution phases; 3 random seeds (Table 4 caption)."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 43.8,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "iterative_phase=1",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "1",
+      "reward_discriminator_threshold_phase1": "5005"
+     },
+     "table": "Table 4",
+     "line_quote": "                                                                                 Medium           HalfCheetah      43.8 ±0.5     44.2 ±0.6",
+     "notes": "ablation on number of iterative self-evolution phases; 3 random seeds (Table 4 caption)."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 95.4,
+     "std": 3.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "iterative_phase=1",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "1",
+      "reward_discriminator_threshold_phase1": "3211"
+     },
+     "table": "Table 4",
+     "line_quote": "                                                                                 Medium             Hopper         95.4 ±3.4     96.6 ±2.7",
+     "notes": "ablation on number of iterative self-evolution phases; 3 random seeds (Table 4 caption)."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 83.2,
+     "std": 3.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "iterative_phase=1",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps_K": "100",
+      "synthetic_data_per_iteration": "50000",
+      "iterative_phase": "1",
+      "reward_discriminator_threshold_phase1": "3700"
+     },
+     "table": "Table 4",
+     "line_quote": "                                                                                 Medium            Walker2d       83.2 ±3.5     84.4 ±2.6",
+     "notes": "ablation on number of iterative self-evolution phases; 3 random seeds (Table 4 caption)."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BC",
+  "CQL",
+  "IQL",
+  "DT",
+  "TT",
+  "MOPO",
+  "MOReL",
+  "MBOP",
+  "Diffuser",
+  "Decision Diffuser"
+ ],
+ "problems": [
+  "Table 8 superscripts are garbled in layout ('10 , 2 × 10' with a '6 6' line above) - read as 10^6 and 2x10^6 expert data; synthetic data 50000 is clear.",
+  "Exact guidance scale alpha per locomotion dataset not stated (only grid {1,5,10,50,100}); the reward-guidance scale used for locomotion planning (as opposed to the auxiliary 2-norm guide) is not separately stated.",
+  "Whether Table 2 main results correspond to the 2nd iterative phase is inferred from Table 4 '2nd Phase' column equaling Table 2 values for the 6 overlapping datasets; the paper does not state the number of phases used for Table 2 explicitly.",
+  "Evaluation episodes per seed, checkpoint selection, and D4RL dataset version not stated.",
+  "Table 5 (expert data fraction ablation) is Maze2d-Large only -> skipped."
+ ]
+}

@@ -1,0 +1,1189 @@
+{
+ "arxiv_id": "2106.08909",
+ "title": "Offline RL Without Off-Policy Evaluation",
+ "methods": [
+  {
+   "method_name": "One-step Easy BCQ",
+   "is_own_method": true,
+   "one_paragraph_description": "Fit behavior policy beta-hat by imitation and Q^beta by fitted Q evaluation (SARSA-style, on-policy w.r.t. data). Policy draws M samples from beta-hat at each state and executes the one with highest Q^beta; no policy network trained. Single improvement step (K=1).",
+   "conventional_lineage_hint": "offline RL, one-step policy improvement from the behavior Q-function ('one step of policy improvement is sufficient to beat state of the art results on much of the D4RL benchmark')",
+   "global_conditions": {
+    "network": {
+     "value": "MLP, 2 hidden layers of width 1024, ReLU (Q and policy)",
+     "quote": "All of our Q functions and policies are simple MLPs with ReLU activations and 2 hidden layers of width 1024.",
+     "location": "Appendix C.1"
+    },
+    "policy_distribution": {
+     "value": "truncated normal, diagonal covariance",
+     "quote": "Our policies output a truncated normal distribution with diagonal covariance",
+     "location": "Appendix C.1"
+    },
+    "behavior_training_steps": {
+     "value": "500k",
+     "quote": "we train our β̂ behavior estimate by imitation learning for 500k gradient steps using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "q_training_steps": {
+     "value": "2M (fitted Q evaluation)",
+     "quote": "We train our Q b β estimator by fitted Q evaluation with a target network for 2 million gradient steps using Adam with learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "policy_training_steps": {
+     "value": "100k",
+     "quote": "All policies are trained for 100k steps again with Adam using learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "learning_rate": {
+     "value": "1e-4",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "batch_size": {
+     "value": "512",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "target_update_rate": {
+     "value": "0.005",
+     "quote": "The target is updated softly at every step with parameter τ = 0.005.",
+     "location": "Appendix C.1"
+    },
+    "hyperparameter_selection": {
+     "value": "best of 6 values per dataset, selected by online evaluation; tuned on 3 seeds, then 7 more seeds",
+     "quote": "We tune hyperparameters using 3 seeds, but then evaluate the best hyperparameter by training on an additional 7 seeds and then report results on the 10 total seeds.",
+     "location": "Appendix C.1"
+    },
+    "M_sweep": {
+     "value": "{2, 5, 10, 20, 50, 100}",
+     "quote": "Easy BCQ (M )                     {2, 5, 10, 20, 50, 100}",
+     "location": "Table 3"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "10",
+    "episodes_per_seed": "100",
+    "checkpoint_selection": "final policy after fixed step budget (not otherwise stated); hyperparameter chosen by online evaluation",
+    "quote": "We report the mean and standard error over 10 seeds of the training process and using 100 evaluation episodes per seed.",
+    "location": "Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "We use the latest versions, which are v2 for the mujoco datasets and v1 for the adroit datasets.",
+    "location": "Appendix C.1"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-m",
+     "outcome": 52.6,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "M": "best of {2,5,10,20,50,100} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-m           46.3          42.1 ± 0.1   52.6 ± 0.1     55.6 ± 0.2     48.6 ± 0.0",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-m",
+     "outcome": 86.9,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "M": "best of {2,5,10,20,50,100} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-m              81.1          70.2 ± 1.3   86.9 ± 0.4     85.6 ± 0.4     80.3 ± 1.1",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-m",
+     "outcome": 69.7,
+     "std": 2.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "M": "best of {2,5,10,20,50,100} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-m                58.8          49.8 ± 0.6   69.7 ± 2.1     83.3 ± 1.4     56.7 ± 0.8",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "halfcheetah-m-e",
+     "outcome": 77.0,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "M": "best of {2,5,10,20,50,100} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-m-e         64.7          60.1 ± 0.8    77.0 ± 0.9    93.5 ± 0.1     91.7 ± 0.9",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-m-e",
+     "outcome": 111.8,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "M": "best of {2,5,10,20,50,100} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-m-e            111.0         93.6 ± 5.6   111.8 ± 0.2   110.9 ± 0.1    112.9 ± 0.2",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-m-e",
+     "outcome": 81.4,
+     "std": 1.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "M": "best of {2,5,10,20,50,100} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-m-e              111.9         48.1 ± 1.5    81.4 ± 1.9   102.1 ± 1.3     83.1 ± 7.0",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "halfcheetah-m-re",
+     "outcome": 38.4,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "M": "best of {2,5,10,20,50,100} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-m-re        47.7          34.9 ± 0.3   38.4 ± 0.3     42.4 ± 0.1     38.6 ± 0.5",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-m-re",
+     "outcome": 66.4,
+     "std": 2.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "M": "best of {2,5,10,20,50,100} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-m-re           26.7          23.9 ± 1.6   66.4 ± 2.0     71.6 ± 3.1     49.3 ± 3.5",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-m-re",
+     "outcome": 77.3,
+     "std": 2.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "M": "best of {2,5,10,20,50,100} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-m-re             48.6          21.2 ± 1.3   77.3 ± 2.7     71.0 ± 8.1     94.1 ± 2.4",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "halfcheetah-r",
+     "outcome": 5.4,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "M": "best of {2,5,10,20,50,100} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-r           35.4          2.2 ± 0.0     5.4 ± 0.1      6.9 ± 1.0      3.7 ± 0.2",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-r",
+     "outcome": 4.2,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "M": "best of {2,5,10,20,50,100} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-r               7.3          0.7 ± 0.1     4.2 ± 0.2      6.1 ± 0.3      5.2 ± 0.2",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-r",
+     "outcome": 6.7,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "M": "best of {2,5,10,20,50,100} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-r                12.2          2.6 ± 0.4     6.7 ± 0.1      7.8 ± 0.3      5.6 ± 0.6",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    }
+   ]
+  },
+  {
+   "method_name": "One-step Rev. KL Reg",
+   "is_own_method": true,
+   "one_paragraph_description": "Fit beta-hat and Q^beta as above; policy maximizes E_{a~pi}[Q^beta(s,a)] - alpha * KL(pi || beta-hat), with reverse KL estimated from 10 samples of the current policy and the beta-hat density. Single improvement step.",
+   "conventional_lineage_hint": "offline RL, one-step policy improvement from the behavior Q-function ('one step of policy improvement is sufficient to beat state of the art results on much of the D4RL benchmark')",
+   "global_conditions": {
+    "network": {
+     "value": "MLP, 2 hidden layers of width 1024, ReLU (Q and policy)",
+     "quote": "All of our Q functions and policies are simple MLPs with ReLU activations and 2 hidden layers of width 1024.",
+     "location": "Appendix C.1"
+    },
+    "policy_distribution": {
+     "value": "truncated normal, diagonal covariance",
+     "quote": "Our policies output a truncated normal distribution with diagonal covariance",
+     "location": "Appendix C.1"
+    },
+    "behavior_training_steps": {
+     "value": "500k",
+     "quote": "we train our β̂ behavior estimate by imitation learning for 500k gradient steps using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "q_training_steps": {
+     "value": "2M (fitted Q evaluation)",
+     "quote": "We train our Q b β estimator by fitted Q evaluation with a target network for 2 million gradient steps using Adam with learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "policy_training_steps": {
+     "value": "100k",
+     "quote": "All policies are trained for 100k steps again with Adam using learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "learning_rate": {
+     "value": "1e-4",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "batch_size": {
+     "value": "512",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "target_update_rate": {
+     "value": "0.005",
+     "quote": "The target is updated softly at every step with parameter τ = 0.005.",
+     "location": "Appendix C.1"
+    },
+    "hyperparameter_selection": {
+     "value": "best of 6 values per dataset, selected by online evaluation; tuned on 3 seeds, then 7 more seeds",
+     "quote": "We tune hyperparameters using 3 seeds, but then evaluate the best hyperparameter by training on an additional 7 seeds and then report results on the 10 total seeds.",
+     "location": "Appendix C.1"
+    },
+    "alpha_sweep": {
+     "value": "{0.03, 0.1, 0.3, 1.0, 3.0, 10.0}",
+     "quote": "Reverse KL  (α)               {0.03, 0.1, 0.3, 1.0, 3.0, 10.0}",
+     "location": "Table 3"
+    },
+    "kl_samples": {
+     "value": "10",
+     "quote": "To estimate reverse KL at some state we use 10 samples from the current policy and the density defined by our estimated β̂.",
+     "location": "Appendix C.1"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "10",
+    "episodes_per_seed": "100",
+    "checkpoint_selection": "final policy after fixed step budget (not otherwise stated); hyperparameter chosen by online evaluation",
+    "quote": "We report the mean and standard error over 10 seeds of the training process and using 100 evaluation episodes per seed.",
+    "location": "Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "We use the latest versions, which are v2 for the mujoco datasets and v1 for the adroit datasets.",
+    "location": "Appendix C.1"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-m",
+     "outcome": 55.6,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "alpha": "best of {0.03,0.1,0.3,1.0,3.0,10.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-m           46.3          42.1 ± 0.1   52.6 ± 0.1     55.6 ± 0.2     48.6 ± 0.0",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-m",
+     "outcome": 85.6,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "alpha": "best of {0.03,0.1,0.3,1.0,3.0,10.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-m              81.1          70.2 ± 1.3   86.9 ± 0.4     85.6 ± 0.4     80.3 ± 1.1",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-m",
+     "outcome": 83.3,
+     "std": 1.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "alpha": "best of {0.03,0.1,0.3,1.0,3.0,10.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-m                58.8          49.8 ± 0.6   69.7 ± 2.1     83.3 ± 1.4     56.7 ± 0.8",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "halfcheetah-m-e",
+     "outcome": 93.5,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "alpha": "best of {0.03,0.1,0.3,1.0,3.0,10.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-m-e         64.7          60.1 ± 0.8    77.0 ± 0.9    93.5 ± 0.1     91.7 ± 0.9",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-m-e",
+     "outcome": 110.9,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "alpha": "best of {0.03,0.1,0.3,1.0,3.0,10.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-m-e            111.0         93.6 ± 5.6   111.8 ± 0.2   110.9 ± 0.1    112.9 ± 0.2",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-m-e",
+     "outcome": 102.1,
+     "std": 1.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "alpha": "best of {0.03,0.1,0.3,1.0,3.0,10.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-m-e              111.9         48.1 ± 1.5    81.4 ± 1.9   102.1 ± 1.3     83.1 ± 7.0",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "halfcheetah-m-re",
+     "outcome": 42.4,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "alpha": "best of {0.03,0.1,0.3,1.0,3.0,10.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-m-re        47.7          34.9 ± 0.3   38.4 ± 0.3     42.4 ± 0.1     38.6 ± 0.5",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-m-re",
+     "outcome": 71.6,
+     "std": 3.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "alpha": "best of {0.03,0.1,0.3,1.0,3.0,10.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-m-re           26.7          23.9 ± 1.6   66.4 ± 2.0     71.6 ± 3.1     49.3 ± 3.5",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-m-re",
+     "outcome": 71.0,
+     "std": 8.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "alpha": "best of {0.03,0.1,0.3,1.0,3.0,10.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-m-re             48.6          21.2 ± 1.3   77.3 ± 2.7     71.0 ± 8.1     94.1 ± 2.4",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "halfcheetah-r",
+     "outcome": 6.9,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "alpha": "best of {0.03,0.1,0.3,1.0,3.0,10.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-r           35.4          2.2 ± 0.0     5.4 ± 0.1      6.9 ± 1.0      3.7 ± 0.2",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-r",
+     "outcome": 6.1,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "alpha": "best of {0.03,0.1,0.3,1.0,3.0,10.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-r               7.3          0.7 ± 0.1     4.2 ± 0.2      6.1 ± 0.3      5.2 ± 0.2",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-r",
+     "outcome": 7.8,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "alpha": "best of {0.03,0.1,0.3,1.0,3.0,10.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-r                12.2          2.6 ± 0.4     6.7 ± 0.1      7.8 ± 0.3      5.6 ± 0.6",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    }
+   ]
+  },
+  {
+   "method_name": "One-step Exp. Weight",
+   "is_own_method": true,
+   "one_paragraph_description": "Fit beta-hat and Q^beta; policy trained by exponentially-weighted imitation: maximize sum exp(tau*(Q^beta(s,a) - V(s))) log pi(a|s) on dataset actions, weights clipped at 100. Single improvement step.",
+   "conventional_lineage_hint": "offline RL, one-step policy improvement from the behavior Q-function ('one step of policy improvement is sufficient to beat state of the art results on much of the D4RL benchmark')",
+   "global_conditions": {
+    "network": {
+     "value": "MLP, 2 hidden layers of width 1024, ReLU (Q and policy)",
+     "quote": "All of our Q functions and policies are simple MLPs with ReLU activations and 2 hidden layers of width 1024.",
+     "location": "Appendix C.1"
+    },
+    "policy_distribution": {
+     "value": "truncated normal, diagonal covariance",
+     "quote": "Our policies output a truncated normal distribution with diagonal covariance",
+     "location": "Appendix C.1"
+    },
+    "behavior_training_steps": {
+     "value": "500k",
+     "quote": "we train our β̂ behavior estimate by imitation learning for 500k gradient steps using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "q_training_steps": {
+     "value": "2M (fitted Q evaluation)",
+     "quote": "We train our Q b β estimator by fitted Q evaluation with a target network for 2 million gradient steps using Adam with learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "policy_training_steps": {
+     "value": "100k",
+     "quote": "All policies are trained for 100k steps again with Adam using learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "learning_rate": {
+     "value": "1e-4",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "batch_size": {
+     "value": "512",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "target_update_rate": {
+     "value": "0.005",
+     "quote": "The target is updated softly at every step with parameter τ = 0.005.",
+     "location": "Appendix C.1"
+    },
+    "hyperparameter_selection": {
+     "value": "best of 6 values per dataset, selected by online evaluation; tuned on 3 seeds, then 7 more seeds",
+     "quote": "We tune hyperparameters using 3 seeds, but then evaluate the best hyperparameter by training on an additional 7 seeds and then report results on the 10 total seeds.",
+     "location": "Appendix C.1"
+    },
+    "tau_sweep": {
+     "value": "{0.1, 0.3, 1.0, 3.0, 10.0, 30.0}",
+     "quote": "Exponentially weighted (τ ) {0.1, 0.3, 1.0, 3.0, 10.0, 30.0}",
+     "location": "Table 3"
+    },
+    "weight_clip": {
+     "value": "100",
+     "quote": "For the exponentially weighted algorithm, we clip the weights at 100 to prevent numerical instability.",
+     "location": "Appendix C.1"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "10",
+    "episodes_per_seed": "100",
+    "checkpoint_selection": "final policy after fixed step budget (not otherwise stated); hyperparameter chosen by online evaluation",
+    "quote": "We report the mean and standard error over 10 seeds of the training process and using 100 evaluation episodes per seed.",
+    "location": "Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "We use the latest versions, which are v2 for the mujoco datasets and v1 for the adroit datasets.",
+    "location": "Appendix C.1"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-m",
+     "outcome": 48.6,
+     "std": 0.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "tau": "best of {0.1,0.3,1.0,3.0,10.0,30.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-m           46.3          42.1 ± 0.1   52.6 ± 0.1     55.6 ± 0.2     48.6 ± 0.0",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-m",
+     "outcome": 80.3,
+     "std": 1.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "tau": "best of {0.1,0.3,1.0,3.0,10.0,30.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-m              81.1          70.2 ± 1.3   86.9 ± 0.4     85.6 ± 0.4     80.3 ± 1.1",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-m",
+     "outcome": 56.7,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "tau": "best of {0.1,0.3,1.0,3.0,10.0,30.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-m                58.8          49.8 ± 0.6   69.7 ± 2.1     83.3 ± 1.4     56.7 ± 0.8",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "halfcheetah-m-e",
+     "outcome": 91.7,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "tau": "best of {0.1,0.3,1.0,3.0,10.0,30.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-m-e         64.7          60.1 ± 0.8    77.0 ± 0.9    93.5 ± 0.1     91.7 ± 0.9",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-m-e",
+     "outcome": 112.9,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "tau": "best of {0.1,0.3,1.0,3.0,10.0,30.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-m-e            111.0         93.6 ± 5.6   111.8 ± 0.2   110.9 ± 0.1    112.9 ± 0.2",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-m-e",
+     "outcome": 83.1,
+     "std": 7.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "tau": "best of {0.1,0.3,1.0,3.0,10.0,30.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-m-e              111.9         48.1 ± 1.5    81.4 ± 1.9   102.1 ± 1.3     83.1 ± 7.0",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "halfcheetah-m-re",
+     "outcome": 38.6,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "tau": "best of {0.1,0.3,1.0,3.0,10.0,30.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-m-re        47.7          34.9 ± 0.3   38.4 ± 0.3     42.4 ± 0.1     38.6 ± 0.5",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-m-re",
+     "outcome": 49.3,
+     "std": 3.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "tau": "best of {0.1,0.3,1.0,3.0,10.0,30.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-m-re           26.7          23.9 ± 1.6   66.4 ± 2.0     71.6 ± 3.1     49.3 ± 3.5",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-m-re",
+     "outcome": 94.1,
+     "std": 2.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "tau": "best of {0.1,0.3,1.0,3.0,10.0,30.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-m-re             48.6          21.2 ± 1.3   77.3 ± 2.7     71.0 ± 8.1     94.1 ± 2.4",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "halfcheetah-r",
+     "outcome": 3.7,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "tau": "best of {0.1,0.3,1.0,3.0,10.0,30.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-r           35.4          2.2 ± 0.0     5.4 ± 0.1      6.9 ± 1.0      3.7 ± 0.2",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-r",
+     "outcome": 5.2,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "tau": "best of {0.1,0.3,1.0,3.0,10.0,30.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-r               7.3          0.7 ± 0.1     4.2 ± 0.2      6.1 ± 0.3      5.2 ± 0.2",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-r",
+     "outcome": 5.6,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "one-step (K=1)",
+      "tau": "best of {0.1,0.3,1.0,3.0,10.0,30.0} per dataset (value not reported)"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-r                12.2          2.6 ± 0.4     6.7 ± 0.1      7.8 ± 0.3      5.6 ± 0.6",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    }
+   ]
+  },
+  {
+   "method_name": "Multi-step (Rev. KL Reg)",
+   "is_own_method": true,
+   "one_paragraph_description": "Paper's own multi-step variant: initialize from pre-trained beta-hat and Q^beta, then 5 policy-improvement steps each of 20k policy gradient steps followed by 200k off-policy Q steps (next action sampled from current policy); reverse-KL regularized improvement operator.",
+   "conventional_lineage_hint": "offline RL, multi-step (approximate modified policy iteration with off-policy evaluation)",
+   "global_conditions": {
+    "network": {
+     "value": "MLP, 2 hidden layers of width 1024, ReLU (Q and policy)",
+     "quote": "All of our Q functions and policies are simple MLPs with ReLU activations and 2 hidden layers of width 1024.",
+     "location": "Appendix C.1"
+    },
+    "policy_distribution": {
+     "value": "truncated normal, diagonal covariance",
+     "quote": "Our policies output a truncated normal distribution with diagonal covariance",
+     "location": "Appendix C.1"
+    },
+    "behavior_training_steps": {
+     "value": "500k",
+     "quote": "we train our β̂ behavior estimate by imitation learning for 500k gradient steps using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "q_training_steps": {
+     "value": "2M (fitted Q evaluation)",
+     "quote": "We train our Q b β estimator by fitted Q evaluation with a target network for 2 million gradient steps using Adam with learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "policy_training_steps": {
+     "value": "100k",
+     "quote": "All policies are trained for 100k steps again with Adam using learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "learning_rate": {
+     "value": "1e-4",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "batch_size": {
+     "value": "512",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "target_update_rate": {
+     "value": "0.005",
+     "quote": "The target is updated softly at every step with parameter τ = 0.005.",
+     "location": "Appendix C.1"
+    },
+    "hyperparameter_selection": {
+     "value": "best of 6 values per dataset, selected by online evaluation; tuned on 3 seeds, then 7 more seeds",
+     "quote": "We tune hyperparameters using 3 seeds, but then evaluate the best hyperparameter by training on an additional 7 seeds and then report results on the 10 total seeds.",
+     "location": "Appendix C.1"
+    },
+    "policy_steps_K": {
+     "value": "5",
+     "quote": "Then we consider 5 policy steps.",
+     "location": "Appendix C.1"
+    },
+    "per_step_schedule": {
+     "value": "20k policy steps + 200k Q steps per policy step",
+     "quote": "each step consists of 20k gradient steps on the policy followed by 200k gradient steps on the Q function.",
+     "location": "Appendix C.1"
+    },
+    "alpha_sweep": {
+     "value": "{0.03, 0.1, 0.3, 1.0, 3.0, 10.0}",
+     "quote": "Reverse KL  (α)               {0.03, 0.1, 0.3, 1.0, 3.0, 10.0}",
+     "location": "Table 3"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "10",
+    "episodes_per_seed": "100",
+    "checkpoint_selection": "final policy after fixed step budget (not otherwise stated); hyperparameter chosen by online evaluation",
+    "quote": "Again we run 6 hyperparameters and report the mean and standard error across 10 seeds using 100 evaluation episodes.",
+    "location": "Table 2 caption"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "We use the latest versions, which are v2 for the mujoco datasets and v1 for the adroit datasets.",
+    "location": "Appendix C.1"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-m",
+     "outcome": 40.8,
+     "std": 8.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "multi-step (K=5)",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-m       55.6 ± 0.2       40.8 ± 8.6    47.4 ± 3.5",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-m",
+     "outcome": 75.9,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "multi-step (K=5)",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-m          85.6 ± 0.4       75.9 ± 0.5    75.4 ± 0.8",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-m",
+     "outcome": 53.0,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "multi-step (K=5)",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-m            83.3 ± 1.4       53.0 ± 1.0    54.2 ± 0.6",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "halfcheetah-m-e",
+     "outcome": 93.6,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "multi-step (K=5)",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-m-e     93.5 ± 0.1       93.6 ± 0.3    93.6 ± 0.2",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-m-e",
+     "outcome": 76.3,
+     "std": 15.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "multi-step (K=5)",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-m-e       110.9 ± 0.1       76.3 ± 15.9   108.2 ± 0.3",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-m-e",
+     "outcome": 101.3,
+     "std": 3.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "multi-step (K=5)",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-m-e         102.1 ± 1.3       101.3 ± 3.9    82.7 ± 7.4",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "halfcheetah-r",
+     "outcome": 13.7,
+     "std": 1.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "multi-step (K=5)",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-r       6.9 ± 1.0        13.7 ± 1.7    16.3 ± 1.6",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-r",
+     "outcome": 5.0,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "multi-step (K=5)",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-r          6.1 ± 0.3         5.0 ± 0.3    5.1 ± 0.3",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-r",
+     "outcome": 15.4,
+     "std": 2.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "multi-step (K=5)",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-r            7.8 ± 0.3        15.4 ± 2.9     9.7 ± 0.1",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    }
+   ]
+  },
+  {
+   "method_name": "Iterative (Rev. KL Reg)",
+   "is_own_method": true,
+   "one_paragraph_description": "Paper's own iterative (actor-critic style) variant: initialize from beta-hat and Q^beta, take 100k policy gradient steps with 2 off-policy Q gradient steps per policy step; reverse-KL regularized improvement operator.",
+   "conventional_lineage_hint": "offline RL, iterative regularized actor-critic ('our iterative algorithm recovers similar performance to prior regularized actor-critic approaches')",
+   "global_conditions": {
+    "network": {
+     "value": "MLP, 2 hidden layers of width 1024, ReLU (Q and policy)",
+     "quote": "All of our Q functions and policies are simple MLPs with ReLU activations and 2 hidden layers of width 1024.",
+     "location": "Appendix C.1"
+    },
+    "policy_distribution": {
+     "value": "truncated normal, diagonal covariance",
+     "quote": "Our policies output a truncated normal distribution with diagonal covariance",
+     "location": "Appendix C.1"
+    },
+    "behavior_training_steps": {
+     "value": "500k",
+     "quote": "we train our β̂ behavior estimate by imitation learning for 500k gradient steps using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "q_training_steps": {
+     "value": "2M (fitted Q evaluation)",
+     "quote": "We train our Q b β estimator by fitted Q evaluation with a target network for 2 million gradient steps using Adam with learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "policy_training_steps": {
+     "value": "100k",
+     "quote": "All policies are trained for 100k steps again with Adam using learning rate 1e-4 and batch size 512.",
+     "location": "Appendix C.1"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "learning_rate": {
+     "value": "1e-4",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "batch_size": {
+     "value": "512",
+     "quote": "using Adam [Kingma and Ba, 2014] with learning rate 1e-4 and batch size 512",
+     "location": "Appendix C.1"
+    },
+    "target_update_rate": {
+     "value": "0.005",
+     "quote": "The target is updated softly at every step with parameter τ = 0.005.",
+     "location": "Appendix C.1"
+    },
+    "hyperparameter_selection": {
+     "value": "best of 6 values per dataset, selected by online evaluation; tuned on 3 seeds, then 7 more seeds",
+     "quote": "We tune hyperparameters using 3 seeds, but then evaluate the best hyperparameter by training on an additional 7 seeds and then report results on the 10 total seeds.",
+     "location": "Appendix C.1"
+    },
+    "q_steps_per_policy_step": {
+     "value": "2",
+     "quote": "For each step on the policy network we take 2 off-policy gradient steps on the Q network.",
+     "location": "Appendix C.1"
+    },
+    "alpha_sweep": {
+     "value": "{0.03, 0.1, 0.3, 1.0, 3.0, 10.0}",
+     "quote": "Reverse KL  (α)               {0.03, 0.1, 0.3, 1.0, 3.0, 10.0}",
+     "location": "Table 3"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "10",
+    "episodes_per_seed": "100",
+    "checkpoint_selection": "final policy after fixed step budget (not otherwise stated); hyperparameter chosen by online evaluation",
+    "quote": "Again we run 6 hyperparameters and report the mean and standard error across 10 seeds using 100 evaluation episodes.",
+    "location": "Table 2 caption"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "We use the latest versions, which are v2 for the mujoco datasets and v1 for the adroit datasets.",
+    "location": "Appendix C.1"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-m",
+     "outcome": 47.4,
+     "std": 3.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "iterative",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-m       55.6 ± 0.2       40.8 ± 8.6    47.4 ± 3.5",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-m",
+     "outcome": 75.4,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "iterative",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-m          85.6 ± 0.4       75.9 ± 0.5    75.4 ± 0.8",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-m",
+     "outcome": 54.2,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "iterative",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-m            83.3 ± 1.4       53.0 ± 1.0    54.2 ± 0.6",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "halfcheetah-m-e",
+     "outcome": 93.6,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "iterative",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-m-e     93.5 ± 0.1       93.6 ± 0.3    93.6 ± 0.2",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-m-e",
+     "outcome": 108.2,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "iterative",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-m-e       110.9 ± 0.1       76.3 ± 15.9   108.2 ± 0.3",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-m-e",
+     "outcome": 82.7,
+     "std": 7.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "iterative",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-m-e         102.1 ± 1.3       101.3 ± 3.9    82.7 ± 7.4",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "halfcheetah-r",
+     "outcome": 16.3,
+     "std": 1.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "iterative",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-r       6.9 ± 1.0        13.7 ± 1.7    16.3 ± 1.6",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "walker2d-r",
+     "outcome": 5.1,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "iterative",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-r          6.1 ± 0.3         5.0 ± 0.3    5.1 ± 0.3",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    },
+    {
+     "dataset": "hopper-r",
+     "outcome": 9.7,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "template": "iterative",
+      "alpha": "best of sweep per dataset (value not reported)"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-r            7.8 ± 0.3        15.4 ± 2.9     9.7 ± 0.1",
+     "notes": "Dataset printed abbreviated; caption: 'We use m for medium, m-e for medium-expert, m-re for medium-replay, r for random'. ± is standard error over 10 seeds (not std). Hyperparameter chosen per dataset from sweep by online evaluation; chosen value not reported. std field holds standard error."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "Iterative Fu et al. [2020] (best of several)",
+  "BC"
+ ],
+ "problems": [
+  "± in Tables 1 and 2 is standard ERROR over 10 seeds, not std; stored in 'std' field with note.",
+  "Dataset names abbreviated (halfcheetah-m, -m-e, -m-re, -r); kept as printed, mapping given in caption.",
+  "Per-dataset chosen hyperparameter value (alpha / M / tau) not reported; only sweep sets (Table 3). Selection used online evaluation.",
+  "Table 2 'One-step' column repeats Table 1 'Rev. KL Reg' values (identical); not duplicated as rows.",
+  "Appendix C.1 says 'We use three random seeds' right after describing the 10-seed protocol; contradiction in text — Table captions say 10 seeds.",
+  "Figure-only results (learning curves, hyperparameter sensitivity, Fig 2/3/6) not extracted."
+ ]
+}

@@ -1,0 +1,664 @@
+{
+ "arxiv_id": "2403.00564",
+ "title": "EfficientZero V2: Mastering Discrete and Continuous Control with Limited Data",
+ "methods": [
+  {
+   "method_name": "EZ-V2",
+   "is_own_method": true,
+   "one_paragraph_description": "MuZero/EfficientZero-style model-based agent: learns a latent dynamics model with representation, dynamics, reward, value and policy networks plus a self-supervised consistency loss, and plans actions with a sampling-based Gumbel search (S-Gumbel Search) over the learned model, using only 16 simulations and 8 sampled actions on Atari 100k. Value targets use a 'mixed value target' combining search-based value estimation (SVE) for stale data with multi-step TD targets for fresh data. Trained with SGD, batch 256, UTD 1.",
+   "conventional_lineage_hint": "model-based RL with tree search / MuZero lineage: 'Our method surpasses the previous state-of-the-art, EfficientZero'; 'the planning with tree search ... and the mixed value target'; compared against 'lookahead search' methods",
+   "global_conditions": {
+    "replay_capacity": {
+     "value": "1e6 (FIFO)",
+     "quote": "Replay capacity (FIFO)                             —                   106",
+     "location": "Table 3 (Appendix I.1)"
+    },
+    "batch_size": {
+     "value": "256",
+     "quote": "Batch size                                         B                   256",
+     "location": "Table 3"
+    },
+    "discount": {
+     "value": "0.997",
+     "quote": "Discount                                           γ                 0.997",
+     "location": "Table 3"
+    },
+    "update_to_data_ratio": {
+     "value": "1",
+     "quote": "Update-to-data (UTD)                               —                    1",
+     "location": "Table 3"
+    },
+    "unroll_steps": {
+     "value": "5",
+     "quote": "Unroll steps                                      lunroll               5",
+     "location": "Table 3"
+    },
+    "td_steps": {
+     "value": "5",
+     "quote": "TD steps                                            k                   5",
+     "location": "Table 3"
+    },
+    "num_simulations": {
+     "value": "16 (Atari 100k)",
+     "quote": "Number of simulations in search                   Nsim      32 (16 in ‘Atari 100k’)",
+     "location": "Table 3"
+    },
+    "num_sampled_actions": {
+     "value": "8 (Atari 100k)",
+     "quote": "Number of sampled actions                           K        16 (8 in ‘Atari 100k’)",
+     "location": "Table 3"
+    },
+    "self_play_network_update_interval": {
+     "value": "100",
+     "quote": "Self-play network updating interval                 —                  100",
+     "location": "Table 3"
+    },
+    "target_network_update_interval": {
+     "value": "400",
+     "quote": "Target network updating interval                    —                  400",
+     "location": "Table 3"
+    },
+    "sve_start_steps_T1": {
+     "value": "4e4",
+     "quote": "Starting steps when using SVE                       T1               4 · 104",
+     "location": "Table 3"
+    },
+    "sve_buffer_index_threshold_T2": {
+     "value": "2e4",
+     "quote": "Threshold of buffer index when using SVE            T2               2 · 104",
+     "location": "Table 3"
+    },
+    "priority_exponent": {
+     "value": "1",
+     "quote": "Priority exponent                                   α                   1",
+     "location": "Table 3"
+    },
+    "priority_correction": {
+     "value": "1",
+     "quote": "Priority correction                                 β                   1",
+     "location": "Table 3"
+    },
+    "reward_loss_coefficient": {
+     "value": "1.0",
+     "quote": "Reward loss coefficient                             λ1                 1.0",
+     "location": "Table 3"
+    },
+    "policy_loss_coefficient": {
+     "value": "1.0",
+     "quote": "Policy loss coefficient                             λ2                 1.0",
+     "location": "Table 3"
+    },
+    "value_loss_coefficient": {
+     "value": "0.25",
+     "quote": "Value loss coefficient                              λ3                0.25",
+     "location": "Table 3"
+    },
+    "consistency_loss_coefficient": {
+     "value": "2.0",
+     "quote": "Self-supervised consistency loss coefficient        λ4                 2.0",
+     "location": "Table 3"
+    },
+    "policy_entropy_loss_coefficient": {
+     "value": "5e-3",
+     "quote": "Policy entropy loss coefficient                     —               5 · 10−3",
+     "location": "Table 3"
+    },
+    "optimizer": {
+     "value": "SGD",
+     "quote": "Optimizer                                          —                  SGD",
+     "location": "Table 3 (Vision Control 100-200k & Atari 100k block)"
+    },
+    "learning_rate": {
+     "value": "0.2",
+     "quote": "Optimizer: learning rate                           —                   0.2",
+     "location": "Table 3"
+    },
+    "weight_decay": {
+     "value": "1e-4",
+     "quote": "Optimizer: weight decay                            —                1 · 10−4",
+     "location": "Table 3"
+    },
+    "momentum": {
+     "value": "0.9",
+     "quote": "Optimizer: momentum                                —                   0.9",
+     "location": "Table 3"
+    },
+    "environment_steps": {
+     "value": "100k steps = 400k frames, action repeat 4",
+     "quote": "encompassing 26 Atari games and limiting training to 400k environment steps, equivalent to 100k steps with action repeats of 4.",
+     "location": "Section 5.1, layout l.409-413"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "not stated for Atari (3 seeds stated for DMControl only)",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated",
+    "quote": "Table 2. Scores achieved on the Proprio Control 50/100k and Vision Control 100/200k benchmarks (with 3 seeds run for each)",
+    "location": "Table 2 caption, layout l.521"
+   },
+   "dataset_version": {
+    "value": "Atari 100k: 400k frames = 100k steps with action repeat 4; sticky actions not stated (unknown)",
+    "quote": "limiting training to 400k environment steps, equivalent to 100k steps with action repeats of 4.",
+    "location": "Section 5.1, layout l.409-413"
+   },
+   "rows": [
+    {
+     "dataset": "Alien",
+     "outcome": 1557.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Alien             227.8     7127.7    616.9     558.2     771.2      801.5    530.0        808.5           959      1173.2         1557.7",
+     "notes": ""
+    },
+    {
+     "dataset": "Amidar",
+     "outcome": 184.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Amidar              5.8     1719.5      88.0    142.1      102.8     176.3     38.8        148.6           139       244.6          184.9",
+     "notes": ""
+    },
+    {
+     "dataset": "Assault",
+     "outcome": 1757.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Assault           222.4      742.0    527.2     600.6     452.4      571.0    500.1       1263.1           706      2098.5         1757.5",
+     "notes": ""
+    },
+    {
+     "dataset": "Asterix",
+     "outcome": 61810.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Asterix           210.0     8503.3   1128.3     734.5     603.5      977.8   1734.0      25557.8          932      3946.1         61810.0",
+     "notes": ""
+    },
+    {
+     "dataset": "Bank Heist",
+     "outcome": 1316.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Bank Heist         14.2      753.1     34.2     131.6     168.9      380.9    192.5        351.0           649       732.9         1316.7",
+     "notes": ""
+    },
+    {
+     "dataset": "BattleZone",
+     "outcome": 14433.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "BattleZone       2360.0    37187.5    5184.4   14870.0   12954.0   16651.0    7687.5     13871.2         12250     24459.8        14433.3",
+     "notes": ""
+    },
+    {
+     "dataset": "Boxing",
+     "outcome": 75.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Boxing              0.1       12.1      9.1       1.2        6.0     35.8      15.1         52.7          52.7        85.8           75.0",
+     "notes": ""
+    },
+    {
+     "dataset": "Breakout",
+     "outcome": 400.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Breakout            1.7       30.5     16.4       4.9       16.1     17.1      48.0       414.1            31       370.6           400.1",
+     "notes": ""
+    },
+    {
+     "dataset": "ChopperCmd",
+     "outcome": 1196.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "ChopperCmd        811.0     7387.8   1246.9    1058.5     780.3      974.8   1350.0       1117.3           420      7549.3         1196.6",
+     "notes": ""
+    },
+    {
+     "dataset": "Crazy Climber",
+     "outcome": 112363.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Crazy Climber    10780.5   35829.4   62583.6   12146.5   20516.5   42923.6   56937.0     83940.2         97190     58431.8       112363.3",
+     "notes": ""
+    },
+    {
+     "dataset": "Demon Attack",
+     "outcome": 22773.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Demon Attack      152.1     1971.0     208.1    817.6     1113.4     545.2   3527.0      13003.9           303     13341.4        22773.5",
+     "notes": ""
+    },
+    {
+     "dataset": "Freeway",
+     "outcome": 0.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Freeway             0.0       29.6     20.3      26.7       9.8      24.4      21.8        21.8             0         25.5            0.0",
+     "notes": ""
+    },
+    {
+     "dataset": "Frostbite",
+     "outcome": 1136.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Frostbite          65.2     4334.7    254.7    1181.3     331.1     1821.5    255.0       296.3           909       2384.8         1136.3",
+     "notes": ""
+    },
+    {
+     "dataset": "Gopher",
+     "outcome": 3868.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Gopher            257.6     2412.5     771.0    669.3      636.3     715.2   1256.0       3260.3          3730      1331.2         3868.7",
+     "notes": ""
+    },
+    {
+     "dataset": "Hero",
+     "outcome": 9705.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Hero             1027.0    30826.4   2656.6    6279.3    3736.3     7019.2   3095.0       9315.9         11161      7818.6         9705.0",
+     "notes": ""
+    },
+    {
+     "dataset": "Jamesbond",
+     "outcome": 468.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Jamesbond          29.0      302.8    125.3     471.0     236.0     365.4      87.5       517.0           445       1129.6          468.3",
+     "notes": ""
+    },
+    {
+     "dataset": "Kangaroo",
+     "outcome": 1886.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Kangaroo           52.0    3035.0     323.1     872.5     940.6     3276.4     62.5        724.1          4098      6614.7         1886.7",
+     "notes": ""
+    },
+    {
+     "dataset": "Krull",
+     "outcome": 9080.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Krull            1598.0     2665.5   4539.9    4229.6    4018.1     3688.9   4890.8       5663.3          7782      8223.4         9080.0",
+     "notes": ""
+    },
+    {
+     "dataset": "Kung Fu Master",
+     "outcome": 28883.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Kung Fu Master    258.5    22736.3   17257.2   14307.8    9111.0   13192.7   18813.0     30944.8         21420     18991.7        28883.3",
+     "notes": ""
+    },
+    {
+     "dataset": "Ms Pacman",
+     "outcome": 2251.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Ms Pacman         307.3     6951.6   1480.0    1465.5     960.5     1313.2   1265.6       1281.2          1327      2008.3         2251.0",
+     "notes": ""
+    },
+    {
+     "dataset": "Pong",
+     "outcome": 20.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Pong              -20.7       14.6     12.8      -16.5      -8.5      -5.9     -6.7         20.1           18        16.7            20.8",
+     "notes": ""
+    },
+    {
+     "dataset": "Private Eye",
+     "outcome": 99.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Private Eye        24.9    69571.3     58.3     218.4      -13.6     124.0     56.3         96.7          882         40.5           99.8",
+     "notes": ""
+    },
+    {
+     "dataset": "Qbert",
+     "outcome": 16058.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Qbert             163.9    13455.0   1288.8    1042.4     854.4      669.1   3952.0      13781.9          3405      4447.1        16058.3",
+     "notes": ""
+    },
+    {
+     "dataset": "Road Runner",
+     "outcome": 27516.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Road Runner        11.5     7845.0   5640.6    5661.0    8895.1    14220.5   2500.0      17751.3         15565     33426.8        27516.7",
+     "notes": ""
+    },
+    {
+     "dataset": "Seaquest",
+     "outcome": 1974.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Seaquest           68.4    42054.7    683.3     384.5     301.2      583.1    208.0       1100.2           618      1232.5         1974.0",
+     "notes": ""
+    },
+    {
+     "dataset": "Up N Down",
+     "outcome": 15224.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Up N Down         533.4    11693.2    3350.3    2955.2    3180.8   28138.5   2896.9      17264.2            -      12101.7        15224.3",
+     "notes": ""
+    },
+    {
+     "dataset": "Asterix",
+     "outcome": 26023.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "value_target=multi-step TD",
+     "config_conditions": {
+      "value_target": "multi-step TD target (instead of mixed value target)"
+     },
+     "table": "Table 6",
+     "line_quote": "W/ Multi-step TD Target           26023.1         13725.7          9463.3",
+     "notes": "ablation row printed as 'W/ Multi-step TD Target'; game name as printed in Table 6 header ('Asterix'), Table 1 prints it as 'Asterix'"
+    },
+    {
+     "dataset": "UpNDown",
+     "outcome": 13725.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "value_target=multi-step TD",
+     "config_conditions": {
+      "value_target": "multi-step TD target (instead of mixed value target)"
+     },
+     "table": "Table 6",
+     "line_quote": "W/ Multi-step TD Target           26023.1         13725.7          9463.3",
+     "notes": "ablation row printed as 'W/ Multi-step TD Target'; game name as printed in Table 6 header ('UpNDown'), Table 1 prints it as 'Up N Down'"
+    },
+    {
+     "dataset": "Qbert",
+     "outcome": 9463.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "value_target=multi-step TD",
+     "config_conditions": {
+      "value_target": "multi-step TD target (instead of mixed value target)"
+     },
+     "table": "Table 6",
+     "line_quote": "W/ Multi-step TD Target           26023.1         13725.7          9463.3",
+     "notes": "ablation row printed as 'W/ Multi-step TD Target'; game name as printed in Table 6 header ('Qbert'), Table 1 prints it as 'Qbert'"
+    },
+    {
+     "dataset": "Asterix",
+     "outcome": 22816.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "value_target=GAE",
+     "config_conditions": {
+      "value_target": "GAE (instead of mixed value target)"
+     },
+     "table": "Table 6",
+     "line_quote": "W/ GAE                            22816.7         16255.3          7807.3",
+     "notes": "ablation row printed as 'W/ GAE'; game name as printed in Table 6 header ('Asterix'), Table 1 prints it as 'Asterix'"
+    },
+    {
+     "dataset": "UpNDown",
+     "outcome": 16255.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "value_target=GAE",
+     "config_conditions": {
+      "value_target": "GAE (instead of mixed value target)"
+     },
+     "table": "Table 6",
+     "line_quote": "W/ GAE                            22816.7         16255.3          7807.3",
+     "notes": "ablation row printed as 'W/ GAE'; game name as printed in Table 6 header ('UpNDown'), Table 1 prints it as 'Up N Down'"
+    },
+    {
+     "dataset": "Qbert",
+     "outcome": 7807.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "value_target=GAE",
+     "config_conditions": {
+      "value_target": "GAE (instead of mixed value target)"
+     },
+     "table": "Table 6",
+     "line_quote": "W/ GAE                            22816.7         16255.3          7807.3",
+     "notes": "ablation row printed as 'W/ GAE'; game name as printed in Table 6 header ('Qbert'), Table 1 prints it as 'Qbert'"
+    }
+   ]
+  }
+ ],
+ "reference_scores": {
+  "Alien": {
+   "random": 227.8,
+   "human": 7127.7,
+   "line_quote": "Alien             227.8     7127.7    616.9     558.2     771.2      801.5    530.0        808.5           959      1173.2         1557.7"
+  },
+  "Amidar": {
+   "random": 5.8,
+   "human": 1719.5,
+   "line_quote": "Amidar              5.8     1719.5      88.0    142.1      102.8     176.3     38.8        148.6           139       244.6          184.9"
+  },
+  "Assault": {
+   "random": 222.4,
+   "human": 742.0,
+   "line_quote": "Assault           222.4      742.0    527.2     600.6     452.4      571.0    500.1       1263.1           706      2098.5         1757.5"
+  },
+  "Asterix": {
+   "random": 210.0,
+   "human": 8503.3,
+   "line_quote": "Asterix           210.0     8503.3   1128.3     734.5     603.5      977.8   1734.0      25557.8          932      3946.1         61810.0"
+  },
+  "Bank Heist": {
+   "random": 14.2,
+   "human": 753.1,
+   "line_quote": "Bank Heist         14.2      753.1     34.2     131.6     168.9      380.9    192.5        351.0           649       732.9         1316.7"
+  },
+  "BattleZone": {
+   "random": 2360.0,
+   "human": 37187.5,
+   "line_quote": "BattleZone       2360.0    37187.5    5184.4   14870.0   12954.0   16651.0    7687.5     13871.2         12250     24459.8        14433.3"
+  },
+  "Boxing": {
+   "random": 0.1,
+   "human": 12.1,
+   "line_quote": "Boxing              0.1       12.1      9.1       1.2        6.0     35.8      15.1         52.7          52.7        85.8           75.0"
+  },
+  "Breakout": {
+   "random": 1.7,
+   "human": 30.5,
+   "line_quote": "Breakout            1.7       30.5     16.4       4.9       16.1     17.1      48.0       414.1            31       370.6           400.1"
+  },
+  "ChopperCmd": {
+   "random": 811.0,
+   "human": 7387.8,
+   "line_quote": "ChopperCmd        811.0     7387.8   1246.9    1058.5     780.3      974.8   1350.0       1117.3           420      7549.3         1196.6"
+  },
+  "Crazy Climber": {
+   "random": 10780.5,
+   "human": 35829.4,
+   "line_quote": "Crazy Climber    10780.5   35829.4   62583.6   12146.5   20516.5   42923.6   56937.0     83940.2         97190     58431.8       112363.3"
+  },
+  "Demon Attack": {
+   "random": 152.1,
+   "human": 1971.0,
+   "line_quote": "Demon Attack      152.1     1971.0     208.1    817.6     1113.4     545.2   3527.0      13003.9           303     13341.4        22773.5"
+  },
+  "Freeway": {
+   "random": 0.0,
+   "human": 29.6,
+   "line_quote": "Freeway             0.0       29.6     20.3      26.7       9.8      24.4      21.8        21.8             0         25.5            0.0"
+  },
+  "Frostbite": {
+   "random": 65.2,
+   "human": 4334.7,
+   "line_quote": "Frostbite          65.2     4334.7    254.7    1181.3     331.1     1821.5    255.0       296.3           909       2384.8         1136.3"
+  },
+  "Gopher": {
+   "random": 257.6,
+   "human": 2412.5,
+   "line_quote": "Gopher            257.6     2412.5     771.0    669.3      636.3     715.2   1256.0       3260.3          3730      1331.2         3868.7"
+  },
+  "Hero": {
+   "random": 1027.0,
+   "human": 30826.4,
+   "line_quote": "Hero             1027.0    30826.4   2656.6    6279.3    3736.3     7019.2   3095.0       9315.9         11161      7818.6         9705.0"
+  },
+  "Jamesbond": {
+   "random": 29.0,
+   "human": 302.8,
+   "line_quote": "Jamesbond          29.0      302.8    125.3     471.0     236.0     365.4      87.5       517.0           445       1129.6          468.3"
+  },
+  "Kangaroo": {
+   "random": 52.0,
+   "human": 3035.0,
+   "line_quote": "Kangaroo           52.0    3035.0     323.1     872.5     940.6     3276.4     62.5        724.1          4098      6614.7         1886.7"
+  },
+  "Krull": {
+   "random": 1598.0,
+   "human": 2665.5,
+   "line_quote": "Krull            1598.0     2665.5   4539.9    4229.6    4018.1     3688.9   4890.8       5663.3          7782      8223.4         9080.0"
+  },
+  "Kung Fu Master": {
+   "random": 258.5,
+   "human": 22736.3,
+   "line_quote": "Kung Fu Master    258.5    22736.3   17257.2   14307.8    9111.0   13192.7   18813.0     30944.8         21420     18991.7        28883.3"
+  },
+  "Ms Pacman": {
+   "random": 307.3,
+   "human": 6951.6,
+   "line_quote": "Ms Pacman         307.3     6951.6   1480.0    1465.5     960.5     1313.2   1265.6       1281.2          1327      2008.3         2251.0"
+  },
+  "Pong": {
+   "random": -20.7,
+   "human": 14.6,
+   "line_quote": "Pong              -20.7       14.6     12.8      -16.5      -8.5      -5.9     -6.7         20.1           18        16.7            20.8"
+  },
+  "Private Eye": {
+   "random": 24.9,
+   "human": 69571.3,
+   "line_quote": "Private Eye        24.9    69571.3     58.3     218.4      -13.6     124.0     56.3         96.7          882         40.5           99.8"
+  },
+  "Qbert": {
+   "random": 163.9,
+   "human": 13455.0,
+   "line_quote": "Qbert             163.9    13455.0   1288.8    1042.4     854.4      669.1   3952.0      13781.9          3405      4447.1        16058.3"
+  },
+  "Road Runner": {
+   "random": 11.5,
+   "human": 7845.0,
+   "line_quote": "Road Runner        11.5     7845.0   5640.6    5661.0    8895.1    14220.5   2500.0      17751.3         15565     33426.8        27516.7"
+  },
+  "Seaquest": {
+   "random": 68.4,
+   "human": 42054.7,
+   "line_quote": "Seaquest           68.4    42054.7    683.3     384.5     301.2      583.1    208.0       1100.2           618      1232.5         1974.0"
+  },
+  "Up N Down": {
+   "random": 533.4,
+   "human": 11693.2,
+   "line_quote": "Up N Down         533.4    11693.2    3350.3    2955.2    3180.8   28138.5   2896.9      17264.2            -      12101.7        15224.3"
+  }
+ },
+ "baseline_rows_seen": [
+  "Random",
+  "Human",
+  "SimPLe",
+  "CURL",
+  "DrQ",
+  "SPR",
+  "MuZero",
+  "EfficientZero",
+  "DreamerV3",
+  "BBF"
+ ],
+ "problems": [
+  "Number of seeds and evaluation episodes for the Atari 100k results are not stated (3 seeds is stated only for DMControl Table 2).",
+  "Sticky actions not mentioned.",
+  "'W/ Sample MCTS' ablation row exists in Tables 4-5 (DMControl) but not in Table 6 (Atari); Table 6 covers only Asterix, UpNDown, Qbert.",
+  "Table 1 uses names 'ChopperCmd', 'Bank Heist', 'Crazy Climber', 'Kung Fu Master', 'Ms Pacman', 'Private Eye', 'Road Runner', 'Up N Down' as printed; Table 6 prints 'UpNDown'.",
+  "No per-game std printed."
+ ]
+}

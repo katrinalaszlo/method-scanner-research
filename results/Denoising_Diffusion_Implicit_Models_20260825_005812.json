@@ -1,0 +1,94 @@
+{
+  "paper": "Denoising Diffusion Implicit Models",
+  "timestamp": "20260825_005812",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 16.73,
+  "abstract": "This method builds on the following base algorithm from Denoising Diffusion Probabilistic Models (Ho et al. 2020), which it inherits unchanged except where noted below.\n\n\fAlgorithm 1 Training\nAlgorithm 2 Sampling\n1: repeat\n2: x0 ∼ q(x0 )\n3: t ∼ Uniform({1, . . . , T })\n4: \u000f ∼ N (0, I)\n5: Take gradient descent step on\n√\n√\n2\n∇θ \u000f − \u000fθ ( ᾱt x0 + 1 − ᾱt \u000f, t)\n6: until converged\n1: xT ∼ N (0, I)\n2: for t = T, . . . , 1 do\n3: z ∼ N (0, I) \u0010\nif t > 1, else z = 0\n\u0011\nt\n4: xt−1 = √1αt xt − √1−α\n\u000f\n(x\n,\nt)\n+ σt z\nt\nθ\n1−ᾱt\n5: end for\n\nThe modification introduced in this paper:\n\nVARIATIONAL I NFERENCE FOR NON -M ARKOVIAN F ORWARD P ROCESSES Because the generative model approximates the reverse of the inference process, we need to rethink the inference process in order to reduce the number of iterations required by the generative model. Our key observation is that the DDPM objective in the form of Lγ only depends on the marginals2 q(xt |x0 ), but not directly on the joint q(x1:T |x0 ). Since there are many inference distributions (joints) with the same marginals, we explore alternative inference processes that are non-Markovian, which leads to new generative processes (Figure 1, right). These non-Markovian inference process lead to the same surrogate objective function as DDPM, as we will show below. In Appendix A, we show that the non-Markovian perspective also applies beyond the Gaussian case. 3.1 N ON -M ARKOVIAN FORWARD PROCESSES Let us consider a family Q of inference distributions, indexed by a real vector σ ∈ RT≥0 : qσ (x1:T |x0 ) := qσ (xT |x0 ) T Y qσ (xt−1 |xt , x0 ) (6) t=2 √ where qσ (xT |x0 ) = N ( αT x0 , (1 − αT )I) and for all t > 1, \u0012 \u0013 √ q xt − αt x0 2 √ 2 qσ (xt−1 |xt , x0 ) = N αt−1 x0 + 1 − αt−1 − σt · √ , σt I . (7) 1 − αt √ The mean function is chosen to order to ensure that qσ (xt |x0 ) = N ( αt x0 , (1 − αt )I) for all t (see Lemma 1 of Appendix B), so that it defines a joint inference distribution that matches the “marginals” as desired. The forward process3 can be derived from Bayes’ rule: qσ (xt |xt−1 , x0 ) = qσ (xt−1 |xt , x0 )qσ (xt |x0 ) , qσ (xt−1 |x0 ) 1 Please refer to Appendix C.2 for details. We slightly abuse this term (as well as joints) when only conditioned on x0 . 3 We overload the term “forward process” for cases where the inference model is not a diffusion. 2 3 (8) Published as a conference paper at ICLR 2021 which is also Gaussian (although we do not use this fact for the remainder of this paper). Unlike the diffusion process in Eq. (3), the forward process here is no longer Markovian, since each xt could depend on both xt−1 and x0 . The magnitude of σ controls the how stochastic the forward process is; when σ → 0, we reach an extreme case where as long as we observe x0 and xt for some t, then xt−1 become known and fixed. 3.2 G ENERATIVE PROCESS AND UNIFIED VARIATIONAL INFERENCE OBJECTIVE (t) Next, we define a trainable generative process pθ (x0:T ) where each pθ (xt−1 |xt ) leverages knowledge of qσ (xt−1 |xt , x0 ). Intuitively, given a noisy observation xt , we first make a prediction4 of the corresponding x0 , and then use it to obtain a sample xt−1 through the reverse conditional distribution qσ (xt−1 |xt , x0 ), which we have defined. (t) For some x0 ∼ q(x0 ) and \u000ft ∼ N (0, I), xt can be obtained using Eq. (4). The model \u000fθ (xt ) then attempts to predict \u000ft from xt , without knowledge of x0 . By rewriting Eq. (4), one can then predict the denoised observation, which is a prediction of x0 given xt : √ √ (t) (t) fθ (xt ) := (xt − 1 − αt · \u000fθ (xt ))/ αt . (9) We can then define the generative process with a fixed prior pθ (xT ) = N (0, I) and ( (1) N (fθ (x1 ), σ12 I) if t = 1 (t) pθ (xt−1 |xt ) = (t) qσ (xt−1 |xt , fθ (xt )) otherwise, (t) (10) (t) where qσ (xt−1 |xt , fθ (xt )) is defined as in Eq. (7) with x0 replaced by fθ (xt ). We add some Gaussian noise (with covariance σ12 I) for the case of t = 1 to ensure that the generative process is supported everywhere. We optimize θ via the following variational inference objective (which is a functional over \u000fθ ): Jσ (\u000fθ ) := Ex0:T ∼qσ (x0:T ) [log qσ (x1:T |x0 ) − log pθ (x0:T )] (11) \" # T T X X (t) = Ex0:T ∼qσ (x0:T ) log qσ (xT |x0 ) + log qσ (xt−1 |xt , x0 ) − log pθ (xt−1 |xt ) − log pθ (xT ) t=2 t=1 where we factorize qσ (x1:T |x0 ) according to Eq. (6) and pθ (x0:T ) according to Eq. (1). From the definition of Jσ , it would appear that a different model has to be trained for every choice of σ, since it corresponds to a different variational objective (and a different generative process). However, Jσ is equivalent to Lγ for certain weights γ, as we show below. Theorem 1. For all σ > 0, there exists γ ∈ RT>0 and C ∈ R, such that Jσ = Lγ + C. (t) The variational objective Lγ is special in the sense that if parameters θ of the models \u000fθ are not shared across different t, then the optimal solution for \u000fθ will not depend on the weights γ (as global optimum is achieved by separately maximizing each term in the sum). This property of Lγ has two implications. On the one hand, this justified the use of L1 as a surrogate objective function for the variational lower bound in DDPMs; on the other hand, since Jσ is equivalent to some Lγ from Theorem 1, the optimal solution of Jσ is also the same as that of L1 . Therefore, if parameters are not shared across t in the model \u000fθ , then the L1 objective used by Ho et al. (2020) can be used as a surrogate objective for the variational objective Jσ as well. 4 S AMPLING FROM G ENERALIZED G ENERATIVE P ROCESSES With L1 as the objective, we are not only learning a generative process for the Markovian inference process considered in Sohl-Dickstein et al. (2015) and Ho et al. (2020), but also generative processes for many non-Markovian forward processes parametrized by σ that we have described. Therefore, we can essentially use pretrained DDPM models as the solutions to the new objectives, and focus on finding a generative process that is better at producing samples subject to our needs by changing σ. 4 Learning a distribution over the predictions is also possible, but empirically we found little benefits of it. 4 Published as a conference paper at ICLR 2021 Figure 2: Graphical model for accelerated generation, where τ = [1, 3]. 4.1 D ENOISING D IFFUSION I MPLICIT M ODELS From pθ (x1:T ) in Eq. (10), one can generate a sample xt−1 from a sample xt via: xt−1 = √ xt − αt−1 | √ ! q (t) 1 − αt \u000fθ (xt ) (t) + 1 − αt−1 − σt2 · \u000fθ (xt ) + σt \u000ft √ |{z} αt {z } random | noise {z",
+  "source": "arxiv:2010.02502 [diffusion] injected: DDPM Algorithm 1 + pinned: VARIATIONAL I NFERENCE FOR NON -M ARKOVI",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits —\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We describe a speech enhancement system. A recurrent network estimates a spectral\nmask from noisy audio, the mask is applied to the spectrogram, and the result is inverted back to\na waveform. The method struggles at very low signal-to-noise ratios, where it introduces musical\nnoise artifacts.\nJSON: {\"name\": \"Mask-Based Speech Enhancement\", \"operations\": [\"estimate\", \"mask\", \"invert\"], \"loss\": null, \"failure\": \"musical noise artifacts at very low signal-to-noise ratios\"}\n\nExample\nDescription: We index a document collection with an inverted index. Each document is tokenized,\ntokens are stemmed, and a posting list is built per term. Queries are answered by intersecting\nposting lists and ranking by BM25.\nJSON: {\"name\": \"Inverted Index Retrieval\", \"operations\": [\"tokenize\", \"stem\", \"intersect\", \"rank\"], \"loss\": null, \"failure\": null}\n\nRules for \"failure\": extract it only when the Description itself states a limitation, instability,\nor breakdown condition (for example \"diverges when\", \"struggles with\", \"fails under\"). Quote the\nDescription's own words. If the Description states no weakness, \"failure\" is null — that is the\nnormal case, not a fallback. Never reuse wording from the examples.\n\nNow do the same for:\nDescription: This method builds on the following base algorithm from Denoising Diffusion Probabilistic Models (Ho et al. 2020), which it inherits unchanged except where noted below.\n\n\fAlgorithm 1 Training\nAlgorithm 2 Sampling\n1: repeat\n2: x0 ∼ q(x0 )\n3: t ∼ Uniform({1, . . . , T })\n4: \u000f ∼ N (0, I)\n5: Take gradient descent step on\n√\n√\n2\n∇θ \u000f − \u000fθ ( ᾱt x0 + 1 − ᾱt \u000f, t)\n6: until converged\n1: xT ∼ N (0, I)\n2: for t = T, . . . , 1 do\n3: z ∼ N (0, I) \u0010\nif t > 1, else z = 0\n\u0011\nt\n4: xt−1 = √1αt xt − √1−α\n\u000f\n(x\n,\nt)\n+ σt z\nt\nθ\n1−ᾱt\n5: end for\n\nThe modification introduced in this paper:\n\nVARIATIONAL I NFERENCE FOR NON -M ARKOVIAN F ORWARD P ROCESSES Because the generative model approximates the reverse of the inference process, we need to rethink the inference process in order to reduce the number of iterations required by the generative model. Our key observation is that the DDPM objective in the form of Lγ only depends on the marginals2 q(xt |x0 ), but not directly on the joint q(x1:T |x0 ). Since there are many inference distributions (joints) with the same marginals, we explore alternative inference processes that are non-Markovian, which leads to new generative processes (Figure 1, right). These non-Markovian inference process lead to the same surrogate objective function as DDPM, as we will show below. In Appendix A, we show that the non-Markovian perspective also applies beyond the Gaussian case. 3.1 N ON -M ARKOVIAN FORWARD PROCESSES Let us consider a family Q of inference distributions, indexed by a real vector σ ∈ RT≥0 : qσ (x1:T |x0 ) := qσ (xT |x0 ) T Y qσ (xt−1 |xt , x0 ) (6) t=2 √ where qσ (xT |x0 ) = N ( αT x0 , (1 − αT )I) and for all t > 1, \u0012 \u0013 √ q xt − αt x0 2 √ 2 qσ (xt−1 |xt , x0 ) = N αt−1 x0 + 1 − αt−1 − σt · √ , σt I . (7) 1 − αt √ The mean function is chosen to order to ensure that qσ (xt |x0 ) = N ( αt x0 , (1 − αt )I) for all t (see Lemma 1 of Appendix B), so that it defines a joint inference distribution that matches the “marginals” as desired. The forward process3 can be derived from Bayes’ rule: qσ (xt |xt−1 , x0 ) = qσ (xt−1 |xt , x0 )qσ (xt |x0 ) , qσ (xt−1 |x0 ) 1 Please refer to Appendix C.2 for details. We slightly abuse this term (as well as joints) when only conditioned on x0 . 3 We overload the term “forward process” for cases where the inference model is not a diffusion. 2 3 (8) Published as a conference paper at ICLR 2021 which is also Gaussian (although we do not use this fact for the remainder of this paper). Unlike the diffusion process in Eq. (3), the forward process here is no longer Markovian, since each xt could depend on both xt−1 and x0 . The magnitude of σ controls the how stochastic the forward process is; when σ → 0, we reach an extreme case where as long as we observe x0 and xt for some t, then xt−1 become known and fixed. 3.2 G ENERATIVE PROCESS AND UNIFIED VARIATIONAL INFERENCE OBJECTIVE (t) Next, we define a trainable generative process pθ (x0:T ) where each pθ (xt−1 |xt ) leverages knowledge of qσ (xt−1 |xt , x0 ). Intuitively, given a noisy observation xt , we first make a prediction4 of the corresponding x0 , and then use it to obtain a sample xt−1 through the reverse conditional distribution qσ (xt−1 |xt , x0 ), which we have defined. (t) For some x0 ∼ q(x0 ) and \u000ft ∼ N (0, I), xt can be obtained using Eq. (4). The model \u000fθ (xt ) then attempts to predict \u000ft from xt , without knowledge of x0 . By rewriting Eq. (4), one can then predict the denoised observation, which is a prediction of x0 given xt : √ √ (t) (t) fθ (xt ) := (xt − 1 − αt · \u000fθ (xt ))/ αt . (9) We can then define the generative process with a fixed prior pθ (xT ) = N (0, I) and ( (1) N (fθ (x1 ), σ12 I) if t = 1 (t) pθ (xt−1 |xt ) = (t) qσ (xt−1 |xt , fθ (xt )) otherwise, (t) (10) (t) where qσ (xt−1 |xt , fθ (xt )) is defined as in Eq. (7) with x0 replaced by fθ (xt ). We add some Gaussian noise (with covariance σ12 I) for the case of t = 1 to ensure that the generative process is supported everywhere. We optimize θ via the following variational inference objective (which is a functional over \u000fθ ): Jσ (\u000fθ ) := Ex0:T ∼qσ (x0:T ) [log qσ (x1:T |x0 ) − log pθ (x0:T )] (11) \" # T T X X (t) = Ex0:T ∼qσ (x0:T ) log qσ (xT |x0 ) + log qσ (xt−1 |xt , x0 ) − log pθ (xt−1 |xt ) − log pθ (xT ) t=2 t=1 where we factorize qσ (x1:T |x0 ) according to Eq. (6) and pθ (x0:T ) according to Eq. (1). From the definition of Jσ , it would appear that a different model has to be trained for every choice of σ, since it corresponds to a different variational objective (and a different generative process). However, Jσ is equivalent to Lγ for certain weights γ, as we show below. Theorem 1. For all σ > 0, there exists γ ∈ RT>0 and C ∈ R, such that Jσ = Lγ + C. (t) The variational objective Lγ is special in the sense that if parameters θ of the models \u000fθ are not shared across different t, then the optimal solution for \u000fθ will not depend on the weights γ (as global optimum is achieved by separately maximizing each term in the sum). This property of Lγ has two implications. On the one hand, this justified the use of L1 as a surrogate objective function for the variational lower bound in DDPMs; on the other hand, since Jσ is equivalent to some Lγ from Theorem 1, the optimal solution of Jσ is also the same as that of L1 . Therefore, if parameters are not shared across t in the model \u000fθ , then the L1 objective used by Ho et al. (2020) can be used as a surrogate objective for the variational objective Jσ as well. 4 S AMPLING FROM G ENERALIZED G ENERATIVE P ROCESSES With L1 as the objective, we are not only learning a generative process for the Markovian inference process considered in Sohl-Dickstein et al. (2015) and Ho et al. (2020), but also generative processes for many non-Markovian forward processes parametrized by σ that we have described. Therefore, we can essentially use pretrained DDPM models as the solutions to the new objectives, and focus on finding a generative process that is better at producing samples subject to our needs by changing σ. 4 Learning a distribution over the predictions is also possible, but empirically we found little benefits of it. 4 Published as a conference paper at ICLR 2021 Figure 2: Graphical model for accelerated generation, where τ = [1, 3]. 4.1 D ENOISING D IFFUSION I MPLICIT M ODELS From pθ (x1:T ) in Eq. (10), one can generate a sample xt−1 from a sample xt via: xt−1 = √ xt − αt−1 | √ ! q (t) 1 − αt \u000fθ (xt ) (t) + 1 − αt−1 − σt2 · \u000fθ (xt ) + σt \u000ft √ |{z} αt {z } random | noise {z\nJSON:\n",
+  "raw_response": "{\"name\": \"Non-Markovian Diffusion Model\", \"operations\": [\"predict\", \"sample\", \"denoise\"], \"loss\": \"L1\", \"failure\": \"the generative process is supported everywhere\"}",
+  "data": {
+    "name": "Non-Markovian Diffusion Model",
+    "operations": [
+      "predict",
+      "sample",
+      "denoise"
+    ],
+    "loss": "L1",
+    "failure": "the generative process is supported everywhere"
+  },
+  "semantic_ops_v2": [
+    {
+      "op": "predict",
+      "object_type": "latent",
+      "context": "nonlinear",
+      "quote": "The model \u000fθ (xt ) then attempts to predict \u000ft from xt , without knowledge of x0 .",
+      "grounded": true
+    },
+    {
+      "op": "sample",
+      "object_type": "state",
+      "context": "stochastic",
+      "quote": "xT ∼ N (0, I)",
+      "grounded": true
+    },
+    {
+      "op": "denoise",
+      "object_type": "latent",
+      "context": "nonlinear",
+      "quote": "fθ (xt ) := (xt − 1 − αt · \u000fθ (xt ))/ αt .",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_v2_model": "qwen3:8b",
+  "semantic_ops": [
+    {
+      "op": "predict",
+      "object_type": "latent",
+      "context": "nonlinear",
+      "quote": "The model \u000fθ (xt ) then attempts to predict \u000ft from xt , without knowledge of x0 .",
+      "grounded": true
+    },
+    {
+      "op": "sample",
+      "object_type": "state",
+      "context": "stochastic",
+      "quote": "xT ∼ N (0, I)",
+      "grounded": true
+    },
+    {
+      "op": "denoise",
+      "object_type": "latent",
+      "context": "nonlinear",
+      "quote": "We can then define the generative process with a fixed prior pθ (xT ) = N (0, I)",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_model": "qwen3:8b",
+  "semantic_ops_v2_inherited": [
+    {
+      "op": "predict",
+      "object_type": "latent",
+      "context": "nonlinear",
+      "quote": "The model \u000fθ (xt ) then attempts to predict \u000ft from xt , without knowledge of x0 .",
+      "grounded": true
+    },
+    {
+      "op": "sample",
+      "object_type": "state",
+      "context": "stochastic",
+      "quote": "xT ∼ N (0, I)",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_v2_own": [
+    {
+      "op": "denoise",
+      "object_type": "latent",
+      "context": "nonlinear",
+      "quote": "fθ (xt ) := (xt − 1 − αt · \u000fθ (xt ))/ αt .",
+      "grounded": true
+    }
+  ]
+}

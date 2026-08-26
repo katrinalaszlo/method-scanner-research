@@ -1,0 +1,60 @@
+Phase 20 — pinned re-extraction, RL re-split by mechanism, orphans finalised (2026-08-25)
+Corpus 58. Matrices: matrices/phase20_{lexical,semantic_strict_v2,semantic_relaxed_v2}.csv; RL sub-matrix matrices/phase20_rl_submatrix_strict_v2.csv
+Old TD3/DDQN/Rainbow records: results_phase19_snapshot/. New tool: fulltext.py --from "<regex>" pins the section start.
+
+TRACK A — RE-EXTRACTION (pinned headings)
+  paper    section pinned                          Phase 19 tuples (v2)                                  Phase 20 tuples (v2)
+  TD3      4.2 Clipped Double Q-Learning (2000w)   update@value, optimize@policy, estimate@value         update@value, estimate@value, minimize@error
+  DDQN     Double DQN (sec. 4)                     select@action?, evaluate@value?                       select action@value, evaluate value@value, update network@parameter, copy target network@parameter
+  Rainbow  The Integrated Agent                    contract/shift/softmax@distribution, aggregate@value, noisy@gradient   contract/shift/softmax@distribution, aggregate@value, replace@parameter
+  Correct sections changed almost nothing. Rainbow's method section IS the distributional projection. TD3's IS the clipped-double-Q target.
+  DDQN now has the target-network ops, but the typer emitted multi-word ops ("select action", "evaluate value") that don't string-match DQN's select@action.
+  Note: DDQN "select action@value" is a typing error (object should be action); the state guard only demotes state, so it stands.
+
+TRACK B — RE-SPLIT (strict v2)                            target
+  on-policy (n=3: PPO, TRPO, SAC)           0.43   >0.30   MET.  Top family in the corpus, above meta-learning 0.34
+  replay-off-policy (n=5)                   0.05   >0.20   FAILED. Only DDPG x DQN 0.36; TD3, Rainbow 0.00 with everyone; DDQN 0.07-0.09 with DQN/DDPG
+  on-policy x replay-off-policy             0.03   <0.10   met — but because replay-off-policy is incoherent, not because two loops were separated
+  A3C held out as `a3c-outlier` (n=1): 0.00 with PPO/TRPO/SAC, <=0.14 with replay papers. Spec's on-policy list excludes it; with it in, on-policy is 0.22.
+  SAC bridge test: SAC has no store/sample tuple. 0.40 with PPO and TRPO, 0.00 with every replay paper. Not a bridge; it sits with on-policy cleanly.
+
+RL SUB-MATRIX (strict v2)
+                  A3C   PPO   SAC   TRPO  TD3   DDPG  DDQN  DQN   Rainbow
+  A3C     out    1.00  0.00  0.00  0.00  0.00  0.09  0.14  0.07  0.00
+  PPO     on     0.00  1.00  0.40  0.50  0.00  0.00  0.17  0.00  0.00
+  SAC     on     0.00  0.40  1.00  0.40  0.00  0.00  0.14  0.00  0.00
+  TRPO    on     0.00  0.50  0.40  1.00  0.00  0.00  0.17  0.00  0.00
+  TD3     rp     0.00  0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00
+  DDPG    rp     0.09  0.00  0.00  0.00  0.00  1.00  0.09  0.36  0.00
+  DDQN    rp     0.14  0.17  0.14  0.17  0.00  0.09  1.00  0.07  0.00
+  DQN     rp     0.07  0.00  0.00  0.00  0.00  0.36  0.07  1.00  0.00
+  Rainbow rp     0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  1.00
+
+READING — why replay-off-policy does not cohere, and why extraction can't fix it
+  DQN and DDPG both print the full agent loop as pseudocode (store, sample, select, execute, update). Every later paper in the lineage — DDQN, TD3,
+  Rainbow — inherits that loop as background and writes only its delta: DDQN the decoupled select/evaluate, TD3 the clipped target, Rainbow the
+  distributional projection. The extractor reads what the paper writes, so the family's shared mechanism never appears in 3 of 5 papers.
+  This is a different failure from Phase 19's (wrong section). It is a property of incremental papers: the mechanism a family shares is the one
+  its later members don't restate. Lexical says the same thing: replay-off-policy 0.28 vs on-policy 0.50.
+  Consequence for the method: mechanism families cohere when members restate the loop (jepa, pc-learning, on-policy trio) and dissolve when members
+  are deltas on a base paper. A "delta paper" needs its base paper's loop injected, or scored against the base only.
+
+TRACK C — ORPHANS
+  DKF -> pc-learning per spec: peers 0.05 (was 0.06 in worldmodels), best still Spiking PC 0.20. pc-learning drops 0.15 -> 0.13 with DKF in.
+  DVBF -> worldmodels 0.00 to peers; L-VSSF -> state-estimation 0.00 to peers. Accepted as between-family, listed in families.json _orphans_phase20.
+  latent-generative: gone from families.json.
+
+STABILITY — untouched families identical to Phase 19: meta-learning 0.34, jepa 0.21, particle 0.11, state-estimation 0.06, control 0.00.
+TOP ANALOGIES (strict v2, excluding the n=1 outlier): meta-learning x pc-learning 0.13, jepa x pc-learning 0.10, meta-learning x on-policy 0.08 (MAML improve@parameter <-> PPO/TRPO). Unchanged.
+  (a3c-outlier x meta-learning 0.14 and x pc-learning 0.13 top the raw list — A3C's correct@parameter/gradient tuples; n=1, not a family analogy.)
+
+ANSWERS
+  Track A  Did correct sections fix the three?   No. Tuples barely moved; the sections describe deltas, not the loop.
+  Track B  on-policy >0.30?                       Yes, 0.43 (n=3). replay-off-policy >0.20? No, 0.05 — see reading. Between 0.03 <0.10, yes.
+           SAC bridge?                           No. Clean on-policy member by mechanism despite off-policy lineage.
+  Track C  Orphans finalised?                    Yes. DKF weak in pc-learning; DVBF, L-VSSF between-family. latent-generative removed.
+
+NEXT (candidates)
+  - Delta-paper handling: for DDQN/TD3/Rainbow, extract base-loop + delta (prepend DQN/DDPG Algorithm 1 to the section) and see if the family appears. Tests the reading above directly.
+  - Multi-word op normalisation in the typer: "select action" -> select, "evaluate value" -> evaluate (canonicalize() already does head-verb matching; the semantic path doesn't).
+  - A3C: drop from on-policy or leave as the family's flagged outlier. n=3 trio at 0.43 is the cleanest RL family the corpus has.

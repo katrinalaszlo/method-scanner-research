@@ -1,0 +1,745 @@
+{
+  "arxiv_id": "2004.13649",
+  "title": "Image Augmentation Is All You Need: Regularizing Deep Reinforcement Learning from Pixels",
+  "methods": [
+    {
+      "method_name": "DrQ (Eff. DQN + DrQ)",
+      "is_own_method": true,
+      "one_paragraph_description": "DrQ (Data-regularized Q) applies image augmentation (random shifts and intensity on Atari) to input observations of a standard model-free RL agent, and additionally regularizes the Q-function by averaging target Q values over K augmented copies of the next state and Q values over M augmented copies of the current state. On Atari 100k the configuration is DrQ [K=1,M=1] applied on top of 'Efficient DQN' (DQN with double Q-learning, 10-step returns, dueling architecture). No auxiliary loss, no pretraining.",
+      "conventional_lineage_hint": "model-free RL from pixels with data augmentation ('a simple data augmentation technique that can be applied to standard model-free reinforcement learning algorithms'); applied to DQN for Atari 100k",
+      "global_conditions": {
+        "data_augmentation": {
+          "value": "Random shifts and Intensity",
+          "quote": "Data augmentation              Random shifts and Intensity",
+          "location": "Table 4 (Appendix C)"
+        },
+        "grey_scaling": {
+          "value": "True",
+          "quote": "Grey-scaling                                True",
+          "location": "Table 4 (Appendix C)"
+        },
+        "observation_down_sampling": {
+          "value": "84 × 84",
+          "quote": "Observation down-sampling                84 × 84",
+          "location": "Table 4 (Appendix C)"
+        },
+        "frames_stacked": {
+          "value": "4",
+          "quote": "Frames stacked                                4",
+          "location": "Table 4 (Appendix C)"
+        },
+        "action_repetitions": {
+          "value": "4",
+          "quote": "Action repetitions                            4",
+          "location": "Table 4 (Appendix C)"
+        },
+        "reward_clipping": {
+          "value": "[−1, 1]",
+          "quote": "Reward clipping                           [−1, 1]",
+          "location": "Table 4 (Appendix C)"
+        },
+        "terminal_on_loss_of_life": {
+          "value": "True",
+          "quote": "Terminal on loss of life                    True",
+          "location": "Table 4 (Appendix C)"
+        },
+        "max_frames_per_episode": {
+          "value": "108k",
+          "quote": "Max frames per episode                     108k",
+          "location": "Table 4 (Appendix C)"
+        },
+        "update": {
+          "value": "Double Q",
+          "quote": "Update                                  Double Q",
+          "location": "Table 4 (Appendix C)"
+        },
+        "dueling": {
+          "value": "True",
+          "quote": "Dueling                                     True",
+          "location": "Table 4 (Appendix C)"
+        },
+        "target_network_update_period": {
+          "value": "1",
+          "quote": "Target network: update period                 1",
+          "location": "Table 4 (Appendix C)"
+        },
+        "discount_factor": {
+          "value": "0.99",
+          "quote": "Discount factor                             0.99",
+          "location": "Table 4 (Appendix C)"
+        },
+        "minibatch_size": {
+          "value": "32",
+          "quote": "Minibatch size                               32",
+          "location": "Table 4 (Appendix C)"
+        },
+        "optimizer": {
+          "value": "Adam",
+          "quote": "Optimizer                                  Adam",
+          "location": "Table 4 (Appendix C)"
+        },
+        "optimizer_learning_rate": {
+          "value": "0.0001",
+          "quote": "Optimizer: learning rate                  0.0001",
+          "location": "Table 4 (Appendix C)"
+        },
+        "optimizer_beta1": {
+          "value": "0.9",
+          "quote": "Optimizer: β1                               0.9",
+          "location": "Table 4 (Appendix C)"
+        },
+        "optimizer_beta2": {
+          "value": "0.999",
+          "quote": "Optimizer: β2                              0.999",
+          "location": "Table 4 (Appendix C)"
+        },
+        "optimizer_epsilon": {
+          "value": "0.00015",
+          "quote": "Optimizer: \u000f                             0.00015",
+          "location": "Table 4 (Appendix C)"
+        },
+        "max_gradient_norm": {
+          "value": "10",
+          "quote": "Max gradient norm                            10",
+          "location": "Table 4 (Appendix C)"
+        },
+        "training_steps": {
+          "value": "100k",
+          "quote": "Training steps                             100k",
+          "location": "Table 4 (Appendix C)"
+        },
+        "evaluation_steps": {
+          "value": "125k environment steps at end of training",
+          "quote": "evaluation is done for 125k environment steps at the end of training for 100k environment steps.",
+          "location": "Appendix C"
+        },
+        "min_replay_size_for_sampling": {
+          "value": "1600",
+          "quote": "Min replay size for sampling               1600",
+          "location": "Table 4 (Appendix C)"
+        },
+        "memory_size": {
+          "value": "Unbounded",
+          "quote": "Memory size                            Unbounded",
+          "location": "Table 4 (Appendix C)"
+        },
+        "replay_period_every": {
+          "value": "1 step",
+          "quote": "Replay period every                        1 step",
+          "location": "Table 4 (Appendix C)"
+        },
+        "multi_step_return_length": {
+          "value": "10",
+          "quote": "Multi-step return length                     10",
+          "location": "Table 4 (Appendix C)"
+        },
+        "q_network_channels": {
+          "value": "32, 64, 64",
+          "quote": "Q network: channels                     32, 64, 64",
+          "location": "Table 4 (Appendix C)"
+        },
+        "q_network_filter_size": {
+          "value": "8 × 8, 4 × 4, 3 × 3",
+          "quote": "Q network: filter size             8 × 8, 4 × 4, 3 × 3",
+          "location": "Table 4 (Appendix C)"
+        },
+        "q_network_stride": {
+          "value": "4, 2, 1",
+          "quote": "Q network: stride                          4, 2, 1",
+          "location": "Table 4 (Appendix C)"
+        },
+        "q_network_hidden_units": {
+          "value": "512",
+          "quote": "Q network: hidden units                     512",
+          "location": "Table 4 (Appendix C)"
+        },
+        "non_linearity": {
+          "value": "ReLU",
+          "quote": "Non-linearity                              ReLU",
+          "location": "Table 4 (Appendix C)"
+        },
+        "exploration": {
+          "value": "epsilon-greedy",
+          "quote": "Exploration                              \u000f-greedy",
+          "location": "Table 4 (Appendix C)"
+        },
+        "epsilon_decay": {
+          "value": "5000",
+          "quote": "\u000f-decay                                    5000",
+          "location": "Table 4 (Appendix C)"
+        },
+        "K_target_q_augmentations": {
+          "value": "1",
+          "quote": "We evaluate DrQ [K=1,M=1] on the recently introduced Atari 100k [31] benchmark – a sample-",
+          "location": "Section 4.2"
+        },
+        "M_q_augmentations": {
+          "value": "1",
+          "quote": "We evaluate DrQ [K=1,M=1] on the recently introduced Atari 100k [31] benchmark – a sample-",
+          "location": "Section 4.2"
+        },
+        "base_agent": {
+          "value": "DQN + double Q-learning + n-step returns + dueling ('Efficient DQN')",
+          "quote": "constrained evaluation for discrete control algorithms. The underlying RL approach to which DrQ is applied is a DQN, combined with double Q-learning [53], n-step returns [42], and dueling critic",
+          "location": "Section 4.2"
+        },
+        "seeds": {
+          "value": "5",
+          "quote": "DQN [43]. Per common practise, we average performance of our agent over 5 random seeds. The",
+          "location": "Appendix C"
+        }
+      },
+      "per_dataset_conditions": {},
+      "evaluation_protocol": {
+        "seeds": "5",
+        "episodes_per_seed": "not fixed: evaluated for 125k environment steps at end of training",
+        "checkpoint_selection": "last (end of training)",
+        "quote": "Table 5: Mean episode returns on each of 26 Atari games from the setup in [31]. The results are recorded at the end of training and averaged across 5 random seeds (the CURL’s results are averaged | DQN [43]. Per common practise, we average performance of our agent over 5 random seeds. The evaluation is done for 125k environment steps at the end of training for 100k environment steps.",
+        "location": "Table 5 caption; Appendix C"
+      },
+      "dataset_version": {
+        "value": "Atari 100k: 100k agent steps (action repeat 4 -> 400k frames); eval 125k env steps at end of training; sticky actions: not stated",
+        "quote": "Discount factor                             0.99 | Max gradient norm                            10 | Training steps                             100k | evaluation is done for 125k environment steps at the end of training for 100k environment steps.",
+        "location": "Table 4; Appendix C"
+      },
+      "rows": [
+        {
+          "dataset": "Alien",
+          "outcome": 771.2,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Alien                      7127.7     227.8    616.9       824.7        739.9          1148.2          558.1        771.2",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Amidar",
+          "outcome": 102.8,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Amidar                     1719.5       5.8     88.0        82.8        188.6           232.3           63.7        102.8",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Assault",
+          "outcome": 452.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Assault                    742.0     222.4     527.2       351.9        431.2           543.7          589.5       452.4",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Asterix",
+          "outcome": 603.5,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Asterix                    8503.3     210.0   1128.3      628.5         470.8           524.3          341.9       603.5",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "BankHeist",
+          "outcome": 168.9,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    BankHeist                  753.1       14.2     34.2       182.1         51.0           193.7           74.0        168.9",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "BattleZone",
+          "outcome": 12954.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    BattleZone                37187.5    2360.0   5184.4      4060.6      10124.6         11208.0         4760.8      12954.0",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Boxing",
+          "outcome": 6.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Boxing                      12.1        0.1     9.1         2.5           0.2             4.8           -1.8         6.0",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Breakout",
+          "outcome": 16.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Breakout                    30.5        1.7     16.4         9.8          1.9            18.2           7.3          16.1",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "ChopperCommand",
+          "outcome": 780.3,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    ChopperCommand             7387.8     811.0   1246.9     1033.3        861.8           1198.0         624.4        780.3",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "CrazyClimber",
+          "outcome": 20516.5,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    CrazyClimber              35829.4   10780.5   62583.6    21327.8      16185.3         27805.6         5430.6      20516.5",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "DemonAttack",
+          "outcome": 1113.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    DemonAttack                1971.0     152.1    208.1       711.8        508.0           834.0          403.5       1113.4",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Freeway",
+          "outcome": 9.8,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Freeway                     29.6        0.0     20.3        25.0         27.9            27.9           3.7           9.8",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Frostbite",
+          "outcome": 331.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Frostbite                  4334.7      65.2    254.7       231.6        866.8           924.0          202.9        331.1",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Gopher",
+          "outcome": 636.3,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Gopher                     2412.5     257.6    771.0       778.0        349.5           801.4          320.8        636.3",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Hero",
+          "outcome": 3736.3,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Hero                      30826.4    1027.0   2656.6      6458.8      6857.0           6235.1         2200.1       3736.3",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Jamesbond",
+          "outcome": 236.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Jamesbond                  302.8       29.0    125.3       112.3        301.6           400.1          133.2        236.0",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Kangaroo",
+          "outcome": 940.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Kangaroo                   3035.0      52.0    323.1       605.4        779.3           345.3          448.6       940.6",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Krull",
+          "outcome": 4018.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Krull                      2665.5    1598.0   4539.9     3277.9        2851.5          3833.6         2999.0      4018.1",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "KungFuMaster",
+          "outcome": 9111.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    KungFuMaster              22736.3     258.5   17257.2    5722.2       14346.1         14280.0         2020.9      9111.0",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "MsPacman",
+          "outcome": 960.5,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    MsPacman                   6951.6     307.3   1480.0       941.9       1204.1          1492.8          872.0        960.5",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Pong",
+          "outcome": -8.5,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Pong                        14.6      -20.7     12.8        1.3         -19.3             2.1          -19.4         -8.5",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "PrivateEye",
+          "outcome": -13.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    PrivateEye                69571.3      24.9     58.3       100.0         97.8           105.2          351.3        -13.6",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Qbert",
+          "outcome": 854.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Qbert                     13455.0     163.9   1288.8      509.3        1152.9          1225.6          627.5       854.4",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "RoadRunner",
+          "outcome": 8895.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    RoadRunner                 7845.0      11.5   5640.6      2696.7      9600.0           6786.7         1491.9       8895.1",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "Seaquest",
+          "outcome": 301.2,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    Seaquest                  42054.7      68.4    683.3      286.9         354.1           408.0          240.1       301.2",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        },
+        {
+          "dataset": "UpNDown",
+          "outcome": 3180.8,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "1",
+            "M": "1",
+            "base_agent": "Efficient DQN"
+          },
+          "table": "Table 5",
+          "line_quote": "    UpNDown                   11693.2     533.4   3350.3     2847.6        2877.4          2735.2         2901.7      3180.8",
+          "notes": "raw mean episode return; column 'Eff. DQN +DrQ (Ours)' (last column); no per-game std reported"
+        }
+      ]
+    }
+  ],
+  "reference_scores": {
+    "Alien": {
+      "random": 227.8,
+      "human": 7127.7,
+      "line_quote": "    Alien                      7127.7     227.8    616.9       824.7        739.9          1148.2          558.1        771.2"
+    },
+    "Amidar": {
+      "random": 5.8,
+      "human": 1719.5,
+      "line_quote": "    Amidar                     1719.5       5.8     88.0        82.8        188.6           232.3           63.7        102.8"
+    },
+    "Assault": {
+      "random": 222.4,
+      "human": 742.0,
+      "line_quote": "    Assault                    742.0     222.4     527.2       351.9        431.2           543.7          589.5       452.4"
+    },
+    "Asterix": {
+      "random": 210.0,
+      "human": 8503.3,
+      "line_quote": "    Asterix                    8503.3     210.0   1128.3      628.5         470.8           524.3          341.9       603.5"
+    },
+    "BankHeist": {
+      "random": 14.2,
+      "human": 753.1,
+      "line_quote": "    BankHeist                  753.1       14.2     34.2       182.1         51.0           193.7           74.0        168.9"
+    },
+    "BattleZone": {
+      "random": 2360.0,
+      "human": 37187.5,
+      "line_quote": "    BattleZone                37187.5    2360.0   5184.4      4060.6      10124.6         11208.0         4760.8      12954.0"
+    },
+    "Boxing": {
+      "random": 0.1,
+      "human": 12.1,
+      "line_quote": "    Boxing                      12.1        0.1     9.1         2.5           0.2             4.8           -1.8         6.0"
+    },
+    "Breakout": {
+      "random": 1.7,
+      "human": 30.5,
+      "line_quote": "    Breakout                    30.5        1.7     16.4         9.8          1.9            18.2           7.3          16.1"
+    },
+    "ChopperCommand": {
+      "random": 811.0,
+      "human": 7387.8,
+      "line_quote": "    ChopperCommand             7387.8     811.0   1246.9     1033.3        861.8           1198.0         624.4        780.3"
+    },
+    "CrazyClimber": {
+      "random": 10780.5,
+      "human": 35829.4,
+      "line_quote": "    CrazyClimber              35829.4   10780.5   62583.6    21327.8      16185.3         27805.6         5430.6      20516.5"
+    },
+    "DemonAttack": {
+      "random": 152.1,
+      "human": 1971.0,
+      "line_quote": "    DemonAttack                1971.0     152.1    208.1       711.8        508.0           834.0          403.5       1113.4"
+    },
+    "Freeway": {
+      "random": 0.0,
+      "human": 29.6,
+      "line_quote": "    Freeway                     29.6        0.0     20.3        25.0         27.9            27.9           3.7           9.8"
+    },
+    "Frostbite": {
+      "random": 65.2,
+      "human": 4334.7,
+      "line_quote": "    Frostbite                  4334.7      65.2    254.7       231.6        866.8           924.0          202.9        331.1"
+    },
+    "Gopher": {
+      "random": 257.6,
+      "human": 2412.5,
+      "line_quote": "    Gopher                     2412.5     257.6    771.0       778.0        349.5           801.4          320.8        636.3"
+    },
+    "Hero": {
+      "random": 1027.0,
+      "human": 30826.4,
+      "line_quote": "    Hero                      30826.4    1027.0   2656.6      6458.8      6857.0           6235.1         2200.1       3736.3"
+    },
+    "Jamesbond": {
+      "random": 29.0,
+      "human": 302.8,
+      "line_quote": "    Jamesbond                  302.8       29.0    125.3       112.3        301.6           400.1          133.2        236.0"
+    },
+    "Kangaroo": {
+      "random": 52.0,
+      "human": 3035.0,
+      "line_quote": "    Kangaroo                   3035.0      52.0    323.1       605.4        779.3           345.3          448.6       940.6"
+    },
+    "Krull": {
+      "random": 1598.0,
+      "human": 2665.5,
+      "line_quote": "    Krull                      2665.5    1598.0   4539.9     3277.9        2851.5          3833.6         2999.0      4018.1"
+    },
+    "KungFuMaster": {
+      "random": 258.5,
+      "human": 22736.3,
+      "line_quote": "    KungFuMaster              22736.3     258.5   17257.2    5722.2       14346.1         14280.0         2020.9      9111.0"
+    },
+    "MsPacman": {
+      "random": 307.3,
+      "human": 6951.6,
+      "line_quote": "    MsPacman                   6951.6     307.3   1480.0       941.9       1204.1          1492.8          872.0        960.5"
+    },
+    "Pong": {
+      "random": -20.7,
+      "human": 14.6,
+      "line_quote": "    Pong                        14.6      -20.7     12.8        1.3         -19.3             2.1          -19.4         -8.5"
+    },
+    "PrivateEye": {
+      "random": 24.9,
+      "human": 69571.3,
+      "line_quote": "    PrivateEye                69571.3      24.9     58.3       100.0         97.8           105.2          351.3        -13.6"
+    },
+    "Qbert": {
+      "random": 163.9,
+      "human": 13455.0,
+      "line_quote": "    Qbert                     13455.0     163.9   1288.8      509.3        1152.9          1225.6          627.5       854.4"
+    },
+    "RoadRunner": {
+      "random": 11.5,
+      "human": 7845.0,
+      "line_quote": "    RoadRunner                 7845.0      11.5   5640.6      2696.7      9600.0           6786.7         1491.9       8895.1"
+    },
+    "Seaquest": {
+      "random": 68.4,
+      "human": 42054.7,
+      "line_quote": "    Seaquest                  42054.7      68.4    683.3      286.9         354.1           408.0          240.1       301.2"
+    },
+    "UpNDown": {
+      "random": 533.4,
+      "human": 11693.2,
+      "line_quote": "    UpNDown                   11693.2     533.4   3350.3     2847.6        2877.4          2735.2         2901.7      3180.8"
+    }
+  },
+  "baseline_rows_seen": [
+    "SimPLe",
+    "OTRainbow",
+    "Eff. Rainbow",
+    "OT/Eff. Rainbow +CURL",
+    "Eff. DQN (paper's own unaugmented base agent, not extracted as own method)"
+  ],
+  "problems": [
+    "Table 5 header is split across three lines (1047-1049): 'OT/Eff. Rainbow' / '+CURL' and 'Eff. DQN' / '+DrQ (Ours)'. Column order resolved as: Human, Random, SimPLe, OTRainbow, Eff. Rainbow, OT/Eff.Rainbow+CURL, Eff. DQN, Eff. DQN+DrQ (Ours). Own method = last column.",
+    "Table 4 rows 'Optimizer: ' and ' -decay' have the epsilon symbol dropped by pdftotext (Adam epsilon 0.00015; epsilon-greedy decay 5000).",
+    "Sticky actions not mentioned anywhere in the paper.",
+    "No per-game standard deviations reported for Atari.",
+    "Human/Random scores are 'taken from [54]' (Table 5 preamble), i.e. not measured by this paper."
+  ]
+}

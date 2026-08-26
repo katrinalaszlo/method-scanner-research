@@ -1,0 +1,1168 @@
+{
+ "arxiv_id": "2011.07213",
+ "title": "PLAS: Latent Action Space for Offline Reinforcement Learning",
+ "methods": [
+  {
+   "method_name": "PLAS",
+   "is_own_method": true,
+   "one_paragraph_description": "Train a CVAE on the dataset to model the behavior policy p(a|s); then train a deterministic latent policy z = pi(s) (tanh output scaled by 'max latent action') with DDPG/TD3-style deterministic policy gradient and clipped double Q-learning, and decode actions with the fixed pretrained CVAE decoder p_beta(a|s,z). The latent policy's bounded output keeps the decoded actions within the support of the behavior policy. No perturbation layer.",
+   "conventional_lineage_hint": "offline RL / batch RL with implicit policy constraint ('We propose a straightforward approach to offline RL that implicitly constrains the policy to be within the support of the dataset without being restricted by the density of the dataset distribution.')",
+   "global_conditions": {
+    "actor_learning_rate": {
+     "value": "1e-4",
+     "quote": "Adam. The actor learning rate is 1e-4 and the critic learning rate is 1e-3. The CVAE learning rate is",
+     "location": "Appendix A"
+    },
+    "critic_learning_rate": {
+     "value": "1e-3",
+     "quote": "Adam. The actor learning rate is 1e-4 and the critic learning rate is 1e-3. The CVAE learning rate is",
+     "location": "Appendix A"
+    },
+    "cvae_learning_rate": {
+     "value": "1e-4",
+     "quote": "1e-4. Both the encoder and the decoder have two hidden layers (750, 750) by default. For datasets",
+     "location": "Appendix A"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "Hyper-parameters for MuJoCo datasets: The actor, the critic, and the CVAE are optimized using",
+     "location": "Appendix A"
+    },
+    "cvae_encoder_decoder_hidden": {
+     "value": "(750, 750) default; (128, 128) for datasets smaller than 1e6 transitions (medium-replay)",
+     "quote": "1e-4. Both the encoder and the decoder have two hidden layers (750, 750) by default. For datasets",
+     "location": "Appendix A"
+    },
+    "cvae_training_steps": {
+     "value": "5e5",
+     "quote": "fitting. We train the CVAE for 5e5 timesteps with batch size 100. The latent policy, the critic, and",
+     "location": "Appendix A"
+    },
+    "cvae_batch_size": {
+     "value": "100",
+     "quote": "fitting. We train the CVAE for 5e5 timesteps with batch size 100. The latent policy, the critic, and",
+     "location": "Appendix A"
+    },
+    "policy_critic_perturbation_hidden": {
+     "value": "(400, 300)",
+     "quote": "the perturbation layer have two hidden layers (400, 300). We use τ = 0.005 for the soft target",
+     "location": "Appendix A"
+    },
+    "tau": {
+     "value": "0.005",
+     "quote": "the perturbation layer have two hidden layers (400, 300). We use τ = 0.005 for the soft target",
+     "location": "Appendix A"
+    },
+    "lambda_clipped_double_q": {
+     "value": "1",
+     "quote": "update. λ = 1 is used to calculate the Q-value target. The policy is trained for 5e5 timesteps with",
+     "location": "Appendix A"
+    },
+    "policy_training_steps": {
+     "value": "5e5 (500 epochs x 1000 steps)",
+     "quote": "update. λ = 1 is used to calculate the Q-value target. The policy is trained for 5e5 timesteps with",
+     "location": "Appendix A; also Sec 5.1 'We train the policy for 500 epochs and each epoch has 1000 training steps.'"
+    },
+    "policy_batch_size": {
+     "value": "100",
+     "quote": "batch size 100.",
+     "location": "Appendix A"
+    },
+    "max_latent_action": {
+     "value": "2 by default; 0.5 for hopper-medium-replay and halfcheetah-medium-expert",
+     "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+     "location": "Appendix B / Appendix C"
+    },
+    "max_latent_action_sweep": {
+     "value": "{0.5, 1, 2, 3} (Figure 6 only, not tabulated)",
+     "quote": "action from {0.5, 1, 2, 3} over the MuJoCo datasets in d4rl as shown in Figure 6. In hopper-medium-",
+     "location": "Appendix C"
+    },
+    "latent_dim": {
+     "value": "not stated",
+     "quote": "(no line in the text states the CVAE latent dimension)",
+     "location": "n/a"
+    },
+    "num_critics": {
+     "value": "2 (clipped double Q)",
+     "quote": "Initialize the latent policy network πθ , critic networks Qφ1 , Qφ2 and their corresponding target",
+     "location": "Algorithm 1"
+    },
+    "policy_type": {
+     "value": "deterministic, tanh output",
+     "quote": "The latent policy is a deterministic policy with tanh activation at the output. The output is",
+     "location": "Appendix A"
+    },
+    "codebase": {
+     "value": "BCQ repository",
+     "quote": "The implementation of our algorithm is based on the original implementation of BCQ: https:",
+     "location": "Appendix A"
+    }
+   },
+   "per_dataset_conditions": {
+    "walker2d-medium-expert": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "hopper-medium-expert-(a)": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "hopper-medium-expert-(b)": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "halfcheetah-medium-expert": {
+     "max_latent_action": {
+      "value": "0.5",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "walker2d-medium-replay": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     },
+     "cvae_encoder_decoder_hidden": {
+      "value": "(128, 128)",
+      "quote": "smaller than 1e6 transitions such as the medium-replay datasets, we use (128, 128) to prevent over-",
+      "location": "Appendix A"
+     }
+    },
+    "hopper-medium-replay": {
+     "max_latent_action": {
+      "value": "0.5",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     },
+     "cvae_encoder_decoder_hidden": {
+      "value": "(128, 128)",
+      "quote": "smaller than 1e6 transitions such as the medium-replay datasets, we use (128, 128) to prevent over-",
+      "location": "Appendix A"
+     }
+    },
+    "halfcheetah-medium-replay": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     },
+     "cvae_encoder_decoder_hidden": {
+      "value": "(128, 128)",
+      "quote": "smaller than 1e6 transitions such as the medium-replay datasets, we use (128, 128) to prevent over-",
+      "location": "Appendix A"
+     }
+    },
+    "walker2d-medium": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "hopper-medium": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "halfcheetah-medium": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "walker2d-random": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "hopper-random": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "halfcheetah-random": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "3",
+    "episodes_per_seed": "10 evaluation episodes every epoch",
+    "checkpoint_selection": "not stated (tables say results averaged over 3 seeds; no statement of last vs best checkpoint)",
+    "quote": "sults are averaged over 3 seeds. “PLAS” refers to the latent policy without the perturbation layer. | and each epoch has 1000 training steps. The policy is evaluated every 1 epoch over 10 episodes.",
+    "location": "Appendix B; Section 5.1"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "In the current version of the d4rl dataset, hopper-medium-expert is actually a combination of the",
+    "location": "Appendix B. Env names 'Walker2d-v2, Hopper-v2, and Halfcheetah-v2' (Sec 5.1) are Gym env versions, not D4RL dataset versions; D4RL version string never given. Baseline numbers taken from the D4RL paper [8]."
+   },
+   "rows": [
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 89.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "0 (no perturbation layer)"
+     },
+     "table": "Table 3",
+     "line_quote": "         walker2d-medium-expert            40.1        81.6     57.5     89.6         97.2",
+     "notes": ""
+    },
+    {
+     "dataset": "hopper-medium-expert-(a)",
+     "outcome": 111.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "0 (no perturbation layer)"
+     },
+     "table": "Table 3",
+     "line_quote": "         hopper-medium-expert-(a)          96.3         0.8    110.9    111.0         94.7",
+     "notes": "dataset as shipped in D4RL at the time: 'hopper-medium-expert is actually a combination of the medium-replay and the expert datasets' (Appendix B)"
+    },
+    {
+     "dataset": "hopper-medium-expert-(b)",
+     "outcome": 111.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "0 (no perturbation layer)"
+     },
+     "table": "Table 3",
+     "line_quote": "         hopper-medium-expert-(b)          82.0        69.6     62.7    111.0        108.7",
+     "notes": "authors' own concatenation of medium + expert datasets, not the D4RL-distributed file (Appendix B)"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 96.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "0.5",
+      "max_perturbation": "0 (no perturbation layer)"
+     },
+     "table": "Table 3",
+     "line_quote": "         halfcheetah-medium-expert         53.4        41.9     64.7     96.6         99.3",
+     "notes": ""
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 30.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "0 (no perturbation layer)"
+     },
+     "table": "Table 3",
+     "line_quote": "         walker2d-medium-replay            19.2         0.9       15     30.2         14.3",
+     "notes": ""
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 27.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "0.5",
+      "max_perturbation": "0 (no perturbation layer)"
+     },
+     "table": "Table 3",
+     "line_quote": "         hopper-medium-replay              33.7         0.6     33.1     27.9         51.9",
+     "notes": ""
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 43.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "0 (no perturbation layer)"
+     },
+     "table": "Table 3",
+     "line_quote": "         halfcheetah-medium-replay         38.6        47.7     38.2     43.9         45.7",
+     "notes": ""
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 44.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "0 (no perturbation layer)"
+     },
+     "table": "Table 3",
+     "line_quote": "         walker2d-medium                   59.1        81.1     53.1     44.6         66.9",
+     "notes": ""
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 32.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "0 (no perturbation layer)"
+     },
+     "table": "Table 3",
+     "line_quote": "         hopper-medium                     52.1        31.1     54.5     32.9         36.9",
+     "notes": ""
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 39.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "0 (no perturbation layer)"
+     },
+     "table": "Table 3",
+     "line_quote": "         halfcheetah-medium                41.7        46.3     40.7     39.3         42.2",
+     "notes": ""
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 3.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "0 (no perturbation layer)"
+     },
+     "table": "Table 3",
+     "line_quote": "         walker2d-random                    7.3         1.9      4.9      3.1          6.8",
+     "notes": "paper notes 'all the experiments for walker2d-random are unstable' (Appendix C)"
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 10.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "0 (no perturbation layer)"
+     },
+     "table": "Table 3",
+     "line_quote": "         hopper-random                     11.4        12.2     10.6     10.5         13.3",
+     "notes": ""
+    },
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 25.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "0 (no perturbation layer)"
+     },
+     "table": "Table 3",
+     "line_quote": "         halfcheetah-random                25.1        31.2      2.2     25.8         28.3",
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "method_name": "PLAS+P",
+   "is_own_method": true,
+   "one_paragraph_description": "PLAS plus an optional perturbation layer on top of the decoder output that outputs a residual over the action limited to [-epsilon, epsilon] (L-infinity), allowing controlled out-of-distribution actions when the Q-function generalizes well. Inspired by BCQ's perturbation model but applied to a deterministic latent policy.",
+   "conventional_lineage_hint": "offline RL / batch RL with implicit policy constraint ('We propose a straightforward approach to offline RL that implicitly constrains the policy to be within the support of the dataset without being restricted by the density of the dataset distribution.')",
+   "global_conditions": {
+    "actor_learning_rate": {
+     "value": "1e-4",
+     "quote": "Adam. The actor learning rate is 1e-4 and the critic learning rate is 1e-3. The CVAE learning rate is",
+     "location": "Appendix A"
+    },
+    "critic_learning_rate": {
+     "value": "1e-3",
+     "quote": "Adam. The actor learning rate is 1e-4 and the critic learning rate is 1e-3. The CVAE learning rate is",
+     "location": "Appendix A"
+    },
+    "cvae_learning_rate": {
+     "value": "1e-4",
+     "quote": "1e-4. Both the encoder and the decoder have two hidden layers (750, 750) by default. For datasets",
+     "location": "Appendix A"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "Hyper-parameters for MuJoCo datasets: The actor, the critic, and the CVAE are optimized using",
+     "location": "Appendix A"
+    },
+    "cvae_encoder_decoder_hidden": {
+     "value": "(750, 750) default; (128, 128) for datasets smaller than 1e6 transitions (medium-replay)",
+     "quote": "1e-4. Both the encoder and the decoder have two hidden layers (750, 750) by default. For datasets",
+     "location": "Appendix A"
+    },
+    "cvae_training_steps": {
+     "value": "5e5",
+     "quote": "fitting. We train the CVAE for 5e5 timesteps with batch size 100. The latent policy, the critic, and",
+     "location": "Appendix A"
+    },
+    "cvae_batch_size": {
+     "value": "100",
+     "quote": "fitting. We train the CVAE for 5e5 timesteps with batch size 100. The latent policy, the critic, and",
+     "location": "Appendix A"
+    },
+    "policy_critic_perturbation_hidden": {
+     "value": "(400, 300)",
+     "quote": "the perturbation layer have two hidden layers (400, 300). We use τ = 0.005 for the soft target",
+     "location": "Appendix A"
+    },
+    "tau": {
+     "value": "0.005",
+     "quote": "the perturbation layer have two hidden layers (400, 300). We use τ = 0.005 for the soft target",
+     "location": "Appendix A"
+    },
+    "lambda_clipped_double_q": {
+     "value": "1",
+     "quote": "update. λ = 1 is used to calculate the Q-value target. The policy is trained for 5e5 timesteps with",
+     "location": "Appendix A"
+    },
+    "policy_training_steps": {
+     "value": "5e5 (500 epochs x 1000 steps)",
+     "quote": "update. λ = 1 is used to calculate the Q-value target. The policy is trained for 5e5 timesteps with",
+     "location": "Appendix A; also Sec 5.1 'We train the policy for 500 epochs and each epoch has 1000 training steps.'"
+    },
+    "policy_batch_size": {
+     "value": "100",
+     "quote": "batch size 100.",
+     "location": "Appendix A"
+    },
+    "max_latent_action": {
+     "value": "2 by default; 0.5 for hopper-medium-replay and halfcheetah-medium-expert",
+     "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+     "location": "Appendix B / Appendix C"
+    },
+    "max_latent_action_sweep": {
+     "value": "{0.5, 1, 2, 3} (Figure 6 only, not tabulated)",
+     "quote": "action from {0.5, 1, 2, 3} over the MuJoCo datasets in d4rl as shown in Figure 6. In hopper-medium-",
+     "location": "Appendix C"
+    },
+    "latent_dim": {
+     "value": "not stated",
+     "quote": "(no line in the text states the CVAE latent dimension)",
+     "location": "n/a"
+    },
+    "num_critics": {
+     "value": "2 (clipped double Q)",
+     "quote": "Initialize the latent policy network πθ , critic networks Qφ1 , Qφ2 and their corresponding target",
+     "location": "Algorithm 1"
+    },
+    "policy_type": {
+     "value": "deterministic, tanh output",
+     "quote": "The latent policy is a deterministic policy with tanh activation at the output. The output is",
+     "location": "Appendix A"
+    },
+    "codebase": {
+     "value": "BCQ repository",
+     "quote": "The implementation of our algorithm is based on the original implementation of BCQ: https:",
+     "location": "Appendix A"
+    },
+    "max_perturbation_sweep": {
+     "value": "{0, 0.01, 0.05, 0.1, 0.2, 0.5}",
+     "quote": "summarize the results with max perturbation  ∈ {0, 0.01, 0.05, 0.1, 0.2, 0.5} in Figure 7.  = 0",
+     "location": "Appendix D"
+    }
+   },
+   "per_dataset_conditions": {
+    "walker2d-medium-expert": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "hopper-medium-expert-(a)": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "hopper-medium-expert-(b)": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "halfcheetah-medium-expert": {
+     "max_latent_action": {
+      "value": "0.5",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "walker2d-medium-replay": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     },
+     "cvae_encoder_decoder_hidden": {
+      "value": "(128, 128)",
+      "quote": "smaller than 1e6 transitions such as the medium-replay datasets, we use (128, 128) to prevent over-",
+      "location": "Appendix A"
+     }
+    },
+    "hopper-medium-replay": {
+     "max_latent_action": {
+      "value": "0.5",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     },
+     "cvae_encoder_decoder_hidden": {
+      "value": "(128, 128)",
+      "quote": "smaller than 1e6 transitions such as the medium-replay datasets, we use (128, 128) to prevent over-",
+      "location": "Appendix A"
+     }
+    },
+    "halfcheetah-medium-replay": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     },
+     "cvae_encoder_decoder_hidden": {
+      "value": "(128, 128)",
+      "quote": "smaller than 1e6 transitions such as the medium-replay datasets, we use (128, 128) to prevent over-",
+      "location": "Appendix A"
+     }
+    },
+    "walker2d-medium": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "hopper-medium": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "halfcheetah-medium": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "walker2d-random": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "hopper-random": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    },
+    "halfcheetah-random": {
+     "max_latent_action": {
+      "value": "2",
+      "quote": "replay and halfcheetah-medium-expert use 0.5 and all the other locomotion datasets use 2 for both",
+      "location": "Appendix B"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "3",
+    "episodes_per_seed": "10 evaluation episodes every epoch",
+    "checkpoint_selection": "not stated (tables say results averaged over 3 seeds; no statement of last vs best checkpoint)",
+    "quote": "sults are averaged over 3 seeds. “PLAS” refers to the latent policy without the perturbation layer. | and each epoch has 1000 training steps. The policy is evaluated every 1 epoch over 10 episodes.",
+    "location": "Appendix B; Section 5.1"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "In the current version of the d4rl dataset, hopper-medium-expert is actually a combination of the",
+    "location": "Appendix B. Env names 'Walker2d-v2, Hopper-v2, and Halfcheetah-v2' (Sec 5.1) are Gym env versions, not D4RL dataset versions; D4RL version string never given. Baseline numbers taken from the D4RL paper [8]."
+   },
+   "rows": [
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 97.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "best of sweep {0, 0.01, 0.05, 0.1, 0.2, 0.5} (Appendix D); exact value per dataset not tabulated"
+     },
+     "table": "Table 3",
+     "line_quote": "         walker2d-medium-expert            40.1        81.6     57.5     89.6         97.2",
+     "notes": "PLAS+P column = 'we report the best result from Appendix D' (best over max perturbation epsilon)."
+    },
+    {
+     "dataset": "hopper-medium-expert-(a)",
+     "outcome": 94.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "best of sweep {0, 0.01, 0.05, 0.1, 0.2, 0.5} (Appendix D); exact value per dataset not tabulated"
+     },
+     "table": "Table 3",
+     "line_quote": "         hopper-medium-expert-(a)          96.3         0.8    110.9    111.0         94.7",
+     "notes": "PLAS+P column = 'we report the best result from Appendix D' (best over max perturbation epsilon). dataset as shipped in D4RL at the time: 'hopper-medium-expert is actually a combination of the medium-replay and the expert datasets' (Appendix B)"
+    },
+    {
+     "dataset": "hopper-medium-expert-(b)",
+     "outcome": 108.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "best of sweep {0, 0.01, 0.05, 0.1, 0.2, 0.5} (Appendix D); exact value per dataset not tabulated"
+     },
+     "table": "Table 3",
+     "line_quote": "         hopper-medium-expert-(b)          82.0        69.6     62.7    111.0        108.7",
+     "notes": "PLAS+P column = 'we report the best result from Appendix D' (best over max perturbation epsilon). authors' own concatenation of medium + expert datasets, not the D4RL-distributed file (Appendix B)"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 99.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "0.5",
+      "max_perturbation": "best of sweep {0, 0.01, 0.05, 0.1, 0.2, 0.5} (Appendix D); exact value per dataset not tabulated"
+     },
+     "table": "Table 3",
+     "line_quote": "         halfcheetah-medium-expert         53.4        41.9     64.7     96.6         99.3",
+     "notes": "PLAS+P column = 'we report the best result from Appendix D' (best over max perturbation epsilon)."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 14.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "best of sweep {0, 0.01, 0.05, 0.1, 0.2, 0.5} (Appendix D); exact value per dataset not tabulated"
+     },
+     "table": "Table 3",
+     "line_quote": "         walker2d-medium-replay            19.2         0.9       15     30.2         14.3",
+     "notes": "PLAS+P column = 'we report the best result from Appendix D' (best over max perturbation epsilon)."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 51.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "0.5",
+      "max_perturbation": "best of sweep {0, 0.01, 0.05, 0.1, 0.2, 0.5} (Appendix D); exact value per dataset not tabulated"
+     },
+     "table": "Table 3",
+     "line_quote": "         hopper-medium-replay              33.7         0.6     33.1     27.9         51.9",
+     "notes": "PLAS+P column = 'we report the best result from Appendix D' (best over max perturbation epsilon)."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 45.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "best of sweep {0, 0.01, 0.05, 0.1, 0.2, 0.5} (Appendix D); exact value per dataset not tabulated"
+     },
+     "table": "Table 3",
+     "line_quote": "         halfcheetah-medium-replay         38.6        47.7     38.2     43.9         45.7",
+     "notes": "PLAS+P column = 'we report the best result from Appendix D' (best over max perturbation epsilon)."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 66.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "best of sweep {0, 0.01, 0.05, 0.1, 0.2, 0.5} (Appendix D); exact value per dataset not tabulated"
+     },
+     "table": "Table 3",
+     "line_quote": "         walker2d-medium                   59.1        81.1     53.1     44.6         66.9",
+     "notes": "PLAS+P column = 'we report the best result from Appendix D' (best over max perturbation epsilon)."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 36.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "best of sweep {0, 0.01, 0.05, 0.1, 0.2, 0.5} (Appendix D); exact value per dataset not tabulated"
+     },
+     "table": "Table 3",
+     "line_quote": "         hopper-medium                     52.1        31.1     54.5     32.9         36.9",
+     "notes": "PLAS+P column = 'we report the best result from Appendix D' (best over max perturbation epsilon)."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "best of sweep {0, 0.01, 0.05, 0.1, 0.2, 0.5} (Appendix D); exact value per dataset not tabulated"
+     },
+     "table": "Table 3",
+     "line_quote": "         halfcheetah-medium                41.7        46.3     40.7     39.3         42.2",
+     "notes": "PLAS+P column = 'we report the best result from Appendix D' (best over max perturbation epsilon)."
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 6.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "best of sweep {0, 0.01, 0.05, 0.1, 0.2, 0.5} (Appendix D); exact value per dataset not tabulated"
+     },
+     "table": "Table 3",
+     "line_quote": "         walker2d-random                    7.3         1.9      4.9      3.1          6.8",
+     "notes": "PLAS+P column = 'we report the best result from Appendix D' (best over max perturbation epsilon). paper notes 'all the experiments for walker2d-random are unstable' (Appendix C)"
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 13.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "best of sweep {0, 0.01, 0.05, 0.1, 0.2, 0.5} (Appendix D); exact value per dataset not tabulated"
+     },
+     "table": "Table 3",
+     "line_quote": "         hopper-random                     11.4        12.2     10.6     10.5         13.3",
+     "notes": "PLAS+P column = 'we report the best result from Appendix D' (best over max perturbation epsilon)."
+    },
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 28.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "max_latent_action": "2",
+      "max_perturbation": "best of sweep {0, 0.01, 0.05, 0.1, 0.2, 0.5} (Appendix D); exact value per dataset not tabulated"
+     },
+     "table": "Table 3",
+     "line_quote": "         halfcheetah-random                25.1        31.2      2.2     25.8         28.3",
+     "notes": "PLAS+P column = 'we report the best result from Appendix D' (best over max perturbation epsilon)."
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 6.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.05",
+     "config_conditions": {
+      "max_perturbation": "0.05",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              walker2d-random            3.1       6.8           2.4        1.3       −0.3",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.05' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 2.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.1",
+     "config_conditions": {
+      "max_perturbation": "0.1",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              walker2d-random            3.1       6.8           2.4        1.3       −0.3",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.1' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 1.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.2",
+     "config_conditions": {
+      "max_perturbation": "0.2",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              walker2d-random            3.1       6.8           2.4        1.3       −0.3",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.2' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": -0.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.5",
+     "config_conditions": {
+      "max_perturbation": "0.5",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              walker2d-random            3.1       6.8           2.4        1.3       −0.3",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.5' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 11.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.05",
+     "config_conditions": {
+      "max_perturbation": "0.05",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              hopper-random             10.5       11.1         11.6       12.2       13.3",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.05' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 11.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.1",
+     "config_conditions": {
+      "max_perturbation": "0.1",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              hopper-random             10.5       11.1         11.6       12.2       13.3",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.1' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 12.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.2",
+     "config_conditions": {
+      "max_perturbation": "0.2",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              hopper-random             10.5       11.1         11.6       12.2       13.3",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.2' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 13.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.5",
+     "config_conditions": {
+      "max_perturbation": "0.5",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              hopper-random             10.5       11.1         11.6       12.2       13.3",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.5' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 25.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.05",
+     "config_conditions": {
+      "max_perturbation": "0.05",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              halfcheetah-random        25.8       25.7         27.4       27.6       28.3",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.05' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 27.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.1",
+     "config_conditions": {
+      "max_perturbation": "0.1",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              halfcheetah-random        25.8       25.7         27.4       27.6       28.3",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.1' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 27.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.2",
+     "config_conditions": {
+      "max_perturbation": "0.2",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              halfcheetah-random        25.8       25.7         27.4       27.6       28.3",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.2' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 28.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.5",
+     "config_conditions": {
+      "max_perturbation": "0.5",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              halfcheetah-random        25.8       25.7         27.4       27.6       28.3",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.5' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 64.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.05",
+     "config_conditions": {
+      "max_perturbation": "0.05",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              walker2d-medium           44.6       64.8        66.9        62.1        39.2",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.05' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 66.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.1",
+     "config_conditions": {
+      "max_perturbation": "0.1",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              walker2d-medium           44.6       64.8        66.9        62.1        39.2",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.1' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 62.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.2",
+     "config_conditions": {
+      "max_perturbation": "0.2",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              walker2d-medium           44.6       64.8        66.9        62.1        39.2",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.2' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 39.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.5",
+     "config_conditions": {
+      "max_perturbation": "0.5",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              walker2d-medium           44.6       64.8        66.9        62.1        39.2",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.5' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 35.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.05",
+     "config_conditions": {
+      "max_perturbation": "0.05",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              hopper-medium             32.9       35.5         17.5        2.5        2.1",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.05' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 17.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.1",
+     "config_conditions": {
+      "max_perturbation": "0.1",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              hopper-medium             32.9       35.5         17.5        2.5        2.1",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.1' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 2.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.2",
+     "config_conditions": {
+      "max_perturbation": "0.2",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              hopper-medium             32.9       35.5         17.5        2.5        2.1",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.2' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 2.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.5",
+     "config_conditions": {
+      "max_perturbation": "0.5",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              hopper-medium             32.9       35.5         17.5        2.5        2.1",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.5' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 41.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.05",
+     "config_conditions": {
+      "max_perturbation": "0.05",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              halfcheetah-medium        39.3       41.3        42.2       42.2         40.4",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.05' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.1",
+     "config_conditions": {
+      "max_perturbation": "0.1",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              halfcheetah-medium        39.3       41.3        42.2       42.2         40.4",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.1' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.2",
+     "config_conditions": {
+      "max_perturbation": "0.2",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              halfcheetah-medium        39.3       41.3        42.2       42.2         40.4",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.2' (epsilon glyph dropped in layout.txt)"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 40.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "epsilon=0.5",
+     "config_conditions": {
+      "max_perturbation": "0.5",
+      "max_latent_action": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "              halfcheetah-medium        39.3       41.3        42.2       42.2         40.4",
+     "notes": "perturbation-limit ablation; column header 'ε = 0.5' (epsilon glyph dropped in layout.txt)"
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BEAR",
+  "BRAC-v",
+  "BCQ",
+  "BC",
+  "SAC-off"
+ ],
+ "problems": [
+  "CVAE latent dimension is never stated in the text (only 'each latent dimension i').",
+  "D4RL dataset version (v0/v2) never stated; env names '-v2' refer to Gym environments. The remark that hopper-medium-expert was medium-replay+expert in 'the current version of the d4rl dataset' and the two variants (a)/(b) are recorded as separate dataset rows.",
+  "No standard deviations reported in Tables 1-3; only training curves (Figure 4) show shaded std.",
+  "PLAS+P 'main' column in Table 3 is the best over the max-perturbation sweep ('we report the best result from Appendix D'); the winning epsilon per dataset is not tabulated (Figure 7 only). E.g. hopper-medium PLAS+P = 36.9 does not match any Table 1 column, presumably epsilon=0.01 from Figure 7.",
+  "Table 1 epsilon=0 column duplicates the PLAS main rows of Table 3 (identical values); not emitted twice.",
+  "Max-latent-action sweep {0.5,1,2,3} (Appendix C, Figure 6) and full epsilon sweep incl. medium-replay/medium-expert (Appendix D, Figure 7) are figures only -> excluded.",
+  "Table 2 (raw average reward) duplicates Table 3 datasets in raw returns; not extracted as rows since normalized scores exist in Table 3.",
+  "Whether '10 episodes' per epoch evaluation is the number behind the reported table value, and whether reported value is last-epoch or best, is not stated."
+ ]
+}

@@ -1,0 +1,378 @@
+{
+ "arxiv_id": "2304.12824",
+ "title": "Contrastive Energy Prediction for Exact Energy-Guided Diffusion Sampling in Offline Reinforcement Learning",
+ "methods": [
+  {
+   "method_name": "QGPO",
+   "is_own_method": true,
+   "one_paragraph_description": "Q-Guided Policy Optimization: train (1) a diffusion behavior model mu(a|s) (following SfBC), (2) an action-evaluation critic Q trained by in-support softmax Q-learning over a pre-generated support action set of K samples per state, and (3) an intermediate energy guidance model f(s,a_t,t) trained with contrastive energy prediction (CEP) against beta*Q on the support set. At runtime, sample a single action from the diffusion model with DPM-Solver (15 steps), guided by the gradient of the energy model scaled by guidance scale s; no candidate resampling (1 action candidate).",
+   "conventional_lineage_hint": "offline RL with diffusion-based policies / energy-guided diffusion sampling ('recent advances in offline RL that adopt diffusion-based policies')",
+   "global_conditions": {
+    "diffusion_steps": {
+     "value": "15",
+     "quote": "We use the second-order sampler and report performance scores at a diffusion step of 15.",
+     "location": "Appendix I.2"
+    },
+    "sampler": {
+     "value": "DPM-Solver, second-order",
+     "quote": "In order to sample from the learned diffusion-based policy, we adopt a recent advance in diffusion sampling, namely DPM-Solver (Lu et al., 2022b). We use the second-order sampler and report performance scores at a diffusion step of 15.",
+     "location": "Appendix I.2"
+    },
+    "num_action_candidates": {
+     "value": "1",
+     "quote": "# Action candidates                   1       100              1          32      1         1         50        1             1",
+     "location": "Table 2 (last column = QGPO)"
+    },
+    "support_actions_K": {
+     "value": "16 (MuJoCo Locomotion)",
+     "quote": "We set βQ = 1 and K = 16 for MuJoCo Locomotion tasks, βQ = 20 and K = 32 for AntMaze tasks in Eq. (22).",
+     "location": "Appendix I.2, Training action evaluation model"
+    },
+    "beta_Q": {
+     "value": "1 (MuJoCo Locomotion)",
+     "quote": "We set βQ = 1 and K = 16 for MuJoCo Locomotion tasks, βQ = 20 and K = 32 for AntMaze tasks in Eq. (22).",
+     "location": "Appendix I.2"
+    },
+    "beta_energy_guidance": {
+     "value": "3",
+     "quote": "The size support action set is the same as the one used in training the action evaluation model (K = 16 for MuJoCo Locomotion and K = 32 for AntMaze), though we set β = 3 in all tasks.",
+     "location": "Appendix I.2, Training energy guidance model"
+    },
+    "guidance_scale_sweep": {
+     "value": "[1.0, 2.0, 3.0, 5.0, 8.0, 10.0] (locomotion), chosen per task (Table 5)",
+     "quote": "To choose the optimal energy guidance scales s for action sampling, we sweep over [1.0, 2.0, 3.0, 5.0, 8.0, 10.0] for MuJoCo Locomotion and [1.0, 1.5, 2.0, 2.5, 3.0, 4.0] for AntMaze tasks during evaluation (Figure 4).",
+     "location": "Appendix I.2"
+    },
+    "behavior_model_grad_steps": {
+     "value": "600k",
+     "quote": "We train the behavior model for 600k gradient steps, using the Adam optimizer with a learning rate",
+     "location": "Appendix I.2"
+    },
+    "behavior_model_learning_rate": {
+     "value": "1e-4",
+     "quote": "of 1e-4. The batchsize is 4096. As for the data perturbation method, we adopt the default VPSDE setting in (Song et al.,",
+     "location": "Appendix I.2"
+    },
+    "behavior_model_batch_size": {
+     "value": "4096",
+     "quote": "of 1e-4. The batchsize is 4096.",
+     "location": "Appendix I.2"
+    },
+    "behavior_model_architecture": {
+     "value": "U-Net-like with dense connections, follows Chen et al. (2022) (SfBC)",
+     "quote": "The architecture and training method of our behavior model completely follow Chen et al. (2022). The network architecture resembles U-Nets, but with spatial convolutions changed to dense connections",
+     "location": "Appendix I.2"
+    },
+    "sde": {
+     "value": "VPSDE linear schedule, beta0=0.1, beta1=20",
+     "quote": "β0 = 0.1, β1 = 20.",
+     "location": "Appendix I.2, Eq. (41)"
+    },
+    "critic_architecture": {
+     "value": "3-layer MLP, 256 hidden, ReLU",
+     "quote": "The action evaluation model is a 3-layer MLP with 256 hidden units and ReLU activations.",
+     "location": "Appendix I.2"
+    },
+    "critic_grad_steps": {
+     "value": "500k",
+     "quote": "We train the action evaluation model for 500k gradient steps, using the Adam optimizer with a learning rate of",
+     "location": "Appendix I.2"
+    },
+    "critic_learning_rate": {
+     "value": "3e-4",
+     "quote": "3e-4. The batchsize is 256. We set βQ = 1 and K = 16 for MuJoCo Locomotion tasks",
+     "location": "Appendix I.2"
+    },
+    "critic_batch_size": {
+     "value": "256",
+     "quote": "3e-4. The batchsize is 256.",
+     "location": "Appendix I.2"
+    },
+    "critic_tricks": {
+     "value": "soft target updates, double Q networks, reward normalization as in IQL",
+     "quote": "Before training, we follow Kostrikov et al. (2022) and normalize task rewards. We also use standard tricks such as soft updates (Lillicrap et al., 2016) and double networks (Fujimoto et al., 2018) to stabilize Q-learning.",
+     "location": "Appendix I.2"
+    },
+    "energy_model_architecture": {
+     "value": "4-layer MLP, 256 hidden, SiLU",
+     "quote": "The energy guidance model is a 4-layer MLP with 256 hidden units and SiLU activations.",
+     "location": "Appendix I.2"
+    },
+    "energy_model_grad_steps": {
+     "value": "1M",
+     "quote": "We train it for 1M gradient steps, using the Adam optimizer with a learning rate of 3e-4. The batchsize is",
+     "location": "Appendix I.2"
+    },
+    "energy_model_learning_rate": {
+     "value": "3e-4",
+     "quote": "We train it for 1M gradient steps, using the Adam optimizer with a learning rate of 3e-4.",
+     "location": "Appendix I.2"
+    },
+    "energy_model_batch_size": {
+     "value": "256",
+     "quote": "256. The size support action set is the same as the one used in training the action evaluation model",
+     "location": "Appendix I.2"
+    }
+   },
+   "per_dataset_conditions": {
+    "halfcheetah-medium-expert": {
+     "guidance_scale_s": {
+      "value": "3.0",
+      "quote": "Walker2d       Halfcheetah       Hopper\n                            Locomotion-Medium-Expert\n                                                                   5.0             3.0            2.0",
+      "location": "Table 5 (Appendix I.2)"
+     }
+    },
+    "hopper-medium-expert": {
+     "guidance_scale_s": {
+      "value": "2.0",
+      "quote": "Walker2d       Halfcheetah       Hopper\n                            Locomotion-Medium-Expert\n                                                                   5.0             3.0            2.0",
+      "location": "Table 5 (Appendix I.2)"
+     }
+    },
+    "walker2d-medium-expert": {
+     "guidance_scale_s": {
+      "value": "5.0",
+      "quote": "Walker2d       Halfcheetah       Hopper\n                            Locomotion-Medium-Expert\n                                                                   5.0             3.0            2.0",
+      "location": "Table 5 (Appendix I.2)"
+     }
+    },
+    "halfcheetah-medium": {
+     "guidance_scale_s": {
+      "value": "10.0",
+      "quote": "Walker2d       Halfcheetah       Hopper\n                            Locomotion-Medium\n                                                                  10.0            10.0            8.0",
+      "location": "Table 5 (Appendix I.2)"
+     }
+    },
+    "hopper-medium": {
+     "guidance_scale_s": {
+      "value": "8.0",
+      "quote": "Walker2d       Halfcheetah       Hopper\n                            Locomotion-Medium\n                                                                  10.0            10.0            8.0",
+      "location": "Table 5 (Appendix I.2)"
+     }
+    },
+    "walker2d-medium": {
+     "guidance_scale_s": {
+      "value": "10.0",
+      "quote": "Walker2d       Halfcheetah       Hopper\n                            Locomotion-Medium\n                                                                  10.0            10.0            8.0",
+      "location": "Table 5 (Appendix I.2)"
+     }
+    },
+    "halfcheetah-medium-replay": {
+     "guidance_scale_s": {
+      "value": "8.0",
+      "quote": "Walker2d       Halfcheetah       Hopper\n                            Locomotion-Medium-Replay\n                                                                   5.0             8.0            3.0",
+      "location": "Table 5 (Appendix I.2)"
+     }
+    },
+    "hopper-medium-replay": {
+     "guidance_scale_s": {
+      "value": "3.0",
+      "quote": "Walker2d       Halfcheetah       Hopper\n                            Locomotion-Medium-Replay\n                                                                   5.0             8.0            3.0",
+      "location": "Table 5 (Appendix I.2)"
+     }
+    },
+    "walker2d-medium-replay": {
+     "guidance_scale_s": {
+      "value": "5.0",
+      "quote": "Walker2d       Halfcheetah       Hopper\n                            Locomotion-Medium-Replay\n                                                                   5.0             8.0            3.0",
+      "location": "Table 5 (Appendix I.2)"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "5",
+    "episodes_per_seed": "10 test seeds (MuJoCo Locomotion)",
+    "checkpoint_selection": "last (end of training)",
+    "quote": "We report mean and standard deviation of algorithm performance across 5 random seeds at the end of training. | We run all experiments over 5 independent trials and report their averaged performance. For each trial, we additionally collect the evaluation score averaged on multiple test seeds (10 for MuJoCo Locomotion and 100 for AntMaze).",
+    "location": "Table 2 caption; Appendix I.2 Evaluation"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "Table 2. Evaluation numbers of D4RL benchmarks (normalized as suggested by Fu et al. (2020)).",
+    "location": "Table 2 caption; no '-v0'/'-v2' suffix appears anywhere in the text"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 93.5,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "guidance_scale_s": "3.0",
+      "diffusion_steps": "15",
+      "num_action_candidates": "1",
+      "support_actions_K": "16",
+      "beta_Q": "1",
+      "beta_energy_guidance": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "Medium-Expert       HalfCheetah                62.4     64.7            86.7    92.6       90.6      79.8     96.1       94.8      93.5 ± 0.3",
+     "notes": "printed as 'Medium-Expert HalfCheetah' (QGPO column is last, 'mean ± std')"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 108.0,
+     "std": 2.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "guidance_scale_s": "2.0",
+      "diffusion_steps": "15",
+      "num_action_candidates": "1",
+      "support_actions_K": "16",
+      "beta_Q": "1",
+      "beta_energy_guidance": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "Medium-Expert       Hopper                     98.7    100.9            91.5   108.6      111.8     107.2     110.7     100.6      108.0 ± 2.5",
+     "notes": "printed as 'Medium-Expert Hopper' (QGPO column is last, 'mean ± std')"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 110.7,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "guidance_scale_s": "5.0",
+      "diffusion_steps": "15",
+      "num_action_candidates": "1",
+      "support_actions_K": "16",
+      "beta_Q": "1",
+      "beta_energy_guidance": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "Medium-Expert       Walker2d                  111.0    57.5            109.6   109.8      108.8     108.4     109.7     108.9      110.7 ± 0.6",
+     "notes": "printed as 'Medium-Expert Walker2d' (QGPO column is last, 'mean ± std')"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 54.1,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "guidance_scale_s": "10.0",
+      "diffusion_steps": "15",
+      "num_action_candidates": "1",
+      "support_actions_K": "16",
+      "beta_Q": "1",
+      "beta_energy_guidance": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "Medium              HalfCheetah               44.4      40.7           47.4        45.9    49.1      44.2     50.6       47.8      54.1 ± 0.4",
+     "notes": "printed as 'Medium HalfCheetah' (QGPO column is last, 'mean ± std')"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 98.0,
+     "std": 2.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "guidance_scale_s": "8.0",
+      "diffusion_steps": "15",
+      "num_action_candidates": "1",
+      "support_actions_K": "16",
+      "beta_Q": "1",
+      "beta_energy_guidance": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "Medium              Hopper                    58.0      54.5           66.3        57.1    79.3      58.5     82.4       64.1      98.0 ± 2.6",
+     "notes": "printed as 'Medium Hopper' (QGPO column is last, 'mean ± std')"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 86.0,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "guidance_scale_s": "10.0",
+      "diffusion_steps": "15",
+      "num_action_candidates": "1",
+      "support_actions_K": "16",
+      "beta_Q": "1",
+      "beta_energy_guidance": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "Medium              Walker2                   79.2      53.1           78.3        77.9    82.5      79.7     85.1       82.0      86.0 ± 0.7",
+     "notes": "printed as 'Medium Walker2' (QGPO column is last, 'mean ± std'); row printed with typo 'Walker2'"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 47.6,
+     "std": 1.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "guidance_scale_s": "8.0",
+      "diffusion_steps": "15",
+      "num_action_candidates": "1",
+      "support_actions_K": "16",
+      "beta_Q": "1",
+      "beta_energy_guidance": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "Medium-Replay       HalfCheetah               46.2      38.2           44.2        37.1    39.3      42.2     47.5       44.0      47.6 ± 1.4",
+     "notes": "printed as 'Medium-Replay HalfCheetah' (QGPO column is last, 'mean ± std')"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 96.9,
+     "std": 2.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "guidance_scale_s": "3.0",
+      "diffusion_steps": "15",
+      "num_action_candidates": "1",
+      "support_actions_K": "16",
+      "beta_Q": "1",
+      "beta_energy_guidance": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "Medium-Replay       Hopper                    48.6      33.1           94.7        86.2   100.0      96.8     100.7      63.1      96.9 ± 2.6",
+     "notes": "printed as 'Medium-Replay Hopper' (QGPO column is last, 'mean ± std')"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 84.4,
+     "std": 4.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "guidance_scale_s": "5.0",
+      "diffusion_steps": "15",
+      "num_action_candidates": "1",
+      "support_actions_K": "16",
+      "beta_Q": "1",
+      "beta_energy_guidance": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "Medium-Replay       Walker2d                  26.7      15.0           73.9        65.1    75.0      61.2     94.3       75.4      84.4 ± 4.1",
+     "notes": "printed as 'Medium-Replay Walker2d' (QGPO column is last, 'mean ± std')"
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "CQL",
+  "BCQ",
+  "IQL",
+  "SfBC",
+  "DD",
+  "Diffuser",
+  "D-QL",
+  "D-QL@1"
+ ],
+ "problems": [
+  "D4RL dataset version (v0/v2) is never stated; only 'normalized as suggested by Fu et al. (2020)'.",
+  "Table 5 (guidance scale per task) is laid out as a header line 'Walker2d Halfcheetah Hopper' followed by the group label and a value line; mapping assumed positional (Walker2d, Halfcheetah, Hopper). Quotes are two-line.",
+  "Table 2 'Medium / Walker2' row has a typo ('Walker2' for 'Walker2d'); mapped to walker2d-medium.",
+  "Ablations of guidance scale s (Figure 4) and diffusion steps (Figure 5) are figures only; not extracted.",
+  "Table 6 (MSE / E-MSE / RS / CEP guidance ablation) reports only domain averages (Locomotion 68.0/58.1/76.9/86.6); no per-dataset rows, so not extracted.",
+  "D-QL and D-QL@1 columns are the authors' reruns of Diffusion-QL (Appendix I.3) but are baselines, not the paper's own method; listed in baseline_rows_seen only."
+ ]
+}

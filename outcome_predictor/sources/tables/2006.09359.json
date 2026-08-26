@@ -1,0 +1,440 @@
+{
+ "arxiv_id": "2006.09359",
+ "title": "AWAC: Accelerating Online Reinforcement Learning with Offline Datasets",
+ "methods": [
+  {
+   "method_name": "AWAC",
+   "is_own_method": true,
+   "one_paragraph_description": "Advantage Weighted Actor Critic: trains an off-policy critic Q^pi with TD bootstrapping and updates the actor by weighted maximum likelihood on dataset/replay actions, with weights exp(A^{pi_k}(s,a)/lambda) — an implicit KL policy constraint towards the behavior data (Lagrangian in Eq. 10). Used for offline pretraining followed by online fine-tuning.",
+   "conventional_lineage_hint": "'off-policy' actor-critic for offline pretraining + online fine-tuning; paper positions itself relative to 'Offline RL algorithms' (Section III) and 'advantage weighted actor critic' family (AWR/MARWIL)",
+   "global_conditions": {
+    "lambda": {
+     "value": "1.0 (MuJoCo benchmark environments)",
+     "quote": "The Lagrange multiplier λ is treated as a hyperparameter in                      door        1       0.10     0.00 our method. In this work we use λ = 0.3 for the manipulation environments and λ = 1.0 for the MuJoCo benchmark",
+     "location": "Appendix, Lagrange multiplier paragraph (layout lines 833-836)"
+    },
+    "training_batches_per_timestep": {
+     "value": "1",
+     "quote": "function is r = 1|xp −dp |≤0.075 1|xo ·do |≤0.95 - 1. In Rajeswaran",
+     "location": "Table II"
+    },
+    "batch_size": {
+     "value": "1024",
+     "quote": "RL Batch Size                       1024                 requires first twisting a latch. The action dimension is 28 and",
+     "location": "Table II"
+    },
+    "discount": {
+     "value": "0.99",
+     "quote": "Discount Factor                       0.99                the observation dimension is 39. Let d denote the angle of the",
+     "location": "Table II"
+    },
+    "reward_scaling": {
+     "value": "1",
+     "quote": "Reward Scaling                         1                        c) relocate-binary-v0.: The task is to relocate an object to",
+     "location": "Table II"
+    },
+    "replay_buffer_size": {
+     "value": "1000000",
+     "quote": "Replay Buffer Size                    1000000               a goal location. The action dimension is 30 and the observation",
+     "location": "Table II"
+    },
+    "pretraining_steps": {
+     "value": "25000",
+     "quote": "Policy Hidden Sizes             [256, 256, 256, 256]        1.",
+     "location": "Table II"
+    },
+    "policy_hidden_sizes": {
+     "value": "[256, 256, 256, 256]",
+     "quote": "2) Sawyer Manipulation Environment:",
+     "location": "Table II"
+    },
+    "policy_hidden_activation": {
+     "value": "ReLU",
+     "quote": "Policy Weight Decay                     10−4                 Multiworld library. The task is to push a puck to a goal position",
+     "location": "Table II"
+    },
+    "policy_weight_decay": {
+     "value": "1e-4",
+     "quote": "in a 40cm x 20cm, and the reward function is the negative",
+     "location": "Table II"
+    },
+    "policy_learning_rate": {
+     "value": "3e-4",
+     "quote": "conditioned reinforcement learning. The random dataset for",
+     "location": "Table II"
+    },
+    "q_hidden_sizes": {
+     "value": "[256, 256, 256, 256]",
+     "quote": "Q Hidden Activation                     ReLU                 prior data was collected by rolling out an Ornstein-Uhlenbeck",
+     "location": "Table II"
+    },
+    "q_hidden_activation": {
+     "value": "ReLU",
+     "quote": "Q Learning Rate                    3 × 10−4               expert data, behavior cloning (BC) on the expert data (1),",
+     "location": "Table II"
+    },
+    "q_weight_decay": {
+     "value": "0",
+     "quote": "Target Network τ                    5 × 10−3               and BC on the combined expert+BC data (2) are included in",
+     "location": "Table II"
+    },
+    "q_learning_rate": {
+     "value": "3e-4",
+     "quote": "manipulation tasks we report the success rate, and the expert",
+     "location": "Table II"
+    },
+    "target_network_tau": {
+     "value": "5e-3",
+     "quote": "states that will be visited by πθ , and therefore preserving       data consists of human demonstrations provided by Rajeswaran",
+     "location": "Table II"
+    },
+    "exploration_noise": {
+     "value": "None (stochastic policy)",
+     "quote": "Exploration Noise           None (stochastic policy)       the hand; we did not include this early termination condition.",
+     "location": "Table II"
+    },
+    "online_finetuning_steps_d4rl": {
+     "value": "500,000",
+     "quote": "RL. The results are obtained by first by training offline and then fine-tuning online on each setting for 500,000 additional",
+     "location": "Appendix G"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "not stated",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated",
+    "quote": "data quality (random, medium, medium-expert, and expert) datasets included in D4RL [12], a dataset intended for offline RL. The results are obtained by first by training offline and then fine-tuning online on each setting for 500,000 additional",
+    "location": "Appendix G"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "(no line states the D4RL dataset version; only Gym env names like 'HalfCheetah-v2' appear, e.g. line 148: 'in this setting on the HalfCheetah-v2 Gym environment1 . out-of-distribution actions, leading to a policy update of this')",
+    "location": "n/a"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-random",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "and perform 25K pretraining steps before online RL. The              HalfCheetah    random            2.2         52.9       25.5",
+     "outcome": 2.2,
+     "std": null,
+     "config_label": "main (AWAC offline, before fine-tuning)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "phase": "offline pretraining only"
+     },
+     "notes": "Printed as 'HalfCheetah random' in layout; environment name carried down from the group header row. Source is labeled 'Figure 11' but the values are printed digits, not read from a plot. No std, no seed count stated. Column 'AWAC (offline)'."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "medium            37.4        41.1       38.6",
+     "outcome": 37.4,
+     "std": null,
+     "config_label": "main (AWAC offline, before fine-tuning)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "phase": "offline pretraining only"
+     },
+     "notes": "Printed as 'HalfCheetah medium' in layout; environment name carried down from the group header row. Source is labeled 'Figure 11' but the values are printed digits, not read from a plot. No std, no seed count stated. Column 'AWAC (offline)'."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "medium-expert     36.8        41.0       51.7",
+     "outcome": 36.8,
+     "std": null,
+     "config_label": "main (AWAC offline, before fine-tuning)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "phase": "offline pretraining only"
+     },
+     "notes": "Printed as 'HalfCheetah medium-expert' in layout; environment name carried down from the group header row. Source is labeled 'Figure 11' but the values are printed digits, not read from a plot. No std, no seed count stated. Column 'AWAC (offline)'."
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "expert            78.5        105.6      108.2",
+     "outcome": 78.5,
+     "std": null,
+     "config_label": "main (AWAC offline, before fine-tuning)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "phase": "offline pretraining only"
+     },
+     "notes": "Printed as 'HalfCheetah expert' in layout; environment name carried down from the group header row. Source is labeled 'Figure 11' but the values are printed digits, not read from a plot. No std, no seed count stated. Column 'AWAC (offline)'."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "Hopper         random            9.6         62.8       9.5",
+     "outcome": 9.6,
+     "std": null,
+     "config_label": "main (AWAC offline, before fine-tuning)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "phase": "offline pretraining only"
+     },
+     "notes": "Printed as 'Hopper random' in layout; environment name carried down from the group header row. Source is labeled 'Figure 11' but the values are printed digits, not read from a plot. No std, no seed count stated. Column 'AWAC (offline)'."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "medium            72.0        91.0       47.6",
+     "outcome": 72.0,
+     "std": null,
+     "config_label": "main (AWAC offline, before fine-tuning)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "phase": "offline pretraining only"
+     },
+     "notes": "Printed as 'Hopper medium' in layout; environment name carried down from the group header row. Source is labeled 'Figure 11' but the values are printed digits, not read from a plot. No std, no seed count stated. Column 'AWAC (offline)'."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "medium-expert     80.9        111.9      4.0",
+     "outcome": 80.9,
+     "std": null,
+     "config_label": "main (AWAC offline, before fine-tuning)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "phase": "offline pretraining only"
+     },
+     "notes": "Printed as 'Hopper medium-expert' in layout; environment name carried down from the group header row. Source is labeled 'Figure 11' but the values are printed digits, not read from a plot. No std, no seed count stated. Column 'AWAC (offline)'."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "expert            85.2        111.8      110.3",
+     "outcome": 85.2,
+     "std": null,
+     "config_label": "main (AWAC offline, before fine-tuning)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "phase": "offline pretraining only"
+     },
+     "notes": "Printed as 'Hopper expert' in layout; environment name carried down from the group header row. Source is labeled 'Figure 11' but the values are printed digits, not read from a plot. No std, no seed count stated. Column 'AWAC (offline)'."
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "Walker2D       random            5.1         11.7       6.7",
+     "outcome": 5.1,
+     "std": null,
+     "config_label": "main (AWAC offline, before fine-tuning)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "phase": "offline pretraining only"
+     },
+     "notes": "Printed as 'Walker2D random' in layout; environment name carried down from the group header row. Source is labeled 'Figure 11' but the values are printed digits, not read from a plot. No std, no seed count stated. Column 'AWAC (offline)'."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "medium            30.1        79.1       33.2",
+     "outcome": 30.1,
+     "std": null,
+     "config_label": "main (AWAC offline, before fine-tuning)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "phase": "offline pretraining only"
+     },
+     "notes": "Printed as 'Walker2D medium' in layout; environment name carried down from the group header row. Source is labeled 'Figure 11' but the values are printed digits, not read from a plot. No std, no seed count stated. Column 'AWAC (offline)'."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "medium-expert     42.7        78.3       10.8",
+     "outcome": 42.7,
+     "std": null,
+     "config_label": "main (AWAC offline, before fine-tuning)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "phase": "offline pretraining only"
+     },
+     "notes": "Printed as 'Walker2D medium-expert' in layout; environment name carried down from the group header row. Source is labeled 'Figure 11' but the values are printed digits, not read from a plot. No std, no seed count stated. Column 'AWAC (offline)'."
+    },
+    {
+     "dataset": "halfcheetah-random",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "and perform 25K pretraining steps before online RL. The              HalfCheetah    random            2.2         52.9       25.5",
+     "outcome": 52.9,
+     "std": null,
+     "config_label": "AWAC online (after 500,000 online fine-tuning steps)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "online_finetuning_steps": "500,000"
+     },
+     "notes": "Printed as 'HalfCheetah random'. NOT a pure offline result — score after online fine-tuning; not comparable to offline-only D4RL tables. Column 'AWAC (online)'. Labeled 'Figure 11'."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "medium            37.4        41.1       38.6",
+     "outcome": 41.1,
+     "std": null,
+     "config_label": "AWAC online (after 500,000 online fine-tuning steps)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "online_finetuning_steps": "500,000"
+     },
+     "notes": "Printed as 'HalfCheetah medium'. NOT a pure offline result — score after online fine-tuning; not comparable to offline-only D4RL tables. Column 'AWAC (online)'. Labeled 'Figure 11'."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "medium-expert     36.8        41.0       51.7",
+     "outcome": 41.0,
+     "std": null,
+     "config_label": "AWAC online (after 500,000 online fine-tuning steps)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "online_finetuning_steps": "500,000"
+     },
+     "notes": "Printed as 'HalfCheetah medium-expert'. NOT a pure offline result — score after online fine-tuning; not comparable to offline-only D4RL tables. Column 'AWAC (online)'. Labeled 'Figure 11'."
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "expert            78.5        105.6      108.2",
+     "outcome": 105.6,
+     "std": null,
+     "config_label": "AWAC online (after 500,000 online fine-tuning steps)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "online_finetuning_steps": "500,000"
+     },
+     "notes": "Printed as 'HalfCheetah expert'. NOT a pure offline result — score after online fine-tuning; not comparable to offline-only D4RL tables. Column 'AWAC (online)'. Labeled 'Figure 11'."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "Hopper         random            9.6         62.8       9.5",
+     "outcome": 62.8,
+     "std": null,
+     "config_label": "AWAC online (after 500,000 online fine-tuning steps)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "online_finetuning_steps": "500,000"
+     },
+     "notes": "Printed as 'Hopper random'. NOT a pure offline result — score after online fine-tuning; not comparable to offline-only D4RL tables. Column 'AWAC (online)'. Labeled 'Figure 11'."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "medium            72.0        91.0       47.6",
+     "outcome": 91.0,
+     "std": null,
+     "config_label": "AWAC online (after 500,000 online fine-tuning steps)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "online_finetuning_steps": "500,000"
+     },
+     "notes": "Printed as 'Hopper medium'. NOT a pure offline result — score after online fine-tuning; not comparable to offline-only D4RL tables. Column 'AWAC (online)'. Labeled 'Figure 11'."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "medium-expert     80.9        111.9      4.0",
+     "outcome": 111.9,
+     "std": null,
+     "config_label": "AWAC online (after 500,000 online fine-tuning steps)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "online_finetuning_steps": "500,000"
+     },
+     "notes": "Printed as 'Hopper medium-expert'. NOT a pure offline result — score after online fine-tuning; not comparable to offline-only D4RL tables. Column 'AWAC (online)'. Labeled 'Figure 11'."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "expert            85.2        111.8      110.3",
+     "outcome": 111.8,
+     "std": null,
+     "config_label": "AWAC online (after 500,000 online fine-tuning steps)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "online_finetuning_steps": "500,000"
+     },
+     "notes": "Printed as 'Hopper expert'. NOT a pure offline result — score after online fine-tuning; not comparable to offline-only D4RL tables. Column 'AWAC (online)'. Labeled 'Figure 11'."
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "Walker2D       random            5.1         11.7       6.7",
+     "outcome": 11.7,
+     "std": null,
+     "config_label": "AWAC online (after 500,000 online fine-tuning steps)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "online_finetuning_steps": "500,000"
+     },
+     "notes": "Printed as 'Walker2D random'. NOT a pure offline result — score after online fine-tuning; not comparable to offline-only D4RL tables. Column 'AWAC (online)'. Labeled 'Figure 11'."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "medium            30.1        79.1       33.2",
+     "outcome": 79.1,
+     "std": null,
+     "config_label": "AWAC online (after 500,000 online fine-tuning steps)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "online_finetuning_steps": "500,000"
+     },
+     "notes": "Printed as 'Walker2D medium'. NOT a pure offline result — score after online fine-tuning; not comparable to offline-only D4RL tables. Column 'AWAC (online)'. Labeled 'Figure 11'."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome_is_mean_over_seeds": null,
+     "table": "Figure 11 (printed numeric table in appendix G)",
+     "line_quote": "medium-expert     42.7        78.3       10.8",
+     "outcome": 78.3,
+     "std": null,
+     "config_label": "AWAC online (after 500,000 online fine-tuning steps)",
+     "config_conditions": {
+      "lambda": "1.0",
+      "online_finetuning_steps": "500,000"
+     },
+     "notes": "Printed as 'Walker2D medium-expert'. NOT a pure offline result — score after online fine-tuning; not comparable to offline-only D4RL tables. Column 'AWAC (online)'. Labeled 'Figure 11'."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BEAR (offline, in Figure 11 table)",
+  "CQL (Figure 10, plot only)",
+  "AlgaeDICE (Figure 10, plot only)"
+ ],
+ "problems": [
+  "D4RL Gym-MuJoCo locomotion results exist ONLY in the appendix (Appendix G, 'Online Fine-Tuning From D4RL') and are presented as 'Figure 11', which in the layout text is a printed numeric table (AWAC offline / AWAC online / BEAR). No main-text D4RL table exists. Rows emitted from these printed digits but flagged; drop them if figure-sourced values are disallowed.",
+  "No standard deviations, no number of seeds, and no number of evaluation episodes are stated for the D4RL experiment (grep for 'seed'/'episodes' finds nothing relevant).",
+  "D4RL dataset version (v0/v2) is never stated; the only '-v2' mentions are Gym environment names (HalfCheetah-v2 etc.), not D4RL dataset versions. Marked unknown. Given a 2020 paper, v0 is likely but NOT stated.",
+  "Table II hyperparameters are described as 'used for RL experiments' generally; it is not stated whether Table II's 25000 pretraining steps applies to the D4RL offline phase (Appendix F says AlgaeDICE used 25K pretraining steps; AWAC offline step count for D4RL not stated explicitly).",
+  "Only 4 dataset types (random, medium, medium-expert, expert) are reported; no medium-replay / full-replay. Dataset names in the table are 'HalfCheetah'/'Hopper'/'Walker2D' + type; normalized to lowercase D4RL style in 'dataset' field.",
+  "Checkpoint selection not stated."
+ ]
+}

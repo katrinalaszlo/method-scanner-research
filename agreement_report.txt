@@ -1,0 +1,62 @@
+papers with both passes: 45   tuples compared: 165   exact agreement: 124/165 = 0.75
+pass 2 said unknown: 4/165 = 0.02   (agreement excluding unknowns: 0.77)
+
+papers where typing changed (changed/total):
+  3/6  Differentiable Particle Filters: End-to-End Learning with Al
+  3/3  Mastering Diverse Domains through World Models
+  3/3  Revisiting Feature Prediction for Learning Visual Representa
+  2/5  Bootstrap your own latent: A new approach to self-supervised
+  2/3  Deep Kalman Filters
+  2/6  Deep Robust Kalman Filter
+  2/3  Denoising Diffusion Probabilistic Models
+  2/3  Efficient Estimation of Word Representations in Vector Space
+  2/3  Elucidating the Design Space of Diffusion-Based Generative M
+  2/3  Mastering Atari with Discrete World Models
+  2/4  Particle Filter Recurrent Neural Networks
+  2/3  Self-Supervised Learning from Images with a Joint-Embedding 
+  1/4  A Simple Framework for Contrastive Learning of Visual Repres
+  1/3  Adam: A Method for Stochastic Optimization
+  1/4  Attention Is All You Need
+  1/3  Black box variational inference for state space models
+  1/3  Deep Predictive Coding Networks for Video Prediction and Uns
+  1/3  Deep Residual Learning for Image Recognition
+  1/3  Deep Unsupervised Learning using Nonequilibrium Thermodynami
+  1/4  Dendritic predictive coding: A theory of cortical computatio
+  1/3  Dream to Control: Learning Behaviors by Latent Imagination
+  1/4  Learning Latent Dynamics for Planning from Pixels
+  1/4  Neural Kalman Filtering
+  1/4  Predictive Coding Can Do Exact Backpropagation on Convolutio
+  1/4  Score-Based Generative Modeling through Stochastic Different
+  1/4  World Models
+
+most frequent re-typings (pass1 -> pass2):
+   4  sample        -> state
+   3  state         -> input
+   3  distribution  -> input
+   3  state         -> parameter
+   2  latent        -> distribution
+   2  latent        -> input
+   2  latent        -> unknown
+   2  latent        -> parameter
+   2  parameter     -> state
+   2  action        -> state
+   1  gradient      -> parameter
+   1  gradient      -> unknown
+
+what pass 1 'state' became in pass 2:
+  41  state
+   3  input
+   3  parameter
+   1  distribution
+   1  unknown
+   1  latent
+   1  noise
+
+agreement by operation (n>=3):
+  3/5  sample
+  14/21  predict
+  6/8  encode
+  9/11  update
+  5/5  project
+  3/3  estimate
+  4/4  update weights

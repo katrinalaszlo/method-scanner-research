@@ -1,0 +1,249 @@
+{
+ "arxiv_id": "2205.09991",
+ "title": "Planning with Diffusion for Flexible Behavior Synthesis",
+ "methods": [
+  {
+   "method_name": "Diffuser",
+   "is_own_method": true,
+   "one_paragraph_description": "Diffuser is a denoising diffusion model over two-dimensional trajectory arrays (states and actions over the planning horizon). At runtime it observes the current state, initializes a plan from Gaussian noise, and iteratively denoises it for N steps; at each reverse step the mean is shifted by the gradient of a separately trained return predictor J_phi (classifier-style guidance, scale alpha), and the first state of the plan is constrained to the observed state via inpainting. The first action of the sampled plan is executed and the procedure repeats in a receding-horizon control loop (Algorithm 1).",
+   "conventional_lineage_hint": "model-based reinforcement learning / diffusion-based planning: 'Model-based reinforcement learning methods often use learning only for the purpose of estimating an approximate dynamics model' ... 'we propose to fold as much of the trajectory optimization pipeline as possible into the modeling problem' ; evaluated on 'the D4RL offline locomotion suite' (Section 5.3 Offline Reinforcement Learning)",
+   "global_conditions": {
+    "architecture": {
+     "value": "temporal U-Net with 6 repeated residual blocks; each block two temporal convolutions + group norm + Mish",
+     "quote": "a U-Net structure with 6 repeated residual blocks.",
+     "location": "Appendix C item 1"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "We train the model using the Adam optimizer (Kingma",
+     "location": "Appendix C item 2"
+    },
+    "learning_rate": {
+     "value": "4e-05",
+     "quote": "& Ba, 2015) with a learning rate of 4e−05 and batch",
+     "location": "Appendix C item 2"
+    },
+    "batch_size": {
+     "value": "32",
+     "quote": "size of 32. We train the models for 500k steps.",
+     "location": "Appendix C item 2"
+    },
+    "training_steps": {
+     "value": "500k",
+     "quote": "size of 32. We train the models for 500k steps.",
+     "location": "Appendix C item 2"
+    },
+    "return_predictor_architecture": {
+     "value": "first half of the U-Net + final linear layer",
+     "quote": "The return predictor J has the structure of the first half of the U-Net used for the diffusion model, with a final linear layer to produce a scalar output.",
+     "location": "Appendix C item 3"
+    },
+    "planning_horizon": {
+     "value": "32 (locomotion)",
+     "quote": "We use a planning horizon T of 32 in all locomotion tasks, 128 for block-stacking, 128 in Maze2D / Multi2D U-Maze, 265 in Maze2D / Multi2D Medium, and 384 in Maze2D / Multi2D Large.",
+     "location": "Appendix C item 4"
+    },
+    "diffusion_steps": {
+     "value": "N = 20 (locomotion)",
+     "quote": "We use N = 20 diffusion steps for locomotion tasks and N = 100 for block-stacking.",
+     "location": "Appendix C item 6"
+    },
+    "guide_scale": {
+     "value": "alpha = 0.1 (all tasks except hopper-medium-expert)",
+     "quote": "We use a guide scale of α = 0.1 for all tasks except hopper-medium-expert, in which we use a smaller scale of 0.0001.",
+     "location": "Appendix C item 7"
+    },
+    "discount": {
+     "value": "0.997 (for return predictor J_phi)",
+     "quote": "We used a discount factor of 0.997 for the return prediction Jφ , though found that above γ = 0.99 planning was fairly insensitive to changes in discount factor.",
+     "location": "Appendix C item 8"
+    },
+    "horizon_reduction_note": {
+     "value": "horizon can be reduced with lower guide scale, e.g. 0.001 for horizon 4 on halfcheetah (no results table given)",
+     "quote": "We found that we could reduce the planning horizon for many tasks, but that the guide scale would need to be lowered (e.g., to 0.001 for a horizon of 4 in the halfcheetah tasks) to accommodate.",
+     "location": "Appendix C item 5"
+    },
+    "control_loop": {
+     "value": "receding-horizon; execute first action of plan then replan",
+     "quote": "Execute first action of plan τa00",
+     "location": "Algorithm 1 line 11 / Section 3.2"
+    }
+   },
+   "per_dataset_conditions": {
+    "hopper-medium-expert": {
+     "guide_scale": {
+      "value": "0.0001",
+      "quote": "except hopper-medium-expert, in which we use a smaller scale of 0.0001.",
+      "location": "Appendix C item 7"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "150 planning seeds",
+    "episodes_per_seed": "not stated (mean and standard error over 150 planning seeds)",
+    "checkpoint_selection": "not stated",
+    "quote": "Results for Diffuser correspond to the mean and standard error over 150 planning seeds.",
+    "location": "Table 2 caption"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "benchmark (Fu et al., 2020). Results for Diffuser correspond to the mean and standard error over 150 planning seeds. (no -v0/-v2 suffix anywhere in text)",
+    "location": "Table 2 caption"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 88.9,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps": "20",
+      "guide_scale": "0.1"
+     },
+     "table": "Table 2",
+     "line_quote": " Medium-Expert       HalfCheetah         55.2          91.6     86.7    86.8      95.0     63.3       53.3       105.9     88.9 ±0.3",
+     "notes": "std column is standard error over 150 planning seeds (Table 2 caption). Dataset names printed as 'Medium-Expert / HalfCheetah' etc.; no D4RL version suffix printed."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 103.3,
+     "std": 1.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps": "20",
+      "guide_scale": "0.0001"
+     },
+     "table": "Table 2",
+     "line_quote": " Medium-Expert       Hopper              52.5         105.4     91.5   107.6     110.0     23.7      108.7        55.1    103.3 ±1.3",
+     "notes": "std column is standard error over 150 planning seeds (Table 2 caption). Dataset names printed as 'Medium-Expert / HalfCheetah' etc.; no D4RL version suffix printed."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 106.9,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps": "20",
+      "guide_scale": "0.1"
+     },
+     "table": "Table 2",
+     "line_quote": " Medium-Expert       Walker2d           107.5         108.8    109.6   108.1     101.9     44.6       95.6        70.2    106.9 ±0.2",
+     "notes": "std column is standard error over 150 planning seeds (Table 2 caption). Dataset names printed as 'Medium-Expert / HalfCheetah' etc.; no D4RL version suffix printed."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.8,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps": "20",
+      "guide_scale": "0.1"
+     },
+     "table": "Table 2",
+     "line_quote": " Medium              HalfCheetah         42.6         44.0     47.4    42.6       46.9     42.3       42.1        44.6      42.8 ±0.3",
+     "notes": "std column is standard error over 150 planning seeds (Table 2 caption). Dataset names printed as 'Medium-Expert / HalfCheetah' etc.; no D4RL version suffix printed."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 74.3,
+     "std": 1.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps": "20",
+      "guide_scale": "0.1"
+     },
+     "table": "Table 2",
+     "line_quote": " Medium              Hopper              52.9         58.5     66.3    67.6       61.1     28.0       95.4        48.8      74.3 ±1.4",
+     "notes": "std column is standard error over 150 planning seeds (Table 2 caption). Dataset names printed as 'Medium-Expert / HalfCheetah' etc.; no D4RL version suffix printed."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 79.6,
+     "std": 0.55,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps": "20",
+      "guide_scale": "0.1"
+     },
+     "table": "Table 2",
+     "line_quote": " Medium              Walker2d            75.3         72.5     78.3    74.0       79.0     17.8       77.8        41.0     79.6 ±0.55",
+     "notes": "std column is standard error over 150 planning seeds (Table 2 caption). Dataset names printed as 'Medium-Expert / HalfCheetah' etc.; no D4RL version suffix printed."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 37.7,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps": "20",
+      "guide_scale": "0.1"
+     },
+     "table": "Table 2",
+     "line_quote": " Medium-Replay       HalfCheetah         36.6         45.5     44.2    36.6       41.9     53.1       40.2        42.3     37.7 ±0.5",
+     "notes": "std column is standard error over 150 planning seeds (Table 2 caption). Dataset names printed as 'Medium-Expert / HalfCheetah' etc.; no D4RL version suffix printed."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 93.6,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps": "20",
+      "guide_scale": "0.1"
+     },
+     "table": "Table 2",
+     "line_quote": " Medium-Replay       Hopper              18.1         95.0     94.7    82.7       91.5     67.5       93.6        12.4     93.6 ±0.4",
+     "notes": "std column is standard error over 150 planning seeds (Table 2 caption). Dataset names printed as 'Medium-Expert / HalfCheetah' etc.; no D4RL version suffix printed."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 70.6,
+     "std": 1.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "32",
+      "diffusion_steps": "20",
+      "guide_scale": "0.1"
+     },
+     "table": "Table 2",
+     "line_quote": " Medium-Replay       Walker2d            26.0         77.2     73.9    66.6       82.6     39.0       49.8         9.7     70.6 ±1.6",
+     "notes": "std column is standard error over 150 planning seeds (Table 2 caption). Dataset names printed as 'Medium-Expert / HalfCheetah' etc.; no D4RL version suffix printed."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BC",
+  "CQL",
+  "IQL",
+  "DT",
+  "TT",
+  "MOPO",
+  "MOReL",
+  "MBOP"
+ ],
+ "problems": [
+  "Number of candidate plans sampled per replanning step is not stated in the text; Algorithm 1 denoises a single plan.",
+  "Figure 7 (varying number of diffusion steps 2-100 on Walker2d Medium-Expert with warm-starting) is a figure only, no table -> excluded per rules.",
+  "Appendix C item 5 mentions reduced horizon (e.g. 4 for halfcheetah with guide scale 0.001) but reports no scores -> no ablation rows for horizon or guidance scale.",
+  "Number of evaluation episodes per seed / checkpoint selection not stated.",
+  "D4RL dataset version (v0/v2) never stated."
+ ]
+}

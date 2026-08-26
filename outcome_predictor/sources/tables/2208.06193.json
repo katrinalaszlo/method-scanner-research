@@ -1,0 +1,747 @@
+{
+ "arxiv_id": "2208.06193",
+ "title": "Diffusion Policies as an Expressive Policy Class for Offline Reinforcement Learning",
+ "methods": [
+  {
+   "method_name": "Diffusion-QL",
+   "is_own_method": true,
+   "one_paragraph_description": "Diffusion-QL represents the policy as an MLP-based conditional diffusion model over actions given state: an action is produced at runtime by running N reverse denoising steps from Gaussian noise conditioned on the state. Training minimizes a behavior-cloning diffusion loss Ld (regularizing toward the dataset actions) plus a Q-learning term Lq that maximizes Q of the sampled action, weighted by alpha = eta / E|Q|, with gradients backpropagated through the whole diffusion chain; two Q-networks with target networks and double-Q (clipped min) are learned via the Bellman objective (Algorithm 1).",
+   "conventional_lineage_hint": "offline RL, policy-regularization family: 'Offline reinforcement learning (RL), which aims to learn an optimal policy using previously collected static datasets' ; 'we analyze why Diffusion-QL outperforms the other policy-constraint based methods'",
+   "global_conditions": {
+    "policy_architecture": {
+     "value": "3-layer MLP, Mish activations, 256 hidden units (conditional diffusion noise model eps_theta(a_i, s, i))",
+     "quote": "We model ϵθ as a 3-layer MLPs with Mish activations and we use 256 hidden units for all networks.",
+     "location": "Appendix B"
+    },
+    "q_network_architecture": {
+     "value": "two Q networks, 3-layer MLP, Mish, 256 hidden units",
+     "quote": "We build two Q networks with the same MLP setting as our diffusion policy, which has 3-layer MLPs with Mish activations and 256 hidden units for all networks.",
+     "location": "Appendix B"
+    },
+    "num_q_networks": {
+     "value": "2 (double Q-learning, min over targets)",
+     "quote": "We built two Q-networks, Qϕ1 , Qϕ2 , and target networks Qϕ′1 , Qϕ′2 and πθ′ .",
+     "location": "Section 3"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "We use the Adam (Kingma & Ba, 2014) optimizer for the training of both Diffusion policy and Q networks.",
+     "location": "Appendix B"
+    },
+    "diffusion_steps_N": {
+     "value": "5",
+     "quote": "lowing D4RL tasks, we set a moderate value, N = 5, to balance the performance and computational",
+     "location": "Section 5 'Effect of hyperparameter N'"
+    },
+    "epochs": {
+     "value": "2000 (Gym)",
+     "quote": "We train our algorithm with 2000 epochs for Gym tasks and 1000 epochs for the other tasks, where",
+     "location": "Appendix C"
+    },
+    "gradient_steps_per_epoch": {
+     "value": "1000",
+     "quote": "1000 gradient steps with batch size 256. The training is usually quite stable as shown in Figure 3",
+     "location": "Section 5 Experimental details"
+    },
+    "batch_size": {
+     "value": "256",
+     "quote": "1000 gradient steps with batch size 256. The training is usually quite stable as shown in Figure 3",
+     "location": "Section 5 Experimental details"
+    },
+    "q_learning_rate": {
+     "value": "3e-4 (fixed for Q-networks)",
+     "quote": "we consider values in the grid {1 × 10−3 , 3 × 10−4 , 3 × 10−5 } for the policy, while we use a fixed",
+     "location": "Appendix E"
+    },
+    "policy_learning_rate_grid": {
+     "value": "{1e-3, 3e-4, 3e-5}",
+     "quote": "we consider values in the grid {1 × 10−3 , 3 × 10−4 , 3 × 10−5 } for the policy, while we use a fixed",
+     "location": "Appendix E"
+    },
+    "eta_definition": {
+     "value": "alpha = eta / E_{(s,a)~D}[|Q_phi(s,a)|]",
+     "quote": "Fujimoto & Gu (2021) to set α as α = E(s,a)∼D [|Q ϕ (s,a)|]",
+     "location": "Section 3 (Eq. after Eq. 3)"
+    },
+    "target_network_update": {
+     "value": "Polyak with rho (value not stated)",
+     "quote": "θ′ = ρθ′ + (1 − ρ)θ, ϕ′i = ρϕ′i + (1 − ρ)ϕi for i = {1, 2}.",
+     "location": "Algorithm 1"
+    },
+    "reward_processing": {
+     "value": "original task rewards for MuJoCo Gym",
+     "quote": "We use the original task rewards from MuJoCo Gym and Kitchen tasks. We standardize Adroit task",
+     "location": "Appendix C"
+    }
+   },
+   "per_dataset_conditions": {
+    "halfcheetah-medium-v2": {
+     "learning_rate": {
+      "value": "3e-4",
+      "quote": "                      halfcheetah-medium-v2            3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "                      halfcheetah-medium-v2            3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "max_q_backup": {
+      "value": "False",
+      "quote": "                      halfcheetah-medium-v2            3 × 10−4       1.0       False",
+      "location": "Table 3"
+     }
+    },
+    "hopper-medium-v2": {
+     "learning_rate": {
+      "value": "3e-4",
+      "quote": "                      hopper-medium-v2                 3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "                      hopper-medium-v2                 3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "max_q_backup": {
+      "value": "False",
+      "quote": "                      hopper-medium-v2                 3 × 10−4       1.0       False",
+      "location": "Table 3"
+     }
+    },
+    "walker2d-medium-v2": {
+     "learning_rate": {
+      "value": "3e-4",
+      "quote": "                      walker2d-medium-v2               3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "                      walker2d-medium-v2               3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "max_q_backup": {
+      "value": "False",
+      "quote": "                      walker2d-medium-v2               3 × 10−4       1.0       False",
+      "location": "Table 3"
+     }
+    },
+    "halfcheetah-medium-replay-v2": {
+     "learning_rate": {
+      "value": "3e-4",
+      "quote": "                      halfcheetah-medium-replay-v2     3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "                      halfcheetah-medium-replay-v2     3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "max_q_backup": {
+      "value": "False",
+      "quote": "                      halfcheetah-medium-replay-v2     3 × 10−4       1.0       False",
+      "location": "Table 3"
+     }
+    },
+    "hopper-medium-replay-v2": {
+     "learning_rate": {
+      "value": "3e-4",
+      "quote": "                      hopper-medium-replay-v2          3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "                      hopper-medium-replay-v2          3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "max_q_backup": {
+      "value": "False",
+      "quote": "                      hopper-medium-replay-v2          3 × 10−4       1.0       False",
+      "location": "Table 3"
+     }
+    },
+    "walker2d-medium-replay-v2": {
+     "learning_rate": {
+      "value": "3e-4",
+      "quote": "                      walker2d-medium-replay-v2        3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "                      walker2d-medium-replay-v2        3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "max_q_backup": {
+      "value": "False",
+      "quote": "                      walker2d-medium-replay-v2        3 × 10−4       1.0       False",
+      "location": "Table 3"
+     }
+    },
+    "halfcheetah-medium-expert-v2": {
+     "learning_rate": {
+      "value": "3e-4",
+      "quote": "                      halfcheetah-medium-expert-v2     3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "                      halfcheetah-medium-expert-v2     3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "max_q_backup": {
+      "value": "False",
+      "quote": "                      halfcheetah-medium-expert-v2     3 × 10−4       1.0       False",
+      "location": "Table 3"
+     }
+    },
+    "hopper-medium-expert-v2": {
+     "learning_rate": {
+      "value": "3e-4",
+      "quote": "                      hopper-medium-expert-v2          3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "                      hopper-medium-expert-v2          3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "max_q_backup": {
+      "value": "False",
+      "quote": "                      hopper-medium-expert-v2          3 × 10−4       1.0       False",
+      "location": "Table 3"
+     }
+    },
+    "walker2d-medium-expert-v2": {
+     "learning_rate": {
+      "value": "3e-4",
+      "quote": "                      walker2d-medium-expert-v2        3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "                      walker2d-medium-expert-v2        3 × 10−4       1.0       False",
+      "location": "Table 3"
+     },
+     "max_q_backup": {
+      "value": "False",
+      "quote": "                      walker2d-medium-expert-v2        3 × 10−4       1.0       False",
+      "location": "Table 3"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "5 independently trained models (Table 1 caption) / 6 (Appendix C) - conflict",
+    "episodes_per_seed": "10 trajectories per model (Gym)",
+    "checkpoint_selection": "offline: early stopping on Ld, pick checkpoint with 2nd or 3rd lowest Ld (main results); online best-checkpoint variant in Table 4",
+    "quote": "random rollouts (5 independently trained models and 10 trajectories per model) for Gym tasks, which generally",
+    "location": "Table 1 caption; Appendix C; Section 5 Experimental details"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": " halfcheetah-medium-v2                        42.6    43.5                       44.2       42.1              48.4                48.3                 42.6         44.0        47.4      51.1 ± 0.5",
+    "location": "Table 1"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-v2",
+     "outcome": 51.1,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "offline (Ld lagging indicator, 2nd/3rd lowest)"
+     },
+     "table": "Table 1",
+     "line_quote": " halfcheetah-medium-v2                        42.6    43.5                       44.2       42.1              48.4                48.3                 42.6         44.0        47.4      51.1 ± 0.5",
+     "notes": "std is standard error over 50 random rollouts (5 models x 10 trajectories) per Table 1 caption; Appendix C says 6 models x 10 trajectories (conflict)."
+    },
+    {
+     "dataset": "hopper-medium-v2",
+     "outcome": 90.5,
+     "std": 4.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "offline (Ld lagging indicator, 2nd/3rd lowest)"
+     },
+     "table": "Table 1",
+     "line_quote": " hopper-medium-v2                             52.9    57.0                       58.5       95.4              59.6                59.3                 67.6         58.5        66.3      90.5 ± 4.6",
+     "notes": "std is standard error over 50 random rollouts (5 models x 10 trajectories) per Table 1 caption; Appendix C says 6 models x 10 trajectories (conflict)."
+    },
+    {
+     "dataset": "walker2d-medium-v2",
+     "outcome": 87.0,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "offline (Ld lagging indicator, 2nd/3rd lowest)"
+     },
+     "table": "Table 1",
+     "line_quote": " walker2d-medium-v2                           75.3    72.4                       79.7       77.8              81.8                83.7                 74.0         72.5        78.3      87.0 ± 0.9",
+     "notes": "std is standard error over 50 random rollouts (5 models x 10 trajectories) per Table 1 caption; Appendix C says 6 models x 10 trajectories (conflict)."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay-v2",
+     "outcome": 47.8,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "offline (Ld lagging indicator, 2nd/3rd lowest)"
+     },
+     "table": "Table 1",
+     "line_quote": " halfcheetah-medium-replay-v2                 36.6    40.5                       42.2       40.2              38.1                44.6                 36.6         45.5        44.2      47.8 ± 0.3",
+     "notes": "std is standard error over 50 random rollouts (5 models x 10 trajectories) per Table 1 caption; Appendix C says 6 models x 10 trajectories (conflict)."
+    },
+    {
+     "dataset": "hopper-medium-replay-v2",
+     "outcome": 101.3,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "offline (Ld lagging indicator, 2nd/3rd lowest)"
+     },
+     "table": "Table 1",
+     "line_quote": " hopper-medium-replay-v2                      18.1    37.2                       96.8       93.6              97.5                60.9                 82.7         95.0        94.7      101.3 ± 0.6",
+     "notes": "std is standard error over 50 random rollouts (5 models x 10 trajectories) per Table 1 caption; Appendix C says 6 models x 10 trajectories (conflict)."
+    },
+    {
+     "dataset": "walker2d-medium-replay-v2",
+     "outcome": 95.5,
+     "std": 1.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "offline (Ld lagging indicator, 2nd/3rd lowest)"
+     },
+     "table": "Table 1",
+     "line_quote": " walker2d-medium-replay-v2                    26.0    27.0                       61.2       49.8              49.5                81.8                 66.6         77.2        73.9      95.5 ± 1.5",
+     "notes": "std is standard error over 50 random rollouts (5 models x 10 trajectories) per Table 1 caption; Appendix C says 6 models x 10 trajectories (conflict)."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert-v2",
+     "outcome": 96.8,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "offline (Ld lagging indicator, 2nd/3rd lowest)"
+     },
+     "table": "Table 1",
+     "line_quote": " halfcheetah-medium-expert-v2                 55.2    42.8                       79.8       53.3              93.4                90.7                 86.8         91.6        86.7      96.8 ± 0.3",
+     "notes": "std is standard error over 50 random rollouts (5 models x 10 trajectories) per Table 1 caption; Appendix C says 6 models x 10 trajectories (conflict)."
+    },
+    {
+     "dataset": "hopper-medium-expert-v2",
+     "outcome": 111.1,
+     "std": 1.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "offline (Ld lagging indicator, 2nd/3rd lowest)"
+     },
+     "table": "Table 1",
+     "line_quote": " hopper-medium-expert-v2                      52.5    55.8                       107.2      108.7             103.3               98.0                 107.6        105.4       91.5      111.1 ± 1.3",
+     "notes": "std is standard error over 50 random rollouts (5 models x 10 trajectories) per Table 1 caption; Appendix C says 6 models x 10 trajectories (conflict)."
+    },
+    {
+     "dataset": "walker2d-medium-expert-v2",
+     "outcome": 110.1,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "offline (Ld lagging indicator, 2nd/3rd lowest)"
+     },
+     "table": "Table 1",
+     "line_quote": " walker2d-medium-expert-v2                   107.5    74.5                       108.4      95.6              113.0             110.1                  108.1        108.8       109.6     110.1 ± 0.3",
+     "notes": "std is standard error over 50 random rollouts (5 models x 10 trajectories) per Table 1 caption; Appendix C says 6 models x 10 trajectories (conflict)."
+    },
+    {
+     "dataset": "halfcheetah-medium-v2",
+     "outcome": 51.5,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online model selection",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "online (best checkpoint by online evaluation)"
+     },
+     "table": "Table 4",
+     "line_quote": "                halfcheetah-medium-v2                51.1 ± 0.5                 51.5 ± 0.3",
+     "notes": "uses online evaluation for checkpoint selection; not comparable to purely offline protocol. Table 4 'Diffusion-QL (Offline)' column duplicates Table 1 and is not re-emitted."
+    },
+    {
+     "dataset": "hopper-medium-v2",
+     "outcome": 96.6,
+     "std": 3.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online model selection",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "online (best checkpoint by online evaluation)"
+     },
+     "table": "Table 4",
+     "line_quote": "                hopper-medium-v2                     90.5 ± 4.6                 96.6 ± 3.4",
+     "notes": "uses online evaluation for checkpoint selection; not comparable to purely offline protocol. Table 4 'Diffusion-QL (Offline)' column duplicates Table 1 and is not re-emitted."
+    },
+    {
+     "dataset": "walker2d-medium-v2",
+     "outcome": 87.3,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online model selection",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "online (best checkpoint by online evaluation)"
+     },
+     "table": "Table 4",
+     "line_quote": "                walker2d-medium-v2                   87.0 ± 0.9                 87.3 ± 0.5",
+     "notes": "uses online evaluation for checkpoint selection; not comparable to purely offline protocol. Table 4 'Diffusion-QL (Offline)' column duplicates Table 1 and is not re-emitted."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay-v2",
+     "outcome": 48.3,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online model selection",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "online (best checkpoint by online evaluation)"
+     },
+     "table": "Table 4",
+     "line_quote": "                halfcheetah-medium-replay-v2         47.8 ± 0.3                 48.3 ± 0.2",
+     "notes": "uses online evaluation for checkpoint selection; not comparable to purely offline protocol. Table 4 'Diffusion-QL (Offline)' column duplicates Table 1 and is not re-emitted."
+    },
+    {
+     "dataset": "hopper-medium-replay-v2",
+     "outcome": 102.0,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online model selection",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "online (best checkpoint by online evaluation)"
+     },
+     "table": "Table 4",
+     "line_quote": "                hopper-medium-replay-v2             101.3 ± 0.6                102.0 ± 0.4",
+     "notes": "uses online evaluation for checkpoint selection; not comparable to purely offline protocol. Table 4 'Diffusion-QL (Offline)' column duplicates Table 1 and is not re-emitted."
+    },
+    {
+     "dataset": "walker2d-medium-replay-v2",
+     "outcome": 98.0,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online model selection",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "online (best checkpoint by online evaluation)"
+     },
+     "table": "Table 4",
+     "line_quote": "                walker2d-medium-replay-v2            95.5 ± 1.5                 98.0 ± 0.5",
+     "notes": "uses online evaluation for checkpoint selection; not comparable to purely offline protocol. Table 4 'Diffusion-QL (Offline)' column duplicates Table 1 and is not re-emitted."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert-v2",
+     "outcome": 97.2,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online model selection",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "online (best checkpoint by online evaluation)"
+     },
+     "table": "Table 4",
+     "line_quote": "                halfcheetah-medium-expert-v2         96.8 ± 0.3                 97.2 ± 0.4",
+     "notes": "uses online evaluation for checkpoint selection; not comparable to purely offline protocol. Table 4 'Diffusion-QL (Offline)' column duplicates Table 1 and is not re-emitted."
+    },
+    {
+     "dataset": "hopper-medium-expert-v2",
+     "outcome": 112.3,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online model selection",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "online (best checkpoint by online evaluation)"
+     },
+     "table": "Table 4",
+     "line_quote": "                hopper-medium-expert-v2             111.1 ± 1.3                112.3 ± 0.8",
+     "notes": "uses online evaluation for checkpoint selection; not comparable to purely offline protocol. Table 4 'Diffusion-QL (Offline)' column duplicates Table 1 and is not re-emitted."
+    },
+    {
+     "dataset": "walker2d-medium-expert-v2",
+     "outcome": 111.2,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online model selection",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False",
+      "model_selection": "online (best checkpoint by online evaluation)"
+     },
+     "table": "Table 4",
+     "line_quote": "                walker2d-medium-expert-v2           110.1 ± 0.3                111.2 ± 0.9",
+     "notes": "uses online evaluation for checkpoint selection; not comparable to purely offline protocol. Table 4 'Diffusion-QL (Offline)' column duplicates Table 1 and is not re-emitted."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert-v2",
+     "outcome": 97.2,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (Table 2 ablation column)",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False"
+     },
+     "table": "Table 2",
+     "line_quote": "      halfcheetah-medium-expert-v2   67.3 ± 7.4     76.6 ± 7.0        96.1 ± 0.5      94.6 ± 1.0    70.3 ± 5.5     97.2 ± 0.4",
+     "notes": "Table 2 Diffusion-QL values equal the Table 4 ONLINE-selection column, not the Table 1 offline values; paper does not say which selection Table 2 used."
+    },
+    {
+     "dataset": "hopper-medium-expert-v2",
+     "outcome": 112.3,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (Table 2 ablation column)",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False"
+     },
+     "table": "Table 2",
+     "line_quote": "      hopper-medium-expert-v2        69.9 ± 8.6     78.0 ± 8.9        108.5 ± 0.6    109.3 ± 0.9    109.2 ± 4.6    112.3 ± 0.8",
+     "notes": "Table 2 Diffusion-QL values equal the Table 4 ONLINE-selection column, not the Table 1 offline values; paper does not say which selection Table 2 used."
+    },
+    {
+     "dataset": "walker2d-medium-expert-v2",
+     "outcome": 111.2,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (Table 2 ablation column)",
+     "config_conditions": {
+      "diffusion_steps_N": "5",
+      "eta": "1.0",
+      "learning_rate": "3e-4",
+      "max_q_backup": "False"
+     },
+     "table": "Table 2",
+     "line_quote": "      walker2d-medium-expert-v2      102.5 ± 4.4    103.1 ± 4.4       110.7 ± 0.2    114.0 ± 0.5    50.5 ± 38.2    111.2 ± 0.9",
+     "notes": "Table 2 Diffusion-QL values equal the Table 4 ONLINE-selection column, not the Table 1 offline values; paper does not say which selection Table 2 used."
+    }
+   ]
+  },
+  {
+   "method_name": "BC-Diffusion",
+   "is_own_method": true,
+   "one_paragraph_description": "Ablation variant: the diffusion policy trained with the behavior-cloning diffusion loss Ld only (no Q-learning term).",
+   "conventional_lineage_hint": "ablation variant of Diffusion-QL (offline RL, policy-regularization / behavior cloning with diffusion policy)",
+   "global_conditions": {
+    "note": {
+     "value": "hyperparameters not separately stated; presumed shared with Diffusion-QL (Appendix B/C)",
+     "quote": "Table 2: Ablation study. We conduct an ablation study to compare our diffusion model with CVAE models, and",
+     "location": "Table 2 caption"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "not restated for Table 2",
+    "episodes_per_seed": "not restated",
+    "checkpoint_selection": "not stated",
+    "quote": "our Q-learning method with BCQ policy improvement.",
+    "location": "Table 2 caption"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "      halfcheetah-medium-expert-v2   67.3 ± 7.4     76.6 ± 7.0        96.1 ± 0.5      94.6 ± 1.0    70.3 ± 5.5     97.2 ± 0.4",
+    "location": "Table 2"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-expert-v2",
+     "outcome": 76.6,
+     "std": 7.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "      halfcheetah-medium-expert-v2   67.3 ± 7.4     76.6 ± 7.0        96.1 ± 0.5      94.6 ± 1.0    70.3 ± 5.5     97.2 ± 0.4",
+     "notes": "ablation column"
+    },
+    {
+     "dataset": "hopper-medium-expert-v2",
+     "outcome": 78.0,
+     "std": 8.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "      hopper-medium-expert-v2        69.9 ± 8.6     78.0 ± 8.9        108.5 ± 0.6    109.3 ± 0.9    109.2 ± 4.6    112.3 ± 0.8",
+     "notes": "ablation column"
+    },
+    {
+     "dataset": "walker2d-medium-expert-v2",
+     "outcome": 103.1,
+     "std": 4.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "      walker2d-medium-expert-v2      102.5 ± 4.4    103.1 ± 4.4       110.7 ± 0.2    114.0 ± 0.5    50.5 ± 38.2    111.2 ± 0.9",
+     "notes": "ablation column"
+    }
+   ]
+  },
+  {
+   "method_name": "BCQ-Diffusion",
+   "is_own_method": true,
+   "one_paragraph_description": "Ablation variant: the diffusion policy used as the generative model inside the BCQ policy-improvement framework instead of Diffusion-QL's Q-learning guidance.",
+   "conventional_lineage_hint": "ablation variant of Diffusion-QL (offline RL, policy-regularization / behavior cloning with diffusion policy)",
+   "global_conditions": {
+    "note": {
+     "value": "hyperparameters not separately stated; presumed shared with Diffusion-QL (Appendix B/C)",
+     "quote": "Table 2: Ablation study. We conduct an ablation study to compare our diffusion model with CVAE models, and",
+     "location": "Table 2 caption"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "not restated for Table 2",
+    "episodes_per_seed": "not restated",
+    "checkpoint_selection": "not stated",
+    "quote": "our Q-learning method with BCQ policy improvement.",
+    "location": "Table 2 caption"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "      halfcheetah-medium-expert-v2   67.3 ± 7.4     76.6 ± 7.0        96.1 ± 0.5      94.6 ± 1.0    70.3 ± 5.5     97.2 ± 0.4",
+    "location": "Table 2"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-expert-v2",
+     "outcome": 94.6,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "      halfcheetah-medium-expert-v2   67.3 ± 7.4     76.6 ± 7.0        96.1 ± 0.5      94.6 ± 1.0    70.3 ± 5.5     97.2 ± 0.4",
+     "notes": "ablation column"
+    },
+    {
+     "dataset": "hopper-medium-expert-v2",
+     "outcome": 109.3,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "      hopper-medium-expert-v2        69.9 ± 8.6     78.0 ± 8.9        108.5 ± 0.6    109.3 ± 0.9    109.2 ± 4.6    112.3 ± 0.8",
+     "notes": "ablation column"
+    },
+    {
+     "dataset": "walker2d-medium-expert-v2",
+     "outcome": 114.0,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "      walker2d-medium-expert-v2      102.5 ± 4.4    103.1 ± 4.4       110.7 ± 0.2    114.0 ± 0.5    50.5 ± 38.2    111.2 ± 0.9",
+     "notes": "ablation column"
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BC",
+  "AWAC",
+  "Diffuser",
+  "MoRel",
+  "Onestep RL",
+  "TD3+BC",
+  "DT",
+  "CQL",
+  "IQL",
+  "BC-CVAE",
+  "BCQ-CVAE",
+  "CVAE-QL",
+  "TD3+BC",
+  "TD3+BC-GM"
+ ],
+ "problems": [
+  "Figure 3 (ablation over N in {2,5,10,20} on halfcheetah/hopper/walker2d-medium-expert-v2) is a learning-curve figure only; no table -> no N-ablation rows emitted.",
+  "Seed count conflict: Table 1 caption says 5 independently trained models x 10 trajectories; Appendix C says 6 independently trained models x 10 trajectories.",
+  "Table 2 Diffusion-QL column (97.2, 112.3, 111.2) equals Table 4 'online model selection' column, not the Table 1 offline-selection values; selection protocol for Table 2 not stated.",
+  "Polyak rate rho, discount gamma, and variance schedule values are not stated in text.",
+  "Table 5 Diffusion-QL column (96.8/111.1/110.1) duplicates Table 1 and is not re-emitted."
+ ]
+}

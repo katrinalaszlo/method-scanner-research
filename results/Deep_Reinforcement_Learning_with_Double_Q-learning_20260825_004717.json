@@ -1,0 +1,116 @@
+{
+  "paper": "Deep Reinforcement Learning with Double Q-learning",
+  "timestamp": "20260825_004717",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 25.06,
+  "abstract": "This method builds on the following base algorithm from Playing Atari with Deep Reinforcement Learning (Mnih et al. 2013), which it inherits unchanged except where noted below.\n\n\fAlgorithm 1 Deep Q-learning with Experience Replay\nInitialize replay memory D to capacity N\nInitialize action-value function Q with random weights\nfor episode = 1, M do\nInitialise sequence s1 = {x1 } and preprocessed sequenced φ1 = φ(s1 )\nfor t = 1, T do\nWith probability \u000f select a random action at\notherwise select at = maxa Q∗ (φ(st ), a; θ)\nExecute action at in emulator and observe reward rt and image xt+1\nSet st+1 = st , at , xt+1 and preprocess φt+1 = φ(st+1 )\nStore transition (φt , at , rt , φt+1 ) in D\nSample random\nminibatch of transitions (φj , aj , rj , φj+1 ) from D\n\u001a\nrj\nfor terminal φj+1\nSet yj =\nrj + γ maxa0 Q(φj+1 , a0 ; θ)\nfor non-terminal φj+1\n2\nPerform a gradient descent step on (yj − Q(φj , aj ; θ)) according to equation 3\nend for\nend for\n\nThe modification introduced in this paper:\n\nDouble DQN The idea of Double Q-learning is to reduce overestimations by decomposing the max operation in the target into action selection and action evaluation. Although not fully decoupled, the target network in the DQN architecture provides a natural candidate for the second value function, without having to introduce additional networks. We therefore propose to evaluate the greedy policy according to the online network, but using the target network to estimate its value. In reference to both Double Q-learning and DQN, we refer to the resulting algorithm as Double DQN. Its update is the same as for DQN, but replacing the target YtDQN with YtDoubleDQN ≡ Rt+1 +γQ(St+1 , argmax Q(St+1 , a; θt ), θt− ) . a In comparison to Double Q-learning (4), the weights of the second network θt0 are replaced with the weights of the target network θt− for the evaluation of the current greedy policy. The update to the target network stays unchanged from DQN, and remains a periodic copy of the online network. This version of Double DQN is perhaps the minimal possible change to DQN towards Double Q-learning. The goal is to get most of the benefit of Double Q-learning, while keeping the rest of the DQN algorithm intact for a fair comparison, and with minimal computational overhead. Empirical results In this section, we analyze the overestimations of DQN and show that Double DQN improves over DQN both in terms of value accuracy and in terms of policy quality. To further test the robustness of the approach we additionally evaluate the algorithms with random starts generated from expert human trajectories, as proposed by Nair et al. (2015). Our testbed consists of Atari 2600 games, using the Arcade Learning Environment (Bellemare et al., 2013). The goal is for a single algorithm, with a fixed set of hyperparameters, to learn to play each of the games separately from interaction given only the screen pixels as input. This is a demanding testbed: not only are the inputs high-dimensional, the game visuals and game mechanics vary substantially between games. Good solutions must therefore rely heavily on the learning algorithm — it is not practically feasible to overfit the domain by relying only on tuning. We closely follow the experimental setting and network architecture outlined by Mnih et al. (2015). Briefly, the network architecture is a convolutional neural network (Fukushima, 1988; LeCun et al., 1998) with 3 convolution layers and a fully-connected hidden layer (approximately 1.5M parameters in total). The network takes the last four frames as input and outputs the action value of each action. On each game, the network is trained on a single GPU for 200M frames, or approximately 1 week. Results on overoptimism Figure 3 shows examples of DQN’s overestimations in six Atari games. DQN and Double DQN were both trained under the exact conditions described by Mnih et al. (2015). DQN is consistently and sometimes vastly overoptimistic about the value of the current greedy policy, as can be seen by comparing the orange learning curves in the top row of plots to the straight orange lines, which represent the actual discounted value of the best learned policy. More precisely, the (averaged) value estimates are computed regularly during training with full evaluation phases of length T = 125, 000 steps as T 1X argmax Q(St , a; θ) . T t=1 a Value estimates Alien Space Invaders Time Pilot Zaxxon 2.5 20 8 8 2.0 6 1.5 4 1.0 2 15 6 Double DQN estimate 10 4 Value estimates (log scale) 0 50 100 150 200 Double DQN true value DQN true value 0 0 50 100 150 200 0 50 100 150 200 0 50 100 150 200 Training steps (in millions) Wizard of Wor Asterix 100 80 DQN 40 10 DQN 1 20 10 Double DQN 0 50 100 150 Double DQN 5 200 0 50 Wizard of Wor 100 150 200 Asterix 4000 Score DQN estimate Double DQN 6000 Double DQN 3000 4000 2000 2000 1000 DQN DQN 0 0 0 50 100 150 200 Training steps (in millions) 0 50 100 150 200 Training steps (in millions) Figure 3: The top and middle rows show value estimates by DQN (orange) and Double DQN (blue) on six Atari games. The results are obtained by running DQN and Double DQN with 6 different random seeds with the hyper-parameters employed by Mnih et al. (2015). The darker line shows the median over seeds and we average the two extreme values to obtain the shaded area (i.e., 10% and 90% quantiles with linear interpolation). The straight horizontal orange (for DQN) and blue (for Double DQN) lines in the top row are computed by running the corresponding agents after learning concluded, and averaging the actual discounted return obtained from each visited state. These straight lines would match the learning curves at the right side of the plots if there is no bias. The middle row shows the value estimates (in log scale) for two games in which DQN’s overoptimism is quite extreme. The bottom row shows the detrimental effect of this on the score achieved by the agent as it is evaluated during training: the scores drop when the overestimations begin. Learning with Double DQN is much more stable. The ground truth averaged values are obtained by running the best learned policies for several episodes and computing the actual cumulative rewards. Without overestimations we would expect these quantities to match up (i.e., the curve to match the straight line at the right of each plot). Instead, the learning curves of DQN consistently end up much higher than the true values. The learning curves for Double DQN, shown in blue, are much closer to the blue straight line representing the true value of the final policy. Note that the blue straight line is often higher than the orange straight line. This indicates that Double DQN does not just produce more accurate value estimates but also better policies. More extreme overestimations are shown in the middle two plots, where DQN is highly unstable on the games Asterix and Wizard of Wor. Notice the log scale for the values on the y-axis. The bottom two plots shows the corresponding scores for these two games. Notice that the increases in value estimates for DQN in the middle plots coincide with decreasing scores in bottom plots. Again, this indicates that the overestimations are harming the quality of the resulting policies. If seen in isolation, one might perhaps be tempted to think the observed instability is related to inherent instability problems of off-policy learning with function approximation (Baird, 1995; Tsitsiklis and Van Roy, 1997; Sutton et al., 2008; Maei, 2011; Sutton et al., 2015). However, we see that learning is much more stable with Double DQN, Median Mean DQN 93.5% 241.1% Double DQN 114.7% 330.3% Table 1: Summary of normalized performance up to 5 minutes of play on 49 games. Results for DQN are from Mnih et al. (2015) suggesting that the cause for these instabilities is in fact Qlearning’s overoptimism. Figure 3 only shows a few examples, but overestimations were observed for DQN in all 49 tested Atari games, albeit in varying amounts. Quality of the learned policies Overoptimism does",
+  "source": "arxiv:1509.06461 [policy-learning] injected: DQN Algorithm 1 + pinned: Double DQN",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits —\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We describe a speech enhancement system. A recurrent network estimates a spectral\nmask from noisy audio, the mask is applied to the spectrogram, and the result is inverted back to\na waveform. The method struggles at very low signal-to-noise ratios, where it introduces musical\nnoise artifacts.\nJSON: {\"name\": \"Mask-Based Speech Enhancement\", \"operations\": [\"estimate\", \"mask\", \"invert\"], \"loss\": null, \"failure\": \"musical noise artifacts at very low signal-to-noise ratios\"}\n\nExample\nDescription: We index a document collection with an inverted index. Each document is tokenized,\ntokens are stemmed, and a posting list is built per term. Queries are answered by intersecting\nposting lists and ranking by BM25.\nJSON: {\"name\": \"Inverted Index Retrieval\", \"operations\": [\"tokenize\", \"stem\", \"intersect\", \"rank\"], \"loss\": null, \"failure\": null}\n\nRules for \"failure\": extract it only when the Description itself states a limitation, instability,\nor breakdown condition (for example \"diverges when\", \"struggles with\", \"fails under\"). Quote the\nDescription's own words. If the Description states no weakness, \"failure\" is null — that is the\nnormal case, not a fallback. Never reuse wording from the examples.\n\nNow do the same for:\nDescription: This method builds on the following base algorithm from Playing Atari with Deep Reinforcement Learning (Mnih et al. 2013), which it inherits unchanged except where noted below.\n\n\fAlgorithm 1 Deep Q-learning with Experience Replay\nInitialize replay memory D to capacity N\nInitialize action-value function Q with random weights\nfor episode = 1, M do\nInitialise sequence s1 = {x1 } and preprocessed sequenced φ1 = φ(s1 )\nfor t = 1, T do\nWith probability \u000f select a random action at\notherwise select at = maxa Q∗ (φ(st ), a; θ)\nExecute action at in emulator and observe reward rt and image xt+1\nSet st+1 = st , at , xt+1 and preprocess φt+1 = φ(st+1 )\nStore transition (φt , at , rt , φt+1 ) in D\nSample random\nminibatch of transitions (φj , aj , rj , φj+1 ) from D\n\u001a\nrj\nfor terminal φj+1\nSet yj =\nrj + γ maxa0 Q(φj+1 , a0 ; θ)\nfor non-terminal φj+1\n2\nPerform a gradient descent step on (yj − Q(φj , aj ; θ)) according to equation 3\nend for\nend for\n\nThe modification introduced in this paper:\n\nDouble DQN The idea of Double Q-learning is to reduce overestimations by decomposing the max operation in the target into action selection and action evaluation. Although not fully decoupled, the target network in the DQN architecture provides a natural candidate for the second value function, without having to introduce additional networks. We therefore propose to evaluate the greedy policy according to the online network, but using the target network to estimate its value. In reference to both Double Q-learning and DQN, we refer to the resulting algorithm as Double DQN. Its update is the same as for DQN, but replacing the target YtDQN with YtDoubleDQN ≡ Rt+1 +γQ(St+1 , argmax Q(St+1 , a; θt ), θt− ) . a In comparison to Double Q-learning (4), the weights of the second network θt0 are replaced with the weights of the target network θt− for the evaluation of the current greedy policy. The update to the target network stays unchanged from DQN, and remains a periodic copy of the online network. This version of Double DQN is perhaps the minimal possible change to DQN towards Double Q-learning. The goal is to get most of the benefit of Double Q-learning, while keeping the rest of the DQN algorithm intact for a fair comparison, and with minimal computational overhead. Empirical results In this section, we analyze the overestimations of DQN and show that Double DQN improves over DQN both in terms of value accuracy and in terms of policy quality. To further test the robustness of the approach we additionally evaluate the algorithms with random starts generated from expert human trajectories, as proposed by Nair et al. (2015). Our testbed consists of Atari 2600 games, using the Arcade Learning Environment (Bellemare et al., 2013). The goal is for a single algorithm, with a fixed set of hyperparameters, to learn to play each of the games separately from interaction given only the screen pixels as input. This is a demanding testbed: not only are the inputs high-dimensional, the game visuals and game mechanics vary substantially between games. Good solutions must therefore rely heavily on the learning algorithm — it is not practically feasible to overfit the domain by relying only on tuning. We closely follow the experimental setting and network architecture outlined by Mnih et al. (2015). Briefly, the network architecture is a convolutional neural network (Fukushima, 1988; LeCun et al., 1998) with 3 convolution layers and a fully-connected hidden layer (approximately 1.5M parameters in total). The network takes the last four frames as input and outputs the action value of each action. On each game, the network is trained on a single GPU for 200M frames, or approximately 1 week. Results on overoptimism Figure 3 shows examples of DQN’s overestimations in six Atari games. DQN and Double DQN were both trained under the exact conditions described by Mnih et al. (2015). DQN is consistently and sometimes vastly overoptimistic about the value of the current greedy policy, as can be seen by comparing the orange learning curves in the top row of plots to the straight orange lines, which represent the actual discounted value of the best learned policy. More precisely, the (averaged) value estimates are computed regularly during training with full evaluation phases of length T = 125, 000 steps as T 1X argmax Q(St , a; θ) . T t=1 a Value estimates Alien Space Invaders Time Pilot Zaxxon 2.5 20 8 8 2.0 6 1.5 4 1.0 2 15 6 Double DQN estimate 10 4 Value estimates (log scale) 0 50 100 150 200 Double DQN true value DQN true value 0 0 50 100 150 200 0 50 100 150 200 0 50 100 150 200 Training steps (in millions) Wizard of Wor Asterix 100 80 DQN 40 10 DQN 1 20 10 Double DQN 0 50 100 150 Double DQN 5 200 0 50 Wizard of Wor 100 150 200 Asterix 4000 Score DQN estimate Double DQN 6000 Double DQN 3000 4000 2000 2000 1000 DQN DQN 0 0 0 50 100 150 200 Training steps (in millions) 0 50 100 150 200 Training steps (in millions) Figure 3: The top and middle rows show value estimates by DQN (orange) and Double DQN (blue) on six Atari games. The results are obtained by running DQN and Double DQN with 6 different random seeds with the hyper-parameters employed by Mnih et al. (2015). The darker line shows the median over seeds and we average the two extreme values to obtain the shaded area (i.e., 10% and 90% quantiles with linear interpolation). The straight horizontal orange (for DQN) and blue (for Double DQN) lines in the top row are computed by running the corresponding agents after learning concluded, and averaging the actual discounted return obtained from each visited state. These straight lines would match the learning curves at the right side of the plots if there is no bias. The middle row shows the value estimates (in log scale) for two games in which DQN’s overoptimism is quite extreme. The bottom row shows the detrimental effect of this on the score achieved by the agent as it is evaluated during training: the scores drop when the overestimations begin. Learning with Double DQN is much more stable. The ground truth averaged values are obtained by running the best learned policies for several episodes and computing the actual cumulative rewards. Without overestimations we would expect these quantities to match up (i.e., the curve to match the straight line at the right of each plot). Instead, the learning curves of DQN consistently end up much higher than the true values. The learning curves for Double DQN, shown in blue, are much closer to the blue straight line representing the true value of the final policy. Note that the blue straight line is often higher than the orange straight line. This indicates that Double DQN does not just produce more accurate value estimates but also better policies. More extreme overestimations are shown in the middle two plots, where DQN is highly unstable on the games Asterix and Wizard of Wor. Notice the log scale for the values on the y-axis. The bottom two plots shows the corresponding scores for these two games. Notice that the increases in value estimates for DQN in the middle plots coincide with decreasing scores in bottom plots. Again, this indicates that the overestimations are harming the quality of the resulting policies. If seen in isolation, one might perhaps be tempted to think the observed instability is related to inherent instability problems of off-policy learning with function approximation (Baird, 1995; Tsitsiklis and Van Roy, 1997; Sutton et al., 2008; Maei, 2011; Sutton et al., 2015). However, we see that learning is much more stable with Double DQN, Median Mean DQN 93.5% 241.1% Double DQN 114.7% 330.3% Table 1: Summary of normalized performance up to 5 minutes of play on 49 games. Results for DQN are from Mnih et al. (2015) suggesting that the cause for these instabilities is in fact Qlearning’s overoptimism. Figure 3 only shows a few examples, but overestimations were observed for DQN in all 49 tested Atari games, albeit in varying amounts. Quality of the learned policies Overoptimism does\nJSON:\n",
+  "raw_response": "{\"name\": \"Double DQN\", \"operations\": [\"store transition\", \"sample minibatch\", \"compute target\", \"update network\"], \"loss\": \"mean squared error\", \"failure\": \"overestimations ... leading to unstable policies and lower scores\"}",
+  "data": {
+    "name": "Double DQN",
+    "operations": [
+      "store transition",
+      "sample minibatch",
+      "compute target",
+      "update network"
+    ],
+    "loss": "mean squared error",
+    "failure": "overestimations ... leading to unstable policies and lower scores"
+  },
+  "semantic_ops_v2": [
+    {
+      "op": "store transition",
+      "object_type": "state",
+      "context": "temporal",
+      "quote": "Store transition (φt , at , rt , φt+1 ) in D",
+      "grounded": true
+    },
+    {
+      "op": "sample minibatch",
+      "object_type": "state",
+      "context": "temporal",
+      "quote": "Sample random minibatch of transitions (φj , aj , rj , φj+1 ) from D",
+      "grounded": false
+    },
+    {
+      "op": "compute target",
+      "object_type": "value",
+      "context": "temporal",
+      "quote": "Set yj = rj + γ maxa0 Q(φj+1 , a0 ; θ) for non-terminal φj+1",
+      "grounded": false
+    },
+    {
+      "op": "update network",
+      "object_type": "parameter",
+      "context": "temporal",
+      "quote": "Perform a gradient descent step on (yj − Q(φj , aj ; θ)) according to equation 3",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_v2_model": "qwen3:8b",
+  "semantic_ops": [
+    {
+      "op": "store transition",
+      "object_type": "state",
+      "context": "temporal",
+      "quote": "Store transition (φt , at , rt , φt+1 ) in D",
+      "grounded": true
+    },
+    {
+      "op": "sample minibatch",
+      "object_type": "state",
+      "context": "temporal",
+      "quote": "Sample random minibatch of transitions (φj , aj , rj , φj+1 ) from D",
+      "grounded": false
+    },
+    {
+      "op": "compute target",
+      "object_type": "reward",
+      "context": "temporal",
+      "quote": "Set yj = rj + γ maxa0 Q(φj+1 , a0 ; θ) for non-terminal φj+1",
+      "grounded": false
+    },
+    {
+      "op": "update network",
+      "object_type": "parameter",
+      "context": "temporal",
+      "quote": "Perform a gradient descent step on (yj − Q(φj , aj ; θ)) according to equation 3",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_model": "qwen3:8b",
+  "semantic_ops_v2_inherited": [
+    {
+      "op": "store transition",
+      "object_type": "state",
+      "context": "temporal",
+      "quote": "Store transition (φt , at , rt , φt+1 ) in D",
+      "grounded": true
+    },
+    {
+      "op": "sample minibatch",
+      "object_type": "state",
+      "context": "temporal",
+      "quote": "Sample random minibatch of transitions (φj , aj , rj , φj+1 ) from D",
+      "grounded": false
+    },
+    {
+      "op": "update network",
+      "object_type": "parameter",
+      "context": "temporal",
+      "quote": "Perform a gradient descent step on (yj − Q(φj , aj ; θ)) according to equation 3",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_v2_own": [
+    {
+      "op": "compute target",
+      "object_type": "value",
+      "context": "temporal",
+      "quote": "Set yj = rj + γ maxa0 Q(φj+1 , a0 ; θ) for non-terminal φj+1",
+      "grounded": false
+    }
+  ]
+}

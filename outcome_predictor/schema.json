@@ -1,0 +1,19 @@
+{
+  "_about": "Phase 24 frozen feature schema (machine-readable twin of schema.md). Frozen 2026-08-25 before any held-out evaluation.",
+  "holdout_unit": "method_id",
+  "numeric_conditions": [
+    "batch_size", "learning_rate", "training_steps", "hidden_dim", "num_layers", "discount",
+    "planning_horizon", "context_length", "denoising_steps", "guidance_scale", "num_candidates",
+    "num_q_networks", "model_rollout_length", "expectile_tau", "n_seeds"
+  ],
+  "categorical_conditions": [
+    "sampler", "checkpoint_selection", "critic_layernorm", "policy_extraction", "base_learner", "discretization"
+  ],
+  "always_included_categoricals": ["dataset", "dataset_version"],
+  "missing_states": ["missing", "not_applicable"],
+  "ridge_alpha_grid": [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0],
+  "ridge_alpha_selection": "GroupKFold(min(5, n_train_methods)) by method_id inside the training rows, lowest mean MAE",
+  "knn_k": 5,
+  "knn_weighting": "unweighted mean of the 5 nearest training rows",
+  "exclude_config_labels": []
+}

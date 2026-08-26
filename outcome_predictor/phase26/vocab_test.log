@@ -1,0 +1,12 @@
+short strict   ridge_clipped      vocab= 80 shared= 11 tuples/method= 3.7 | A= 26.3 B= 24.5 C= 26.5 D= 22.4 E= 24.1 | D<B 22/27 D<E 20/27
+short strict   knn_dataset_first  vocab= 80 shared= 11 tuples/method= 3.7 | A= 26.3 B= 14.7 C= 26.0 D= 14.8 E= 15.8 | D<B 3/27 D<E 11/27
+short relaxed  ridge_clipped      vocab= 75 shared= 14 tuples/method= 3.7 | A= 26.3 B= 24.5 C= 26.7 D= 21.9 E= 24.1 | D<B 22/27 D<E 21/27
+short relaxed  knn_dataset_first  vocab= 75 shared= 14 tuples/method= 3.7 | A= 26.3 B= 14.7 C= 27.1 D= 14.8 E= 15.8 | D<B 4/27 D<E 11/27
+short bare     ridge_clipped      vocab= 53 shared= 14 tuples/method= 3.6 | A= 26.3 B= 24.5 C= 26.6 D= 23.5 E= 24.1 | D<B 20/27 D<E 19/27
+short bare     knn_dataset_first  vocab= 53 shared= 14 tuples/method= 3.6 | A= 26.3 B= 14.7 C= 27.6 D= 14.8 E= 15.8 | D<B 11/27 D<E 15/27
+long  strict   ridge_clipped      vocab= 74 shared= 19 tuples/method= 3.9 | A= 26.3 B= 24.5 C= 25.5 D= 22.2 E= 24.1 | D<B 22/27 D<E 20/27
+long  strict   knn_dataset_first  vocab= 74 shared= 19 tuples/method= 3.9 | A= 26.3 B= 14.7 C= 27.6 D= 14.6 E= 15.8 | D<B 6/27 D<E 11/27
+long  relaxed  ridge_clipped      vocab= 68 shared= 21 tuples/method= 3.9 | A= 26.3 B= 24.5 C= 26.0 D= 22.2 E= 24.1 | D<B 20/27 D<E 20/27
+long  relaxed  knn_dataset_first  vocab= 68 shared= 21 tuples/method= 3.9 | A= 26.3 B= 14.7 C= 28.0 D= 14.9 E= 15.8 | D<B 6/27 D<E 9/27
+long  bare     ridge_clipped      vocab= 44 shared= 14 tuples/method= 3.9 | A= 26.3 B= 24.5 C= 26.4 D= 23.4 E= 24.1 | D<B 18/27 D<E 17/27
+long  bare     knn_dataset_first  vocab= 44 shared= 14 tuples/method= 3.9 | A= 26.3 B= 14.7 C= 29.4 D= 14.8 E= 15.8 | D<B 11/27 D<E 11/27

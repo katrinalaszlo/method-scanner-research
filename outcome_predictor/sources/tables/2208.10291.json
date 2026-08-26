@@ -1,0 +1,2675 @@
+{
+ "arxiv_id": "2208.10291",
+ "title": "Efficient Planning in a Compact Latent Action Space (Trajectory Autoencoding Planner, TAP)",
+ "methods": [
+  {
+   "method_name": "TAP",
+   "is_own_method": true,
+   "one_paragraph_description": "Learns discrete latent action codes with a state-conditional VQ-VAE over trajectories (each latent code covers L=3 raw steps, K=512 codebook entries); the causal-Transformer decoder acts as a dynamics model mapping (initial state, latent codes) to a trajectory of states, actions, rewards and returns-to-go, and a Transformer prior p(z|s) models latent sequences. At decision time TAP runs beam search in the latent space (beam width B, expansion factor E), scoring trajectories by predicted discounted return plus an OOD penalty alpha*ln min(p(z|s), beta^M), and executes the first action of the best plan.",
+   "conventional_lineage_hint": "model-based planning / sequence modelling (paper: 'TAP is a novel model-based RL method'; 'conceptually the most related to the Trajectory Transformer'; 'Planning-based reinforcement learning')",
+   "global_conditions": {
+    "planning_horizon": {
+     "value": "15 (raw steps; 5 latent steps)",
+     "quote": "Locomotion Control    planning horizon                         15 || horizon in the raw action space is 15 for gym locomotion tasks and 24 for Adroit tasks. As such, the planning horizon in the latent space will be reduced to 5 or 8. Other hyperparameters including",
+     "location": "Table 7; Section 4.1"
+    },
+    "beam_width": {
+     "value": "64",
+     "quote": "Locomotion Control    beam width                               64",
+     "location": "Table 7 (Appendix G)"
+    },
+    "beam_expansion_factor": {
+     "value": "4",
+     "quote": "All                   beam expansion factor                     4",
+     "location": "Table 7 (Appendix G)"
+    },
+    "latent_steps_L": {
+     "value": "3",
+     "quote": "All                   number of steps for a latent code         3",
+     "location": "Table 7 (Appendix G)"
+    },
+    "K_codebook_size": {
+     "value": "512",
+     "quote": "Locomotion Control    K                                       512",
+     "location": "Table 7 (Appendix G)"
+    },
+    "beta_threshold": {
+     "value": "0.05",
+     "quote": "All                   β                                      0.05",
+     "location": "Table 7 (Appendix G)"
+    },
+    "learning_rate": {
+     "value": "2e-4",
+     "quote": "All                   learning rate                         2e−4",
+     "location": "Table 7 (Appendix G)"
+    },
+    "batch_size": {
+     "value": "512",
+     "quote": "All                   batch size                              512",
+     "location": "Table 7 (Appendix G)"
+    },
+    "dropout": {
+     "value": "0.1",
+     "quote": "All                   dropout probability                     0.1",
+     "location": "Table 7 (Appendix G)"
+    },
+    "attention_heads": {
+     "value": "4",
+     "quote": "All                   number of attention heads                 4",
+     "location": "Table 7 (Appendix G)"
+    },
+    "latent_embedding_size": {
+     "value": "512",
+     "quote": "All                   Embedding size for a latent code        512",
+     "location": "Table 7 (Appendix G)"
+    },
+    "training_sequence_length": {
+     "value": "24",
+     "quote": "Locomotion Control    training sequence length                 24",
+     "location": "Table 7 (Appendix G)"
+    },
+    "discount": {
+     "value": "0.99",
+     "quote": "Locomotion Control    discount                               0.99",
+     "location": "Table 7 (Appendix G)"
+    },
+    "num_layers": {
+     "value": "4",
+     "quote": "Locomotion Control    number of layers                          4",
+     "location": "Table 7 (Appendix G)"
+    },
+    "feature_vector_size": {
+     "value": "512",
+     "quote": "Locomotion Control    feature vector size                     512",
+     "location": "Table 7 (Appendix G)"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "5 training seeds",
+    "episodes_per_seed": "20",
+    "checkpoint_selection": "not stated",
+    "quote": "architectures can be found in the Appendix. We test each task with 5 training seeds, each evaluated for 20 episodes. Following the evaluation protocol of TT and IQL, we use the v2 version of the",
+    "location": "Section 4.1"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "for 20 episodes. Following the evaluation protocol of TT and IQL, we use the v2 version of the datasets for locomotion control and v0 for the other tasks.",
+    "location": "Section 4.1"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 91.8,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "15",
+      "latent_steps_L": "3",
+      "beam_width": "64",
+      "beam_expansion_factor": "4",
+      "beta_threshold": "0.05",
+      "K_codebook_size": "512"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium-Expert         HalfCheetah           59.9       91.6        86.7      86.8        53.3     95.0      91.8 ±0.8",
+     "notes": "printed as 'Medium-Expert Halfcheetah'; ± is not defined in the caption (std or SE unstated); 5 seeds x 20 episodes"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 105.5,
+     "std": 1.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "15",
+      "latent_steps_L": "3",
+      "beam_width": "64",
+      "beam_expansion_factor": "4",
+      "beta_threshold": "0.05",
+      "K_codebook_size": "512"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium-Expert         Hopper                79.6      105.4        91.5     107.6       108.7    110.0     105.5 ±1.7",
+     "notes": "printed as 'Medium-Expert Hopper'; ± is not defined in the caption (std or SE unstated); 5 seeds x 20 episodes"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 107.4,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "15",
+      "latent_steps_L": "3",
+      "beam_width": "64",
+      "beam_expansion_factor": "4",
+      "beta_threshold": "0.05",
+      "K_codebook_size": "512"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium-Expert         Walker2d              36.6      108.8       109.6     108.1        95.6    101.9     107.4 ±0.9",
+     "notes": "printed as 'Medium-Expert Walker2D'; ± is not defined in the caption (std or SE unstated); 5 seeds x 20 episodes"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 45.0,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "15",
+      "latent_steps_L": "3",
+      "beam_width": "64",
+      "beam_expansion_factor": "4",
+      "beta_threshold": "0.05",
+      "K_codebook_size": "512"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium                HalfCheetah           43.1       44.4        47.4         42.6     42.1     46.9        45.0 ±0.1",
+     "notes": "printed as 'Medium Halfcheetah'; ± is not defined in the caption (std or SE unstated); 5 seeds x 20 episodes"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 63.4,
+     "std": 1.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "15",
+      "latent_steps_L": "3",
+      "beam_width": "64",
+      "beam_expansion_factor": "4",
+      "beta_threshold": "0.05",
+      "K_codebook_size": "512"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium                Hopper                63.9       58.0        66.3         67.6     95.4     61.1        63.4 ±1.4",
+     "notes": "printed as 'Medium Hopper'; ± is not defined in the caption (std or SE unstated); 5 seeds x 20 episodes"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 64.9,
+     "std": 2.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "15",
+      "latent_steps_L": "3",
+      "beam_width": "64",
+      "beam_expansion_factor": "4",
+      "beta_threshold": "0.05",
+      "K_codebook_size": "512"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium                Walker2d              77.3       72.5        78.3         74.0     77.8     79.0        64.9 ±2.1",
+     "notes": "printed as 'Medium Walker2D'; ± is not defined in the caption (std or SE unstated); 5 seeds x 20 episodes"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 40.8,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "15",
+      "latent_steps_L": "3",
+      "beam_width": "64",
+      "beam_expansion_factor": "4",
+      "beta_threshold": "0.05",
+      "K_codebook_size": "512"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium-Replay         HalfCheetah            4.3       45.5        44.2         36.6     40.2     41.9        40.8 ±0.6",
+     "notes": "printed as 'Medium-Replay Halfcheetah'; ± is not defined in the caption (std or SE unstated); 5 seeds x 20 episodes"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 87.3,
+     "std": 2.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "15",
+      "latent_steps_L": "3",
+      "beam_width": "64",
+      "beam_expansion_factor": "4",
+      "beta_threshold": "0.05",
+      "K_codebook_size": "512"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium-Replay         Hopper                27.6       95.0        94.7         82.7     93.6     91.5        87.3 ±2.3",
+     "notes": "printed as 'Medium-Replay Hopper'; ± is not defined in the caption (std or SE unstated); 5 seeds x 20 episodes"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 66.8,
+     "std": 3.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "15",
+      "latent_steps_L": "3",
+      "beam_width": "64",
+      "beam_expansion_factor": "4",
+      "beta_threshold": "0.05",
+      "K_codebook_size": "512"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium-Replay         Walker2d              36.9       77.2        73.9         66.6     49.8     82.6        66.8 ±3.1",
+     "notes": "printed as 'Medium-Replay Walker2D'; ± is not defined in the caption (std or SE unstated); 5 seeds x 20 episodes"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 91.74,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=3",
+     "config_conditions": {
+      "planning_horizon": "3"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Expert      HalfCheetah          91.74              91.17           91.77           90.6",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 91.17,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=9",
+     "config_conditions": {
+      "planning_horizon": "9"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Expert      HalfCheetah          91.74              91.17           91.77           90.6",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 91.77,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=15",
+     "config_conditions": {
+      "planning_horizon": "15"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Expert      HalfCheetah          91.74              91.17           91.77           90.6",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 90.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=21",
+     "config_conditions": {
+      "planning_horizon": "21"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Expert      HalfCheetah          91.74              91.17           91.77           90.6",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 88.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=3",
+     "config_conditions": {
+      "planning_horizon": "3"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Expert      Hopper                88.3             104.01          105.53           96.4",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 104.01,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=9",
+     "config_conditions": {
+      "planning_horizon": "9"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Expert      Hopper                88.3             104.01          105.53           96.4",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 105.53,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=15",
+     "config_conditions": {
+      "planning_horizon": "15"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Expert      Hopper                88.3             104.01          105.53           96.4",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 96.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=21",
+     "config_conditions": {
+      "planning_horizon": "21"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Expert      Hopper                88.3             104.01          105.53           96.4",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 99.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=3",
+     "config_conditions": {
+      "planning_horizon": "3"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Expert      Walker2d              99.4             107.25          107.44         108.82",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 107.25,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=9",
+     "config_conditions": {
+      "planning_horizon": "9"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Expert      Walker2d              99.4             107.25          107.44         108.82",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 107.44,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=15",
+     "config_conditions": {
+      "planning_horizon": "15"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Expert      Walker2d              99.4             107.25          107.44         108.82",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 108.82,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=21",
+     "config_conditions": {
+      "planning_horizon": "21"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Expert      Walker2d              99.4             107.25          107.44         108.82",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 44.01,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=3",
+     "config_conditions": {
+      "planning_horizon": "3"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium             HalfCheetah            44.01            44.98           45.04           44.7",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 44.98,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=9",
+     "config_conditions": {
+      "planning_horizon": "9"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium             HalfCheetah            44.01            44.98           45.04           44.7",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 45.04,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=15",
+     "config_conditions": {
+      "planning_horizon": "15"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium             HalfCheetah            44.01            44.98           45.04           44.7",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 44.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=21",
+     "config_conditions": {
+      "planning_horizon": "21"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium             HalfCheetah            44.01            44.98           45.04           44.7",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 49.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=3",
+     "config_conditions": {
+      "planning_horizon": "3"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium             Hopper                  49.7            64.44           63.44           66.7",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 64.44,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=9",
+     "config_conditions": {
+      "planning_horizon": "9"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium             Hopper                  49.7            64.44           63.44           66.7",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 63.44,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=15",
+     "config_conditions": {
+      "planning_horizon": "15"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium             Hopper                  49.7            64.44           63.44           66.7",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 66.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=21",
+     "config_conditions": {
+      "planning_horizon": "21"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium             Hopper                  49.7            64.44           63.44           66.7",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 65.04,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=3",
+     "config_conditions": {
+      "planning_horizon": "3"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium             Walker2d               65.04            63.21           64.87          52.03",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 63.21,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=9",
+     "config_conditions": {
+      "planning_horizon": "9"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium             Walker2d               65.04            63.21           64.87          52.03",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 64.87,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=15",
+     "config_conditions": {
+      "planning_horizon": "15"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium             Walker2d               65.04            63.21           64.87          52.03",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 52.03,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=21",
+     "config_conditions": {
+      "planning_horizon": "21"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium             Walker2d               65.04            63.21           64.87          52.03",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 40.59,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=3",
+     "config_conditions": {
+      "planning_horizon": "3"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Replay      HalfCheetah            40.59            41.51           40.78          41.36",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 41.51,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=9",
+     "config_conditions": {
+      "planning_horizon": "9"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Replay      HalfCheetah            40.59            41.51           40.78          41.36",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 40.78,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=15",
+     "config_conditions": {
+      "planning_horizon": "15"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Replay      HalfCheetah            40.59            41.51           40.78          41.36",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 41.36,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=21",
+     "config_conditions": {
+      "planning_horizon": "21"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Replay      HalfCheetah            40.59            41.51           40.78          41.36",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 29.39,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=3",
+     "config_conditions": {
+      "planning_horizon": "3"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Replay      Hopper                 29.39            90.17            87.3          96.35",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 90.17,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=9",
+     "config_conditions": {
+      "planning_horizon": "9"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Replay      Hopper                 29.39            90.17            87.3          96.35",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 87.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=15",
+     "config_conditions": {
+      "planning_horizon": "15"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Replay      Hopper                 29.39            90.17            87.3          96.35",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 96.35,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=21",
+     "config_conditions": {
+      "planning_horizon": "21"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Replay      Hopper                 29.39            90.17            87.3          96.35",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 57.58,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=3",
+     "config_conditions": {
+      "planning_horizon": "3"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Replay      Walker2d               57.58            58.41           66.85          69.25",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 58.41,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=9",
+     "config_conditions": {
+      "planning_horizon": "9"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Replay      Walker2d               57.58            58.41           66.85          69.25",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 66.85,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=15",
+     "config_conditions": {
+      "planning_horizon": "15"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Replay      Walker2d               57.58            58.41           66.85          69.25",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 69.25,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "horizon=21",
+     "config_conditions": {
+      "planning_horizon": "21"
+     },
+     "table": "Table 3",
+     "line_quote": "Medium-Replay      Walker2d               57.58            58.41           66.85          69.25",
+     "notes": "planning-horizon ablation; no std; horizon=15 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 64.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=1e-5",
+     "config_conditions": {
+      "beta_threshold": "1e-5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      HalfCheetah          64.3            91.0         90.3          91.8        92.2       87.7",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 91.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.002",
+     "config_conditions": {
+      "beta_threshold": "0.002"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      HalfCheetah          64.3            91.0         90.3          91.8        92.2       87.7",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 90.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.01",
+     "config_conditions": {
+      "beta_threshold": "0.01"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      HalfCheetah          64.3            91.0         90.3          91.8        92.2       87.7",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 91.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.05",
+     "config_conditions": {
+      "beta_threshold": "0.05"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      HalfCheetah          64.3            91.0         90.3          91.8        92.2       87.7",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 92.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.1",
+     "config_conditions": {
+      "beta_threshold": "0.1"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      HalfCheetah          64.3            91.0         90.3          91.8        92.2       87.7",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 87.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.5",
+     "config_conditions": {
+      "beta_threshold": "0.5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      HalfCheetah          64.3            91.0         90.3          91.8        92.2       87.7",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 66.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=1e-5",
+     "config_conditions": {
+      "beta_threshold": "1e-5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      Hopper               66.3            95.1         94.5         105.5       107.0       76.1",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 95.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.002",
+     "config_conditions": {
+      "beta_threshold": "0.002"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      Hopper               66.3            95.1         94.5         105.5       107.0       76.1",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 94.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.01",
+     "config_conditions": {
+      "beta_threshold": "0.01"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      Hopper               66.3            95.1         94.5         105.5       107.0       76.1",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 105.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.05",
+     "config_conditions": {
+      "beta_threshold": "0.05"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      Hopper               66.3            95.1         94.5         105.5       107.0       76.1",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 107.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.1",
+     "config_conditions": {
+      "beta_threshold": "0.1"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      Hopper               66.3            95.1         94.5         105.5       107.0       76.1",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 76.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.5",
+     "config_conditions": {
+      "beta_threshold": "0.5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      Hopper               66.3            95.1         94.5         105.5       107.0       76.1",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 86.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=1e-5",
+     "config_conditions": {
+      "beta_threshold": "1e-5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      Walker2d             86.6           110.1        109.2         107.4       106.5      104.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 110.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.002",
+     "config_conditions": {
+      "beta_threshold": "0.002"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      Walker2d             86.6           110.1        109.2         107.4       106.5      104.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 109.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.01",
+     "config_conditions": {
+      "beta_threshold": "0.01"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      Walker2d             86.6           110.1        109.2         107.4       106.5      104.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 107.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.05",
+     "config_conditions": {
+      "beta_threshold": "0.05"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      Walker2d             86.6           110.1        109.2         107.4       106.5      104.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 106.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.1",
+     "config_conditions": {
+      "beta_threshold": "0.1"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      Walker2d             86.6           110.1        109.2         107.4       106.5      104.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 104.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.5",
+     "config_conditions": {
+      "beta_threshold": "0.5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Expert      Walker2d             86.6           110.1        109.2         107.4       106.5      104.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=1e-5",
+     "config_conditions": {
+      "beta_threshold": "1e-5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             HalfCheetah          42.6            44.8            44.8       45.0        45.1       42.9",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 44.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.002",
+     "config_conditions": {
+      "beta_threshold": "0.002"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             HalfCheetah          42.6            44.8            44.8       45.0        45.1       42.9",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 44.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.01",
+     "config_conditions": {
+      "beta_threshold": "0.01"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             HalfCheetah          42.6            44.8            44.8       45.0        45.1       42.9",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 45.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.05",
+     "config_conditions": {
+      "beta_threshold": "0.05"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             HalfCheetah          42.6            44.8            44.8       45.0        45.1       42.9",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 45.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.1",
+     "config_conditions": {
+      "beta_threshold": "0.1"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             HalfCheetah          42.6            44.8            44.8       45.0        45.1       42.9",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.5",
+     "config_conditions": {
+      "beta_threshold": "0.5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             HalfCheetah          42.6            44.8            44.8       45.0        45.1       42.9",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 42.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=1e-5",
+     "config_conditions": {
+      "beta_threshold": "1e-5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             Hopper               42.9            64.6            67.0       63.4        63.8       47.5",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 64.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.002",
+     "config_conditions": {
+      "beta_threshold": "0.002"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             Hopper               42.9            64.6            67.0       63.4        63.8       47.5",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 67.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.01",
+     "config_conditions": {
+      "beta_threshold": "0.01"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             Hopper               42.9            64.6            67.0       63.4        63.8       47.5",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 63.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.05",
+     "config_conditions": {
+      "beta_threshold": "0.05"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             Hopper               42.9            64.6            67.0       63.4        63.8       47.5",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 63.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.1",
+     "config_conditions": {
+      "beta_threshold": "0.1"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             Hopper               42.9            64.6            67.0       63.4        63.8       47.5",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 47.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.5",
+     "config_conditions": {
+      "beta_threshold": "0.5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             Hopper               42.9            64.6            67.0       63.4        63.8       47.5",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 63.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=1e-5",
+     "config_conditions": {
+      "beta_threshold": "1e-5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             Walker2d             63.4            49.2            53.8       64.9        64.4       58.7",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 49.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.002",
+     "config_conditions": {
+      "beta_threshold": "0.002"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             Walker2d             63.4            49.2            53.8       64.9        64.4       58.7",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 53.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.01",
+     "config_conditions": {
+      "beta_threshold": "0.01"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             Walker2d             63.4            49.2            53.8       64.9        64.4       58.7",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 64.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.05",
+     "config_conditions": {
+      "beta_threshold": "0.05"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             Walker2d             63.4            49.2            53.8       64.9        64.4       58.7",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 64.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.1",
+     "config_conditions": {
+      "beta_threshold": "0.1"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             Walker2d             63.4            49.2            53.8       64.9        64.4       58.7",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 58.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.5",
+     "config_conditions": {
+      "beta_threshold": "0.5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium             Walker2d             63.4            49.2            53.8       64.9        64.4       58.7",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 36.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=1e-5",
+     "config_conditions": {
+      "beta_threshold": "1e-5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      HalfCheetah          36.2            42.2            40.5       40.8        40.6       41.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 42.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.002",
+     "config_conditions": {
+      "beta_threshold": "0.002"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      HalfCheetah          36.2            42.2            40.5       40.8        40.6       41.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 40.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.01",
+     "config_conditions": {
+      "beta_threshold": "0.01"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      HalfCheetah          36.2            42.2            40.5       40.8        40.6       41.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 40.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.05",
+     "config_conditions": {
+      "beta_threshold": "0.05"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      HalfCheetah          36.2            42.2            40.5       40.8        40.6       41.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 40.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.1",
+     "config_conditions": {
+      "beta_threshold": "0.1"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      HalfCheetah          36.2            42.2            40.5       40.8        40.6       41.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 41.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.5",
+     "config_conditions": {
+      "beta_threshold": "0.5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      HalfCheetah          36.2            42.2            40.5       40.8        40.6       41.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 19.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=1e-5",
+     "config_conditions": {
+      "beta_threshold": "1e-5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      Hopper               19.9            94.4            93.2       87.3        97.0        3.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 94.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.002",
+     "config_conditions": {
+      "beta_threshold": "0.002"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      Hopper               19.9            94.4            93.2       87.3        97.0        3.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 93.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.01",
+     "config_conditions": {
+      "beta_threshold": "0.01"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      Hopper               19.9            94.4            93.2       87.3        97.0        3.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 87.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.05",
+     "config_conditions": {
+      "beta_threshold": "0.05"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      Hopper               19.9            94.4            93.2       87.3        97.0        3.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 97.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.1",
+     "config_conditions": {
+      "beta_threshold": "0.1"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      Hopper               19.9            94.4            93.2       87.3        97.0        3.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 3.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.5",
+     "config_conditions": {
+      "beta_threshold": "0.5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      Hopper               19.9            94.4            93.2       87.3        97.0        3.0",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 27.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=1e-5",
+     "config_conditions": {
+      "beta_threshold": "1e-5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      Walker2d             27.1            57.3            59.6       66.8        65.6       50.3",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 57.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.002",
+     "config_conditions": {
+      "beta_threshold": "0.002"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      Walker2d             27.1            57.3            59.6       66.8        65.6       50.3",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 59.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.01",
+     "config_conditions": {
+      "beta_threshold": "0.01"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      Walker2d             27.1            57.3            59.6       66.8        65.6       50.3",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 66.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.05",
+     "config_conditions": {
+      "beta_threshold": "0.05"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      Walker2d             27.1            57.3            59.6       66.8        65.6       50.3",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 65.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.1",
+     "config_conditions": {
+      "beta_threshold": "0.1"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      Walker2d             27.1            57.3            59.6       66.8        65.6       50.3",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 50.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "beta=0.5",
+     "config_conditions": {
+      "beta_threshold": "0.5"
+     },
+     "table": "Table 4",
+     "line_quote": "Medium-Replay      Walker2d             27.1            57.3            59.6       66.8        65.6       50.3",
+     "notes": "OOD-penalty probability threshold ablation; no std; beta=0.05 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 37.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=1",
+     "config_conditions": {
+      "latent_steps_L": "1"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Expert       HalfCheetah       37.4      68.1     91.8       92.5",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 68.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=2",
+     "config_conditions": {
+      "latent_steps_L": "2"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Expert       HalfCheetah       37.4      68.1     91.8       92.5",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 91.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=3",
+     "config_conditions": {
+      "latent_steps_L": "3"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Expert       HalfCheetah       37.4      68.1     91.8       92.5",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 92.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=4",
+     "config_conditions": {
+      "latent_steps_L": "4"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Expert       HalfCheetah       37.4      68.1     91.8       92.5",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 44.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=1",
+     "config_conditions": {
+      "latent_steps_L": "1"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Expert       Hopper            44.7      55.6    105.5      102.2",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 55.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=2",
+     "config_conditions": {
+      "latent_steps_L": "2"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Expert       Hopper            44.7      55.6    105.5      102.2",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 105.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=3",
+     "config_conditions": {
+      "latent_steps_L": "3"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Expert       Hopper            44.7      55.6    105.5      102.2",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 102.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=4",
+     "config_conditions": {
+      "latent_steps_L": "4"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Expert       Hopper            44.7      55.6    105.5      102.2",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 94.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=1",
+     "config_conditions": {
+      "latent_steps_L": "1"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Expert       Walker2d          94.9     108.9    107.4      108.5",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 108.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=2",
+     "config_conditions": {
+      "latent_steps_L": "2"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Expert       Walker2d          94.9     108.9    107.4      108.5",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 107.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=3",
+     "config_conditions": {
+      "latent_steps_L": "3"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Expert       Walker2d          94.9     108.9    107.4      108.5",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 108.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=4",
+     "config_conditions": {
+      "latent_steps_L": "4"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Expert       Walker2d          94.9     108.9    107.4      108.5",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 43.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=1",
+     "config_conditions": {
+      "latent_steps_L": "1"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium              HalfCheetah         43.5    42.6     45.0       45.4",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=2",
+     "config_conditions": {
+      "latent_steps_L": "2"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium              HalfCheetah         43.5    42.6     45.0       45.4",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 45.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=3",
+     "config_conditions": {
+      "latent_steps_L": "3"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium              HalfCheetah         43.5    42.6     45.0       45.4",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 45.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=4",
+     "config_conditions": {
+      "latent_steps_L": "4"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium              HalfCheetah         43.5    42.6     45.0       45.4",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 55.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=1",
+     "config_conditions": {
+      "latent_steps_L": "1"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium              Hopper              55.1    70.5     63.4       70.7",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 70.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=2",
+     "config_conditions": {
+      "latent_steps_L": "2"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium              Hopper              55.1    70.5     63.4       70.7",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 63.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=3",
+     "config_conditions": {
+      "latent_steps_L": "3"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium              Hopper              55.1    70.5     63.4       70.7",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 70.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=4",
+     "config_conditions": {
+      "latent_steps_L": "4"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium              Hopper              55.1    70.5     63.4       70.7",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 35.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=1",
+     "config_conditions": {
+      "latent_steps_L": "1"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium              Walker2d            35.2    70.6     64.9       69.3",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 70.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=2",
+     "config_conditions": {
+      "latent_steps_L": "2"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium              Walker2d            35.2    70.6     64.9       69.3",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 64.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=3",
+     "config_conditions": {
+      "latent_steps_L": "3"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium              Walker2d            35.2    70.6     64.9       69.3",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 69.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=4",
+     "config_conditions": {
+      "latent_steps_L": "4"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium              Walker2d            35.2    70.6     64.9       69.3",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 30.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=1",
+     "config_conditions": {
+      "latent_steps_L": "1"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Replay       HalfCheetah         30.3    30.1     40.8       40.0",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 30.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=2",
+     "config_conditions": {
+      "latent_steps_L": "2"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Replay       HalfCheetah         30.3    30.1     40.8       40.0",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 40.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=3",
+     "config_conditions": {
+      "latent_steps_L": "3"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Replay       HalfCheetah         30.3    30.1     40.8       40.0",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 40.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=4",
+     "config_conditions": {
+      "latent_steps_L": "4"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Replay       HalfCheetah         30.3    30.1     40.8       40.0",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 61.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=1",
+     "config_conditions": {
+      "latent_steps_L": "1"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Replay       Hopper              61.9    69.9     87.3       85.6",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 69.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=2",
+     "config_conditions": {
+      "latent_steps_L": "2"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Replay       Hopper              61.9    69.9     87.3       85.6",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 87.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=3",
+     "config_conditions": {
+      "latent_steps_L": "3"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Replay       Hopper              61.9    69.9     87.3       85.6",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 85.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=4",
+     "config_conditions": {
+      "latent_steps_L": "4"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Replay       Hopper              61.9    69.9     87.3       85.6",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 29.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=1",
+     "config_conditions": {
+      "latent_steps_L": "1"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Replay       Walker2d            29.4    60.5     66.8       54.8",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 60.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=2",
+     "config_conditions": {
+      "latent_steps_L": "2"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Replay       Walker2d            29.4    60.5     66.8       54.8",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 66.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=3",
+     "config_conditions": {
+      "latent_steps_L": "3"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Replay       Walker2d            29.4    60.5     66.8       54.8",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 54.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "L=4",
+     "config_conditions": {
+      "latent_steps_L": "4"
+     },
+     "table": "Table 8",
+     "line_quote": "Medium-Replay       Walker2d            29.4    60.5     66.8       54.8",
+     "notes": "latent-steps ablation; no std; L=3 is the main setting"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 89.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample prior (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium-Expert     HalfCheetah              91.8             89.9                 41.8",
+     "notes": "no std; 2048 samples stated in Section 4.4 ('sampling 2048 trajectories from the policy prior')"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 41.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample uniform (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from uniform prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium-Expert     HalfCheetah              91.8             89.9                 41.8",
+     "notes": "no std"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 98.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample prior (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium-Expert     Hopper                  105.5             98.5                 62.3",
+     "notes": "no std; 2048 samples stated in Section 4.4 ('sampling 2048 trajectories from the policy prior')"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 62.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample uniform (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from uniform prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium-Expert     Hopper                  105.5             98.5                 62.3",
+     "notes": "no std"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 107.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample prior (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium-Expert     Walker2d                107.4            107.7                 86.7",
+     "notes": "no std; 2048 samples stated in Section 4.4 ('sampling 2048 trajectories from the policy prior')"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 86.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample uniform (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from uniform prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium-Expert     Walker2d                107.4            107.7                 86.7",
+     "notes": "no std"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 44.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample prior (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium            HalfCheetah                45.0           44.3                 39.5",
+     "notes": "no std; 2048 samples stated in Section 4.4 ('sampling 2048 trajectories from the policy prior')"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 39.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample uniform (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from uniform prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium            HalfCheetah                45.0           44.3                 39.5",
+     "notes": "no std"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 64.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample prior (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium            Hopper                     63.4           64.3                 39.6",
+     "notes": "no std; 2048 samples stated in Section 4.4 ('sampling 2048 trajectories from the policy prior')"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 39.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample uniform (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from uniform prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium            Hopper                     63.4           64.3                 39.6",
+     "notes": "no std"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 55.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample prior (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium            Walker2d                   64.9           55.5                 70.2",
+     "notes": "no std; 2048 samples stated in Section 4.4 ('sampling 2048 trajectories from the policy prior')"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 70.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample uniform (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from uniform prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium            Walker2d                   64.9           55.5                 70.2",
+     "notes": "no std"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 39.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample prior (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium-Replay     HalfCheetah                40.8           39.8                 10.2",
+     "notes": "no std; 2048 samples stated in Section 4.4 ('sampling 2048 trajectories from the policy prior')"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 10.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample uniform (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from uniform prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium-Replay     HalfCheetah                40.8           39.8                 10.2",
+     "notes": "no std"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 79.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample prior (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium-Replay     Hopper                     87.3           79.0                 14.7",
+     "notes": "no std; 2048 samples stated in Section 4.4 ('sampling 2048 trajectories from the policy prior')"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 14.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample uniform (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from uniform prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium-Replay     Hopper                     87.3           79.0                 14.7",
+     "notes": "no std"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 66.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample prior (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium-Replay     Walker2d                   66.8           66.0                  7.8",
+     "notes": "no std; 2048 samples stated in Section 4.4 ('sampling 2048 trajectories from the policy prior')"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 7.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "sample uniform (N=2048, no beam search)",
+     "config_conditions": {
+      "planner": "direct sampling from uniform prior",
+      "num_samples": "2048"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium-Replay     Walker2d                   66.8           66.0                  7.8",
+     "notes": "no std"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 91.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "attention bottleneck, sample",
+     "config_conditions": {
+      "bottleneck": "attention",
+      "planner": "direct sampling"
+     },
+     "table": "Table 5",
+     "line_quote": "Medium-Expert       HalfCheetah              91.8              89.9                  91.3",
+     "notes": "no std; 'L = 3 sample' column duplicates Table 9 'sample prior' and is not re-emitted"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 108.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "attention bottleneck, sample",
+     "config_conditions": {
+      "bottleneck": "attention",
+      "planner": "direct sampling"
+     },
+     "table": "Table 5",
+     "line_quote": "Medium-Expert       Hopper                  105.5              98.5                 108.2",
+     "notes": "no std; 'L = 3 sample' column duplicates Table 9 'sample prior' and is not re-emitted"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 104.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "attention bottleneck, sample",
+     "config_conditions": {
+      "bottleneck": "attention",
+      "planner": "direct sampling"
+     },
+     "table": "Table 5",
+     "line_quote": "Medium-Expert       Walker2d                107.4             107.7                 104.1",
+     "notes": "no std; 'L = 3 sample' column duplicates Table 9 'sample prior' and is not re-emitted"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 45.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "attention bottleneck, sample",
+     "config_conditions": {
+      "bottleneck": "attention",
+      "planner": "direct sampling"
+     },
+     "table": "Table 5",
+     "line_quote": "Medium              HalfCheetah               45.0              44.3                 45.2",
+     "notes": "no std; 'L = 3 sample' column duplicates Table 9 'sample prior' and is not re-emitted"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 65.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "attention bottleneck, sample",
+     "config_conditions": {
+      "bottleneck": "attention",
+      "planner": "direct sampling"
+     },
+     "table": "Table 5",
+     "line_quote": "Medium              Hopper                    63.4              64.3                 65.9",
+     "notes": "no std; 'L = 3 sample' column duplicates Table 9 'sample prior' and is not re-emitted"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 58.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "attention bottleneck, sample",
+     "config_conditions": {
+      "bottleneck": "attention",
+      "planner": "direct sampling"
+     },
+     "table": "Table 5",
+     "line_quote": "Medium              Walker2d                  64.9              55.5                 58.0",
+     "notes": "no std; 'L = 3 sample' column duplicates Table 9 'sample prior' and is not re-emitted"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 39.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "attention bottleneck, sample",
+     "config_conditions": {
+      "bottleneck": "attention",
+      "planner": "direct sampling"
+     },
+     "table": "Table 5",
+     "line_quote": "Medium-Replay       HalfCheetah               40.8              39.8                 39.8",
+     "notes": "no std; 'L = 3 sample' column duplicates Table 9 'sample prior' and is not re-emitted"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 79.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "attention bottleneck, sample",
+     "config_conditions": {
+      "bottleneck": "attention",
+      "planner": "direct sampling"
+     },
+     "table": "Table 5",
+     "line_quote": "Medium-Replay       Hopper                    87.3              79.0                 79.7",
+     "notes": "no std; 'L = 3 sample' column duplicates Table 9 'sample prior' and is not re-emitted"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 68.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "attention bottleneck, sample",
+     "config_conditions": {
+      "bottleneck": "attention",
+      "planner": "direct sampling"
+     },
+     "table": "Table 5",
+     "line_quote": "Medium-Replay       Walker2d                  66.8              66.0                 68.8",
+     "notes": "no std; 'L = 3 sample' column duplicates Table 9 'sample prior' and is not re-emitted"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 10.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=1",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "1"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Expert      HalfCheetah       10.0     11.0      9.5",
+     "notes": "no std"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 11.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=2",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "2"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Expert      HalfCheetah       10.0     11.0      9.5",
+     "notes": "no std"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 9.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=3",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "3"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Expert      HalfCheetah       10.0     11.0      9.5",
+     "notes": "no std"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 27.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=1",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "1"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Expert      Hopper            27.8     29.6     42.6",
+     "notes": "no std"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 29.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=2",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "2"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Expert      Hopper            27.8     29.6     42.6",
+     "notes": "no std"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 42.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=3",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "3"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Expert      Hopper            27.8     29.6     42.6",
+     "notes": "no std"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 50.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=1",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "1"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Expert      Walker2d          50.0     46.9     15.7",
+     "notes": "no std"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 46.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=2",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "2"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Expert      Walker2d          50.0     46.9     15.7",
+     "notes": "no std"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 15.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=3",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "3"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Expert      Walker2d          50.0     46.9     15.7",
+     "notes": "no std"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 18.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=1",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "1"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium             HalfCheetah       18.2     16.5     13.6",
+     "notes": "no std"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 16.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=2",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "2"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium             HalfCheetah       18.2     16.5     13.6",
+     "notes": "no std"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 13.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=3",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "3"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium             HalfCheetah       18.2     16.5     13.6",
+     "notes": "no std"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 37.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=1",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "1"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium             Hopper            37.0     39.2     47.0",
+     "notes": "no std"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 39.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=2",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "2"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium             Hopper            37.0     39.2     47.0",
+     "notes": "no std"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 47.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=3",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "3"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium             Hopper            37.0     39.2     47.0",
+     "notes": "no std"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 13.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=1",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "1"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium             Walker2d          13.6     17.3     24.8",
+     "notes": "no std"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 17.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=2",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "2"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium             Walker2d          13.6     17.3     24.8",
+     "notes": "no std"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 24.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=3",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "3"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium             Walker2d          13.6     17.3     24.8",
+     "notes": "no std"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 4.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=1",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "1"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Replay      HalfCheetah        4.8      5.7      5.0",
+     "notes": "no std"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 5.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=2",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "2"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Replay      HalfCheetah        4.8      5.7      5.0",
+     "notes": "no std"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 5.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=3",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "3"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Replay      HalfCheetah        4.8      5.7      5.0",
+     "notes": "no std"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 19.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=1",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "1"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Replay      Hopper            19.6     16.6     22.6",
+     "notes": "no std"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 16.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=2",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "2"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Replay      Hopper            19.6     16.6     22.6",
+     "notes": "no std"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 22.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=3",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "3"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Replay      Hopper            19.6     16.6     22.6",
+     "notes": "no std"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 8.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=1",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "1"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Replay      Walker2d           8.2      8.9      9.6",
+     "notes": "no std"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 8.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=2",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "2"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Replay      Walker2d           8.2      8.9      9.6",
+     "notes": "no std"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 9.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "unconditional decoder, L=3",
+     "config_conditions": {
+      "decoder": "state-unconditional",
+      "latent_steps_L": "3"
+     },
+     "table": "Table 10",
+     "line_quote": "Medium-Replay      Walker2d           8.2      8.9      9.6",
+     "notes": "no std"
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BC",
+  "CQL",
+  "IQL",
+  "DT",
+  "MoReL",
+  "TT"
+ ],
+ "problems": [
+  "Table 1 '±' is not defined (std vs standard error unstated).",
+  "Ablation tables 3,4,5,8,9,10 report no uncertainty and do not restate seed/episode counts; assumed to follow the Section 4.1 protocol (5 seeds x 20 episodes) but this is not explicit.",
+  "Ant rows in all tables skipped (not in the requested halfcheetah/hopper/walker2d set). No random/expert/full-replay datasets evaluated.",
+  "Table 3 horizon=15 values (e.g. 91.77, 105.53) differ slightly in precision from Table 1 (91.8, 105.5) — same runs, rounding differences.",
+  "Checkpoint selection not stated."
+ ]
+}

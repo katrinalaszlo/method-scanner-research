@@ -1,0 +1,6 @@
+# Phase 16 Track B — Sutton-lineage RL, provisional family policy-learning
+policy-learning   1312.5602    Playing Atari with Deep Reinforcement Learning (DQN)
+policy-learning   1707.06347   Proximal Policy Optimization Algorithms (PPO)
+policy-learning   1502.05477   Trust Region Policy Optimization (TRPO)
+policy-learning   1801.01290   Soft Actor-Critic (SAC)
+policy-learning   1602.01783   Asynchronous Methods for Deep RL (A3C)

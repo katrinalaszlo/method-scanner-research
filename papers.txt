@@ -1,0 +1,59 @@
+# family  arxiv_id     title (verified against arXiv API 2026-08-24)
+filters      2411.06378   PKF: Probabilistic Data Association Kalman Filter
+filters      1605.07148   Backprop KF
+filters      1805.08975   Particle Filter Networks
+filters      2107.10043   KalmanNet
+filters      1511.05121   Deep Kalman Filters
+jepa         2301.08243   I-JEPA
+jepa         2404.08471   V-JEPA
+jepa         2006.07733   BYOL
+jepa         2011.10566   SimSiam
+jepa         2002.05709   SimCLR
+predcoding   1605.08104   PredNet
+predcoding   2107.12979   Predictive Coding: Theoretical and Experimental Review
+predcoding   2202.09467   Predictive Coding: Beyond Backpropagation
+predcoding   2407.04117   Predictive Coding Networks and Inference Learning
+predcoding   2605.12732   Predictive Coding Light+
+worldmodels  1803.10122   World Models
+worldmodels  1811.04551   PlaNet
+worldmodels  1912.01603   Dreamer
+worldmodels  2010.02193   DreamerV2
+worldmodels  2301.04104   DreamerV3
+diffusion    1503.03585   Sohl-Dickstein Diffusion
+diffusion    2006.11239   DDPM
+diffusion    2010.02502   DDIM
+diffusion    2011.13456   Score-Based SDE
+diffusion    2206.00364   EDM
+control      1409.1556    VGG
+control      1512.03385   ResNet
+control      1706.03762   Attention Is All You Need
+control      1301.3781    word2vec
+control      1412.6980    Adam
+pc-learning        2106.13082   On the relationship between predictive coding and backpropagation
+pc-learning        2103.03725   Predictive Coding Can Do Exact Backpropagation on Convolutional and Recurrent
+pc-learning        2305.13562   Understanding and Improving Optimization in Predictive Coding Networks
+pc-neuro           2205.05303   Dendritic predictive coding (spiking)
+pc-neuro           1908.08655   Spiking Neural Predictive Coding for Continual Learning
+pc-neuro           2210.15752   Constrained Predictive Coding as a Model of the Cortical
+state-estimation   2102.10021   Neural Kalman Filtering
+state-estimation   1703.02310   Deep Robust Kalman Filter
+state-estimation   2503.05490   Adaptive Neural Unscented Kalman Filter
+latent-generative  1910.06205   Variational Tracking and Prediction with Generative Disentangled State-Space Models
+latent-generative  2201.01353   Linear Variational State-Space Filtering
+latent-generative  1511.07367   Black box variational inference for state space models
+particle           1805.11122   Differentiable Particle Filters: End-to-End Learning with Algorithmic Priors
+particle           1905.12885   Particle Filter Recurrent Neural Networks
+particle           1508.06818   The Neural Particle Filter
+policy-learning   1312.5602    Playing Atari with Deep Reinforcement Learning (DQN)
+policy-learning   1707.06347   Proximal Policy Optimization Algorithms (PPO)
+policy-learning   1502.05477   Trust Region Policy Optimization (TRPO)
+policy-learning   1801.01290   Soft Actor-Critic (SAC)
+policy-learning   1602.01783   Asynchronous Methods for Deep RL (A3C)
+meta-learning   1803.02999   Reptile (On First-Order Meta-Learning Algorithms)
+meta-learning   1707.09835   Meta-SGD
+latent-generative 1605.06432 Deep Variational Bayes Filters (promoted from Phase 17 test)
+meta-learning   1703.03400   MAML (promoted from Phase 17 test)
+policy-gradient   1509.02971   DDPG
+policy-gradient   1802.09477   TD3
+value-based       1509.06461   Double DQN
+value-based       1710.02298   Rainbow

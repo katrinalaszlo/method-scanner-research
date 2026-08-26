@@ -1,0 +1,1081 @@
+{
+ "arxiv_id": "2310.03022",
+ "title": "Decision ConvFormer: Local Filtering in MetaFormer is Sufficient for Decision Making",
+ "methods": [
+  {
+   "method_name": "DC",
+   "is_own_method": true,
+   "one_paragraph_description": "Decision ConvFormer keeps the DT/MetaFormer block structure and input token sequence of the last K timesteps of (RTG, state, action) embeddings, but replaces the attention token mixer with three static causal 1-D convolution filters (separate RTG, state and action filters of length L=6 per hidden dimension) followed by an FFN; it is trained to predict actions and at test time is conditioned on a target RTG like DT.",
+   "conventional_lineage_hint": "Return-Conditioned BC (Table 1 groups DC under 'Return-Conditioned BC' versus 'Value-Based Method'); offline RL action sequence predictor based on MetaFormer",
+   "global_conditions": {
+    "num_layers": {
+     "value": "3",
+     "quote": "                               Number of layers          3",
+     "location": "Table 4 (Appendix C.1)"
+    },
+    "batch_size": {
+     "value": "64",
+     "quote": "                               Batch size                64",
+     "location": "Table 4"
+    },
+    "context_length_K": {
+     "value": "8",
+     "quote": "                               Context length K          8",
+     "location": "Table 4"
+    },
+    "dropout": {
+     "value": "0.1",
+     "quote": "                               Dropout                   0.1",
+     "location": "Table 4"
+    },
+    "nonlinearity": {
+     "value": "GELU",
+     "quote": "                               Nonlinearity function     GELU",
+     "location": "Table 4"
+    },
+    "grad_norm_clip": {
+     "value": "0.25",
+     "quote": "                               Grad norm clip            0.25",
+     "location": "Table 4"
+    },
+    "weight_decay": {
+     "value": "1e-4",
+     "quote": "                               Weight decay              10−4",
+     "location": "Table 4"
+    },
+    "lr_schedule": {
+     "value": "Linear warmup",
+     "quote": "                               Learning rate decay       Linear warmup",
+     "location": "Table 4"
+    },
+    "total_updates": {
+     "value": "1e5",
+     "quote": "                               Total number of updates   105",
+     "location": "Table 4 (10^5 rendered as '105')"
+    },
+    "filter_length_L": {
+     "value": "6",
+     "quote": "the current position corresponds to RTG, state or action. We set the filter length L = 6 covering",
+     "location": "Section 4.2"
+    },
+    "target_rtg_selection": {
+     "value": "six multiples of Chen et al. default, up to 20x; report highest",
+     "quote": "We examine six target RTG values, each being a multiple of the default target RTG in Chen et al.",
+     "location": "Section 5.1 Offline Results"
+    }
+   },
+   "per_dataset_conditions": {
+    "hopper-medium": {
+     "embedding_dim": {
+      "value": "256",
+      "quote": "• Embedding dimension: We use an embedding dimension of 256 in hopper-medium and",
+      "location": "Appendix C.1"
+     },
+     "learning_rate": {
+      "value": "1e-4",
+      "quote": "• Learning rate: We use a learning rate of 10−4 for training in hopper-medium,",
+      "location": "Appendix C.1"
+     }
+    },
+    "hopper-medium-replay": {
+     "embedding_dim": {
+      "value": "256",
+      "quote": "  hopper-medium-replay, and 128 in the other environments. The impact of the embedding",
+      "location": "Appendix C.1"
+     },
+     "learning_rate": {
+      "value": "1e-4",
+      "quote": "  hopper-medium-replay, walker2d-medium, and antMaze. For other environments,",
+      "location": "Appendix C.1"
+     }
+    },
+    "walker2d-medium": {
+     "embedding_dim": {
+      "value": "128",
+      "quote": "  hopper-medium-replay, and 128 in the other environments. The impact of the embedding",
+      "location": "Appendix C.1"
+     },
+     "learning_rate": {
+      "value": "1e-4",
+      "quote": "  hopper-medium-replay, walker2d-medium, and antMaze. For other environments,",
+      "location": "Appendix C.1"
+     }
+    },
+    "other MuJoCo datasets": {
+     "embedding_dim": {
+      "value": "128",
+      "quote": "  hopper-medium-replay, and 128 in the other environments. The impact of the embedding",
+      "location": "Appendix C.1"
+     },
+     "learning_rate": {
+      "value": "1e-3",
+      "quote": "  we use 10−3 .",
+      "location": "Appendix C.1"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "5",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated (best target RTG among six is reported)",
+    "quote": "expert-normalized returns, following Fu et al. (2020), averaged across 5 random seeds. The dataset",
+    "location": "Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "ronment, we examined three distinct v2 datasets, each reflecting a different data quality level:",
+    "location": "Appendix B (MuJoCo domain)"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 43.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "8",
+      "filter_length_L": "6",
+      "embedding_dim": "128",
+      "learning_rate": "1e-3",
+      "num_filters": "3",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  halfcheetah-m         48.3     47.4    44.0       42.6     43.1     41.6     42.5     43.0     43.6",
+     "notes": "Column 'DC'. No std reported. Target RTG: 'We examine six target RTG values, each being a multiple of the default target RTG in Chen et al. (2021)... We subsequently report the highest score achieved for each algorithm.'"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 92.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "8",
+      "filter_length_L": "6",
+      "embedding_dim": "256",
+      "learning_rate": "1e-4",
+      "num_filters": "3",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  hopper-m              59.3     63.8    58.5       68.4     78.3     60.2     54.2     92.5     93.6",
+     "notes": "Column 'DC'. No std reported. Target RTG: 'We examine six target RTG values, each being a multiple of the default target RTG in Chen et al. (2021)... We subsequently report the highest score achieved for each algorithm.'"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 79.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "8",
+      "filter_length_L": "6",
+      "embedding_dim": "128",
+      "learning_rate": "1e-4",
+      "num_filters": "3",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  walker2d-m            83.7     79.9    72.5       75.5     78.4     71.7     78.0     79.2     80.5",
+     "notes": "Column 'DC'. No std reported. Target RTG: 'We examine six target RTG values, each being a multiple of the default target RTG in Chen et al. (2021)... We subsequently report the highest score achieved for each algorithm.'"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 41.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "8",
+      "filter_length_L": "6",
+      "embedding_dim": "128",
+      "learning_rate": "1e-3",
+      "num_filters": "3",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  halfcheetah-m-r       44.6     44.1    45.5       37.0     41.5     38.0     15.2     41.3     42.4",
+     "notes": "Column 'DC'. No std reported. Target RTG: 'We examine six target RTG values, each being a multiple of the default target RTG in Chen et al. (2021)... We subsequently report the highest score achieved for each algorithm.'"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 94.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "8",
+      "filter_length_L": "6",
+      "embedding_dim": "256",
+      "learning_rate": "1e-4",
+      "num_filters": "3",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  hopper-m-r            60.9     92.1    95.0       85.6     91.9     73.5     49.6     94.2     94.1",
+     "notes": "Column 'DC'. No std reported. Target RTG: 'We examine six target RTG values, each being a multiple of the default target RTG in Chen et al. (2021)... We subsequently report the highest score achieved for each algorithm.'"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 76.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "8",
+      "filter_length_L": "6",
+      "embedding_dim": "128",
+      "learning_rate": "1e-3",
+      "num_filters": "3",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  walker2d-m-r          81.8     73.7    77.2       71.2     81.0      60.6    69.0     76.6      81.4",
+     "notes": "Column 'DC'. No std reported. Target RTG: 'We examine six target RTG values, each being a multiple of the default target RTG in Chen et al. (2021)... We subsequently report the highest score achieved for each algorithm.'"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 93.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "8",
+      "filter_length_L": "6",
+      "embedding_dim": "128",
+      "learning_rate": "1e-3",
+      "num_filters": "3",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  halfcheetah-m-e       90.7     86.7    91.6       88.8     94.8     92.2     92.7     93.0     94.8",
+     "notes": "Column 'DC'. No std reported. Target RTG: 'We examine six target RTG values, each being a multiple of the default target RTG in Chen et al. (2021)... We subsequently report the highest score achieved for each algorithm.'"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 110.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "8",
+      "filter_length_L": "6",
+      "embedding_dim": "128",
+      "learning_rate": "1e-3",
+      "num_filters": "3",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  hopper-m-e            98.0     91.5   105.4      109.6    111.3     101.7   110.8    110.4     111.7",
+     "notes": "Column 'DC'. No std reported. Target RTG: 'We examine six target RTG values, each being a multiple of the default target RTG in Chen et al. (2021)... We subsequently report the highest score achieved for each algorithm.'"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 109.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "8",
+      "filter_length_L": "6",
+      "embedding_dim": "128",
+      "learning_rate": "1e-3",
+      "num_filters": "3",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  walker2d-m-e         110.1    109.6   108.8      109.3    108.7     106.0   105.7    109.6     108.9",
+     "notes": "Column 'DC'. No std reported. Target RTG: 'We examine six target RTG values, each being a multiple of the default target RTG in Chen et al. (2021)... We subsequently report the highest score achieved for each algorithm.'"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 69.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "embedding_dim=128",
+     "config_conditions": {
+      "embedding_dim": "128",
+      "context_length_K": "8"
+     },
+     "table": "Table 5",
+     "line_quote": "                   hopper-medium              63.1        68.4      69.7         92.5",
+     "notes": "Columns: DT-128, DT-256, DC-128, DC-256. DC-256 (92.5) equals Table 1 main."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 88.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "embedding_dim=128",
+     "config_conditions": {
+      "embedding_dim": "128",
+      "context_length_K": "8"
+     },
+     "table": "Table 5",
+     "line_quote": "                   hopper-medium-replay       83.4        85.6      88.2         94.2",
+     "notes": "Columns: DT-128, DT-256, DC-128, DC-256. DC-256 (94.2) equals Table 1 main."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 88.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "action information included (action O)",
+     "config_conditions": {
+      "action_tokens_included": "yes",
+      "context_length_K": "8"
+     },
+     "table": "Table 12",
+     "line_quote": " hopper-medium-replay        82.2          85.6       88.7          94.2      88.9     91.9       90.1     94.1",
+     "notes": "Column pairs DT(O,X) DC(O,X) ODT(O,X) ODC(O,X). 'X' (action excluded) = 94.2 matches Table 1 main, implying main DC hopper-medium-replay excludes action information."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 88.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "1-filter DC",
+     "config_conditions": {
+      "num_filters": "1",
+      "context_length_K": "8",
+      "filter_length_L": "6"
+     },
+     "table": "Table 17",
+     "line_quote": "                     hopper-medium                       88.3             92.5          68.4",
+     "notes": "Single unified filter instead of separate RTG/state/action filters. Note Table 17 3-filter DC hopper-medium-replay = 94.1 whereas Table 1 = 94.2 (minor inconsistency in paper)."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 77.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "1-filter DC",
+     "config_conditions": {
+      "num_filters": "1",
+      "context_length_K": "8",
+      "filter_length_L": "6"
+     },
+     "table": "Table 17",
+     "line_quote": "                     walker2d-medium                     77.6             79.2          75.5",
+     "notes": "Single unified filter instead of separate RTG/state/action filters. Note Table 17 3-filter DC hopper-medium-replay = 94.1 whereas Table 1 = 94.2 (minor inconsistency in paper)."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 89.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "1-filter DC",
+     "config_conditions": {
+      "num_filters": "1",
+      "context_length_K": "8",
+      "filter_length_L": "6"
+     },
+     "table": "Table 17",
+     "line_quote": "                     hopper-medium-replay                89.6             94.1          85.6",
+     "notes": "Single unified filter instead of separate RTG/state/action filters. Note Table 17 3-filter DC hopper-medium-replay = 94.1 whereas Table 1 = 94.2 (minor inconsistency in paper)."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 78.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "1-filter DC",
+     "config_conditions": {
+      "num_filters": "1",
+      "context_length_K": "8",
+      "filter_length_L": "6"
+     },
+     "table": "Table 17",
+     "line_quote": "                     walker2d-medium-replay              78.0             76.6          71.2",
+     "notes": "Single unified filter instead of separate RTG/state/action filters. Note Table 17 3-filter DC hopper-medium-replay = 94.1 whereas Table 1 = 94.2 (minor inconsistency in paper)."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 83.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=8, L=3",
+     "config_conditions": {
+      "context_length_K": "8",
+      "filter_length_L": "3"
+     },
+     "table": "Table 18",
+     "line_quote": "                                    8         83.5         92.5      -",
+     "notes": "Grid: rows K in {8,20}, columns L in {3,6,30}. K=8,L=6 = 92.5 = main (not duplicated). K=8,L=30 is '-' (not run)."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 90.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=20, L=3",
+     "config_conditions": {
+      "context_length_K": "20",
+      "filter_length_L": "3"
+     },
+     "table": "Table 18",
+     "line_quote": "                                    20        90.1         94.2     93.5",
+     "notes": "Grid: rows K in {8,20}, columns L in {3,6,30}. K=8,L=6 = 92.5 = main (not duplicated). K=8,L=30 is '-' (not run)."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 94.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=20, L=6",
+     "config_conditions": {
+      "context_length_K": "20",
+      "filter_length_L": "6"
+     },
+     "table": "Table 18",
+     "line_quote": "                                    20        90.1         94.2     93.5",
+     "notes": "Grid: rows K in {8,20}, columns L in {3,6,30}. K=8,L=6 = 92.5 = main (not duplicated). K=8,L=30 is '-' (not run)."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 93.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=20, L=30",
+     "config_conditions": {
+      "context_length_K": "20",
+      "filter_length_L": "30"
+     },
+     "table": "Table 18",
+     "line_quote": "                                    20        90.1         94.2     93.5",
+     "notes": "Grid: rows K in {8,20}, columns L in {3,6,30}. K=8,L=6 = 92.5 = main (not duplicated). K=8,L=30 is '-' (not run)."
+    }
+   ]
+  },
+  {
+   "method_name": "ODC",
+   "is_own_method": true,
+   "one_paragraph_description": "Online Decision ConvFormer: the DC architecture inserted into the Online Decision Transformer (ODT, Zheng et al. 2022) framework — offline pretraining with a stochastic policy and entropy term (target entropy −dim(A)), optionally followed by online finetuning that collects data with an exploration RTG g_online and evaluates with target RTG g_eval.",
+   "conventional_lineage_hint": "Return-Conditioned BC (Table 1 grouping) / online-finetuned DT variant (ODT framework of Zheng et al. 2022)",
+   "global_conditions": {
+    "num_layers": {
+     "value": "4",
+     "quote": "                   Number of layers          4",
+     "location": "Table 8 (Appendix D)"
+    },
+    "embedding_dim": {
+     "value": "512 (256 for hopper-medium-replay)",
+     "quote": "                   Embedding dimension       256, hopper-medium-replay",
+     "location": "Table 8"
+    },
+    "batch_size": {
+     "value": "256",
+     "quote": "                   Batch size                256",
+     "location": "Table 8"
+    },
+    "context_length_K": {
+     "value": "8",
+     "quote": "                   Context length K          8",
+     "location": "Table 8"
+    },
+    "dropout": {
+     "value": "0.1",
+     "quote": "                   Dropout                   0.1",
+     "location": "Table 8"
+    },
+    "nonlinearity": {
+     "value": "GELU",
+     "quote": "                   Nonlinearity function     GELU",
+     "location": "Table 8"
+    },
+    "learning_rate": {
+     "value": "5e-4 (1e-3 for walker2d-medium)",
+     "quote": "                   Learning rate             10−3 , walker2d-medium",
+     "location": "Table 8"
+    },
+    "grad_norm_clip": {
+     "value": "0.25",
+     "quote": "                   Grad norm clip            0.25",
+     "location": "Table 8"
+    },
+    "weight_decay": {
+     "value": "1e-4",
+     "quote": "                   Weight decay              10−4",
+     "location": "Table 8"
+    },
+    "lr_schedule": {
+     "value": "Linear warmup for first 1e4 training steps",
+     "quote": "                   Learning rate decay       Linear warmup for first 104 training steps",
+     "location": "Table 8 (10^4 rendered as '104')"
+    },
+    "target_entropy_beta": {
+     "value": "-dim(A)",
+     "quote": "                   Target entropy β          −dim(A)",
+     "location": "Table 8"
+    },
+    "total_updates": {
+     "value": "1e5",
+     "quote": "                   Total number of updates   105",
+     "location": "Table 8 (10^5 rendered as '105')"
+    },
+    "positional_embedding": {
+     "value": "no for medium & medium-expert, yes for medium-replay",
+     "quote": "                {halfcheetah, hopper, walker2d}-medium-replay               yes",
+     "location": "Table 9"
+    }
+   },
+   "per_dataset_conditions": {
+    "halfcheetah-medium": {
+     "finetune_pretraining_updates": {
+      "value": "5000",
+      "quote": " halfcheetah-m         5000      1000         512     0.0005        0.0001     6000    12000          no",
+      "location": "Table 10"
+     },
+     "finetune_buffer_size": {
+      "value": "1000",
+      "quote": " halfcheetah-m         5000      1000         512     0.0005        0.0001     6000    12000          no",
+      "location": "Table 10"
+     },
+     "finetune_embedding_size": {
+      "value": "512",
+      "quote": " halfcheetah-m         5000      1000         512     0.0005        0.0001     6000    12000          no",
+      "location": "Table 10"
+     },
+     "finetune_learning_rate": {
+      "value": "0.0005",
+      "quote": " halfcheetah-m         5000      1000         512     0.0005        0.0001     6000    12000          no",
+      "location": "Table 10"
+     },
+     "finetune_weight_decay": {
+      "value": "0.0001",
+      "quote": " halfcheetah-m         5000      1000         512     0.0005        0.0001     6000    12000          no",
+      "location": "Table 10"
+     },
+     "g_eval_target_rtg": {
+      "value": "6000",
+      "quote": " halfcheetah-m         5000      1000         512     0.0005        0.0001     6000    12000          no",
+      "location": "Table 10"
+     },
+     "g_online_exploration_rtg": {
+      "value": "12000",
+      "quote": " halfcheetah-m         5000      1000         512     0.0005        0.0001     6000    12000          no",
+      "location": "Table 10"
+     },
+     "finetune_positional_embedding": {
+      "value": "no",
+      "quote": " halfcheetah-m         5000      1000         512     0.0005        0.0001     6000    12000          no",
+      "location": "Table 10"
+     }
+    },
+    "hopper-medium": {
+     "finetune_pretraining_updates": {
+      "value": "5000",
+      "quote": " hopper-m              5000      1000         512     0.0005        0.0001     3600    7200          no",
+      "location": "Table 10"
+     },
+     "finetune_buffer_size": {
+      "value": "1000",
+      "quote": " hopper-m              5000      1000         512     0.0005        0.0001     3600    7200          no",
+      "location": "Table 10"
+     },
+     "finetune_embedding_size": {
+      "value": "512",
+      "quote": " hopper-m              5000      1000         512     0.0005        0.0001     3600    7200          no",
+      "location": "Table 10"
+     },
+     "finetune_learning_rate": {
+      "value": "0.0005",
+      "quote": " hopper-m              5000      1000         512     0.0005        0.0001     3600    7200          no",
+      "location": "Table 10"
+     },
+     "finetune_weight_decay": {
+      "value": "0.0001",
+      "quote": " hopper-m              5000      1000         512     0.0005        0.0001     3600    7200          no",
+      "location": "Table 10"
+     },
+     "g_eval_target_rtg": {
+      "value": "3600",
+      "quote": " hopper-m              5000      1000         512     0.0005        0.0001     3600    7200          no",
+      "location": "Table 10"
+     },
+     "g_online_exploration_rtg": {
+      "value": "7200",
+      "quote": " hopper-m              5000      1000         512     0.0005        0.0001     3600    7200          no",
+      "location": "Table 10"
+     },
+     "finetune_positional_embedding": {
+      "value": "no",
+      "quote": " hopper-m              5000      1000         512     0.0005        0.0001     3600    7200          no",
+      "location": "Table 10"
+     }
+    },
+    "walker2d-medium": {
+     "finetune_pretraining_updates": {
+      "value": "10000",
+      "quote": " walker2d-m           10000      1000         512     0.0005        0.0001     5000    10000         no",
+      "location": "Table 10"
+     },
+     "finetune_buffer_size": {
+      "value": "1000",
+      "quote": " walker2d-m           10000      1000         512     0.0005        0.0001     5000    10000         no",
+      "location": "Table 10"
+     },
+     "finetune_embedding_size": {
+      "value": "512",
+      "quote": " walker2d-m           10000      1000         512     0.0005        0.0001     5000    10000         no",
+      "location": "Table 10"
+     },
+     "finetune_learning_rate": {
+      "value": "0.0005",
+      "quote": " walker2d-m           10000      1000         512     0.0005        0.0001     5000    10000         no",
+      "location": "Table 10"
+     },
+     "finetune_weight_decay": {
+      "value": "0.0001",
+      "quote": " walker2d-m           10000      1000         512     0.0005        0.0001     5000    10000         no",
+      "location": "Table 10"
+     },
+     "g_eval_target_rtg": {
+      "value": "5000",
+      "quote": " walker2d-m           10000      1000         512     0.0005        0.0001     5000    10000         no",
+      "location": "Table 10"
+     },
+     "g_online_exploration_rtg": {
+      "value": "10000",
+      "quote": " walker2d-m           10000      1000         512     0.0005        0.0001     5000    10000         no",
+      "location": "Table 10"
+     },
+     "finetune_positional_embedding": {
+      "value": "no",
+      "quote": " walker2d-m           10000      1000         512     0.0005        0.0001     5000    10000         no",
+      "location": "Table 10"
+     }
+    },
+    "halfcheetah-medium-replay": {
+     "finetune_pretraining_updates": {
+      "value": "5000",
+      "quote": " halfcheetah-m-r       5000      1000         512     0.0001        0.0001     6000    12000          no",
+      "location": "Table 10"
+     },
+     "finetune_buffer_size": {
+      "value": "1000",
+      "quote": " halfcheetah-m-r       5000      1000         512     0.0001        0.0001     6000    12000          no",
+      "location": "Table 10"
+     },
+     "finetune_embedding_size": {
+      "value": "512",
+      "quote": " halfcheetah-m-r       5000      1000         512     0.0001        0.0001     6000    12000          no",
+      "location": "Table 10"
+     },
+     "finetune_learning_rate": {
+      "value": "0.0001",
+      "quote": " halfcheetah-m-r       5000      1000         512     0.0001        0.0001     6000    12000          no",
+      "location": "Table 10"
+     },
+     "finetune_weight_decay": {
+      "value": "0.0001",
+      "quote": " halfcheetah-m-r       5000      1000         512     0.0001        0.0001     6000    12000          no",
+      "location": "Table 10"
+     },
+     "g_eval_target_rtg": {
+      "value": "6000",
+      "quote": " halfcheetah-m-r       5000      1000         512     0.0001        0.0001     6000    12000          no",
+      "location": "Table 10"
+     },
+     "g_online_exploration_rtg": {
+      "value": "12000",
+      "quote": " halfcheetah-m-r       5000      1000         512     0.0001        0.0001     6000    12000          no",
+      "location": "Table 10"
+     },
+     "finetune_positional_embedding": {
+      "value": "no",
+      "quote": " halfcheetah-m-r       5000      1000         512     0.0001        0.0001     6000    12000          no",
+      "location": "Table 10"
+     }
+    },
+    "hopper-medium-replay": {
+     "finetune_pretraining_updates": {
+      "value": "5000",
+      "quote": " hopper-m-r            5000      1000         512     0.0005        0.00005    3600    7200          no",
+      "location": "Table 10"
+     },
+     "finetune_buffer_size": {
+      "value": "1000",
+      "quote": " hopper-m-r            5000      1000         512     0.0005        0.00005    3600    7200          no",
+      "location": "Table 10"
+     },
+     "finetune_embedding_size": {
+      "value": "512",
+      "quote": " hopper-m-r            5000      1000         512     0.0005        0.00005    3600    7200          no",
+      "location": "Table 10"
+     },
+     "finetune_learning_rate": {
+      "value": "0.0005",
+      "quote": " hopper-m-r            5000      1000         512     0.0005        0.00005    3600    7200          no",
+      "location": "Table 10"
+     },
+     "finetune_weight_decay": {
+      "value": "0.00005",
+      "quote": " hopper-m-r            5000      1000         512     0.0005        0.00005    3600    7200          no",
+      "location": "Table 10"
+     },
+     "g_eval_target_rtg": {
+      "value": "3600",
+      "quote": " hopper-m-r            5000      1000         512     0.0005        0.00005    3600    7200          no",
+      "location": "Table 10"
+     },
+     "g_online_exploration_rtg": {
+      "value": "7200",
+      "quote": " hopper-m-r            5000      1000         512     0.0005        0.00005    3600    7200          no",
+      "location": "Table 10"
+     },
+     "finetune_positional_embedding": {
+      "value": "no",
+      "quote": " hopper-m-r            5000      1000         512     0.0005        0.00005    3600    7200          no",
+      "location": "Table 10"
+     }
+    },
+    "walker2d-medium-replay": {
+     "finetune_pretraining_updates": {
+      "value": "10000",
+      "quote": " walker2d-m-r         10000      1000         512      0.001        0.0001     5000    10000         no",
+      "location": "Table 10"
+     },
+     "finetune_buffer_size": {
+      "value": "1000",
+      "quote": " walker2d-m-r         10000      1000         512      0.001        0.0001     5000    10000         no",
+      "location": "Table 10"
+     },
+     "finetune_embedding_size": {
+      "value": "512",
+      "quote": " walker2d-m-r         10000      1000         512      0.001        0.0001     5000    10000         no",
+      "location": "Table 10"
+     },
+     "finetune_learning_rate": {
+      "value": "0.001",
+      "quote": " walker2d-m-r         10000      1000         512      0.001        0.0001     5000    10000         no",
+      "location": "Table 10"
+     },
+     "finetune_weight_decay": {
+      "value": "0.0001",
+      "quote": " walker2d-m-r         10000      1000         512      0.001        0.0001     5000    10000         no",
+      "location": "Table 10"
+     },
+     "g_eval_target_rtg": {
+      "value": "5000",
+      "quote": " walker2d-m-r         10000      1000         512      0.001        0.0001     5000    10000         no",
+      "location": "Table 10"
+     },
+     "g_online_exploration_rtg": {
+      "value": "10000",
+      "quote": " walker2d-m-r         10000      1000         512      0.001        0.0001     5000    10000         no",
+      "location": "Table 10"
+     },
+     "finetune_positional_embedding": {
+      "value": "no",
+      "quote": " walker2d-m-r         10000      1000         512      0.001        0.0001     5000    10000         no",
+      "location": "Table 10"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "5",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated",
+    "quote": "tuned with 0.2 million online samples. We report the expert-normalized returns averaged across five / random seeds.",
+    "location": "Table 2 caption (offline: Table 1 caption '5 random seeds')"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "ronment, we examined three distinct v2 datasets, each reflecting a different data quality level:",
+    "location": "Appendix B"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 43.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (offline pretraining)",
+     "config_conditions": {
+      "context_length_K": "8",
+      "embedding_dim": "512",
+      "learning_rate": "5e-4",
+      "positional_embedding": "no",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  halfcheetah-m         48.3     47.4    44.0       42.6     43.1     41.6     42.5     43.0     43.6",
+     "notes": "Column 'ODC' (Online Decision ConvFormer, offline-pretrained, evaluated offline). No std reported."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 93.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (offline pretraining)",
+     "config_conditions": {
+      "context_length_K": "8",
+      "embedding_dim": "512",
+      "learning_rate": "5e-4",
+      "positional_embedding": "no",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  hopper-m              59.3     63.8    58.5       68.4     78.3     60.2     54.2     92.5     93.6",
+     "notes": "Column 'ODC' (Online Decision ConvFormer, offline-pretrained, evaluated offline). No std reported."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 80.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (offline pretraining)",
+     "config_conditions": {
+      "context_length_K": "8",
+      "embedding_dim": "512",
+      "learning_rate": "1e-3",
+      "positional_embedding": "no",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  walker2d-m            83.7     79.9    72.5       75.5     78.4     71.7     78.0     79.2     80.5",
+     "notes": "Column 'ODC' (Online Decision ConvFormer, offline-pretrained, evaluated offline). No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 42.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (offline pretraining)",
+     "config_conditions": {
+      "context_length_K": "8",
+      "embedding_dim": "512",
+      "learning_rate": "5e-4",
+      "positional_embedding": "yes",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  halfcheetah-m-r       44.6     44.1    45.5       37.0     41.5     38.0     15.2     41.3     42.4",
+     "notes": "Column 'ODC' (Online Decision ConvFormer, offline-pretrained, evaluated offline). No std reported."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 94.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (offline pretraining)",
+     "config_conditions": {
+      "context_length_K": "8",
+      "embedding_dim": "256",
+      "learning_rate": "5e-4",
+      "positional_embedding": "yes",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  hopper-m-r            60.9     92.1    95.0       85.6     91.9     73.5     49.6     94.2     94.1",
+     "notes": "Column 'ODC' (Online Decision ConvFormer, offline-pretrained, evaluated offline). No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 81.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (offline pretraining)",
+     "config_conditions": {
+      "context_length_K": "8",
+      "embedding_dim": "512",
+      "learning_rate": "5e-4",
+      "positional_embedding": "yes",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  walker2d-m-r          81.8     73.7    77.2       71.2     81.0      60.6    69.0     76.6      81.4",
+     "notes": "Column 'ODC' (Online Decision ConvFormer, offline-pretrained, evaluated offline). No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 94.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (offline pretraining)",
+     "config_conditions": {
+      "context_length_K": "8",
+      "embedding_dim": "512",
+      "learning_rate": "5e-4",
+      "positional_embedding": "no",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  halfcheetah-m-e       90.7     86.7    91.6       88.8     94.8     92.2     92.7     93.0     94.8",
+     "notes": "Column 'ODC' (Online Decision ConvFormer, offline-pretrained, evaluated offline). No std reported."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 111.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (offline pretraining)",
+     "config_conditions": {
+      "context_length_K": "8",
+      "embedding_dim": "512",
+      "learning_rate": "5e-4",
+      "positional_embedding": "no",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  hopper-m-e            98.0     91.5   105.4      109.6    111.3     101.7   110.8    110.4     111.7",
+     "notes": "Column 'ODC' (Online Decision ConvFormer, offline-pretrained, evaluated offline). No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 108.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (offline pretraining)",
+     "config_conditions": {
+      "context_length_K": "8",
+      "embedding_dim": "512",
+      "learning_rate": "5e-4",
+      "positional_embedding": "no",
+      "target_rtg": "best of six multiples of Chen et al. default (reported highest)"
+     },
+     "table": "Table 1",
+     "line_quote": "  walker2d-m-e         110.1    109.6   108.8      109.3    108.7     106.0   105.7    109.6     108.9",
+     "notes": "Column 'ODC' (Online Decision ConvFormer, offline-pretrained, evaluated offline). No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.82,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online finetuning 0.2M samples",
+     "config_conditions": {
+      "online_samples": "0.2M",
+      "g_eval_target_rtg": "6000",
+      "g_online_exploration_rtg": "12000",
+      "context_length_K": "8"
+     },
+     "table": "Table 2",
+     "line_quote": " halfcheetah-m          47.41              0.04       42.53       -0.62         42.82           -0.81",
+     "notes": "NOT offline: score after online finetuning with 0.2M online samples ('ODC (0.2M)' column). Exclude from offline comparisons."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 99.29,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online finetuning 0.2M samples",
+     "config_conditions": {
+      "online_samples": "0.2M",
+      "g_eval_target_rtg": "3600",
+      "g_online_exploration_rtg": "7200",
+      "context_length_K": "8"
+     },
+     "table": "Table 2",
+     "line_quote": " hopper-m               66.79              2.98       96.33       18.03         99.29           5.64",
+     "notes": "NOT offline: score after online finetuning with 0.2M online samples ('ODC (0.2M)' column). Exclude from offline comparisons."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 79.44,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online finetuning 0.2M samples",
+     "config_conditions": {
+      "online_samples": "0.2M",
+      "g_eval_target_rtg": "5000",
+      "g_online_exploration_rtg": "10000",
+      "context_length_K": "8"
+     },
+     "table": "Table 2",
+     "line_quote": " walker2d-m             80.33              0.44       75.56       -2.89         79.44           -1.09",
+     "notes": "NOT offline: score after online finetuning with 0.2M online samples ('ODC (0.2M)' column). Exclude from offline comparisons."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 41.42,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online finetuning 0.2M samples",
+     "config_conditions": {
+      "online_samples": "0.2M",
+      "g_eval_target_rtg": "6000",
+      "g_online_exploration_rtg": "12000",
+      "context_length_K": "8"
+     },
+     "table": "Table 2",
+     "line_quote": " halfcheetah-m-r        44.14              0.04       40.64       -0.86         41.42           -1.02",
+     "notes": "NOT offline: score after online finetuning with 0.2M online samples ('ODC (0.2M)' column). Exclude from offline comparisons."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 95.23,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online finetuning 0.2M samples",
+     "config_conditions": {
+      "online_samples": "0.2M",
+      "g_eval_target_rtg": "3600",
+      "g_online_exploration_rtg": "7200",
+      "context_length_K": "8"
+     },
+     "table": "Table 2",
+     "line_quote": " hopper-m-r             96.23              4.10       89.26       -2.65         95.23           1.16",
+     "notes": "NOT offline: score after online finetuning with 0.2M online samples ('ODC (0.2M)' column). Exclude from offline comparisons."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 77.89,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "online finetuning 0.2M samples",
+     "config_conditions": {
+      "online_samples": "0.2M",
+      "g_eval_target_rtg": "5000",
+      "g_online_exploration_rtg": "10000",
+      "context_length_K": "8"
+     },
+     "table": "Table 2",
+     "line_quote": " walker2d-m-r           70.55              -3.12      77.71       -3.32         77.89           -3.14",
+     "notes": "NOT offline: score after online finetuning with 0.2M online samples ('ODC (0.2M)' column). Exclude from offline comparisons."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 90.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "action information included (action O)",
+     "config_conditions": {
+      "action_tokens_included": "yes",
+      "context_length_K": "8"
+     },
+     "table": "Table 12",
+     "line_quote": " hopper-medium-replay        82.2          85.6       88.7          94.2      88.9     91.9       90.1     94.1",
+     "notes": "ODC action O = 90.1; ODC action X = 94.1 matches Table 1 main."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "TD3+BC",
+  "IQL",
+  "CQL",
+  "DT",
+  "ODT",
+  "RvS",
+  "DS4",
+  "IQL (0.2M)",
+  "ODT (0.2M)",
+  "DT (20)",
+  "DT (8)",
+  "DT (2)",
+  "1-filter DC vs DT in Table 17"
+ ],
+ "problems": [
+  "No standard deviations reported for any MuJoCo result.",
+  "Number of evaluation episodes per seed not stated anywhere.",
+  "Numeric target RTG for offline DC/ODC not given; paper sweeps six multiples of Chen et al.'s default (6000/3600/5000 not printed for DC in this paper) and reports the highest — treat Table 1 as best-of-6 target RTG. Only Table 10 (online finetuning) prints g_eval 6000/3600/5000.",
+  "Table 19 reports DC (8) averaged over medium & medium-replay per environment — averages, skipped.",
+  "Table 17 3-filter DC hopper-medium-replay = 94.1 vs Table 1 = 94.2; Table 12 DC action-X = 94.2. Minor inconsistency noted, main row uses Table 1.",
+  "Table 2 online-finetuning rows for ODC included but flagged NOT offline.",
+  "ODC learning rate/embedding per dataset in Table 8 also applies to AntMaze; MuJoCo-only values reproduced as printed."
+ ]
+}

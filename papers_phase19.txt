@@ -1,0 +1,5 @@
+# Phase 19 — RL split
+policy-gradient   1509.02971   DDPG
+policy-gradient   1802.09477   TD3
+value-based       1509.06461   Double DQN
+value-based       1710.02298   Rainbow

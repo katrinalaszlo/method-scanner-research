@@ -1,0 +1,529 @@
+{
+ "arxiv_id": "2305.19452",
+ "title": "Bigger, Better, Faster: Human-level Atari with human-level efficiency",
+ "methods": [
+  {
+   "method_name": "BBF",
+   "is_own_method": true,
+   "one_paragraph_description": "Model-free value-based agent built on SR-SPR (Rainbow-style Q-learning with SPR self-supervised objective, periodic shrink-and-perturb network resets and high replay ratio). BBF scales the encoder to a 4x-wide Impala-CNN ResNet, uses harder resets (50% perturbation toward random init), an update horizon (n-step) annealed exponentially from 10 to 3 and discount annealed from 0.97 to 0.997 after each reset, weight decay 0.1 via AdamW, an EMA target network, and removes NoisyNets. Trained at replay ratio 8 (RR=2 also reported for ablations).",
+   "conventional_lineage_hint": "model-free RL / value-based RL: 'we introduce BBF, a modelfree RL agent that achieves super-human performance'; 'We introduce a value-based RL agent'",
+   "global_conditions": {
+    "replay_ratio": {
+     "value": "8",
+     "quote": "use of periodic network resets, SR-SPR is able to scale up its replay ratio (RR) to values as high as 16, yielding better sample efficiency. For BBF, we use RR=8 in order to balance the increased computation arising from our large network.",
+     "location": "Section 4 (Base agent), txt l.541-544"
+    },
+    "encoder": {
+     "value": "Impala-CNN 15-layer ResNet, width scaled 4x",
+     "quote": "Impala-CNN (Espeholt et al., 2018) network, a 15-layer ResNet ... Additionally, BBF scales the width of each layer in Impala-CNN by 4×.",
+     "location": "Section 4 (Larger network), txt l.524-529"
+    },
+    "width_scale": {
+     "value": "4",
+     "quote": "Given that ResNet BBF performs comparably at 4× and 8×, we chose 4× to reduce the computational burden.",
+     "location": "Section 4, txt l.556-557"
+    },
+    "n_step_schedule": {
+     "value": "10 -> 3, exponential over first 10K gradient steps after each reset",
+     "quote": "that decreases exponentially from 10 to 3 over the first 10K gradient steps following each network reset.",
+     "location": "Section 4 (Receding update horizon), txt l.567-569"
+    },
+    "reset_interval_gradient_steps": {
+     "value": "40k",
+     "quote": "follow the schedule of D’Oro et al. (2023) and reset every ... 40k gradient steps, the annealing phase is always 25% of training, regardless of the replay ratio.",
+     "location": "Section 4, txt l.570 and l.653-654"
+    },
+    "discount_schedule": {
+     "value": "0.97 -> 0.997",
+     "quote": "We choose γ1 = 0.97, slightly lower than the typical discount used for Atari, and γ2 = 0.997 as it is used by MuZero",
+     "location": "Section 4 (Increasing discount factor), txt l.671-673"
+    },
+    "reset_perturbation": {
+     "value": "50% toward random target (conv layers)",
+     "quote": "move them 50% towards the random target, resulting in a stronger perturbation and improving results (see Figure 5).",
+     "location": "Section 4 (Harder resets), txt l.519-520"
+    },
+    "optimizer": {
+     "value": "AdamW",
+     "quote": "To do so, we use the AdamW optimizer (Loshchilov & Hutter, 2019) with a weight decay value of 0.1.",
+     "location": "Section 5 (Weight decay), txt l.696-698"
+    },
+    "weight_decay": {
+     "value": "0.1",
+     "quote": "To do so, we use the AdamW optimizer (Loshchilov & Hutter, 2019) with a weight decay value of 0.1.",
+     "location": "Section 5, txt l.696-698"
+    },
+    "noisy_nets": {
+     "value": "removed",
+     "quote": "Removing NoisyNets results in large computational and memory savings",
+     "location": "Section 4, txt l.605-606"
+    },
+    "target_network": {
+     "value": "EMA target network",
+     "quote": "Comparison of BBF and SR-SPR at replay ratios 2 and 8 with and without EMA target networks.",
+     "location": "Figure 7 caption, txt l.626-627"
+    },
+    "environment_steps": {
+     "value": "100k (400k frames)",
+     "quote": "100k steps (400k frames) at 60 FPS is 111 minutes.",
+     "location": "Footnote 2, layout l.311"
+    },
+    "base_agent": {
+     "value": "SR-SPR (Dopamine)",
+     "quote": "BBF uses a modified version of the recently introduced SR-SPR agent (D’Oro et al., 2023).",
+     "location": "Section 4, txt l.538-539"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "50",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "end of training (last)",
+    "quote": "Scores are averaged across 50 seeds per game for BBF, 30 for SR-SPR, 5 for IRIS, 3 for EfficientZero, and 100 for others. | Performance profiles showing the distribution of scores across all runs and 26 games at the end of training",
+    "location": "Table A.1 caption (layout l.966-967); Figure 4 caption (layout l.266)"
+   },
+   "dataset_version": {
+    "value": "Atari 100k: 100k agent steps = 400k frames; no sticky actions (standard Atari 100K); sticky-action results exist only as figures",
+    "quote": "tion is that the Atari 100K benchmark uses only 26 of the 55 games from the full ALE suite, and it does not include sticky actions3 (Machado et al., 2018) | 100k steps (400k frames) at 60 FPS is 111 minutes.",
+    "location": "Section 6 (Overfitting on Atari 100K), layout l.553-559; footnote 2 layout l.311"
+   },
+   "rows": [
+    {
+     "dataset": "Alien",
+     "outcome": 1173.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Alien                227.8      7127.7    802.3     865.2        841.9     420.0     1107.8     808.5           1173.2",
+     "notes": ""
+    },
+    {
+     "dataset": "Amidar",
+     "outcome": 244.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Amidar               5.8        1719.5    125.9     137.8        179.7     143.0     203.4      148.6           244.6",
+     "notes": ""
+    },
+    {
+     "dataset": "Assault",
+     "outcome": 2098.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Assault              222.4      742.0     561.5     579.6        565.6     1524.4    1088.9     1263.1          2098.5",
+     "notes": ""
+    },
+    {
+     "dataset": "Asterix",
+     "outcome": 3946.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Asterix              210.0      8503.3    535.4     763.6        962.5     853.6     903.1      25557.8         3946.1",
+     "notes": ""
+    },
+    {
+     "dataset": "BankHeist",
+     "outcome": 732.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "BankHeist            14.2       753.1     185.5     232.9        345.4     53.1      531.7      351.0           732.9",
+     "notes": ""
+    },
+    {
+     "dataset": "BattleZone",
+     "outcome": 24459.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "BattleZone           2360.0     37187.5   8977.0    10165.3      14834.1   13074.0   17671.0    13871.2         24459.8",
+     "notes": ""
+    },
+    {
+     "dataset": "Boxing",
+     "outcome": 85.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Boxing               0.1        12.1      -0.3      9.0          35.7      70.1      45.8       52.7            85.8",
+     "notes": ""
+    },
+    {
+     "dataset": "Breakout",
+     "outcome": 370.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Breakout             1.7        30.5      9.2       19.8         19.6      83.7      25.5       414.1           370.6",
+     "notes": ""
+    },
+    {
+     "dataset": "ChopperCommand",
+     "outcome": 7549.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "ChopperCommand       811.0      7387.8    925.9     844.6        946.3     1565.0    2362.1     1117.3          7549.3",
+     "notes": ""
+    },
+    {
+     "dataset": "CrazyClimber",
+     "outcome": 58431.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "CrazyClimber         10780.5    35829.4   34508.6   21539.0      36700.5   59324.2   45544.1    83940.2         58431.8",
+     "notes": ""
+    },
+    {
+     "dataset": "DemonAttack",
+     "outcome": 13341.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "DemonAttack          152.1      1971.0    627.6     1321.5       517.6     2034.4    2814.4     13003.9         13341.4",
+     "notes": ""
+    },
+    {
+     "dataset": "Freeway",
+     "outcome": 25.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Freeway              0.0        29.6      20.9      20.3         19.3      31.1      25.4       21.8            25.5",
+     "notes": ""
+    },
+    {
+     "dataset": "Frostbite",
+     "outcome": 2384.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Frostbite            65.2       4334.7    871.0     1014.2       1170.7    259.1     2584.8     296.3           2384.8",
+     "notes": ""
+    },
+    {
+     "dataset": "Gopher",
+     "outcome": 1331.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Gopher               257.6      2412.5    467.0     621.6        660.6     2236.1    712.4      3260.3          1331.2",
+     "notes": ""
+    },
+    {
+     "dataset": "Hero",
+     "outcome": 7818.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Hero                 1027.0     30826.4   6226.0    4167.9       5858.6    7037.4    8524.0     9315.9          7818.6",
+     "notes": ""
+    },
+    {
+     "dataset": "Jamesbond",
+     "outcome": 1129.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Jamesbond            29.0       302.8     275.7     349.1        366.5     462.7     389.1      517.0           1129.6",
+     "notes": ""
+    },
+    {
+     "dataset": "Kangaroo",
+     "outcome": 6614.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Kangaroo             52.0       3035.0    581.7     1088.4       3617.4    838.2     3631.7     724.1           6614.7",
+     "notes": ""
+    },
+    {
+     "dataset": "Krull",
+     "outcome": 8223.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Krull                1598.0     2665.5    3256.9    4402.1       3681.6    6616.4    5911.8     5663.3          8223.4",
+     "notes": ""
+    },
+    {
+     "dataset": "KungFuMaster",
+     "outcome": 18991.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "KungFuMaster         258.5      22736.3   6580.1    11467.4      14783.2   21759.8   18649.4    30944.8         18991.7",
+     "notes": ""
+    },
+    {
+     "dataset": "MsPacman",
+     "outcome": 2008.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "MsPacman             307.3      6951.6    1187.4    1218.1       1318.4    999.1     1574.1     1281.2          2008.3",
+     "notes": ""
+    },
+    {
+     "dataset": "Pong",
+     "outcome": 16.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Pong                 -20.7      14.6      -9.7      -9.1         -5.4      14.6      2.9        20.1            16.7",
+     "notes": ""
+    },
+    {
+     "dataset": "PrivateEye",
+     "outcome": 40.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "PrivateEye           24.9       69571.3   72.8      3.5          86.0      100.0     97.9       96.7            40.5",
+     "notes": ""
+    },
+    {
+     "dataset": "Qbert",
+     "outcome": 4447.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Qbert                163.9      13455.0   1773.5    1810.7       866.3     745.7     4044.1     14448.5         4447.1",
+     "notes": ""
+    },
+    {
+     "dataset": "Roadrunner",
+     "outcome": 33426.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Roadrunner           11.5       7845.0    11843.4   11211.4      12213.1   9614.6    13463.4    17751.3         33426.8",
+     "notes": ""
+    },
+    {
+     "dataset": "Seaquest",
+     "outcome": 1232.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "Seaquest             68.4       42054.7   304.6     352.3        558.1     661.3     819.0      1100.2          1232.5",
+     "notes": ""
+    },
+    {
+     "dataset": "UpNDown",
+     "outcome": 12101.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table A.1",
+     "line_quote": "UpNDown              533.4      11693.2   3075.0    4324.5       10859.2   3546.2    112450.3   17264.2         12101.7",
+     "notes": ""
+    }
+   ]
+  }
+ ],
+ "reference_scores": {
+  "Alien": {
+   "random": 227.8,
+   "human": 7127.7,
+   "line_quote": "Alien                227.8      7127.7    802.3     865.2        841.9     420.0     1107.8     808.5           1173.2"
+  },
+  "Amidar": {
+   "random": 5.8,
+   "human": 1719.5,
+   "line_quote": "Amidar               5.8        1719.5    125.9     137.8        179.7     143.0     203.4      148.6           244.6"
+  },
+  "Assault": {
+   "random": 222.4,
+   "human": 742.0,
+   "line_quote": "Assault              222.4      742.0     561.5     579.6        565.6     1524.4    1088.9     1263.1          2098.5"
+  },
+  "Asterix": {
+   "random": 210.0,
+   "human": 8503.3,
+   "line_quote": "Asterix              210.0      8503.3    535.4     763.6        962.5     853.6     903.1      25557.8         3946.1"
+  },
+  "BankHeist": {
+   "random": 14.2,
+   "human": 753.1,
+   "line_quote": "BankHeist            14.2       753.1     185.5     232.9        345.4     53.1      531.7      351.0           732.9"
+  },
+  "BattleZone": {
+   "random": 2360.0,
+   "human": 37187.5,
+   "line_quote": "BattleZone           2360.0     37187.5   8977.0    10165.3      14834.1   13074.0   17671.0    13871.2         24459.8"
+  },
+  "Boxing": {
+   "random": 0.1,
+   "human": 12.1,
+   "line_quote": "Boxing               0.1        12.1      -0.3      9.0          35.7      70.1      45.8       52.7            85.8"
+  },
+  "Breakout": {
+   "random": 1.7,
+   "human": 30.5,
+   "line_quote": "Breakout             1.7        30.5      9.2       19.8         19.6      83.7      25.5       414.1           370.6"
+  },
+  "ChopperCommand": {
+   "random": 811.0,
+   "human": 7387.8,
+   "line_quote": "ChopperCommand       811.0      7387.8    925.9     844.6        946.3     1565.0    2362.1     1117.3          7549.3"
+  },
+  "CrazyClimber": {
+   "random": 10780.5,
+   "human": 35829.4,
+   "line_quote": "CrazyClimber         10780.5    35829.4   34508.6   21539.0      36700.5   59324.2   45544.1    83940.2         58431.8"
+  },
+  "DemonAttack": {
+   "random": 152.1,
+   "human": 1971.0,
+   "line_quote": "DemonAttack          152.1      1971.0    627.6     1321.5       517.6     2034.4    2814.4     13003.9         13341.4"
+  },
+  "Freeway": {
+   "random": 0.0,
+   "human": 29.6,
+   "line_quote": "Freeway              0.0        29.6      20.9      20.3         19.3      31.1      25.4       21.8            25.5"
+  },
+  "Frostbite": {
+   "random": 65.2,
+   "human": 4334.7,
+   "line_quote": "Frostbite            65.2       4334.7    871.0     1014.2       1170.7    259.1     2584.8     296.3           2384.8"
+  },
+  "Gopher": {
+   "random": 257.6,
+   "human": 2412.5,
+   "line_quote": "Gopher               257.6      2412.5    467.0     621.6        660.6     2236.1    712.4      3260.3          1331.2"
+  },
+  "Hero": {
+   "random": 1027.0,
+   "human": 30826.4,
+   "line_quote": "Hero                 1027.0     30826.4   6226.0    4167.9       5858.6    7037.4    8524.0     9315.9          7818.6"
+  },
+  "Jamesbond": {
+   "random": 29.0,
+   "human": 302.8,
+   "line_quote": "Jamesbond            29.0       302.8     275.7     349.1        366.5     462.7     389.1      517.0           1129.6"
+  },
+  "Kangaroo": {
+   "random": 52.0,
+   "human": 3035.0,
+   "line_quote": "Kangaroo             52.0       3035.0    581.7     1088.4       3617.4    838.2     3631.7     724.1           6614.7"
+  },
+  "Krull": {
+   "random": 1598.0,
+   "human": 2665.5,
+   "line_quote": "Krull                1598.0     2665.5    3256.9    4402.1       3681.6    6616.4    5911.8     5663.3          8223.4"
+  },
+  "KungFuMaster": {
+   "random": 258.5,
+   "human": 22736.3,
+   "line_quote": "KungFuMaster         258.5      22736.3   6580.1    11467.4      14783.2   21759.8   18649.4    30944.8         18991.7"
+  },
+  "MsPacman": {
+   "random": 307.3,
+   "human": 6951.6,
+   "line_quote": "MsPacman             307.3      6951.6    1187.4    1218.1       1318.4    999.1     1574.1     1281.2          2008.3"
+  },
+  "Pong": {
+   "random": -20.7,
+   "human": 14.6,
+   "line_quote": "Pong                 -20.7      14.6      -9.7      -9.1         -5.4      14.6      2.9        20.1            16.7"
+  },
+  "PrivateEye": {
+   "random": 24.9,
+   "human": 69571.3,
+   "line_quote": "PrivateEye           24.9       69571.3   72.8      3.5          86.0      100.0     97.9       96.7            40.5"
+  },
+  "Qbert": {
+   "random": 163.9,
+   "human": 13455.0,
+   "line_quote": "Qbert                163.9      13455.0   1773.5    1810.7       866.3     745.7     4044.1     14448.5         4447.1"
+  },
+  "Roadrunner": {
+   "random": 11.5,
+   "human": 7845.0,
+   "line_quote": "Roadrunner           11.5       7845.0    11843.4   11211.4      12213.1   9614.6    13463.4    17751.3         33426.8"
+  },
+  "Seaquest": {
+   "random": 68.4,
+   "human": 42054.7,
+   "line_quote": "Seaquest             68.4       42054.7   304.6     352.3        558.1     661.3     819.0      1100.2          1232.5"
+  },
+  "UpNDown": {
+   "random": 533.4,
+   "human": 11693.2,
+   "line_quote": "UpNDown              533.4      11693.2   3075.0    4324.5       10859.2   3546.2    112450.3   17264.2         12101.7"
+  }
+ },
+ "baseline_rows_seen": [
+  "Random",
+  "Human",
+  "DER",
+  "DrQ(ϵ)",
+  "SPR",
+  "IRIS",
+  "SR-SPR",
+  "EfficientZero"
+ ],
+ "problems": [
+  "Table A.1 caption does not state which replay ratio the per-game BBF scores use; Figure 4 (same 26-game results) says 'BBF at replay ratio 8', and the paper's main setting is RR=8, but the table itself is unlabeled. Rows are labelled 'main' with replay_ratio=8 assumed from Section 4 ('For BBF, we use RR=8').",
+  "No hyperparameter table (batch size, learning rate, seeds-per-eval episodes, data augmentation, frame skip) exists in this arXiv text; only prose-level hyperparameters were harvested.",
+  "RR=2 variant and ablations (Figure 5, Figure 8, Figure A.2) are reported only as IQM figures, not per-game tables -> not extracted.",
+  "Sticky-action results (Figure 9, 55 games) are figures only -> not extracted.",
+  "No per-game standard deviations printed."
+ ]
+}

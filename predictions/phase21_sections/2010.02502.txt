@@ -1,0 +1,34 @@
+This method builds on the following base algorithm from Denoising Diffusion Probabilistic Models (Ho et al. 2020), which it inherits unchanged except where noted below.
+
+Algorithm 1 Training
+Algorithm 2 Sampling
+1: repeat
+2: x0 ∼ q(x0 )
+3: t ∼ Uniform({1, . . . , T })
+4:  ∼ N (0, I)
+5: Take gradient descent step on
+√
+√
+2
+∇θ  − θ ( ᾱt x0 + 1 − ᾱt , t)
+6: until converged
+1: xT ∼ N (0, I)
+2: for t = T, . . . , 1 do
+3: z ∼ N (0, I) 
+if t > 1, else z = 0
+
+t
+4: xt−1 = √1αt xt − √1−α
+
+(x
+,
+t)
++ σt z
+t
+θ
+1−ᾱt
+5: end for
+
+The modification introduced in this paper:
+
+VARIATIONAL I NFERENCE FOR NON -M ARKOVIAN F ORWARD P ROCESSES Because the generative model approximates the reverse of the inference process, we need to rethink the inference process in order to reduce the number of iterations required by the generative model. Our key observation is that the DDPM objective in the form of Lγ only depends on the marginals2 q(xt |x0 ), but not directly on the joint q(x1:T |x0 ). Since there are many inference distributions (joints) with the same marginals, we explore alternative inference processes that are non-Markovian, which leads to new generative processes (Figure 1, right). These non-Markovian inference process lead to the same surrogate objective function as DDPM, as we will show below. In Appendix A, we show that the non-Markovian perspective also applies beyond the Gaussian case. 3.1 N ON -M ARKOVIAN FORWARD PROCESSES Let us consider a family Q of inference distributions, indexed by a real vector σ ∈ RT≥0 : qσ (x1:T |x0 ) := qσ (xT |x0 ) T Y qσ (xt−1 |xt , x0 ) (6) t=2 √ where qσ (xT |x0 ) = N ( αT x0 , (1 − αT )I) and for all t > 1,   √ q xt − αt x0 2 √ 2 qσ (xt−1 |xt , x0 ) = N αt−1 x0 + 1 − αt−1 − σt · √ , σt I . (7) 1 − αt √ The mean function is chosen to order to ensure that qσ (xt |x0 ) = N ( αt x0 , (1 − αt )I) for all t (see Lemma 1 of Appendix B), so that it defines a joint inference distribution that matches the “marginals” as desired. The forward process3 can be derived from Bayes’ rule: qσ (xt |xt−1 , x0 ) = qσ (xt−1 |xt , x0 )qσ (xt |x0 ) , qσ (xt−1 |x0 ) 1 Please refer to Appendix C.2 for details. We slightly abuse this term (as well as joints) when only conditioned on x0 . 3 We overload the term “forward process” for cases where the inference model is not a diffusion. 2 3 (8) Published as a conference paper at ICLR 2021 which is also Gaussian (although we do not use this fact for the remainder of this paper). Unlike the diffusion process in Eq. (3), the forward process here is no longer Markovian, since each xt could depend on both xt−1 and x0 . The magnitude of σ controls the how stochastic the forward process is; when σ → 0, we reach an extreme case where as long as we observe x0 and xt for some t, then xt−1 become known and fixed. 3.2 G ENERATIVE PROCESS AND UNIFIED VARIATIONAL INFERENCE OBJECTIVE (t) Next, we define a trainable generative process pθ (x0:T ) where each pθ (xt−1 |xt ) leverages knowledge of qσ (xt−1 |xt , x0 ). Intuitively, given a noisy observation xt , we first make a prediction4 of the corresponding x0 , and then use it to obtain a sample xt−1 through the reverse conditional distribution qσ (xt−1 |xt , x0 ), which we have defined. (t) For some x0 ∼ q(x0 ) and t ∼ N (0, I), xt can be obtained using Eq. (4). The model θ (xt ) then attempts to predict t from xt , without knowledge of x0 . By rewriting Eq. (4), one can then predict the denoised observation, which is a prediction of x0 given xt : √ √ (t) (t) fθ (xt ) := (xt − 1 − αt · θ (xt ))/ αt . (9) We can then define the generative process with a fixed prior pθ (xT ) = N (0, I) and ( (1) N (fθ (x1 ), σ12 I) if t = 1 (t) pθ (xt−1 |xt ) = (t) qσ (xt−1 |xt , fθ (xt )) otherwise, (t) (10) (t) where qσ (xt−1 |xt , fθ (xt )) is defined as in Eq. (7) with x0 replaced by fθ (xt ). We add some Gaussian noise (with covariance σ12 I) for the case of t = 1 to ensure that the generative process is supported everywhere. We optimize θ via the following variational inference objective (which is a functional over θ ): Jσ (θ ) := Ex0:T ∼qσ (x0:T ) [log qσ (x1:T |x0 ) − log pθ (x0:T )] (11) " # T T X X (t) = Ex0:T ∼qσ (x0:T ) log qσ (xT |x0 ) + log qσ (xt−1 |xt , x0 ) − log pθ (xt−1 |xt ) − log pθ (xT ) t=2 t=1 where we factorize qσ (x1:T |x0 ) according to Eq. (6) and pθ (x0:T ) according to Eq. (1). From the definition of Jσ , it would appear that a different model has to be trained for every choice of σ, since it corresponds to a different variational objective (and a different generative process). However, Jσ is equivalent to Lγ for certain weights γ, as we show below. Theorem 1. For all σ > 0, there exists γ ∈ RT>0 and C ∈ R, such that Jσ = Lγ + C. (t) The variational objective Lγ is special in the sense that if parameters θ of the models θ are not shared across different t, then the optimal solution for θ will not depend on the weights γ (as global optimum is achieved by separately maximizing each term in the sum). This property of Lγ has two implications. On the one hand, this justified the use of L1 as a surrogate objective function for the variational lower bound in DDPMs; on the other hand, since Jσ is equivalent to some Lγ from Theorem 1, the optimal solution of Jσ is also the same as that of L1 . Therefore, if parameters are not shared across t in the model θ , then the L1 objective used by Ho et al. (2020) can be used as a surrogate objective for the variational objective Jσ as well. 4 S AMPLING FROM G ENERALIZED G ENERATIVE P ROCESSES With L1 as the objective, we are not only learning a generative process for the Markovian inference process considered in Sohl-Dickstein et al. (2015) and Ho et al. (2020), but also generative processes for many non-Markovian forward processes parametrized by σ that we have described. Therefore, we can essentially use pretrained DDPM models as the solutions to the new objectives, and focus on finding a generative process that is better at producing samples subject to our needs by changing σ. 4 Learning a distribution over the predictions is also possible, but empirically we found little benefits of it. 4 Published as a conference paper at ICLR 2021 Figure 2: Graphical model for accelerated generation, where τ = [1, 3]. 4.1 D ENOISING D IFFUSION I MPLICIT M ODELS From pθ (x1:T ) in Eq. (10), one can generate a sample xt−1 from a sample xt via: xt−1 = √ xt − αt−1 | √ ! q (t) 1 − αt θ (xt ) (t) + 1 − αt−1 − σt2 · θ (xt ) + σt t √ |{z} αt {z } random | noise {z

@@ -1,0 +1,828 @@
+{
+  "arxiv_id": "2106.04152",
+  "title": "PlayVirtual: Augmenting Cycle-Consistent Virtual Trajectories for Reinforcement Learning",
+  "methods": [
+    {
+      "method_name": "PlayVirtual",
+      "is_own_method": true,
+      "one_paragraph_description": "PlayVirtual builds on SPR (Rainbow-based for Atari). In addition to SPR's forward latent prediction loss, it adds a backward dynamics model (BDM): from current latent state z_t it samples M sets of K random actions, rolls forward with the dynamics model, rolls backward with the BDM, and enforces a cycle-consistency loss d_M(z'_t, z_t) on the returned state (computed in the SPR 'projection' space). This generates abundant virtual trajectories with no ground-truth state supervision to regularize encoder representation learning. Total loss = RL + lambda_pred * L_pred + lambda_cyc * L_cyc, with lambda_cyc warmed up (Gaussian ramp-up to 1 at 50K). Auxiliary models discarded at test time.",
+      "conventional_lineage_hint": "self-supervised representation learning / auxiliary tasks for data-efficient deep RL from pixels ('augments cycle-consistent virtual trajectories to enhance the data efficiency for RL feature representation learning'); built on SPR / Rainbow",
+      "global_conditions": {
+        "gray_scaling": {
+          "value": "True",
+          "quote": "Gray-scaling                                                  True",
+          "location": "Table 15 (Appendix)"
+        },
+        "frame_stack": {
+          "value": "4",
+          "quote": "Frame stack                                                   4",
+          "location": "Table 15 (Appendix)"
+        },
+        "observation_downsampling": {
+          "value": "(84, 84)",
+          "quote": "Observation downsampling                                      (84, 84)",
+          "location": "Table 15 (Appendix)"
+        },
+        "augmentation": {
+          "value": "Random shift & intensity",
+          "quote": "Augmentation                                                  Random shift & intensity",
+          "location": "Table 15 (Appendix)"
+        },
+        "action_repeat": {
+          "value": "4",
+          "quote": "Action repeat                                                 4",
+          "location": "Table 15 (Appendix)"
+        },
+        "training_steps": {
+          "value": "100K",
+          "quote": "Training steps                                                100K",
+          "location": "Table 15 (Appendix)"
+        },
+        "max_frames_per_episode": {
+          "value": "108K",
+          "quote": "Max frames per episode                                        108K",
+          "location": "Table 15 (Appendix)"
+        },
+        "reply_buffer_size": {
+          "value": "100K",
+          "quote": "Reply buffer size                                             100K",
+          "location": "Table 15 (Appendix)"
+        },
+        "minimum_replay_size_for_sampling": {
+          "value": "2000",
+          "quote": "Minimum replay size for sampling                              2000",
+          "location": "Table 15 (Appendix)"
+        },
+        "mini_batch_size": {
+          "value": "32",
+          "quote": "Mini-batch size                                               32",
+          "location": "Table 15 (Appendix)"
+        },
+        "optimizer": {
+          "value": "Adam",
+          "quote": "Optimizer                                                     Adam",
+          "location": "Table 15 (Appendix)"
+        },
+        "optimizer_learning_rate": {
+          "value": "0.0001",
+          "quote": "Optimizer: learning rate                                      0.0001",
+          "location": "Table 15 (Appendix)"
+        },
+        "optimizer_beta1": {
+          "value": "0.9",
+          "quote": "Optimizer: β1                                                 0.9",
+          "location": "Table 15 (Appendix)"
+        },
+        "optimizer_beta2": {
+          "value": "0.999",
+          "quote": "Optimizer: β2                                                 0.999",
+          "location": "Table 15 (Appendix)"
+        },
+        "optimizer_epsilon": {
+          "value": "0.00015",
+          "quote": "Optimizer: \u000f                                                  0.00015",
+          "location": "Table 15 (Appendix)"
+        },
+        "max_gradient_norm": {
+          "value": "10",
+          "quote": "Max gradient norm                                             10",
+          "location": "Table 15 (Appendix)"
+        },
+        "update": {
+          "value": "Distributional Q",
+          "quote": "Update                                                        Distributional Q",
+          "location": "Table 15 (Appendix)"
+        },
+        "dueling": {
+          "value": "True",
+          "quote": "Dueling                                                       True",
+          "location": "Table 15 (Appendix)"
+        },
+        "support_of_q_distribution": {
+          "value": "51 bins",
+          "quote": "Support of Q-distribution                                     51 bins",
+          "location": "Table 15 (Appendix)"
+        },
+        "discount_factor": {
+          "value": "0.99",
+          "quote": "Discount factor                                               0.99",
+          "location": "Table 15 (Appendix)"
+        },
+        "reward_clipping": {
+          "value": "[-1, 1]",
+          "quote": "Reward clipping Frame stack                                   [-1, 1]",
+          "location": "Table 15 (Appendix)"
+        },
+        "priority_exponent": {
+          "value": "0.5",
+          "quote": "Priority exponent                                             0.5",
+          "location": "Table 15 (Appendix)"
+        },
+        "priority_correction": {
+          "value": "0.4 → 1",
+          "quote": "Priority correction                                           0.4 → 1",
+          "location": "Table 15 (Appendix)"
+        },
+        "exploration": {
+          "value": "Noisy nets",
+          "quote": "Exploration                                                   Noisy nets",
+          "location": "Table 15 (Appendix)"
+        },
+        "noisy_nets_parameter": {
+          "value": "0.5",
+          "quote": "Noisy nets parameter                                          0.5",
+          "location": "Table 15 (Appendix)"
+        },
+        "evaluation_trajectories": {
+          "value": "100",
+          "quote": "Evaluation trajectories                                       100",
+          "location": "Table 15 (Appendix)"
+        },
+        "replay_period_every": {
+          "value": "1 step",
+          "quote": "Replay period every                                           1 step",
+          "location": "Table 15 (Appendix)"
+        },
+        "updates_per_step": {
+          "value": "2",
+          "quote": "Updates per step                                              2",
+          "location": "Table 15 (Appendix)"
+        },
+        "multi_step_return_length": {
+          "value": "10",
+          "quote": "Multi-step return length                                      10",
+          "location": "Table 15 (Appendix)"
+        },
+        "q_network_channels": {
+          "value": "32, 64, 64",
+          "quote": "Q network: channels                                           32, 64, 64",
+          "location": "Table 15 (Appendix)"
+        },
+        "q_network_filter_size": {
+          "value": "8 × 8, 4 × 4, 3 × 3",
+          "quote": "Q network: filter size                                        8 × 8, 4 × 4, 3 × 3",
+          "location": "Table 15 (Appendix)"
+        },
+        "q_network_stride": {
+          "value": "4, 2, 1",
+          "quote": "Q network: stride                                             4, 2, 1",
+          "location": "Table 15 (Appendix)"
+        },
+        "q_network_hidden_units": {
+          "value": "256",
+          "quote": "Q network: hidden units                                       256",
+          "location": "Table 15 (Appendix)"
+        },
+        "target_network_update_period": {
+          "value": "1",
+          "quote": "Target network update period                                  1",
+          "location": "Table 15 (Appendix)"
+        },
+        "tau_ema_coefficient": {
+          "value": "0",
+          "quote": "τ (EMA coefficient)                                           0",
+          "location": "Table 15 (Appendix)"
+        },
+        "k_number_of_prediction_steps": {
+          "value": "9",
+          "quote": "K (number of prediction steps)                                9",
+          "location": "Table 15 (Appendix)"
+        },
+        "m_number_of_virtual_trajectories": {
+          "value": "2|A| (two times of action space size)",
+          "quote": "M (number of virtual trajectories)                            2|A| (two times of action space size)",
+          "location": "Table 15 (Appendix)"
+        },
+        "lambda_pred": {
+          "value": "1",
+          "quote": "λpred (weight for prediction loss)                            1",
+          "location": "Table 15 (Appendix)"
+        },
+        "lambda_cyc_max": {
+          "value": "1",
+          "quote": "cyc (a weight related to cycle consistency loss)             1",
+          "location": "Table 15 (Appendix)"
+        },
+        "warmup": {
+          "value": "Gaussian ramp-up (iend =50K)",
+          "quote": "Warmup                                                        Gaussian ramp-up (iend =50K)",
+          "location": "Table 15 (Appendix)"
+        },
+        "seeds": {
+          "value": "15",
+          "quote": "Table 1: Scores achieved by different methods on Atari-100k. We also report median HNS. We run our PlayVirtual with 15 random seeds given that this benchmark is susceptible to high variance across",
+          "location": "Table 1 caption"
+        },
+        "base_agent": {
+          "value": "SPR (Rainbow-based) for Atari",
+          "quote": "Effectiveness of PlayVirtual. As described in Table 3: Effectiveness of PlayVirtual on top of",
+          "location": "Section 4.3 / Table 3 caption"
+        }
+      },
+      "per_dataset_conditions": {},
+      "evaluation_protocol": {
+        "seeds": "15",
+        "episodes_per_seed": "100 evaluation trajectories",
+        "checkpoint_selection": "last (100K training steps; not otherwise stated)",
+        "quote": "Table 1: Scores achieved by different methods on Atari-100k. We also report median HNS. We run our PlayVirtual with 15 random seeds given that this benchmark is susceptible to high variance across | Replay period every                                           1 step | Table 8: The standard deviation (STD) comparison of Baseline and PlayVirtual on Atari-100k. The STD is obtained from 15 runs with random seeds.",
+        "location": "Table 1 caption; Table 15; Table 8 caption"
+      },
+      "dataset_version": {
+        "value": "Atari-100k: 100K training steps, action repeat 4; 100 evaluation trajectories; sticky actions: not stated",
+        "quote": "Training steps                                                100K | Max frames per episode                                        108K | Replay period every                                           1 step",
+        "location": "Table 15"
+      },
+      "rows": [
+        {
+          "dataset": "Alien",
+          "outcome": 947.8,
+          "std": 231.7,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Alien             7127.7     227.8      616.9        739.9     824.7     558.2      771.2     801.5      947.8",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Alien               138.8       231.7       Crazy Climber   6275.9       4664.4      Kung Fu Master   4095.1      6198.7"
+        },
+        {
+          "dataset": "Amidar",
+          "outcome": 165.3,
+          "std": 41.3,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Amidar             1719.5      5.8       88.0        188.6      82.8     142.1      102.8     176.3     165.3",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Amidar                43.0       41.3       Demon Attack     207.6        332.4      Ms Pacman         546.9       330.7"
+        },
+        {
+          "dataset": "Assault",
+          "outcome": 702.3,
+          "std": 50.2,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Assault            742.0     222.4      527.2        431.2     351.9     600.6      452.4     571.0      702.3",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Assault              138.8       50.2       Freeway           15.3         13.9      Pong               6.5         13.2"
+        },
+        {
+          "dataset": "Asterix",
+          "outcome": 933.3,
+          "std": 170.5,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Asterix           8503.3     210.0      1128.3       470.8     628.5      734.5     603.5     977.8     933.3",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Asterix              229.8      170.5       Frostbite       1075.0       1196.3      Private Eye        0.0        23.5"
+        },
+        {
+          "dataset": "Bank Heist",
+          "outcome": 245.9,
+          "std": 160.9,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Bank Heist         753.1      14.2       34.2         51.0     182.1     131.6      168.9     380.9      245.9",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Bank Heist            97.2      160.9       Gopher           251.9        276.6      Qbert            1053.2       952.6"
+        },
+        {
+          "dataset": "Battle Zone",
+          "outcome": 13260.0,
+          "std": 5261.6,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Battle Zone       37187.5   2360.0     5184.4      10124.6    4060.6    14870.0   12954.0   16651.0    13260.0",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Battle Zone         4027.3      5261.6      Hero            2940.3       2130.9      Road Runner      3940.8      3765.5"
+        },
+        {
+          "dataset": "Boxing",
+          "outcome": 38.3,
+          "std": 19.9,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Boxing              12.1       0.1        9.1          0.2       2.5       1.2        6.0      35.8      38.3",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Boxing                13.6       19.9       Jamesbond         47.3         75.3      Seaquest          111.9       126.9"
+        },
+        {
+          "dataset": "Breakout",
+          "outcome": 20.6,
+          "std": 4.4,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Breakout            30.5       1.7       16.4          1.9       9.8       4.9       16.1      17.1      20.6",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Breakout              3.9         4.4       Kangaroo        3551.8       3183.0      Up N Down        2848.4      10398.1"
+        },
+        {
+          "dataset": "Chopper Command",
+          "outcome": 922.4,
+          "std": 318.7,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Chopper Command    7387.8    811.0      1246.9       861.8    1033.3     1058.5     780.3     974.8     922.4",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Chopper Command      337.0      318.7       Krull            323.7        524.6"
+        },
+        {
+          "dataset": "Crazy Climber",
+          "outcome": 23176.7,
+          "std": 4664.4,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Crazy Climber     35829.4   10780.5    62583.6     16185.3   21327.8    12146.5   20516.5   42923.6    23176.7",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Alien               138.8       231.7       Crazy Climber   6275.9       4664.4      Kung Fu Master   4095.1      6198.7"
+        },
+        {
+          "dataset": "Demon Attack",
+          "outcome": 1131.7,
+          "std": 332.4,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Demon Attack       1971.0    152.1      208.1        508.0     711.8     817.6     1113.4     545.2     1131.7",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Amidar                43.0       41.3       Demon Attack     207.6        332.4      Ms Pacman         546.9       330.7"
+        },
+        {
+          "dataset": "Freeway",
+          "outcome": 16.1,
+          "std": 13.9,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Freeway             29.6       0.0       20.3         27.9      25.0      26.7        9.8      24.4      16.1",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Assault              138.8       50.2       Freeway           15.3         13.9      Pong               6.5         13.2"
+        },
+        {
+          "dataset": "Frostbite",
+          "outcome": 1984.7,
+          "std": 1196.3,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Frostbite          4334.7     65.2      254.7        866.8     231.6    1181.3      331.1    1821.5     1984.7",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Asterix              229.8      170.5       Frostbite       1075.0       1196.3      Private Eye        0.0        23.5"
+        },
+        {
+          "dataset": "Gopher",
+          "outcome": 684.3,
+          "std": 276.6,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Gopher             2412.5    257.6      771.0        349.5     778.0      669.3     636.3     715.2      684.3",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Bank Heist            97.2      160.9       Gopher           251.9        276.6      Qbert            1053.2       952.6"
+        },
+        {
+          "dataset": "Hero",
+          "outcome": 8597.5,
+          "std": 2130.9,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Hero              30826.4    1027.0    2656.6       6857.0    6458.8     6279.3    3736.3    7019.2     8597.5",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Battle Zone         4027.3      5261.6      Hero            2940.3       2130.9      Road Runner      3940.8      3765.5"
+        },
+        {
+          "dataset": "Jamesbond",
+          "outcome": 394.7,
+          "std": 75.3,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Jamesbond           302.8     29.0      125.3        301.6     112.3      471.0     236.0     365.4     394.7",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Boxing                13.6       19.9       Jamesbond         47.3         75.3      Seaquest          111.9       126.9"
+        },
+        {
+          "dataset": "Kangaroo",
+          "outcome": 2384.7,
+          "std": 3183.0,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Kangaroo           3035.0     52.0      323.1        779.3     605.4     872.5      940.6    3276.4     2384.7",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Breakout              3.9         4.4       Kangaroo        3551.8       3183.0      Up N Down        2848.4      10398.1"
+        },
+        {
+          "dataset": "Krull",
+          "outcome": 3880.7,
+          "std": 524.6,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Krull              2665.5    1598.0     4539.9      2851.5    3277.9     4229.6    4018.1    3688.9     3880.7",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Chopper Command      337.0      318.7       Krull            323.7        524.6"
+        },
+        {
+          "dataset": "Kung Fu Master",
+          "outcome": 14259.0,
+          "std": 6198.7,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Kung Fu Master    22736.3     258.5    17257.2     14346.1    5722.2    14307.8    9111.0   13192.7    14259.0",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Alien               138.8       231.7       Crazy Climber   6275.9       4664.4      Kung Fu Master   4095.1      6198.7"
+        },
+        {
+          "dataset": "Ms Pacman",
+          "outcome": 1335.4,
+          "std": 330.7,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Ms Pacman          6951.6     307.3     1480.0      1204.1     941.9     1465.5     960.5    1313.2     1335.4",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Amidar                43.0       41.3       Demon Attack     207.6        332.4      Ms Pacman         546.9       330.7"
+        },
+        {
+          "dataset": "Pong",
+          "outcome": -3.0,
+          "std": 13.2,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Pong                 14.6     -20.7      12.8        -19.3       1.3      -16.5      -8.5      -5.9       -3.0",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Assault              138.8       50.2       Freeway           15.3         13.9      Pong               6.5         13.2"
+        },
+        {
+          "dataset": "Private Eye",
+          "outcome": 93.9,
+          "std": 23.5,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Private Eye       69571.3      24.9      58.3         97.8     100.0      218.4     -13.6    124.0        93.9",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Asterix              229.8      170.5       Frostbite       1075.0       1196.3      Private Eye        0.0        23.5"
+        },
+        {
+          "dataset": "Qbert",
+          "outcome": 3620.1,
+          "std": 952.6,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Qbert             13455.0     163.9    1288.8       1152.9     509.3     1042.4     854.4     669.1     3620.1",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Bank Heist            97.2      160.9       Gopher           251.9        276.6      Qbert            1053.2       952.6"
+        },
+        {
+          "dataset": "Road Runner",
+          "outcome": 13534.0,
+          "std": 3765.5,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Road Runner        7845.0      11.5    5640.6       9600.0    2696.7     5661.0    8895.1   14220.5    13534.0",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Battle Zone         4027.3      5261.6      Hero            2940.3       2130.9      Road Runner      3940.8      3765.5"
+        },
+        {
+          "dataset": "Seaquest",
+          "outcome": 527.7,
+          "std": 126.9,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Seaquest          42054.7      68.4     683.3        354.1     286.9      384.5     301.2     583.1     527.7",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Boxing                13.6       19.9       Jamesbond         47.3         75.3      Seaquest          111.9       126.9"
+        },
+        {
+          "dataset": "Up N Down",
+          "outcome": 10225.2,
+          "std": 10398.1,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "K": "9",
+            "M": "2|A|",
+            "lambda_pred": "1",
+            "lambda_cyc_max": "1",
+            "distance_space": "M_proj"
+          },
+          "table": "Table 1",
+          "line_quote": " Up N Down         11693.2     533.4    3350.3       2877.4    2847.6     2955.2    3180.8   28138.5    10225.2",
+          "notes": "raw score (mean over 15 seeds); std from Table 8 (15 seeds): Breakout              3.9         4.4       Kangaroo        3551.8       3183.0      Up N Down        2848.4      10398.1"
+        }
+      ]
+    }
+  ],
+  "reference_scores": {
+    "Alien": {
+      "random": 227.8,
+      "human": 7127.7,
+      "line_quote": " Alien             7127.7     227.8      616.9        739.9     824.7     558.2      771.2     801.5      947.8"
+    },
+    "Amidar": {
+      "random": 5.8,
+      "human": 1719.5,
+      "line_quote": " Amidar             1719.5      5.8       88.0        188.6      82.8     142.1      102.8     176.3     165.3"
+    },
+    "Assault": {
+      "random": 222.4,
+      "human": 742.0,
+      "line_quote": " Assault            742.0     222.4      527.2        431.2     351.9     600.6      452.4     571.0      702.3"
+    },
+    "Asterix": {
+      "random": 210.0,
+      "human": 8503.3,
+      "line_quote": " Asterix           8503.3     210.0      1128.3       470.8     628.5      734.5     603.5     977.8     933.3"
+    },
+    "Bank Heist": {
+      "random": 14.2,
+      "human": 753.1,
+      "line_quote": " Bank Heist         753.1      14.2       34.2         51.0     182.1     131.6      168.9     380.9      245.9"
+    },
+    "Battle Zone": {
+      "random": 2360.0,
+      "human": 37187.5,
+      "line_quote": " Battle Zone       37187.5   2360.0     5184.4      10124.6    4060.6    14870.0   12954.0   16651.0    13260.0"
+    },
+    "Boxing": {
+      "random": 0.1,
+      "human": 12.1,
+      "line_quote": " Boxing              12.1       0.1        9.1          0.2       2.5       1.2        6.0      35.8      38.3"
+    },
+    "Breakout": {
+      "random": 1.7,
+      "human": 30.5,
+      "line_quote": " Breakout            30.5       1.7       16.4          1.9       9.8       4.9       16.1      17.1      20.6"
+    },
+    "Chopper Command": {
+      "random": 811.0,
+      "human": 7387.8,
+      "line_quote": " Chopper Command    7387.8    811.0      1246.9       861.8    1033.3     1058.5     780.3     974.8     922.4"
+    },
+    "Crazy Climber": {
+      "random": 10780.5,
+      "human": 35829.4,
+      "line_quote": " Crazy Climber     35829.4   10780.5    62583.6     16185.3   21327.8    12146.5   20516.5   42923.6    23176.7"
+    },
+    "Demon Attack": {
+      "random": 152.1,
+      "human": 1971.0,
+      "line_quote": " Demon Attack       1971.0    152.1      208.1        508.0     711.8     817.6     1113.4     545.2     1131.7"
+    },
+    "Freeway": {
+      "random": 0.0,
+      "human": 29.6,
+      "line_quote": " Freeway             29.6       0.0       20.3         27.9      25.0      26.7        9.8      24.4      16.1"
+    },
+    "Frostbite": {
+      "random": 65.2,
+      "human": 4334.7,
+      "line_quote": " Frostbite          4334.7     65.2      254.7        866.8     231.6    1181.3      331.1    1821.5     1984.7"
+    },
+    "Gopher": {
+      "random": 257.6,
+      "human": 2412.5,
+      "line_quote": " Gopher             2412.5    257.6      771.0        349.5     778.0      669.3     636.3     715.2      684.3"
+    },
+    "Hero": {
+      "random": 1027.0,
+      "human": 30826.4,
+      "line_quote": " Hero              30826.4    1027.0    2656.6       6857.0    6458.8     6279.3    3736.3    7019.2     8597.5"
+    },
+    "Jamesbond": {
+      "random": 29.0,
+      "human": 302.8,
+      "line_quote": " Jamesbond           302.8     29.0      125.3        301.6     112.3      471.0     236.0     365.4     394.7"
+    },
+    "Kangaroo": {
+      "random": 52.0,
+      "human": 3035.0,
+      "line_quote": " Kangaroo           3035.0     52.0      323.1        779.3     605.4     872.5      940.6    3276.4     2384.7"
+    },
+    "Krull": {
+      "random": 1598.0,
+      "human": 2665.5,
+      "line_quote": " Krull              2665.5    1598.0     4539.9      2851.5    3277.9     4229.6    4018.1    3688.9     3880.7"
+    },
+    "Kung Fu Master": {
+      "random": 258.5,
+      "human": 22736.3,
+      "line_quote": " Kung Fu Master    22736.3     258.5    17257.2     14346.1    5722.2    14307.8    9111.0   13192.7    14259.0"
+    },
+    "Ms Pacman": {
+      "random": 307.3,
+      "human": 6951.6,
+      "line_quote": " Ms Pacman          6951.6     307.3     1480.0      1204.1     941.9     1465.5     960.5    1313.2     1335.4"
+    },
+    "Pong": {
+      "random": -20.7,
+      "human": 14.6,
+      "line_quote": " Pong                 14.6     -20.7      12.8        -19.3       1.3      -16.5      -8.5      -5.9       -3.0"
+    },
+    "Private Eye": {
+      "random": 24.9,
+      "human": 69571.3,
+      "line_quote": " Private Eye       69571.3      24.9      58.3         97.8     100.0      218.4     -13.6    124.0        93.9"
+    },
+    "Qbert": {
+      "random": 163.9,
+      "human": 13455.0,
+      "line_quote": " Qbert             13455.0     163.9    1288.8       1152.9     509.3     1042.4     854.4     669.1     3620.1"
+    },
+    "Road Runner": {
+      "random": 11.5,
+      "human": 7845.0,
+      "line_quote": " Road Runner        7845.0      11.5    5640.6       9600.0    2696.7     5661.0    8895.1   14220.5    13534.0"
+    },
+    "Seaquest": {
+      "random": 68.4,
+      "human": 42054.7,
+      "line_quote": " Seaquest          42054.7      68.4     683.3        354.1     286.9      384.5     301.2     583.1     527.7"
+    },
+    "Up N Down": {
+      "random": 533.4,
+      "human": 11693.2,
+      "line_quote": " Up N Down         11693.2     533.4    3350.3       2877.4    2847.6     2955.2    3180.8   28138.5    10225.2"
+    }
+  },
+  "baseline_rows_seen": [
+    "SimPLe[65]",
+    "DER[49]",
+    "OTR[25]",
+    "CURL[32]",
+    "DrQ[54]",
+    "SPR[44] (copied from SPR paper)",
+    "Baseline (SPR re-run by the authors) - only STD per game in Table 8, no per-game means"
+  ],
+  "problems": [
+    "All ablations (Tables 3-7, 9-11: K sweep, M sweep, lambda_cyc_max sweep, warmup, distance space, PlayVirtual-ND) report only median HNS (%) over 26 games, not per-game scores; no ablation rows extracted.",
+    "Table 15 row 'Optimizer: ' has the epsilon symbol dropped by pdftotext (value 0.00015). Row 'Reward clipping Frame stack  [-1, 1]' is a pdftotext merge; reward clipping = [-1, 1].",
+    "Sticky actions not mentioned anywhere in the paper.",
+    "Table 1 caption notes SPR column is copied from the SPR paper (41.5%) whereas the authors' reproduction gives 37.1%."
+  ]
+}

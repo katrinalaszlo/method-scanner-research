@@ -1,0 +1,569 @@
+{
+ "arxiv_id": "2006.04779",
+ "title": "Conservative Q-Learning for Offline Reinforcement Learning",
+ "methods": [
+  {
+   "method_name": "CQL(H)",
+   "is_own_method": true,
+   "one_paragraph_description": "Actor-critic built on SAC whose Q-function objective is replaced with the CQL(H) regularized objective: it minimizes Q-values under a log-sum-exp over actions (importance-sampled from uniform and current policy) while maximizing Q-values on dataset actions, added to the standard Bellman error; the policy is improved with SAC-style entropy regularization. Alpha is tuned via a Lagrange dual with threshold tau.",
+   "conventional_lineage_hint": "offline RL ('We compare CQL to prior offline RL methods'; 'CQL methods do not use a policy constraint, unlike prior offline RL methods')",
+   "global_conditions": {
+    "base_algorithm": {
+     "value": "SAC (rlkit implementation)",
+     "quote": "Hyperparameters. For the D4RL tasks, we built CQL on top of the implementation of SAC provided at: https://github.com/vitchyr/rlkit/.",
+     "location": "Appendix F"
+    },
+    "alpha": {
+     "value": "auto-tuned via Lagrangian dual gradient descent (CQL-Lagrange)",
+     "quote": "The tradeoff factor, α is automatically tuned via Lagrangian dual gradient descent for continuous control",
+     "location": "Section 4"
+    },
+    "lagrange_threshold_tau": {
+     "value": "10.0",
+     "quote": "For our experiments, across D4RL Gym MuJoCo domains, we choose τ = 10.0.",
+     "location": "Appendix F"
+    },
+    "policy_learning_rate": {
+     "value": "3e-5",
+     "quote": "the learning rate for the policy is chosen to be 3e-5 (vs 3e-4 or 1e-4 for the Q-function)",
+     "location": "Section 4 / Appendix F"
+    },
+    "q_learning_rate": {
+     "value": "3e-4",
+     "quote": "3e − 4 which is the SAC default was chosen to be the default for CQL.",
+     "location": "Appendix F"
+    },
+    "gradient_steps": {
+     "value": "1M",
+     "quote": "For our experiments, we used 1M gradient steps for all D4RL domains",
+     "location": "Appendix F"
+    },
+    "num_action_samples_logsumexp": {
+     "value": "10 (from Unif(a) and from π)",
+     "quote": "where in practice, we sampled 10 action samples each at every state s from a uniform-at-random Unif(a) and the current policy, π(a|s)",
+     "location": "Appendix F"
+    },
+    "other_hyperparameters": {
+     "value": "SAC defaults incl. twin Q-functions, soft target updates",
+     "quote": "Other hyperparameters, were kept identical to SAC on the D4RL tasks, including the twin Q-function trick, soft-target updates, etc.",
+     "location": "Appendix F"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "4",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated (returns after 1M gradient steps)",
+    "quote": "we report the normalized, smooth average undiscounted return over 4 seeds for in our results in Section 6.",
+    "location": "Appendix F / Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "v0",
+    "quote": "seemed to be better on some of our experiments (such as hopper-medium-v0 and antmaze-medium-play-v0)",
+    "location": "Appendix F (Table 1 itself prints no suffix; '-mixed' naming is v0-era)"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 35.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-random          30.5      2.1         25.5      23.5      28.1      35.4",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 10.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-random               11.3      9.8          9.5      11.1      12.0      10.8",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix."
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 7.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-random               4.1     1.6          6.7       0.8       0.5       7.0",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 44.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-medium           -4.3    36.1         38.6      44.0      45.5      44.4",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 79.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-medium               0.9     6.6         33.2      72.7      81.3      79.2",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 58.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-medium                 0.8    29.0         47.6      31.2      32.3      58.0",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix."
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome": 104.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-expert           -1.9   107.0        108.2       3.8      -1.1     104.8",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 109.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-expert                 0.7   109.0        110.3       6.6       3.7     109.9",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix."
+    },
+    {
+     "dataset": "walker2d-expert",
+     "outcome": 153.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-expert              -0.3   125.7        106.1      -0.2      -0.0     153.9",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 62.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-medium-expert     1.8    35.8         51.7      43.8      45.3      62.4",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 98.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-medium-expert        1.9    11.3         10.8      -0.3       0.9      98.7",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 111.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-medium-expert          1.6   111.9          4.0       1.1       0.8     111.0",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix."
+    },
+    {
+     "dataset": "halfcheetah-mixed",
+     "outcome": 46.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-mixed            -2.4    38.4         36.2      45.6      45.9      46.2",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix. '-mixed' is the v0-era name of the medium-replay dataset."
+    },
+    {
+     "dataset": "hopper-mixed",
+     "outcome": 48.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-mixed                  3.5    11.8         25.3       0.7       0.8      48.6",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix. '-mixed' is the v0-era name of the medium-replay dataset."
+    },
+    {
+     "dataset": "walker2d-mixed",
+     "outcome": 26.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-mixed                1.9    11.3         10.8      -0.3       0.9      26.7",
+     "notes": "normalized D4RL score; CQL(H) column. Table 1 prints no version suffix. '-mixed' is the v0-era name of the medium-replay dataset."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 7234.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 5",
+     "line_quote": "halfcheetah-medium-expert         7234.5       3995.6",
+     "notes": "raw return (average return, not normalized). "
+    },
+    {
+     "dataset": "walker2d-mixed",
+     "outcome": 1227.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 5",
+     "line_quote": "walker2d-mixed                    1227.2        812.7",
+     "notes": "raw return (average return, not normalized). "
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 1866.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 5",
+     "line_quote": "hopper-medium                     1866.1       1166.1",
+     "notes": "raw return (average return, not normalized). "
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 3628.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 6",
+     "line_quote": "hopper-medium-expert          3628.4                     3610.3",
+     "notes": "raw return (average return, not normalized). "
+    },
+    {
+     "dataset": "hopper-mixed",
+     "outcome": 1563.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 6",
+     "line_quote": "hopper-mixed                  1563.2                       864.6",
+     "notes": "raw return (average return, not normalized). "
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 1866.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 6",
+     "line_quote": "hopper-medium                 1866.1                     1028.4",
+     "notes": "raw return (average return, not normalized). "
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 3628.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 7",
+     "line_quote": "hopper-medium-expert                                 3628.4                     3589.4",
+     "notes": "raw return (average return, not normalized).  Table 7 column header: 'CQL(H) (Lagrange), τ = 10.0'."
+    },
+    {
+     "dataset": "hopper-mixed",
+     "outcome": 1866.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 7",
+     "line_quote": "hopper-mixed                                         1866.1                     1002.8",
+     "notes": "raw return (average return, not normalized).  Table 7 column header: 'CQL(H) (Lagrange), τ = 10.0'."
+    },
+    {
+     "dataset": "walker-mixed",
+     "outcome": 1227.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 7",
+     "line_quote": "walker-mixed                                         1227.2                     1055.7",
+     "notes": "raw return (average return, not normalized). Printed as 'walker-mixed' (presumably walker2d-mixed). Table 7 column header: 'CQL(H) (Lagrange), τ = 10.0'."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 1866.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "Lagrange (auto-tuned), tau=10.0"
+     },
+     "table": "Table 7",
+     "line_quote": "hopper-medium                                        1866.1                     1583.4",
+     "notes": "raw return (average return, not normalized).  Table 7 column header: 'CQL(H) (Lagrange), τ = 10.0'."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 3610.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "w/ Equation 1 (no dataset Q-value maximization term)",
+     "config_conditions": {
+      "objective": "Equation 1 (point-wise penalty, no dataset average Q maximization term)"
+     },
+     "table": "Table 6",
+     "line_quote": "hopper-medium-expert          3628.4                     3610.3",
+     "notes": "raw return. Column 'CQL(H) (w/ Equation 1)'."
+    },
+    {
+     "dataset": "hopper-mixed",
+     "outcome": 864.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "w/ Equation 1 (no dataset Q-value maximization term)",
+     "config_conditions": {
+      "objective": "Equation 1 (point-wise penalty, no dataset average Q maximization term)"
+     },
+     "table": "Table 6",
+     "line_quote": "hopper-mixed                  1563.2                       864.6",
+     "notes": "raw return. Column 'CQL(H) (w/ Equation 1)'."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 1028.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "w/ Equation 1 (no dataset Q-value maximization term)",
+     "config_conditions": {
+      "objective": "Equation 1 (point-wise penalty, no dataset average Q maximization term)"
+     },
+     "table": "Table 6",
+     "line_quote": "hopper-medium                 1866.1                     1028.4",
+     "notes": "raw return. Column 'CQL(H) (w/ Equation 1)'."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 3589.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=5.0 (fixed, non-Lagrange)",
+     "config_conditions": {
+      "alpha": "5.0 (fixed)"
+     },
+     "table": "Table 7",
+     "line_quote": "hopper-medium-expert                                 3628.4                     3589.4",
+     "notes": "raw return. Column 'CQL(H), α = 5.0'."
+    },
+    {
+     "dataset": "hopper-mixed",
+     "outcome": 1002.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=5.0 (fixed, non-Lagrange)",
+     "config_conditions": {
+      "alpha": "5.0 (fixed)"
+     },
+     "table": "Table 7",
+     "line_quote": "hopper-mixed                                         1866.1                     1002.8",
+     "notes": "raw return. Column 'CQL(H), α = 5.0'."
+    },
+    {
+     "dataset": "walker-mixed",
+     "outcome": 1055.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=5.0 (fixed, non-Lagrange)",
+     "config_conditions": {
+      "alpha": "5.0 (fixed)"
+     },
+     "table": "Table 7",
+     "line_quote": "walker-mixed                                         1227.2                     1055.7",
+     "notes": "raw return. Column 'CQL(H), α = 5.0'. Printed as 'walker-mixed'."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 1583.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=5.0 (fixed, non-Lagrange)",
+     "config_conditions": {
+      "alpha": "5.0 (fixed)"
+     },
+     "table": "Table 7",
+     "line_quote": "hopper-medium                                        1866.1                     1583.4",
+     "notes": "raw return. Column 'CQL(H), α = 5.0'."
+    }
+   ]
+  },
+  {
+   "method_name": "CQL(ρ)",
+   "is_own_method": true,
+   "one_paragraph_description": "CQL variant where the regularizer is a KL divergence against a prior rho; with rho = previous policy iterate, the penalty samples actions from the previous policy and avoids importance weights.",
+   "conventional_lineage_hint": "offline RL",
+   "global_conditions": {
+    "rho": {
+     "value": "previous policy π̂^{k-1}",
+     "quote": "How does CQL(H) compare to CQL(ρ), with ρ = π̂ k−1 , the previous policy?",
+     "location": "Appendix G"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "4 (assumed same as Table 1; not restated for Table 5)",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated",
+    "quote": "Table 5: Average return obtained by CQL(H), and CQL(ρ) on three D4RL MuJoCo environments.",
+    "location": "Appendix G Table 5"
+   },
+   "dataset_version": {
+    "value": "v0",
+    "quote": "seemed to be better on some of our experiments (such as hopper-medium-v0 and antmaze-medium-play-v0)",
+    "location": "Appendix F"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 3995.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rho": "previous policy"
+     },
+     "table": "Table 5",
+     "line_quote": "halfcheetah-medium-expert         7234.5       3995.6",
+     "notes": "raw return"
+    },
+    {
+     "dataset": "walker2d-mixed",
+     "outcome": 812.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rho": "previous policy"
+     },
+     "table": "Table 5",
+     "line_quote": "walker2d-mixed                    1227.2        812.7",
+     "notes": "raw return"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 1166.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rho": "previous policy"
+     },
+     "table": "Table 5",
+     "line_quote": "hopper-medium                     1866.1       1166.1",
+     "notes": "raw return"
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "SAC",
+  "BC",
+  "BEAR",
+  "BRAC-p",
+  "BRAC-v"
+ ],
+ "problems": [
+  "Table 1 has no std; only means over 4 seeds. Evaluation episodes per seed not stated.",
+  "Table 1 dataset names carry no version suffix; v0 inferred from '-v0' mentions elsewhere in the paper and v0-era '-mixed' naming.",
+  "Table 1 '-random-expert' rows (halfcheetah/hopper/walker2d-random-expert: 92.5/110.5/91.1) skipped — not in the allowed dataset list.",
+  "Tables 5/6/7 report raw returns, not normalized scores; rows emitted with notes 'raw return'.",
+  "Table 7 prints 'walker-mixed' (not walker2d-mixed); kept as printed.",
+  "Table 7 hopper-mixed CQL(H) Lagrange value 1866.1 is identical to hopper-medium and differs from Table 6 hopper-mixed 1563.2 — possible paper typo; both copied as printed.",
+  "CQL(ρ) appears on locomotion only in Table 5 (raw returns); no normalized locomotion scores for CQL(ρ).",
+  "Ablation Table 7 also has antmaze rows (skipped)."
+ ]
+}

@@ -1,0 +1,137 @@
+OK   1903.00374 Model-Based Reinforcement Learning for A   41.54s heading: Next Frame                  ops=['embed', 'encode', 'decode', 'predict', 'approximate', 'discretize', 'sample', 'train'] canon=['encode', 'reconstruct', 'predict', 'sample', 'train']
+OK   1906.05243 When to use parametric models in reinfor   14.67s fallback: 20% window                 ops=['plan', 'reconstruct', 'generalize'] canon=['plan', 'reconstruct']
+OK   2003.10181 Importance of using appropriate baseline    14.5s heading: DATA EFFICIENCY OF STANDA   ops=['update', 'simulate', 'replay'] canon=['correct']
+OK   2004.04136 CURL: Contrastive Unsupervised Represent    17.1s heading: CURL Implementation         ops=['discriminate', 'generate', 'encode', 'augment'] canon=['reconstruct', 'encode', 'augment']
+OK   2004.13649 Image Augmentation Is All You Need: Regu   15.83s heading: Sample Efficient Reinforc   ops=['transform', 'average target', 'average q function'] canon=[]
+OK   2007.05929 Data-Efficient Reinforcement Learning wi    20.7s heading: METHOD                      ops=['encode', 'predict', 'project', 'compute loss'] canon=['encode', 'predict', 'project', 'evaluate']
+OK   2106.04152 PlayVirtual: Augmenting Cycle-Consistent   22.13s heading: Cycle-Consistent Virtual    ops=['predict', 'backward predict', 'cycle consistency'] canon=['predict']
+OK   2111.00210 Mastering Atari Games with Limited Data     21.3s heading: EfficientZero               ops=['predict', 'simulate', 'learn'] canon=['predict', 'train']
+OK   2201.12096 Mask-based Latent Reconstruction for Rei   26.49s heading: Approach                    ops=['mask', 'encode', 'decode', 'reconstruct'] canon=['mask', 'encode', 'reconstruct']
+OK   2209.00588 Transformers are Sample-Efficient World    23.64s heading: METHOD                      ops=['collect experience', 'update world model', 'update behavior'] canon=['correct']
+OK   2303.07109 Transformer-based World Models Are Happy   20.01s heading: METHOD                      ops=['encode', 'decode', 'aggregate', 'predict', 'sample'] canon=['encode', 'reconstruct', 'aggregate', 'predict', 'sample']
+OK   2305.19452 Bigger, Better, Faster: Human-level Atar   19.85s heading: Method                      ops=['scale network capacity', 'reset convolutional layers', 'update horizon'] canon=['correct']
+OK   2310.09615 STORM: Efficient Stochastic Transformer     24.3s heading: Method                      ops=['gather data', 'update world model', 'improve policy', 'encode', 'decode', 'sample', 'predict reward', 'predict continuation', 'predict next distribution', 'mix action', 'sequence model', 'reconstruct image', 'compute loss'] canon=['correct', 'improve', 'encode', 'reconstruct', 'sample', 'predict', 'evaluate']
+OK   2405.12399 Diffusion for World Modeling: Visual Det   23.97s heading: Method                      ops=['perturb', 'precondition', 'train', 'sample', 'condition', 'predict', 'update'] canon=['intervene', 'train', 'sample', 'predict', 'correct']
+OK   2403.00564 EfficientZero V2: Mastering Discrete and   23.64s heading: Method                      ops=['sample', 'select', 'estimate', 'bootstrap'] canon=['sample', 'predict']
+OK   2406.19320 Efficient World Models with Context-Awar   24.65s heading: Method                      ops=['embed', 'predict', 'decode', 'model'] canon=['encode', 'predict', 'reconstruct']
+OK  Model-Based Reinforcement Learning for A   ['embed:input', 'encode:input', 'decode:latent', 'predict:other', 'approximate:distribution', 'discretize:latent', 'sample:latent', 'train:other']
+OK  When to use parametric models in reinfor   ['plan:trajectory']
+OK  Importance of using appropriate baseline   ['update:parameter', 'simulate:other', 'replay:other']
+OK  CURL: Contrastive Unsupervised Represent   ['discriminate:state', 'generate:sample', 'encode:input', 'augment:input']
+OK  Image Augmentation Is All You Need: Regu   ['transform:input', 'average target:other', 'average q function:value']
+OK  Data-Efficient Reinforcement Learning wi   ['encode:state', 'predict:latent', 'project:latent', 'compute loss:distribution']
+OK  PlayVirtual: Augmenting Cycle-Consistent   ['predict:latent?', 'backward predict:latent?', 'cycle consistency:state']
+OK  Mastering Atari Games with Limited Data    ['predict:state', 'simulate:trajectory', 'learn:latent']
+OK  Mask-based Latent Reconstruction for Rei   ['mask:input', 'encode:input', 'decode:latent?', 'reconstruct:latent']
+OK  Transformers are Sample-Efficient World    ['collect experience:state', 'update world model:state', 'update behavior:policy?']
+OK  Transformer-based World Models Are Happy   ['encode:input', 'decode:latent', 'aggregate:latent', 'predict:latent', 'sample:latent']
+OK  Bigger, Better, Faster: Human-level Atar   ['scale network capacity:parameter', 'reset convolutional layers:parameter?', 'update horizon:parameter']
+OK  STORM: Efficient Stochastic Transformer    ['gather data:trajectory', 'update world model:distribution', 'improve policy:policy', 'encode:input', 'decode:latent', 'sample:distribution', 'predict reward:value?', 'predict continuation:error?', 'predict next distribution:distribution', 'mix action:action', 'sequence model:state', 'reconstruct image:input', 'compute loss:error']
+OK  Diffusion for World Modeling: Visual Det   ['perturb:noise', 'precondition:parameter', 'train:parameter', 'sample:noise', 'condition:input', 'predict:distribution', 'update:parameter']
+OK  EfficientZero V2: Mastering Discrete and   ['sample:action', 'select:action', 'estimate:value', 'bootstrap:value']
+OK  Efficient World Models with Context-Awar   ['embed:input', 'predict:distribution', 'decode:state', 'model:distribution']
+ATARI_DONE
+FAIL 2205.09991 Planning with Diffusion for Flexible Beh   no JSON object in output
+FAIL 2211.15657 Is Conditional Generative Modeling all y   parse failed: Expecting ',' delimiter: line 13 column 4 (char 1607)
+FAIL 2208.06193 Diffusion Policies as an Expressive Poli   parse failed: Expecting ',' delimiter: line 13 column 6 (char 1340)
+FAIL 2006.04779 Conservative Q-Learning for Offline Rein   no JSON object in output
+FAIL 2110.06169 Offline Reinforcement Learning with Impl   parse failed: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+FAIL 2106.06860 A Minimalist Approach to Offline Reinfor   no JSON object in output
+FAIL 2106.01345 Decision Transformer: Reinforcement Lear   parse failed: Expecting ',' delimiter: line 29 column 6 (char 665)
+OK   2106.02039 Offline Reinforcement Learning as One Bi   62.81s heading: Reinforcement Learning an   ops=['discretize', 'tokenize', 'predict', 'beam search', 'decode'] canon=['predict', 'reconstruct']
+OK  Offline Reinforcement Learning as One Bi   ['discretize:trajectory', 'tokenize:trajectory', 'predict:distribution', 'beam search:trajectory?', 'decode:trajectory']
+FAIL 2005.13239 MOPO: Model-based Offline Policy Optimiz   no JSON object in output
+FAIL 2005.05951 MOReL : Model-Based Offline Reinforcemen   no JSON object in output
+--- vocab loop restart with num_ctx 8192
+FAIL 2205.09991 Planning with Diffusion for Flexible Beh   no JSON object in output
+FAIL 2211.15657 Is Conditional Generative Modeling all y   parse failed: Expecting ',' delimiter: line 13 column 4 (char 1607)
+--- vocab loop restart with num_ctx 8192
+OK   2205.09991 Planning with Diffusion for Flexible Beh   84.65s heading: Planning with Diffusion     ops=['predict trajectory', 'denoise', 'condition', 'sample'] canon=['predict', 'reconstruct', 'intervene', 'sample']
+OK  Planning with Diffusion for Flexible Beh   ['predict trajectory:trajectory', 'denoise:trajectory', 'condition:trajectory', 'sample:trajectory']
+OK   2211.15657 Is Conditional Generative Modeling all y   78.05s pinned: G ENERATIVE M ODELING WITH   ops=['diffuse', 'denoise', 'estimate', 'condition'] canon=['diffuse', 'reconstruct', 'predict', 'intervene']
+OK  Is Conditional Generative Modeling all y   ['diffuse:state', 'denoise:state', 'estimate:parameter?', 'condition:state']
+OK   2208.06193 Diffusion Policies as an Expressive Poli   103.5s heading: DIFFUSION Q- LEARNING       ops=['sample', 'reverse diffusion', 'optimize', 'update'] canon=['sample', 'reverse', 'improve', 'correct']
+OK  Diffusion Policies as an Expressive Poli   ['sample:sample', 'reverse diffusion:distribution', 'optimize:parameter', 'update:parameter']
+OK   2006.04779 Conservative Q-Learning for Offline Rein   81.72s heading: The Conservative Q-Learni   ops=['minimize Q-values', 'estimate Q-values', 'optimize policy'] canon=['predict', 'improve']
+OK  Conservative Q-Learning for Offline Rein   ['minimize Q-values:value?', 'estimate Q-values:value', 'optimize policy:policy?']
+OK   2110.06169 Offline Reinforcement Learning with Impl   79.39s heading: IMPLICIT Q-LEARNING         ops=['evaluate', 'update', 'extract'] canon=['evaluate', 'correct']
+OK  Offline Reinforcement Learning with Impl   ['evaluate:value', 'update:parameter', 'extract:policy']
+OK   2106.06860 A Minimalist Approach to Offline Reinfor   100.73s heading: A Minimalist Offline RL A   ops=['regularize', 'normalize', 'update', 'evaluate'] canon=['correct', 'evaluate']
+OK  A Minimalist Approach to Offline Reinfor   ['regularize:policy', 'normalize:state', 'update:policy', 'evaluate:policy']
+OK   2106.01345 Decision Transformer: Reinforcement Lear   91.23s heading: Method                      ops=['embed', 'interleave', 'predict', 'generate'] canon=['encode', 'predict', 'reconstruct']
+OK  Decision Transformer: Reinforcement Lear   ['embed:input', 'interleave:trajectory', 'predict:action', 'generate:action']
+OK   2005.13239 MOPO: Model-based Offline Policy Optimiz   82.04s heading: MOPO: Model-Based Offline   ops=['define reward penalty', 'optimize policy', 'estimate error', 'penalize reward'] canon=['improve', 'predict']
+OK  MOPO: Model-based Offline Policy Optimiz   ['define reward penalty:reward?', 'optimize policy:policy?', 'estimate error:error', 'penalize reward:reward']
+OK   2005.05951 MOReL : Model-Based Offline Reinforcemen   101.93s heading: Algorithmic Framework       ops=['learn dynamics model', 'construct USAD', 'construct pessimistic MDP', 'planning'] canon=['train']
+OK  MOReL : Model-Based Offline Reinforcemen   ['learn dynamics model:state', 'construct USAD:state', 'construct pessimistic MDP:state', 'planning:state']
+OK   2102.08363 COMBO: Conservative Offline Model-Based    91.74s heading: Conservative Offline Mode   ops=['train model', 'collect model rollouts', 'conservatively evaluate policy', 'improve policy'] canon=['train', 'improve']
+OK  COMBO: Conservative Offline Model-Based    ['train model:other', 'collect model rollouts:trajectory', 'conservatively evaluate policy:value', 'improve policy:policy']
+OK   2106.08909 Offline RL Without Off-Policy Evaluation   95.97s heading: Defining the algorithms     ops=['evaluate', 'improve'] canon=['evaluate', 'improve']
+OK  Offline RL Without Off-Policy Evaluation   ['evaluate:value?', 'improve:policy']
+OK   2110.01548 Uncertainty-Based Offline Reinforcement    89.52s heading: Uncertainty penalization    ops=['clip', 'penalize', 'estimate', 'update'] canon=['predict', 'correct']
+OK  Uncertainty-Based Offline Reinforcement    ['clip:value?', 'penalize:error', 'estimate:distribution', 'update:parameter']
+OK   2305.09836 Revisiting the Minimalist Approach to Of   121.08s heading: ReBRAC: Distilling Key De   ops=['penalize', 'normalize', 'train', 'evaluate'] canon=['train', 'evaluate']
+OK  Revisiting the Minimalist Approach to Of   ['penalize:gradient', 'normalize:distribution', 'train:parameter', 'evaluate:task']
+OK   2304.10573 IDQL: Implicit Q-Learning as an Actor-Cr   83.02s heading: Implicit Q-Learning as an   ops=['critic update', 'policy extraction', 'diffusion model training'] canon=[]
+OK  IDQL: Implicit Q-Learning as an Actor-Cr   ['critic update:value', 'policy extraction:policy', 'diffusion model training:policy']
+OK   2209.14548 Offline Reinforcement Learning via High-   106.96s heading: METHOD                      ops=['model', 'improve', 'sample', 'evaluate'] canon=['improve', 'sample', 'evaluate']
+OK  Offline Reinforcement Learning via High-   ['model:policy', 'improve:policy', 'sample:action', 'evaluate:action']
+OK   2302.01877 AdaptDiffuser: Diffusion Models as Adapt   84.76s heading: Method                      ops=['generate synthetic data', 'predict actions', 'refine trajectories', 'optimize reward gradients'] canon=['reconstruct', 'predict', 'correct', 'improve']
+OK  AdaptDiffuser: Diffusion Models as Adapt   ['generate synthetic data:trajectory?', 'predict actions:trajectory?', 'refine trajectories:trajectory?', 'optimize reward gradients:gradient']
+OK   2304.12824 Contrastive Energy Prediction for Exact    116.29s pinned: 5. Q-Guided Policy Optimiz   ops=['diffuse', 'estimate', 'sample', 'train'] canon=['diffuse', 'predict', 'sample', 'train']
+OK  Contrastive Energy Prediction for Exact    ['diffuse:action', 'estimate:parameter?', 'sample:action?', 'train:parameter']
+OK   2305.20081 Efficient Diffusion Policies for Offline   82.04s heading: Efficient Diffusion Polic   ops=['formulate', 'train', 'generalize', 'sample'] canon=['train', 'sample']
+OK  Efficient Diffusion Policies for Offline   ['formulate:policy', 'train:parameter', 'generalize:policy', 'sample:action']
+OK   2112.10751 RvS: What is Essential for Offline RL vi    85.1s pinned: R EINFORCEMENT L EARNING V   ops=['sample trajectories', 'sample time index', 'sample outcome', 'compute loss', 'update policy parameters'] canon=['sample', 'evaluate', 'correct']
+OK  RvS: What is Essential for Offline RL vi   ['sample trajectories:trajectory', 'sample time index:trajectory?', 'sample outcome:distribution', 'compute loss:policy', 'update policy parameters:parameter']
+OK   2103.08050 Offline Reinforcement Learning with Fish   81.99s pinned: 4. Fisher-BRC                ops=['learn approximate µ', 'update θ', 'update φ', 'repeat'] canon=['train', 'correct']
+OK  Offline Reinforcement Learning with Fish   ['learn approximate µ:policy', 'update θ:parameter', 'update φ:parameter', 'repeat:other?']
+OK   2011.07213 PLAS: Latent Action Space for Offline Re   102.15s heading: Method                      ops=['encode', 'decode', 'project', 'perturb', 'train', 'optimize', 'generate', 'update', 'evaluate'] canon=['encode', 'reconstruct', 'project', 'intervene', 'train', 'improve', 'correct', 'evaluate']
+OK  PLAS: Latent Action Space for Offline Re   ['encode:latent', 'decode:action', 'project:action', 'perturb:action', 'train:parameter', 'optimize:parameter', 'generate:action', 'update:parameter', 'evaluate:reward']
+Traceback (most recent call last):
+  File "/Users/katlaszlo/Desktop/Desktop - Kat’s MacBook Air/Github-Wiki/GitHub/method_scanner/fulltext.py", line 181, in <module>
+    main(sys.argv[1:])
+    ~~~~^^^^^^^^^^^^^^
+  File "/Users/katlaszlo/Desktop/Desktop - Kat’s MacBook Air/Github-Wiki/GitHub/method_scanner/fulltext.py", line 167, in main
+    title, _ = arxiv_meta(aid)
+               ~~~~~~~~~~^^^^^
+  File "/Users/katlaszlo/Desktop/Desktop - Kat’s MacBook Air/Github-Wiki/GitHub/method_scanner/fulltext.py", line 34, in arxiv_meta
+    root = ET.fromstring(urllib.request.urlopen(url, timeout=60).read())
+                         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 493, in open
+    response = meth(req, response)
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 602, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 531, in error
+    return self._call_chain(*args)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 464, in _call_chain
+    result = func(*args)
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 611, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 429: Unknown Error
+OK   2310.03022 Decision ConvFormer: Local Filtering in     90.0s heading: THE PROPOSED METHOD : DEC   ops=['embed', 'convolve', 'project'] canon=['encode', 'project']
+OK  Decision ConvFormer: Local Filtering in    ['embed:input', 'convolve:input', 'project:state']
+OK   2310.07297 Score Regularized Policy Optimization th   124.28s heading: PRACTICAL ALGORITHM         ops=['pretrain', 'behavior training', 'policy extraction'] canon=[]
+OK  Score Regularized Policy Optimization th   ['pretrain:policy?', 'behavior training:distribution', 'policy extraction:policy?']
+OK   2401.02644 Simple Hierarchical Planning with Diffus   97.89s pinned: H IERARCHICAL D IFFUSER      ops=['generate subgoals', 'refine plan', 'predict return', 'denoise trajectory'] canon=['reconstruct', 'correct', 'predict']
+OK  Simple Hierarchical Planning with Diffus   ['generate subgoals:state', 'refine plan:trajectory?', 'predict return:value?', 'denoise trajectory:trajectory']
+OK   2208.10291 Efficient Planning in a Compact Latent A   97.52s heading: METHOD                      ops=['encode', 'decode', 'quantize', 'tile', 'reconstruct', 'sample', 'plan'] canon=['encode', 'reconstruct', 'sample', 'plan']
+OK  Efficient Planning in a Compact Latent A   ['encode:trajectory', 'decode:trajectory', 'quantize:sample', 'tile:sample', 'reconstruct:trajectory', 'sample:distribution', 'plan:trajectory']
+VOCAB_DONE
+MOVED results/When_to_use_parametric_models_in_reinforcement_learning__20260825_204837.json
+OK   1906.05243 When to use parametric models in reinfor   44.05s pinned: 4. Model-based algorithms    ops=['sample transitions', 'learn action-value estimates', 'update policy'] canon=['sample', 'train', 'correct']
+OK  When to use parametric models in reinfor   ['sample transitions:trajectory', 'learn action-value estimates:value', 'update policy:policy']
+MOVED results/Model-Based_Reinforcement_Learning_for_Atari_20260825_204817.json
+OK   1903.00374 Model-Based Reinforcement Learning for A    33.7s pinned: W ORLD M ODELS               ops=['predict', 'sample', 'encode', 'decode', 'reconstruct'] canon=['predict', 'sample', 'encode', 'reconstruct']
+OK  Model-Based Reinforcement Learning for A   ['predict:distribution', 'sample:latent', 'encode:input', 'decode:distribution', 'reconstruct:distribution']
+PINS_DONE
+ALL_DONE
+OK   2209.03993 Q-learning Decision Transformer: Leverag   51.37s heading: Method                      ops=['learn value function', 'relabel RTG values', 'regenerate RTG'] canon=['train']
+OK  Q-learning Decision Transformer: Leverag   ['learn value function:value', 'relabel RTG values:reward', 'regenerate RTG:reward']
+QDT_DONE
+VOCAB_TEST_DONE

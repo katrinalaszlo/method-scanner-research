@@ -1,0 +1,677 @@
+{
+ "arxiv_id": "2005.05951",
+ "title": "MOReL: Model-Based Offline Reinforcement Learning",
+ "methods": [
+  {
+   "method_name": "MOReL",
+   "is_own_method": true,
+   "one_paragraph_description": "Two steps: (a) learn a pessimistic MDP (P-MDP) from the offline dataset using an ensemble of Gaussian MLP dynamics models; an unknown state-action detector (USAD) flags (s,a) as unknown when ensemble discrepancy disc(s,a)=max_{i,j}||f_i(s,a)-f_j(s,a)||_2 exceeds a threshold, and such transitions go to an absorbing HALT state with reward -kappa; (b) learn a policy (tanh MLP) in the P-MDP with model-based natural policy gradient (NPG). Performance in the real environment is approximately lower-bounded by performance in the P-MDP.",
+   "conventional_lineage_hint": "model-based offline RL (paper: 'we present MOReL, an algorithmic framework for model-based offline RL')",
+   "global_conditions": {
+    "ensemble_size": {
+     "value": "4 dynamics models",
+     "quote": "We parameterize the dynamics model using 2-layer ReLU-MLPs and use an ensemble of 4 dynamics models to implement USAD as described in Section 4.2. We parameterize the policy using a 2-layer",
+     "location": "Section 5 / Appendix C.2"
+    },
+    "dynamics_model_architecture": {
+     "value": "2 hidden layer ReLU MLP, 512 units (Hopper, Walker2d, Ant) or 1024 (HalfCheetah)",
+     "quote": "We use 2 hidden layer MLPs with 512 (for Hopper-v2, Walker2d-v2, Ant-v2) or 1024 (for HalfCheetah-v2) ReLU activated nodes each for representing the dynamics model, use an",
+     "location": "Appendix C.2"
+    },
+    "policy_architecture": {
+     "value": "2 hidden layer MLP, 32 tanh units",
+     "quote": "ensemble of four such models for building the USAD, and our policy is represented with a 2 hidden layer MLP with 32 tanh activated nodes in each layer. The dynamics model is learnt using Adam [68]",
+     "location": "Appendix C.2"
+    },
+    "uncertainty_threshold": {
+     "value": "thresh = mu_d + beta * sigma_d; beta tuned between 0 and beta_max = (m_d - mu_d)/sigma_d in steps of 5",
+     "quote": "occuring in the dataset. Then, we utilize an upper-confidence inspired strategy by defining a threshold thresh = µd + β · σd . The value of beta is tuned between 0 to βmax = (md − µd )/σd in steps of 5.",
+     "location": "Appendix C.5"
+    },
+    "penalty_negative_reward": {
+     "value": "min reward in D offset by a value searched over {30, 50, 100, 200}",
+     "quote": "defining the USAD. The negative reward for defining the absorbing unknown state is set as the minimum reward in the dataset D offsetted by a value that is searched over {30, 50, 100, 200}.",
+     "location": "Appendix C.5"
+    },
+    "planning_horizon": {
+     "value": "400 or 500 (environment-dependent)",
+     "quote": "tasks [30, 90, 91, 28], we reduce the planning horizon for the environments to 400 or 500. Similar",
+     "location": "Appendix C.1"
+    },
+    "adam_stepsize": {
+     "value": "5e-4",
+     "quote": "Adam Stepsize                  5e-4                Adam Stepsize                 5e-4",
+     "location": "Table 4"
+    },
+    "batch_size": {
+     "value": "256",
+     "quote": "Batch Size                     256                 Batch Size                     256",
+     "location": "Table 4"
+    },
+    "eval_trajectories": {
+     "value": "25",
+     "quote": "# Eval trajectories                25              # Eval trajectories               25",
+     "location": "Table 5"
+    },
+    "cg_steps_damping": {
+     "value": "25, 1e-4 (Hopper/HalfCheetah/Walker); 10, 1e-4 (Ant)",
+     "quote": "# CG Steps/Damping              10, 1e-4           # CG Steps/Damping             25, 1e-4",
+     "location": "Table 5"
+    },
+    "log_sigma_min": {
+     "value": "-2.0",
+     "quote": "log σmin                          -2.0             log σmin                         -2.0",
+     "location": "Table 5"
+    }
+   },
+   "per_dataset_conditions": {
+    "hopper-random": {
+     "dynamics_model_hidden": {
+      "value": "MLP(512, 512)",
+      "quote": "Dynamics Model           MLP(512, 512)             Dynamics Model          MLP(512, 512)",
+      "location": "Table 4 (Appendix C.5)"
+     },
+     "dynamics_training_epochs": {
+      "value": "300",
+      "quote": "# Training Epochs              300                 # Training Epochs              300",
+      "location": "Table 4"
+     },
+     "horizon": {
+      "value": "400",
+      "quote": "Horizon                        500                 Horizon                        400",
+      "location": "Table 4"
+     },
+     "negative_reward_penalty_kappa": {
+      "value": "rmin(D) - 50",
+      "quote": "Negative Reward          rmin (D) − 100            Negative Reward          rmin (D) − 50",
+      "location": "Table 4"
+     },
+     "usad_ensemble_size": {
+      "value": "4",
+      "quote": "USAD                   4-dynamics models           USAD                  4-dynamics models",
+      "location": "Table 4"
+     },
+     "npg_updates": {
+      "value": "500",
+      "quote": "# updates                        1000              # updates                        500",
+      "location": "Table 5"
+     },
+     "trajectories_for_gradient": {
+      "value": "50",
+      "quote": "# trajectories for gradient       200              # trajectories for gradient       50",
+      "location": "Table 5"
+     }
+    },
+    "halfcheetah-random": {
+     "dynamics_model_hidden": {
+      "value": "MLP(1024,1024)",
+      "quote": "Dynamics Model          MLP(1024,1024)             Dynamics Model          MLP(512, 512)",
+      "location": "Table 4 (Appendix C.5)"
+     },
+     "dynamics_training_epochs": {
+      "value": "3000",
+      "quote": "# Training Epochs              3000                # Training Epochs              300",
+      "location": "Table 4"
+     },
+     "horizon": {
+      "value": "500",
+      "quote": "Horizon                         500                Horizon                        400",
+      "location": "Table 4"
+     },
+     "negative_reward_penalty_kappa": {
+      "value": "rmin(D) - 200",
+      "quote": "Negative Reward          rmin (D) − 200            Negative Reward          rmin (D) − 30",
+      "location": "Table 4"
+     },
+     "usad_ensemble_size": {
+      "value": "4",
+      "quote": "USAD                   4-dynamics models           USAD                  4-dynamics models",
+      "location": "Table 4"
+     },
+     "npg_updates": {
+      "value": "2500",
+      "quote": "# updates                        2500              # updates                       1000",
+      "location": "Table 5"
+     },
+     "trajectories_for_gradient": {
+      "value": "40",
+      "quote": "# trajectories for gradient        40              # trajectories for gradient      100",
+      "location": "Table 5"
+     }
+    },
+    "walker2d-random": {
+     "dynamics_model_hidden": {
+      "value": "MLP(512, 512)",
+      "quote": "Dynamics Model          MLP(1024,1024)             Dynamics Model          MLP(512, 512)",
+      "location": "Table 4 (Appendix C.5)"
+     },
+     "dynamics_training_epochs": {
+      "value": "300",
+      "quote": "# Training Epochs              3000                # Training Epochs              300",
+      "location": "Table 4"
+     },
+     "horizon": {
+      "value": "400",
+      "quote": "Horizon                         500                Horizon                        400",
+      "location": "Table 4"
+     },
+     "negative_reward_penalty_kappa": {
+      "value": "rmin(D) - 30",
+      "quote": "Negative Reward          rmin (D) − 200            Negative Reward          rmin (D) − 30",
+      "location": "Table 4"
+     },
+     "usad_ensemble_size": {
+      "value": "4",
+      "quote": "USAD                   4-dynamics models           USAD                  4-dynamics models",
+      "location": "Table 4"
+     },
+     "npg_updates": {
+      "value": "1000",
+      "quote": "# updates                        2500              # updates                       1000",
+      "location": "Table 5"
+     },
+     "trajectories_for_gradient": {
+      "value": "100",
+      "quote": "# trajectories for gradient        40              # trajectories for gradient      100",
+      "location": "Table 5"
+     }
+    },
+    "hopper-medium": {
+     "dynamics_model_hidden": {
+      "value": "MLP(512, 512)",
+      "quote": "Dynamics Model           MLP(512, 512)             Dynamics Model          MLP(512, 512)",
+      "location": "Table 4 (Appendix C.5)"
+     },
+     "dynamics_training_epochs": {
+      "value": "300",
+      "quote": "# Training Epochs              300                 # Training Epochs              300",
+      "location": "Table 4"
+     },
+     "horizon": {
+      "value": "400",
+      "quote": "Horizon                        500                 Horizon                        400",
+      "location": "Table 4"
+     },
+     "negative_reward_penalty_kappa": {
+      "value": "rmin(D) - 50",
+      "quote": "Negative Reward          rmin (D) − 100            Negative Reward          rmin (D) − 50",
+      "location": "Table 4"
+     },
+     "usad_ensemble_size": {
+      "value": "4",
+      "quote": "USAD                   4-dynamics models           USAD                  4-dynamics models",
+      "location": "Table 4"
+     },
+     "npg_updates": {
+      "value": "500",
+      "quote": "# updates                        1000              # updates                        500",
+      "location": "Table 5"
+     },
+     "trajectories_for_gradient": {
+      "value": "50",
+      "quote": "# trajectories for gradient       200              # trajectories for gradient       50",
+      "location": "Table 5"
+     }
+    },
+    "halfcheetah-medium": {
+     "dynamics_model_hidden": {
+      "value": "MLP(1024,1024)",
+      "quote": "Dynamics Model          MLP(1024,1024)             Dynamics Model          MLP(512, 512)",
+      "location": "Table 4 (Appendix C.5)"
+     },
+     "dynamics_training_epochs": {
+      "value": "3000",
+      "quote": "# Training Epochs              3000                # Training Epochs              300",
+      "location": "Table 4"
+     },
+     "horizon": {
+      "value": "500",
+      "quote": "Horizon                         500                Horizon                        400",
+      "location": "Table 4"
+     },
+     "negative_reward_penalty_kappa": {
+      "value": "rmin(D) - 200",
+      "quote": "Negative Reward          rmin (D) − 200            Negative Reward          rmin (D) − 30",
+      "location": "Table 4"
+     },
+     "usad_ensemble_size": {
+      "value": "4",
+      "quote": "USAD                   4-dynamics models           USAD                  4-dynamics models",
+      "location": "Table 4"
+     },
+     "npg_updates": {
+      "value": "2500",
+      "quote": "# updates                        2500              # updates                       1000",
+      "location": "Table 5"
+     },
+     "trajectories_for_gradient": {
+      "value": "40",
+      "quote": "# trajectories for gradient        40              # trajectories for gradient      100",
+      "location": "Table 5"
+     }
+    },
+    "walker2d-medium": {
+     "dynamics_model_hidden": {
+      "value": "MLP(512, 512)",
+      "quote": "Dynamics Model          MLP(1024,1024)             Dynamics Model          MLP(512, 512)",
+      "location": "Table 4 (Appendix C.5)"
+     },
+     "dynamics_training_epochs": {
+      "value": "300",
+      "quote": "# Training Epochs              3000                # Training Epochs              300",
+      "location": "Table 4"
+     },
+     "horizon": {
+      "value": "400",
+      "quote": "Horizon                         500                Horizon                        400",
+      "location": "Table 4"
+     },
+     "negative_reward_penalty_kappa": {
+      "value": "rmin(D) - 30",
+      "quote": "Negative Reward          rmin (D) − 200            Negative Reward          rmin (D) − 30",
+      "location": "Table 4"
+     },
+     "usad_ensemble_size": {
+      "value": "4",
+      "quote": "USAD                   4-dynamics models           USAD                  4-dynamics models",
+      "location": "Table 4"
+     },
+     "npg_updates": {
+      "value": "1000",
+      "quote": "# updates                        2500              # updates                       1000",
+      "location": "Table 5"
+     },
+     "trajectories_for_gradient": {
+      "value": "100",
+      "quote": "# trajectories for gradient        40              # trajectories for gradient      100",
+      "location": "Table 5"
+     }
+    },
+    "hopper-medium-replay": {
+     "dynamics_model_hidden": {
+      "value": "MLP(512, 512)",
+      "quote": "Dynamics Model           MLP(512, 512)             Dynamics Model          MLP(512, 512)",
+      "location": "Table 4 (Appendix C.5)"
+     },
+     "dynamics_training_epochs": {
+      "value": "300",
+      "quote": "# Training Epochs              300                 # Training Epochs              300",
+      "location": "Table 4"
+     },
+     "horizon": {
+      "value": "400",
+      "quote": "Horizon                        500                 Horizon                        400",
+      "location": "Table 4"
+     },
+     "negative_reward_penalty_kappa": {
+      "value": "rmin(D) - 50",
+      "quote": "Negative Reward          rmin (D) − 100            Negative Reward          rmin (D) − 50",
+      "location": "Table 4"
+     },
+     "usad_ensemble_size": {
+      "value": "4",
+      "quote": "USAD                   4-dynamics models           USAD                  4-dynamics models",
+      "location": "Table 4"
+     },
+     "npg_updates": {
+      "value": "500",
+      "quote": "# updates                        1000              # updates                        500",
+      "location": "Table 5"
+     },
+     "trajectories_for_gradient": {
+      "value": "50",
+      "quote": "# trajectories for gradient       200              # trajectories for gradient       50",
+      "location": "Table 5"
+     }
+    },
+    "halfcheetah-medium-replay": {
+     "dynamics_model_hidden": {
+      "value": "MLP(1024,1024)",
+      "quote": "Dynamics Model          MLP(1024,1024)             Dynamics Model          MLP(512, 512)",
+      "location": "Table 4 (Appendix C.5)"
+     },
+     "dynamics_training_epochs": {
+      "value": "3000",
+      "quote": "# Training Epochs              3000                # Training Epochs              300",
+      "location": "Table 4"
+     },
+     "horizon": {
+      "value": "500",
+      "quote": "Horizon                         500                Horizon                        400",
+      "location": "Table 4"
+     },
+     "negative_reward_penalty_kappa": {
+      "value": "rmin(D) - 200",
+      "quote": "Negative Reward          rmin (D) − 200            Negative Reward          rmin (D) − 30",
+      "location": "Table 4"
+     },
+     "usad_ensemble_size": {
+      "value": "4",
+      "quote": "USAD                   4-dynamics models           USAD                  4-dynamics models",
+      "location": "Table 4"
+     },
+     "npg_updates": {
+      "value": "2500",
+      "quote": "# updates                        2500              # updates                       1000",
+      "location": "Table 5"
+     },
+     "trajectories_for_gradient": {
+      "value": "40",
+      "quote": "# trajectories for gradient        40              # trajectories for gradient      100",
+      "location": "Table 5"
+     }
+    },
+    "walker2d-medium-replay": {
+     "dynamics_model_hidden": {
+      "value": "MLP(512, 512)",
+      "quote": "Dynamics Model          MLP(1024,1024)             Dynamics Model          MLP(512, 512)",
+      "location": "Table 4 (Appendix C.5)"
+     },
+     "dynamics_training_epochs": {
+      "value": "300",
+      "quote": "# Training Epochs              3000                # Training Epochs              300",
+      "location": "Table 4"
+     },
+     "horizon": {
+      "value": "400",
+      "quote": "Horizon                         500                Horizon                        400",
+      "location": "Table 4"
+     },
+     "negative_reward_penalty_kappa": {
+      "value": "rmin(D) - 30",
+      "quote": "Negative Reward          rmin (D) − 200            Negative Reward          rmin (D) − 30",
+      "location": "Table 4"
+     },
+     "usad_ensemble_size": {
+      "value": "4",
+      "quote": "USAD                   4-dynamics models           USAD                  4-dynamics models",
+      "location": "Table 4"
+     },
+     "npg_updates": {
+      "value": "1000",
+      "quote": "# updates                        2500              # updates                       1000",
+      "location": "Table 5"
+     },
+     "trajectories_for_gradient": {
+      "value": "100",
+      "quote": "# trajectories for gradient        40              # trajectories for gradient      100",
+      "location": "Table 5"
+     }
+    },
+    "hopper-medium-expert": {
+     "dynamics_model_hidden": {
+      "value": "MLP(512, 512)",
+      "quote": "Dynamics Model           MLP(512, 512)             Dynamics Model          MLP(512, 512)",
+      "location": "Table 4 (Appendix C.5)"
+     },
+     "dynamics_training_epochs": {
+      "value": "300",
+      "quote": "# Training Epochs              300                 # Training Epochs              300",
+      "location": "Table 4"
+     },
+     "horizon": {
+      "value": "400",
+      "quote": "Horizon                        500                 Horizon                        400",
+      "location": "Table 4"
+     },
+     "negative_reward_penalty_kappa": {
+      "value": "rmin(D) - 50",
+      "quote": "Negative Reward          rmin (D) − 100            Negative Reward          rmin (D) − 50",
+      "location": "Table 4"
+     },
+     "usad_ensemble_size": {
+      "value": "4",
+      "quote": "USAD                   4-dynamics models           USAD                  4-dynamics models",
+      "location": "Table 4"
+     },
+     "npg_updates": {
+      "value": "500",
+      "quote": "# updates                        1000              # updates                        500",
+      "location": "Table 5"
+     },
+     "trajectories_for_gradient": {
+      "value": "50",
+      "quote": "# trajectories for gradient       200              # trajectories for gradient       50",
+      "location": "Table 5"
+     }
+    },
+    "halfcheetah-medium-expert": {
+     "dynamics_model_hidden": {
+      "value": "MLP(1024,1024)",
+      "quote": "Dynamics Model          MLP(1024,1024)             Dynamics Model          MLP(512, 512)",
+      "location": "Table 4 (Appendix C.5)"
+     },
+     "dynamics_training_epochs": {
+      "value": "3000",
+      "quote": "# Training Epochs              3000                # Training Epochs              300",
+      "location": "Table 4"
+     },
+     "horizon": {
+      "value": "500",
+      "quote": "Horizon                         500                Horizon                        400",
+      "location": "Table 4"
+     },
+     "negative_reward_penalty_kappa": {
+      "value": "rmin(D) - 200",
+      "quote": "Negative Reward          rmin (D) − 200            Negative Reward          rmin (D) − 30",
+      "location": "Table 4"
+     },
+     "usad_ensemble_size": {
+      "value": "4",
+      "quote": "USAD                   4-dynamics models           USAD                  4-dynamics models",
+      "location": "Table 4"
+     },
+     "npg_updates": {
+      "value": "2500",
+      "quote": "# updates                        2500              # updates                       1000",
+      "location": "Table 5"
+     },
+     "trajectories_for_gradient": {
+      "value": "40",
+      "quote": "# trajectories for gradient        40              # trajectories for gradient      100",
+      "location": "Table 5"
+     }
+    },
+    "walker2d-medium-expert": {
+     "dynamics_model_hidden": {
+      "value": "MLP(512, 512)",
+      "quote": "Dynamics Model          MLP(1024,1024)             Dynamics Model          MLP(512, 512)",
+      "location": "Table 4 (Appendix C.5)"
+     },
+     "dynamics_training_epochs": {
+      "value": "300",
+      "quote": "# Training Epochs              3000                # Training Epochs              300",
+      "location": "Table 4"
+     },
+     "horizon": {
+      "value": "400",
+      "quote": "Horizon                         500                Horizon                        400",
+      "location": "Table 4"
+     },
+     "negative_reward_penalty_kappa": {
+      "value": "rmin(D) - 30",
+      "quote": "Negative Reward          rmin (D) − 200            Negative Reward          rmin (D) − 30",
+      "location": "Table 4"
+     },
+     "usad_ensemble_size": {
+      "value": "4",
+      "quote": "USAD                   4-dynamics models           USAD                  4-dynamics models",
+      "location": "Table 4"
+     },
+     "npg_updates": {
+      "value": "1000",
+      "quote": "# updates                        2500              # updates                       1000",
+      "location": "Table 5"
+     },
+     "trajectories_for_gradient": {
+      "value": "100",
+      "quote": "# trajectories for gradient        40              # trajectories for gradient      100",
+      "location": "Table 5"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "3 (D4RL Table 2); 5 for the Wu et al. datasets in Table 1",
+    "episodes_per_seed": "25 eval trajectories per iteration (Table 5); score = average over last 100 iterations",
+    "checkpoint_selection": "average over last 100 iterations of policy learning",
+    "quote": "averaged over 3 random seeds. Results of MOPO [54] and CQL [76] are reported from their respective papers. Remaining results are taken from the D4RL benchmark suite white-paper [75].",
+    "location": "Table 2 caption; Table 5"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "no D4RL dataset version stated; only gym env names like 'Hopper-v2, HalfCheetah-v2, Ant-v2, and Walker2d-v2' (line 414) which refer to the gym environment, not the D4RL dataset release",
+    "location": "Section 5 / Table 2"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 25.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "random              halfcheetah          25.6        34.4       35.4         30.5        25.1        24.1        31.2",
+     "notes": "no std reported; raw score = average over last 100 iterations of policy learning, averaged over 3 seeds; printed as 'random halfcheetah'"
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 53.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "random              hopper               53.6        11.7       10.8         11.3        11.4         11         12.2",
+     "notes": "no std reported; raw score = average over last 100 iterations of policy learning, averaged over 3 seeds; printed as 'random hopper'"
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 37.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "random              walker2d             37.3        13.6        7           4.1          7.3        -0.2        1.9",
+     "notes": "no std reported; raw score = average over last 100 iterations of policy learning, averaged over 3 seeds; printed as 'random walker2d'"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "medium              halfcheetah          42.1        42.3       44.4         -4.3        41.7        43.8        46.3",
+     "notes": "no std reported; raw score = average over last 100 iterations of policy learning, averaged over 3 seeds; printed as 'medium halfcheetah'"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 95.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "medium              hopper               95.4        28.0       86.6         0.8         52.1        32.7        31.1",
+     "notes": "no std reported; raw score = average over last 100 iterations of policy learning, averaged over 3 seeds; printed as 'medium hopper'"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 77.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "medium              walker2d             77.8        17.8       74.5         0.9         59.1        77.5        81.1",
+     "notes": "no std reported; raw score = average over last 100 iterations of policy learning, averaged over 3 seeds; printed as 'medium walker2d'"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 40.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "medium-replay       halfcheetah          40.2        53.1       46.2         -2.4        38.6        45.4        47.7",
+     "notes": "no std reported; raw score = average over last 100 iterations of policy learning, averaged over 3 seeds; printed as 'medium-replay halfcheetah'"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 93.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "medium-replay       hopper               93.6        67.5       48.6         3.5         33.7         0.6        0.6",
+     "notes": "no std reported; raw score = average over last 100 iterations of policy learning, averaged over 3 seeds; printed as 'medium-replay hopper'"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 49.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "medium-replay       walker2d             49.8        39.0       32.6         1.9         19.2        -0.3        0.9",
+     "notes": "no std reported; raw score = average over last 100 iterations of policy learning, averaged over 3 seeds; printed as 'medium-replay walker2d'"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 53.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "medium-expert       halfcheetah          53.3        63.3       62.4         1.8         53.4        44.2        41.9",
+     "notes": "no std reported; raw score = average over last 100 iterations of policy learning, averaged over 3 seeds; printed as 'medium-expert halfcheetah'"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 108.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "medium-expert       hopper               108.7       23.7       111          1.6         96.3         1.9        0.8",
+     "notes": "no std reported; raw score = average over last 100 iterations of policy learning, averaged over 3 seeds; printed as 'medium-expert hopper'"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 95.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "medium-expert       walker2d             95.6        44.6       98.7         -0.1        40.1        76.9        81.6",
+     "notes": "no std reported; raw score = average over last 100 iterations of policy learning, averaged over 3 seeds; printed as 'medium-expert walker2d'"
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "MOPO",
+  "CQL",
+  "SAC-Off",
+  "BEAR",
+  "BRAC-p",
+  "BRAC-v"
+ ],
+ "problems": [
+  "Hyperparameters in Tables 4 and 5 are stated per gym environment for the Wu et al. (2019) datasets (Pure/Eps/Gauss); the paper never states separate hyperparameters for the D4RL runs. Per-dataset conditions above copy the per-environment values and should be treated as the best available, not confirmed D4RL settings.",
+  "The USAD threshold beta and the negative-reward offset are searched per setting but the chosen values are not reported.",
+  "Table 2 has no std / confidence interval.",
+  "Seed count is inconsistent: Table 2 caption says 3 seeds for D4RL; main text (Section 5, Appendix C.1) says 5 seeds for the Wu et al. datasets.",
+  "Table 7 (discrepancy threshold ablation) is on a non-D4RL Hopper-v2 dataset and reports raw returns; not extracted as rows.",
+  "D4RL dataset version (v0/v2) not stated."
+ ]
+}

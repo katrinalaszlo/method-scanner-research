@@ -1,0 +1,1341 @@
+{
+ "arxiv_id": "2110.01548",
+ "title": "Uncertainty-Based Offline Reinforcement Learning with Diversified Q-Ensemble",
+ "methods": [
+  {
+   "method_name": "SAC-N",
+   "is_own_method": true,
+   "one_paragraph_description": "SAC with the clipped double-Q trick extended to N Q-networks: the Bellman target uses the minimum over N Q-function estimates (plus entropy term), which penalizes OOD actions in proportion to the ensemble's uncertainty (Eq. around line 166). Everything else is default rlkit SAC with 3-layer networks.",
+   "conventional_lineage_hint": "offline RL (\"also known as batch RL\", line 49); uncertainty-based Q-ensemble actor-critic",
+   "global_conditions": {
+    "network_layers": {
+     "value": "3 (policy and Q-function networks)",
+     "quote": "SAC We use the SAC implementation from rlkit3 . We use its default parameters except for increasing the number of layers for both the policy network and the Q-function networks from 2 to 3, following the protocol of CQL.",
+     "location": "Appendix B Implementation details"
+    },
+    "base_implementation": {
+     "value": "rlkit SAC with default parameters",
+     "quote": "SAC We use the SAC implementation from rlkit3 . We use its default parameters except for",
+     "location": "Appendix B"
+    },
+    "training_steps": {
+     "value": "3 million",
+     "quote": "some of the bugs from the previous versions. We run each algorithm for 3 million training steps and report the normalized average return of each policy. While the CQL paper originally used 1",
+     "location": "Appendix C Experimental settings"
+    },
+    "num_q_networks_search_range": {
+     "value": "halfcheetah/walker2d: {5,10,20} (walker2d-expert up to 100); hopper: {100,200,500,1000}",
+     "quote": "ble size N . On halfcheetah and walker2d environments, we tune N in the range of {5, 10, 20} except for walker2d-expert, which requires up to N = 100. For hopper, we tune within N ∈ {100, 200, 500, 1000}. The hyperparameters selected are listed in Table 4. As we noted in Figure 5,",
+     "location": "Appendix B, SAC-N (Ours)"
+    }
+   },
+   "per_dataset_conditions": {
+    "halfcheetah-random": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "halfcheetah-random                10            10, 0.0",
+      "location": "Table 4"
+     }
+    },
+    "halfcheetah-medium": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "halfcheetah-medium                10            10, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "halfcheetah-expert": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "halfcheetah-expert                10            10, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "halfcheetah-medium-expert": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "halfcheetah-medium-expert         10            10, 5.0",
+      "location": "Table 4"
+     }
+    },
+    "halfcheetah-medium-replay": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "halfcheetah-medium-replay         10            10, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "halfcheetah-full-replay": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "halfcheetah-full-replay           10            10, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "hopper-random": {
+     "num_q_networks": {
+      "value": "500",
+      "quote": "hopper-random                     500           50, 0.0",
+      "location": "Table 4"
+     }
+    },
+    "hopper-medium": {
+     "num_q_networks": {
+      "value": "500",
+      "quote": "hopper-medium                     500           50, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "hopper-expert": {
+     "num_q_networks": {
+      "value": "500",
+      "quote": "hopper-expert                     500           50, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "hopper-medium-expert": {
+     "num_q_networks": {
+      "value": "200",
+      "quote": "hopper-medium-expert              200           50, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "hopper-medium-replay": {
+     "num_q_networks": {
+      "value": "200",
+      "quote": "hopper-medium-replay              200           50, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "hopper-full-replay": {
+     "num_q_networks": {
+      "value": "200",
+      "quote": "hopper-full-replay                200           50, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "walker2d-random": {
+     "num_q_networks": {
+      "value": "20",
+      "quote": "walker2d-random                    20           10, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "walker2d-medium": {
+     "num_q_networks": {
+      "value": "20",
+      "quote": "walker2d-medium                    20           10, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "walker2d-expert": {
+     "num_q_networks": {
+      "value": "100",
+      "quote": "walker2d-expert                   100           10, 5.0",
+      "location": "Table 4"
+     }
+    },
+    "walker2d-medium-expert": {
+     "num_q_networks": {
+      "value": "20",
+      "quote": "walker2d-medium-expert             20           10, 5.0",
+      "location": "Table 4"
+     }
+    },
+    "walker2d-medium-replay": {
+     "num_q_networks": {
+      "value": "20",
+      "quote": "walker2d-medium-replay             20           10, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "walker2d-full-replay": {
+     "num_q_networks": {
+      "value": "20",
+      "quote": "walker2d-full-replay               20           10, 1.0",
+      "location": "Table 4"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "4",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated (normalized average return after 3M training steps)",
+    "quote": "Table 1: Normalized average returns on D4RL Gym tasks, averaged over 4 random seeds. CQL | some of the bugs from the previous versions. We run each algorithm for 3 million training steps and report the normalized average return of each policy. While the CQL paper originally used 1",
+    "location": "Table 1 caption; Appendix C"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "MuJoCo Gym We use the v2 version of each dataset (e.g., halfcheetah-random-v2) which fixes",
+    "location": "Appendix C Experimental settings, MuJoCo Gym"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 28.0,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-random                               2.2±0.0               29.7±1.4                  -0.8±1.1            35.4                  31.3±3.5             28.0±0.9        28.4±1.0",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 67.5,
+     "std": 1.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-medium                              43.2±0.6              55.2±27.8                  -0.8±1.3            44.4                  46.9±0.4             67.5±1.2        65.9±0.6",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome": 105.2,
+     "std": 2.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-expert                              91.8±1.5               -0.8±1.8                   4.1±5.7           104.8                  97.3±1.1            105.2±2.6       106.8±3.4",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 107.1,
+     "std": 2.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-medium-expert                       44.0±1.6              28.4±19.4                   0.7±3.7            62.4                  95.0±1.4            107.1±2.0       106.3±1.9",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 63.9,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-medium-replay                       37.6±2.1                0.8±1.0                  6.6±11.0            46.2                  45.3±0.3             63.9±0.8        61.3±1.9",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "halfcheetah-full-replay",
+     "outcome": 84.5,
+     "std": 1.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-full-replay                         62.9±0.8               86.8±1.0                 27.8±35.4               -                  76.9±0.9             84.5±1.2        84.6±0.9",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 31.3,
+     "std": 0.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "500"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-random                                    3.7±0.6                9.9±1.5                   3.4±2.2            10.8                   5.3±0.6             31.3±0.0       25.3±10.4",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 100.3,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "500"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-medium                                   54.1±3.8                0.8±0.0                   0.7±0.0            86.6                  61.9±6.4            100.3±0.3       101.6±0.6",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 110.3,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "500"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-expert                                  107.7±9.7                0.7±0.0                   0.8±0.0           109.9                 106.5±9.1            110.3±0.3       110.1±0.1",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 110.1,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "200"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-medium-expert                            53.9±4.7                0.7±0.0                   0.8±0.0           111.0                 96.9±15.1            110.1±0.3       110.7±0.1",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 101.8,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "200"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-medium-replay                            16.6±4.8                7.4±0.5                 27.5±15.2            48.6                  86.3±7.3            101.8±0.5       101.0±0.5",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "hopper-full-replay",
+     "outcome": 102.9,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "200"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-full-replay                             19.9±12.9              41.1±17.9                 19.7±24.6               -                 101.9±0.6            102.9±0.3       105.4±0.7",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 21.7,
+     "std": 0.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "20"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-random                                  1.3±0.1                0.9±0.8                   6.9±8.3             7.0                   5.4±1.7             21.7±0.0        16.6±7.0",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 87.9,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "20"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-medium                                70.9±11.0               -0.3±0.2                   0.2±0.7            74.5                  79.5±3.2             87.9±0.2        92.5±0.8",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "walker2d-expert",
+     "outcome": 107.4,
+     "std": 2.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "100"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-expert                                108.7±0.2                0.7±0.3                   1.0±2.3           121.6                 109.3±0.1            107.4±2.4       115.1±1.9",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 116.7,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "20"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-medium-expert                         90.1±13.2                1.9±3.9                  -0.1±0.0            98.7                 109.1±0.2            116.7±0.4       114.7±0.9",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 78.7,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "20"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-medium-replay                          20.3±9.8               -0.4±0.3                  12.5±6.2            32.6                 76.8±10.0             78.7±0.7        87.1±2.3",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    },
+    {
+     "dataset": "walker2d-full-replay",
+     "outcome": 94.6,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "20"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-full-replay                           68.8±17.7              27.9±47.3                  -0.2±0.3               -                  94.2±1.9             94.6±0.5        99.8±0.7",
+     "notes": "std is across 4 seeds; column 'SAC-N (Ours)'"
+    }
+   ]
+  },
+  {
+   "method_name": "EDAC",
+   "is_own_method": true,
+   "one_paragraph_description": "Ensemble-Diversified Actor Critic: SAC-N plus an ensemble gradient diversity regularizer weighted by eta that pushes the action-gradients of the N Q-networks apart, so far fewer Q-networks are needed to get the same uncertainty-based OOD penalization. Runtime: actor-critic with N Q-networks, min-over-ensemble target.",
+   "conventional_lineage_hint": "offline RL; uncertainty-based Q-ensemble actor-critic (Section 1)",
+   "global_conditions": {
+    "network_layers": {
+     "value": "3 (policy and Q-function networks)",
+     "quote": "SAC We use the SAC implementation from rlkit3 . We use its default parameters except for increasing the number of layers for both the policy network and the Q-function networks from 2 to 3, following the protocol of CQL.",
+     "location": "Appendix B Implementation details"
+    },
+    "base_implementation": {
+     "value": "rlkit SAC with default parameters",
+     "quote": "SAC We use the SAC implementation from rlkit3 . We use its default parameters except for",
+     "location": "Appendix B"
+    },
+    "training_steps": {
+     "value": "3 million",
+     "quote": "some of the bugs from the previous versions. We run each algorithm for 3 million training steps and report the normalized average return of each policy. While the CQL paper originally used 1",
+     "location": "Appendix C Experimental settings"
+    },
+    "num_q_networks_search_range": {
+     "value": "{10,20,50}",
+     "quote": "EDAC (Ours) For Mujoco Gym tasks, we tune the ensemble size N within the range of {10, 20, 50}",
+     "location": "Appendix B, EDAC (Ours)"
+    },
+    "eta_search_range": {
+     "value": "{0.0,1.0,5.0}",
+     "quote": "and the weight of the ensemble gradient diversity term η within {0.0, 1.0, 5.0}. Note that we use",
+     "location": "Appendix B, EDAC (Ours)"
+    }
+   },
+   "per_dataset_conditions": {
+    "halfcheetah-random": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "halfcheetah-random                10            10, 0.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "0.0",
+      "quote": "halfcheetah-random                10            10, 0.0",
+      "location": "Table 4"
+     }
+    },
+    "halfcheetah-medium": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "halfcheetah-medium                10            10, 1.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "halfcheetah-medium                10            10, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "halfcheetah-expert": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "halfcheetah-expert                10            10, 1.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "halfcheetah-expert                10            10, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "halfcheetah-medium-expert": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "halfcheetah-medium-expert         10            10, 5.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "5.0",
+      "quote": "halfcheetah-medium-expert         10            10, 5.0",
+      "location": "Table 4"
+     }
+    },
+    "halfcheetah-medium-replay": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "halfcheetah-medium-replay         10            10, 1.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "halfcheetah-medium-replay         10            10, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "halfcheetah-full-replay": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "halfcheetah-full-replay           10            10, 1.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "halfcheetah-full-replay           10            10, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "hopper-random": {
+     "num_q_networks": {
+      "value": "50",
+      "quote": "hopper-random                     500           50, 0.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "0.0",
+      "quote": "hopper-random                     500           50, 0.0",
+      "location": "Table 4"
+     }
+    },
+    "hopper-medium": {
+     "num_q_networks": {
+      "value": "50",
+      "quote": "hopper-medium                     500           50, 1.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "hopper-medium                     500           50, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "hopper-expert": {
+     "num_q_networks": {
+      "value": "50",
+      "quote": "hopper-expert                     500           50, 1.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "hopper-expert                     500           50, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "hopper-medium-expert": {
+     "num_q_networks": {
+      "value": "50",
+      "quote": "hopper-medium-expert              200           50, 1.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "hopper-medium-expert              200           50, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "hopper-medium-replay": {
+     "num_q_networks": {
+      "value": "50",
+      "quote": "hopper-medium-replay              200           50, 1.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "hopper-medium-replay              200           50, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "hopper-full-replay": {
+     "num_q_networks": {
+      "value": "50",
+      "quote": "hopper-full-replay                200           50, 1.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "hopper-full-replay                200           50, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "walker2d-random": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "walker2d-random                    20           10, 1.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "walker2d-random                    20           10, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "walker2d-medium": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "walker2d-medium                    20           10, 1.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "walker2d-medium                    20           10, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "walker2d-expert": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "walker2d-expert                   100           10, 5.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "5.0",
+      "quote": "walker2d-expert                   100           10, 5.0",
+      "location": "Table 4"
+     }
+    },
+    "walker2d-medium-expert": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "walker2d-medium-expert             20           10, 5.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "5.0",
+      "quote": "walker2d-medium-expert             20           10, 5.0",
+      "location": "Table 4"
+     }
+    },
+    "walker2d-medium-replay": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "walker2d-medium-replay             20           10, 1.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "walker2d-medium-replay             20           10, 1.0",
+      "location": "Table 4"
+     }
+    },
+    "walker2d-full-replay": {
+     "num_q_networks": {
+      "value": "10",
+      "quote": "walker2d-full-replay               20           10, 1.0",
+      "location": "Table 4"
+     },
+     "eta": {
+      "value": "1.0",
+      "quote": "walker2d-full-replay               20           10, 1.0",
+      "location": "Table 4"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "4",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated (normalized average return after 3M training steps)",
+    "quote": "Table 1: Normalized average returns on D4RL Gym tasks, averaged over 4 random seeds. CQL | some of the bugs from the previous versions. We run each algorithm for 3 million training steps and report the normalized average return of each policy. While the CQL paper originally used 1",
+    "location": "Table 1 caption; Appendix C"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "MuJoCo Gym We use the v2 version of each dataset (e.g., halfcheetah-random-v2) which fixes",
+    "location": "Appendix C Experimental settings, MuJoCo Gym"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 28.4,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10",
+      "eta": "0.0"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-random                               2.2±0.0               29.7±1.4                  -0.8±1.1            35.4                  31.3±3.5             28.0±0.9        28.4±1.0",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 65.9,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10",
+      "eta": "1.0"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-medium                              43.2±0.6              55.2±27.8                  -0.8±1.3            44.4                  46.9±0.4             67.5±1.2        65.9±0.6",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome": 106.8,
+     "std": 3.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10",
+      "eta": "1.0"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-expert                              91.8±1.5               -0.8±1.8                   4.1±5.7           104.8                  97.3±1.1            105.2±2.6       106.8±3.4",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 106.3,
+     "std": 1.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10",
+      "eta": "5.0"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-medium-expert                       44.0±1.6              28.4±19.4                   0.7±3.7            62.4                  95.0±1.4            107.1±2.0       106.3±1.9",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 61.3,
+     "std": 1.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10",
+      "eta": "1.0"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-medium-replay                       37.6±2.1                0.8±1.0                  6.6±11.0            46.2                  45.3±0.3             63.9±0.8        61.3±1.9",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "halfcheetah-full-replay",
+     "outcome": 84.6,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10",
+      "eta": "1.0"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-full-replay                         62.9±0.8               86.8±1.0                 27.8±35.4               -                  76.9±0.9             84.5±1.2        84.6±0.9",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 25.3,
+     "std": 10.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "0.0"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-random                                    3.7±0.6                9.9±1.5                   3.4±2.2            10.8                   5.3±0.6             31.3±0.0       25.3±10.4",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 101.6,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "1.0"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-medium                                   54.1±3.8                0.8±0.0                   0.7±0.0            86.6                  61.9±6.4            100.3±0.3       101.6±0.6",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 110.1,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "1.0"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-expert                                  107.7±9.7                0.7±0.0                   0.8±0.0           109.9                 106.5±9.1            110.3±0.3       110.1±0.1",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 110.7,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "1.0"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-medium-expert                            53.9±4.7                0.7±0.0                   0.8±0.0           111.0                 96.9±15.1            110.1±0.3       110.7±0.1",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 101.0,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "1.0"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-medium-replay                            16.6±4.8                7.4±0.5                 27.5±15.2            48.6                  86.3±7.3            101.8±0.5       101.0±0.5",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "hopper-full-replay",
+     "outcome": 105.4,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "1.0"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-full-replay                             19.9±12.9              41.1±17.9                 19.7±24.6               -                 101.9±0.6            102.9±0.3       105.4±0.7",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 16.6,
+     "std": 7.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10",
+      "eta": "1.0"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-random                                  1.3±0.1                0.9±0.8                   6.9±8.3             7.0                   5.4±1.7             21.7±0.0        16.6±7.0",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 92.5,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10",
+      "eta": "1.0"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-medium                                70.9±11.0               -0.3±0.2                   0.2±0.7            74.5                  79.5±3.2             87.9±0.2        92.5±0.8",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "walker2d-expert",
+     "outcome": 115.1,
+     "std": 1.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10",
+      "eta": "5.0"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-expert                                108.7±0.2                0.7±0.3                   1.0±2.3           121.6                 109.3±0.1            107.4±2.4       115.1±1.9",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 114.7,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10",
+      "eta": "5.0"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-medium-expert                         90.1±13.2                1.9±3.9                  -0.1±0.0            98.7                 109.1±0.2            116.7±0.4       114.7±0.9",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 87.1,
+     "std": 2.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10",
+      "eta": "1.0"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-medium-replay                          20.3±9.8               -0.4±0.3                  12.5±6.2            32.6                 76.8±10.0             78.7±0.7        87.1±2.3",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "walker2d-full-replay",
+     "outcome": 99.8,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "num_q_networks": "10",
+      "eta": "1.0"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-full-replay                           68.8±17.7              27.9±47.3                  -0.2±0.3               -                  94.2±1.9             94.6±0.5        99.8±0.7",
+     "notes": "std is across 4 seeds; column 'EDAC (Ours)'"
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 25.3,
+     "std": 10.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=0.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "0.0"
+     },
+     "table": "Table 9",
+     "line_quote": "random           25.3±10.4       9.3±6.2        6.7±0.8      3.8±1.5      1.9±0.8",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 9.3,
+     "std": 6.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=0.5, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "0.5"
+     },
+     "table": "Table 9",
+     "line_quote": "random           25.3±10.4       9.3±6.2        6.7±0.8      3.8±1.5      1.9±0.8",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 6.7,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=1.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "1.0"
+     },
+     "table": "Table 9",
+     "line_quote": "random           25.3±10.4       9.3±6.2        6.7±0.8      3.8±1.5      1.9±0.8",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 3.8,
+     "std": 1.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=2.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "2.0"
+     },
+     "table": "Table 9",
+     "line_quote": "random           25.3±10.4       9.3±6.2        6.7±0.8      3.8±1.5      1.9±0.8",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 1.9,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=5.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "5.0"
+     },
+     "table": "Table 9",
+     "line_quote": "random           25.3±10.4       9.3±6.2        6.7±0.8      3.8±1.5      1.9±0.8",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 7.3,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=0.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "0.0"
+     },
+     "table": "Table 9",
+     "line_quote": "medium             7.3±0.1     102.2±0,4      101.6±0.5    94.5±12.4    75.5±24.1",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 101.6,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=1.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "1.0"
+     },
+     "table": "Table 9",
+     "line_quote": "medium             7.3±0.1     102.2±0,4      101.6±0.5    94.5±12.4    75.5±24.1",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 94.5,
+     "std": 12.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=2.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "2.0"
+     },
+     "table": "Table 9",
+     "line_quote": "medium             7.3±0.1     102.2±0,4      101.6±0.5    94.5±12.4    75.5±24.1",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 75.5,
+     "std": 24.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=5.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "5.0"
+     },
+     "table": "Table 9",
+     "line_quote": "medium             7.3±0.1     102.2±0,4      101.6±0.5    94.5±12.4    75.5±24.1",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 2.3,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=0.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "0.0"
+     },
+     "table": "Table 9",
+     "line_quote": "expert             2.3±0.1     110.3±0.2      110.1±0.1    109.8±0.2    109.9±0.2",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 110.3,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=0.5, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "0.5"
+     },
+     "table": "Table 9",
+     "line_quote": "expert             2.3±0.1     110.3±0.2      110.1±0.1    109.8±0.2    109.9±0.2",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 110.1,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=1.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "1.0"
+     },
+     "table": "Table 9",
+     "line_quote": "expert             2.3±0.1     110.3±0.2      110.1±0.1    109.8±0.2    109.9±0.2",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 109.8,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=2.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "2.0"
+     },
+     "table": "Table 9",
+     "line_quote": "expert             2.3±0.1     110.3±0.2      110.1±0.1    109.8±0.2    109.9±0.2",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 109.9,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=5.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "5.0"
+     },
+     "table": "Table 9",
+     "line_quote": "expert             2.3±0.1     110.3±0.2      110.1±0.1    109.8±0.2    109.9±0.2",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 46.9,
+     "std": 33.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=0.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "0.0"
+     },
+     "table": "Table 9",
+     "line_quote": "medium-expert    46.9±33.0    103.8±12.4      110.7±0.1    109.8±0.2    109.8±0.2",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 103.8,
+     "std": 12.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=0.5, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "0.5"
+     },
+     "table": "Table 9",
+     "line_quote": "medium-expert    46.9±33.0    103.8±12.4      110.7±0.1    109.8±0.2    109.8±0.2",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 110.7,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=1.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "1.0"
+     },
+     "table": "Table 9",
+     "line_quote": "medium-expert    46.9±33.0    103.8±12.4      110.7±0.1    109.8±0.2    109.8±0.2",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 109.8,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=2.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "2.0"
+     },
+     "table": "Table 9",
+     "line_quote": "medium-expert    46.9±33.0    103.8±12.4      110.7±0.1    109.8±0.2    109.8±0.2",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 109.8,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=5.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "5.0"
+     },
+     "table": "Table 9",
+     "line_quote": "medium-expert    46.9±33.0    103.8±12.4      110.7±0.1    109.8±0.2    109.8±0.2",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 100.9,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=0.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "0.0"
+     },
+     "table": "Table 9",
+     "line_quote": "medium-replay    100.9±0.4     100.3±0.8      101.0±0.4    100.2±0.5     20.6±0.7",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 100.3,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=0.5, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "0.5"
+     },
+     "table": "Table 9",
+     "line_quote": "medium-replay    100.9±0.4     100.3±0.8      101.0±0.4    100.2±0.5     20.6±0.7",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 101.0,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=1.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "1.0"
+     },
+     "table": "Table 9",
+     "line_quote": "medium-replay    100.9±0.4     100.3±0.8      101.0±0.4    100.2±0.5     20.6±0.7",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 100.2,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=2.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "2.0"
+     },
+     "table": "Table 9",
+     "line_quote": "medium-replay    100.9±0.4     100.3±0.8      101.0±0.4    100.2±0.5     20.6±0.7",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 20.6,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=5.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "5.0"
+     },
+     "table": "Table 9",
+     "line_quote": "medium-replay    100.9±0.4     100.3±0.8      101.0±0.4    100.2±0.5     20.6±0.7",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-full-replay",
+     "outcome": 105.6,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=0.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "0.0"
+     },
+     "table": "Table 9",
+     "line_quote": "full-replay      105.6±0.4     104.9±0.5     4105.4±0.6    104.0±0.2    106.3±0.9",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-full-replay",
+     "outcome": 104.9,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=0.5, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "0.5"
+     },
+     "table": "Table 9",
+     "line_quote": "full-replay      105.6±0.4     104.9±0.5     4105.4±0.6    104.0±0.2    106.3±0.9",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-full-replay",
+     "outcome": 104.0,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=2.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "2.0"
+     },
+     "table": "Table 9",
+     "line_quote": "full-replay      105.6±0.4     104.9±0.5     4105.4±0.6    104.0±0.2    106.3±0.9",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    },
+    {
+     "dataset": "hopper-full-replay",
+     "outcome": 106.3,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "eta=5.0, N=50",
+     "config_conditions": {
+      "num_q_networks": "50",
+      "eta": "5.0"
+     },
+     "table": "Table 9",
+     "line_quote": "full-replay      105.6±0.4     104.9±0.5     4105.4±0.6    104.0±0.2    106.3±0.9",
+     "notes": "Appendix H eta sensitivity sweep on hopper datasets with N fixed to 50; 'Dataset type' column gives only the suffix, environment is hopper per table caption. Seeds not restated for Table 9 (assumed same 4-seed protocol)."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BC",
+  "SAC",
+  "REM",
+  "CQL (Paper)",
+  "CQL (Reproduced)",
+  "BCQ",
+  "BEAR",
+  "BRAC",
+  "MOReL",
+  "UWAC",
+  "CQL-N",
+  "CQL w/ diversification"
+ ],
+ "problems": [
+  "Table 9 (line 1149) cell for hopper-medium, eta=0.5 is garbled: '102.2±0,4' (verbatim line: 'medium             7.3±0.1     102.2±0,4      101.6±0.5    94.5±12.4    75.5±24.1'); row not emitted.",
+  "Table 9 (line 1153) cell for hopper-full-replay, eta=1.0 is garbled: '4105.4±0.6' (verbatim line: 'full-replay      105.6±0.4     104.9±0.5     4105.4±0.6    104.0±0.2    106.3±0.9'); row not emitted.",
+  "Table 7 (line 1099-1100) restates SAC-N/EDAC on *-medium datasets; EDAC halfcheetah-medium printed as '65.9±1.6' there vs '65.9±0.6' in Table 1 (line 467) — std discrepancy between tables; Table 1 value used, Table 7 not emitted as separate rows.",
+  "Number of evaluation episodes per seed is not stated anywhere in the text; only '4 random seeds'. Checkpoint selection not stated (paper reports 'normalized average return' after 3 million training steps).",
+  "Network widths (hidden dim), batch size, learning rates, discount, tau are not printed; paper says rlkit SAC defaults are used except 3 layers (line 884-885).",
+  "Table 9 hopper-medium eta=0.5 cell '102.2±0,4' has a comma instead of a decimal point in the std; hopper-full-replay eta=1.0 cell '4105.4±0.6' has a stray leading '4'. Both excluded rather than guessed."
+ ]
+}

@@ -1,0 +1,270 @@
+{
+  "_about": "Mechanism-based family labels, assigned 2026-08-24 from the Phase 11 semantic tuples. Lineage labels stay in each record's `source` string and in papers.txt; this file overrides them when compare.py is run with --families mechanism. Additive: unlisted ids keep their lineage family.",
+  "_assignment_basis": {
+    "pc-neuro": "predict@input + error/state objects — predicts sensory input, computes errors, updates neural state. Membership by object, not by spiking",
+    "pc-learning": "correct/train@parameter — predictive coding as a weight-update rule. Includes spiking implementations whose mechanism is a parameter update",
+    "state-estimation": "predict@state / correct@state / filter@state on a dynamical-system state",
+    "particle": "sample@sample + encode@parameter — sampling/resampling based",
+    "meta-learning": "provisional: sample@task + evaluate@value/task + correct@parameter",
+    "on-policy": "evaluate@value + improve@policy/parameter — advantage/surrogate objective on the current policy, no replay buffer. PPO, TRPO, SAC. A3C held out (a3c-outlier)",
+    "replay-off-policy": "store/sample@sample + select/act@action + update@parameter — experience replay loop, target network. DQN, DDPG, TD3, DDQN, Rainbow"
+  },
+  "mechanism": {
+    "1605.08104": "pc-neuro",
+    "2605.12732": "pc-neuro",
+    "2407.04117": "pc-learning",
+    "2202.09467": "pc-learning",
+    "2107.12979": "pc-learning",
+    "2107.10043": "state-estimation",
+    "2411.06378": "state-estimation",
+    "1605.07148": "state-estimation",
+    "1511.05121": "pc-learning",
+    "1805.08975": "particle",
+    "2106.13082": "pc-learning",
+    "2103.03725": "pc-learning",
+    "2305.13562": "pc-learning",
+    "2205.05303": "pc-neuro",
+    "1908.08655": "pc-learning",
+    "2210.15752": "pc-learning",
+    "2102.10021": "state-estimation",
+    "1703.02310": "state-estimation",
+    "2503.05490": "state-estimation",
+    "1910.06205": "state-estimation",
+    "2201.01353": "state-estimation",
+    "1511.07367": "particle",
+    "1805.11122": "particle",
+    "1905.12885": "particle",
+    "1508.06818": "particle",
+    "1312.5602": "replay-off-policy",
+    "1707.06347": "on-policy",
+    "1502.05477": "on-policy",
+    "1801.01290": "on-policy",
+    "1602.01783": "a3c-outlier",
+    "1605.06432": "worldmodels",
+    "1703.03400": "meta-learning",
+    "1803.02999": "meta-learning",
+    "1707.09835": "meta-learning",
+    "1509.02971": "replay-off-policy",
+    "1802.09477": "replay-off-policy",
+    "1509.06461": "replay-off-policy",
+    "1710.02298": "replay-off-policy"
+  },
+  "_moves_phase16": {
+    "1511.07367": {
+      "from": "latent-generative",
+      "to": "particle",
+      "why": "sample@sample + parameterize@distribution: sampling-based variational estimation"
+    },
+    "2201.01353": {
+      "from": "latent-generative",
+      "to": "state-estimation",
+      "why": "forward pass@state + backward pass@state: a linear smoother"
+    },
+    "1910.06205": {
+      "from": "latent-generative",
+      "to": "state-estimation",
+      "why": "predict@state x2 + transmit@state: state tracking"
+    },
+    "1511.05121": {
+      "from": "latent-generative",
+      "to": "worldmodels",
+      "why": "reconstruct + predict@latent: latent generative dynamics; 1.00 lexical with DreamerV3"
+    },
+    "2210.15752": {
+      "from": "pc-neuro",
+      "to": "pc-learning",
+      "why": "train@parameter + correct@parameter: weight-update rule, not input prediction"
+    },
+    "1908.08655": {
+      "from": "pc-neuro",
+      "to": "pc-learning",
+      "why": "error@error + weight adaptation@parameter: error-driven weight update (spiking is implementation, not mechanism)"
+    },
+    "2205.05303": {
+      "from": "pc-neuro",
+      "to": "pc-neuro",
+      "why": "compute errors@error x3 + predict@input: hierarchical input prediction with error units"
+    },
+    "2605.12732": {
+      "from": "pc-neuro",
+      "to": "pc-neuro",
+      "why": "predict@input + maintain@state"
+    },
+    "1605.08104": {
+      "from": "pc-neuro",
+      "to": "pc-neuro",
+      "why": "predict@input + correct@state"
+    }
+  },
+  "_moves_phase18": {
+    "1605.06432": {
+      "from": "(new)",
+      "to": "latent-generative",
+      "why": "Phase 18 re-validation with ontology v2"
+    },
+    "1511.05121": {
+      "from": "worldmodels",
+      "to": "latent-generative",
+      "why": "Phase 18 re-validation with ontology v2"
+    },
+    "1511.07367": {
+      "from": "particle",
+      "to": "latent-generative",
+      "why": "Phase 18 re-validation with ontology v2"
+    },
+    "2201.01353": {
+      "from": "state-estimation",
+      "to": "latent-generative",
+      "why": "Phase 18 re-validation with ontology v2"
+    },
+    "1910.06205": {
+      "from": "state-estimation",
+      "to": "latent-generative",
+      "why": "Phase 18 re-validation with ontology v2"
+    },
+    "1703.03400": {
+      "from": "(new)",
+      "to": "meta-learning",
+      "why": "Phase 18 re-validation with ontology v2"
+    },
+    "1803.02999": {
+      "from": "(new)",
+      "to": "meta-learning",
+      "why": "Phase 18 re-validation with ontology v2"
+    },
+    "1707.09835": {
+      "from": "(new)",
+      "to": "meta-learning",
+      "why": "Phase 18 re-validation with ontology v2"
+    }
+  },
+  "_moves_phase19": {
+    "1707.06347": {
+      "from": "policy-learning",
+      "to": "policy-gradient",
+      "why": "Phase 19 RL split / latent-generative retired"
+    },
+    "1502.05477": {
+      "from": "policy-learning",
+      "to": "policy-gradient",
+      "why": "Phase 19 RL split / latent-generative retired"
+    },
+    "1801.01290": {
+      "from": "policy-learning",
+      "to": "policy-gradient",
+      "why": "Phase 19 RL split / latent-generative retired"
+    },
+    "1312.5602": {
+      "from": "policy-learning",
+      "to": "value-based",
+      "why": "Phase 19 RL split / latent-generative retired"
+    },
+    "1602.01783": {
+      "from": "policy-learning",
+      "to": "value-based",
+      "why": "A3C typed accumulate updates@gradient + correct@parameter — matches neither half; placed with value-based per spec, flagged"
+    },
+    "1509.02971": {
+      "from": "(new)",
+      "to": "policy-gradient",
+      "why": "Phase 19 RL split / latent-generative retired"
+    },
+    "1802.09477": {
+      "from": "(new)",
+      "to": "policy-gradient",
+      "why": "Phase 19 RL split / latent-generative retired"
+    },
+    "1509.06461": {
+      "from": "(new)",
+      "to": "value-based",
+      "why": "Phase 19 RL split / latent-generative retired"
+    },
+    "1710.02298": {
+      "from": "(new)",
+      "to": "value-based",
+      "why": "Phase 19 RL split / latent-generative retired"
+    },
+    "1605.06432": {
+      "from": "latent-generative",
+      "to": "worldmodels",
+      "why": "DVBF transition@state + predict@input — latent dynamics + decoder → worldmodels"
+    },
+    "1511.05121": {
+      "from": "latent-generative",
+      "to": "worldmodels",
+      "why": "DKF reconstruct@input + predict@latent → worldmodels (1.00 lexical with DreamerV3)"
+    },
+    "2201.01353": {
+      "from": "latent-generative",
+      "to": "state-estimation",
+      "why": "Phase 19 RL split / latent-generative retired"
+    },
+    "1910.06205": {
+      "from": "latent-generative",
+      "to": "state-estimation",
+      "why": "Phase 19 RL split / latent-generative retired"
+    },
+    "1511.07367": {
+      "from": "latent-generative",
+      "to": "particle",
+      "why": "BBVI sample@sample + parameterize@distribution → particle"
+    }
+  },
+  "_moves_phase20": {
+    "1707.06347": {
+      "from": "policy-gradient",
+      "to": "on-policy",
+      "why": "Phase 20 RL re-split by mechanism: on-policy vs replay-off-policy"
+    },
+    "1502.05477": {
+      "from": "policy-gradient",
+      "to": "on-policy",
+      "why": "Phase 20 RL re-split by mechanism: on-policy vs replay-off-policy"
+    },
+    "1801.01290": {
+      "from": "policy-gradient",
+      "to": "on-policy",
+      "why": "SAC typed evaluate@value + improve@policy with PPO/TRPO (0.40 each); off-policy by lineage — the bridge test case"
+    },
+    "1602.01783": {
+      "from": "value-based",
+      "to": "a3c-outlier",
+      "why": "A3C typed accumulate@gradient + update policy/value@parameter; 0.00 with PPO/TRPO/SAC, <=0.14 with replay papers. Spec's on-policy list is PPO/TRPO/SAC; A3C held out as n=1 flagged outlier"
+    },
+    "1312.5602": {
+      "from": "value-based",
+      "to": "replay-off-policy",
+      "why": "Phase 20 RL re-split by mechanism: on-policy vs replay-off-policy"
+    },
+    "1509.02971": {
+      "from": "policy-gradient",
+      "to": "replay-off-policy",
+      "why": "DDPG typed store/sample@sample + select/execute@action: the DQN loop with an actor (0.36 with DQN)"
+    },
+    "1802.09477": {
+      "from": "policy-gradient",
+      "to": "replay-off-policy",
+      "why": "TD3 is DDPG + clipped double-Q: replay loop by mechanism. Re-extracted from 4.2 in Phase 20"
+    },
+    "1509.06461": {
+      "from": "value-based",
+      "to": "replay-off-policy",
+      "why": "Phase 20 RL re-split by mechanism: on-policy vs replay-off-policy"
+    },
+    "1710.02298": {
+      "from": "value-based",
+      "to": "replay-off-policy",
+      "why": "Phase 20 RL re-split by mechanism: on-policy vs replay-off-policy"
+    },
+    "1511.05121": {
+      "from": "worldmodels",
+      "to": "pc-learning",
+      "why": "DKF nearest is Spiking PC 0.20 (pc-learning); worldmodels peers 0.06. Per Phase 20 spec"
+    }
+  },
+  "_orphans_phase20": {
+    "1605.06432": "DVBF -> worldmodels, 0.00 to peers at strict; between-family",
+    "2201.01353": "L-VSSF -> state-estimation, 0.00 to everything at strict; between-family",
+    "1511.05121": "DKF -> pc-learning, weak (best 0.20)"
+  }
+}

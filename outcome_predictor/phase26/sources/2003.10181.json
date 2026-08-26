@@ -1,0 +1,560 @@
+{
+ "arxiv_id": "2003.10181",
+ "title": "Importance of using appropriate baselines for evaluation of data-efficiency in deep reinforcement learning for Atari",
+ "methods": [
+  {
+   "method_name": "OTRainbow (Overtrained Rainbow)",
+   "is_own_method": true,
+   "one_paragraph_description": "Rainbow DQN (Dopamine implementation, Hessel et al. 2018 hyperparameters) with the update period reduced to tau_u=1 and a new parameter k=8 network updates per step (replay ratio r=8), epsilon decay 50K steps, target update period 500, min replay history 20K; trained for 100k real interactions.",
+   "conventional_lineage_hint": "model-free DQN-like RL with increased update ratio ('Overtrained Rainbow'; 'classical DQN-like methods are not as data inefficient as they are often portrayed', Section 4)",
+   "global_conditions": {
+    "update_period_tau_u": {
+     "value": "1",
+     "quote": "To create both OTDQN and OTRainbow we decrease period between updates as much as possible so τu = 1 (thus r = 1). To ensure fainess with respect to EBU, we stick to this r in case of OTDQN",
+     "location": "Section 5"
+    },
+    "updates_per_period_k": {
+     "value": "8 (replay ratio r = 8)",
+     "quote": "from Holland et al. (2018)). We find that k = 8 for Rainbow produces the best results (hence",
+     "location": "Section 5"
+    },
+    "epsilon_decay_period": {
+     "value": "50K steps",
+     "quote": "Rainbow’s r = 8). We also decrease the epsilon decay period to 250K steps and 50K steps, target",
+     "location": "Section 5"
+    },
+    "target_network_update_period": {
+     "value": "500",
+     "quote": "network update period 5000 and 500, and minimum replay history to 25K and 20K for OTDQN and",
+     "location": "Section 5"
+    },
+    "min_replay_history": {
+     "value": "20K",
+     "quote": "network update period 5000 and 500, and minimum replay history to 25K and 20K for OTDQN and",
+     "location": "Section 5"
+    },
+    "base_hyperparameters": {
+     "value": "Rainbow, Hessel et al. (2018) unless stated otherwise",
+     "quote": "RL is not as inefficient as it is often stated. Throughout the paper hyperparameters from Hessel et al.",
+     "location": "Section 2"
+    },
+    "codebase": {
+     "value": "Dopamine (modified)",
+     "quote": "Existing code from the Dopamine framework (Castro et al., 2018) was modified, as explained above,",
+     "location": "Section 5"
+    },
+    "environment_steps": {
+     "value": "100k interactions",
+     "quote": "based on a mean score in the low data regime of 100k interactions with the real environment, while",
+     "location": "Section 5"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "not stated",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "after 100k interactions",
+    "quote": "Table 1: Mean scores produced by each approach in the low-data regime. Scores for OTRainbow, SimPLe, HRainbow, and Rainbow are obtained after 100k interactions with the real environment.",
+    "location": "Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "100k interactions with real environment; sticky actions not mentioned; eval episodes not stated",
+    "quote": "data settings they used in the original papers. The efficiency of OTRainbow and SimPLe is tested based on a mean score in the low data regime of 100k interactions with the real environment, while",
+    "location": "Section 5"
+   },
+   "rows": [
+    {
+     "dataset": "Alien",
+     "outcome": 824.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Alien                     824.7           616.9          290.6      318.7      6875      184.8",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Amidar",
+     "outcome": 82.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Amidar                    82.8            74.3           20.8       32.5       1676      11.8",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Assault",
+     "outcome": 351.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Assault                   351.9           527.2          285.7      231        1496      248.8",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Asterix",
+     "outcome": 628.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Asterix                   628.5           1128.3         300.3      243.6      8503      233.7",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "BankHeist",
+     "outcome": 182.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "BankHeist                 182.1           34.2           34.5       15.55      734.4     15",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "BattleZone",
+     "outcome": 4060.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "BattleZone                4060.6          4031.2         3363.5     3285.71    37800     2895",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Boxing",
+     "outcome": 2.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Boxing                    2.5             7.8            0.9        -24.8      4.3       0.3",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Breakout",
+     "outcome": 9.84,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Breakout                  9.84            16.4           3.3        1.2        31.8      0.9",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "ChopperCommand",
+     "outcome": 1033.33,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "ChopperCommand            1033.33         979.4          776.6      120        9882      671",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "CrazyClimber",
+     "outcome": 21327.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "CrazyClimber              21327.8         62583.6        12558.3    2254.5     35411     7339",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "DemonAttack",
+     "outcome": 711.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "DemonAttack               711.8           208.1          431.6      163.6      3401      140",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Freeway",
+     "outcome": 25.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Freeway                   25              16.7           0.1        0          29.6      0",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Frostbite",
+     "outcome": 231.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Frostbite                 231.6           236.9          140.1      60.2       4335      74",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Gopher",
+     "outcome": 778.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Gopher                    778             596.8          748.3      431.2      2321      245.9",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Hero",
+     "outcome": 6458.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Hero                      6458.8          2656.6         2676.3     487        25763     224.6",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Jamesbond",
+     "outcome": 112.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Jamesbond                 112.3           100.5          61.7       47.4       406.7     29.2",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Kangaroo",
+     "outcome": 605.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Kangaroo                  605.4           51.2           38.7       0          3035      42",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Krull",
+     "outcome": 3277.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Krull                     3277.9          2204.8         2978.8     1468       2395      1543.3",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "KungFuMaster",
+     "outcome": 5722.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "KungFuMaster              5722.2          14862.5        1019.4     0          22736     616.5",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "MsPacman",
+     "outcome": 941.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "MsPacman                  941.9           1480           364.3      67         15693     235.2",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Pong",
+     "outcome": 1.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Pong                      1.3             12.8           -19.5      -20.6      9.3       -20.4",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "PrivateEye",
+     "outcome": 100.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "PrivateEye                100             35             42.1       0          69571     26.6",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Qbert",
+     "outcome": 509.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Qbert                     509.3           1288.8         235.6      123.46     13455     166.1",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "RoadRunner",
+     "outcome": 2696.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "RoadRunner                2696.7          5640.6         524.1      1588.46    7845      0",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "Seaquest",
+     "outcome": 286.92,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Seaquest                  286.92          683.3          206.3      131.69     20182     61.1",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    },
+    {
+     "dataset": "UpNDown",
+     "outcome": 2847.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": null,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "UpNDown                   2847.6          3350.3         1346.3     504.6      9082      488.4",
+     "notes": "raw mean score after 100k interactions; number of seeds not stated; no std"
+    }
+   ]
+  }
+ ],
+ "reference_scores": {
+  "Alien": {
+   "human": 6875.0,
+   "random": 184.8,
+   "line_quote": "Alien                     824.7           616.9          290.6      318.7      6875      184.8",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Amidar": {
+   "human": 1676.0,
+   "random": 11.8,
+   "line_quote": "Amidar                    82.8            74.3           20.8       32.5       1676      11.8",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Assault": {
+   "human": 1496.0,
+   "random": 248.8,
+   "line_quote": "Assault                   351.9           527.2          285.7      231        1496      248.8",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Asterix": {
+   "human": 8503.0,
+   "random": 233.7,
+   "line_quote": "Asterix                   628.5           1128.3         300.3      243.6      8503      233.7",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "BankHeist": {
+   "human": 734.4,
+   "random": 15.0,
+   "line_quote": "BankHeist                 182.1           34.2           34.5       15.55      734.4     15",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "BattleZone": {
+   "human": 37800.0,
+   "random": 2895.0,
+   "line_quote": "BattleZone                4060.6          4031.2         3363.5     3285.71    37800     2895",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Boxing": {
+   "human": 4.3,
+   "random": 0.3,
+   "line_quote": "Boxing                    2.5             7.8            0.9        -24.8      4.3       0.3",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Breakout": {
+   "human": 31.8,
+   "random": 0.9,
+   "line_quote": "Breakout                  9.84            16.4           3.3        1.2        31.8      0.9",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "ChopperCommand": {
+   "human": 9882.0,
+   "random": 671.0,
+   "line_quote": "ChopperCommand            1033.33         979.4          776.6      120        9882      671",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "CrazyClimber": {
+   "human": 35411.0,
+   "random": 7339.0,
+   "line_quote": "CrazyClimber              21327.8         62583.6        12558.3    2254.5     35411     7339",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "DemonAttack": {
+   "human": 3401.0,
+   "random": 140.0,
+   "line_quote": "DemonAttack               711.8           208.1          431.6      163.6      3401      140",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Freeway": {
+   "human": 29.6,
+   "random": 0.0,
+   "line_quote": "Freeway                   25              16.7           0.1        0          29.6      0",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Frostbite": {
+   "human": 4335.0,
+   "random": 74.0,
+   "line_quote": "Frostbite                 231.6           236.9          140.1      60.2       4335      74",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Gopher": {
+   "human": 2321.0,
+   "random": 245.9,
+   "line_quote": "Gopher                    778             596.8          748.3      431.2      2321      245.9",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Hero": {
+   "human": 25763.0,
+   "random": 224.6,
+   "line_quote": "Hero                      6458.8          2656.6         2676.3     487        25763     224.6",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Jamesbond": {
+   "human": 406.7,
+   "random": 29.2,
+   "line_quote": "Jamesbond                 112.3           100.5          61.7       47.4       406.7     29.2",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Kangaroo": {
+   "human": 3035.0,
+   "random": 42.0,
+   "line_quote": "Kangaroo                  605.4           51.2           38.7       0          3035      42",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Krull": {
+   "human": 2395.0,
+   "random": 1543.3,
+   "line_quote": "Krull                     3277.9          2204.8         2978.8     1468       2395      1543.3",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "KungFuMaster": {
+   "human": 22736.0,
+   "random": 616.5,
+   "line_quote": "KungFuMaster              5722.2          14862.5        1019.4     0          22736     616.5",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "MsPacman": {
+   "human": 15693.0,
+   "random": 235.2,
+   "line_quote": "MsPacman                  941.9           1480           364.3      67         15693     235.2",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Pong": {
+   "human": 9.3,
+   "random": -20.4,
+   "line_quote": "Pong                      1.3             12.8           -19.5      -20.6      9.3       -20.4",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "PrivateEye": {
+   "human": 69571.0,
+   "random": 26.6,
+   "line_quote": "PrivateEye                100             35             42.1       0          69571     26.6",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Qbert": {
+   "human": 13455.0,
+   "random": 166.1,
+   "line_quote": "Qbert                     509.3           1288.8         235.6      123.46     13455     166.1",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "RoadRunner": {
+   "human": 7845.0,
+   "random": 0.0,
+   "line_quote": "RoadRunner                2696.7          5640.6         524.1      1588.46    7845      0",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "Seaquest": {
+   "human": 20182.0,
+   "random": 61.1,
+   "line_quote": "Seaquest                  286.92          683.3          206.3      131.69     20182     61.1",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  },
+  "UpNDown": {
+   "human": 9082.0,
+   "random": 488.4,
+   "line_quote": "UpNDown                   2847.6          3350.3         1346.3     504.6      9082      488.4",
+   "table": "Table 1",
+   "notes": "Human column = Mnih et al. (2015) human scores, differs from Kaiser et al. values"
+  }
+ },
+ "baseline_rows_seen": [
+  "SimPLe",
+  "HRainbow",
+  "SRainbow",
+  "Human",
+  "Random",
+  "OTRainbow (500k)",
+  "SRainbow (500k)",
+  "SRainbow (1M)",
+  "SRainbow (2M)",
+  "OTDQN",
+  "EBU",
+  "SDQN"
+ ],
+ "problems": [
+  "OTRainbow (500k) column in Table 3 is a different budget — excluded.",
+  "Table 4 human-normalized percentages excluded (raw scores available).",
+  "Table 2 (OTDQN/EBU/SDQN, 10M frames) is a different benchmark — excluded.",
+  "No seeds, no std, no evaluation-episode count, no batch size / lr stated (defaults to Hessel et al. 2018).",
+  "Table 1 Human column uses Mnih et al. (2015) scores (e.g. Pong 9.3, Boxing 4.3), not the Kaiser et al. reference values."
+ ]
+}

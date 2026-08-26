@@ -1,0 +1,11 @@
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+papers/
+# Phase 23 large artifacts (cloned Diffuser repo, D4RL HDF5s, per-run logs); results_collected.csv and phase23_results.md stay tracked
+phase23/diffuser/
+phase23/venv/
+phase23/d4rl_data/
+phase23/*.log

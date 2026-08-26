@@ -1,0 +1,137 @@
+{
+  "paper": "Backprop KF: Learning Discriminative Deterministic State Estimators",
+  "timestamp": "20260824_185857",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 18.47,
+  "abstract": "Discriminative Deterministic State Estimation Our contribution is based on a generalized view of state estimation that subsumes the na\u00efve, piecewisetrained models discussed in the previous section and allows them to be trained end-to-end using simple and scalable stochastic gradient descent methods. In the na\u00efve approach, the observation function g\u03b8 (ot ) is trained to directly predict zt , since a standard generative filter model does not provide for a straightforward way to optimize g\u03b8 (ot ) with respect to the accuracy of the filter on the labels y1:T . However, the filter can be viewed as a computation graph unrolled through time, as shown in Figure 2b. In this graph, the filter has an internal state defined by the posterior over xt . For 3 example, in a Kalman filter with Gaussian posteriors, we can represent the internal state with the tuple st = (\u00b5xt , \u03a3xt ). In general, we will use st to refer to the state of any filter. We also augment this graph with an output function q(st ) = \u03c6yt that outputs the parameters of a distribution over labels yt . In the case of a Kalman filter, we would simply have q(st ) = (Cy \u00b5xt , Cy \u03a3xt CT y ), where the matrix Cy defines a linear observation function from xt to yt . Viewing the filter as a computation graph in this way, g\u03b8 (ot ) can be trained discriminatively on the entire sequence, rather than individually on single time steps. Let l(\u03c6yt ) be a loss function on the output distribution of the computation graph, which might, for example, be given by l(\u03c6yt ) = \u2212 log p\u03c6yt (yP t ), where p\u03c6yt is the distribution induced by the parameters \u03c6yt , and yt is the label. Let L(\u03b8) = t l(\u03c6yt ) be the loss on an entire sequence with respect to \u03b8. Furthermore, let \u03ba(st , zt+1 ) denote the operation performed by the filter to compute st+1 based on st and zt+1 . We can compute the gradient of l(\u03b8) with respect to the parameters \u03b8 by first recursively computing the gradient of the loss with respect to the filter state st from the back to the front according to the following recursion: d\u03c6yt\u22121 dL dst dL dL = + , dst\u22121 dst\u22121 d\u03c6yt\u22121 dst\u22121 dst (1) and then applying the chain rule to obtain \u2207\u03b8 L(\u03b8) = T X dzt dst dL . d\u03b8 dzt dst t=1 (2) All of the derivatives in these equations can be obtained from g\u03b8 (ot ), \u03ba(st\u22121 , zt ), q(st ), and l(\u03c6yt ): dst dst = \u2207st\u22121 \u03ba(st\u22121 , zt ), = \u2207zt \u03ba(st\u22121 , zt ), dst\u22121 dzt dL dzt d\u03c6yt = \u2207\u03b8 g\u03b8 (ot ). = \u2207\u03c6yt l(\u03c6yt ), = \u2207st q(st ), d\u03c6yt dst d\u03b8 (3) The parameters \u03b8 can be optimized with gradient descent using these gradients. This is an instance of backpropagation through time (BPTT), a well known algorithm for training recurrent neural networks. Recognizing this connection between state-space models and recurrent neural networks allows us to extend this generic filtering architecture and explore the continuum of models between filters with a discriminatively trained observation model g\u03b8 (ot ) all the way to fully general recurrent neural networks. In our experimental evaluation, we use a standard Kalman filter update as \u03ba(st , zt+1 ), but we use a nonlinear convolutional neural network observation function g\u03b8 (ot ). We found that this provides a good trade-off between incorporating domain knowledge and end-to-end learning for the task of visual tracking and odometry, but other variants of this model could be explored in future work. 5 Experimental Evaluation In this section, we compare our deterministic discriminatively trained state estimator with a set of alternative methods, including simple feedforward convolutional networks, piecewise-trained Kalman filter, and fully general LSTM models. We evaluate these models on two tasks that require processing of raw image input: synthetic task of tracking a red disk in the presence of clutter and severe occlusion; and the KITTI visual odometry task [8]. 5.1 State Estimation Models Our proposed model, which we call the \u201cbackprop Kalman filter\u201d (BKF), is a computation graph made up of a Kalman filter (KF) and a feedforward convolutional neural network that distills the observation ot into a low-dimensional signal zt , which serves as the observation for the KF. The neural network outputs both a point observation zt and an observation covariance matrix Rt . Since the network is trained together with the filter, it can learn to use the covariance matrix to communicate the desired degree of uncertainty about the observation, so as to maximize the accuracy of the final filter prediction. 4 \u00b5xt\u22121 fc zt A\u00b5xt\u22121 reshape diag exp Lt h4 fc fc h3 ReLU fc h2 ReLU ReLU max_pool conv h1 Kalman filter resp_norm ReLU max_pool conv ot resp_norm Feedforward network Lt LT t \u0001 \u00b50xt + Kt zt \u2212 Cz \u00b50xt Rt 0 T \u03a30xt CT z Cz \u03a3xt Cz + Rt L\u0302t A\u03a3xt\u22121 A T + Bw QBT w \u03a30xt yt \u00b50xt \u0001\u22121 \u00b5xt Loss PN PT i=1 1 t=1 2T N (i) (i) Cy \u00b5xt \u2212 yt 2 2 Kt (I \u2212 Kt Cz ) \u03a30xt \u03a3xt \u03a3xt\u22121 Figure 3: Illustration of the computation graph for the BKF. The graph is composed of a feedforward part, which processes the raw images ot and outputs intermediate observations zt and a matrix L\u0302t that is used to form a positive definite observation covariance matrix Rt , and a recurrent part that integrates zt through time to produce filtered state estimates. See Appendix A for details. We compare the backprop KF to three alternative state estimators: the \u201cfeedforward model\u201d, the \u201cpiecewise KF\u201d, and the \u201cLSTM model\u201d. The simplest of the models, the feedforward model, does not consider the temporal structure in the task at all, and consists only of a feedforward convolutional network that takes in the observations ot and outputs a point estimate y\u0302t of the label yt . This approach is viable only if the label information can be directly inferred from ot , such as when tracking an object. On the other hand, tasks that require long term memory, such as visual odometry, cannot be solved with a plain feedforward network. The piecewise KF model corresponds to the simple generative approach described in Section 3, which combines the feedforward network with a Kalman filter that filters the network predictions zt to produce a distribution over the state estimate x\u0302t . The piecewise model is based on the same computation graph as the BKF, but does not optimize the filter and network together end-to-end, instead training the two pieces separately. The only difference between the two graphs is that the piecewise KF does not implement the additional pathway for propagating the uncertainty from the feedforward network into the filter, but instead, the filter needs to learn to handle the uncertainty in zt independently. An example instantiation of BKF is depicted in Figure 3. A detailed overview of the computational blocks shown in the figure is deferred to Appendix A. Finally, we compare to a recurrent neural network based on LSTM hidden units [10]. This model resembles the backprop KF, except that the filter portion of the graph is replaced with a generic LSTM layer. The LSTM model learns the dynamics from data, without incorporating the domain knowledge present in the KF. 5.2 Neural Network Design A special aspect of our network design is a novel response normalization layer that is applied to the convolutional activations before applying the nonlinearity. The response normalization transforms the activations such that the activations of layer i have always mean \u00b5i and variance \u03c3i2 regardless of the input to the layer. The parameters \u00b5i and \u03c3i2 are learned along with other parameters. This normalization is used in all of the convolutional networks in our evaluation, and resembles batch normalization [11] in its behavior. However, we found this approach to be substantially more effective for recurrent models that require backpropagation through time, compared to the more standard batch normalization approach, which is known to require additional care when applied to recurrent networks. It has been since proposed independently from our work in [2], which gives an in-depth analysis of the method. The normalization is followed by a rectified linear unit (ReLU) and a max pooling layer. 5.3 Synthetic Visual State Estimation Task Our state estimation task is meant to reflect some of the typical challenges in visual state estimation: the need for long-term tracking to handle occlusions, the presence of noise, and the need to process raw pixel data. The task requires tracking a red disk from image observations, as shown in Figure 4. Distractor disks with random colors and radii are added into the scene to occlude the red disk, and the trajectories of all disks follow linear-Gaussian dynamics, with a linear spring force that pulls the disks toward the center of the frame and a drag force that prevents",
+  "source": "arxiv:1605.07148 [filters] heading: Discriminative Deterministic State Estimation",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits \u2014\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We describe a speech enhancement system. A recurrent network estimates a spectral\nmask from noisy audio, the mask is applied to the spectrogram, and the result is inverted back to\na waveform. The method struggles at very low signal-to-noise ratios, where it introduces musical\nnoise artifacts.\nJSON: {\"name\": \"Mask-Based Speech Enhancement\", \"operations\": [\"estimate\", \"mask\", \"invert\"], \"loss\": null, \"failure\": \"musical noise artifacts at very low signal-to-noise ratios\"}\n\nExample\nDescription: We index a document collection with an inverted index. Each document is tokenized,\ntokens are stemmed, and a posting list is built per term. Queries are answered by intersecting\nposting lists and ranking by BM25.\nJSON: {\"name\": \"Inverted Index Retrieval\", \"operations\": [\"tokenize\", \"stem\", \"intersect\", \"rank\"], \"loss\": null, \"failure\": null}\n\nRules for \"failure\": extract it only when the Description itself states a limitation, instability,\nor breakdown condition (for example \"diverges when\", \"struggles with\", \"fails under\"). Quote the\nDescription's own words. If the Description states no weakness, \"failure\" is null \u2014 that is the\nnormal case, not a fallback. Never reuse wording from the examples.\n\nNow do the same for:\nDescription: Discriminative Deterministic State Estimation Our contribution is based on a generalized view of state estimation that subsumes the na\u00efve, piecewisetrained models discussed in the previous section and allows them to be trained end-to-end using simple and scalable stochastic gradient descent methods. In the na\u00efve approach, the observation function g\u03b8 (ot ) is trained to directly predict zt , since a standard generative filter model does not provide for a straightforward way to optimize g\u03b8 (ot ) with respect to the accuracy of the filter on the labels y1:T . However, the filter can be viewed as a computation graph unrolled through time, as shown in Figure 2b. In this graph, the filter has an internal state defined by the posterior over xt . For 3 example, in a Kalman filter with Gaussian posteriors, we can represent the internal state with the tuple st = (\u00b5xt , \u03a3xt ). In general, we will use st to refer to the state of any filter. We also augment this graph with an output function q(st ) = \u03c6yt that outputs the parameters of a distribution over labels yt . In the case of a Kalman filter, we would simply have q(st ) = (Cy \u00b5xt , Cy \u03a3xt CT y ), where the matrix Cy defines a linear observation function from xt to yt . Viewing the filter as a computation graph in this way, g\u03b8 (ot ) can be trained discriminatively on the entire sequence, rather than individually on single time steps. Let l(\u03c6yt ) be a loss function on the output distribution of the computation graph, which might, for example, be given by l(\u03c6yt ) = \u2212 log p\u03c6yt (yP t ), where p\u03c6yt is the distribution induced by the parameters \u03c6yt , and yt is the label. Let L(\u03b8) = t l(\u03c6yt ) be the loss on an entire sequence with respect to \u03b8. Furthermore, let \u03ba(st , zt+1 ) denote the operation performed by the filter to compute st+1 based on st and zt+1 . We can compute the gradient of l(\u03b8) with respect to the parameters \u03b8 by first recursively computing the gradient of the loss with respect to the filter state st from the back to the front according to the following recursion: d\u03c6yt\u22121 dL dst dL dL = + , dst\u22121 dst\u22121 d\u03c6yt\u22121 dst\u22121 dst (1) and then applying the chain rule to obtain \u2207\u03b8 L(\u03b8) = T X dzt dst dL . d\u03b8 dzt dst t=1 (2) All of the derivatives in these equations can be obtained from g\u03b8 (ot ), \u03ba(st\u22121 , zt ), q(st ), and l(\u03c6yt ): dst dst = \u2207st\u22121 \u03ba(st\u22121 , zt ), = \u2207zt \u03ba(st\u22121 , zt ), dst\u22121 dzt dL dzt d\u03c6yt = \u2207\u03b8 g\u03b8 (ot ). = \u2207\u03c6yt l(\u03c6yt ), = \u2207st q(st ), d\u03c6yt dst d\u03b8 (3) The parameters \u03b8 can be optimized with gradient descent using these gradients. This is an instance of backpropagation through time (BPTT), a well known algorithm for training recurrent neural networks. Recognizing this connection between state-space models and recurrent neural networks allows us to extend this generic filtering architecture and explore the continuum of models between filters with a discriminatively trained observation model g\u03b8 (ot ) all the way to fully general recurrent neural networks. In our experimental evaluation, we use a standard Kalman filter update as \u03ba(st , zt+1 ), but we use a nonlinear convolutional neural network observation function g\u03b8 (ot ). We found that this provides a good trade-off between incorporating domain knowledge and end-to-end learning for the task of visual tracking and odometry, but other variants of this model could be explored in future work. 5 Experimental Evaluation In this section, we compare our deterministic discriminatively trained state estimator with a set of alternative methods, including simple feedforward convolutional networks, piecewise-trained Kalman filter, and fully general LSTM models. We evaluate these models on two tasks that require processing of raw image input: synthetic task of tracking a red disk in the presence of clutter and severe occlusion; and the KITTI visual odometry task [8]. 5.1 State Estimation Models Our proposed model, which we call the \u201cbackprop Kalman filter\u201d (BKF), is a computation graph made up of a Kalman filter (KF) and a feedforward convolutional neural network that distills the observation ot into a low-dimensional signal zt , which serves as the observation for the KF. The neural network outputs both a point observation zt and an observation covariance matrix Rt . Since the network is trained together with the filter, it can learn to use the covariance matrix to communicate the desired degree of uncertainty about the observation, so as to maximize the accuracy of the final filter prediction. 4 \u00b5xt\u22121 fc zt A\u00b5xt\u22121 reshape diag exp Lt h4 fc fc h3 ReLU fc h2 ReLU ReLU max_pool conv h1 Kalman filter resp_norm ReLU max_pool conv ot resp_norm Feedforward network Lt LT t \u0001 \u00b50xt + Kt zt \u2212 Cz \u00b50xt Rt 0 T \u03a30xt CT z Cz \u03a3xt Cz + Rt L\u0302t A\u03a3xt\u22121 A T + Bw QBT w \u03a30xt yt \u00b50xt \u0001\u22121 \u00b5xt Loss PN PT i=1 1 t=1 2T N (i) (i) Cy \u00b5xt \u2212 yt 2 2 Kt (I \u2212 Kt Cz ) \u03a30xt \u03a3xt \u03a3xt\u22121 Figure 3: Illustration of the computation graph for the BKF. The graph is composed of a feedforward part, which processes the raw images ot and outputs intermediate observations zt and a matrix L\u0302t that is used to form a positive definite observation covariance matrix Rt , and a recurrent part that integrates zt through time to produce filtered state estimates. See Appendix A for details. We compare the backprop KF to three alternative state estimators: the \u201cfeedforward model\u201d, the \u201cpiecewise KF\u201d, and the \u201cLSTM model\u201d. The simplest of the models, the feedforward model, does not consider the temporal structure in the task at all, and consists only of a feedforward convolutional network that takes in the observations ot and outputs a point estimate y\u0302t of the label yt . This approach is viable only if the label information can be directly inferred from ot , such as when tracking an object. On the other hand, tasks that require long term memory, such as visual odometry, cannot be solved with a plain feedforward network. The piecewise KF model corresponds to the simple generative approach described in Section 3, which combines the feedforward network with a Kalman filter that filters the network predictions zt to produce a distribution over the state estimate x\u0302t . The piecewise model is based on the same computation graph as the BKF, but does not optimize the filter and network together end-to-end, instead training the two pieces separately. The only difference between the two graphs is that the piecewise KF does not implement the additional pathway for propagating the uncertainty from the feedforward network into the filter, but instead, the filter needs to learn to handle the uncertainty in zt independently. An example instantiation of BKF is depicted in Figure 3. A detailed overview of the computational blocks shown in the figure is deferred to Appendix A. Finally, we compare to a recurrent neural network based on LSTM hidden units [10]. This model resembles the backprop KF, except that the filter portion of the graph is replaced with a generic LSTM layer. The LSTM model learns the dynamics from data, without incorporating the domain knowledge present in the KF. 5.2 Neural Network Design A special aspect of our network design is a novel response normalization layer that is applied to the convolutional activations before applying the nonlinearity. The response normalization transforms the activations such that the activations of layer i have always mean \u00b5i and variance \u03c3i2 regardless of the input to the layer. The parameters \u00b5i and \u03c3i2 are learned along with other parameters. This normalization is used in all of the convolutional networks in our evaluation, and resembles batch normalization [11] in its behavior. However, we found this approach to be substantially more effective for recurrent models that require backpropagation through time, compared to the more standard batch normalization approach, which is known to require additional care when applied to recurrent networks. It has been since proposed independently from our work in [2], which gives an in-depth analysis of the method. The normalization is followed by a rectified linear unit (ReLU) and a max pooling layer. 5.3 Synthetic Visual State Estimation Task Our state estimation task is meant to reflect some of the typical challenges in visual state estimation: the need for long-term tracking to handle occlusions, the presence of noise, and the need to process raw pixel data. The task requires tracking a red disk from image observations, as shown in Figure 4. Distractor disks with random colors and radii are added into the scene to occlude the red disk, and the trajectories of all disks follow linear-Gaussian dynamics, with a linear spring force that pulls the disks toward the center of the frame and a drag force that prevents\nJSON:\n",
+  "raw_response": "{\"name\": \"Discriminative Deterministic State Estimation\", \"operations\": [\"estimate\", \"filter\", \"distill\", \"propagate\", \"normalize\"], \"loss\": \"negative log likelihood\", \"failure\": \"struggles with severe occlusion\"}",
+  "data": {
+    "name": "Discriminative Deterministic State Estimation",
+    "operations": [
+      "estimate",
+      "filter",
+      "distill",
+      "propagate",
+      "normalize"
+    ],
+    "loss": "negative log likelihood",
+    "failure": "struggles with severe occlusion"
+  },
+  "semantic_ops": [
+    {
+      "op": "estimate",
+      "object_type": "state",
+      "context": "deterministic",
+      "quote": "the internal state defined by the posterior over xt",
+      "grounded": false
+    },
+    {
+      "op": "filter",
+      "object_type": "state",
+      "context": "deterministic",
+      "quote": "the filter has an internal state defined by the posterior over xt",
+      "grounded": true
+    },
+    {
+      "op": "distill",
+      "object_type": "input",
+      "context": "temporal",
+      "quote": "a feedforward convolutional neural network that distills the observation ot into a low-dimensional signal zt",
+      "grounded": true
+    },
+    {
+      "op": "propagate",
+      "object_type": "state",
+      "context": "temporal",
+      "quote": "the filter to compute st+1 based on st and zt+1",
+      "grounded": true
+    },
+    {
+      "op": "normalize",
+      "object_type": "distribution",
+      "context": "stochastic",
+      "quote": "response normalization transforms the activations such that the activations of layer i have always mean \u00b5i and variance \u03c3i2",
+      "grounded": true
+    }
+  ],
+  "semantic_model": "qwen3:8b",
+  "semantic_ops_pass2": [
+    {
+      "op": "estimate",
+      "object_type": "state",
+      "context": "unspecified",
+      "quote": "the state of any filter",
+      "grounded": true
+    },
+    {
+      "op": "filter",
+      "object_type": "state",
+      "context": "unspecified",
+      "quote": "the filter has an internal state defined by the posterior over xt",
+      "grounded": true
+    },
+    {
+      "op": "distill",
+      "object_type": "input",
+      "context": "unspecified",
+      "quote": "distills the observation ot into a low-dimensional signal zt",
+      "grounded": true
+    },
+    {
+      "op": "propagate",
+      "object_type": "state",
+      "context": "unspecified",
+      "quote": "the operation performed by the filter to compute st+1 based on st and zt+1",
+      "grounded": true
+    },
+    {
+      "op": "normalize",
+      "object_type": "distribution",
+      "context": "unspecified",
+      "quote": "response normalization layer that is applied to the convolutional activations",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_pass2_model": "qwen3:8b",
+  "semantic_ops_v2": [
+    {
+      "op": "estimate",
+      "object_type": "state",
+      "context": "deterministic",
+      "quote": "the internal state defined by the posterior over xt",
+      "grounded": false
+    },
+    {
+      "op": "filter",
+      "object_type": "state",
+      "context": "deterministic",
+      "quote": "the filter has an internal state defined by the posterior over xt",
+      "grounded": true
+    },
+    {
+      "op": "distill",
+      "object_type": "input",
+      "context": "nonlinear",
+      "quote": "a feedforward convolutional neural network that distills the observation ot into a low-dimensional signal zt",
+      "grounded": true
+    },
+    {
+      "op": "propagate",
+      "object_type": "state",
+      "context": "temporal",
+      "quote": "the filter to compute st+1 based on st and zt+1",
+      "grounded": true
+    },
+    {
+      "op": "normalize",
+      "object_type": "distribution",
+      "context": "stochastic",
+      "quote": "response normalization transforms the activations such that the activations of layer i have always mean \u00b5i and variance \u03c3i2",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_v2_model": "qwen3:8b"
+}

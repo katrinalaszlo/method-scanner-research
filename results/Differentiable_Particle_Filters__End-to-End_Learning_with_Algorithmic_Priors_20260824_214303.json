@@ -1,0 +1,159 @@
+{
+  "paper": "Differentiable Particle Filters: End-to-End Learning with Algorithmic Priors",
+  "timestamp": "20260824_214303",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 52.84,
+  "abstract": "IV. D IFFERENTIABLE PARTICLE F ILTERS Differentiable particle filters (DPFs) are a differentiable implementation of the particle filter algorithm with end-to-end learnable models. We can also view DPFs as a new recurrent network architecture that encodes the algorithmic prior from particle filters in the network structure (see Fig. 3a). With end-to-end learning, we do not mean that every part of a system is learned but that the objective for the learnable parts is end-to-end performance. For efficient end-to-end learning in particle filters, we need learnable models and the ability to backpropagate the gradient through the particle filter algorithm\u2014not to change the algorithm but to compute how to change the models to improve the algorithm\u2019s output. This section describes our DPF implementation. Our source code based on TensorFlow [1] and Sonnet [4] is available at https://github.com/tu-rbo/differentiable-particle-filters. A. Belief DPFs represent the belief at time t by a set of weighted particles, bel(st ) = (St , wt ), where S \u2208 Rn\u00d7d describes n particles in d-dimensional state space with weights w \u2208 Rn . At every time step, DPFs update the previous belief bel(st\u22121 ) with action at and observation ot to get bel(st ) (see Fig. 3a). B. Prediction The prediction step moves each particle by sampling from a probabilistic motion model (Eq. 3). Motion models often assume deterministic environments; they account for uncertainty by generating noisy versions of the commanded or measured action such that a different version of the action is applied to each particle [21, chap. 5]. We follow the same approach by splitting the motion model into an action sampler f , which creates a noisy action a\u0302[i] per particle, and a dynamics model g, which moves each particle i according to a\u0302[i] . [i] a\u0302t = at + f\u03b8 (at , \u000f[i] \u223c N ), (5) [i] [i] [i] [i] st = st\u22121 + g(st\u22121 , a\u0302t ), (6) where f\u03b8 is a feedforward network (see Table I), \u03b8 are all parameters of the DPF, and \u000f[i] \u2208 Rd is a noise vector drawn from a standard normal distribution. Using the noise vector as input for a learnable generative model is known as the reparameterization trick [14]. Here, this trick enables f\u03b8 to learn to sample from action-dependent motion noise. The resulting noisy actions are fed into g, which simulates how these actions change the state. Since we often know the underlying dynamics model, we can implement its equations in g. Alternatively, we can replace g by a feedforward network g\u03b8 and learn the dynamics from data (tested in Section V-A3). C. Measurement Update The measurement update uses the observation to compute particle weights (Eq. 4). DPFs implement this update and additionally use the observation to propose new particles (see Fig. 3a). The DPF measurement model consists of three components: a shared observation encoder h, which encodes an observation ot into a vector et , a particle proposer k, which generates new particles, and an observation likelihood estimator l, which weights each particle based on the observation. et = h\u03b8 (ot ), [i] st = k\u03b8 (et , \u03b4 [i] \u223c B), [i] [i] wt = l\u03b8 (et , st ), (7) (8) (9) where h\u03b8 , k\u03b8 , and l\u03b8 are feedforward networks based on parameters \u03b8; the input \u03b4 [i] is a dropout vector sampled from a Bernoulli distribution. Here, dropout is not used for regularization but as a source of randomness for sampling different particles from the same encoding et (see Table I). D. Particle Proposal and Resampling We do not initialize DPFs by uniformly sampling the state space\u2014this would produce too few initial particles near the true state. Instead, we initialize DPFs by proposing particles from the current observation (as described above) for the first steps. During filtering, DPFs move gradually from particle proposal, which generates hypotheses, to resampling, which tracks and weeds out these hypotheses. The ratio of proposed to resampled particles follows an exponential function \u03b3 t\u22121 , where \u03b3 is a hyperparameter set to 0.7 in our experiments. We use 1000 particles for testing and 100 particles for training (to speed up the training process). DPFs implement resampling by stochastic universal sampling [2], which is not differentiable and leads to limitations discussed in Section IV-F. E. Supervised Learning DPF models can be learned from sequences of supervised data o1:T , a1:T , s\u22171:T using maximum likelihood estimation by maximizing the belief at the true state s\u2217t . To estimate bel(s\u2217t ) from a set of particles, we treat each particle as a Gaussian in a mixture model with weights wt (see Fig. 3b). For a sensible metric across state dimensions, we scale each dimension by dividing by the average step size Et [abs(s\u2217t \u2212 s\u2217t\u22121 )]. This density estimation enables individual and end-to-end learning. 1) Individual learning of the motion model: We optimize the motion model individually to match the observed motion [i] noise by sampling states st from s\u2217t\u22121 and at using Eq. 56 and maximizing the data likelihood as described above, \u03b8 \u2217f = argmin\u03b8f \u2212 log p(s\u2217t | s\u2217t\u22121 , at ; \u03b8 f ). If the dynamics model g is unknown, we train g\u03b8 by minimizing mean squared error between g(s\u2217t\u22121 , at ) and s\u2217t \u2212 s\u2217t\u22121 . 2) Individual learning of the measurement model: The [i] particle proposer k\u03b8 is trained by sampling st from ot using Eq. 7-8 and maximizing the Gaussian mixture at s\u2217t . We train the observation likelihood estimator l\u03b8 (and h\u03b8 ) by maximizing the likelihood of observations in their state and minimizing their likelihood in other states, \u03b8 \u2217h,l = argmin\u03b8h,l \u2212 log(Et [l\u03b8 (h\u03b8 (ot ), s\u2217t )]) \u2212 log(1 \u2212 Et1 ,t2 [l\u03b8 (h\u03b8 (ot1 ), s\u2217t2 )]). 3) End-to-end learning: For end-to-end learning, we apply DPFs on overlapping subsequences and maximize the belief at all true states along the sequence as described above, \u03b8 \u2217 = argmin\u03b8 \u2212 log Et [bel(s\u2217t ; \u03b8)]. F. Limitations and Future Work We compute the end-to-end gradient by backpropagation from the DPF output through the filtering loop. Since resampling is not differentiable, it stops the gradient computation after a single loop iteration. Therefore, the gradient neglects the effects of previous prediction and update steps on the current belief. This limits the scope of our implementation TABLE I: Feedforward networks for learnable DPF models f\u03b8 : 2 x fc(32, relu), fc(3) + mean centering across particles g\u03b8 : 3 x fc(128, relu), fc(3) + scaled by Et [abs(st \u2212 st\u22121 )] h\u03b8 : conv(3x3, 16, stride 2, relu), conv(3x3, 32, stride 2, relu), conv(3x3, 64, stride 2, relu), dropout(keep 0.3), fc(128, relu) k\u03b8 : fc(128, relu), dropout*(keep 0.15), 3 x fc(128, relu), fc(4, tanh) l\u03b8 : 2 x fc(128, relu), fc(1, sigmoid scaled to range [0.004, 1.0]) fc: fully connected, conv: convolution, *: applied at training and test time to supervised learning, where predicting the Markov state at each time step is a useful objective that facilitates future predictions. Differentiable resampling could still improve supervised learning, e.g. by encouraging beliefs to overestimate uncertainty, which reduces performance at the current step but can potentially increase robustness of future state estimates. Since it is difficult to generate training data that include the true state s\u2217t outside of simulation, we must work towards unsupervised learning, which will require backpropagation through multiple time steps because observations are generally non-Markov. Here are two possible implementations of differentiable resampling that could be the starting point of future work: a) Partial resampling: sample only m particles in each step; keep n\u2212m particles from the previous time step; the gradient can flow backwards through those. b) Proxy gradients: define a proxy gradient for the weight of a resampled particle that is tied to the particle it was sampled from; the particle pose is already connected to the pose of the particle it was sampled from; the gradient can flow through these connections. V. E XPERIMENTS We evaluated DPFs in two state estimation problems in robotics: global localization and visual odometry. We tested global localization in simulated 3D mazes based on vision and odometry. We focused on this task because it requires simultaneously considering multiple hypotheses, which is the main advantage of particle filters over Kalman filters. Here, we evaluated: a) the effect of end-to-end learning compared to individual learning and b) the influence of algorithmic priors encoded in DPFs by comparing to generic LSTMs. To show the versatility of DPFs and to compare to published results with backprop Kalman filters (BKFs) [7], we also apply DPFs to the KITTI visual odometry task [5]. The goal is to track the pose of a driving car based on a first-person-view video. In both tasks, DPFs use the known dynamics model g but do not assume any knowledge about the map of the environment and learn the measurement model entirely from data. Our global localization results show that 1) algorithmic priors enable explainability, 2) end-to-end learning improves performance but sequencing individual and end-to-end learning is even more powerful,",
+  "source": "arxiv:1805.11122 [particle] heading: DIFFERENTIABLE PARTICLE FILTERS",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits \u2014\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We describe a speech enhancement system. A recurrent network estimates a spectral\nmask from noisy audio, the mask is applied to the spectrogram, and the result is inverted back to\na waveform. The method struggles at very low signal-to-noise ratios, where it introduces musical\nnoise artifacts.\nJSON: {\"name\": \"Mask-Based Speech Enhancement\", \"operations\": [\"estimate\", \"mask\", \"invert\"], \"loss\": null, \"failure\": \"musical noise artifacts at very low signal-to-noise ratios\"}\n\nExample\nDescription: We index a document collection with an inverted index. Each document is tokenized,\ntokens are stemmed, and a posting list is built per term. Queries are answered by intersecting\nposting lists and ranking by BM25.\nJSON: {\"name\": \"Inverted Index Retrieval\", \"operations\": [\"tokenize\", \"stem\", \"intersect\", \"rank\"], \"loss\": null, \"failure\": null}\n\nRules for \"failure\": extract it only when the Description itself states a limitation, instability,\nor breakdown condition (for example \"diverges when\", \"struggles with\", \"fails under\"). Quote the\nDescription's own words. If the Description states no weakness, \"failure\" is null \u2014 that is the\nnormal case, not a fallback. Never reuse wording from the examples.\n\nNow do the same for:\nDescription: IV. D IFFERENTIABLE PARTICLE F ILTERS Differentiable particle filters (DPFs) are a differentiable implementation of the particle filter algorithm with end-to-end learnable models. We can also view DPFs as a new recurrent network architecture that encodes the algorithmic prior from particle filters in the network structure (see Fig. 3a). With end-to-end learning, we do not mean that every part of a system is learned but that the objective for the learnable parts is end-to-end performance. For efficient end-to-end learning in particle filters, we need learnable models and the ability to backpropagate the gradient through the particle filter algorithm\u2014not to change the algorithm but to compute how to change the models to improve the algorithm\u2019s output. This section describes our DPF implementation. Our source code based on TensorFlow [1] and Sonnet [4] is available at https://github.com/tu-rbo/differentiable-particle-filters. A. Belief DPFs represent the belief at time t by a set of weighted particles, bel(st ) = (St , wt ), where S \u2208 Rn\u00d7d describes n particles in d-dimensional state space with weights w \u2208 Rn . At every time step, DPFs update the previous belief bel(st\u22121 ) with action at and observation ot to get bel(st ) (see Fig. 3a). B. Prediction The prediction step moves each particle by sampling from a probabilistic motion model (Eq. 3). Motion models often assume deterministic environments; they account for uncertainty by generating noisy versions of the commanded or measured action such that a different version of the action is applied to each particle [21, chap. 5]. We follow the same approach by splitting the motion model into an action sampler f , which creates a noisy action a\u0302[i] per particle, and a dynamics model g, which moves each particle i according to a\u0302[i] . [i] a\u0302t = at + f\u03b8 (at , \u000f[i] \u223c N ), (5) [i] [i] [i] [i] st = st\u22121 + g(st\u22121 , a\u0302t ), (6) where f\u03b8 is a feedforward network (see Table I), \u03b8 are all parameters of the DPF, and \u000f[i] \u2208 Rd is a noise vector drawn from a standard normal distribution. Using the noise vector as input for a learnable generative model is known as the reparameterization trick [14]. Here, this trick enables f\u03b8 to learn to sample from action-dependent motion noise. The resulting noisy actions are fed into g, which simulates how these actions change the state. Since we often know the underlying dynamics model, we can implement its equations in g. Alternatively, we can replace g by a feedforward network g\u03b8 and learn the dynamics from data (tested in Section V-A3). C. Measurement Update The measurement update uses the observation to compute particle weights (Eq. 4). DPFs implement this update and additionally use the observation to propose new particles (see Fig. 3a). The DPF measurement model consists of three components: a shared observation encoder h, which encodes an observation ot into a vector et , a particle proposer k, which generates new particles, and an observation likelihood estimator l, which weights each particle based on the observation. et = h\u03b8 (ot ), [i] st = k\u03b8 (et , \u03b4 [i] \u223c B), [i] [i] wt = l\u03b8 (et , st ), (7) (8) (9) where h\u03b8 , k\u03b8 , and l\u03b8 are feedforward networks based on parameters \u03b8; the input \u03b4 [i] is a dropout vector sampled from a Bernoulli distribution. Here, dropout is not used for regularization but as a source of randomness for sampling different particles from the same encoding et (see Table I). D. Particle Proposal and Resampling We do not initialize DPFs by uniformly sampling the state space\u2014this would produce too few initial particles near the true state. Instead, we initialize DPFs by proposing particles from the current observation (as described above) for the first steps. During filtering, DPFs move gradually from particle proposal, which generates hypotheses, to resampling, which tracks and weeds out these hypotheses. The ratio of proposed to resampled particles follows an exponential function \u03b3 t\u22121 , where \u03b3 is a hyperparameter set to 0.7 in our experiments. We use 1000 particles for testing and 100 particles for training (to speed up the training process). DPFs implement resampling by stochastic universal sampling [2], which is not differentiable and leads to limitations discussed in Section IV-F. E. Supervised Learning DPF models can be learned from sequences of supervised data o1:T , a1:T , s\u22171:T using maximum likelihood estimation by maximizing the belief at the true state s\u2217t . To estimate bel(s\u2217t ) from a set of particles, we treat each particle as a Gaussian in a mixture model with weights wt (see Fig. 3b). For a sensible metric across state dimensions, we scale each dimension by dividing by the average step size Et [abs(s\u2217t \u2212 s\u2217t\u22121 )]. This density estimation enables individual and end-to-end learning. 1) Individual learning of the motion model: We optimize the motion model individually to match the observed motion [i] noise by sampling states st from s\u2217t\u22121 and at using Eq. 56 and maximizing the data likelihood as described above, \u03b8 \u2217f = argmin\u03b8f \u2212 log p(s\u2217t | s\u2217t\u22121 , at ; \u03b8 f ). If the dynamics model g is unknown, we train g\u03b8 by minimizing mean squared error between g(s\u2217t\u22121 , at ) and s\u2217t \u2212 s\u2217t\u22121 . 2) Individual learning of the measurement model: The [i] particle proposer k\u03b8 is trained by sampling st from ot using Eq. 7-8 and maximizing the Gaussian mixture at s\u2217t . We train the observation likelihood estimator l\u03b8 (and h\u03b8 ) by maximizing the likelihood of observations in their state and minimizing their likelihood in other states, \u03b8 \u2217h,l = argmin\u03b8h,l \u2212 log(Et [l\u03b8 (h\u03b8 (ot ), s\u2217t )]) \u2212 log(1 \u2212 Et1 ,t2 [l\u03b8 (h\u03b8 (ot1 ), s\u2217t2 )]). 3) End-to-end learning: For end-to-end learning, we apply DPFs on overlapping subsequences and maximize the belief at all true states along the sequence as described above, \u03b8 \u2217 = argmin\u03b8 \u2212 log Et [bel(s\u2217t ; \u03b8)]. F. Limitations and Future Work We compute the end-to-end gradient by backpropagation from the DPF output through the filtering loop. Since resampling is not differentiable, it stops the gradient computation after a single loop iteration. Therefore, the gradient neglects the effects of previous prediction and update steps on the current belief. This limits the scope of our implementation TABLE I: Feedforward networks for learnable DPF models f\u03b8 : 2 x fc(32, relu), fc(3) + mean centering across particles g\u03b8 : 3 x fc(128, relu), fc(3) + scaled by Et [abs(st \u2212 st\u22121 )] h\u03b8 : conv(3x3, 16, stride 2, relu), conv(3x3, 32, stride 2, relu), conv(3x3, 64, stride 2, relu), dropout(keep 0.3), fc(128, relu) k\u03b8 : fc(128, relu), dropout*(keep 0.15), 3 x fc(128, relu), fc(4, tanh) l\u03b8 : 2 x fc(128, relu), fc(1, sigmoid scaled to range [0.004, 1.0]) fc: fully connected, conv: convolution, *: applied at training and test time to supervised learning, where predicting the Markov state at each time step is a useful objective that facilitates future predictions. Differentiable resampling could still improve supervised learning, e.g. by encouraging beliefs to overestimate uncertainty, which reduces performance at the current step but can potentially increase robustness of future state estimates. Since it is difficult to generate training data that include the true state s\u2217t outside of simulation, we must work towards unsupervised learning, which will require backpropagation through multiple time steps because observations are generally non-Markov. Here are two possible implementations of differentiable resampling that could be the starting point of future work: a) Partial resampling: sample only m particles in each step; keep n\u2212m particles from the previous time step; the gradient can flow backwards through those. b) Proxy gradients: define a proxy gradient for the weight of a resampled particle that is tied to the particle it was sampled from; the particle pose is already connected to the pose of the particle it was sampled from; the gradient can flow through these connections. V. E XPERIMENTS We evaluated DPFs in two state estimation problems in robotics: global localization and visual odometry. We tested global localization in simulated 3D mazes based on vision and odometry. We focused on this task because it requires simultaneously considering multiple hypotheses, which is the main advantage of particle filters over Kalman filters. Here, we evaluated: a) the effect of end-to-end learning compared to individual learning and b) the influence of algorithmic priors encoded in DPFs by comparing to generic LSTMs. To show the versatility of DPFs and to compare to published results with backprop Kalman filters (BKFs) [7], we also apply DPFs to the KITTI visual odometry task [5]. The goal is to track the pose of a driving car based on a first-person-view video. In both tasks, DPFs use the known dynamics model g but do not assume any knowledge about the map of the environment and learn the measurement model entirely from data. Our global localization results show that 1) algorithmic priors enable explainability, 2) end-to-end learning improves performance but sequencing individual and end-to-end learning is even more powerful,\nJSON:\n",
+  "raw_response": "{\n  \"name\": \"Differentiable Particle Filters\",\n  \"operations\": [\"predict\", \"update\", \"resample\", \"propose\", \"encode\", \"decode\"],\n  \"loss\": \"mean squared error\",\n  \"failure\": \"gradient neglects the effects of previous prediction and update steps on the current belief\"\n}",
+  "data": {
+    "name": "Differentiable Particle Filters",
+    "operations": [
+      "predict",
+      "update",
+      "resample",
+      "propose",
+      "encode",
+      "decode"
+    ],
+    "loss": "mean squared error",
+    "failure": "gradient neglects the effects of previous prediction and update steps on the current belief"
+  },
+  "semantic_ops": [
+    {
+      "op": "predict",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "Motion models often assume deterministic environments; they account for uncertainty by generating noisy versions of the commanded or measured action.",
+      "grounded": true
+    },
+    {
+      "op": "update",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "The measurement update uses the observation to compute particle weights (Eq. 4).",
+      "grounded": true
+    },
+    {
+      "op": "resample",
+      "object_type": "sample",
+      "context": "stochastic",
+      "quote": "DPFs implement resampling by stochastic universal sampling [2], which is not differentiable.",
+      "grounded": true
+    },
+    {
+      "op": "propose",
+      "object_type": "sample",
+      "context": "stochastic",
+      "quote": "The DPF measurement model consists of ... a particle proposer k, which generates new particles.",
+      "grounded": false
+    },
+    {
+      "op": "encode",
+      "object_type": "input",
+      "context": "nonlinear",
+      "quote": "et = h\u03b8 (ot ), where h\u03b8 is a feedforward network based on parameters \u03b8.",
+      "grounded": false
+    },
+    {
+      "op": "decode",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "The DPF measurement model consists of ... an observation likelihood estimator l, which weights each particle based on the observation.",
+      "grounded": false
+    }
+  ],
+  "semantic_ops_model": "qwen3:8b",
+  "semantic_ops_pass2": [
+    {
+      "op": "predict",
+      "object_type": "state",
+      "context": "unspecified",
+      "quote": "The prediction step moves each particle by sampling from a probabilistic motion model (Eq. 3).",
+      "grounded": true
+    },
+    {
+      "op": "update",
+      "object_type": "state",
+      "context": "unspecified",
+      "quote": "The measurement update uses the observation to compute particle weights (Eq. 4).",
+      "grounded": true
+    },
+    {
+      "op": "resample",
+      "object_type": "state",
+      "context": "unspecified",
+      "quote": "DPFs implement resampling by stochastic universal sampling [2], which is not differentiable",
+      "grounded": true
+    },
+    {
+      "op": "propose",
+      "object_type": "state",
+      "context": "unspecified",
+      "quote": "We initialize DPFs by proposing particles from the current observation",
+      "grounded": true
+    },
+    {
+      "op": "encode",
+      "object_type": "input",
+      "context": "unspecified",
+      "quote": "a shared observation encoder h, which encodes an observation ot into a vector et",
+      "grounded": true
+    },
+    {
+      "op": "decode",
+      "object_type": "unknown",
+      "context": "unspecified",
+      "quote": "",
+      "grounded": false
+    }
+  ],
+  "semantic_ops_pass2_model": "qwen3:8b",
+  "semantic_ops_v2": [
+    {
+      "op": "predict",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "Motion models often assume deterministic environments; they account for uncertainty by generating noisy versions of the commanded or measured action.",
+      "grounded": true
+    },
+    {
+      "op": "update",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "DPFs update the previous belief bel(st\u22121 ) with action at and observation ot to get bel(st ).",
+      "grounded": true
+    },
+    {
+      "op": "resample",
+      "object_type": "sample",
+      "context": "stochastic",
+      "quote": "DPFs implement resampling by stochastic universal sampling [2], which is not differentiable.",
+      "grounded": true
+    },
+    {
+      "op": "propose",
+      "object_type": "sample",
+      "context": "stochastic",
+      "quote": "DPFs initialize DPFs by proposing particles from the current observation (as described above) for the first steps.",
+      "grounded": false
+    },
+    {
+      "op": "encode",
+      "object_type": "input",
+      "context": "nonlinear",
+      "quote": "The DPF measurement model consists of a shared observation encoder h, which encodes an observation ot into a vector et .",
+      "grounded": false
+    },
+    {
+      "op": "decode",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "The observation likelihood estimator l weights each particle based on the observation.",
+      "grounded": false
+    }
+  ],
+  "semantic_ops_v2_model": "qwen3:8b"
+}

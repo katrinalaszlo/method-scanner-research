@@ -1,0 +1,85 @@
+{
+  "paper": "Efficient Planning in a Compact Latent Action Space",
+  "timestamp": "20260825_195329",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 25.07,
+  "abstract": "M ETHOD To enable flexible planning in learned latent action space, we propose Trajectory Autoencoding Planner (TAP) based on the VQ-VAE. In this section, we will describe the latent action model framework and provide the model architecture details for TAP. Then we elaborate on how to plan with this latent-action model. 3.1 L ATENT-ACTION M ODEL AND P LANNING Consider the following trajectory \u03c4 of length T , sampled from an MDP with a fixed stochastic policy, consisting of a sequence of states, actions, rewards and return-to-go Rt = P behaviour i\u2212t ri as proxies for future rewards: i=t \u03b3 \u03c4 = (s 1 , a 1 , r1 , R1 , s 2 , a2 , r2 , R2 , . . . , s T , a T , rT , RT ) . (2) We model the conditional distribution of the trajectory p(\u03c4 |s, z) with a sequence of latent variables z = (z1 , . . . , zM ). Assume the state and latent variables (s, z) can be deterministically mapped to a trajectory \u03c4 so that p(\u03c4 |s, z) = 1(\u03c4 = h(s, z))p(z|s). We refer to z as latent actions and p(z|s) as the latent policy. The mapping h(s, z) from state and latent actions (s, z) to a trajectory \u03c4 is thus a latent-action model. In a deterministic MDP, the trajectory for an arbitrary h(s, z) with p(z|s) > 0 will be an executable plan, namely, the trajectory can be recovered by following the action sequences, starting from state s. Therefore, we can optimize latent actions z in order to find an optimal plan. Planning in the latent action space has two advantages compared to planning in the raw action space. Firstly, the latent-action model only captures possible actions in the support of the behaviour policy, allowing the latent action space to potentially be much smaller than the raw action space. For example, considering the policy is a mixture of X policies, then the latent action space can be a discrete space with only X actions, no matter how high-dimensional the raw action space is. In addition, only allowing the in-distribution actions prevents the planner from exploiting the weakness of the model by querying the actions with high uncertainty whose values are most susceptible to overestimation. Secondly, the latent-action model allows the decoupling of the temporal structure between planning and modelling. When planning in the raw action space, the time resolution of planning must be the same as the predicted trajectories. In contrast, planning in the latent action space can be much more flexible, as a latent action does not have to be tied to a particular step of the transition. This property allows the length of the latent action sequence M to be smaller than the planning horizon T , leading to more efficient planning. 3.2 L EARNING A L ATENT-ACTION M ODEL WITH VQ-VAE S A discrete action space makes dealing with the full distribution of actions easier and also allows a spectrum of advanced planning algorithms to be applied Silver et al. (2018); Tillmann et al. (1997). To learn a compact discrete latent action space, we propose Trajectory Autoencoding Planner (TAP) to model the trajectories with a state-conditioned VQ-VAE. We treat xt := (st , at , rt , Rt ) as a single token for the Transformer encoder and decoder. Both the autoencoder and the prior over latent variables are conditioned on the first state s1 of the trajectory. 3 Published as a conference paper at ICLR 2023 Figure 2: Illustration of the training and test time inference process of TAP. The left-hand side shows the training process, highlighting the design of the bottleneck. The right-hand side figure shows how we generate plans during the test time, with vanilla sampling. Encoder g and decoder h. For the encoder, token xt is processed by a causal Transformer, leading to T feature vectors. We then apply a 1-dimensional max pooling with both kernel size and stride of L, followed by a linear layer. This results in M = T /L vectors (x\u0304 1 , x\u0304 2 , ..., x\u0304 M ), corresponding to the number of discrete latent variables. After vector quantization in Equation (1), we get embedding vectors for the latent variables (z 1 , z 2 , ..., z M ). For the decoder, the latent variables are then tiled L times to match the number of the input/output tokens T . For L = 3, this is written as tile(z 1 , z 2 , ..., z T /3 ) = (z 1 , z 1 , z 1 , z 2 , z 2 , z 2 , ..., z T /3 , z T /3 , z T /3 ). We concatenate the state and embedding vector for the codes and apply a linear projection to provide state information to the decoder. After adding the positional embedding, the decoder then reconstructs the trajectory \u03c4\u0302 := (x\u03021 , x\u03022 , . . . , x\u0302T ), where x\u0302t := (s\u0302t , a\u0302t , r\u0302t , R\u0302t ). Finally, to train the encoder/decoder, the reconstruction loss is the mean squared error over the input trajectories {\u03c4 } and reconstructed ones {\u03c4\u0302 }. Prior distribution of latent codes. While the derivation of VQ-VAE assumes a uniform prior over latents, in practice, learning a parameterised prior over latents will usually lead to better sample quality. Similarly, TAP learns a prior policy p(z |s 1 ) to inform sampling and planning. TAP uses a Transformer to autoregressively model the distribution of the latent action codes given the initial state s 1 . The state information is also blended into the architecture by the concatenation of token embeddings. We denote the autoregressive prior policy as p(z t |z <t , s 1 ) = p(z t |s 1 , z 1 , z 2 , ..., z t\u22121 ). 3.3 P LANNING IN THE D ISCRETE L ATENT ACTION S PACE",
+  "source": "test:2208.10291 [unseen] heading: METHOD",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits \u2014\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We describe a speech enhancement system. A recurrent network estimates a spectral\nmask from noisy audio, the mask is applied to the spectrogram, and the result is inverted back to\na waveform. The method struggles at very low signal-to-noise ratios, where it introduces musical\nnoise artifacts.\nJSON: {\"name\": \"Mask-Based Speech Enhancement\", \"operations\": [\"estimate\", \"mask\", \"invert\"], \"loss\": null, \"failure\": \"musical noise artifacts at very low signal-to-noise ratios\"}\n\nExample\nDescription: We index a document collection with an inverted index. Each document is tokenized,\ntokens are stemmed, and a posting list is built per term. Queries are answered by intersecting\nposting lists and ranking by BM25.\nJSON: {\"name\": \"Inverted Index Retrieval\", \"operations\": [\"tokenize\", \"stem\", \"intersect\", \"rank\"], \"loss\": null, \"failure\": null}\n\nRules for \"failure\": extract it only when the Description itself states a limitation, instability,\nor breakdown condition (for example \"diverges when\", \"struggles with\", \"fails under\"). Quote the\nDescription's own words. If the Description states no weakness, \"failure\" is null \u2014 that is the\nnormal case, not a fallback. Never reuse wording from the examples.\n\nNow do the same for:\nDescription: M ETHOD To enable flexible planning in learned latent action space, we propose Trajectory Autoencoding Planner (TAP) based on the VQ-VAE. In this section, we will describe the latent action model framework and provide the model architecture details for TAP. Then we elaborate on how to plan with this latent-action model. 3.1 L ATENT-ACTION M ODEL AND P LANNING Consider the following trajectory \u03c4 of length T , sampled from an MDP with a fixed stochastic policy, consisting of a sequence of states, actions, rewards and return-to-go Rt = P behaviour i\u2212t ri as proxies for future rewards: i=t \u03b3 \u03c4 = (s 1 , a 1 , r1 , R1 , s 2 , a2 , r2 , R2 , . . . , s T , a T , rT , RT ) . (2) We model the conditional distribution of the trajectory p(\u03c4 |s, z) with a sequence of latent variables z = (z1 , . . . , zM ). Assume the state and latent variables (s, z) can be deterministically mapped to a trajectory \u03c4 so that p(\u03c4 |s, z) = 1(\u03c4 = h(s, z))p(z|s). We refer to z as latent actions and p(z|s) as the latent policy. The mapping h(s, z) from state and latent actions (s, z) to a trajectory \u03c4 is thus a latent-action model. In a deterministic MDP, the trajectory for an arbitrary h(s, z) with p(z|s) > 0 will be an executable plan, namely, the trajectory can be recovered by following the action sequences, starting from state s. Therefore, we can optimize latent actions z in order to find an optimal plan. Planning in the latent action space has two advantages compared to planning in the raw action space. Firstly, the latent-action model only captures possible actions in the support of the behaviour policy, allowing the latent action space to potentially be much smaller than the raw action space. For example, considering the policy is a mixture of X policies, then the latent action space can be a discrete space with only X actions, no matter how high-dimensional the raw action space is. In addition, only allowing the in-distribution actions prevents the planner from exploiting the weakness of the model by querying the actions with high uncertainty whose values are most susceptible to overestimation. Secondly, the latent-action model allows the decoupling of the temporal structure between planning and modelling. When planning in the raw action space, the time resolution of planning must be the same as the predicted trajectories. In contrast, planning in the latent action space can be much more flexible, as a latent action does not have to be tied to a particular step of the transition. This property allows the length of the latent action sequence M to be smaller than the planning horizon T , leading to more efficient planning. 3.2 L EARNING A L ATENT-ACTION M ODEL WITH VQ-VAE S A discrete action space makes dealing with the full distribution of actions easier and also allows a spectrum of advanced planning algorithms to be applied Silver et al. (2018); Tillmann et al. (1997). To learn a compact discrete latent action space, we propose Trajectory Autoencoding Planner (TAP) to model the trajectories with a state-conditioned VQ-VAE. We treat xt := (st , at , rt , Rt ) as a single token for the Transformer encoder and decoder. Both the autoencoder and the prior over latent variables are conditioned on the first state s1 of the trajectory. 3 Published as a conference paper at ICLR 2023 Figure 2: Illustration of the training and test time inference process of TAP. The left-hand side shows the training process, highlighting the design of the bottleneck. The right-hand side figure shows how we generate plans during the test time, with vanilla sampling. Encoder g and decoder h. For the encoder, token xt is processed by a causal Transformer, leading to T feature vectors. We then apply a 1-dimensional max pooling with both kernel size and stride of L, followed by a linear layer. This results in M = T /L vectors (x\u0304 1 , x\u0304 2 , ..., x\u0304 M ), corresponding to the number of discrete latent variables. After vector quantization in Equation (1), we get embedding vectors for the latent variables (z 1 , z 2 , ..., z M ). For the decoder, the latent variables are then tiled L times to match the number of the input/output tokens T . For L = 3, this is written as tile(z 1 , z 2 , ..., z T /3 ) = (z 1 , z 1 , z 1 , z 2 , z 2 , z 2 , ..., z T /3 , z T /3 , z T /3 ). We concatenate the state and embedding vector for the codes and apply a linear projection to provide state information to the decoder. After adding the positional embedding, the decoder then reconstructs the trajectory \u03c4\u0302 := (x\u03021 , x\u03022 , . . . , x\u0302T ), where x\u0302t := (s\u0302t , a\u0302t , r\u0302t , R\u0302t ). Finally, to train the encoder/decoder, the reconstruction loss is the mean squared error over the input trajectories {\u03c4 } and reconstructed ones {\u03c4\u0302 }. Prior distribution of latent codes. While the derivation of VQ-VAE assumes a uniform prior over latents, in practice, learning a parameterised prior over latents will usually lead to better sample quality. Similarly, TAP learns a prior policy p(z |s 1 ) to inform sampling and planning. TAP uses a Transformer to autoregressively model the distribution of the latent action codes given the initial state s 1 . The state information is also blended into the architecture by the concatenation of token embeddings. We denote the autoregressive prior policy as p(z t |z <t , s 1 ) = p(z t |s 1 , z 1 , z 2 , ..., z t\u22121 ). 3.3 P LANNING IN THE D ISCRETE L ATENT ACTION S PACE\nJSON:\n",
+  "raw_response": "{\n  \"name\": \"Trajectory Autoencoding Planner\",\n  \"operations\": [\"encode\", \"decode\", \"quantize\", \"reconstruct\", \"tile\", \"concatenate\", \"project\", \"sample\"],\n  \"loss\": \"mean squared error\",\n  \"failure\": null\n}",
+  "data": {
+    "name": "Trajectory Autoencoding Planner",
+    "operations": [
+      "encode",
+      "decode",
+      "quantize",
+      "reconstruct",
+      "tile",
+      "concatenate",
+      "project",
+      "sample"
+    ],
+    "loss": "mean squared error",
+    "failure": null
+  },
+  "semantic_ops_v2": [
+    {
+      "op": "encode",
+      "object_type": "input",
+      "context": "stochastic",
+      "quote": "We treat xt := (st , at , rt , Rt ) as a single token for the Transformer encoder and decoder.",
+      "grounded": true
+    },
+    {
+      "op": "decode",
+      "object_type": "sample",
+      "context": "stochastic",
+      "quote": "The decoder then reconstructs the trajectory \u03c4\u0302 := (x\u03021 , x\u03022 , . . . , x\u0302T ), where x\u0302t := (s\u0302t , a\u0302t , r\u0302t , R\u0302t ).",
+      "grounded": true
+    },
+    {
+      "op": "quantize",
+      "object_type": "sample",
+      "context": "stochastic",
+      "quote": "After vector quantization in Equation (1), we get embedding vectors for the latent variables (z 1 , z 2 , ..., z M ).",
+      "grounded": true
+    },
+    {
+      "op": "reconstruct",
+      "object_type": "sample",
+      "context": "stochastic",
+      "quote": "Finally, to train the encoder/decoder, the reconstruction loss is the mean squared error over the input trajectories {\u03c4 } and reconstructed ones {\u03c4\u0302 }.",
+      "grounded": true
+    },
+    {
+      "op": "tile",
+      "object_type": "sample",
+      "context": "stochastic",
+      "quote": "For L = 3, this is written as tile(z 1 , z 2 , ..., z T /3 ) = (z 1 , z 1 , z 1 , z 2 , z 2 , z 2 , ..., z T /3 , z T /3 , z T /3 ).",
+      "grounded": true
+    },
+    {
+      "op": "concatenate",
+      "object_type": "sample",
+      "context": "stochastic",
+      "quote": "We concatenate the state and embedding vector for the codes and apply a linear projection to provide state information to the decoder.",
+      "grounded": true
+    },
+    {
+      "op": "project",
+      "object_type": "sample",
+      "context": "stochastic",
+      "quote": "We concatenate the state and embedding vector for the codes and apply a linear projection to provide state information to the decoder.",
+      "grounded": true
+    },
+    {
+      "op": "sample",
+      "object_type": "distribution",
+      "context": "stochastic",
+      "quote": "TAP uses a Transformer to autoregressively model the distribution of the latent action codes given the initial state s 1 .",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_v2_model": "qwen3:8b"
+}

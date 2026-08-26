@@ -1,0 +1,63 @@
+Phase 19 — policy-learning split + latent-generative retired (2026-08-25)
+Corpus 58 (54 + 4 new RL). Matrices: matrices/phase19_{lexical,semantic_strict_v2,semantic_relaxed_v2}.csv
+
+VERDICTS (strict v2)
+  policy-gradient (n=5)           0.15   target >0.30   FAILED  (PPO/TRPO/SAC core still 0.40-0.50; DDPG + TD3 dilute it)
+  value-based (n=4)               0.03   target >0.20   FAILED  (DQN/DDQN/Rainbow/A3C: four signatures, no shared loop)
+  policy-gradient x value-based   0.06   target <0.10   met, trivially — value-based is not coherent enough to be "distinct from"
+
+RL SUB-MATRIX (strict v2)
+                 TD3   DDPG  PPO   SAC   TRPO  A3C   DDQN  DQN   Rainbow
+  TD3     pg     1.00  0.00  0.00  0.17  0.00  0.00  0.00  0.00  0.00
+  DDPG    pg     0.00  1.00  0.00  0.00  0.00  0.09  0.11  0.36  0.00
+  PPO     pg     0.00  0.00  1.00  0.40  0.50  0.00  0.25  0.00  0.00
+  SAC     pg     0.17  0.00  0.40  1.00  0.40  0.00  0.20  0.00  0.00
+  TRPO    pg     0.00  0.00  0.50  0.40  1.00  0.00  0.25  0.00  0.00
+  A3C     vb     0.00  0.09  0.00  0.00  0.00  1.00  0.00  0.07  0.00
+  DDQN    vb     0.00  0.11  0.25  0.20  0.25  0.00  1.00  0.08  0.00
+  DQN     vb     0.00  0.36  0.00  0.00  0.00  0.07  0.08  1.00  0.00
+  Rainbow vb     0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  1.00
+
+WHAT THE TUPLES SAY
+  DDPG    initialize@parameter, sample@sample, update@parameter, store@sample, select@action, execute@action, observe@state, normalize@input
+          -> the DQN replay loop with an actor. Its strongest pair anywhere is DQN (0.36 strict, 1.00 lexical). Typed as value-based, labelled policy-gradient.
+  TD3     update@value, optimize@policy, estimate@value  (section finder hit "Overestimation Bias" — the analysis section, not Algorithm 1)
+  DDQN    select@action, evaluate@value  (fallback 20% window, 2 tuples, both ungrounded). Nearest: PPO/TRPO 0.25 on evaluate@value.
+  Rainbow contract@distribution, shift@distribution, aggregate@value, softmax@distribution, noisy@gradient  (fallback window; typed the distributional-RL projection, 0.00 with everyone)
+  A3C     accumulate updates@gradient, update policy/value@parameter — still matches neither half (flagged in Phase 18)
+
+READING
+  1. The split the data supports is not policy-gradient vs value-based. It is on-policy trust-region (PPO, TRPO, SAC: evaluate@value + improve@policy/parameter)
+     vs replay-based off-policy (DQN, DDPG: store/sample@sample + select/act@action). DDPG is "policy-gradient" by lineage and DQN-loop by mechanism —
+     the same lineage-vs-mechanism mismatch as pc-neuro (Phase 15) and A3C (Phase 18), now on the paper the spec assumed would confirm the family.
+  2. Three of four new papers got bad input. Section finder: TD3 -> wrong heading; DDQN, Rainbow -> 20% fallback. Rainbow's window landed on the C51
+     distributional projection, not the agent loop. Same failure class as Phase 5 (Kalman abstract had no "predict"). Value-based 0.03 is partly an
+     extraction result, not a mechanism result. Fix input before judging the family.
+  3. value-based has n=4, not 5 — A3C was counted as a member by the spec but is an outlier; effective n=3.
+
+LATENT-GENERATIVE DISSOLUTION (strict v2, mean to new-family peers / mean to other ex-LG papers / best pair)
+  Variational Tracking -> state-estimation   0.10 / 0.00 / 0.33 Backprop KF (state-estimation)     fits
+  Deep Kalman Filters  -> worldmodels        0.06 / 0.00 / 0.20 Spiking PC (pc-learning)           weak; nearest is pc-learning, as spec predicted
+  DVBF                 -> worldmodels        0.00 / 0.00 / 0.17 DDIM (diffusion)                    no fit anywhere at strict
+  L-VSSF               -> state-estimation   0.00 / 0.00 / 0.00                                     no fit anywhere (forward/backward pass@state only)
+  BBVI                 -> particle           (particle family 0.11)
+  Dissolution holds: every ex-LG paper is 0.00 with every other ex-LG paper. Reassignment "succeeds" only for Variational Tracking; DKF, DVBF, L-VSSF
+  are orphans — no family at strict granularity. families.json keeps the Phase 16 homes; flagged.
+
+TOP CROSS-DOMAIN ANALOGIES (strict v2, between-family means)
+  1. meta-learning x pc-learning   0.14  (MAML/Reptile correct@parameter <-> PC weight update)  — unchanged from Phase 18, still #1
+  2. jepa x pc-learning            0.10  (I-JEPA x PC Networks 0.50: correct@parameter + predict@latent — top paper pair in the corpus)
+  3. jepa x worldmodels            0.06  (V-JEPA / I-JEPA x World Models 0.40: encode@latent + predict@latent)
+  New RL pairs: policy-gradient x value-based 0.06 and meta-learning x value-based 0.06 — both driven by DDPG x DQN (0.36) and DDQN x PPO/TRPO (0.25).
+  Lexically DDPG x DQN is 1.00 [act, correct, sample]: the strongest RL pair the corpus has, and it crosses the split.
+
+ANSWERS
+  Q1 policy-gradient >0.30?         No. 0.15. Core trio 0.43; DDPG belongs to the replay loop, TD3 mis-sectioned.
+  Q2 value-based distinct (<0.10)?  0.06, yes — but value-based itself is 0.03, so "distinct" is not meaningful yet.
+  Q3 dissolution holds?             Yes (0.00 pairwise among ex-LG). Reassignment: 1 fit, 1 weak, 3 orphans.
+  Q4 top analogies?                 meta x pc-learning 0.14, jepa x pc-learning 0.10, jepa x worldmodels 0.06. Unchanged by the RL expansion.
+
+NEXT (candidates)
+  - Re-extract TD3 (Algorithm 1 / "Clipped Double Q-Learning"), DDQN ("Double Q-learning" section), Rainbow ("Integrated Agent") with pinned headings, re-type, re-run. ~5 min. Judge value-based after that, not before.
+  - Re-split RL by mechanism the tuples show: on-policy (PPO, TRPO, SAC?) vs replay/off-policy (DQN, DDPG, DDQN, Rainbow, TD3). SAC is off-policy by lineage but typed with the on-policy trio — the test case.
+  - DKF/DVBF/L-VSSF: three orphans; either an `infer@latent` object that they share or accept they sit between families.

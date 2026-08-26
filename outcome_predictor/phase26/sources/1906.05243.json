@@ -1,0 +1,648 @@
+{
+ "arxiv_id": "1906.05243",
+ "title": "When to use parametric models in reinforcement learning?",
+ "methods": [
+  {
+   "method_name": "Data-efficient Rainbow (DER)",
+   "is_own_method": true,
+   "one_paragraph_description": "Rainbow DQN with hyper-parameters modified for extreme data efficiency: one replay update per environment step (M=1, P=32), multi-step return length raised from 3 to 20, min replay size reduced from 20,000 to 1600, smaller Q network (2 conv layers 32/64 ch, 5x5 kernels stride 5, 256 hidden), lr 1e-4; 100,000 interactions total.",
+   "conventional_lineage_hint": "replay-based model-free RL ('replay-based algorithms should be competitive to or better than model-based algorithms', abstract; 'A data efficient Rainbow DQN', Section 4.1)",
+   "global_conditions": {
+    "training_frames": {
+     "value": "400,000",
+     "quote": "Training frames                                200,000,000                             400,000",
+     "location": "Table 2"
+    },
+    "environment_steps": {
+     "value": "K = 100,000, M = 1, P = 32",
+     "quote": "that of SimPLe, by setting K = 100,000, M = 1 and             teractions (=frames/action repeats). The horizontal",
+     "location": "Section 4.1"
+    },
+    "min_replay_size": {
+     "value": "1600",
+     "quote": "Min replay size for sampling                          20,000                               1600",
+     "location": "Table 2"
+    },
+    "memory_size": {
+     "value": "unbounded",
+     "quote": "Memory size                                1,000,000 steps                         unbounded",
+     "location": "Table 2"
+    },
+    "replay_period": {
+     "value": "every 1 step",
+     "quote": "Replay period every                                  4 steps                            1 steps",
+     "location": "Table 2"
+    },
+    "multi_step_return_length": {
+     "value": "20",
+     "quote": "Multi-step return length                                     3                                20",
+     "location": "Table 2"
+    },
+    "q_network_channels": {
+     "value": "32, 64",
+     "quote": "Q network: channels                                32, 64, 64                             32, 64",
+     "location": "Table 2"
+    },
+    "q_network_filter_size": {
+     "value": "5x5, 5x5",
+     "quote": "Q network: filter size                   8 × 8, 4 × 4, 3 × 3                        5 × 5, 5 × 5",
+     "location": "Table 2"
+    },
+    "q_network_stride": {
+     "value": "5, 5",
+     "quote": "Q network: stride                                      4, 2, 1                              5, 5",
+     "location": "Table 2"
+    },
+    "q_network_hidden_units": {
+     "value": "256",
+     "quote": "Q network: hidden units                                   512                               256",
+     "location": "Table 2"
+    },
+    "learning_rate": {
+     "value": "0.0001",
+     "quote": "Optimizer: learning rate                          0.0000625                              0.0001",
+     "location": "Table 2"
+    },
+    "grey_scaling": {
+     "value": "True",
+     "quote": "Grey-scaling                                                                              True",
+     "location": "Table 2"
+    },
+    "observation_downsampling": {
+     "value": "(84, 84)",
+     "quote": "Observation down-sampling                                                             (84, 84)",
+     "location": "Table 2"
+    },
+    "frames_stacked": {
+     "value": "4",
+     "quote": "Frames stacked                                                                                4",
+     "location": "Table 2"
+    },
+    "action_repetitions": {
+     "value": "4",
+     "quote": "Action repetitions                                                                            4",
+     "location": "Table 2"
+    },
+    "reward_clipping": {
+     "value": "[-1, 1]",
+     "quote": "Reward clipping                                                                         [-1, 1]",
+     "location": "Table 2"
+    },
+    "terminal_on_loss_of_life": {
+     "value": "True",
+     "quote": "Terminal on loss of life                                                                  True",
+     "location": "Table 2"
+    },
+    "max_frames_per_episode": {
+     "value": "108K",
+     "quote": "Max frames per episode                                                                   108K",
+     "location": "Table 2"
+    },
+    "update": {
+     "value": "Distributional Double Q",
+     "quote": "Update                                                               Distributional Double Q",
+     "location": "Table 2"
+    },
+    "target_network_update_period": {
+     "value": "every 2000 updates",
+     "quote": "Target network update period∗                                             every 2000 updates",
+     "location": "Table 2"
+    },
+    "q_distribution_support": {
+     "value": "51 bins",
+     "quote": "Support of Q-distribution                                                             51 bins",
+     "location": "Table 2"
+    },
+    "discount": {
+     "value": "0.99",
+     "quote": "Discount factor                                                                           0.99",
+     "location": "Table 2"
+    },
+    "batch_size": {
+     "value": "32",
+     "quote": "Minibatch size                                                                               32",
+     "location": "Table 2"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "Optimizer                                                                              Adam",
+     "location": "Table 2"
+    },
+    "adam_beta1": {
+     "value": "0.9",
+     "quote": "Optimizer: first moment decay                                                               0.9",
+     "location": "Table 2"
+    },
+    "adam_beta2": {
+     "value": "0.999",
+     "quote": "Optimizer: second moment decay                                                           0.999",
+     "location": "Table 2"
+    },
+    "adam_epsilon": {
+     "value": "0.00015",
+     "quote": "Optimizer: e                                                                         0.00015",
+     "location": "Table 2"
+    },
+    "max_gradient_norm": {
+     "value": "10",
+     "quote": "Max gradient norm                                                                            10",
+     "location": "Table 2"
+    },
+    "priority_exponent": {
+     "value": "0.5",
+     "quote": "Priority exponent                                                                           0.5",
+     "location": "Table 2"
+    },
+    "priority_correction": {
+     "value": "0.4 -> 1 (linearly annealed, max_step = 100K)",
+     "quote": "Priority correction∗∗                                                                0.4 → 1",
+     "location": "Table 2"
+    },
+    "hardware": {
+     "value": "CPU",
+     "quote": "Hardware                                                                                 CPU",
+     "location": "Table 2"
+    },
+    "noisy_nets_parameter": {
+     "value": "0.1",
+     "quote": "Noisy nets parameter                                                                        0.1",
+     "location": "Table 2"
+    },
+    "replayed_samples_total": {
+     "value": "3.2 million",
+     "quote": "P = 32. The total number of replayed samples (3.2 mil-        dashed line corresponds to the performance of SimPLe",
+     "location": "Section 4.1"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "5",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "end of training (last)",
+    "quote": "Table 1 | Mean episode returns of Human, Random, SimPLe and Rainbow agents, on each of 26 Atari games. The Rainbow results are measured at the end of training and averaged across 5 seeds; the results for SimPLe are",
+    "location": "Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "100K interactions = 400,000 training frames (action repeat 4); sticky actions not mentioned; terminal on loss of life True; max 108K frames per episode; eval episodes not stated",
+    "quote": "that of SimPLe, by setting K = 100,000, M = 1 and             teractions (=frames/action repeats). The horizontal | Training frames                                200,000,000                             400,000 | Action repetitions                                                                            4",
+    "location": "Section 4.1 / Table 2"
+   },
+   "rows": [
+    {
+     "dataset": "alien",
+     "outcome": 739.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "alien                       7127.7         227.8       405.2           739.9",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "amidar",
+     "outcome": 188.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "amidar                      1719.5            5.8        88.0          188.6",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "assault",
+     "outcome": 431.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "assault                      742.0         222.4       369.3           431.2",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "asterix",
+     "outcome": 470.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "asterix                     8503.3         210.0      1089.5           470.8",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "bank_heist",
+     "outcome": 51.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "bank_heist                   753.1          14.2          8.2           51.0",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "battle_zone",
+     "outcome": 10124.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "battle_zone                37187.5       2360.0       5184.4         10124.6",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "boxing",
+     "outcome": 0.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "boxing                         12.1           0.1         9.1            0.2",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "breakout",
+     "outcome": 1.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "breakout                       30.5           1.7        12.7            1.9",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "chopper_command",
+     "outcome": 861.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "chopper_command             7387.8         811.0      1246.9           861.8",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "crazy_climber",
+     "outcome": 16185.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "crazy_climber              35829.4      10780.5      39827.8         16185.3",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "demon_attack",
+     "outcome": 508.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "demon_attack                1971.0         152.1       169.5           508.0",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "freeway",
+     "outcome": 27.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "freeway                        29.6           0.0        20.3           27.9",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "frostbite",
+     "outcome": 866.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "frostbite                   4334.7          65.2       254.7           866.8",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "gopher",
+     "outcome": 349.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "gopher                      2412.5         257.6       771.0           349.5",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "hero",
+     "outcome": 6857.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "hero                       30826.4       1027.0       1295.1          6857.0",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "jamesbond",
+     "outcome": 301.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "jamesbond                    302.8          29.0       125.3           301.6",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "kangaroo",
+     "outcome": 779.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "kangaroo                    3035.0          52.0       323.1           779.3",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "krull",
+     "outcome": 2851.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "krull                       2665.5       1598.0       4539.9          2851.5",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "kung_fu_master",
+     "outcome": 14346.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "kung_fu_master             22736.3         258.5     17257.2         14346.1",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "ms_pacman",
+     "outcome": 1204.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "ms_pacman                   6951.6         307.3       762.8          1204.1",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "pong",
+     "outcome": -19.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "pong                           14.6        -20.7          5.2          -19.3",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "private_eye",
+     "outcome": 97.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "private_eye                69571.3          24.9         58.3           97.8",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "qbert",
+     "outcome": 1152.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "qbert                      13455.0         163.9       559.8          1152.9",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "road_runner",
+     "outcome": 9600.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "road_runner                 7845.0          11.5      5169.4          9600.0",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "seaquest",
+     "outcome": 354.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "seaquest                   42054.7          68.4       370.9           354.1",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    },
+    {
+     "dataset": "up_n_down",
+     "outcome": 2877.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "up_n_down                  11693.2         533.4      2152.6          2877.4",
+     "notes": "raw mean episode return at end of training, averaged across 5 seeds; no std printed"
+    }
+   ]
+  }
+ ],
+ "reference_scores": {
+  "alien": {
+   "human": 7127.7,
+   "random": 227.8,
+   "line_quote": "alien                       7127.7         227.8       405.2           739.9",
+   "table": "Table 1"
+  },
+  "amidar": {
+   "human": 1719.5,
+   "random": 5.8,
+   "line_quote": "amidar                      1719.5            5.8        88.0          188.6",
+   "table": "Table 1"
+  },
+  "assault": {
+   "human": 742.0,
+   "random": 222.4,
+   "line_quote": "assault                      742.0         222.4       369.3           431.2",
+   "table": "Table 1"
+  },
+  "asterix": {
+   "human": 8503.3,
+   "random": 210.0,
+   "line_quote": "asterix                     8503.3         210.0      1089.5           470.8",
+   "table": "Table 1"
+  },
+  "bank_heist": {
+   "human": 753.1,
+   "random": 14.2,
+   "line_quote": "bank_heist                   753.1          14.2          8.2           51.0",
+   "table": "Table 1"
+  },
+  "battle_zone": {
+   "human": 37187.5,
+   "random": 2360.0,
+   "line_quote": "battle_zone                37187.5       2360.0       5184.4         10124.6",
+   "table": "Table 1"
+  },
+  "boxing": {
+   "human": 12.1,
+   "random": 0.1,
+   "line_quote": "boxing                         12.1           0.1         9.1            0.2",
+   "table": "Table 1"
+  },
+  "breakout": {
+   "human": 30.5,
+   "random": 1.7,
+   "line_quote": "breakout                       30.5           1.7        12.7            1.9",
+   "table": "Table 1"
+  },
+  "chopper_command": {
+   "human": 7387.8,
+   "random": 811.0,
+   "line_quote": "chopper_command             7387.8         811.0      1246.9           861.8",
+   "table": "Table 1"
+  },
+  "crazy_climber": {
+   "human": 35829.4,
+   "random": 10780.5,
+   "line_quote": "crazy_climber              35829.4      10780.5      39827.8         16185.3",
+   "table": "Table 1"
+  },
+  "demon_attack": {
+   "human": 1971.0,
+   "random": 152.1,
+   "line_quote": "demon_attack                1971.0         152.1       169.5           508.0",
+   "table": "Table 1"
+  },
+  "freeway": {
+   "human": 29.6,
+   "random": 0.0,
+   "line_quote": "freeway                        29.6           0.0        20.3           27.9",
+   "table": "Table 1"
+  },
+  "frostbite": {
+   "human": 4334.7,
+   "random": 65.2,
+   "line_quote": "frostbite                   4334.7          65.2       254.7           866.8",
+   "table": "Table 1"
+  },
+  "gopher": {
+   "human": 2412.5,
+   "random": 257.6,
+   "line_quote": "gopher                      2412.5         257.6       771.0           349.5",
+   "table": "Table 1"
+  },
+  "hero": {
+   "human": 30826.4,
+   "random": 1027.0,
+   "line_quote": "hero                       30826.4       1027.0       1295.1          6857.0",
+   "table": "Table 1"
+  },
+  "jamesbond": {
+   "human": 302.8,
+   "random": 29.0,
+   "line_quote": "jamesbond                    302.8          29.0       125.3           301.6",
+   "table": "Table 1"
+  },
+  "kangaroo": {
+   "human": 3035.0,
+   "random": 52.0,
+   "line_quote": "kangaroo                    3035.0          52.0       323.1           779.3",
+   "table": "Table 1"
+  },
+  "krull": {
+   "human": 2665.5,
+   "random": 1598.0,
+   "line_quote": "krull                       2665.5       1598.0       4539.9          2851.5",
+   "table": "Table 1"
+  },
+  "kung_fu_master": {
+   "human": 22736.3,
+   "random": 258.5,
+   "line_quote": "kung_fu_master             22736.3         258.5     17257.2         14346.1",
+   "table": "Table 1"
+  },
+  "ms_pacman": {
+   "human": 6951.6,
+   "random": 307.3,
+   "line_quote": "ms_pacman                   6951.6         307.3       762.8          1204.1",
+   "table": "Table 1"
+  },
+  "pong": {
+   "human": 14.6,
+   "random": -20.7,
+   "line_quote": "pong                           14.6        -20.7          5.2          -19.3",
+   "table": "Table 1"
+  },
+  "private_eye": {
+   "human": 69571.3,
+   "random": 24.9,
+   "line_quote": "private_eye                69571.3          24.9         58.3           97.8",
+   "table": "Table 1"
+  },
+  "qbert": {
+   "human": 13455.0,
+   "random": 163.9,
+   "line_quote": "qbert                      13455.0         163.9       559.8          1152.9",
+   "table": "Table 1"
+  },
+  "road_runner": {
+   "human": 7845.0,
+   "random": 11.5,
+   "line_quote": "road_runner                 7845.0          11.5      5169.4          9600.0",
+   "table": "Table 1"
+  },
+  "seaquest": {
+   "human": 42054.7,
+   "random": 68.4,
+   "line_quote": "seaquest                   42054.7          68.4       370.9           354.1",
+   "table": "Table 1"
+  },
+  "up_n_down": {
+   "human": 11693.2,
+   "random": 533.4,
+   "line_quote": "up_n_down                  11693.2         533.4      2152.6          2877.4",
+   "table": "Table 1"
+  }
+ },
+ "baseline_rows_seen": [
+  "Human",
+  "Random",
+  "SimPLe"
+ ],
+ "problems": [
+  "No per-game std printed in Table 1.",
+  "Ablations (N in {5,10,20}, M in {1,4}, P=128) only in Figure 5 curves — no per-game table, excluded.",
+  "Sticky actions and number of evaluation episodes not stated."
+ ]
+}

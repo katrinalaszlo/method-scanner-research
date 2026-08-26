@@ -1,0 +1,646 @@
+{
+  "arxiv_id": "2303.07109",
+  "title": "Transformer-based World Models Are Happy With 100k Interactions",
+  "methods": [
+    {
+      "method_name": "TWM",
+      "is_own_method": true,
+      "one_paragraph_description": "Transformer-based world model: observations are encoded by a CNN into stochastic discrete latent states; a Transformer-XL is applied autoregressively to the sequence of latent states, actions and rewards (three modalities as separate tokens) with history length 16 to compute a deterministic hidden state from which next latent, reward and discount are predicted. An actor-critic is trained purely on imagined trajectories (horizon 15, batch 400) starting from real latents; the policy input is only the latent state z. A balanced dataset-sampling procedure (temperature 20) selects starting points; the actor uses an entropy-threshold regularizer.",
+      "conventional_lineage_hint": "'Our transformer-based world model (TWM) generates meaningful, new experience, which is used to train a policy that outperforms previous model-free and model-based reinforcement learning algorithms' (Abstract); Table 1 groups TWM under 'Imagination' — model-based RL / world models",
+      "global_conditions": {
+        "dataset_sampling_temperature": {
+          "value": 20,
+          "quote": "Dataset sampling temperature         τ           20",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "discount": {
+          "value": 0.99,
+          "quote": "Discount factor                      γ         0.99",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "gae_lambda": {
+          "value": 0.95,
+          "quote": "GAE parameter                        λ         0.95",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "world_model_batch_size": {
+          "value": 100,
+          "quote": "World model batch size               N          100",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "history_length": {
+          "value": 16,
+          "quote": "History length                        `          16",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "imagination_batch_size": {
+          "value": 400,
+          "quote": "Imagination batch size               M          400",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "imagination_horizon": {
+          "value": 15,
+          "quote": "Imagination horizon                  H           15",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "encoder_entropy_coefficient": {
+          "value": 5.0,
+          "quote": "Encoder entropy coefficient          α1         5.0",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "consistency_loss_coefficient": {
+          "value": 0.01,
+          "quote": "Consistency loss coefficient         α2        0.01",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "reward_coefficient": {
+          "value": 10.0,
+          "quote": "Reward coefficient                   β1        10.0",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "discount_coefficient": {
+          "value": 50.0,
+          "quote": "Discount coefficient                 β2        50.0",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "actor_entropy_coefficient": {
+          "value": 0.01,
+          "quote": "Actor entropy coefficient            η         0.01",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "actor_entropy_threshold": {
+          "value": 0.1,
+          "quote": "Actor entropy threshold              Γ          0.1",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "environment_steps": {
+          "value": "100K",
+          "quote": "Environment steps                    —        100K",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "frame_skip": {
+          "value": 4,
+          "quote": "Frame skip                           —            4",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "frame_down_sampling": {
+          "value": "64 x 64",
+          "quote": "Frame down-sampling                  —      64 × 64",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "frame_gray_scaling": {
+          "value": true,
+          "quote": "Frame gray-scaling                   —          Yes",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "frame_stack": {
+          "value": 4,
+          "quote": "Frame stack                          —            4",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "terminate_on_life_loss": {
+          "value": true,
+          "quote": "Terminate on live loss               —          Yes",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "max_frames_per_episode": {
+          "value": "108K",
+          "quote": "Max frames per episode               —         108K",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "max_no_ops": {
+          "value": 30,
+          "quote": "Max no-ops                           —           30",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "observation_learning_rate": {
+          "value": 0.0001,
+          "quote": "Observation learning rate            —       0.0001",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "dynamics_learning_rate": {
+          "value": 0.0001,
+          "quote": "Dynamics learning rate               —       0.0001",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "actor_learning_rate": {
+          "value": 0.0001,
+          "quote": "Actor learning rate                  —       0.0001",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "critic_learning_rate": {
+          "value": 1e-05,
+          "quote": "Critic learning rate                 —      0.00001",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "transformer_embedding_size": {
+          "value": 256,
+          "quote": "Transformer embedding size           —          256",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "transformer_layers": {
+          "value": 10,
+          "quote": "Transformer layers                   —           10",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "transformer_heads": {
+          "value": "4 x 64",
+          "quote": "Transformer heads                    —       4 × 64",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "transformer_feedforward_size": {
+          "value": 1024,
+          "quote": "Transformer feedforward size         —         1024",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "latent_state_predictor_units": {
+          "value": "4 x 512",
+          "quote": "Latent state predictor units         —      4 × 512",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "reward_predictor_units": {
+          "value": "4 x 256",
+          "quote": "Reward predictor units               —      4 × 256",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "discount_predictor_units": {
+          "value": "4 x 256",
+          "quote": "Discount predictor units             —      4 × 256",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "actor_units": {
+          "value": "4 x 512",
+          "quote": "Actor units                          —      4 × 512",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "critic_units": {
+          "value": "4 x 512",
+          "quote": "Critic units                         —      4 × 512",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "activation": {
+          "value": "SiLU",
+          "quote": "Activation function                  —         SiLU",
+          "location": "Table 4 (Appendix A.3)"
+        },
+        "total_parameters": {
+          "value": "21.6M (world model 19M, actor-critic 2.6M)",
+          "quote": "Total                      —            21.6M",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "compute": {
+          "value": "~10 hours on one A100 per run (training + evaluation)",
+          "quote": "roughly 10 hours on a single NVIDIA A100 GPU. The time can vary slightly, since the budget is",
+          "location": "Appendix (Wall-Clock Times, after Table 2)"
+        }
+      },
+      "per_dataset_conditions": {},
+      "evaluation_protocol": {
+        "seeds": "5 runs per game",
+        "episodes_per_seed": "100 episodes at end of training",
+        "checkpoint_selection": "last (end of training)",
+        "quote": "Table 1: Mean scores on the Atari 100k benchmark per game as well as the aggregated human normalized mean and median. We perform 5 runs per game and compute the average over 100 episodes at the end of training for each run.",
+        "location": "Table 1 caption; Section 3.1"
+      },
+      "dataset_version": {
+        "value": "Atari 100k: 100K interactions = 400K frames (frame skip 4); max no-ops 30; terminate on life loss; 108K max frames/episode; sticky actions not mentioned; 5 runs x 100 eval episodes at end of training",
+        "quote": "(Bellemare et al., 2013) and limits the number of interactions per game to 100K. This corresponds | to 400K frames (because of frame skipping) or roughly 2 hours of gameplay, which is 500 times less | Max no-ops                           —           30",
+        "location": "Section 3; Table 4"
+      },
+      "rows": [
+        {
+          "dataset": "Alien",
+          "outcome": 674.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Alien                  227.8       7127.7     802.3    711.0        865.2         841.9     616.9        674.6",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Amidar",
+          "outcome": 121.8,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Amidar                   5.8       1719.5     125.9    113.7        137.8         179.7      74.3        121.8",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Assault",
+          "outcome": 682.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Assault                222.4        742.0     561.5    500.9        579.6         565.6     527.2        682.6",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Asterix",
+          "outcome": 1116.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Asterix                210.0       8503.3     535.4    567.2        763.6         962.5    1128.3       1116.6",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "BankHeist",
+          "outcome": 466.7,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              BankHeist               14.2        753.1     185.5     65.3        232.9         345.4      34.2        466.7",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "BattleZone",
+          "outcome": 5068.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              BattleZone            2360.0      37187.5    8977.0   8997.8      10165.3       14834.1    4031.2       5068.0",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Boxing",
+          "outcome": 77.5,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Boxing                   0.1         12.1      -0.3      0.9          9.0          35.7       7.8         77.5",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Breakout",
+          "outcome": 20.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Breakout                 1.7         30.5       9.2      2.6         19.8          19.6      16.4         20.0",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "ChopperCommand",
+          "outcome": 1697.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              ChopperCommand         811.0       7387.8     925.9    783.5        844.6         946.3     979.4       1697.4",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "CrazyClimber",
+          "outcome": 71820.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              CrazyClimber         10780.5      35829.4   34508.6   9154.4      21539.0       36700.5   62583.6      71820.4",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "DemonAttack",
+          "outcome": 350.2,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              DemonAttack            152.1       1971.0     627.6    646.5       1321.5         517.6     208.1        350.2",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Freeway",
+          "outcome": 24.3,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Freeway                  0.0         29.6      20.9     28.3         20.3          19.3      16.7         24.3",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Frostbite",
+          "outcome": 1475.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Frostbite               65.2       4334.7     871.0   1226.5       1014.2        1170.7     236.9       1475.6",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Gopher",
+          "outcome": 1674.8,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Gopher                 257.6       2412.5     467.0    400.9        621.6         660.6     596.8       1674.8",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Hero",
+          "outcome": 7254.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Hero                  1027.0      30826.4    6226.0   4987.7       4167.9        5858.6    2656.6       7254.0",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Jamesbond",
+          "outcome": 362.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Jamesbond               29.0        302.8     275.7    331.0        349.1         366.5     100.5        362.4",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Kangaroo",
+          "outcome": 1240.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Kangaroo                52.0       3035.0     581.7    740.2       1088.4        3617.4      51.2       1240.0",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Krull",
+          "outcome": 6349.2,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Krull                 1598.0       2665.5    3256.9   3049.2       4402.1        3681.6    2204.8       6349.2",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "KungFuMaster",
+          "outcome": 24554.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              KungFuMaster           258.5      22736.3    6580.1   8155.6      11467.4       14783.2   14862.5      24554.6",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "MsPacman",
+          "outcome": 1588.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              MsPacman               307.3       6951.6    1187.4   1064.0       1218.1        1318.4    1480.0       1588.4",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Pong",
+          "outcome": 18.8,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Pong                   -20.7         14.6      -9.7    -18.5         -9.1          -5.4      12.8         18.8",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "PrivateEye",
+          "outcome": 86.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              PrivateEye              24.9      69571.3      72.8     81.9          3.5          86.0      35.0         86.6",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Qbert",
+          "outcome": 3330.8,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Qbert                  163.9      13455.0    1773.5    727.0       1810.7         866.3    1288.8       3330.8",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "RoadRunner",
+          "outcome": 9109.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              RoadRunner              11.5       7845.0   11843.4   5006.1      11211.4       12213.1    5640.6       9109.0",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Seaquest",
+          "outcome": 774.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              Seaquest                68.4      42054.7     304.6    315.2        352.3         558.1     683.3        774.4",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "UpNDown",
+          "outcome": 15981.7,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "                              UpNDown                533.4      11693.2    3075.0   2646.4       4324.5       10859.2    3350.3      15981.7",
+          "notes": "raw score; column 'TWM (ours)'; mean of 5 runs x 100 episodes at end of training; no std in table"
+        }
+      ]
+    }
+  ],
+  "reference_scores": {
+    "Alien": {
+      "random": 227.8,
+      "human": 7127.7,
+      "line_quote": "                              Alien                  227.8       7127.7     802.3    711.0        865.2         841.9     616.9        674.6"
+    },
+    "Amidar": {
+      "random": 5.8,
+      "human": 1719.5,
+      "line_quote": "                              Amidar                   5.8       1719.5     125.9    113.7        137.8         179.7      74.3        121.8"
+    },
+    "Assault": {
+      "random": 222.4,
+      "human": 742.0,
+      "line_quote": "                              Assault                222.4        742.0     561.5    500.9        579.6         565.6     527.2        682.6"
+    },
+    "Asterix": {
+      "random": 210.0,
+      "human": 8503.3,
+      "line_quote": "                              Asterix                210.0       8503.3     535.4    567.2        763.6         962.5    1128.3       1116.6"
+    },
+    "BankHeist": {
+      "random": 14.2,
+      "human": 753.1,
+      "line_quote": "                              BankHeist               14.2        753.1     185.5     65.3        232.9         345.4      34.2        466.7"
+    },
+    "BattleZone": {
+      "random": 2360.0,
+      "human": 37187.5,
+      "line_quote": "                              BattleZone            2360.0      37187.5    8977.0   8997.8      10165.3       14834.1    4031.2       5068.0"
+    },
+    "Boxing": {
+      "random": 0.1,
+      "human": 12.1,
+      "line_quote": "                              Boxing                   0.1         12.1      -0.3      0.9          9.0          35.7       7.8         77.5"
+    },
+    "Breakout": {
+      "random": 1.7,
+      "human": 30.5,
+      "line_quote": "                              Breakout                 1.7         30.5       9.2      2.6         19.8          19.6      16.4         20.0"
+    },
+    "ChopperCommand": {
+      "random": 811.0,
+      "human": 7387.8,
+      "line_quote": "                              ChopperCommand         811.0       7387.8     925.9    783.5        844.6         946.3     979.4       1697.4"
+    },
+    "CrazyClimber": {
+      "random": 10780.5,
+      "human": 35829.4,
+      "line_quote": "                              CrazyClimber         10780.5      35829.4   34508.6   9154.4      21539.0       36700.5   62583.6      71820.4"
+    },
+    "DemonAttack": {
+      "random": 152.1,
+      "human": 1971.0,
+      "line_quote": "                              DemonAttack            152.1       1971.0     627.6    646.5       1321.5         517.6     208.1        350.2"
+    },
+    "Freeway": {
+      "random": 0.0,
+      "human": 29.6,
+      "line_quote": "                              Freeway                  0.0         29.6      20.9     28.3         20.3          19.3      16.7         24.3"
+    },
+    "Frostbite": {
+      "random": 65.2,
+      "human": 4334.7,
+      "line_quote": "                              Frostbite               65.2       4334.7     871.0   1226.5       1014.2        1170.7     236.9       1475.6"
+    },
+    "Gopher": {
+      "random": 257.6,
+      "human": 2412.5,
+      "line_quote": "                              Gopher                 257.6       2412.5     467.0    400.9        621.6         660.6     596.8       1674.8"
+    },
+    "Hero": {
+      "random": 1027.0,
+      "human": 30826.4,
+      "line_quote": "                              Hero                  1027.0      30826.4    6226.0   4987.7       4167.9        5858.6    2656.6       7254.0"
+    },
+    "Jamesbond": {
+      "random": 29.0,
+      "human": 302.8,
+      "line_quote": "                              Jamesbond               29.0        302.8     275.7    331.0        349.1         366.5     100.5        362.4"
+    },
+    "Kangaroo": {
+      "random": 52.0,
+      "human": 3035.0,
+      "line_quote": "                              Kangaroo                52.0       3035.0     581.7    740.2       1088.4        3617.4      51.2       1240.0"
+    },
+    "Krull": {
+      "random": 1598.0,
+      "human": 2665.5,
+      "line_quote": "                              Krull                 1598.0       2665.5    3256.9   3049.2       4402.1        3681.6    2204.8       6349.2"
+    },
+    "KungFuMaster": {
+      "random": 258.5,
+      "human": 22736.3,
+      "line_quote": "                              KungFuMaster           258.5      22736.3    6580.1   8155.6      11467.4       14783.2   14862.5      24554.6"
+    },
+    "MsPacman": {
+      "random": 307.3,
+      "human": 6951.6,
+      "line_quote": "                              MsPacman               307.3       6951.6    1187.4   1064.0       1218.1        1318.4    1480.0       1588.4"
+    },
+    "Pong": {
+      "random": -20.7,
+      "human": 14.6,
+      "line_quote": "                              Pong                   -20.7         14.6      -9.7    -18.5         -9.1          -5.4      12.8         18.8"
+    },
+    "PrivateEye": {
+      "random": 24.9,
+      "human": 69571.3,
+      "line_quote": "                              PrivateEye              24.9      69571.3      72.8     81.9          3.5          86.0      35.0         86.6"
+    },
+    "Qbert": {
+      "random": 163.9,
+      "human": 13455.0,
+      "line_quote": "                              Qbert                  163.9      13455.0    1773.5    727.0       1810.7         866.3    1288.8       3330.8"
+    },
+    "RoadRunner": {
+      "random": 11.5,
+      "human": 7845.0,
+      "line_quote": "                              RoadRunner              11.5       7845.0   11843.4   5006.1      11211.4       12213.1    5640.6       9109.0"
+    },
+    "Seaquest": {
+      "random": 68.4,
+      "human": 42054.7,
+      "line_quote": "                              Seaquest                68.4      42054.7     304.6    315.2        352.3         558.1     683.3        774.4"
+    },
+    "UpNDown": {
+      "random": 533.4,
+      "human": 11693.2,
+      "line_quote": "                              UpNDown                533.4      11693.2    3075.0   2646.4       4324.5       10859.2    3350.3      15981.7"
+    }
+  },
+  "baseline_rows_seen": [
+    "Random",
+    "Human",
+    "DER",
+    "CURL",
+    "DrQ(ε)",
+    "SPR",
+    "SimPLe"
+  ],
+  "problems": [
+    "Table 2 reports TWM at intermediate stages 5K/10K/25K/50K/75K interactions of the same runs; excluded as not 100k; its 100K column matches Table 1 exactly (verified).",
+    "Ablations (entropy threshold, history length 4, policy input [z,h], extra training at 10K/25K/50K) are only in Figures 15-18 -> excluded.",
+    "Sticky actions not mentioned in text. No per-game std reported."
+  ]
+}

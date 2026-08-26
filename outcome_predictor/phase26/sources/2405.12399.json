@@ -1,0 +1,768 @@
+{
+ "arxiv_id": "2405.12399",
+ "title": "Diffusion for World Modeling: Visual Details Matter in Atari",
+ "methods": [
+  {
+   "method_name": "DIAMOND",
+   "is_own_method": true,
+   "one_paragraph_description": "Model-based RL agent (DIffusion As a Model Of eNvironment Dreams) whose world model is a diffusion model (EDM formulation, UNet, frame-stacked conditioning on the last 4 frames and actions) that generates the next 64x64 frame with 3 Euler denoising steps; a separate CNN+LSTM reward/termination model predicts rewards and episode ends. The actor-critic (CNN+LSTM) is trained entirely on imagined trajectories of horizon 15 inside the diffusion world model with lambda-returns, then acts in the real environment (epsilon-greedy 0.01 collection).",
+   "conventional_lineage_hint": "model-based RL / world models, agents trained entirely within a world model: 'a new best among agents trained entirely within a world model'; 'diffusion for world modeling'",
+   "global_conditions": {
+    "epochs": {
+     "value": "1000",
+     "quote": "Number of epochs                                                         1000",
+     "location": "Table 3 (Appendix E)"
+    },
+    "training_steps_per_epoch": {
+     "value": "400",
+     "quote": "Training steps per epoch                                                  400",
+     "location": "Table 3"
+    },
+    "batch_size": {
+     "value": "32",
+     "quote": "Batch size                                                                 32",
+     "location": "Table 3"
+    },
+    "environment_steps_per_epoch": {
+     "value": "100",
+     "quote": "Environment steps per epoch                                               100",
+     "location": "Table 3"
+    },
+    "collection_epsilon_greedy": {
+     "value": "0.01",
+     "quote": "Epsilon (greedy) for collection                                          0.01",
+     "location": "Table 3"
+    },
+    "imagination_horizon": {
+     "value": "15",
+     "quote": "Imagination horizon (H)                                                    15",
+     "location": "Table 3"
+    },
+    "discount": {
+     "value": "0.985",
+     "quote": "Discount factor (γ)                                                      0.985",
+     "location": "Table 3"
+    },
+    "entropy_weight": {
+     "value": "0.001",
+     "quote": "Entropy weight (η)                                                       0.001",
+     "location": "Table 3"
+    },
+    "lambda": {
+     "value": "0.95",
+     "quote": "λ-returns coefficient (λ)                                                 0.95",
+     "location": "Table 3"
+    },
+    "conditioning_observations_L": {
+     "value": "4",
+     "quote": "For Dθ , number of conditioning observations and actions (L)               4",
+     "location": "Table 3"
+    },
+    "reward_model_burn_in": {
+     "value": "4",
+     "quote": "For Rψ , burn-in length (BR ), set to L in practice                        4",
+     "location": "Table 3"
+    },
+    "reward_model_training_sequence_length": {
+     "value": "19",
+     "quote": "For Rψ , training sequence length (BR + H)                                 19",
+     "location": "Table 3"
+    },
+    "actor_critic_burn_in": {
+     "value": "4",
+     "quote": "For πϕ and Vϕ , burn-in length (Bπ,V ), set to L in practice                4",
+     "location": "Table 3"
+    },
+    "optimizer": {
+     "value": "AdamW",
+     "quote": "Optimizer                                                               AdamW",
+     "location": "Table 3"
+    },
+    "learning_rate": {
+     "value": "1e-4",
+     "quote": "Learning rate                                                            1e-4",
+     "location": "Table 3"
+    },
+    "adam_epsilon": {
+     "value": "1e-8",
+     "quote": "Epsilon                                                                  1e-8",
+     "location": "Table 3"
+    },
+    "weight_decay_diffusion": {
+     "value": "1e-2",
+     "quote": "Weight decay (Dθ )                                                       1e-2",
+     "location": "Table 3"
+    },
+    "weight_decay_reward_model": {
+     "value": "1e-2",
+     "quote": "Weight decay (Rψ )                                                       1e-2",
+     "location": "Table 3"
+    },
+    "weight_decay_actor_critic": {
+     "value": "0",
+     "quote": "Weight decay (πϕ and Vϕ )                                                  0",
+     "location": "Table 3"
+    },
+    "diffusion_sampler": {
+     "value": "Euler",
+     "quote": "Method                                                                   Euler",
+     "location": "Table 3"
+    },
+    "denoising_steps": {
+     "value": "3",
+     "quote": "Number of steps                                                           3",
+     "location": "Table 3"
+    },
+    "image_observation_dimensions": {
+     "value": "64x64x3",
+     "quote": "Image observation dimensions                                           64×64×3",
+     "location": "Table 3"
+    },
+    "frame_skip": {
+     "value": "4",
+     "quote": "Frameskip                                                                   4",
+     "location": "Table 3"
+    },
+    "max_noop": {
+     "value": "30",
+     "quote": "Max noop                                                                   30",
+     "location": "Table 3"
+    },
+    "termination_on_life_loss": {
+     "value": "True",
+     "quote": "Termination on life loss                                                  True",
+     "location": "Table 3"
+    },
+    "reward_clipping": {
+     "value": "{-1, 0, 1}",
+     "quote": "Reward clipping                                                        {−1, 0, 1}",
+     "location": "Table 3"
+    },
+    "diffusion_residual_block_layers": {
+     "value": "[2, 2, 2, 2]",
+     "quote": "Residual blocks layers                               [2, 2, 2, 2]",
+     "location": "Table 2 (Appendix D)"
+    },
+    "diffusion_residual_block_channels": {
+     "value": "[64, 64, 64, 64]",
+     "quote": "Residual blocks channels                           [64, 64, 64, 64]",
+     "location": "Table 2"
+    },
+    "diffusion_conditioning_dimension": {
+     "value": "256",
+     "quote": "Residual blocks conditioning dimension                   256",
+     "location": "Table 2"
+    },
+    "reward_model_residual_block_channels": {
+     "value": "[32, 32, 32, 32]",
+     "quote": "Residual blocks channels                           [32, 32, 32, 32]",
+     "location": "Table 2"
+    },
+    "reward_model_lstm_dimension": {
+     "value": "512",
+     "quote": "LSTM dimension                                           512",
+     "location": "Table 2"
+    },
+    "actor_critic_residual_block_channels": {
+     "value": "[32, 32, 64, 64]",
+     "quote": "Residual blocks channels                            [32, 32, 64, 64]",
+     "location": "Table 2"
+    },
+    "actor_critic_lstm_dimension": {
+     "value": "512",
+     "quote": "LSTM dimension                                            512",
+     "location": "Table 2"
+    },
+    "environment_steps": {
+     "value": "100k",
+     "quote": "an agent is only allowed to take 100k actions in the environment, which is roughly equivalent to 2 hours of human gameplay",
+     "location": "Section 4.1, layout l.297-298"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "5",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated (after 100k actions / end of training)",
+    "quote": "We trained DIAMOND from scratch for 5 random seeds on each game. | DIAMOND notably outperforms other world model baselines in terms of mean score over 5 seeds.",
+    "location": "Section 4.1 layout l.299-300; Table 1 caption layout l.336"
+   },
+   "dataset_version": {
+    "value": "Atari 100k: 100k actions, frameskip 4, max noop 30, termination on life loss; sticky actions not stated (unknown)",
+    "quote": "an agent is only allowed to take 100k actions in the environment | Frameskip 4 | Max noop 30 | Termination on life loss True",
+    "location": "Section 4.1 layout l.297; Table 3 layout l.1015-1019"
+   },
+   "rows": [
+    {
+     "dataset": "Alien",
+     "outcome": 744.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Alien               227.8    7127.7     616.9     674.6     420.0       959.0     983.6            744.1",
+     "notes": ""
+    },
+    {
+     "dataset": "Amidar",
+     "outcome": 225.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Amidar                5.8    1719.5      74.3     121.8     143.0       139.0     204.8            225.8",
+     "notes": ""
+    },
+    {
+     "dataset": "Assault",
+     "outcome": 1526.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Assault             222.4     742.0     527.2     682.6    1524.4       706.0     801.0           1526.4",
+     "notes": ""
+    },
+    {
+     "dataset": "Asterix",
+     "outcome": 3698.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Asterix             210.0    8503.3    1128.3    1116.6     853.6       932.0    1028.0           3698.5",
+     "notes": ""
+    },
+    {
+     "dataset": "BankHeist",
+     "outcome": 19.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "BankHeist            14.2     753.1      34.2     466.7      53.1       649.0     641.2             19.7",
+     "notes": ""
+    },
+    {
+     "dataset": "BattleZone",
+     "outcome": 4702.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "BattleZone         2360.0   37187.5    4031.2    5068.0   13074.0     12250.0   13540.0           4702.0",
+     "notes": ""
+    },
+    {
+     "dataset": "Boxing",
+     "outcome": 86.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Boxing                0.1      12.1       7.8      77.5      70.1        78.0      79.7             86.9",
+     "notes": ""
+    },
+    {
+     "dataset": "Breakout",
+     "outcome": 132.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Breakout              1.7      30.5      16.4      20.0      83.7        31.0      15.9            132.5",
+     "notes": ""
+    },
+    {
+     "dataset": "ChopperCommand",
+     "outcome": 1369.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "ChopperCommand      811.0    7387.8     979.4    1697.4    1565.0       420.0    1888.0           1369.8",
+     "notes": ""
+    },
+    {
+     "dataset": "CrazyClimber",
+     "outcome": 99167.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "CrazyClimber      10780.5   35829.4   62583.6   71820.4   59324.2     97190.0   66776.0          99167.8",
+     "notes": ""
+    },
+    {
+     "dataset": "DemonAttack",
+     "outcome": 288.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "DemonAttack         152.1    1971.0     208.1     350.2    2034.4       303.0     164.6            288.1",
+     "notes": ""
+    },
+    {
+     "dataset": "Freeway",
+     "outcome": 33.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Freeway               0.0      29.6      16.7      24.3      31.1         0.0      33.5             33.3",
+     "notes": ""
+    },
+    {
+     "dataset": "Frostbite",
+     "outcome": 274.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Frostbite            65.2    4334.7     236.9    1475.6     259.1       909.0    1316.0            274.1",
+     "notes": ""
+    },
+    {
+     "dataset": "Gopher",
+     "outcome": 5897.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Gopher              257.6    2412.5     596.8    1674.8    2236.1      3730.0    8239.6           5897.9",
+     "notes": ""
+    },
+    {
+     "dataset": "Hero",
+     "outcome": 5621.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Hero               1027.0   30826.4    2656.6    7254.0    7037.4     11161.0   11044.3           5621.8",
+     "notes": ""
+    },
+    {
+     "dataset": "Jamesbond",
+     "outcome": 427.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Jamesbond            29.0     302.8     100.5     362.4     462.7       445.0     509.0            427.4",
+     "notes": ""
+    },
+    {
+     "dataset": "Kangaroo",
+     "outcome": 5382.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Kangaroo             52.0    3035.0      51.2    1240.0     838.2      4098.0    4208.0           5382.2",
+     "notes": ""
+    },
+    {
+     "dataset": "Krull",
+     "outcome": 8610.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Krull              1598.0    2665.5    2204.8    6349.2    6616.4      7782.0    8412.6           8610.1",
+     "notes": ""
+    },
+    {
+     "dataset": "KungFuMaster",
+     "outcome": 18713.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "KungFuMaster        258.5   22736.3   14862.5   24554.6   21759.8     21420.0   26182.0          18713.6",
+     "notes": ""
+    },
+    {
+     "dataset": "MsPacman",
+     "outcome": 1958.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "MsPacman            307.3    6951.6    1480.0    1588.4     999.1      1327.0    2673.5           1958.2",
+     "notes": ""
+    },
+    {
+     "dataset": "Pong",
+     "outcome": 20.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Pong                -20.7      14.6      12.8      18.8      14.6        18.0      11.3             20.4",
+     "notes": ""
+    },
+    {
+     "dataset": "PrivateEye",
+     "outcome": 114.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "PrivateEye           24.9   69571.3      35.0      86.6     100.0       882.0    7781.0            114.3",
+     "notes": ""
+    },
+    {
+     "dataset": "Qbert",
+     "outcome": 4499.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Qbert               163.9   13455.0    1288.8    3330.8     745.7      3405.0    4522.5           4499.3",
+     "notes": ""
+    },
+    {
+     "dataset": "RoadRunner",
+     "outcome": 20673.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "RoadRunner           11.5    7845.0    5640.6    9109.0    9614.6     15565.0   17564.0          20673.2",
+     "notes": ""
+    },
+    {
+     "dataset": "Seaquest",
+     "outcome": 551.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "Seaquest             68.4   42054.7     683.3     774.4     661.3       618.0     525.2            551.2",
+     "notes": ""
+    },
+    {
+     "dataset": "UpNDown",
+     "outcome": 3856.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 1",
+     "line_quote": "UpNDown             533.4   11693.2    3350.3   15981.7    3546.2      9234.0    7985.0           3856.3",
+     "notes": ""
+    },
+    {
+     "dataset": "Amidar",
+     "outcome": 191.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": false,
+     "config_label": "denoising_steps=1",
+     "config_conditions": {
+      "denoising_steps": "1"
+     },
+     "table": "Table 7",
+     "line_quote": "Amidar              5.8     1719.5               225.8               191.8",
+     "notes": "single seed only ('Note that the 1-step results correspond to a single seed only'); n=3 column in Table 7 duplicates Table 1 main rows"
+    },
+    {
+     "dataset": "Assault",
+     "outcome": 782.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": false,
+     "config_label": "denoising_steps=1",
+     "config_conditions": {
+      "denoising_steps": "1"
+     },
+     "table": "Table 7",
+     "line_quote": "Assault           222.4      742.0              1526.4               782.5",
+     "notes": "single seed only ('Note that the 1-step results correspond to a single seed only'); n=3 column in Table 7 duplicates Table 1 main rows"
+    },
+    {
+     "dataset": "Asterix",
+     "outcome": 6687.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": false,
+     "config_label": "denoising_steps=1",
+     "config_conditions": {
+      "denoising_steps": "1"
+     },
+     "table": "Table 7",
+     "line_quote": "Asterix           210.0     8503.3              3698.5              6687.0",
+     "notes": "single seed only ('Note that the 1-step results correspond to a single seed only'); n=3 column in Table 7 duplicates Table 1 main rows"
+    },
+    {
+     "dataset": "Boxing",
+     "outcome": 41.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": false,
+     "config_label": "denoising_steps=1",
+     "config_conditions": {
+      "denoising_steps": "1"
+     },
+     "table": "Table 7",
+     "line_quote": "Boxing              0.1       12.1                86.9                41.9",
+     "notes": "single seed only ('Note that the 1-step results correspond to a single seed only'); n=3 column in Table 7 duplicates Table 1 main rows"
+    },
+    {
+     "dataset": "Breakout",
+     "outcome": 50.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": false,
+     "config_label": "denoising_steps=1",
+     "config_conditions": {
+      "denoising_steps": "1"
+     },
+     "table": "Table 7",
+     "line_quote": "Breakout            1.7       30.5               132.5                50.8",
+     "notes": "single seed only ('Note that the 1-step results correspond to a single seed only'); n=3 column in Table 7 duplicates Table 1 main rows"
+    },
+    {
+     "dataset": "CrazyClimber",
+     "outcome": 87233.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": false,
+     "config_label": "denoising_steps=1",
+     "config_conditions": {
+      "denoising_steps": "1"
+     },
+     "table": "Table 7",
+     "line_quote": "CrazyClimber    10780.5    35829.4             99167.8             87233.0",
+     "notes": "single seed only ('Note that the 1-step results correspond to a single seed only'); n=3 column in Table 7 duplicates Table 1 main rows"
+    },
+    {
+     "dataset": "Kangaroo",
+     "outcome": 1710.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": false,
+     "config_label": "denoising_steps=1",
+     "config_conditions": {
+      "denoising_steps": "1"
+     },
+     "table": "Table 7",
+     "line_quote": "Kangaroo           52.0     3035.0              5382.2              1710.0",
+     "notes": "single seed only ('Note that the 1-step results correspond to a single seed only'); n=3 column in Table 7 duplicates Table 1 main rows"
+    },
+    {
+     "dataset": "Krull",
+     "outcome": 9105.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": false,
+     "config_label": "denoising_steps=1",
+     "config_conditions": {
+      "denoising_steps": "1"
+     },
+     "table": "Table 7",
+     "line_quote": "Krull            1598.0     2665.5              8610.1              9105.1",
+     "notes": "single seed only ('Note that the 1-step results correspond to a single seed only'); n=3 column in Table 7 duplicates Table 1 main rows"
+    },
+    {
+     "dataset": "Pong",
+     "outcome": 20.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": false,
+     "config_label": "denoising_steps=1",
+     "config_conditions": {
+      "denoising_steps": "1"
+     },
+     "table": "Table 7",
+     "line_quote": "Pong              -20.7       14.6                20.4                20.9",
+     "notes": "single seed only ('Note that the 1-step results correspond to a single seed only'); n=3 column in Table 7 duplicates Table 1 main rows"
+    },
+    {
+     "dataset": "RoadRunner",
+     "outcome": 5084.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": false,
+     "config_label": "denoising_steps=1",
+     "config_conditions": {
+      "denoising_steps": "1"
+     },
+     "table": "Table 7",
+     "line_quote": "RoadRunner         11.5     7845.0             20673.2              5084.0",
+     "notes": "single seed only ('Note that the 1-step results correspond to a single seed only'); n=3 column in Table 7 duplicates Table 1 main rows"
+    }
+   ]
+  }
+ ],
+ "reference_scores": {
+  "Alien": {
+   "random": 227.8,
+   "human": 7127.7,
+   "line_quote": "Alien               227.8    7127.7     616.9     674.6     420.0       959.0     983.6            744.1"
+  },
+  "Amidar": {
+   "random": 5.8,
+   "human": 1719.5,
+   "line_quote": "Amidar                5.8    1719.5      74.3     121.8     143.0       139.0     204.8            225.8"
+  },
+  "Assault": {
+   "random": 222.4,
+   "human": 742.0,
+   "line_quote": "Assault             222.4     742.0     527.2     682.6    1524.4       706.0     801.0           1526.4"
+  },
+  "Asterix": {
+   "random": 210.0,
+   "human": 8503.3,
+   "line_quote": "Asterix             210.0    8503.3    1128.3    1116.6     853.6       932.0    1028.0           3698.5"
+  },
+  "BankHeist": {
+   "random": 14.2,
+   "human": 753.1,
+   "line_quote": "BankHeist            14.2     753.1      34.2     466.7      53.1       649.0     641.2             19.7"
+  },
+  "BattleZone": {
+   "random": 2360.0,
+   "human": 37187.5,
+   "line_quote": "BattleZone         2360.0   37187.5    4031.2    5068.0   13074.0     12250.0   13540.0           4702.0"
+  },
+  "Boxing": {
+   "random": 0.1,
+   "human": 12.1,
+   "line_quote": "Boxing                0.1      12.1       7.8      77.5      70.1        78.0      79.7             86.9"
+  },
+  "Breakout": {
+   "random": 1.7,
+   "human": 30.5,
+   "line_quote": "Breakout              1.7      30.5      16.4      20.0      83.7        31.0      15.9            132.5"
+  },
+  "ChopperCommand": {
+   "random": 811.0,
+   "human": 7387.8,
+   "line_quote": "ChopperCommand      811.0    7387.8     979.4    1697.4    1565.0       420.0    1888.0           1369.8"
+  },
+  "CrazyClimber": {
+   "random": 10780.5,
+   "human": 35829.4,
+   "line_quote": "CrazyClimber      10780.5   35829.4   62583.6   71820.4   59324.2     97190.0   66776.0          99167.8"
+  },
+  "DemonAttack": {
+   "random": 152.1,
+   "human": 1971.0,
+   "line_quote": "DemonAttack         152.1    1971.0     208.1     350.2    2034.4       303.0     164.6            288.1"
+  },
+  "Freeway": {
+   "random": 0.0,
+   "human": 29.6,
+   "line_quote": "Freeway               0.0      29.6      16.7      24.3      31.1         0.0      33.5             33.3"
+  },
+  "Frostbite": {
+   "random": 65.2,
+   "human": 4334.7,
+   "line_quote": "Frostbite            65.2    4334.7     236.9    1475.6     259.1       909.0    1316.0            274.1"
+  },
+  "Gopher": {
+   "random": 257.6,
+   "human": 2412.5,
+   "line_quote": "Gopher              257.6    2412.5     596.8    1674.8    2236.1      3730.0    8239.6           5897.9"
+  },
+  "Hero": {
+   "random": 1027.0,
+   "human": 30826.4,
+   "line_quote": "Hero               1027.0   30826.4    2656.6    7254.0    7037.4     11161.0   11044.3           5621.8"
+  },
+  "Jamesbond": {
+   "random": 29.0,
+   "human": 302.8,
+   "line_quote": "Jamesbond            29.0     302.8     100.5     362.4     462.7       445.0     509.0            427.4"
+  },
+  "Kangaroo": {
+   "random": 52.0,
+   "human": 3035.0,
+   "line_quote": "Kangaroo             52.0    3035.0      51.2    1240.0     838.2      4098.0    4208.0           5382.2"
+  },
+  "Krull": {
+   "random": 1598.0,
+   "human": 2665.5,
+   "line_quote": "Krull              1598.0    2665.5    2204.8    6349.2    6616.4      7782.0    8412.6           8610.1"
+  },
+  "KungFuMaster": {
+   "random": 258.5,
+   "human": 22736.3,
+   "line_quote": "KungFuMaster        258.5   22736.3   14862.5   24554.6   21759.8     21420.0   26182.0          18713.6"
+  },
+  "MsPacman": {
+   "random": 307.3,
+   "human": 6951.6,
+   "line_quote": "MsPacman            307.3    6951.6    1480.0    1588.4     999.1      1327.0    2673.5           1958.2"
+  },
+  "Pong": {
+   "random": -20.7,
+   "human": 14.6,
+   "line_quote": "Pong                -20.7      14.6      12.8      18.8      14.6        18.0      11.3             20.4"
+  },
+  "PrivateEye": {
+   "random": 24.9,
+   "human": 69571.3,
+   "line_quote": "PrivateEye           24.9   69571.3      35.0      86.6     100.0       882.0    7781.0            114.3"
+  },
+  "Qbert": {
+   "random": 163.9,
+   "human": 13455.0,
+   "line_quote": "Qbert               163.9   13455.0    1288.8    3330.8     745.7      3405.0    4522.5           4499.3"
+  },
+  "RoadRunner": {
+   "random": 11.5,
+   "human": 7845.0,
+   "line_quote": "RoadRunner           11.5    7845.0    5640.6    9109.0    9614.6     15565.0   17564.0          20673.2"
+  },
+  "Seaquest": {
+   "random": 68.4,
+   "human": 42054.7,
+   "line_quote": "Seaquest             68.4   42054.7     683.3     774.4     661.3       618.0     525.2            551.2"
+  },
+  "UpNDown": {
+   "random": 533.4,
+   "human": 11693.2,
+   "line_quote": "UpNDown             533.4   11693.2    3350.3   15981.7    3546.2      9234.0    7985.0           3856.3"
+  }
+ },
+ "baseline_rows_seen": [
+  "Random",
+  "Human",
+  "SimPLe",
+  "TWM",
+  "IRIS",
+  "DreamerV3",
+  "STORM",
+  "MuZero",
+  "EfficientZero",
+  "CURL",
+  "SPR",
+  "SR-SPR",
+  "BBF"
+ ],
+ "problems": [
+  "Table 6 (Appendix J) repeats the same DIAMOND column as Table 1 (verified identical values) -> not duplicated as rows.",
+  "Number of evaluation episodes per seed not stated anywhere; sticky actions not mentioned.",
+  "Table 7 n=1 rows are single-seed (outcome_is_mean_over_seeds=false) and only cover DIAMOND's 10 best games.",
+  "No per-game std printed."
+ ]
+}

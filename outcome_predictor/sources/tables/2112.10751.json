@@ -1,0 +1,78 @@
+{
+  "arxiv_id": "2112.10751",
+  "title": "RvS: What is Essential for Offline RL via Supervised Learning?",
+  "methods": [
+    {
+      "method_name": "RvS-R",
+      "is_own_method": true,
+      "one_paragraph_description": "Reward-conditioned behavioral cloning: a two-fully-connected-layer MLP policy pi(a_t | s_t, omega) trained by maximum likelihood on the offline dataset with hindsight relabeling, where the outcome omega is the average return over the remaining time steps (with the max episode length H as constant denominator, early terminations treated as 0 reward afterward). At test time the policy is conditioned on a hand-tuned reward target per task.",
+      "conventional_lineage_hint": "offline RL via supervised learning / reward-conditioned behavior cloning ('we focus on offline RL methods based on conditional behavior cloning that avoid value functions. The most common instantiation of these methods are goal-conditioned behavior cloning [8, 18, 29] and reward-conditioned behavior cloning [26, 35, 38]')",
+      "global_conditions": {
+        "hidden_layers": {"value": "2", "quote": "    Hidden layers                 2           All", "location": "Table 2 (Appendix)"},
+        "layer_width": {"value": "1024", "quote": "    Layer width                1024           All", "location": "Table 2 (Appendix)"},
+        "nonlinearity": {"value": "ReLU", "quote": "    Nonlinearity               ReLU           All", "location": "Table 2 (Appendix)"},
+        "learning_rate": {"value": "1e-3", "quote": "    Learning rate              1e-3           All", "location": "Table 2 (Appendix)"},
+        "epochs": {"value": "2000 (Gym)", "quote": "                               2000           Gym", "location": "Table 2 (Appendix)"},
+        "epoch_length_definition": {"value": "2000*50/2 = 2450000 (as printed; garbled formula)", "quote": "D4RL, we set all epoch lengths at 2000 50 / 2 = 2450000.", "location": "Table 2 caption (Appendix)"},
+        "batch_size": {"value": "16384 (Gym, AntMaze)", "quote": "                              16384           Gym, AntMaze", "location": "Table 2 (Appendix)"},
+        "dropout": {"value": "0 (Gym, AntMaze)", "quote": "                                  0           Gym, AntMaze", "location": "Table 2 (Appendix)"},
+        "policy_output": {"value": "Unimodal Gaussian (Kitchen, Gym, AntMaze)", "quote": "                      Unimodal Gaussian       Kitchen, Gym, AntMaze", "location": "Table 2 (Appendix)"},
+        "conditioning_target": {"value": "average future return (reward target), tuned per task", "quote": "is the average return (ω ∈ R) achieved over some future number of time steps", "location": "Section 3"}
+      },
+      "per_dataset_conditions": {
+        "halfcheetah-random-v2": {"reward_target": {"value": "40", "quote": "                                 40           Gym random, halfcheetah-{medium, medium-replay}", "location": "Table 2 (Appendix)"}},
+        "hopper-random-v2": {"reward_target": {"value": "40", "quote": "                                 40           Gym random, halfcheetah-{medium, medium-replay}", "location": "Table 2 (Appendix)"}},
+        "walker2d-random-v2": {"reward_target": {"value": "40", "quote": "                                 40           Gym random, halfcheetah-{medium, medium-replay}", "location": "Table 2 (Appendix)"}},
+        "halfcheetah-medium-v2": {"reward_target": {"value": "40", "quote": "                                 40           Gym random, halfcheetah-{medium, medium-replay}", "location": "Table 2 (Appendix)"}},
+        "halfcheetah-medium-replay-v2": {"reward_target": {"value": "40", "quote": "                                 40           Gym random, halfcheetah-{medium, medium-replay}", "location": "Table 2 (Appendix)"}},
+        "hopper-medium-v2": {"reward_target": {"value": "60", "quote": "                                 60           Gym hopper-medium", "location": "Table 2 (Appendix)"}},
+        "hopper-medium-replay-v2": {"reward_target": {"value": "90", "quote": "                                 90           Gym {hopper, walker2d}-medium-replay, walker2d-medium", "location": "Table 2 (Appendix)"}},
+        "walker2d-medium-replay-v2": {"reward_target": {"value": "90", "quote": "                                 90           Gym {hopper, walker2d}-medium-replay, walker2d-medium", "location": "Table 2 (Appendix)"}},
+        "walker2d-medium-v2": {"reward_target": {"value": "90", "quote": "                                 90           Gym {hopper, walker2d}-medium-replay, walker2d-medium", "location": "Table 2 (Appendix)"}},
+        "halfcheetah-medium-expert-v2": {"reward_target": {"value": "110", "quote": "    Reward target               110           Gym medium-expert, AntMaze, Kitchen", "location": "Table 2 (Appendix)"}},
+        "hopper-medium-expert-v2": {"reward_target": {"value": "110", "quote": "    Reward target               110           Gym medium-expert, AntMaze, Kitchen", "location": "Table 2 (Appendix)"}},
+        "walker2d-medium-expert-v2": {"reward_target": {"value": "110", "quote": "    Reward target               110           Gym medium-expert, AntMaze, Kitchen", "location": "Table 2 (Appendix)"}}
+      },
+      "evaluation_protocol": {"seeds": "5", "episodes_per_seed": "200 evaluation rollouts (not stated whether per seed or total)", "checkpoint_selection": "not stated", "quote": "task, we use 5 random training seeds and 200 evaluation rollouts for RvS.", "location": "Appendix A"},
+      "dataset_version": {"value": "v2", "quote": "Gym Locomotion We use the v2 versions of the datasets for all algorithms. Because the v2 datasets", "location": "Appendix A"},
+      "rows": [
+        {"dataset": "halfcheetah-random-v2", "outcome": 3.9, "std": null, "outcome_is_mean_over_seeds": true, "config_label": "main", "config_conditions": {"reward_target": "40"}, "table": "Table 1", "line_quote": "                                         halfcheetah-random-v2            2.3       2.0        11.0       6.9    18.6              2.2      3.9", "notes": "RvS-R is the last number in the row; CQL-p and RvS-G columns blank for Gym"},
+        {"dataset": "hopper-random-v2", "outcome": 7.7, "std": null, "outcome_is_mean_over_seeds": true, "config_label": "main", "config_conditions": {"reward_target": "40"}, "table": "Table 1", "line_quote": "                                         hopper-random-v2                 4.8       4.1         8.5       7.8     9.3              7.5      7.7", "notes": ""},
+        {"dataset": "walker2d-random-v2", "outcome": -0.2, "std": null, "outcome_is_mean_over_seeds": true, "config_label": "main", "config_conditions": {"reward_target": "40"}, "table": "Table 1", "line_quote": "                                         walker2d-random-v2               1.7       1.7         1.6       6.1     2.5              2.0     -0.2", "notes": ""},
+        {"dataset": "halfcheetah-medium-replay-v2", "outcome": 38.0, "std": null, "outcome_is_mean_over_seeds": true, "config_label": "main", "config_conditions": {"reward_target": "40"}, "table": "Table 1", "line_quote": "                                         halfcheetah-medium-replay-v2    36.6      40.6        44.6      42.4    47.3             36.6     38.0", "notes": ""},
+        {"dataset": "hopper-medium-replay-v2", "outcome": 73.5, "std": null, "outcome_is_mean_over_seeds": true, "config_label": "main", "config_conditions": {"reward_target": "90"}, "table": "Table 1", "line_quote": "                                         hopper-medium-replay-v2         18.1      75.9        60.9      71.0    97.8             82.7     73.5", "notes": ""},
+        {"dataset": "walker2d-medium-replay-v2", "outcome": 60.6, "std": null, "outcome_is_mean_over_seeds": true, "config_label": "main", "config_conditions": {"reward_target": "90"}, "table": "Table 1", "line_quote": "                                         walker2d-medium-replay-v2       26.0      62.5        81.8      71.6    86.1             66.6     60.6", "notes": ""},
+        {"dataset": "halfcheetah-medium-v2", "outcome": 41.6, "std": null, "outcome_is_mean_over_seeds": true, "config_label": "main", "config_conditions": {"reward_target": "40"}, "table": "Table 1", "line_quote": "                                         halfcheetah-medium-v2           42.6      42.5        48.3      55.6    49.1             42.6     41.6", "notes": ""},
+        {"dataset": "hopper-medium-v2", "outcome": 60.2, "std": null, "outcome_is_mean_over_seeds": true, "config_label": "main", "config_conditions": {"reward_target": "60"}, "table": "Table 1", "line_quote": "7                                        hopper-medium-v2                52.9      56.9        59.3      83.3    64.6             67.6     60.2", "notes": "leading '7' is page number artifact"},
+        {"dataset": "walker2d-medium-v2", "outcome": 71.7, "std": null, "outcome_is_mean_over_seeds": true, "config_label": "main", "config_conditions": {"reward_target": "90"}, "table": "Table 1", "line_quote": "                                         walker2d-medium-v2              75.3      75.0        83.7      85.6    82.9             74.0     71.7", "notes": ""},
+        {"dataset": "halfcheetah-medium-expert-v2", "outcome": 92.2, "std": null, "outcome_is_mean_over_seeds": true, "config_label": "main", "config_conditions": {"reward_target": "110"}, "table": "Table 1", "line_quote": "                                         halfcheetah-medium-expert-v2    55.2      92.9        90.7      93.5    85.8             86.8     92.2", "notes": ""},
+        {"dataset": "hopper-medium-expert-v2", "outcome": 101.7, "std": null, "outcome_is_mean_over_seeds": true, "config_label": "main", "config_conditions": {"reward_target": "110"}, "table": "Table 1", "line_quote": "                                         hopper-medium-expert-v2         52.5     110.9        98.0     102.1   102.0            107.6    101.7", "notes": ""},
+        {"dataset": "walker2d-medium-expert-v2", "outcome": 106.0, "std": null, "outcome_is_mean_over_seeds": true, "config_label": "main", "config_conditions": {"reward_target": "110"}, "table": "Table 1", "line_quote": "                                         walker2d-medium-expert-v2      107.5     109.0       110.1     110.9   109.5            108.1    106.0", "notes": ""}
+      ]
+    },
+    {
+      "method_name": "RvS-G",
+      "is_own_method": true,
+      "one_paragraph_description": "Goal-conditioned behavioral cloning with the same two-layer MLP: the outcome omega is a future state sampled uniformly from the remainder of the trajectory (hindsight relabeling); at test time the policy is conditioned on a goal state / goal location.",
+      "conventional_lineage_hint": "offline RL via supervised learning / goal-conditioned behavior cloning ('goal-conditioned behavior cloning [8, 18, 29]')",
+      "global_conditions": {
+        "hidden_layers": {"value": "2", "quote": "    Hidden layers                 2           All", "location": "Table 2 (Appendix)"},
+        "layer_width": {"value": "1024", "quote": "    Layer width                1024           All", "location": "Table 2 (Appendix)"},
+        "learning_rate": {"value": "1e-3", "quote": "    Learning rate              1e-3           All", "location": "Table 2 (Appendix)"},
+        "conditioning_target": {"value": "future state (goal)", "quote": "is a state (ω ∈ S) that the agent visits in the future: f (ω | τt:H ) = Unif(st+1 , st+2 , · · · , sH ).", "location": "Section 3"}
+      },
+      "per_dataset_conditions": {},
+      "evaluation_protocol": {"seeds": "5", "episodes_per_seed": "200 evaluation rollouts", "checkpoint_selection": "not stated", "quote": "task, we use 5 random training seeds and 200 evaluation rollouts for RvS.", "location": "Appendix A"},
+      "dataset_version": {"value": "v2", "quote": "Gym Locomotion We use the v2 versions of the datasets for all algorithms. Because the v2 datasets", "location": "Appendix A"},
+      "rows": []
+    }
+  ],
+  "baseline_rows_seen": ["BC", "Filt. BC", "TD3+BC", "Onestep", "CQL-r", "CQL-p", "DT", "GCSL"],
+  "problems": [
+    "RvS-G has no Gym locomotion rows: 'We omit numbers for RvS-G because there is no clear way to define the Gym tasks in terms of goals.' (Appendix A). Method included with empty rows.",
+    "Table 1 reports no standard deviations / error bars for any Gym entry.",
+    "Ablations (dropout, network width, batch size) are shown only in Figures 3/4 on hopper-medium-expert etc.; no ablation tables exist for Gym -> excluded per rules.",
+    "Table 2 epoch-length formula is garbled in layout.txt ('2000 50 / 2 = 2450000'); original is 2000 * C(50,2)-style expression, copied as printed.",
+    "Whether '200 evaluation rollouts' is per seed or total across 5 seeds is not stated."
+  ]
+}

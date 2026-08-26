@@ -1,0 +1,39 @@
+Final live test — unseen paper, unseen field (2026-08-25)
+Paper: Planning with Diffusion for Flexible Behavior Synthesis (Diffuser), Janner et al. 2022, arXiv 2205.09991. Robotics / offline-RL planning.
+Record: results/Planning_with_Diffusion_*.json, source "test:" (out of corpus). Section: heading "Planning with Diffusion", 1000 words. Extract 1 pass, v2 + v1 typing.
+(Gatekeeper's suggested arXiv ids were placeholders; this is the real id for its first title.)
+
+PRE-REGISTERED
+  Gatekeeper: family worldmodels or state-estimation; closest KalmanNet / DreamerV3; predict@state or predict@latent + update@parameter.
+  Claude:     family diffusion on sample/denoise@latent, a plan/act tuple pulling toward worldmodels; closest DDPM/DDIM, not KalmanNet.
+
+EXTRACTED
+  ops: predict trajectory, denoise, sample        canonical: predict, reconstruct, sample
+  loss: mean squared error    failure: "planners that exploit learned models by finding adversarial examples" (grounded — sec. 1/3 of the paper)
+  v2 typing: predict trajectory@other, denoise@other, sample@other -> guard: sample@sample. Two of three tuples untyped: the ontology has no
+  trajectory / sequence object. Quotes grounded (tau = s0 a0 s1 a1 ... sT aT; the iterative denoising process ...).
+
+MATCHES
+  lexical   1.00 DDIM [predict, reconstruct, sample]   0.67 DDPM   0.67 EDM   0.67 DKF   0.67 DreamerV3   0.60 Differentiable PF
+            family means: diffusion 0.55, particle 0.37, worldmodels 0.22, state-estimation 0.12
+  strict v2 0.20 DDIM / DDPM / BBVI / PF-Net [sample@sample]   — one shared tuple; family means particle 0.14, replay 0.10, diffusion 0.08
+  relaxed   0.20 all four diffusion papers + BBVI + PF-Net [sample@stochastic_object]   — diffusion 0.16, particle 0.14
+
+ASSIGNED FAMILY: diffusion (lexical 0.55, relaxed 0.16 — top family in both). Strict cannot assign: 0.20 single-tuple ties across diffusion / particle.
+  Gatekeeper prediction: wrong (state-estimation 0.12 lexical, 0.00 strict; KalmanNet not in the top 8). Claude prediction: right on family and closest paper.
+  Ontology gap exposed: `trajectory` (state-action sequence). With it, predict@trajectory would sit next to worldmodels' predict@latent/state and the
+  gatekeeper's half of the prediction (a worldmodels link) would have been testable rather than invisible.
+
+TESTABLE TRANSFER HYPOTHESES
+  1. (grounded in the 1.00 lexical / sample@sample match with DDIM) Diffuser's planner is the DDPM/DDIM sampler run over tau instead of an image.
+     Prediction: substituting DDIM's deterministic sigma=0 sampler with 5-10x fewer denoising steps into Diffuser leaves D4RL return within ~5% of the
+     full-step planner, because nothing in Diffuser's method depends on the stochastic Markov reverse chain — only on the learned epsilon_theta(tau, i).
+  2. (grounded in the 0.60 lexical match with Differentiable Particle Filters: predict, reconstruct, sample) Diffuser's guided sampling — adding grad J(tau)
+     to each denoising step — is a gradient version of importance weighting. Prediction: replacing the gradient guidance with SMC-style resampling of
+     N trajectory samples weighted by exp(J(tau)) at each denoising step gives comparable conditioned returns without a differentiable J, at N x cost.
+     This is the "probabilistic planning with SMC" structure the gatekeeper first asked for, arrived at from the corpus rather than assumed.
+
+VERDICT ON THE SYSTEM
+  Generalises to an unseen field on the lexical/relaxed layer (family and nearest paper right, both pre-registered by Claude).
+  Strict typing fails on a new object type — same failure class as `task` before Phase 18 and `value/policy` before ontology v2. Third time: the ontology
+  grows one object per new field. That is the cost of the strict layer and the reason to keep all three.

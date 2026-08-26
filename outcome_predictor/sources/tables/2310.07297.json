@@ -1,0 +1,357 @@
+{
+ "arxiv_id": "2310.07297",
+ "title": "Score Regularized Policy Optimization through Diffusion Behavior",
+ "methods": [
+  {
+   "method_name": "SRPO",
+   "is_own_method": true,
+   "one_paragraph_description": "Extract a simple deterministic (Dirac) policy pi_theta(s) from a pretrained IQL-style critic and a continuous-time diffusion behavior model, without any diffusion sampling at evaluation. The policy is trained with a reverse-KL behavior-regularized objective max E[Q(s,a)] - (1/beta) KL(pi||mu); the KL gradient is replaced by the behavior score function ∇_a log mu(a|s) estimated by the diffusion model (averaged over diffusion times with weight omega(t)=sigma_t^2 and a baseline term for variance reduction), so the Q-gradient is directly regularized by the behavior score.",
+   "conventional_lineage_hint": "offline RL, behavior-regularized policy optimization with diffusion behavior modeling ('SRPO tackles the behavior-regularized policy optimization problem and provides a computationally efficient way to realize behavior regularization through diffusion behavior modeling')",
+   "global_conditions": {
+    "critic_network": {
+     "value": "2-layer MLP, 256 hidden units, ReLU",
+     "quote": "of readers, we recap some key hyperparameters: All networks are 2-layer MLPs with 256 hidden",
+     "location": "Appendix C, Critic training"
+    },
+    "critic_gradient_steps": {
+     "value": "1.5M",
+     "quote": "units and ReLU activations. We train them for 1.5M gradient steps using Adam optimizer with a",
+     "location": "Appendix C, Critic training"
+    },
+    "critic_learning_rate": {
+     "value": "3e-4",
+     "quote": "learning rate of 3e-4. Batchsize is 256. Temperature: τ = 0.7 (MuJoCo locomotion) and τ = 0.9",
+     "location": "Appendix C, Critic training"
+    },
+    "critic_batch_size": {
+     "value": "256",
+     "quote": "learning rate of 3e-4. Batchsize is 256. Temperature: τ = 0.7 (MuJoCo locomotion) and τ = 0.9",
+     "location": "Appendix C, Critic training"
+    },
+    "expectile_tau": {
+     "value": "0.7 (MuJoCo locomotion); 0.9 (Antmaze)",
+     "quote": "learning rate of 3e-4. Batchsize is 256. Temperature: τ = 0.7 (MuJoCo locomotion) and τ = 0.9",
+     "location": "Appendix C, Critic training (IQL expectile; paper labels it 'Temperature: τ')"
+    },
+    "critic_method": {
+     "value": "implicit Q-learning (Kostrikov et al., 2022)",
+     "quote": "Critic training. We train our critic models following Kostrikov et al. (2022). For the convenience",
+     "location": "Appendix C"
+    },
+    "behavior_model_network": {
+     "value": "6-layer MLP with residual connections, layer norm, dropout; Gaussian Fourier time projection; architecture from Hansen-Estruch et al. (2023)",
+     "quote": "The network is basically a 6-layer MLP with residual connections, layer normalizations, and dropout",
+     "location": "Appendix C, Behavior training"
+    },
+    "behavior_gradient_steps": {
+     "value": "2.0M",
+     "quote": "regularizations. We train the behavior model for 2.0M gradient steps using AdamW optimizer with",
+     "location": "Appendix C, Behavior training"
+    },
+    "behavior_learning_rate": {
+     "value": "3e-4",
+     "quote": "a learning rate of 3e-4 and a batchsize of 2048. Empirical observations suggest that much fewer",
+     "location": "Appendix C, Behavior training"
+    },
+    "behavior_batch_size": {
+     "value": "2048",
+     "quote": "a learning rate of 3e-4 and a batchsize of 2048. Empirical observations suggest that much fewer",
+     "location": "Appendix C, Behavior training"
+    },
+    "behavior_optimizer": {
+     "value": "AdamW",
+     "quote": "regularizations. We train the behavior model for 2.0M gradient steps using AdamW optimizer with",
+     "location": "Appendix C, Behavior training"
+    },
+    "diffusion_schedule": {
+     "value": "continuous-time VPSDE (Song et al., 2021); no discrete diffusion step count reported",
+     "quote": "ensure training convergence in this work. The diffusion data perturbation method follows the default",
+     "location": "Appendix C, Behavior training"
+    },
+    "diffusion_sampling_steps_at_inference": {
+     "value": "0 (deterministic Dirac policy; no diffusion sampling during evaluation)",
+     "quote": "and diffusion behavior models to avoid the iterative diffusion sampling process during evaluation.",
+     "location": "Section 1 / Section 6"
+    },
+    "policy_network": {
+     "value": "2-layer MLP, 256 hidden units, ReLU (locomotion)",
+     "quote": "Policy extraction (Locomotion). The policy model is a 2-layer MLP with 256 hidden units and",
+     "location": "Appendix C, Policy extraction"
+    },
+    "policy_gradient_steps": {
+     "value": "1.0M",
+     "quote": "ReLU activations. It is trained for 1.0M gradient steps using Adam optimizer with a learning rate",
+     "location": "Appendix C, Policy extraction"
+    },
+    "policy_learning_rate": {
+     "value": "3e-4",
+     "quote": "of 3e-4 and a batchsize of 256. For all tasks ω(t) = σt2 . For the temperature coefficient, we sweep",
+     "location": "Appendix C, Policy extraction"
+    },
+    "policy_batch_size": {
+     "value": "256",
+     "quote": "of 3e-4 and a batchsize of 256. For all tasks ω(t) = σt2 . For the temperature coefficient, we sweep",
+     "location": "Appendix C, Policy extraction"
+    },
+    "policy_optimizer": {
+     "value": "Adam",
+     "quote": "ReLU activations. It is trained for 1.0M gradient steps using Adam optimizer with a learning rate",
+     "location": "Appendix C, Policy extraction"
+    },
+    "omega_t": {
+     "value": "sigma_t^2",
+     "quote": "of 3e-4 and a batchsize of 256. For all tasks ω(t) = σt2 . For the temperature coefficient, we sweep",
+     "location": "Appendix C, Policy extraction"
+    },
+    "beta_sweep": {
+     "value": "{0.01, 0.02, 0.05, 0.1, 0.2, 0.5}",
+     "quote": "over β ∈ {0.01, 0.02, 0.05, 0.1, 0.2, 0.5} and observe large variances in appropriate values across",
+     "location": "Appendix C, Policy extraction"
+    },
+    "baseline_subtraction": {
+     "value": "subtract baseline epsilon from estimated behavior gradient (Eq. 15)",
+     "quote": "Subtracting baselines ϵ. In Figure 8, we show that subtracting baselines ϵ from the estimated",
+     "location": "Section 6.2"
+    },
+    "policy_type": {
+     "value": "deterministic (Dirac)",
+     "quote": "SRPO extracts a Dirac policy from behavior and critic models.",
+     "location": "Section 6.1"
+    }
+   },
+   "per_dataset_conditions": {
+    "halfcheetah-medium-expert": {
+     "beta": {
+      "value": "0.01",
+      "quote": "                                                                        0.1                                   0.01                                                                              0.01",
+      "location": "Table 2 (Appendix C): 'Table 2: Temperature coefficient β for every individual task.' Columns Walker2d | Halfcheetah | Hopper, row 'Locomotion-Medium-Expert'"
+     }
+    },
+    "hopper-medium-expert": {
+     "beta": {
+      "value": "0.01",
+      "quote": "                                                                        0.1                                   0.01                                                                              0.01",
+      "location": "Table 2 (Appendix C): 'Table 2: Temperature coefficient β for every individual task.' Columns Walker2d | Halfcheetah | Hopper, row 'Locomotion-Medium-Expert'"
+     }
+    },
+    "walker2d-medium-expert": {
+     "beta": {
+      "value": "0.1",
+      "quote": "                                                                        0.1                                   0.01                                                                              0.01",
+      "location": "Table 2 (Appendix C): 'Table 2: Temperature coefficient β for every individual task.' Columns Walker2d | Halfcheetah | Hopper, row 'Locomotion-Medium-Expert'"
+     }
+    },
+    "halfcheetah-medium": {
+     "beta": {
+      "value": "0.2",
+      "quote": "                                                                       0.05                                    0.2                                                                              0.05",
+      "location": "Table 2 (Appendix C): 'Table 2: Temperature coefficient β for every individual task.' Columns Walker2d | Halfcheetah | Hopper, row 'Locomotion-Medium'"
+     }
+    },
+    "hopper-medium": {
+     "beta": {
+      "value": "0.05",
+      "quote": "                                                                       0.05                                    0.2                                                                              0.05",
+      "location": "Table 2 (Appendix C): 'Table 2: Temperature coefficient β for every individual task.' Columns Walker2d | Halfcheetah | Hopper, row 'Locomotion-Medium'"
+     }
+    },
+    "walker2d-medium": {
+     "beta": {
+      "value": "0.05",
+      "quote": "                                                                       0.05                                    0.2                                                                              0.05",
+      "location": "Table 2 (Appendix C): 'Table 2: Temperature coefficient β for every individual task.' Columns Walker2d | Halfcheetah | Hopper, row 'Locomotion-Medium'"
+     }
+    },
+    "halfcheetah-medium-replay": {
+     "beta": {
+      "value": "0.2",
+      "quote": "                                                                        0.5                                    0.2                                                                               0.2",
+      "location": "Table 2 (Appendix C): 'Table 2: Temperature coefficient β for every individual task.' Columns Walker2d | Halfcheetah | Hopper, row 'Locomotion-Medium-Replay'"
+     }
+    },
+    "hopper-medium-replay": {
+     "beta": {
+      "value": "0.2",
+      "quote": "                                                                        0.5                                    0.2                                                                               0.2",
+      "location": "Table 2 (Appendix C): 'Table 2: Temperature coefficient β for every individual task.' Columns Walker2d | Halfcheetah | Hopper, row 'Locomotion-Medium-Replay'"
+     }
+    },
+    "walker2d-medium-replay": {
+     "beta": {
+      "value": "0.5",
+      "quote": "                                                                        0.5                                    0.2                                                                               0.2",
+      "location": "Table 2 (Appendix C): 'Table 2: Temperature coefficient β for every individual task.' Columns Walker2d | Halfcheetah | Hopper, row 'Locomotion-Medium-Replay'"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "6",
+    "episodes_per_seed": "20 test episodes",
+    "checkpoint_selection": "last (average performance at the end of training)",
+    "quote": "Evaluation. We run all experiments over 6 independent trials. For each trial, we additionally collect the evaluation score averaged across 20 test episodes at regular intervals for plots in Figure 16. The average performance at the end of training is reported in Table 1. | We report mean ± standard deviation of algorithm performance across 6 random seeds at the end of training.",
+    "location": "Appendix C, Evaluation; Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "Table 1: Evaluation numbers of D4RL benchmarks (normalized as suggested by Fu et al. (2020)).",
+    "location": "Table 1 caption; no '-v0'/'-v2' string anywhere in the text"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 92.2,
+     "std": 3.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta": "0.01",
+      "expectile_tau": "0.7",
+      "omega_t": "sigma_t^2"
+     },
+     "table": "Table 1",
+     "line_quote": "  Medium-Expert                    HalfCheetah                          53.4               90.7              86.7             92.6                                     79.8          96.8        93.5                                95.9     92.2 ± 3.0",
+     "notes": "printed as quality='Medium-Expert', env='HalfCheetah'; SRPO is the last column ('SRPO (Ours)'), mean ± std over 6 seeds at end of training"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 100.1,
+     "std": 13.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta": "0.01",
+      "expectile_tau": "0.7",
+      "omega_t": "sigma_t^2"
+     },
+     "table": "Table 1",
+     "line_quote": "  Medium-Expert                    Hopper                               96.3               98.0              91.5            108.6                                    107.2         111.1       108.0                                108.6   100.1 ± 13.9",
+     "notes": "printed as quality='Medium-Expert', env='Hopper'; SRPO is the last column ('SRPO (Ours)'), mean ± std over 6 seeds at end of training"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 114.0,
+     "std": 2.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta": "0.1",
+      "expectile_tau": "0.7",
+      "omega_t": "sigma_t^2"
+     },
+     "table": "Table 1",
+     "line_quote": "  Medium-Expert                    Walker2d                             40.1              110.1             109.6            109.8                                    108.4         110.1       110.7                                112.7   114.0 ± 2.1",
+     "notes": "printed as quality='Medium-Expert', env='Walker2d'; SRPO is the last column ('SRPO (Ours)'), mean ± std over 6 seeds at end of training"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 60.4,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta": "0.2",
+      "expectile_tau": "0.7",
+      "omega_t": "sigma_t^2"
+     },
+     "table": "Table 1",
+     "line_quote": "  Medium                           HalfCheetah                          41.7               48.3               47.4             45.9                                    44.2         51.1                    54.1                     51.0    60.4 ± 0.8",
+     "notes": "printed as quality='Medium', env='HalfCheetah'; SRPO is the last column ('SRPO (Ours)'), mean ± std over 6 seeds at end of training"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 95.5,
+     "std": 2.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta": "0.05",
+      "expectile_tau": "0.7",
+      "omega_t": "sigma_t^2"
+     },
+     "table": "Table 1",
+     "line_quote": "  Medium                           Hopper                               52.1               59.3               66.3             57.1                                    58.5         90.5                    98.0                     65.4    95.5 ± 2.0",
+     "notes": "printed as quality='Medium', env='Hopper'; SRPO is the last column ('SRPO (Ours)'), mean ± std over 6 seeds at end of training"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 84.4,
+     "std": 4.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta": "0.05",
+      "expectile_tau": "0.7",
+      "omega_t": "sigma_t^2"
+     },
+     "table": "Table 1",
+     "line_quote": "  Medium                           Walker2d                             59.1               83.7               78.3             77.9                                    79.7         87.0                    86.0                     82.5    84.4 ± 4.4",
+     "notes": "printed as quality='Medium', env='Walker2d'; SRPO is the last column ('SRPO (Ours)'), mean ± std over 6 seeds at end of training"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 51.4,
+     "std": 3.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta": "0.2",
+      "expectile_tau": "0.7",
+      "omega_t": "sigma_t^2"
+     },
+     "table": "Table 1",
+     "line_quote": "  Medium-Replay                    HalfCheetah                          38.6               44.6               44.2             37.1                                    42.2          47.8                   47.6                     45.9    51.4 ± 3.4",
+     "notes": "printed as quality='Medium-Replay', env='HalfCheetah'; SRPO is the last column ('SRPO (Ours)'), mean ± std over 6 seeds at end of training"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 101.2,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta": "0.2",
+      "expectile_tau": "0.7",
+      "omega_t": "sigma_t^2"
+     },
+     "table": "Table 1",
+     "line_quote": "  Medium-Replay                    Hopper                               33.7               60.9               94.7             86.2                                   101.3         100.7                   96.9                     92.1    101.2 ± 1.0",
+     "notes": "printed as quality='Medium-Replay', env='Hopper'; SRPO is the last column ('SRPO (Ours)'), mean ± std over 6 seeds at end of training"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 84.6,
+     "std": 7.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta": "0.5",
+      "expectile_tau": "0.7",
+      "omega_t": "sigma_t^2"
+     },
+     "table": "Table 1",
+     "line_quote": "  Medium-Replay                    Walker2d                             19.2               81.8               73.9             65.1                                    61.2          95.5                   84.4                     85.1     84.6 ± 7.1",
+     "notes": "printed as quality='Medium-Replay', env='Walker2d'; SRPO is the last column ('SRPO (Ours)'), mean ± std over 6 seeds at end of training"
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BEAR",
+  "TD3+BC",
+  "IQL",
+  "SfBC",
+  "Diffuser",
+  "Diffusion-QL",
+  "QGPO",
+  "IDQL"
+ ],
+ "problems": [
+  "D4RL dataset version (v0/v2) never stated.",
+  "Table 2 (beta per task) is rendered inside Figure 15's garbled region in layout.txt; values recovered from a 3-column grid (Walker2d | Halfcheetah | Hopper) under row headers Locomotion-Medium-Expert / Locomotion-Medium / Locomotion-Medium-Replay. Column-to-env assignment relies on the header line directly above each value line.",
+  "The paper labels the IQL expectile 'Temperature: τ = 0.7'; recorded as expectile_tau.",
+  "No discrete number of diffusion/denoising steps exists: behavior model is continuous-time VPSDE and SRPO does no diffusion sampling at inference.",
+  "Ablations over beta (Figure 15), omega(t) (Figure 8), baseline subtraction (Figure 8), and policy depth (Figure 14) are figures only -> excluded.",
+  "Random and expert datasets are not evaluated; Table 1 covers medium-expert, medium, medium-replay only.",
+  "Table 1 middle columns (Diffusion-QL / QGPO / IDQL) have irregular spacing in layout.txt; baseline values not extracted, SRPO column (last, with ±) is unambiguous."
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "relaxed/ridge_clipped": {
+  "A": {
+   "mean_rho": -0.34414218176778855,
+   "median_rho": -0.4750729535913768,
+   "n_datasets": 18
+  },
+  "B": {
+   "mean_rho": -0.06083754013111589,
+   "median_rho": -0.020205333777033783,
+   "n_datasets": 18
+  },
+  "C": {
+   "mean_rho": -0.3460914989516942,
+   "median_rho": -0.42962460725381635,
+   "n_datasets": 18
+  },
+  "D": {
+   "mean_rho": -0.07385728240821512,
+   "median_rho": -0.08482480111992086,
+   "n_datasets": 18
+  },
+  "E": {
+   "mean_rho": -0.02351185468429526,
+   "median_rho": -0.005522402897230245,
+   "n_datasets": 18
+  }
+ },
+ "strict/knn_dataset_first": {
+  "A": {
+   "mean_rho": -0.34414218176778855,
+   "median_rho": -0.4750729535913768,
+   "n_datasets": 18
+  },
+  "B": {
+   "mean_rho": 0.10879463246470407,
+   "median_rho": 0.04980474787478503,
+   "n_datasets": 18
+  },
+  "C": {
+   "mean_rho": -0.14696410909375754,
+   "median_rho": -0.10990332973558214,
+   "n_datasets": 18
+  },
+  "D": {
+   "mean_rho": 0.10189307844891812,
+   "median_rho": 0.02862836773050902,
+   "n_datasets": 18
+  },
+  "E": {
+   "mean_rho": 0.13371679274386844,
+   "median_rho": 0.140819770111492,
+   "n_datasets": 18
+  }
+ }
+}

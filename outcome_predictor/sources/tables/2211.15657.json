@@ -1,0 +1,435 @@
+{
+ "arxiv_id": "2211.15657",
+ "title": "Is Conditional Generative Modeling All You Need for Decision-Making?",
+ "methods": [
+  {
+   "method_name": "Decision Diffuser (DD)",
+   "is_own_method": true,
+   "one_paragraph_description": "Decision Diffuser trains a conditional diffusion model over state sequences (not actions) conditioned on return (or constraints/skills) with classifier-free guidance, plus a separate inverse-dynamics MLP. At runtime, given the current state (and history of length C), it samples a future state sequence with classifier-free guidance (guidance scale omega) using low-temperature sampling (variance scaled by alpha), conditioned on maximum return R(tau)=1, then uses inverse dynamics to extract and execute the action leading to the immediate next state; the process repeats in a receding-horizon loop (Algorithm 1).",
+   "conventional_lineage_hint": "conditional generative modeling / diffusion-based sequence modeling for offline decision-making; the paper frames it against 'existing offline RL methods, including model-free algorithms like CQL ... and IQL ..., and model-based algorithms such as trajectory transformer ... We also compare with sequence-models like the Decision Transformer ... and diffusion models like Diffuser'",
+   "global_conditions": {
+    "architecture": {
+     "value": "temporal U-Net, 6 repeated residual blocks (from Diffuser); timestep and condition embeddings 128-dim via 2-layer MLPs with 256 hidden units",
+     "quote": "We represent the noise model ϵθ with a temporal U-Net (Janner et al., 2022), consisting of a U-Net structure with 6 repeated residual blocks.",
+     "location": "Appendix B"
+    },
+    "inverse_dynamics_architecture": {
+     "value": "2-layer MLP, 512 hidden units, ReLU",
+     "quote": "We represent the inverse dynamics fϕ with a 2-layered MLP with 512 hidden units and ReLU activations.",
+     "location": "Appendix B"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "We train ϵθ and fϕ using the Adam optimizer (Kingma & Ba, 2015) with a learning rate of 2e − 4",
+     "location": "Appendix B"
+    },
+    "learning_rate": {
+     "value": "2e-4",
+     "quote": "We train ϵθ and fϕ using the Adam optimizer (Kingma & Ba, 2015) with a learning rate of 2e − 4",
+     "location": "Appendix B"
+    },
+    "batch_size": {
+     "value": "32",
+     "quote": "and batch size of 32 for 2e6 train steps.",
+     "location": "Appendix B"
+    },
+    "training_steps": {
+     "value": "2e6",
+     "quote": "and batch size of 32 for 2e6 train steps.",
+     "location": "Appendix B"
+    },
+    "condition_dropout_p": {
+     "value": "0.25",
+     "quote": "We choose the probability p of removing the conditioning information to be 0.25.",
+     "location": "Appendix B"
+    },
+    "diffusion_steps": {
+     "value": "K = 100",
+     "quote": "We use K = 100 diffusion steps.",
+     "location": "Appendix B"
+    },
+    "planning_horizon": {
+     "value": "H = 100 (D4RL locomotion)",
+     "quote": "We use a planning horizon H of 100 in all the D4RL locomotion tasks, 56 in D4RL kitchen tasks,",
+     "location": "Appendix B"
+    },
+    "guidance_scale": {
+     "value": "s in {1.2, 1.4, 1.6, 1.8}; exact per-task choice not given",
+     "quote": "We use a guidance scale s ∈ {1.2, 1.4, 1.6, 1.8} but the exact choice varies by task.",
+     "location": "Appendix B"
+    },
+    "low_temperature_alpha": {
+     "value": "0.5",
+     "quote": "We choose α = 0.5 for low temperature sampling.",
+     "location": "Appendix B"
+    },
+    "context_length": {
+     "value": "C = 20",
+     "quote": "We choose context length C = 20.",
+     "location": "Appendix B"
+    },
+    "test_time_return_condition": {
+     "value": "R(tau) = 1 (max normalized return)",
+     "quote": "R(τ ) = 1. Note that we do not make use of any Q-values, which would then require dynamic",
+     "location": "Section 3 (reflowed txt line 453)"
+    },
+    "runtime_denoising_steps_note": {
+     "value": "100 reverse diffusion steps per action (1.26s); warm-start to 40 without loss, 20 minimal loss, 5 <20% loss (figure only)",
+     "quote": "Every action taken in the environment requires running 100 reverse diffusion steps to generate a state sequence taking on average 1.26s in wall-clock time.",
+     "location": "Appendix E"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "5 random seeds",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated",
+    "quote": "We report the mean and the standard error over 5 random seeds.",
+    "location": "Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "D4RL datasets (Fu et al., 2020). (no -v0/-v2 suffix anywhere in text)",
+    "location": "Section 4.1 Setup"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 90.6,
+     "std": 1.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "100",
+      "diffusion_steps": "100",
+      "low_temperature_alpha": "0.5",
+      "guidance_scale": "in {1.2,1.4,1.6,1.8}, exact value per task not stated",
+      "context_length": "20",
+      "condition_dropout_p": "0.25"
+     },
+     "table": "Table 1",
+     "line_quote": " Med-Expert      HalfCheetah      55.2 91.6       86.7 86.8    95 53.3              79.8        90.6 ±1.3",
+     "notes": "std column is standard error over 5 random seeds (Table 1 caption). Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 111.8,
+     "std": 1.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "100",
+      "diffusion_steps": "100",
+      "low_temperature_alpha": "0.5",
+      "guidance_scale": "in {1.2,1.4,1.6,1.8}, exact value per task not stated",
+      "context_length": "20",
+      "condition_dropout_p": "0.25"
+     },
+     "table": "Table 1",
+     "line_quote": " Med-Expert      Hopper           52.5 105.4      91.5 107.6 110.0 108.7            107.2       111.8 ±1.8",
+     "notes": "std column is standard error over 5 random seeds (Table 1 caption). Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 108.8,
+     "std": 1.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "100",
+      "diffusion_steps": "100",
+      "low_temperature_alpha": "0.5",
+      "guidance_scale": "in {1.2,1.4,1.6,1.8}, exact value per task not stated",
+      "context_length": "20",
+      "condition_dropout_p": "0.25"
+     },
+     "table": "Table 1",
+     "line_quote": " Med-Expert      Walker2d         107.5 108.8     109.6 108.1 101.9 95.6            108.4       108.8 ±1.7",
+     "notes": "std column is standard error over 5 random seeds (Table 1 caption). Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 49.1,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "100",
+      "diffusion_steps": "100",
+      "low_temperature_alpha": "0.5",
+      "guidance_scale": "in {1.2,1.4,1.6,1.8}, exact value per task not stated",
+      "context_length": "20",
+      "condition_dropout_p": "0.25"
+     },
+     "table": "Table 1",
+     "line_quote": " Medium          HalfCheetah      42.6   44.0     47.4   42.6    46.9   42.1        44.2        49.1 ±1.0",
+     "notes": "std column is standard error over 5 random seeds (Table 1 caption). Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 79.3,
+     "std": 3.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "100",
+      "diffusion_steps": "100",
+      "low_temperature_alpha": "0.5",
+      "guidance_scale": "in {1.2,1.4,1.6,1.8}, exact value per task not stated",
+      "context_length": "20",
+      "condition_dropout_p": "0.25"
+     },
+     "table": "Table 1",
+     "line_quote": " Medium          Hopper           52.9   58.5     66.3   67.6    61.1   95.4        58.5        79.3 ±3.6",
+     "notes": "std column is standard error over 5 random seeds (Table 1 caption). Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 82.5,
+     "std": 1.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "100",
+      "diffusion_steps": "100",
+      "low_temperature_alpha": "0.5",
+      "guidance_scale": "in {1.2,1.4,1.6,1.8}, exact value per task not stated",
+      "context_length": "20",
+      "condition_dropout_p": "0.25"
+     },
+     "table": "Table 1",
+     "line_quote": " Medium          Walker2d         75.3   72.5     78.3   74.0     79    77.8        79.7        82.5 ±1.4",
+     "notes": "std column is standard error over 5 random seeds (Table 1 caption). Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 39.3,
+     "std": 4.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "100",
+      "diffusion_steps": "100",
+      "low_temperature_alpha": "0.5",
+      "guidance_scale": "in {1.2,1.4,1.6,1.8}, exact value per task not stated",
+      "context_length": "20",
+      "condition_dropout_p": "0.25"
+     },
+     "table": "Table 1",
+     "line_quote": " Med-Replay      HalfCheetah      36.6   45.5     44.2   36.6    41.9   40.2        42.2        39.3 ±4.1",
+     "notes": "std column is standard error over 5 random seeds (Table 1 caption). Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 100.0,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "100",
+      "diffusion_steps": "100",
+      "low_temperature_alpha": "0.5",
+      "guidance_scale": "in {1.2,1.4,1.6,1.8}, exact value per task not stated",
+      "context_length": "20",
+      "condition_dropout_p": "0.25"
+     },
+     "table": "Table 1",
+     "line_quote": " Med-Replay      Hopper           18.1    95      94.7   82.7    91.5   93.6        96.8        100 ±0.7",
+     "notes": "std column is standard error over 5 random seeds (Table 1 caption). Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 75.0,
+     "std": 4.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "planning_horizon": "100",
+      "diffusion_steps": "100",
+      "low_temperature_alpha": "0.5",
+      "guidance_scale": "in {1.2,1.4,1.6,1.8}, exact value per task not stated",
+      "context_length": "20",
+      "condition_dropout_p": "0.25"
+     },
+     "table": "Table 1",
+     "line_quote": " Med-Replay      Walker2d         26.0   77.2     73.9   66.6    82.6   49.8        61.2        75 ±4.3",
+     "notes": "std column is standard error over 5 random seeds (Table 1 caption). Dataset printed as 'Med-Expert / HalfCheetah' etc."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 104.3,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=0",
+     "config_conditions": {
+      "planning_horizon": "100",
+      "diffusion_steps": "100",
+      "low_temperature_alpha": "0",
+      "guidance_scale": "in {1.2,1.4,1.6,1.8}, exact value per task not stated",
+      "context_length": "20",
+      "condition_dropout_p": "0.25"
+     },
+     "table": "Table A1",
+     "line_quote": "                                    α=0                    104.3 ± 0.7",
+     "notes": "low-temperature sampling ablation; number of seeds for Table A1 not restated (assumed same protocol). std is ±value as printed."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 107.1,
+     "std": 3.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=1.0",
+     "config_conditions": {
+      "planning_horizon": "100",
+      "diffusion_steps": "100",
+      "low_temperature_alpha": "1.0",
+      "guidance_scale": "in {1.2,1.4,1.6,1.8}, exact value per task not stated",
+      "context_length": "20",
+      "condition_dropout_p": "0.25"
+     },
+     "table": "Table A1",
+     "line_quote": "                                   α = 1.0                 107.1 ± 3.5",
+     "notes": "low-temperature sampling ablation. Table A1 α=0.5 row (111.8 ±1.6) is the main config and is not re-emitted; note its ± (1.6) differs from Table 1 (±1.8)."
+    }
+   ]
+  },
+  {
+   "method_name": "CondDiffuser",
+   "is_own_method": true,
+   "one_paragraph_description": "Ablation variant: Diffuser-style model that diffuses over both state and action sequences, trained with classifier-free guidance (return conditioning) instead of classifier guidance; no inverse dynamics.",
+   "conventional_lineage_hint": "ablation variant of Decision Diffuser (diffusion-based conditional generative modeling for offline RL)",
+   "global_conditions": {
+    "note": {
+     "value": "hyperparameters not separately stated; presumed shared with Decision Diffuser (Appendix B)",
+     "quote": "Table 2: Ablations. Using classifier-free guidance with Diffuser, resulting in CondDiffuser, improves",
+     "location": "Table 2 caption"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "not restated for Table 2 (Table 1: 5 random seeds)",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated",
+    "quote": "We report the mean and the standard error over 5 random seeds.",
+    "location": "Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "no -v0/-v2 suffix anywhere in text",
+    "location": "n/a"
+   },
+   "rows": [
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 111.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "                                     Med-Expert            107.6                 111.3                      105.6               111.8 ±1.6",
+     "notes": "no std printed for this column; Hopper-* only"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 66.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "                                      Medium                58.5                 66.3                        54.1                79.3 ±3.6",
+     "notes": "no std printed for this column; Hopper-* only"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 76.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "                                     Med-Replay             96.8                 76.5                        66.5                100 ±0.7",
+     "notes": "no std printed for this column; Hopper-* only"
+    }
+   ]
+  },
+  {
+   "method_name": "CondMLPDiffuser",
+   "is_own_method": true,
+   "one_paragraph_description": "Ablation variant: a policy that diffuses over the current action given the current state and the target return (MLP, no trajectory-level diffusion).",
+   "conventional_lineage_hint": "ablation variant of Decision Diffuser (diffusion-based conditional generative modeling for offline RL)",
+   "global_conditions": {
+    "note": {
+     "value": "hyperparameters not separately stated; presumed shared with Decision Diffuser (Appendix B)",
+     "quote": "Table 2: Ablations. Using classifier-free guidance with Diffuser, resulting in CondDiffuser, improves",
+     "location": "Table 2 caption"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "not restated for Table 2 (Table 1: 5 random seeds)",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated",
+    "quote": "We report the mean and the standard error over 5 random seeds.",
+    "location": "Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "no -v0/-v2 suffix anywhere in text",
+    "location": "n/a"
+   },
+   "rows": [
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 105.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "                                     Med-Expert            107.6                 111.3                      105.6               111.8 ±1.6",
+     "notes": "no std printed for this column; Hopper-* only"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 54.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "                                      Medium                58.5                 66.3                        54.1                79.3 ±3.6",
+     "notes": "no std printed for this column; Hopper-* only"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 66.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {},
+     "table": "Table 2",
+     "line_quote": "                                     Med-Replay             96.8                 76.5                        66.5                100 ±0.7",
+     "notes": "no std printed for this column; Hopper-* only"
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BC",
+  "CQL",
+  "IQL",
+  "DT",
+  "TT",
+  "MOReL",
+  "Diffuser"
+ ],
+ "problems": [
+  "Exact guidance scale omega per locomotion dataset not stated (only the grid {1.2,1.4,1.6,1.8}).",
+  "Table 2 'Diffuser' column values (107.6 / 58.5 / 96.8) differ from Table 1 'Diffuser' column (107.2 / 58.5 / 96.8) for Med-Expert; Table 2 DD Med-Expert std ±1.6 vs Table 1 ±1.8. Recorded as-is, DD Table 2 column not re-emitted.",
+  "Appendix E denoising-step ablation (100/40/20/5 steps with warm-start) is figure only (Figure A2) -> excluded.",
+  "No ablation over guidance weight w or horizon with reported numbers.",
+  "Evaluation episodes per seed and checkpoint selection not stated. D4RL version never stated."
+ ]
+}

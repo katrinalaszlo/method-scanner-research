@@ -1,0 +1,1114 @@
+[
+  {
+    "paper": "A Simple Framework for Contrastive Learning of Visual Representations",
+    "id": "arxiv:2002.05709",
+    "v1": [
+      "augment@input",
+      "encode@input",
+      "project@latent",
+      "compare@latent"
+    ],
+    "v2": [
+      "augment@input",
+      "encode@input",
+      "project@latent",
+      "compare@latent"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Adam: A Method for Stochastic Optimization",
+    "id": "arxiv:1412.6980",
+    "v1": [
+      "compute exponential moving averages@gradient",
+      "bias correct@gradient",
+      "correct@parameter"
+    ],
+    "v2": [
+      "compute exponential moving averages@gradient",
+      "bias correct@gradient",
+      "correct@parameter"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Adaptive Neural Unscented Kalman Filter",
+    "id": "arxiv:2503.05490",
+    "v1": [
+      "compute measurement@state",
+      "compute mean measurement@state",
+      "compute covariance matrix@state",
+      "compute cross-covariance matrix@state",
+      "compute kalman gain@state",
+      "compute new mean@state",
+      "compute new covariance@state"
+    ],
+    "v2": [
+      "compute measurement@state",
+      "compute mean measurement@state",
+      "compute covariance matrix@error",
+      "compute cross-covariance matrix@error",
+      "compute kalman gain@error",
+      "compute new mean@state",
+      "compute new covariance@error"
+    ],
+    "changed": [
+      [
+        "compute covariance matrix@state",
+        "compute covariance matrix@error"
+      ],
+      [
+        "compute cross-covariance matrix@state",
+        "compute cross-covariance matrix@error"
+      ],
+      [
+        "compute kalman gain@state",
+        "compute kalman gain@error"
+      ],
+      [
+        "compute new covariance@state",
+        "compute new covariance@error"
+      ]
+    ]
+  },
+  {
+    "paper": "Asynchronous Methods for Deep Reinforcement Learning",
+    "id": "arxiv:1602.01783",
+    "v1": [
+      "act@other",
+      "compute gradient@other",
+      "accumulate updates@gradient",
+      "correct@parameter",
+      "correct@parameter"
+    ],
+    "v2": [
+      "act@other",
+      "compute gradient@other",
+      "accumulate updates@gradient",
+      "correct@parameter",
+      "correct@parameter"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Attention Is All You Need",
+    "id": "arxiv:1706.03762",
+    "v1": [
+      "self-attention@latent",
+      "feed-forward@latent",
+      "encode@input",
+      "reconstruct@latent"
+    ],
+    "v2": [
+      "self-attention@latent",
+      "feed-forward@latent",
+      "encode@input",
+      "reconstruct@latent"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Backprop KF: Learning Discriminative Deterministic State Estimators",
+    "id": "arxiv:1605.07148",
+    "v1": [
+      "predict@state",
+      "filter@state",
+      "distill@input",
+      "transmit@state",
+      "normalize@distribution"
+    ],
+    "v2": [
+      "predict@state",
+      "filter@state",
+      "distill@input",
+      "transmit@state",
+      "normalize@distribution"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Bidirectional Predictive Coding for Multi-Step Action Anticipation",
+    "id": "test:abstract",
+    "v1": [
+      "encode@latent",
+      "predict@state",
+      "correct@latent",
+      "train@parameter"
+    ],
+    "v2": [
+      "encode@latent",
+      "predict@state",
+      "correct@latent",
+      "train@parameter"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Black box variational inference for state space models",
+    "id": "arxiv:1511.07367",
+    "v1": [
+      "parameterize@distribution",
+      "compute@gradient",
+      "sample@sample"
+    ],
+    "v2": [
+      "parameterize@distribution",
+      "compute@other",
+      "sample@sample"
+    ],
+    "changed": [
+      [
+        "compute@gradient",
+        "compute@other"
+      ]
+    ]
+  },
+  {
+    "paper": "Bootstrap your own latent: A new approach to self-supervised Learning",
+    "id": "arxiv:2006.07733",
+    "v1": [
+      "encode@input",
+      "project@state",
+      "predict@latent",
+      "normalize@latent",
+      "correct@parameter"
+    ],
+    "v2": [
+      "encode@input",
+      "project@state",
+      "predict@latent",
+      "normalize@sample",
+      "correct@parameter"
+    ],
+    "changed": [
+      [
+        "normalize@latent",
+        "normalize@sample"
+      ]
+    ]
+  },
+  {
+    "paper": "Constrained Predictive Coding as a Biologically Plausible Model of the Cortical Hierarchy",
+    "id": "arxiv:2210.15752",
+    "v1": [
+      "improve@parameter",
+      "whiten@latent",
+      "correct@parameter"
+    ],
+    "v2": [
+      "improve@gradient",
+      "whiten@latent",
+      "correct@parameter"
+    ],
+    "changed": [
+      [
+        "improve@parameter",
+        "improve@gradient"
+      ]
+    ]
+  },
+  {
+    "paper": "Deep Kalman Filters",
+    "id": "arxiv:1511.05121",
+    "v1": [
+      "reconstruct@distribution",
+      "reconstruct@input",
+      "predict@latent"
+    ],
+    "v2": [
+      "reconstruct@distribution",
+      "reconstruct@input",
+      "predict@latent"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Deep Predictive Coding Networks for Video Prediction and Unsupervised Learning",
+    "id": "arxiv:1605.08104",
+    "v1": [
+      "predict@input",
+      "compare@state",
+      "correct@state"
+    ],
+    "v2": [
+      "predict@input",
+      "compare@input",
+      "correct@state"
+    ],
+    "changed": [
+      [
+        "compare@state",
+        "compare@input"
+      ]
+    ]
+  },
+  {
+    "paper": "Deep Residual Learning for Image Recognition",
+    "id": "arxiv:1512.03385",
+    "v1": [
+      "train@latent",
+      "apply identity mapping@state",
+      "add residual@state"
+    ],
+    "v2": [
+      "train@latent",
+      "apply identity mapping@state",
+      "add residual@state"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Deep Robust Kalman Filter",
+    "id": "arxiv:1703.02310",
+    "v1": [
+      "compute robust target label@other",
+      "correct@parameter",
+      "linearize observation function@other",
+      "derive posterior distribution@distribution",
+      "kalman gain update@gradient",
+      "correct@parameter"
+    ],
+    "v2": [
+      "compute robust target label@value",
+      "correct@parameter",
+      "linearize observation function@other",
+      "derive posterior distribution@distribution",
+      "kalman gain update@gradient",
+      "correct@parameter"
+    ],
+    "changed": [
+      [
+        "compute robust target label@other",
+        "compute robust target label@value"
+      ]
+    ]
+  },
+  {
+    "paper": "Deep Unsupervised Learning using Nonequilibrium Thermodynamics",
+    "id": "arxiv:1503.03585",
+    "v1": [
+      "diffuse@state",
+      "reverse@distribution",
+      "sample@distribution"
+    ],
+    "v2": [
+      "diffuse@state",
+      "reverse@distribution",
+      "sample@distribution"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Deep Variational Bayes Filters: Unsupervised Learning of State Space Models from Raw Data",
+    "id": "arxiv:1605.06432",
+    "v1": [
+      "reparametrize@other",
+      "predict@parameter",
+      "transition@state",
+      "predict@input"
+    ],
+    "v2": [
+      "reparametrize@other",
+      "predict@parameter",
+      "transition@state",
+      "predict@input"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Dendritic predictive coding: A theory of cortical computation with spiking neurons",
+    "id": "arxiv:2205.05303",
+    "v1": [
+      "compute bottom-up errors@error",
+      "compute top-down errors@error",
+      "predict@other",
+      "integrate errors@error"
+    ],
+    "v2": [
+      "compute bottom-up errors@error",
+      "compute top-down errors@error",
+      "predict@other",
+      "integrate errors@error"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Denoising Diffusion Implicit Models",
+    "id": "arxiv:2010.02502",
+    "v1": [
+      "predict@parameter",
+      "sample@state",
+      "reconstruct@sample"
+    ],
+    "v2": [
+      "predict@parameter",
+      "sample@distribution",
+      "reconstruct@sample"
+    ],
+    "changed": [
+      [
+        "sample@state",
+        "sample@distribution"
+      ]
+    ]
+  },
+  {
+    "paper": "Denoising Diffusion Probabilistic Models",
+    "id": "arxiv:2006.11239",
+    "v1": [
+      "predict@parameter",
+      "sample@sample",
+      "reparameterize@parameter"
+    ],
+    "v2": [
+      "predict@latent",
+      "sample@state",
+      "reparameterize@parameter"
+    ],
+    "changed": [
+      [
+        "predict@parameter",
+        "predict@latent"
+      ],
+      [
+        "sample@sample",
+        "sample@state"
+      ]
+    ]
+  },
+  {
+    "paper": "Differentiable Particle Filters: End-to-End Learning with Algorithmic Priors",
+    "id": "arxiv:1805.11122",
+    "v1": [
+      "predict@state",
+      "correct@state",
+      "sample@sample",
+      "propose@sample",
+      "encode@input",
+      "reconstruct@state"
+    ],
+    "v2": [
+      "predict@state",
+      "correct@state",
+      "sample@sample",
+      "propose@sample",
+      "encode@input",
+      "reconstruct@state"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Dream to Control: Learning Behaviors by Latent Imagination",
+    "id": "arxiv:1912.01603",
+    "v1": [
+      "train@latent",
+      "train@latent",
+      "act@action"
+    ],
+    "v2": [
+      "train@latent",
+      "train@latent",
+      "act@state"
+    ],
+    "changed": [
+      [
+        "act@action",
+        "act@state"
+      ]
+    ]
+  },
+  {
+    "paper": "Efficient Estimation of Word Representations in Vector Space",
+    "id": "arxiv:1301.3781",
+    "v1": [
+      "project@input",
+      "classify@sample",
+      "predict@distribution"
+    ],
+    "v2": [
+      "project@input",
+      "classify@distribution",
+      "predict@distribution"
+    ],
+    "changed": [
+      [
+        "classify@sample",
+        "classify@distribution"
+      ]
+    ]
+  },
+  {
+    "paper": "Elucidating the Design Space of Diffusion-Based Generative Models",
+    "id": "arxiv:2206.00364",
+    "v1": [
+      "reconstruct@sample",
+      "sample@noise",
+      "scale@input"
+    ],
+    "v2": [
+      "reconstruct@sample",
+      "sample@noise",
+      "scale@input"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Exploring Simple Siamese Representation Learning",
+    "id": "arxiv:2011.10566",
+    "v1": [
+      "encode@input",
+      "project@state",
+      "predict@state",
+      "mask@state"
+    ],
+    "v2": [
+      "encode@input",
+      "project@state",
+      "predict@state",
+      "mask@state"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "KalmanNet: Neural Network Aided Kalman Filtering for Partially Known Dynamics",
+    "id": "arxiv:2107.10043",
+    "v1": [
+      "predict@state",
+      "correct@state",
+      "compute kalman gain@parameter",
+      "predict@state"
+    ],
+    "v2": [
+      "predict@state",
+      "correct@state",
+      "compute kalman gain@parameter",
+      "predict@state"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Learning Latent Dynamics for Planning from Pixels",
+    "id": "arxiv:1811.04551",
+    "v1": [
+      "collect data@state",
+      "predict@state",
+      "plan@action",
+      "train@parameter"
+    ],
+    "v2": [
+      "collect data@state",
+      "predict@state",
+      "plan@action",
+      "train@parameter"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Linear Variational State-Space Filtering",
+    "id": "arxiv:2201.01353",
+    "v1": [
+      "forward pass@state",
+      "backward pass@state"
+    ],
+    "v2": [
+      "forward pass@state",
+      "backward pass@state"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Mastering Atari with Discrete World Models",
+    "id": "arxiv:2010.02193",
+    "v1": [
+      "train@state",
+      "train@action",
+      "act@action"
+    ],
+    "v2": [
+      "train@state",
+      "train@parameter",
+      "act@action"
+    ],
+    "changed": [
+      [
+        "train@action",
+        "train@parameter"
+      ]
+    ]
+  },
+  {
+    "paper": "Mastering Diverse Domains through World Models",
+    "id": "arxiv:2301.04104",
+    "v1": [
+      "transform@distribution",
+      "predict@distribution",
+      "reconstruct@distribution"
+    ],
+    "v2": [
+      "transform@distribution",
+      "predict@reward",
+      "reconstruct@input"
+    ],
+    "changed": [
+      [
+        "predict@distribution",
+        "predict@reward"
+      ],
+      [
+        "reconstruct@distribution",
+        "reconstruct@input"
+      ]
+    ]
+  },
+  {
+    "paper": "Meta-SGD: Learning to Learn Quickly for Few-Shot Learning",
+    "id": "arxiv:1707.09835",
+    "v1": [
+      "sample@other",
+      "compute policy gradient@gradient",
+      "correct@parameter",
+      "sample@sample",
+      "compute generalization loss@error"
+    ],
+    "v2": [
+      "sample@task",
+      "compute policy gradient@gradient",
+      "correct@parameter",
+      "sample@sample",
+      "compute generalization loss@error"
+    ],
+    "changed": [
+      [
+        "sample@other",
+        "sample@task"
+      ]
+    ]
+  },
+  {
+    "paper": "Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks",
+    "id": "arxiv:1703.03400",
+    "v1": [
+      "sample@other",
+      "evaluate@other",
+      "correct@parameter",
+      "improve@parameter"
+    ],
+    "v2": [
+      "sample@task",
+      "evaluate@other",
+      "correct@parameter",
+      "improve@parameter"
+    ],
+    "changed": [
+      [
+        "sample@other",
+        "sample@task"
+      ]
+    ]
+  },
+  {
+    "paper": "Neural Kalman Filtering",
+    "id": "arxiv:2102.10021",
+    "v1": [
+      "project@state",
+      "correct@state",
+      "predict@state",
+      "correct@parameter"
+    ],
+    "v2": [
+      "project@state",
+      "correct@state",
+      "predict@state",
+      "correct@state"
+    ],
+    "changed": [
+      [
+        "correct@parameter",
+        "correct@state"
+      ]
+    ]
+  },
+  {
+    "paper": "On First-Order Meta-Learning Algorithms",
+    "id": "arxiv:1803.02999",
+    "v1": [
+      "sample@other",
+      "correct@parameter",
+      "compute gradient@gradient",
+      "correct@parameter"
+    ],
+    "v2": [
+      "sample@task",
+      "correct@parameter",
+      "compute gradient@gradient",
+      "correct@parameter"
+    ],
+    "changed": [
+      [
+        "sample@other",
+        "sample@task"
+      ]
+    ]
+  },
+  {
+    "paper": "On the relationship between predictive coding and backpropagation",
+    "id": "arxiv:2106.13082",
+    "v1": [
+      "correct@parameter",
+      "compute prediction errors@error",
+      "compute gradients@gradient"
+    ],
+    "v2": [
+      "correct@parameter",
+      "compute prediction errors@error",
+      "compute gradients@gradient"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "PKF: Probabilistic Data Association Kalman Filter for Multi-Object Tracking",
+    "id": "arxiv:2411.06378",
+    "v1": [
+      "compute data association weights@distribution",
+      "construct expanded measurement model@state",
+      "correct@state"
+    ],
+    "v2": [
+      "compute data association weights@distribution",
+      "construct expanded measurement model@state",
+      "correct@state"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Particle Filter Networks with Application to Visual Localization",
+    "id": "arxiv:1805.08975",
+    "v1": [
+      "encode@parameter",
+      "encode@parameter",
+      "differentiable particle filtering@distribution",
+      "sample@sample"
+    ],
+    "v2": [
+      "encode@parameter",
+      "encode@parameter",
+      "differentiable particle filtering@other",
+      "sample@sample"
+    ],
+    "changed": [
+      [
+        "differentiable particle filtering@distribution",
+        "differentiable particle filtering@other"
+      ]
+    ]
+  },
+  {
+    "paper": "Particle Filter Recurrent Neural Networks",
+    "id": "arxiv:1905.12885",
+    "v1": [
+      "correct@state",
+      "sample@sample",
+      "aggregate@state",
+      "predict@state"
+    ],
+    "v2": [
+      "correct@state",
+      "sample@sample",
+      "aggregate@state",
+      "predict@value"
+    ],
+    "changed": [
+      [
+        "predict@state",
+        "predict@value"
+      ]
+    ]
+  },
+  {
+    "paper": "Playing Atari with Deep Reinforcement Learning",
+    "id": "arxiv:1312.5602",
+    "v1": [
+      "store@state",
+      "sample@sample",
+      "correct@parameter",
+      "select@action",
+      "act@action",
+      "preprocess@input",
+      "crop@input",
+      "convolve@input",
+      "rectify@distribution",
+      "connect@parameter",
+      "output@parameter"
+    ],
+    "v2": [
+      "store@sample",
+      "sample@sample",
+      "correct@parameter",
+      "select@action",
+      "act@action",
+      "preprocess@input",
+      "crop@input",
+      "convolve@input",
+      "rectify@input",
+      "connect@parameter",
+      "output@value"
+    ],
+    "changed": [
+      [
+        "store@state",
+        "store@sample"
+      ],
+      [
+        "rectify@distribution",
+        "rectify@input"
+      ],
+      [
+        "output@parameter",
+        "output@value"
+      ]
+    ]
+  },
+  {
+    "paper": "Practical Bayesian Optimization of Machine Learning Algorithms",
+    "id": "test:1206.2944",
+    "v1": [
+      "predict@distribution",
+      "acquire@distribution",
+      "improve@distribution"
+    ],
+    "v2": [
+      "predict@distribution",
+      "acquire@value",
+      "improve@action"
+    ],
+    "changed": [
+      [
+        "acquire@distribution",
+        "acquire@value"
+      ],
+      [
+        "improve@distribution",
+        "improve@action"
+      ]
+    ]
+  },
+  {
+    "paper": "Predictive Coding Can Do Exact Backpropagation on Convolutional and Recurrent Neural Networks",
+    "id": "arxiv:2103.03725",
+    "v1": [
+      "correct@parameter",
+      "inference@error",
+      "predict@state",
+      "train@error"
+    ],
+    "v2": [
+      "correct@parameter",
+      "inference@error",
+      "predict@value",
+      "train@parameter"
+    ],
+    "changed": [
+      [
+        "predict@state",
+        "predict@value"
+      ],
+      [
+        "train@error",
+        "train@parameter"
+      ]
+    ]
+  },
+  {
+    "paper": "Predictive Coding Light+: learning to predict visual sequences with spike timing-dependent plasticity and synaptic delays",
+    "id": "arxiv:2605.12732",
+    "v1": [
+      "stimulate@input",
+      "maintain@state",
+      "predict@input",
+      "fill in@input"
+    ],
+    "v2": [
+      "stimulate@input",
+      "maintain@state",
+      "predict@input",
+      "fill in@input"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Predictive Coding Networks and Inference Learning: Tutorial and Survey",
+    "id": "arxiv:2407.04117",
+    "v1": [
+      "predict@latent",
+      "compare@error",
+      "correct@parameter"
+    ],
+    "v2": [
+      "predict@latent",
+      "compare@error",
+      "correct@parameter"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Predictive Coding: Towards a Future of Deep Learning beyond Backpropagation?",
+    "id": "arxiv:2202.09467",
+    "v1": [
+      "predict@state",
+      "transmit@error",
+      "correct@parameter",
+      "minimize energy@error"
+    ],
+    "v2": [
+      "predict@state",
+      "transmit@error",
+      "correct@parameter",
+      "minimize energy@error"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Predictive Coding: a Theoretical and Experimental Review",
+    "id": "arxiv:2107.12979",
+    "v1": [
+      "compute gradients@gradient",
+      "correct@parameter",
+      "predict@distribution",
+      "error propagation@error"
+    ],
+    "v2": [
+      "compute gradients@gradient",
+      "correct@parameter",
+      "predict@distribution",
+      "error propagation@error"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Proximal Policy Optimization Algorithms",
+    "id": "arxiv:1707.06347",
+    "v1": [
+      "evaluate@state",
+      "construct surrogate loss@parameter",
+      "improve@parameter"
+    ],
+    "v2": [
+      "evaluate@value",
+      "construct surrogate loss@value",
+      "improve@parameter"
+    ],
+    "changed": [
+      [
+        "evaluate@state",
+        "evaluate@value"
+      ],
+      [
+        "construct surrogate loss@parameter",
+        "construct surrogate loss@value"
+      ]
+    ]
+  },
+  {
+    "paper": "Revisiting Feature Prediction for Learning Visual Representations from Video",
+    "id": "arxiv:2404.08471",
+    "v1": [
+      "encode@latent",
+      "predict@latent",
+      "regress@parameter"
+    ],
+    "v2": [
+      "encode@latent",
+      "predict@latent",
+      "regress@parameter"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Score-Based Generative Modeling through Stochastic Differential Equations",
+    "id": "arxiv:2011.13456",
+    "v1": [
+      "intervene@state",
+      "reverse@distribution",
+      "predict@gradient",
+      "simulate@distribution"
+    ],
+    "v2": [
+      "intervene@state",
+      "reverse@distribution",
+      "predict@gradient",
+      "simulate@distribution"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture",
+    "id": "arxiv:2301.08243",
+    "v1": [
+      "encode@state",
+      "predict@latent",
+      "correct@parameter"
+    ],
+    "v2": [
+      "encode@state",
+      "predict@latent",
+      "correct@parameter"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+    "id": "arxiv:1801.01290",
+    "v1": [
+      "evaluate@state",
+      "improve@other",
+      "approximate@distribution",
+      "improve@parameter"
+    ],
+    "v2": [
+      "evaluate@value",
+      "improve@policy",
+      "approximate@distribution",
+      "improve@parameter"
+    ],
+    "changed": [
+      [
+        "evaluate@state",
+        "evaluate@value"
+      ],
+      [
+        "improve@other",
+        "improve@policy"
+      ]
+    ]
+  },
+  {
+    "paper": "Spiking Neural Predictive Coding for Continual Learning from Data Streams",
+    "id": "arxiv:1908.08655",
+    "v1": [
+      "predict@state",
+      "error correction@error",
+      "weight adaptation@parameter"
+    ],
+    "v2": [
+      "predict@state",
+      "error correction@error",
+      "weight adaptation@parameter"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "The Neural Particle Filter",
+    "id": "arxiv:1508.06818",
+    "v1": [
+      "correct@parameter",
+      "compute log likelihood@parameter",
+      "filter@state",
+      "predict@state"
+    ],
+    "v2": [
+      "correct@parameter",
+      "compute log likelihood@parameter",
+      "filter@state",
+      "predict@state"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Trust Region Policy Optimization",
+    "id": "arxiv:1502.05477",
+    "v1": [
+      "evaluate@state",
+      "improve@parameter",
+      "improve@parameter"
+    ],
+    "v2": [
+      "evaluate@value",
+      "improve@parameter",
+      "improve@value"
+    ],
+    "changed": [
+      [
+        "evaluate@state",
+        "evaluate@value"
+      ],
+      [
+        "improve@parameter",
+        "improve@value"
+      ]
+    ]
+  },
+  {
+    "paper": "Understanding and Improving Optimization in Predictive Coding Networks",
+    "id": "arxiv:2305.13562",
+    "v1": [
+      "correct@parameter",
+      "equalize@parameter"
+    ],
+    "v2": [
+      "correct@parameter",
+      "equalize@parameter"
+    ],
+    "changed": []
+  },
+  {
+    "paper": "Variational Tracking and Prediction with Generative Disentangled State-Space Models",
+    "id": "arxiv:1910.06205",
+    "v1": [
+      "predict@state",
+      "predict@state",
+      "discover@latent",
+      "transmit@state"
+    ],
+    "v2": [
+      "predict@state",
+      "predict@state",
+      "discover@other",
+      "transmit@state"
+    ],
+    "changed": [
+      [
+        "discover@latent",
+        "discover@other"
+      ]
+    ]
+  },
+  {
+    "paper": "Very Deep Convolutional Networks for Large-Scale Image Recognition",
+    "id": "arxiv:1409.1556",
+    "v1": [
+      "convolve@input",
+      "pool@input",
+      "connect@parameter",
+      "rectify@parameter"
+    ],
+    "v2": [
+      "convolve@input",
+      "pool@input",
+      "connect@parameter",
+      "rectify@state"
+    ],
+    "changed": [
+      [
+        "rectify@parameter",
+        "rectify@state"
+      ]
+    ]
+  },
+  {
+    "paper": "World Models",
+    "id": "arxiv:1803.10122",
+    "v1": [
+      "encode@input",
+      "predict@latent",
+      "encode@latent",
+      "correct@state"
+    ],
+    "v2": [
+      "encode@input",
+      "predict@latent",
+      "encode@latent",
+      "correct@state"
+    ],
+    "changed": []
+  }
+]

@@ -1,0 +1,29 @@
+# family  arxiv_id     title (Phase 24 D4RL locomotion corpus)
+d4rl  2205.09991  Diffuser
+d4rl  2211.15657  Decision Diffuser
+d4rl  2208.06193  Diffusion-QL
+d4rl  2006.04779  CQL
+d4rl  2110.06169  IQL
+d4rl  2106.06860  TD3+BC
+d4rl  2106.01345  Decision Transformer
+d4rl  2106.02039  Trajectory Transformer
+d4rl  2005.13239  MOPO
+d4rl  2005.05951  MOReL
+d4rl  2102.08363  COMBO
+d4rl  2006.09359  AWAC
+d4rl  2106.08909  One-step RL
+d4rl  2110.01548  EDAC / SAC-N
+d4rl  2305.09836  ReBRAC
+d4rl  2304.10573  IDQL
+d4rl  2209.14548  SfBC
+d4rl  2302.01877  AdaptDiffuser
+d4rl  2304.12824  QGPO
+d4rl  2305.20081  EDP
+d4rl  2112.10751  RvS
+d4rl  2103.08050  Fisher-BRC
+d4rl  2011.07213  PLAS
+d4rl  2209.03993  QDT
+d4rl  2310.03022  Decision ConvFormer
+d4rl  2310.07297  SRPO
+d4rl  2401.02644  Hierarchical Diffuser
+d4rl  2208.10291  TAP

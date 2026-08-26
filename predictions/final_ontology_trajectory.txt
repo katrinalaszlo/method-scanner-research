@@ -1,0 +1,56 @@
+Final ontology update — `trajectory` object type (2026-08-25)
+
+1. ONTOLOGY DIFF (semantic_ontology.json; v1 types untouched)
+  object_types_v2 + "trajectory": "a sequence of states and/or actions over time (a plan, rollout, path tau = s0 a0 s1 a1 ...); the whole sequence is the object, not one state"
+  compatibility_groups.represented_state: [state, latent] -> [state, latent, trajectory]   (relaxed: a plan is a state sequence)
+  Comparator sees it: strict tuples print as predict@trajectory; relaxed folds it to represented_state.
+
+2. DIFFUSER RE-TYPED (v2, --force on that record only; previous v2 kept in semantic_ops_v2_before_trajectory; v1 untouched)
+  before  predict trajectory@other, denoise@other, sample@other(->sample by guard)
+  after   predict trajectory@trajectory, denoise@trajectory, sample@trajectory?    (sample ungrounded; the other two grounded)
+  As compared: predict@trajectory, reconstruct@trajectory, sample@trajectory
+
+3. STRICT / RELAXED, DIFFUSER vs 58 (families mechanism)
+                 before (Phase final test)                 after (trajectory)
+  strict v2      0.20 DDIM/DDPM/BBVI/PF-Net [sample@sample]  0.00 — no corpus paper has any @trajectory tuple
+                 family: particle 0.14 / diffusion 0.08      family: all 0.00
+  relaxed v2     0.20 x 6 papers [sample@stochastic_object]  0.50 DDIM [predict, reconstruct @represented_state]; 0.29 Diff. PF; 0.20 DDPM, V-JEPA, I-JEPA, DKF ...
+                 family: diffusion 0.16, particle 0.14       family: diffusion 0.14 = jepa 0.14 (mean); nearest paper DDIM 0.50, unambiguous
+  lexical        1.00 DDIM, diffusion 0.55                   unchanged (typing does not touch canonical ops)
+
+  SUCCESS CRITERIA
+    strict >0.20            NOT MET — went 0.20 -> 0.00. Expected once stated: the only strict match before was sample@sample, and `sample` now
+                            correctly takes `trajectory`. Diffuser's three tuples describe a mechanism no corpus paper has: a diffusion sampler
+                            whose object is a trajectory. The type separates it from the corpus rather than joining it. That is the truthful strict answer.
+    family unambiguous      MET on nearest paper (DDIM 0.50 relaxed, 1.00 lexical); family-mean relaxed ties diffusion/jepa 0.14 (predict@represented_state is jepa's core too).
+    trajectory in comparator  MET.
+
+4. WHO ELSE WOULD CARRY `trajectory` — dry run of the new ontology on scratch copies of the 11 worldmodels + diffusion records (corpus NOT modified)
+  PlaNet            collect data@state -> trajectory (grounded), plan@action -> trajectory (ungrounded)     genuine: PlaNet plans over action sequences
+  Sohl-Dickstein    reverse@distribution -> trajectory (ungrounded)                                         dubious: "reverse trajectory" is the diffusion chain, not a plan
+  DDPM, DDIM, EDM, Score-SDE, DVBF, Dreamer x3, World Models   no trajectory
+  Incidental drift on re-typing (same text, new run): 5 tuples moved with no trajectory involved (World Models update@state->latent, DreamerV2
+  learn actor and critic@parameter->state, Score-SDE perturb@state->distribution, Sohl-Dickstein diffuse@state->distribution). Typing noise ~1 tuple/paper.
+  Applied to corpus? No. PlaNet's trajectory ops (collect, plan) share no verb with Diffuser's (predict, reconstruct, sample), so re-typing would not
+  move Diffuser's strict score and would import 5 drifts. Recorded here; corpus v2 stays as Phase 22 left it.
+
+5. FINAL FAMILY STRUCTURE (strict v2, 58 corpus papers, unchanged from Phase 22)
+  on-policy          3   0.43
+  meta-learning      3   0.34
+  replay-off-policy  5   0.21
+  jepa               5   0.21
+  pc-learning        9   0.13
+  particle           5   0.11
+  diffusion          5   0.07
+  state-estimation   8   0.06
+  pc-neuro           3   0.06
+  worldmodels        6   0.03
+  control            5   0.00
+  a3c-outlier        1   —
+  Unseen test: Diffuser -> diffusion (lexical 0.55 / DDIM 1.00; relaxed DDIM 0.50); strict 0.00 — new object type, no corpus neighbour.
+
+WHAT THIS SAYS FOR THE WRITE-UP
+  Adding an object type to fit one paper does not create a strict match; it creates a correctly isolated paper. Strict similarity needs two papers
+  that act on the same object with the same verb. The ontology addition pays off only when the corpus gets a second trajectory-mechanism paper
+  (e.g. Decision Diffuser, Trajectory Transformer, MPC-with-CEM), at which point Diffuser x that paper is the test. Relaxed is the layer that
+  connects a new field to the corpus on day one (DDIM 0.50 via represented_state); strict is the layer that says "nothing here does what this does".

@@ -1,0 +1,15 @@
+[
+  {
+    "paper": "Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks",
+    "source": "test:1703.03400 [unseen] heading: Model-Agnostic Meta-Learning",
+    "tuples": [
+      {
+        "op": "sample",
+        "object_type": "unknown",
+        "context": "unspecified",
+        "quote": "Sample batch of tasks Ti \u223c p(T)",
+        "grounded": false
+      }
+    ]
+  }
+]

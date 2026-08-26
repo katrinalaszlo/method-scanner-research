@@ -1,0 +1,116 @@
+{
+  "paper": "Rainbow: Combining Improvements in Deep Reinforcement Learning",
+  "timestamp": "20260825_004750",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 16.02,
+  "abstract": "This method builds on the following base algorithm from Playing Atari with Deep Reinforcement Learning (Mnih et al. 2013), which it inherits unchanged except where noted below.\n\n\fAlgorithm 1 Deep Q-learning with Experience Replay\nInitialize replay memory D to capacity N\nInitialize action-value function Q with random weights\nfor episode = 1, M do\nInitialise sequence s1 = {x1 } and preprocessed sequenced φ1 = φ(s1 )\nfor t = 1, T do\nWith probability \u000f select a random action at\notherwise select at = maxa Q∗ (φ(st ), a; θ)\nExecute action at in emulator and observe reward rt and image xt+1\nSet st+1 = st , at , xt+1 and preprocess φt+1 = φ(st+1 )\nStore transition (φt , at , rt , φt+1 ) in D\nSample random\nminibatch of transitions (φj , aj , rj , φj+1 ) from D\n\u001a\nrj\nfor terminal φj+1\nSet yj =\nrj + γ maxa0 Q(φj+1 , a0 ; θ)\nfor non-terminal φj+1\n2\nPerform a gradient descent step on (yj − Q(φj , aj ; θ)) according to equation 3\nend for\nend for\n\nThe modification introduced in this paper:\n\nThe Integrated Agent In this paper we integrate all the aforementioned components into a single integrated agent, which we call Rainbow. First, we replace the 1-step distributional loss (3) with a multi-step variant. We construct the target distribution by contracting the value distribution in St+n according to the cumulative discount, and shifting it by the truncated n-step discounted return. This corresponds to defining the target (n) (n) (n) distribution as dt = (Rt + γt z, pθ (St+n , a∗t+n )). The resulting loss is (n) DKL (Φz dt ||dt ) , where, again, Φz is the projection onto z. We combine the multi-step distributional loss with double Q-learning by using the greedy action in St+n selected according to the online network as the bootstrap action a∗t+n , and evaluating such action using the target network. In standard proportional prioritized replay (Schaul et al. 2015) the absolute TD error is used to prioritize the transitions. This can be computed in the distributional setting, using the mean action values. However, in our experiments all distributional Rainbow variants prioritize transitions by the KL loss, since this is what the algorithm is minimizing: \u0010 \u0011ω (n) pt ∝ DKL (Φz dt ||dt ) . The KL loss as priority might be more robust to noisy stochastic environments because the loss can continue to decrease even when the returns are not deterministic. The network architecture is a dueling network architecture adapted for use with return distributions. The network has a shared representation fξ (s), which is then fed into a value stream vη with Natoms outputs, and into an advantage stream aξ with Natoms × Nactions outputs, where aiξ (fξ (s), a) will denote the output corresponding to atom i and action a. For each atom z i , the value and advantage streams are aggregated, as in dueling DQN, and then passed through a softmax layer to obtain the normalised parametric distributions used to estimate the returns’ distributions: exp(vηi (φ) + aiψ (φ, a) − aiψ (s)) piθ (s, a) = P , j j j j exp(vη (φ) + aψ (φ, a) − aψ (s)) P i 1 0 where φ = fξ (s) and aiψ (s) = Nactions a0 aψ (φ, a ). We then replace all linear layers with their noisy equivalent described in Equation (4). Within these noisy linear layers we use factorised Gaussian noise (Fortunato et al. 2017) to reduce the number of independent noise variables. Experimental Methods We now describe the methods and setup used for configuring and evaluating the learning agents. Evaluation Methodology. We evaluated all agents on 57 Atari 2600 games from the arcade learning environment (Bellemare et al. 2013). We follow the training and evaluation procedures of Mnih et al. (2015) and van Hasselt et al. (2016). The average scores of the agent are evaluated during training, every 1M steps in the environment, by suspending learning and evaluating the latest agent for 500K frames. Episodes are truncated at 108K frames (or 30 minutes of simulated play), as in van Hasselt et al. (2016). Agents’ scores are normalized, per game, so that 0% corresponds to a random agent and 100% to the average score of a human expert. Normalized scores can be aggregated across all Atari levels to compare the performance of different agents. It is common to track the median human normalized performance across all games. We also consider the number of games where the agent’s performance is above some fraction of human performance, to disentangle where improvements in the median come from. The mean human normalized performance is potentially less informative, as it is dominated by a few games (e.g., Atlantis) where agents achieve scores orders of magnitude higher than humans do. Besides tracking the median performance as a function of environment steps, at the end of training we re-evaluate the best agent snapshot using two different testing regimes. In the no-ops starts regime, we insert a random number (up to 30) of no-op actions at the beginning of each episode (as we do also in training). In the human starts regime, episodes are initialized with points randomly sampled from the initial portion of human expert trajectories (Nair et al. 2015); the difference between the two regimes indicates the extent to which the agent has over-fit to its own trajectories. Due to space constraints, we focus on aggregate results across games. However, in the appendix we provide full learning curves for all games and all agents, as well as detailed comparison tables of raw and normalized scores, in both the no-op and human starts testing regimes. Hyper-parameter tuning. All Rainbow’s components have a number of hyper-parameters. The combinatorial space of hyper-parameters is too large for an exhaustive search, therefore we have performed limited tuning. For each component, we started with the values used in the paper that introduced this component, and tuned the most sensitive among hyper-parameters by manual coordinate descent. DQN and its variants do not perform learning updates during the first 200K frames, to ensure sufficiently uncorrelated updates. We have found that, with prioritized replay, it is possible to start learning sooner, after only 80K frames. DQN starts with an exploration \u000f of 1, corresponding to acting uniformly at random; it anneals the amount of exploration over the first 4M frames, to a final value of 0.1 (lowered to 0.01 in later variants). Whenever using Noisy Nets, we acted fully greedily (\u000f = 0), with a value of 0.5 for the σ0 hyper-parameter used to initialize the weights in the noisy stream1 . For agents without Noisy Nets, we used \u000f-greedy but decreased the exploration rate faster than was previously used, annealing \u000f to 0.01 in the first 250K frames. We used the Adam optimizer (Kingma and Ba 2014), which we found less sensitive to the choice of the learning rate than RMSProp. DQN uses a learning rate of α = 0.00025 In all Rainbow’s variants we used a learning rate of α/4, selected among {α/2, α/4, α/6}, and a value of 1.5 × 10−4 for Adam’s \u000f hyper-parameter. For replay prioritization we used the recommended proportional variant, with priority exponent ω of 0.5, and linearly increased the importance sampling exponent β from 0.4 to 1 over the course of training. The priority exponent ω was tuned comparing values of {0.4, 0.5, 0.7}. Using the KL loss of distributional DQN as priority, we have observed that performance is very robust to the choice of ω. The value of n in multi-step learning is a sensitive hyper-parameter of Rainbow. We compared values of n = 1, 3, and 5. We observed that both n = 3 and 5 did well initially, but overall n = 3 performed the best by the end. The hyper-parameters (see Table 1) are identical across all 57 games, i.e., the Rainbow agent really is a single agent setup that performs well across all the games. 1 The noise was generated on the GPU. Tensorflow noise generation can be unreliable on GPU. If generating the noise on the CPU, lowering σ0 to 0.1 may be helpful. Parameter Min history to start learning Adam learning rate Exploration \u000f Noisy Nets σ0 Target Network Period Adam \u000f Prioritization type Prioritization",
+  "source": "arxiv:1710.02298 [policy-learning] injected: DQN Algorithm 1 + pinned: The Integrated Agent",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits —\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We describe a speech enhancement system. A recurrent network estimates a spectral\nmask from noisy audio, the mask is applied to the spectrogram, and the result is inverted back to\na waveform. The method struggles at very low signal-to-noise ratios, where it introduces musical\nnoise artifacts.\nJSON: {\"name\": \"Mask-Based Speech Enhancement\", \"operations\": [\"estimate\", \"mask\", \"invert\"], \"loss\": null, \"failure\": \"musical noise artifacts at very low signal-to-noise ratios\"}\n\nExample\nDescription: We index a document collection with an inverted index. Each document is tokenized,\ntokens are stemmed, and a posting list is built per term. Queries are answered by intersecting\nposting lists and ranking by BM25.\nJSON: {\"name\": \"Inverted Index Retrieval\", \"operations\": [\"tokenize\", \"stem\", \"intersect\", \"rank\"], \"loss\": null, \"failure\": null}\n\nRules for \"failure\": extract it only when the Description itself states a limitation, instability,\nor breakdown condition (for example \"diverges when\", \"struggles with\", \"fails under\"). Quote the\nDescription's own words. If the Description states no weakness, \"failure\" is null — that is the\nnormal case, not a fallback. Never reuse wording from the examples.\n\nNow do the same for:\nDescription: This method builds on the following base algorithm from Playing Atari with Deep Reinforcement Learning (Mnih et al. 2013), which it inherits unchanged except where noted below.\n\n\fAlgorithm 1 Deep Q-learning with Experience Replay\nInitialize replay memory D to capacity N\nInitialize action-value function Q with random weights\nfor episode = 1, M do\nInitialise sequence s1 = {x1 } and preprocessed sequenced φ1 = φ(s1 )\nfor t = 1, T do\nWith probability \u000f select a random action at\notherwise select at = maxa Q∗ (φ(st ), a; θ)\nExecute action at in emulator and observe reward rt and image xt+1\nSet st+1 = st , at , xt+1 and preprocess φt+1 = φ(st+1 )\nStore transition (φt , at , rt , φt+1 ) in D\nSample random\nminibatch of transitions (φj , aj , rj , φj+1 ) from D\n\u001a\nrj\nfor terminal φj+1\nSet yj =\nrj + γ maxa0 Q(φj+1 , a0 ; θ)\nfor non-terminal φj+1\n2\nPerform a gradient descent step on (yj − Q(φj , aj ; θ)) according to equation 3\nend for\nend for\n\nThe modification introduced in this paper:\n\nThe Integrated Agent In this paper we integrate all the aforementioned components into a single integrated agent, which we call Rainbow. First, we replace the 1-step distributional loss (3) with a multi-step variant. We construct the target distribution by contracting the value distribution in St+n according to the cumulative discount, and shifting it by the truncated n-step discounted return. This corresponds to defining the target (n) (n) (n) distribution as dt = (Rt + γt z, pθ (St+n , a∗t+n )). The resulting loss is (n) DKL (Φz dt ||dt ) , where, again, Φz is the projection onto z. We combine the multi-step distributional loss with double Q-learning by using the greedy action in St+n selected according to the online network as the bootstrap action a∗t+n , and evaluating such action using the target network. In standard proportional prioritized replay (Schaul et al. 2015) the absolute TD error is used to prioritize the transitions. This can be computed in the distributional setting, using the mean action values. However, in our experiments all distributional Rainbow variants prioritize transitions by the KL loss, since this is what the algorithm is minimizing: \u0010 \u0011ω (n) pt ∝ DKL (Φz dt ||dt ) . The KL loss as priority might be more robust to noisy stochastic environments because the loss can continue to decrease even when the returns are not deterministic. The network architecture is a dueling network architecture adapted for use with return distributions. The network has a shared representation fξ (s), which is then fed into a value stream vη with Natoms outputs, and into an advantage stream aξ with Natoms × Nactions outputs, where aiξ (fξ (s), a) will denote the output corresponding to atom i and action a. For each atom z i , the value and advantage streams are aggregated, as in dueling DQN, and then passed through a softmax layer to obtain the normalised parametric distributions used to estimate the returns’ distributions: exp(vηi (φ) + aiψ (φ, a) − aiψ (s)) piθ (s, a) = P , j j j j exp(vη (φ) + aψ (φ, a) − aψ (s)) P i 1 0 where φ = fξ (s) and aiψ (s) = Nactions a0 aψ (φ, a ). We then replace all linear layers with their noisy equivalent described in Equation (4). Within these noisy linear layers we use factorised Gaussian noise (Fortunato et al. 2017) to reduce the number of independent noise variables. Experimental Methods We now describe the methods and setup used for configuring and evaluating the learning agents. Evaluation Methodology. We evaluated all agents on 57 Atari 2600 games from the arcade learning environment (Bellemare et al. 2013). We follow the training and evaluation procedures of Mnih et al. (2015) and van Hasselt et al. (2016). The average scores of the agent are evaluated during training, every 1M steps in the environment, by suspending learning and evaluating the latest agent for 500K frames. Episodes are truncated at 108K frames (or 30 minutes of simulated play), as in van Hasselt et al. (2016). Agents’ scores are normalized, per game, so that 0% corresponds to a random agent and 100% to the average score of a human expert. Normalized scores can be aggregated across all Atari levels to compare the performance of different agents. It is common to track the median human normalized performance across all games. We also consider the number of games where the agent’s performance is above some fraction of human performance, to disentangle where improvements in the median come from. The mean human normalized performance is potentially less informative, as it is dominated by a few games (e.g., Atlantis) where agents achieve scores orders of magnitude higher than humans do. Besides tracking the median performance as a function of environment steps, at the end of training we re-evaluate the best agent snapshot using two different testing regimes. In the no-ops starts regime, we insert a random number (up to 30) of no-op actions at the beginning of each episode (as we do also in training). In the human starts regime, episodes are initialized with points randomly sampled from the initial portion of human expert trajectories (Nair et al. 2015); the difference between the two regimes indicates the extent to which the agent has over-fit to its own trajectories. Due to space constraints, we focus on aggregate results across games. However, in the appendix we provide full learning curves for all games and all agents, as well as detailed comparison tables of raw and normalized scores, in both the no-op and human starts testing regimes. Hyper-parameter tuning. All Rainbow’s components have a number of hyper-parameters. The combinatorial space of hyper-parameters is too large for an exhaustive search, therefore we have performed limited tuning. For each component, we started with the values used in the paper that introduced this component, and tuned the most sensitive among hyper-parameters by manual coordinate descent. DQN and its variants do not perform learning updates during the first 200K frames, to ensure sufficiently uncorrelated updates. We have found that, with prioritized replay, it is possible to start learning sooner, after only 80K frames. DQN starts with an exploration \u000f of 1, corresponding to acting uniformly at random; it anneals the amount of exploration over the first 4M frames, to a final value of 0.1 (lowered to 0.01 in later variants). Whenever using Noisy Nets, we acted fully greedily (\u000f = 0), with a value of 0.5 for the σ0 hyper-parameter used to initialize the weights in the noisy stream1 . For agents without Noisy Nets, we used \u000f-greedy but decreased the exploration rate faster than was previously used, annealing \u000f to 0.01 in the first 250K frames. We used the Adam optimizer (Kingma and Ba 2014), which we found less sensitive to the choice of the learning rate than RMSProp. DQN uses a learning rate of α = 0.00025 In all Rainbow’s variants we used a learning rate of α/4, selected among {α/2, α/4, α/6}, and a value of 1.5 × 10−4 for Adam’s \u000f hyper-parameter. For replay prioritization we used the recommended proportional variant, with priority exponent ω of 0.5, and linearly increased the importance sampling exponent β from 0.4 to 1 over the course of training. The priority exponent ω was tuned comparing values of {0.4, 0.5, 0.7}. Using the KL loss of distributional DQN as priority, we have observed that performance is very robust to the choice of ω. The value of n in multi-step learning is a sensitive hyper-parameter of Rainbow. We compared values of n = 1, 3, and 5. We observed that both n = 3 and 5 did well initially, but overall n = 3 performed the best by the end. The hyper-parameters (see Table 1) are identical across all 57 games, i.e., the Rainbow agent really is a single agent setup that performs well across all the games. 1 The noise was generated on the GPU. Tensorflow noise generation can be unreliable on GPU. If generating the noise on the CPU, lowering σ0 to 0.1 may be helpful. Parameter Min history to start learning Adam learning rate Exploration \u000f Noisy Nets σ0 Target Network Period Adam \u000f Prioritization type Prioritization\nJSON:\n",
+  "raw_response": "{\"name\": \"Rainbow\", \"operations\": [\"store\", \"sample\", \"compute\", \"update\"], \"loss\": \"KL loss\", \"failure\": \"KL loss as priority might be more robust to noisy stochastic environments because the loss can continue to decrease even when the returns are not deterministic\"}",
+  "data": {
+    "name": "Rainbow",
+    "operations": [
+      "store",
+      "sample",
+      "compute",
+      "update"
+    ],
+    "loss": "KL loss",
+    "failure": "KL loss as priority might be more robust to noisy stochastic environments because the loss can continue to decrease even when the returns are not deterministic"
+  },
+  "semantic_ops_v2": [
+    {
+      "op": "store",
+      "object_type": "other",
+      "context": "unspecified",
+      "quote": "Store transition (φt , at , rt , φt+1 ) in D",
+      "grounded": true
+    },
+    {
+      "op": "sample",
+      "object_type": "sample",
+      "context": "unspecified",
+      "quote": "Sample random minibatch of transitions (φj , aj , rj , φj+1 ) from D",
+      "grounded": false
+    },
+    {
+      "op": "compute",
+      "object_type": "error",
+      "context": "unspecified",
+      "quote": "Set yj = rj + γ maxa0 Q(φj+1 , a0 ; θ)",
+      "grounded": false
+    },
+    {
+      "op": "update",
+      "object_type": "parameter",
+      "context": "unspecified",
+      "quote": "Perform a gradient descent step on (yj − Q(φj , aj ; θ)) according to equation 3",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_v2_model": "qwen3:8b",
+  "semantic_ops": [
+    {
+      "op": "store",
+      "object_type": "other",
+      "context": "unspecified",
+      "quote": "Store transition (φt , at , rt , φt+1 ) in D",
+      "grounded": true
+    },
+    {
+      "op": "sample",
+      "object_type": "sample",
+      "context": "unspecified",
+      "quote": "Sample random minibatch of transitions (φj , aj , rj , φj+1 ) from D",
+      "grounded": false
+    },
+    {
+      "op": "compute",
+      "object_type": "error",
+      "context": "unspecified",
+      "quote": "Set yj = rj + γ maxa0 Q(φj+1 , a0 ; θ)",
+      "grounded": false
+    },
+    {
+      "op": "update",
+      "object_type": "parameter",
+      "context": "unspecified",
+      "quote": "Perform a gradient descent step on (yj − Q(φj , aj ; θ)) according to equation 3",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_model": "qwen3:8b",
+  "semantic_ops_v2_inherited": [
+    {
+      "op": "store",
+      "object_type": "other",
+      "context": "unspecified",
+      "quote": "Store transition (φt , at , rt , φt+1 ) in D",
+      "grounded": true
+    },
+    {
+      "op": "sample",
+      "object_type": "sample",
+      "context": "unspecified",
+      "quote": "Sample random minibatch of transitions (φj , aj , rj , φj+1 ) from D",
+      "grounded": false
+    },
+    {
+      "op": "update",
+      "object_type": "parameter",
+      "context": "unspecified",
+      "quote": "Perform a gradient descent step on (yj − Q(φj , aj ; θ)) according to equation 3",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_v2_own": [
+    {
+      "op": "compute",
+      "object_type": "error",
+      "context": "unspecified",
+      "quote": "Set yj = rj + γ maxa0 Q(φj+1 , a0 ; θ)",
+      "grounded": false
+    }
+  ]
+}

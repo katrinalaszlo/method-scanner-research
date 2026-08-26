@@ -1,0 +1,165 @@
+diff --git a/config/locomotion.py b/config/locomotion.py
+index 90edd41..97f6561 100644
+--- a/config/locomotion.py
++++ b/config/locomotion.py
+@@ -120,6 +120,10 @@ base = {
+         'scale': 0.1,
+         't_stopgrad': 2,
+         'scale_grad_by_std': True,
++        ## Phase 23
++        'sampler': 'ddpm',
++        'ddim_steps': None,
++        'ddim_eta': 0.0,
+ 
+         ## serialization
+         'loadbase': None,
+diff --git a/diffuser/datasets/buffer.py b/diffuser/datasets/buffer.py
+index 1ad2106..36d7caa 100644
+--- a/diffuser/datasets/buffer.py
++++ b/diffuser/datasets/buffer.py
+@@ -9,7 +9,7 @@ class ReplayBuffer:
+ 
+     def __init__(self, max_n_episodes, max_path_length, termination_penalty):
+         self._dict = {
+-            'path_lengths': np.zeros(max_n_episodes, dtype=np.int),
++            'path_lengths': np.zeros(max_n_episodes, dtype=int)  # Phase 23: np.int removed,
+         }
+         self._count = 0
+         self.max_n_episodes = max_n_episodes
+diff --git a/diffuser/models/diffusion.py b/diffuser/models/diffusion.py
+index b717560..2871509 100644
+--- a/diffuser/models/diffusion.py
++++ b/diffuser/models/diffusion.py
+@@ -190,6 +190,12 @@ class GaussianDiffusion(nn.Module):
+         horizon = horizon or self.horizon
+         shape = (batch_size, horizon, self.transition_dim)
+ 
++        ## Phase 23: route to DDIM when requested; everything else untouched
++        if sample_kwargs.pop('sampler', 'ddpm') == 'ddim':
++            from diffuser.sampling.ddim import ddim_guided_sample_loop
++            sample_kwargs.pop('sample_fn', None)
++            return ddim_guided_sample_loop(self, shape, cond, **sample_kwargs)
++        sample_kwargs.pop('ddim_steps', None); sample_kwargs.pop('ddim_eta', None)
+         return self.p_sample_loop(shape, cond, **sample_kwargs)
+ 
+     #------------------------------------------ training ------------------------------------------#
+diff --git a/diffuser/sampling/policies.py b/diffuser/sampling/policies.py
+index 2387f2c..067f07a 100644
+--- a/diffuser/sampling/policies.py
++++ b/diffuser/sampling/policies.py
+@@ -52,7 +52,7 @@ class GuidedPolicy:
+             conditions,
+             'observations',
+         )
+-        conditions = utils.to_torch(conditions, dtype=torch.float32, device='cuda:0')
++        conditions = utils.to_torch(conditions, dtype=torch.float32, device=utils.DEVICE)  # Phase 23
+         conditions = utils.apply_dict(
+             einops.repeat,
+             conditions,
+diff --git a/diffuser/utils/arrays.py b/diffuser/utils/arrays.py
+index 087ffa9..363ec9f 100644
+--- a/diffuser/utils/arrays.py
++++ b/diffuser/utils/arrays.py
+@@ -4,7 +4,7 @@ import torch
+ import pdb
+ 
+ DTYPE = torch.float
+-DEVICE = 'cuda:0'
++DEVICE = __import__('os').environ.get('DIFFUSER_DEVICE', 'cuda:0')  # Phase 23
+ 
+ #-----------------------------------------------------------------------------#
+ #------------------------------ numpy <--> torch -----------------------------#
+diff --git a/diffuser/utils/config.py b/diffuser/utils/config.py
+index fe83bcb..7777cce 100644
+--- a/diffuser/utils/config.py
++++ b/diffuser/utils/config.py
+@@ -1,5 +1,5 @@
+ import os
+-import collections
++import collections, collections.abc
+ import importlib
+ import pickle
+ 
+@@ -18,7 +18,7 @@ def import_class(_class):
+     print(f'[ utils/config ] Imported {repo_name}.{module_name}:{class_name}')
+     return _class
+ 
+-class Config(collections.Mapping):
++class Config(collections.abc.Mapping):  # Phase 23: py3.10+
+ 
+     def __init__(self, _class, verbose=True, savepath=None, device=None, **kwargs):
+         self._class = import_class(_class)
+@@ -63,6 +63,6 @@ class Config(collections.Mapping):
+ 
+     def __call__(self, *args, **kwargs):
+         instance = self._class(*args, **kwargs, **self._dict)
+-        if self._device:
+-            instance = instance.to(self._device)
++        if self._device:  # Phase 23: pickled configs say 'cuda'; DIFFUSER_DEVICE overrides
++            instance = instance.to(os.environ.get('DIFFUSER_DEVICE', self._device))
+         return instance
+diff --git a/diffuser/utils/logger.py b/diffuser/utils/logger.py
+index a06cc65..22523da 100644
+--- a/diffuser/utils/logger.py
++++ b/diffuser/utils/logger.py
+@@ -13,6 +13,8 @@ class Logger:
+     def log(self, t, samples, state, rollout=None):
+         if t % self.vis_freq != 0:
+             return
++        if getattr(self.renderer, 'viewer', None) is None:
++            return  # Phase 23: no offscreen renderer on this machine; rollout.json is still written by finish()
+ 
+         ## render image of plans
+         self.renderer.composite(
+diff --git a/diffuser/utils/serialization.py b/diffuser/utils/serialization.py
+index d219472..7405934 100644
+--- a/diffuser/utils/serialization.py
++++ b/diffuser/utils/serialization.py
+@@ -33,7 +33,7 @@ def load_config(*loadpath):
+     print(config)
+     return config
+ 
+-def load_diffusion(*loadpath, epoch='latest', device='cuda:0', seed=None):
++def load_diffusion(*loadpath, epoch='latest', device=None, seed=None):  # Phase 23: device unused here
+     dataset_config = load_config(*loadpath, 'dataset_config.pkl')
+     render_config = load_config(*loadpath, 'render_config.pkl')
+     model_config = load_config(*loadpath, 'model_config.pkl')
+diff --git a/diffuser/utils/training.py b/diffuser/utils/training.py
+index fc5d033..6fb1177 100644
+--- a/diffuser/utils/training.py
++++ b/diffuser/utils/training.py
+@@ -154,7 +154,7 @@ class Trainer(object):
+             loads model and ema from disk
+         '''
+         loadpath = os.path.join(self.logdir, f'state_{epoch}.pt')
+-        data = torch.load(loadpath)
++        data = torch.load(loadpath, map_location='cpu', weights_only=False)  # Phase 23: CUDA checkpoint on CPU/MPS
+ 
+         self.step = data['step']
+         self.model.load_state_dict(data['model'])
+diff --git a/scripts/plan_guided.py b/scripts/plan_guided.py
+index d660519..c8dd38d 100644
+--- a/scripts/plan_guided.py
++++ b/scripts/plan_guided.py
+@@ -38,6 +38,10 @@ renderer = diffusion_experiment.renderer
+ 
+ ## initialize value guide
+ value_function = value_experiment.ema
++
++## Phase 23: run on whatever DIFFUSER_DEVICE says (cpu / mps / cuda:0)
++diffusion.to(utils.DEVICE)
++value_function.to(utils.DEVICE)
+ guide_config = utils.Config(args.guide, model=value_function, verbose=False)
+ guide = guide_config()
+ 
+@@ -62,6 +66,10 @@ policy_config = utils.Config(
+     n_guide_steps=args.n_guide_steps,
+     t_stopgrad=args.t_stopgrad,
+     scale_grad_by_std=args.scale_grad_by_std,
++    ## Phase 23: sampler selection (ddpm | ddim), DDIM step count and eta
++    sampler=args.sampler,
++    ddim_steps=args.ddim_steps,
++    ddim_eta=args.ddim_eta,
+     verbose=False,
+ )
+ 

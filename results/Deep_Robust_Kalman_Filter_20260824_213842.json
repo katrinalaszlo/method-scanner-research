@@ -1,0 +1,159 @@
+{
+  "paper": "Deep Robust Kalman Filter",
+  "timestamp": "20260824_213842",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 58.27,
+  "abstract": "4. Solving Large-Scale RMDPs In this section we explain how to combine EKF as a Bayesian method with Deep Q-learning and the robust formulation to solve large scale RMDPs with uncertainty in the transition probabilities. 4.1. Robust Temporal Difference Deep Q-Network (RTD-DQN) Our first step in solving large scale RMDPs with on-line nonlinear approximations is to change the nBTDe presented in Equation (4) with the robust Bellman TD error robust (rBTDe) \u03b4t,\u03b8 and minimize the following objective func0 tion at each time step: Lrobust (\u03b8t ) = t \u00012 1 robust Eo \u223cp(\u00b7) [ \u03b4t,\u03b8 ], 0 (\u03b8t , ot ) 2 t where robust robust \u03b4t,\u03b8 0 (\u03b8t , ot ) = yt,\u03b8 0 (ot ) \u2212 Q(st , at ; \u03b8t ). (13) robust Here, yt,\u03b8 is the robust target label: 0 X robust yt,\u03b8 p(s0 |st , at ) max Q(s0 , a0 ; \u03b8 0 ). 0 (ot ) = rt + \u03b3 min 0 a p\u2208P s0 \u2208S\u0303 (14) Algorithm 1 RTD-DQN Input: P, \u03b3, \u03b1; Initialize: O, \u03b8\u03020|0 , t = 0. 1: for episode = 1 . . . , M do 2: for i = 1, . . . do 3: With probability \u000f select a random action ai , otherwise select ai = arg maxa0 Q(si , a0 ; \u03b8\u0302t|t\u22121 ) 4: Observe oi = {si , ai , ri , si+1 , S\u0303(\u00b7|si ,ai ) } and store it in O. robust 5: Compute yj,\u03b8 0 (oj ) (14) for random mini-batch {oj }kj=1 \u2208 O. 6: Compute \u2207\u03b8t Q(sj , aj ; \u03b8\u0302t|t\u22121 ). 7: Update the weights: \u0002 robust \u03b8\u0302t|t = \u03b8\u0302t|t\u22121 + \u03b1Eoj \u223cO yt,\u03b8 0 (oj )\u2212 \u0001 \u0003 Q(sj , aj ; \u03b8\u0302t|t\u22121 ) \u2207\u03b8t Q(sj , aj ; \u03b8\u0302t|t\u22121 ) 8: t=t+1 9: end for 10: end for Output: \u03b8\u0302t|t The set S\u0303 is the set of all possible next states from state st when taking action at , and it is drawn from the uncertainty robust set P(\u00b7|st ,at ) . Note that yt,\u03b8 is a variation of the robust 0 Bellman function for the optimal Q-function presented in Equation (1). It looks for worst case transitions that may reduce the value of the expected Q-function, and sets the robust target label value according to the minimal expectation. In return, the agent that receives these robust target labels, learns how to act optimally over these transitions. This approach for solving RMDPs is presented in Algorithm 1, RTD-DQN. It is based on the DQN algorithm (Mnih et al., 2013) but incorporates the robust target label instead of the nominal one. RTD-DQN initializes the weights \u03b8\u03020|0 with small random values and holds an experience reply O with finite capacity N . The environment is initialized at the beginning of each episode. We denote the estimation process with subscript t, while the observations at each episode are denoted with subscript i. During an episode the agent observes the uncertainty set P(\u00b7|si ,ai ) for the set of next possible states S\u0303(\u00b7|si ,ai ) . For each mini-batch robust sample oj , the agent computes yj,\u03b8 0 (oj ) (14) and updates the weights according to the gradient descent step (5) with robust nominal yj,\u03b8 replacing yj,\u03b8 . Note that the environment tran0 0 sitions to state si+1 that is drawn from the true unknown MDP model parameter P . However, actions taken by the agent adhere the robust policy, based on the robust target labels. The output of the RTD-DQN algorithm is the MLE M LE weights estimator \u03b8\u0302t|t . The RTD-DQN algorithm incorporates the robust target label into the weights update, but it does not account for uncertainty in the weights. This uncertainty is important for robustness properties. In the next section we suggest to use EKF for this purpose. Deep Robust Kalman Filter 4.2. EKF for Deep Q-learning We propose to improve the performance of RTD-DQN by accounting for uncertainty in the weights in addition to the uncertainty in the transition probabilities. We suggest to use EKF for solving Deep Q-leaning networks. For this purpose, using the formulation for EKF presented in Section 3.4, the observation at time t is simply the nominal nominal target label yt,\u03b8 (ot ) (4) and the observation function is 0 the state-action Q-function, h(\u03b8t ) = Q(st , at ; \u03b8t ). With this formulation, the EKF model for DQN with Bayesian approach becomes: ( \u03b8t = \u03b8t\u22121 + vt . rt + \u03b3 maxa0 Q(st+1 , a0 ; \u03b8 0 ) = Q(st , at ; \u03b8t ) + nt (15) The EKF uses a first order Taylor series linearization for the observation function (Q-function): We now revisit the MAP estimator presented in Equation (6). Given the observations gathered up to time t (denoted as o1:t ) we can write: \u03b8tM AP = arg max log p(\u03b8t |o1:t ) \u03b8t = arg max log p(ot |\u03b8t ) + log p(\u03b8t |o1:t\u22121 ). (19) \u03b8t Here, instead of using the prior of the weights, we present an equivalent derivation for the posterior of the weights conditioned on o1:t , based on the likelihood of a single observation ot and the posterior conditioned on o1:t\u22121 (Van Der Merwe, 2004). When estimating using the EKF, it is common to make the following assumptions regarding the likelihood and the posterior: Assumption 1. The likelihood p(yt (ot )|\u03b8t ) is assumed to be Gaussian: yt (ot )|\u03b8t \u223c N (Eot \u223cp(\u00b7) [Q(st , at ; \u03b8t )], Pnt ). \u2207\u03b8t Q(st , at ; \u03b8\u0302), Assumption 2. The posterior distribution p(\u03b8t |o1:t\u22121 ) is assumed to be Gaussian: \u03b8t |o1:t\u22121 \u223c N (\u03b8\u0302t|t\u22121 , Pt|t\u22121 ). where \u03b8\u0302 is typically chosen to be the previous estimation of the weights at time t \u2212 1, \u03b8\u0302t|t\u22121 . This linearization helps in computing the statistics of interest (see the supplementary material for more detailed derivations): We use the notation yt (ot ) for a general target label (for robust nominal (ot ) or yt,\u03b8 example yt,\u03b8 0 (ot )) that serves as an obser0 vation in the EKF formulation. Based on the Gaussian assumptions, we can derive the following Theorem: Q(st , at ; \u03b8t ) = Q(st , at ; \u03b8\u0302) + \u03b8t \u2212 \u03b8\u0302 \u0001> EKF Theorem 1. Under Assumptions 1 and 2, \u03b8\u0302t|t (18) minimizes at each time step t the following regularized objective function: y\u0302t|t\u22121 (ot ) = Q(st , at ; \u03b8\u0302t|t\u22121 ), P\u03b8\u0303t ,y\u0303(ot ) = Pt|t\u22121 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 ), Py\u0303(ot ) = \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 )> Pt|t\u22121 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 ) + Pn t . (16) The Kalman gain then becomes: Kt = Pt|t\u22121 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 ) (17) \u0010 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 )> Pt|t\u22121 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 ) \u0011\u22121 + Pn t and the update for the weights of the Q-function and the error covariance are: \uf8f1 \u0002 EKF nominal \uf8f4 \uf8f2\u03b8\u0302t|t = \u03b8\u0302t|t\u22121 + Eot \u223cp(\u00b7) Kt yt,\u03b80 (ot ) \u0001\u0003 (18) \u2212Q(st , at ; \u03b8\u0302t|t\u22121 ) \uf8f4 \uf8f3 > Pt|t = Pt|t\u22121 \u2212 Kt Py\u0303(ot ) Kt . It is interesting to note that the Kalman gain Kt (17) can be interpreted as an adaptive learning rate for each individual weight that implicitly incorporates the uncertainty of each weight. This approach resembles familiar stochastic gradient optimization methods such as Adagrad (Duchi et al., 2011), AdaDelta (Zeiler, 2012), RMSprop (Tieleman & Hinton, 2012) and Adam (Kingma & Ba, 2014), for different choices of Pt|t\u22121 and Pnt . We refer the reader to Ruder (2016). \u00012 1 nominal Eo \u223cp(\u00b7) [ \u03b4t,\u03b8 (\u03b8t , ot ) ] 0 2Pnt t 1 + (\u03b8t \u2212 \u03b8\u0302t|t\u22121 )> P\u22121 t|t\u22121 (\u03b8t \u2212 \u03b8\u0302t|t\u22121 ), 2 LEKF (\u03b8t ) = t EKF (\u03b8t ). where \u03b8\u0302t|t \u2208 arg min\u03b8t LEKF t The proof for Theorem 1 appears in the supplementary material. It is based on solving the maximization problem in Equation (19) using the EKF model (15) and the Gaussian assumptions in Assumptions 1 and 2. Note that this objective function is a regularized version of the objective function in Equation (2), where the weights are weighted according to the error covariance matrix nominal Pt|t\u22121 . The nBTDe \u03b4t,\u03b8 is the same as in Equation (3) 0 and the nominal target label is the same as in Equation (4). The observation noise variance Pnt can be interpreted as the regularization coefficient (Rivals & Personnaz, 1998) and we can examine it from two points of view: (1) Looking at Pnt as the amount of confidence we have in the observations: if the observations are noisy, we should consider larger values for Pnt . (2) Treating Pnt as a regularization coefficient: when observations are noisy we would like to put larger impact on the weights prior by increasing Pn t . Deep Robust Kalman Filter Algorithm 2 Deep-RoK Input: P0|0 , Pvt , Pnt , \u03b3, P; Initialize: O, \u03b8\u03020|0 ,",
+  "source": "arxiv:1703.02310 [state-estimation] heading: Solving Large-Scale RMDPs",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits \u2014\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We describe a speech enhancement system. A recurrent network estimates a spectral\nmask from noisy audio, the mask is applied to the spectrogram, and the result is inverted back to\na waveform. The method struggles at very low signal-to-noise ratios, where it introduces musical\nnoise artifacts.\nJSON: {\"name\": \"Mask-Based Speech Enhancement\", \"operations\": [\"estimate\", \"mask\", \"invert\"], \"loss\": null, \"failure\": \"musical noise artifacts at very low signal-to-noise ratios\"}\n\nExample\nDescription: We index a document collection with an inverted index. Each document is tokenized,\ntokens are stemmed, and a posting list is built per term. Queries are answered by intersecting\nposting lists and ranking by BM25.\nJSON: {\"name\": \"Inverted Index Retrieval\", \"operations\": [\"tokenize\", \"stem\", \"intersect\", \"rank\"], \"loss\": null, \"failure\": null}\n\nRules for \"failure\": extract it only when the Description itself states a limitation, instability,\nor breakdown condition (for example \"diverges when\", \"struggles with\", \"fails under\"). Quote the\nDescription's own words. If the Description states no weakness, \"failure\" is null \u2014 that is the\nnormal case, not a fallback. Never reuse wording from the examples.\n\nNow do the same for:\nDescription: 4. Solving Large-Scale RMDPs In this section we explain how to combine EKF as a Bayesian method with Deep Q-learning and the robust formulation to solve large scale RMDPs with uncertainty in the transition probabilities. 4.1. Robust Temporal Difference Deep Q-Network (RTD-DQN) Our first step in solving large scale RMDPs with on-line nonlinear approximations is to change the nBTDe presented in Equation (4) with the robust Bellman TD error robust (rBTDe) \u03b4t,\u03b8 and minimize the following objective func0 tion at each time step: Lrobust (\u03b8t ) = t \u00012 1 robust Eo \u223cp(\u00b7) [ \u03b4t,\u03b8 ], 0 (\u03b8t , ot ) 2 t where robust robust \u03b4t,\u03b8 0 (\u03b8t , ot ) = yt,\u03b8 0 (ot ) \u2212 Q(st , at ; \u03b8t ). (13) robust Here, yt,\u03b8 is the robust target label: 0 X robust yt,\u03b8 p(s0 |st , at ) max Q(s0 , a0 ; \u03b8 0 ). 0 (ot ) = rt + \u03b3 min 0 a p\u2208P s0 \u2208S\u0303 (14) Algorithm 1 RTD-DQN Input: P, \u03b3, \u03b1; Initialize: O, \u03b8\u03020|0 , t = 0. 1: for episode = 1 . . . , M do 2: for i = 1, . . . do 3: With probability \u000f select a random action ai , otherwise select ai = arg maxa0 Q(si , a0 ; \u03b8\u0302t|t\u22121 ) 4: Observe oi = {si , ai , ri , si+1 , S\u0303(\u00b7|si ,ai ) } and store it in O. robust 5: Compute yj,\u03b8 0 (oj ) (14) for random mini-batch {oj }kj=1 \u2208 O. 6: Compute \u2207\u03b8t Q(sj , aj ; \u03b8\u0302t|t\u22121 ). 7: Update the weights: \u0002 robust \u03b8\u0302t|t = \u03b8\u0302t|t\u22121 + \u03b1Eoj \u223cO yt,\u03b8 0 (oj )\u2212 \u0001 \u0003 Q(sj , aj ; \u03b8\u0302t|t\u22121 ) \u2207\u03b8t Q(sj , aj ; \u03b8\u0302t|t\u22121 ) 8: t=t+1 9: end for 10: end for Output: \u03b8\u0302t|t The set S\u0303 is the set of all possible next states from state st when taking action at , and it is drawn from the uncertainty robust set P(\u00b7|st ,at ) . Note that yt,\u03b8 is a variation of the robust 0 Bellman function for the optimal Q-function presented in Equation (1). It looks for worst case transitions that may reduce the value of the expected Q-function, and sets the robust target label value according to the minimal expectation. In return, the agent that receives these robust target labels, learns how to act optimally over these transitions. This approach for solving RMDPs is presented in Algorithm 1, RTD-DQN. It is based on the DQN algorithm (Mnih et al., 2013) but incorporates the robust target label instead of the nominal one. RTD-DQN initializes the weights \u03b8\u03020|0 with small random values and holds an experience reply O with finite capacity N . The environment is initialized at the beginning of each episode. We denote the estimation process with subscript t, while the observations at each episode are denoted with subscript i. During an episode the agent observes the uncertainty set P(\u00b7|si ,ai ) for the set of next possible states S\u0303(\u00b7|si ,ai ) . For each mini-batch robust sample oj , the agent computes yj,\u03b8 0 (oj ) (14) and updates the weights according to the gradient descent step (5) with robust nominal yj,\u03b8 replacing yj,\u03b8 . Note that the environment tran0 0 sitions to state si+1 that is drawn from the true unknown MDP model parameter P . However, actions taken by the agent adhere the robust policy, based on the robust target labels. The output of the RTD-DQN algorithm is the MLE M LE weights estimator \u03b8\u0302t|t . The RTD-DQN algorithm incorporates the robust target label into the weights update, but it does not account for uncertainty in the weights. This uncertainty is important for robustness properties. In the next section we suggest to use EKF for this purpose. Deep Robust Kalman Filter 4.2. EKF for Deep Q-learning We propose to improve the performance of RTD-DQN by accounting for uncertainty in the weights in addition to the uncertainty in the transition probabilities. We suggest to use EKF for solving Deep Q-leaning networks. For this purpose, using the formulation for EKF presented in Section 3.4, the observation at time t is simply the nominal nominal target label yt,\u03b8 (ot ) (4) and the observation function is 0 the state-action Q-function, h(\u03b8t ) = Q(st , at ; \u03b8t ). With this formulation, the EKF model for DQN with Bayesian approach becomes: ( \u03b8t = \u03b8t\u22121 + vt . rt + \u03b3 maxa0 Q(st+1 , a0 ; \u03b8 0 ) = Q(st , at ; \u03b8t ) + nt (15) The EKF uses a first order Taylor series linearization for the observation function (Q-function): We now revisit the MAP estimator presented in Equation (6). Given the observations gathered up to time t (denoted as o1:t ) we can write: \u03b8tM AP = arg max log p(\u03b8t |o1:t ) \u03b8t = arg max log p(ot |\u03b8t ) + log p(\u03b8t |o1:t\u22121 ). (19) \u03b8t Here, instead of using the prior of the weights, we present an equivalent derivation for the posterior of the weights conditioned on o1:t , based on the likelihood of a single observation ot and the posterior conditioned on o1:t\u22121 (Van Der Merwe, 2004). When estimating using the EKF, it is common to make the following assumptions regarding the likelihood and the posterior: Assumption 1. The likelihood p(yt (ot )|\u03b8t ) is assumed to be Gaussian: yt (ot )|\u03b8t \u223c N (Eot \u223cp(\u00b7) [Q(st , at ; \u03b8t )], Pnt ). \u2207\u03b8t Q(st , at ; \u03b8\u0302), Assumption 2. The posterior distribution p(\u03b8t |o1:t\u22121 ) is assumed to be Gaussian: \u03b8t |o1:t\u22121 \u223c N (\u03b8\u0302t|t\u22121 , Pt|t\u22121 ). where \u03b8\u0302 is typically chosen to be the previous estimation of the weights at time t \u2212 1, \u03b8\u0302t|t\u22121 . This linearization helps in computing the statistics of interest (see the supplementary material for more detailed derivations): We use the notation yt (ot ) for a general target label (for robust nominal (ot ) or yt,\u03b8 example yt,\u03b8 0 (ot )) that serves as an obser0 vation in the EKF formulation. Based on the Gaussian assumptions, we can derive the following Theorem: Q(st , at ; \u03b8t ) = Q(st , at ; \u03b8\u0302) + \u03b8t \u2212 \u03b8\u0302 \u0001> EKF Theorem 1. Under Assumptions 1 and 2, \u03b8\u0302t|t (18) minimizes at each time step t the following regularized objective function: y\u0302t|t\u22121 (ot ) = Q(st , at ; \u03b8\u0302t|t\u22121 ), P\u03b8\u0303t ,y\u0303(ot ) = Pt|t\u22121 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 ), Py\u0303(ot ) = \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 )> Pt|t\u22121 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 ) + Pn t . (16) The Kalman gain then becomes: Kt = Pt|t\u22121 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 ) (17) \u0010 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 )> Pt|t\u22121 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 ) \u0011\u22121 + Pn t and the update for the weights of the Q-function and the error covariance are: \uf8f1 \u0002 EKF nominal \uf8f4 \uf8f2\u03b8\u0302t|t = \u03b8\u0302t|t\u22121 + Eot \u223cp(\u00b7) Kt yt,\u03b80 (ot ) \u0001\u0003 (18) \u2212Q(st , at ; \u03b8\u0302t|t\u22121 ) \uf8f4 \uf8f3 > Pt|t = Pt|t\u22121 \u2212 Kt Py\u0303(ot ) Kt . It is interesting to note that the Kalman gain Kt (17) can be interpreted as an adaptive learning rate for each individual weight that implicitly incorporates the uncertainty of each weight. This approach resembles familiar stochastic gradient optimization methods such as Adagrad (Duchi et al., 2011), AdaDelta (Zeiler, 2012), RMSprop (Tieleman & Hinton, 2012) and Adam (Kingma & Ba, 2014), for different choices of Pt|t\u22121 and Pnt . We refer the reader to Ruder (2016). \u00012 1 nominal Eo \u223cp(\u00b7) [ \u03b4t,\u03b8 (\u03b8t , ot ) ] 0 2Pnt t 1 + (\u03b8t \u2212 \u03b8\u0302t|t\u22121 )> P\u22121 t|t\u22121 (\u03b8t \u2212 \u03b8\u0302t|t\u22121 ), 2 LEKF (\u03b8t ) = t EKF (\u03b8t ). where \u03b8\u0302t|t \u2208 arg min\u03b8t LEKF t The proof for Theorem 1 appears in the supplementary material. It is based on solving the maximization problem in Equation (19) using the EKF model (15) and the Gaussian assumptions in Assumptions 1 and 2. Note that this objective function is a regularized version of the objective function in Equation (2), where the weights are weighted according to the error covariance matrix nominal Pt|t\u22121 . The nBTDe \u03b4t,\u03b8 is the same as in Equation (3) 0 and the nominal target label is the same as in Equation (4). The observation noise variance Pnt can be interpreted as the regularization coefficient (Rivals & Personnaz, 1998) and we can examine it from two points of view: (1) Looking at Pnt as the amount of confidence we have in the observations: if the observations are noisy, we should consider larger values for Pnt . (2) Treating Pnt as a regularization coefficient: when observations are noisy we would like to put larger impact on the weights prior by increasing Pn t . Deep Robust Kalman Filter Algorithm 2 Deep-RoK Input: P0|0 , Pvt , Pnt , \u03b3, P; Initialize: O, \u03b8\u03020|0 ,\nJSON:\n",
+  "raw_response": "{\n  \"name\": \"RTD-DQN and EKF for Deep Q-learning\",\n  \"operations\": [\"compute robust target label\", \"update weights\", \"linearize observation function\", \"derive posterior distribution\", \"kalman gain update\", \"update weights and error covariance\"],\n  \"loss\": \"robust Bellman TD error\",\n  \"failure\": \"does not account for uncertainty in the weights\"\n}",
+  "data": {
+    "name": "RTD-DQN and EKF for Deep Q-learning",
+    "operations": [
+      "compute robust target label",
+      "update weights",
+      "linearize observation function",
+      "derive posterior distribution",
+      "kalman gain update",
+      "update weights and error covariance"
+    ],
+    "loss": "robust Bellman TD error",
+    "failure": "does not account for uncertainty in the weights"
+  },
+  "semantic_ops": [
+    {
+      "op": "compute robust target label",
+      "object_type": "other",
+      "context": "unspecified",
+      "quote": "yt,\u03b8 is the robust target label: rt + \u03b3 min a p\u2208P s0 \u2208S\u0303 (14)",
+      "grounded": false
+    },
+    {
+      "op": "update weights",
+      "object_type": "parameter",
+      "context": "nonlinear",
+      "quote": "Update the weights: \u03b8\u0302t|t = \u03b8\u0302t|t\u22121 + \u03b1Eoj \u223cO yt,\u03b8 0 (oj )\u2212 Q(sj , aj ; \u03b8\u0302t|t\u22121 ) \u2207\u03b8t Q(sj , aj ; \u03b8\u0302t|t\u22121 )",
+      "grounded": false
+    },
+    {
+      "op": "linearize observation function",
+      "object_type": "other",
+      "context": "nonlinear",
+      "quote": "EKF uses a first order Taylor series linearization for the observation function (Q-function)",
+      "grounded": true
+    },
+    {
+      "op": "derive posterior distribution",
+      "object_type": "distribution",
+      "context": "stochastic",
+      "quote": "\u03b8t |o1:t\u22121 \u223c N (\u03b8\u0302t|t\u22121 , Pt|t\u22121 )",
+      "grounded": true
+    },
+    {
+      "op": "kalman gain update",
+      "object_type": "gradient",
+      "context": "stochastic",
+      "quote": "Kalman gain then becomes: Kt = Pt|t\u22121 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 )",
+      "grounded": true
+    },
+    {
+      "op": "update weights and error covariance",
+      "object_type": "parameter",
+      "context": "nonlinear",
+      "quote": "\u03b8\u0302t|t = \u03b8\u0302t|t\u22121 + Eot \u223cp(\u00b7) Kt yt,\u03b80 (ot ) \u2212 Q(st , at ; \u03b8\u0302t|t\u22121 )",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_model": "qwen3:8b",
+  "semantic_ops_pass2": [
+    {
+      "op": "compute robust target label",
+      "object_type": "state",
+      "context": "unspecified",
+      "quote": "yt,\u03b8 0 (ot ) = rt + \u03b3 min 0 a p\u2208P s0 \u2208S\u0303 (14)",
+      "grounded": false
+    },
+    {
+      "op": "update weights",
+      "object_type": "parameter",
+      "context": "unspecified",
+      "quote": "Update the weights: \u0002 robust \u03b8\u0302t|t = \u03b8\u0302t|t\u22121 + \u03b1Eoj \u223cO yt,\u03b8 0 (oj )\u2212 \u0001 \u0003 Q(sj , aj ; \u03b8\u0302t|t\u22121 ) \u2207\u03b8t Q(sj , aj ; \u03b8\u0302t|t\u22121 )",
+      "grounded": true
+    },
+    {
+      "op": "linearize observation function",
+      "object_type": "distribution",
+      "context": "unspecified",
+      "quote": "We use the notation yt (ot ) for a general target label (for robust nominal (ot ) or yt,\u03b8 example yt,\u03b8 0 (ot )) that serves as an obser0 vation in the EKF formulation.",
+      "grounded": true
+    },
+    {
+      "op": "derive posterior distribution",
+      "object_type": "distribution",
+      "context": "unspecified",
+      "quote": "\u03b8tM AP = arg max log p(\u03b8t |o1:t ) \u03b8t = arg max log p(ot |\u03b8t ) + log p(\u03b8t |o1:t\u22121 ). (19)",
+      "grounded": true
+    },
+    {
+      "op": "kalman gain update",
+      "object_type": "gradient",
+      "context": "unspecified",
+      "quote": "Kt = Pt|t\u22121 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 ) (17) \u0010 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 )> Pt|t\u22121 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 ) \u0011\u22121 + Pn t",
+      "grounded": true
+    },
+    {
+      "op": "update weights and error covariance",
+      "object_type": "parameter",
+      "context": "unspecified",
+      "quote": "\u03b8\u0302t|t = \u03b8\u0302t|t\u22121 + Eot \u223cp(\u00b7) Kt yt,\u03b80 (ot ) \u0001\u0003 \u2212Q(st , at ; \u03b8\u0302t|t\u22121 )",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_pass2_model": "qwen3:8b",
+  "semantic_ops_v2": [
+    {
+      "op": "compute robust target label",
+      "object_type": "value",
+      "context": "nonlinear",
+      "quote": "yt,\u03b8 is a variation of the robust Bellman function for the optimal Q-function.",
+      "grounded": false
+    },
+    {
+      "op": "update weights",
+      "object_type": "parameter",
+      "context": "nonlinear",
+      "quote": "Update the weights: \u03b8\u0302t|t = \u03b8\u0302t|t\u22121 + \u03b1Eoj \u223cO yt,\u03b8 0 (oj )\u2212 Q(sj , aj ; \u03b8\u0302t|t\u22121 ) \u2207\u03b8t Q(sj , aj ; \u03b8\u0302t|t\u22121 )",
+      "grounded": false
+    },
+    {
+      "op": "linearize observation function",
+      "object_type": "other",
+      "context": "nonlinear",
+      "quote": "The EKF uses a first order Taylor series linearization for the observation function (Q-function).",
+      "grounded": true
+    },
+    {
+      "op": "derive posterior distribution",
+      "object_type": "distribution",
+      "context": "nonlinear",
+      "quote": "The posterior distribution p(\u03b8t |o1:t\u22121 ) is assumed to be Gaussian.",
+      "grounded": true
+    },
+    {
+      "op": "kalman gain update",
+      "object_type": "gradient",
+      "context": "nonlinear",
+      "quote": "The Kalman gain then becomes: Kt = Pt|t\u22121 \u2207\u03b8t Q(st , at ; \u03b8\u0302t|t\u22121 ) (17)",
+      "grounded": true
+    },
+    {
+      "op": "update weights and error covariance",
+      "object_type": "parameter",
+      "context": "nonlinear",
+      "quote": "\u03b8\u0302t|t = \u03b8\u0302t|t\u22121 + Eot \u223cp(\u00b7) Kt yt,\u03b80 (ot ) \u2212 Q(st , at ; \u03b8\u0302t|t\u22121 )",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_v2_model": "qwen3:8b"
+}

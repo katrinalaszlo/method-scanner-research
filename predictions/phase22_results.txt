@@ -1,0 +1,65 @@
+Phase 22 — guard fix, TD3 re-extract, inherited/own split, delta-paper test on diffusion + meta-learning (2026-08-25)
+Matrices matrices/phase22_{lexical,semantic_strict_v2,semantic_relaxed_v2,semantic_strict_v2_own}.csv; RL sub-matrix matrices/phase22_rl_submatrix_strict_v2.csv.
+Snapshots results_phase21_snapshot/ (pre-Phase-22 TD3, DDIM, Reptile). Sections predictions/phase21_sections/{2010.02502,1803.02999}.txt.
+Code: app.py guard_state() now fills store/sample/select/act@other -> sample/action (read-time, all records); compare.py --own; phase22_split.py; phase21_inject.py extended with DDPM, MAML bases.
+
+TRACK A — FIXES
+  Rainbow store@other -> store@sample      DONE by rule, not by hand: NEVER_STATE now also fires on object_type other/unknown. Rainbow x DDPG 0.20->0.33, x DQN 0.15->0.25.
+  TD3 store/sample/select                  NOT MET. Re-extracted the injected text via /api/rerun: identical ops again — update critic, update actor, update target networks.
+                                           The extractor reads DDPG's Algorithm 1 + TD3's 4.2 and summarises the loop into its three update steps. Twice. Recorded, not forced.
+  replay-off-policy (strict v2)            0.19 -> 0.21   target >0.20   MET (by the guard fix alone)
+
+TRACK B — INHERITED vs OWN (phase22_split.py: inherited = head verb appears in the base paper's own extracted ops)
+  DDQN     inherited store transition@sample, sample minibatch@sample, update network@parameter     own compute target@value
+  TD3      inherited update critic@value, update actor@policy, update target networks@parameter    own (none)
+  Rainbow  inherited store@sample, sample@sample, update@parameter                                 own compute@error
+  DDIM     inherited predict@latent, sample@sample                                                 own denoise@latent
+  Reptile  inherited sample task@task, update parameters@parameter, update initialization@parameter own compute gradient@gradient
+
+  within-family strict v2        full    own-only
+    replay-off-policy (5)        0.21    0.04      (DQN x DDPG 0.36 is the only nonzero pair; DDQN/TD3/Rainbow have 0-1 own ops)
+    diffusion (5)                0.07    0.02
+    meta-learning (3)            0.34    0.10
+    on-policy (3)                0.43    0.43      (no injected members — unchanged, the control)
+  Own-only target >0.15 for replay-off-policy: NOT MET (0.04).
+  Reading: the family's coherence IS the inherited DQN loop. The delta papers' own contributions (a target rule, a loss, a projection) are one op each
+  and do not form a family among themselves. That is not a defect of the family — it is what an incremental lineage is. "Real family" vs "inherited
+  structure" is a false dichotomy for delta papers: the mechanism they share is the one they inherit. The honest statement: replay-off-policy is a
+  base-loop family with five members, two of which (DQN, DDPG) carry the loop in their own text and three of which carry it by citation.
+
+TRACK C — DELTA-PAPER TEST OUTSIDE RL (strict v2, before -> after injection)
+  DDPM -> DDIM        DDIM x DDPM  0.00 -> 0.50     DDIM to diffusion peers 0.10 -> 0.12     diffusion family 0.06 -> 0.07
+                      DDIM before: sample@state, reverse@..., etc. (section 3, variational objective). After: predict@latent, sample@sample, denoise@latent.
+                      Pattern holds: DDIM's own text (the non-Markovian objective) does not restate the DDPM training/sampling loop; injection surfaces it.
+                      Family barely moves because the other diffusion papers (score-SDE, EDM, Sohl-Dickstein) each describe their own loop — DDIM was one delta in a family of restaters.
+  MAML -> Reptile     Reptile x MAML  0.40 -> 0.40   Reptile to meta peers 0.36 -> 0.36      meta-learning 0.34 -> 0.34
+                      Reptile prints its own Algorithm 1 in the pinned section. Injection changed nothing — the loop was already there.
+                      This is the control the by-construction caveat needed: prepending the base loop does NOT inflate a paper that already restates it.
+  Verdict: delta-paper is a general property of incremental papers, not RL-specific — DDIM shows it. But it is per-paper, not per-lineage: Reptile is
+  an incremental paper that restates its loop. RL lineages (Atari/MuJoCo) are unusual in that most members omit the loop.
+
+FINAL FAMILY STRUCTURE (strict v2, full ops, 58 papers, mechanism families)
+  on-policy          3   0.43   PPO, TRPO, SAC                              coheres on own ops
+  meta-learning      3   0.34   MAML, Reptile, Meta-SGD
+  replay-off-policy  5   0.21   DQN, DDPG, DDQN(inj), TD3(inj), Rainbow(inj)  base-loop family; 3 members injected
+  jepa               5   0.21   I-JEPA, V-JEPA, BYOL, SimSiam, ...
+  pc-learning        9   0.13   incl. DKF (weak)
+  particle           5   0.11   incl. BBVI
+  diffusion          5   0.07   DDIM(inj)
+  state-estimation   8   0.06   incl. Var. Tracking, L-VSSF (orphan)
+  pc-neuro           3   0.06
+  worldmodels        6   0.03   incl. DVBF (orphan)
+  control            5   0.00
+  a3c-outlier        1   —
+  Note: lexical replay-off-policy 0.63 and on-policy 1.00 — lexical is saturated on injected/restated loops; strict v2 is the score to read.
+
+ANSWERS
+  Q1 replay-off-policy >0.20 after fixes?      Yes, 0.21. Guard fix did it; TD3 fix did not land.
+  Q2 coheres on own ops only?                  No, 0.04. Delta papers have 0-1 own ops. The family is the inherited loop — which is the correct description of this lineage, not a failure.
+  Q3 delta-paper general or RL-specific?       General per paper (DDIM 0.00->0.50), not per lineage (Reptile unchanged). Injection does not inflate papers that already restate the loop.
+  Q4 final structure?                          Table above. 11 families + 1 outlier. Three families cohere >0.30 on own text (on-policy, meta-learning; jepa 0.21 next).
+
+NEXT (candidates)
+  - TD3: extractor summarises pseudocode when a prose section follows it. Try injecting the loop AFTER the delta section, or capping the delta at 600 words.
+  - Score injected papers both ways in the UI/CSV (full vs own) so the inheritance is visible per record, not just in the matrix.
+  - Decide whether injection becomes pipeline policy: every paper that cites a base algorithm without restating it gets base+own. Needs a citation-detection step; currently manual.

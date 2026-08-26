@@ -1,0 +1,648 @@
+{
+  "arxiv_id": "2301.04104",
+  "title": "Mastering Diverse Domains through World Models",
+  "methods": [
+    {
+      "method_name": "DreamerV3 (printed as 'Dreamer' in Table 9)",
+      "is_own_method": true,
+      "one_paragraph_description": "General world-model algorithm with a single configuration across domains. Learns an RSSM world model (CNN encoder, block-GRU sequence model, discrete latents with unimix, symlog observation prediction, twohot symexp reward/critic heads, KL balancing with free bits) from replayed experience, and trains an actor-critic purely on imagined latent trajectories of horizon 15 using lambda-returns, percentile-based return normalization and entropy regularization. Runtime action selection is the actor applied to the model's latent state.",
+      "conventional_lineage_hint": "'Dreamer learns a model of the environment and improves its behavior by imagining future scenarios' (Abstract); 'We present the third generation of the Dreamer line of work' — model-based RL / world models",
+      "global_conditions": {
+        "environment_steps": {
+          "value": "400K env steps = 100K agent steps (action repeat 4)",
+          "quote": "  Atari100K               26       400K          4          1         128        0.1      200M",
+          "location": "Table 2 (Benchmark overview)"
+        },
+        "action_repeat": {
+          "value": 4,
+          "quote": "  Atari100K               26       400K          4          1         128        0.1      200M",
+          "location": "Table 2 (Benchmark overview)"
+        },
+        "env_instances": {
+          "value": 1,
+          "quote": "  Atari100K               26       400K          4          1         128        0.1      200M",
+          "location": "Table 2 (Benchmark overview)"
+        },
+        "replay_ratio": {
+          "value": 128,
+          "quote": "  Atari100K               26       400K          4          1         128        0.1      200M",
+          "location": "Table 2 (Benchmark overview)"
+        },
+        "gpu_days": {
+          "value": 0.1,
+          "quote": "  Atari100K               26       400K          4          1         128        0.1      200M",
+          "location": "Table 2 (Benchmark overview)"
+        },
+        "model_size": {
+          "value": "200M",
+          "quote": "  Atari100K               26       400K          4          1         128        0.1      200M",
+          "location": "Table 2 (Benchmark overview)"
+        },
+        "hidden_size": {
+          "value": 1024,
+          "quote": " Hidden size (d)                      256        384         512        768        1024        1536",
+          "location": "Table 3 (Model sizes)"
+        },
+        "recurrent_units": {
+          "value": 8192,
+          "quote": " Recurrent units (8d)                1024       3072        4096       6144        8192       12288",
+          "location": "Table 3 (Model sizes)"
+        },
+        "base_cnn_channels": {
+          "value": 64,
+          "quote": " Base CNN channels (d/16)              16         24          32         48          64          96",
+          "location": "Table 3 (Model sizes)"
+        },
+        "codes_per_latent": {
+          "value": 64,
+          "quote": " Codes per latent (d/16)               16         24          32         48          64          96",
+          "location": "Table 3 (Model sizes)"
+        },
+        "replay_capacity": {
+          "value": "5e6",
+          "quote": "Replay capacity                              —                 5 × 106",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "batch_size": {
+          "value": 16,
+          "quote": "Batch size                                   B                   16",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "batch_length": {
+          "value": 64,
+          "quote": "Batch length                                 T                   64",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "activation": {
+          "value": "RMSNorm + SiLU",
+          "quote": "Activation                                   —            RMSNorm + SiLU",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "learning_rate": {
+          "value": "4e-5",
+          "quote": "Learning rate                                —                4 × 10−5",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "gradient_clipping": {
+          "value": "AGC(0.3)",
+          "quote": "Gradient clipping                            —               AGC(0.3)",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "optimizer": {
+          "value": "LaProp (eps=1e-20)",
+          "quote": "Optimizer                                    —            LaProp(ϵ = 10−20 )",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "reconstruction_loss_scale": {
+          "value": 1,
+          "quote": "Reconstruction loss scale                   βpred                  1",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "dynamics_loss_scale": {
+          "value": 1,
+          "quote": "Dynamics loss scale                         βdyn                   1",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "representation_loss_scale": {
+          "value": 0.1,
+          "quote": "Representation loss scale                   βrep                  0.1",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "latent_unimix": {
+          "value": "1%",
+          "quote": "Latent unimix                                —                    1%",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "free_nats": {
+          "value": 1,
+          "quote": "Free nats                                    —                     1",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "imagination_horizon": {
+          "value": 15,
+          "quote": "Imagination horizon                          H                    15",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "discount_horizon": {
+          "value": "333 (1/(1-gamma))",
+          "quote": "Discount horizon                         1/(1 − γ)               333",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "return_lambda": {
+          "value": 0.95,
+          "quote": "Return lambda                                λ                   0.95",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "critic_loss_scale": {
+          "value": 1,
+          "quote": "Critic loss scale                           βval                   1",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "critic_replay_loss_scale": {
+          "value": 0.3,
+          "quote": "Critic replay loss scale                   βrepval                0.3",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "critic_ema_regularizer": {
+          "value": 1,
+          "quote": "Critic EMA regularizer                       —                     1",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "critic_ema_decay": {
+          "value": 0.98,
+          "quote": "Critic EMA decay                             —                   0.98",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "actor_loss_scale": {
+          "value": 1,
+          "quote": "Actor loss scale                            βpol                   1",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "actor_entropy_regularizer": {
+          "value": "3e-4",
+          "quote": "Actor entropy regularizer                    η                3 × 10−4",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "actor_unimix": {
+          "value": "1%",
+          "quote": "Actor unimix                                 —                   1%",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "actor_retnorm_scale": {
+          "value": "Per(R,95) - Per(R,5)",
+          "quote": "Actor RetNorm scale                         S          Per(R, 95) − Per(R, 5)",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "actor_retnorm_limit": {
+          "value": 1,
+          "quote": "Actor RetNorm limit                          L                     1",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "actor_retnorm_decay": {
+          "value": 0.99,
+          "quote": "Actor RetNorm decay                          —                   0.99",
+          "location": "Table 4 (Hyperparameters)"
+        },
+        "no_annealing_prioritized_replay_weight_decay_dropout": {
+          "value": "none used",
+          "quote": "not use any hyperparameter annealing, prioritized replay, weight decay, or dropout.",
+          "location": "Table 4 caption"
+        },
+        "compute": {
+          "value": "single Nvidia A100 GPU",
+          "quote": "   Table 2: Benchmark overview. All agents were trained on a single Nvidia A100 GPU each.",
+          "location": "Table 2 (Benchmark overview)"
+        }
+      },
+      "per_dataset_conditions": {},
+      "evaluation_protocol": {
+        "seeds": "5 seeds",
+        "episodes_per_seed": "not stated; Table 10 marks 'Separate eval episodes' as '—' for Dreamer",
+        "checkpoint_selection": "score at 400K env steps (end of budget)",
+        "quote": "Seeds and error bars We run 5 seeds for each Dreamer and PPO per benchmark, with the exception | Separate eval episodes      X          X            X            X             X          —",
+        "location": "Benchmarks section (p.19); Table 10"
+      },
+      "dataset_version": {
+        "value": "Atari100k: 400K env steps = 100K agent steps, action repeat 4, single env instance; Dreamer does NOT use life information, early resets, or separate eval episodes (Table 10); sticky actions stated explicitly only for the 57-game Atari 200M benchmark; for Atari100k the paper says 'we chose the environments as originally introduced'",
+        "quote": "env steps, corresponding to about 100 days of in-game time. Atari100k 17 includes 26 tasks with | a budget of 400K env steps, 100K after action repeat. Prior work has used various environment | settings, summarized in Table 10, and we chose the environments as originally introduced. | Atari 38 uses 57 tasks with sticky actions 65 .",
+        "location": "Benchmarks / Protocols (p.19); Table 10"
+      },
+      "rows": [
+        {
+          "dataset": "Alien",
+          "outcome": 1118.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Alien                      228   7128      276       617      842        675      420     1118",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Amidar",
+          "outcome": 97.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Amidar                       6   1720       26        74      180        122      143       97",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Assault",
+          "outcome": 683.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Assault                    222    742      327       527      566        683     1524      683",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Asterix",
+          "outcome": 1062.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Asterix                    210   8503      292      1128      962       1117      854     1062",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Bank Heist",
+          "outcome": 398.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Bank Heist                  14    753       14        34      345        467       53      398",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Battle Zone",
+          "outcome": 20300.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Battle Zone               2360  37188     2233      4031    14834       5068    13074    20300",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Boxing",
+          "outcome": 82.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Boxing                       0     12        3         8       36         78       70       82",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Breakout",
+          "outcome": 10.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Breakout                     2     30        3        16       20         20       84       10",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Chopper Command",
+          "outcome": 2222.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Chopper Command            811   7388     1005       979      946       1697     1565     2222",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Crazy Climber",
+          "outcome": 86225.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Crazy Climber            10780  35829    14675    62584     36700      71820    59324    86225",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Demon Attack",
+          "outcome": 577.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Demon Attack               152   1971      160       208      518        350     2034      577",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Freeway",
+          "outcome": 0.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Freeway                      0     30        2        17       19         24       31        0",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Frostbite",
+          "outcome": 3377.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Frostbite                   65   4335      127       237     1171       1476      259     3377",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Gopher",
+          "outcome": 2160.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Gopher                     258   2412      368       597      661       1675     2236     2160",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Hero",
+          "outcome": 13354.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Hero                      1027  30826     2596      2657     5859       7254     7037    13354",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Jamesbond",
+          "outcome": 540.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Jamesbond                   29    303       41       100      366        362      463      540",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Kangaroo",
+          "outcome": 2643.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Kangaroo                    52   3035       55        51     3617       1240      838     2643",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Krull",
+          "outcome": 8171.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Krull                     1598   2666     3222      2205     3682       6349     6616     8171",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Kung Fu Master",
+          "outcome": 25900.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Kung Fu Master             258  22736     2090    14862     14783      24555    21760    25900",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Ms Pacman",
+          "outcome": 1521.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Ms Pacman                  307   6952      366      1480     1318       1588      999     1521",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Pong",
+          "outcome": -4.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Pong                       –21     15      –20        13       –5         19       15       –4",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Private Eye",
+          "outcome": 3238.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Private Eye                 25  69571      100        35       86         87      100     3238",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Qbert",
+          "outcome": 2921.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Qbert                      164  13455      317      1289      866       3331      746     2921",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Road Runner",
+          "outcome": 19230.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Road Runner                 12   7845      602      5641    12213       9109     9615    19230",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Seaquest",
+          "outcome": 962.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Seaquest                    68  42055      305       683      558        774      661      962",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        },
+        {
+          "dataset": "Up N Down",
+          "outcome": 46910.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 9",
+          "line_quote": " Up N Down                  533  11693     1502      3350    10859      15982     3546    46910",
+          "notes": "raw score as printed (rounded to integer); column 'Dreamer'; 400K env steps = 100k agent steps; 5 seeds; no std in table; Table 10 marks Dreamer as NOT using separate eval episodes"
+        }
+      ]
+    }
+  ],
+  "reference_scores": {
+    "Alien": {
+      "random": 228.0,
+      "human": 7128.0,
+      "line_quote": " Alien                      228   7128      276       617      842        675      420     1118"
+    },
+    "Amidar": {
+      "random": 6.0,
+      "human": 1720.0,
+      "line_quote": " Amidar                       6   1720       26        74      180        122      143       97"
+    },
+    "Assault": {
+      "random": 222.0,
+      "human": 742.0,
+      "line_quote": " Assault                    222    742      327       527      566        683     1524      683"
+    },
+    "Asterix": {
+      "random": 210.0,
+      "human": 8503.0,
+      "line_quote": " Asterix                    210   8503      292      1128      962       1117      854     1062"
+    },
+    "Bank Heist": {
+      "random": 14.0,
+      "human": 753.0,
+      "line_quote": " Bank Heist                  14    753       14        34      345        467       53      398"
+    },
+    "Battle Zone": {
+      "random": 2360.0,
+      "human": 37188.0,
+      "line_quote": " Battle Zone               2360  37188     2233      4031    14834       5068    13074    20300"
+    },
+    "Boxing": {
+      "random": 0.0,
+      "human": 12.0,
+      "line_quote": " Boxing                       0     12        3         8       36         78       70       82"
+    },
+    "Breakout": {
+      "random": 2.0,
+      "human": 30.0,
+      "line_quote": " Breakout                     2     30        3        16       20         20       84       10"
+    },
+    "Chopper Command": {
+      "random": 811.0,
+      "human": 7388.0,
+      "line_quote": " Chopper Command            811   7388     1005       979      946       1697     1565     2222"
+    },
+    "Crazy Climber": {
+      "random": 10780.0,
+      "human": 35829.0,
+      "line_quote": " Crazy Climber            10780  35829    14675    62584     36700      71820    59324    86225"
+    },
+    "Demon Attack": {
+      "random": 152.0,
+      "human": 1971.0,
+      "line_quote": " Demon Attack               152   1971      160       208      518        350     2034      577"
+    },
+    "Freeway": {
+      "random": 0.0,
+      "human": 30.0,
+      "line_quote": " Freeway                      0     30        2        17       19         24       31        0"
+    },
+    "Frostbite": {
+      "random": 65.0,
+      "human": 4335.0,
+      "line_quote": " Frostbite                   65   4335      127       237     1171       1476      259     3377"
+    },
+    "Gopher": {
+      "random": 258.0,
+      "human": 2412.0,
+      "line_quote": " Gopher                     258   2412      368       597      661       1675     2236     2160"
+    },
+    "Hero": {
+      "random": 1027.0,
+      "human": 30826.0,
+      "line_quote": " Hero                      1027  30826     2596      2657     5859       7254     7037    13354"
+    },
+    "Jamesbond": {
+      "random": 29.0,
+      "human": 303.0,
+      "line_quote": " Jamesbond                   29    303       41       100      366        362      463      540"
+    },
+    "Kangaroo": {
+      "random": 52.0,
+      "human": 3035.0,
+      "line_quote": " Kangaroo                    52   3035       55        51     3617       1240      838     2643"
+    },
+    "Krull": {
+      "random": 1598.0,
+      "human": 2666.0,
+      "line_quote": " Krull                     1598   2666     3222      2205     3682       6349     6616     8171"
+    },
+    "Kung Fu Master": {
+      "random": 258.0,
+      "human": 22736.0,
+      "line_quote": " Kung Fu Master             258  22736     2090    14862     14783      24555    21760    25900"
+    },
+    "Ms Pacman": {
+      "random": 307.0,
+      "human": 6952.0,
+      "line_quote": " Ms Pacman                  307   6952      366      1480     1318       1588      999     1521"
+    },
+    "Pong": {
+      "random": -21.0,
+      "human": 15.0,
+      "line_quote": " Pong                       –21     15      –20        13       –5         19       15       –4"
+    },
+    "Private Eye": {
+      "random": 25.0,
+      "human": 69571.0,
+      "line_quote": " Private Eye                 25  69571      100        35       86         87      100     3238"
+    },
+    "Qbert": {
+      "random": 164.0,
+      "human": 13455.0,
+      "line_quote": " Qbert                      164  13455      317      1289      866       3331      746     2921"
+    },
+    "Road Runner": {
+      "random": 12.0,
+      "human": 7845.0,
+      "line_quote": " Road Runner                 12   7845      602      5641    12213       9109     9615    19230"
+    },
+    "Seaquest": {
+      "random": 68.0,
+      "human": 42055.0,
+      "line_quote": " Seaquest                    68  42055      305       683      558        774      661      962"
+    },
+    "Up N Down": {
+      "random": 533.0,
+      "human": 11693.0,
+      "line_quote": " Up N Down                  533  11693     1502      3350    10859      15982     3546    46910"
+    }
+  },
+  "baseline_rows_seen": [
+    "Random",
+    "Human",
+    "PPO",
+    "SimPLe",
+    "SPR",
+    "TWM",
+    "IRIS"
+  ],
+  "problems": [
+    "Table 9 prints scores rounded to integers (e.g. Random Pong '–21', Human '15'), so reference scores differ in precision from other papers; en-dash minus signs normalized when parsing (line_quote keeps original).",
+    "Model-size and replay-ratio ablations (Figure 6) are on Crafter and DMLab, not tabulated per Atari100k game -> no variant rows.",
+    "Sticky-action setting for Atari100k not explicitly stated ('environments as originally introduced'); sticky actions explicitly stated only for the 57-game Atari benchmark.",
+    "Number of evaluation episodes not stated; Table 10 indicates Dreamer uses no separate eval episodes.",
+    "Table 6 (Atari scores, layout lines ~1196-1224) is the 200M-frame benchmark and was excluded."
+  ]
+}

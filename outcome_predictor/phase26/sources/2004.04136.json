@@ -1,0 +1,785 @@
+{
+ "arxiv_id": "2004.04136",
+ "title": "CURL: Contrastive Unsupervised Representations for Reinforcement Learning",
+ "methods": [
+  {
+   "method_name": "CURL (on Efficient Rainbow)",
+   "is_own_method": true,
+   "one_paragraph_description": "Adds a momentum-contrastive (InfoNCE) auxiliary loss on random-cropped frame stacks to the Efficient Rainbow encoder (query encoder trained jointly with the RL loss, key encoder an EMA with tau=0.001); all other hyperparameters identical to van Hasselt et al. (2019) Efficient Rainbow; trained 100k steps.",
+   "conventional_lineage_hint": "contrastive representation learning for model-free RL ('extracts high-level features from raw pixels using contrastive learning and performs off-policy control on top of the extracted features', abstract)",
+   "global_conditions": {
+    "random_crop": {
+     "value": "True",
+     "quote": "B. Atari100k Implementation Details                                Random crop                        True",
+     "location": "Table 4"
+    },
+    "image_size": {
+     "value": "(84, 84)",
+     "quote": "Image size                         (84, 84)",
+     "location": "Table 4"
+    },
+    "data_augmentation": {
+     "value": "Random Crop (Train)",
+     "quote": "The flexibility of CURL allows us to apply it to discrete          Data Augmentation                  Random Crop (Train)",
+     "location": "Table 4"
+    },
+    "replay_buffer_size": {
+     "value": "100000",
+     "quote": "control setting with minimal modifications. Similar to our         Replay buffer size                 100000",
+     "location": "Table 4"
+    },
+    "training_frames": {
+     "value": "400000",
+     "quote": "rationale for picking SAC as the baseline RL algorithm to          Training frames                    400000",
+     "location": "Table 4"
+    },
+    "training_steps": {
+     "value": "100000",
+     "quote": "Training steps                     100000",
+     "location": "Table 4"
+    },
+    "frame_skip": {
+     "value": "4",
+     "quote": "couple CURL with (for continuous control), we pick the             Frame skip                         4",
+     "location": "Table 4"
+    },
+    "stacked_frames": {
+     "value": "4",
+     "quote": "data-efficient version of Rainbow DQN (Efficient Rainbow)          Stacked frames                     4",
+     "location": "Table 4"
+    },
+    "action_repeat": {
+     "value": "4",
+     "quote": "(van Hasselt et al., 2019) for Atari100K which performs            Action repeat                      4",
+     "location": "Table 4"
+    },
+    "replay_period": {
+     "value": "every 1",
+     "quote": "competitively with an older version of SimPLe (most re-            Replay period every                1",
+     "location": "Table 4"
+    },
+    "q_network_channels": {
+     "value": "32, 64",
+     "quote": "cent version has improved numbers). In order to understand         Q network: channels                32, 64",
+     "location": "Table 4"
+    },
+    "q_network_filter_size": {
+     "value": "5x5, 5x5",
+     "quote": "Q network: filter size             5 × 5, 5 × 5",
+     "location": "Table 4"
+    },
+    "q_network_stride": {
+     "value": "5, 5",
+     "quote": "specifically what the gains from CURL are without any              Q network: stride                  5, 5",
+     "location": "Table 4"
+    },
+    "q_network_hidden_units": {
+     "value": "256",
+     "quote": "other changes, we adopt the exact same hyperparameters             Q network: hidden units            256",
+     "location": "Table 4"
+    },
+    "encoder_momentum_ema_tau": {
+     "value": "0.001",
+     "quote": "specified in the paper (van Hasselt et al., 2019) (including       Momentum (EMA for CURL) τ          0.001",
+     "location": "Table 4"
+    },
+    "non_linearity": {
+     "value": "ReLU",
+     "quote": "a modified convolutional encoder that uses larger kernel           Non-linearity                      ReLU",
+     "location": "Table 4"
+    },
+    "reward_clipping": {
+     "value": "[-1, 1]",
+     "quote": "size and stride of 5). We present the details in Table 4.          Reward Clipping                    [−1, 1]",
+     "location": "Table 4"
+    },
+    "multi_step_return": {
+     "value": "20",
+     "quote": "Multi step return                  20",
+     "location": "Table 4"
+    },
+    "min_replay_size": {
+     "value": "1600",
+     "quote": "Similar to DMControl, the contrastive objective and the            Minimum replay size for sampling   1600",
+     "location": "Table 4"
+    },
+    "max_frames_per_episode": {
+     "value": "108K",
+     "quote": "RL objective are weighted equally for learning (except for         Max frames per episode             108K",
+     "location": "Table 4"
+    },
+    "update": {
+     "value": "Distributional Double Q",
+     "quote": "Pong, Freeway, Boxing and PrivateEye for which we used a           Update                             Distributional Double Q",
+     "location": "Table 4"
+    },
+    "target_network_update_period": {
+     "value": "every 2000 updates",
+     "quote": "coefficient of 0.05 for the momentum contastive loss. On           Target Network Update Period       every 2000 updates",
+     "location": "Table 4"
+    },
+    "q_distribution_support": {
+     "value": "51 bins",
+     "quote": "a large majority (22 out of 26) of the games, we do not            Support-of-Q-distribution          51 bins",
+     "location": "Table 4"
+    },
+    "discount": {
+     "value": "0.99",
+     "quote": "Discount γ                         0.99",
+     "location": "Table 4"
+    },
+    "batch_size": {
+     "value": "32",
+     "quote": "use this adjustment. While it is standard practice to use          Batch Size                         32",
+     "location": "Table 4"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "the same hyperparameters for all games in Atari, papers            Optimizer                          Adam",
+     "location": "Table 4"
+    },
+    "learning_rate": {
+     "value": "0.0001",
+     "quote": "proposing auxiliary losses have adopted a different practice       Optimizer: learning rate           0.0001",
+     "location": "Table 4"
+    },
+    "adam_beta1": {
+     "value": "0.9",
+     "quote": "of using game specific coefficients (Jaderberg et al., 2016).).    Optimizer: β1                      0.9",
+     "location": "Table 4"
+    },
+    "adam_beta2": {
+     "value": "0.999",
+     "quote": "We use the Efficient Rainbow codebase from https:                  Optimizer: β2                      0.999",
+     "location": "Table 4"
+    },
+    "adam_epsilon": {
+     "value": "0.000015 (row label garbled: 'Optimizer 0.000015')",
+     "quote": "Optimizer \u000f                        0.000015",
+     "location": "Table 4"
+    },
+    "max_gradient_norm": {
+     "value": "10",
+     "quote": "//github.com/Kaixhin/Rainbow which has a re-                       Max gradient norm                  10",
+     "location": "Table 4"
+    },
+    "exploration": {
+     "value": "Noisy Nets",
+     "quote": "produced version of van Hasselt et al. (2019). We evaluate         Exploration                        Noisy Nets",
+     "location": "Table 4"
+    },
+    "noisy_nets_parameter": {
+     "value": "0.1",
+     "quote": "with 20 random seeds and report the mean score for each            Noisy nets parameter               0.1",
+     "location": "Table 4"
+    },
+    "priority_exponent": {
+     "value": "0.5",
+     "quote": "game given the high variance nature of the Atari100k steps         Priority exponent                  0.5",
+     "location": "Table 4"
+    },
+    "priority_correction": {
+     "value": "0.4 -> 1",
+     "quote": "benchmark. We restrict ourselves to using grayscale render-        Priority correction                0.4 → 1",
+     "location": "Table 4"
+    },
+    "hardware": {
+     "value": "CPU",
+     "quote": "Hardware                           CPU",
+     "location": "Table 4"
+    },
+    "codebase": {
+     "value": "Kaixhin/Rainbow (Efficient Rainbow reproduction)",
+     "quote": "We use the Efficient Rainbow codebase from https:                  Optimizer: β2                      0.999 //github.com/Kaixhin/Rainbow which has a re-                       Max gradient norm                  10",
+     "location": "Appendix B"
+    },
+    "observations": {
+     "value": "grayscale, random crop of frame stack",
+     "quote": "ings of image observations and use random crop of frame",
+     "location": "Appendix B"
+    }
+   },
+   "per_dataset_conditions": {
+    "Pong": {
+     "contrastive_loss_coefficient": {
+      "value": "0.05",
+      "quote": "RL objective are weighted equally for learning (except for         Max frames per episode             108K Pong, Freeway, Boxing and PrivateEye for which we used a           Update                             Distributional Double Q coefficient of 0.05 for the momentum contastive loss. On           Target Network Update Period       every 2000 updates",
+      "location": "Appendix B"
+     }
+    },
+    "Freeway": {
+     "contrastive_loss_coefficient": {
+      "value": "0.05",
+      "quote": "RL objective are weighted equally for learning (except for         Max frames per episode             108K Pong, Freeway, Boxing and PrivateEye for which we used a           Update                             Distributional Double Q coefficient of 0.05 for the momentum contastive loss. On           Target Network Update Period       every 2000 updates",
+      "location": "Appendix B"
+     }
+    },
+    "Boxing": {
+     "contrastive_loss_coefficient": {
+      "value": "0.05",
+      "quote": "RL objective are weighted equally for learning (except for         Max frames per episode             108K Pong, Freeway, Boxing and PrivateEye for which we used a           Update                             Distributional Double Q coefficient of 0.05 for the momentum contastive loss. On           Target Network Update Period       every 2000 updates",
+      "location": "Appendix B"
+     }
+    },
+    "PrivateEye": {
+     "contrastive_loss_coefficient": {
+      "value": "0.05",
+      "quote": "RL objective are weighted equally for learning (except for         Max frames per episode             108K Pong, Freeway, Boxing and PrivateEye for which we used a           Update                             Distributional Double Q coefficient of 0.05 for the momentum contastive loss. On           Target Network Update Period       every 2000 updates",
+      "location": "Appendix B"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "20",
+    "episodes_per_seed": "not stated for Atari (Table 3 'Evaluation episodes 10' is the DMControl table)",
+    "checkpoint_selection": "after 100K interaction steps",
+    "quote": "produced version of van Hasselt et al. (2019). We evaluate         Exploration                        Noisy Nets with 20 random seeds and report the mean score for each            Noisy nets parameter               0.1 game given the high variance nature of the Atari100k steps         Priority exponent                  0.5 | on 19 out of 26 games. We also run CURL with 20 random seeds given that this benchmark is susceptible to high variance across multiple",
+    "location": "Appendix B / Table 2 caption"
+   },
+   "dataset_version": {
+    "value": "100K interaction steps = 400K frames, frame skip 4; sticky actions not mentioned; max 108K frames per episode; eval episodes for Atari not stated",
+    "quote": "six environments presented in Yarats et al. (2019): ball-in-       method are evaluated for performance after 100K interac- cup, finger-spin, reacher-easy, cheetah-run, walker-walk,          tion steps (400K frames with a frame skip of 4) which cor- | rationale for picking SAC as the baseline RL algorithm to          Training frames                    400000 | Training steps                     100000",
+    "location": "Section 5 / Table 4"
+   },
+   "rows": [
+    {
+     "dataset": "Alien",
+     "outcome": 558.2,
+     "std": 160.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "A LIEN                      7127.7        227.8        318.7         616.9           824.7             739.9           558.2 || 2955.2 6279.3 12146.5       1058.5       817.6     142.1 558.2   131.6     4.9      26.7 -16.5    218.4      1.2 || 1181.1 1871.5  4765.6        299.1       176.6     20.0 160.3     94.4     1.4      2.4    2.9    417.9     10.0",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "Amidar",
+     "outcome": 142.1,
+     "std": 20.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "A MIDAR                     1719.5          5.8         32.5          88.0           82.8              188.6           142.1 || 2955.2 6279.3 12146.5       1058.5       817.6     142.1 558.2   131.6     4.9      26.7 -16.5    218.4      1.2 || 1181.1 1871.5  4765.6        299.1       176.6     20.0 160.3     94.4     1.4      2.4    2.9    417.9     10.0",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "Assault",
+     "outcome": 600.6,
+     "std": 89.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "A SSAULT                     742.0        222.4          231         527.2          351.9             431.2             600.6 || 1465.5 1181.3 734.5        14307.8     872.5    669.3    5661       471      14870     384.5    600.6 4229.6 1042.4 || 397.5  856.2    129.8      7919.3     600.1    220.6   3289.3     226.2    5964.3     170.2    89.5 2540.6 828.4",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "Asterix",
+     "outcome": 734.5,
+     "std": 129.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "A STERIX                    8503.3        210.0        243.6        1128.3           628.5             470.8            734.5 || 1465.5 1181.3 734.5        14307.8     872.5    669.3    5661       471      14870     384.5    600.6 4229.6 1042.4 || 397.5  856.2    129.8      7919.3     600.1    220.6   3289.3     226.2    5964.3     170.2    89.5 2540.6 828.4",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "BankHeist",
+     "outcome": 131.6,
+     "std": 94.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "BANK H EIST                  753.1         14.2        15.55          34.2           182.1              51.0           131.6 || 2955.2 6279.3 12146.5       1058.5       817.6     142.1 558.2   131.6     4.9      26.7 -16.5    218.4      1.2 || 1181.1 1871.5  4765.6        299.1       176.6     20.0 160.3     94.4     1.4      2.4    2.9    417.9     10.0",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "BattleZone",
+     "outcome": 14870.0,
+     "std": 5964.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "BATTLE Z ONE               37187.5       2360.0        2360.0       5184.4         4060.6            10124.6          14870.0 || 1465.5 1181.3 734.5        14307.8     872.5    669.3    5661       471      14870     384.5    600.6 4229.6 1042.4 || 397.5  856.2    129.8      7919.3     600.1    220.6   3289.3     226.2    5964.3     170.2    89.5 2540.6 828.4",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "Boxing",
+     "outcome": 1.2,
+     "std": 10.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "0.05"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "B OXING                       12.1          0.1         -24.8         9.1             2.5               0.2               1.2 || 2955.2 6279.3 12146.5       1058.5       817.6     142.1 558.2   131.6     4.9      26.7 -16.5    218.4      1.2 || 1181.1 1871.5  4765.6        299.1       176.6     20.0 160.3     94.4     1.4      2.4    2.9    417.9     10.0",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "Breakout",
+     "outcome": 4.9,
+     "std": 1.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "B REAKOUT                     30.5          1.7          1.2          16.4            9.84              1.9               4.9 || 2955.2 6279.3 12146.5       1058.5       817.6     142.1 558.2   131.6     4.9      26.7 -16.5    218.4      1.2 || 1181.1 1871.5  4765.6        299.1       176.6     20.0 160.3     94.4     1.4      2.4    2.9    417.9     10.0",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "ChopperCommand",
+     "outcome": 1058.5,
+     "std": 299.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "C HOPPER C OMMAND           7387.8        811.0        120.0        1246.9         1033.33            861.8            1058.5 || 2955.2 6279.3 12146.5       1058.5       817.6     142.1 558.2   131.6     4.9      26.7 -16.5    218.4      1.2 || 1181.1 1871.5  4765.6        299.1       176.6     20.0 160.3     94.4     1.4      2.4    2.9    417.9     10.0",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "CrazyClimber",
+     "outcome": 12146.5,
+     "std": 4765.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "CRAZY CLIMBER              35829.4      10780.5       2254.5       62583.6         21327.8           16185.3          12146.5 || 2955.2 6279.3 12146.5       1058.5       817.6     142.1 558.2   131.6     4.9      26.7 -16.5    218.4      1.2 || 1181.1 1871.5  4765.6        299.1       176.6     20.0 160.3     94.4     1.4      2.4    2.9    417.9     10.0",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "DemonAttack",
+     "outcome": 817.6,
+     "std": 176.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "DEMON ATTACK                1971.0        152.1        163.6         208.1          711.8             508.0             817.6 || 2955.2 6279.3 12146.5       1058.5       817.6     142.1 558.2   131.6     4.9      26.7 -16.5    218.4      1.2 || 1181.1 1871.5  4765.6        299.1       176.6     20.0 160.3     94.4     1.4      2.4    2.9    417.9     10.0",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "Freeway",
+     "outcome": 26.7,
+     "std": 2.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "0.05"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "FREEWAY                       29.6          0.0          0.0          20.3           25.0               27.9             26.7 || 2955.2 6279.3 12146.5       1058.5       817.6     142.1 558.2   131.6     4.9      26.7 -16.5    218.4      1.2 || 1181.1 1871.5  4765.6        299.1       176.6     20.0 160.3     94.4     1.4      2.4    2.9    417.9     10.0",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "Frostbite",
+     "outcome": 1181.3,
+     "std": 856.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "FROSTBITE                   4334.7         65.2         60.2         254.7          231.6             866.8            1181.3 || 1465.5 1181.3 734.5        14307.8     872.5    669.3    5661       471      14870     384.5    600.6 4229.6 1042.4 || 397.5  856.2    129.8      7919.3     600.1    220.6   3289.3     226.2    5964.3     170.2    89.5 2540.6 828.4",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "Gopher",
+     "outcome": 669.3,
+     "std": 220.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "GOPHER                      2412.5        257.6        431.2         771.0           778.0             349.5           669.3 || 1465.5 1181.3 734.5        14307.8     872.5    669.3    5661       471      14870     384.5    600.6 4229.6 1042.4 || 397.5  856.2    129.8      7919.3     600.1    220.6   3289.3     226.2    5964.3     170.2    89.5 2540.6 828.4",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "Hero",
+     "outcome": 6279.3,
+     "std": 1871.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "HERO                       30826.4       1027.0          487        2656.6         6458.8             6857.0          6279.3 || 2955.2 6279.3 12146.5       1058.5       817.6     142.1 558.2   131.6     4.9      26.7 -16.5    218.4      1.2 || 1181.1 1871.5  4765.6        299.1       176.6     20.0 160.3     94.4     1.4      2.4    2.9    417.9     10.0",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "JamesBond",
+     "outcome": 471.0,
+     "std": 226.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "JAMESBOND                    302.8         29.0         47.4         125.3          112.3             301.6             471.0 || 1465.5 1181.3 734.5        14307.8     872.5    669.3    5661       471      14870     384.5    600.6 4229.6 1042.4 || 397.5  856.2    129.8      7919.3     600.1    220.6   3289.3     226.2    5964.3     170.2    89.5 2540.6 828.4",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "Kangaroo",
+     "outcome": 872.5,
+     "std": 600.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "KANGAROO                    3035.0         52.0          0.0         323.1          605.4             779.3             872.5 || 1465.5 1181.3 734.5        14307.8     872.5    669.3    5661       471      14870     384.5    600.6 4229.6 1042.4 || 397.5  856.2    129.8      7919.3     600.1    220.6   3289.3     226.2    5964.3     170.2    89.5 2540.6 828.4",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "Krull",
+     "outcome": 4229.6,
+     "std": 2540.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "KRULL                       2665.5       1598.0         1468        4539.9          3277.9            2851.5           4229.6 || 1465.5 1181.3 734.5        14307.8     872.5    669.3    5661       471      14870     384.5    600.6 4229.6 1042.4 || 397.5  856.2    129.8      7919.3     600.1    220.6   3289.3     226.2    5964.3     170.2    89.5 2540.6 828.4",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "KungFuMaster",
+     "outcome": 14307.8,
+     "std": 7919.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "KUNG FU MASTER             22736.3       258.5            0.       17257.2          5722.2           14346.1          14307.8 || 1465.5 1181.3 734.5        14307.8     872.5    669.3    5661       471      14870     384.5    600.6 4229.6 1042.4 || 397.5  856.2    129.8      7919.3     600.1    220.6   3289.3     226.2    5964.3     170.2    89.5 2540.6 828.4",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "MsPacman",
+     "outcome": 1465.5,
+     "std": 397.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "MS PACMAN                   6951.6        307.3           67        1480.0           941.9            1204.1           1465.5 || 1465.5 1181.3 734.5        14307.8     872.5    669.3    5661       471      14870     384.5    600.6 4229.6 1042.4 || 397.5  856.2    129.8      7919.3     600.1    220.6   3289.3     226.2    5964.3     170.2    89.5 2540.6 828.4",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "Pong",
+     "outcome": -16.5,
+     "std": 2.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "0.05"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "P ONG                         14.6        -20.7         -20.6        12.8             1.3              -19.3            -16.5 || 2955.2 6279.3 12146.5       1058.5       817.6     142.1 558.2   131.6     4.9      26.7 -16.5    218.4      1.2 || 1181.1 1871.5  4765.6        299.1       176.6     20.0 160.3     94.4     1.4      2.4    2.9    417.9     10.0",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "PrivateEye",
+     "outcome": 218.4,
+     "std": 417.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "0.05"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "P RIVATE EYE               69571.3        24.9            0           58.3          100.0              97.8             218.4 || 2955.2 6279.3 12146.5       1058.5       817.6     142.1 558.2   131.6     4.9      26.7 -16.5    218.4      1.2 || 1181.1 1871.5  4765.6        299.1       176.6     20.0 160.3     94.4     1.4      2.4    2.9    417.9     10.0",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "Qbert",
+     "outcome": 1042.4,
+     "std": 828.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "Q BERT                     13455.0        163.9       123.46        1288.8           509.3            1152.9           1042.4 || 1465.5 1181.3 734.5        14307.8     872.5    669.3    5661       471      14870     384.5    600.6 4229.6 1042.4 || 397.5  856.2    129.8      7919.3     600.1    220.6   3289.3     226.2    5964.3     170.2    89.5 2540.6 828.4",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "RoadRunner",
+     "outcome": 5661.0,
+     "std": 3289.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "ROAD RUNNER                 7845.0         11.5       1588.46       5640.6         2696.7             9600.0          5661.0 || 1465.5 1181.3 734.5        14307.8     872.5    669.3    5661       471      14870     384.5    600.6 4229.6 1042.4 || 397.5  856.2    129.8      7919.3     600.1    220.6   3289.3     226.2    5964.3     170.2    89.5 2540.6 828.4",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "Seaquest",
+     "outcome": 384.5,
+     "std": 170.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "SEAQUEST                   42054.7        68.4        131.69         683.3          286.92             354.1            384.5 || 1465.5 1181.3 734.5        14307.8     872.5    669.3    5661       471      14870     384.5    600.6 4229.6 1042.4 || 397.5  856.2    129.8      7919.3     600.1    220.6   3289.3     226.2    5964.3     170.2    89.5 2540.6 828.4",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    },
+    {
+     "dataset": "UpNDown",
+     "outcome": 2955.2,
+     "std": 1181.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "base_agent": "Efficient Rainbow",
+      "contrastive_loss_coefficient": "1 (equal weighting)"
+     },
+     "table": "Table 2 (std from Table 6/7)",
+     "line_quote": "U P N D OWN                11693.2       533.4         504.6        3350.3          2847.6            2877.4           2955.2 || 2955.2 6279.3 12146.5       1058.5       817.6     142.1 558.2   131.6     4.9      26.7 -16.5    218.4      1.2 || 1181.1 1871.5  4765.6        299.1       176.6     20.0 160.3     94.4     1.4      2.4    2.9    417.9     10.0",
+     "notes": "raw score, mean over 20 seeds; std across the 20 runs from Table 6/7 last rows"
+    }
+   ]
+  }
+ ],
+ "reference_scores": {
+  "Alien": {
+   "human": 7127.7,
+   "random": 227.8,
+   "line_quote": "A LIEN                      7127.7        227.8        318.7         616.9           824.7             739.9           558.2",
+   "table": "Table 2"
+  },
+  "Amidar": {
+   "human": 1719.5,
+   "random": 5.8,
+   "line_quote": "A MIDAR                     1719.5          5.8         32.5          88.0           82.8              188.6           142.1",
+   "table": "Table 2"
+  },
+  "Assault": {
+   "human": 742.0,
+   "random": 222.4,
+   "line_quote": "A SSAULT                     742.0        222.4          231         527.2          351.9             431.2             600.6",
+   "table": "Table 2"
+  },
+  "Asterix": {
+   "human": 8503.3,
+   "random": 210.0,
+   "line_quote": "A STERIX                    8503.3        210.0        243.6        1128.3           628.5             470.8            734.5",
+   "table": "Table 2"
+  },
+  "BankHeist": {
+   "human": 753.1,
+   "random": 14.2,
+   "line_quote": "BANK H EIST                  753.1         14.2        15.55          34.2           182.1              51.0           131.6",
+   "table": "Table 2"
+  },
+  "BattleZone": {
+   "human": 37187.5,
+   "random": 2360.0,
+   "line_quote": "BATTLE Z ONE               37187.5       2360.0        2360.0       5184.4         4060.6            10124.6          14870.0",
+   "table": "Table 2"
+  },
+  "Boxing": {
+   "human": 12.1,
+   "random": 0.1,
+   "line_quote": "B OXING                       12.1          0.1         -24.8         9.1             2.5               0.2               1.2",
+   "table": "Table 2"
+  },
+  "Breakout": {
+   "human": 30.5,
+   "random": 1.7,
+   "line_quote": "B REAKOUT                     30.5          1.7          1.2          16.4            9.84              1.9               4.9",
+   "table": "Table 2"
+  },
+  "ChopperCommand": {
+   "human": 7387.8,
+   "random": 811.0,
+   "line_quote": "C HOPPER C OMMAND           7387.8        811.0        120.0        1246.9         1033.33            861.8            1058.5",
+   "table": "Table 2"
+  },
+  "CrazyClimber": {
+   "human": 35829.4,
+   "random": 10780.5,
+   "line_quote": "CRAZY CLIMBER              35829.4      10780.5       2254.5       62583.6         21327.8           16185.3          12146.5",
+   "table": "Table 2"
+  },
+  "DemonAttack": {
+   "human": 1971.0,
+   "random": 152.1,
+   "line_quote": "DEMON ATTACK                1971.0        152.1        163.6         208.1          711.8             508.0             817.6",
+   "table": "Table 2"
+  },
+  "Freeway": {
+   "human": 29.6,
+   "random": 0.0,
+   "line_quote": "FREEWAY                       29.6          0.0          0.0          20.3           25.0               27.9             26.7",
+   "table": "Table 2"
+  },
+  "Frostbite": {
+   "human": 4334.7,
+   "random": 65.2,
+   "line_quote": "FROSTBITE                   4334.7         65.2         60.2         254.7          231.6             866.8            1181.3",
+   "table": "Table 2"
+  },
+  "Gopher": {
+   "human": 2412.5,
+   "random": 257.6,
+   "line_quote": "GOPHER                      2412.5        257.6        431.2         771.0           778.0             349.5           669.3",
+   "table": "Table 2"
+  },
+  "Hero": {
+   "human": 30826.4,
+   "random": 1027.0,
+   "line_quote": "HERO                       30826.4       1027.0          487        2656.6         6458.8             6857.0          6279.3",
+   "table": "Table 2"
+  },
+  "JamesBond": {
+   "human": 302.8,
+   "random": 29.0,
+   "line_quote": "JAMESBOND                    302.8         29.0         47.4         125.3          112.3             301.6             471.0",
+   "table": "Table 2"
+  },
+  "Kangaroo": {
+   "human": 3035.0,
+   "random": 52.0,
+   "line_quote": "KANGAROO                    3035.0         52.0          0.0         323.1          605.4             779.3             872.5",
+   "table": "Table 2"
+  },
+  "Krull": {
+   "human": 2665.5,
+   "random": 1598.0,
+   "line_quote": "KRULL                       2665.5       1598.0         1468        4539.9          3277.9            2851.5           4229.6",
+   "table": "Table 2"
+  },
+  "KungFuMaster": {
+   "human": 22736.3,
+   "random": 258.5,
+   "line_quote": "KUNG FU MASTER             22736.3       258.5            0.       17257.2          5722.2           14346.1          14307.8",
+   "table": "Table 2"
+  },
+  "MsPacman": {
+   "human": 6951.6,
+   "random": 307.3,
+   "line_quote": "MS PACMAN                   6951.6        307.3           67        1480.0           941.9            1204.1           1465.5",
+   "table": "Table 2"
+  },
+  "Pong": {
+   "human": 14.6,
+   "random": -20.7,
+   "line_quote": "P ONG                         14.6        -20.7         -20.6        12.8             1.3              -19.3            -16.5",
+   "table": "Table 2"
+  },
+  "PrivateEye": {
+   "human": 69571.3,
+   "random": 24.9,
+   "line_quote": "P RIVATE EYE               69571.3        24.9            0           58.3          100.0              97.8             218.4",
+   "table": "Table 2"
+  },
+  "Qbert": {
+   "human": 13455.0,
+   "random": 163.9,
+   "line_quote": "Q BERT                     13455.0        163.9       123.46        1288.8           509.3            1152.9           1042.4",
+   "table": "Table 2"
+  },
+  "RoadRunner": {
+   "human": 7845.0,
+   "random": 11.5,
+   "line_quote": "ROAD RUNNER                 7845.0         11.5       1588.46       5640.6         2696.7             9600.0          5661.0",
+   "table": "Table 2"
+  },
+  "Seaquest": {
+   "human": 42054.7,
+   "random": 68.4,
+   "line_quote": "SEAQUEST                   42054.7        68.4        131.69         683.3          286.92             354.1            384.5",
+   "table": "Table 2"
+  },
+  "UpNDown": {
+   "human": 11693.2,
+   "random": 533.4,
+   "line_quote": "U P N D OWN                11693.2       533.4         504.6        3350.3          2847.6            2877.4           2955.2",
+   "table": "Table 2"
+  }
+ },
+ "baseline_rows_seen": [
+  "Human",
+  "Random",
+  "Rainbow",
+  "SimPLe",
+  "OTRainbow",
+  "Eff. Rainbow"
+ ],
+ "problems": [
+  "Per-seed values (20 per game) in Tables 6/7 not emitted as rows; only mean/std used.",
+  "Table 4 row 'Optimizer 0.000015' has a garbled label (presumably Adam epsilon).",
+  "Table 2 Human/Random columns are 'best reported score ... in prior work' per Section 5, so they mix Kaiser and van Hasselt values.",
+  "Ablations (Appendix E) are DMControl only — no Atari ablation rows.",
+  "Sticky actions and number of Atari evaluation episodes not stated."
+ ]
+}

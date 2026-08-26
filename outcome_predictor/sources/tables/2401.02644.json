@@ -1,0 +1,656 @@
+{
+ "arxiv_id": "2401.02644",
+ "title": "Simple Hierarchical Planning with Diffusion",
+ "methods": [
+  {
+   "method_name": "HD-DA",
+   "is_own_method": true,
+   "one_paragraph_description": "Hierarchical Diffuser with Dense Actions: a high-level Sparse Diffuser (SD-DA) trained on subsampled trajectories of every K-th state plus all intermediate actions (dense actions) generates a sequence of H subgoals via return-guided sampling (guidance function predicts return of the full trajectory), discarding actions; then a low-level Diffuser of sequence length K+1, with endpoints clamped to adjacent subgoals at every denoising step and its own return guidance, generates dense state-action segments between subgoals, in parallel. In per-step-replanning environments only the first segment is sampled and the first action executed.",
+   "conventional_lineage_hint": "diffusion-based planning / hierarchical planning for offline RL ('we introduce a diffusion-based hierarchical planning framework for decision-making problems ... on standard offline-RL benchmarks')",
+   "global_conditions": {
+    "K_jump_length": {
+     "value": "4 (Gym-MuJoCo); 15 (long-horizon tasks)",
+     "quote": "• We set K = 15 for the long-horizon planning tasks, while for the Gym-MuJoCo, we use K = 4.",
+     "location": "Appendix A"
+    },
+    "H_high_level_planning_horizon": {
+     "value": "32 (MuJoCo locomotion)",
+     "quote": "• Aligning closely with the settings used by Diffuser, we employ a planning horizon of H = 32",
+     "location": "Appendix A; also Table 9 'Hopper-Medium-Expert 32 32'"
+    },
+    "low_level_sequence_length": {
+     "value": "K + 1",
+     "quote": "• The sequence modeling at the low-level is the same as Diffuser except that we are using a sequence length of K + 1.",
+     "location": "Appendix A"
+    },
+    "guidance_scale_omega": {
+     "value": "chosen from {0.1, 0.01, 0.001, 0.0001}; per-task choice not reported",
+     "quote": "{0.1, 0.01, 0.001, 0.0001}, during the planning phase.",
+     "location": "Appendix A"
+    },
+    "guidance_type": {
+     "value": "classifier-guidance with learned return predictor J_phi (gradient guidance); high-level guidance J_phi^SD-DA predicts return of the full trajectory",
+     "quote": "Sampling from p̃θ (x) is achieved similarly as classifier guidance (Dhariwal & Nichol, 2021; Sohl-",
+     "location": "Section 2 / Section 3"
+    },
+    "K_ablation_sweep": {
+     "value": "{1, 4, 8} (Table 8)",
+     "quote": "       Dataset           Environment     K1 (Diffuser default)   HD-K4 (default)         HD-K8",
+     "location": "Table 8 (Appendix)"
+    },
+    "codebase": {
+     "value": "official Diffuser code, other settings inherited",
+     "quote": "• We build our Hierarchical Diffuser upon the officially released Diffuser code obtained from",
+     "location": "Appendix A"
+    },
+    "diffusion_steps": {
+     "value": "not stated (Diffuser defaults implied)",
+     "quote": "(no line states the number of denoising steps)",
+     "location": "n/a"
+    },
+    "subgoal_conditioning_at_low_level": {
+     "value": "endpoints fixed to subgoals at each denoising step",
+     "quote": "To ensure that the generated x(i) indeed has gi and gi+1 as its endpoints, we set siK = gi and",
+     "location": "Section 3.2"
+    },
+    "replanning": {
+     "value": "per-step replanning where required: sample x(0), execute a0, replan",
+     "quote": "can be generated in parallel. In environments that require per-step replanning, we only need to sample",
+     "location": "Section 3.2"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "5 planning seeds",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated",
+    "quote": "over 5 planning seeds. Following Kostrikov et al. (2022), we emphasize in bold scores within 5% of maximum. | until K = 8. We report the mean and standard error over 5 random seeds.",
+    "location": "Table 2 caption; Table 8 caption"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "We evaluate on Gym-MuJoCo and FrankaKitchen (Fu et al., 2020), which emphasize the ability to learn from data of varying quality and to generalize to",
+    "location": "Section 4.2; no '-v0'/'-v2' string in the text"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 92.5,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "K": "4",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 5",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 2",
+     "line_quote": " Med-Expert      HalfCheetah        55.2       91.6     86.7      86.8     95.0        53.3      88.9±0.3           92.1±1.4        92.5±0.3",
+     "notes": "HD-DA (Ours) is the last column; ± is standard error per Table 8 (same values), averaged over 5 planning seeds"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 115.3,
+     "std": 1.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "K": "4",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 5",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 2",
+     "line_quote": " Med-Expert      Hopper             52.5      105.4     91.5     107.6   110.0        108.7     103.3±1.3          113.5±0.9       115.3±1.1",
+     "notes": "HD-DA (Ours) is the last column; ± is standard error per Table 8 (same values), averaged over 5 planning seeds"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 107.1,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "K": "4",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 5",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 2",
+     "line_quote": " Med-Expert      Walker2d          107.5     108.8     109.6    108.1     101.9        95.6    106.9±0.2           107.9±1.2      107.1 ± 0.1",
+     "notes": "HD-DA (Ours) is the last column; ± is standard error per Table 8 (same values), averaged over 5 planning seeds"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 46.7,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "K": "4",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 5",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 2",
+     "line_quote": " Medium          HalfCheetah         42.6      44.0     47.4     42.6     46.9        42.1      42.8 ± 0.3          48.0±0.9       46.7±0.2",
+     "notes": "HD-DA (Ours) is the last column; ± is standard error per Table 8 (same values), averaged over 5 planning seeds"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 99.3,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "K": "4",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 5",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 2",
+     "line_quote": " Medium          Hopper              52.9      58.5     66.3     67.6     61.1        95.4      74.3 ± 1.4          76.4±2.6       99.3±0.3",
+     "notes": "HD-DA (Ours) is the last column; ± is standard error per Table 8 (same values), averaged over 5 planning seeds"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 84.0,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "K": "4",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 5",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 2",
+     "line_quote": " Medium          Walker2d            75.3      72.5     78.3     74.0     79.0        77.8       79.6±0.6           79.9±1.8       84.0±0.6",
+     "notes": "HD-DA (Ours) is the last column; ± is standard error per Table 8 (same values), averaged over 5 planning seeds"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 38.1,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "K": "4",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 5",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 2",
+     "line_quote": " Med-Replay      HalfCheetah         36.6     45.5      44.2     36.6     41.9         40.2      37.7±0.5           44.9±2.0       38.1±0.7",
+     "notes": "HD-DA (Ours) is the last column; ± is standard error per Table 8 (same values), averaged over 5 planning seeds"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 94.7,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "K": "4",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 5",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 2",
+     "line_quote": " Med-Replay      Hopper              18.1     95.0      94.7     82.7     91.5         93.6      93.6±0.4           99.6±1.5       94.7±0.7",
+     "notes": "HD-DA (Ours) is the last column; ± is standard error per Table 8 (same values), averaged over 5 planning seeds"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 84.1,
+     "std": 2.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "K": "4",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 5",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 2",
+     "line_quote": " Med-Replay      Walker2d            26.0     77.2      73.9     66.6     82.6         49.8      70.6±1.6           80.7±2.1       84.1±2.2",
+     "notes": "HD-DA (Ours) is the last column; ± is standard error per Table 8 (same values), averaged over 5 planning seeds"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 88.9,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=1",
+     "config_conditions": {
+      "K": "1",
+      "H_high_level": "32",
+      "low_level_sequence_length": "n/a (K=1 reduces to flat Diffuser)",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium-Expert     HalfCheetah              88.9 ± 0.3            92.5 ± 0.3     91.5 ± 0.3",
+     "notes": "column header 'K1 (Diffuser default)'; values identical to Diffuser column in Table 2 — this is the flat Diffuser baseline reproduced by the authors, listed here only because Table 8 frames it as the K ablation. std = standard error over 5 seeds."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 91.5,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=8",
+     "config_conditions": {
+      "K": "8",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 9",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium-Expert     HalfCheetah              88.9 ± 0.3            92.5 ± 0.3     91.5 ± 0.3",
+     "notes": "column header 'HD-K8'; std = standard error over 5 seeds. HD-K4 (default) column duplicates Table 2 main rows and is not re-emitted."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 103.3,
+     "std": 1.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=1",
+     "config_conditions": {
+      "K": "1",
+      "H_high_level": "32",
+      "low_level_sequence_length": "n/a (K=1 reduces to flat Diffuser)",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium-Expert     Hopper                  103.3 ± 1.3          115.3 ± 1.1     113.0 ± 0.5",
+     "notes": "column header 'K1 (Diffuser default)'; values identical to Diffuser column in Table 2 — this is the flat Diffuser baseline reproduced by the authors, listed here only because Table 8 frames it as the K ablation. std = standard error over 5 seeds."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 113.0,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=8",
+     "config_conditions": {
+      "K": "8",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 9",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium-Expert     Hopper                  103.3 ± 1.3          115.3 ± 1.1     113.0 ± 0.5",
+     "notes": "column header 'HD-K8'; std = standard error over 5 seeds. HD-K4 (default) column duplicates Table 2 main rows and is not re-emitted."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 106.9,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=1",
+     "config_conditions": {
+      "K": "1",
+      "H_high_level": "32",
+      "low_level_sequence_length": "n/a (K=1 reduces to flat Diffuser)",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium-Expert     Walker2d                106.9 ± 0.2           107.1 ± 0.1   107.6 ± 0.3",
+     "notes": "column header 'K1 (Diffuser default)'; values identical to Diffuser column in Table 2 — this is the flat Diffuser baseline reproduced by the authors, listed here only because Table 8 frames it as the K ablation. std = standard error over 5 seeds."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 107.6,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=8",
+     "config_conditions": {
+      "K": "8",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 9",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium-Expert     Walker2d                106.9 ± 0.2           107.1 ± 0.1   107.6 ± 0.3",
+     "notes": "column header 'HD-K8'; std = standard error over 5 seeds. HD-K4 (default) column duplicates Table 2 main rows and is not re-emitted."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.8,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=1",
+     "config_conditions": {
+      "K": "1",
+      "H_high_level": "32",
+      "low_level_sequence_length": "n/a (K=1 reduces to flat Diffuser)",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium            HalfCheetah               42.8 ± 0.3          46.7 ± 0.2     45.9 ± 0.7",
+     "notes": "column header 'K1 (Diffuser default)'; values identical to Diffuser column in Table 2 — this is the flat Diffuser baseline reproduced by the authors, listed here only because Table 8 frames it as the K ablation. std = standard error over 5 seeds."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 45.9,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=8",
+     "config_conditions": {
+      "K": "8",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 9",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium            HalfCheetah               42.8 ± 0.3          46.7 ± 0.2     45.9 ± 0.7",
+     "notes": "column header 'HD-K8'; std = standard error over 5 seeds. HD-K4 (default) column duplicates Table 2 main rows and is not re-emitted."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 74.3,
+     "std": 1.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=1",
+     "config_conditions": {
+      "K": "1",
+      "H_high_level": "32",
+      "low_level_sequence_length": "n/a (K=1 reduces to flat Diffuser)",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium            Hopper                    74.3 ± 1.4          99.3 ± 0.3     86.7 ± 7.4",
+     "notes": "column header 'K1 (Diffuser default)'; values identical to Diffuser column in Table 2 — this is the flat Diffuser baseline reproduced by the authors, listed here only because Table 8 frames it as the K ablation. std = standard error over 5 seeds."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 86.7,
+     "std": 7.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=8",
+     "config_conditions": {
+      "K": "8",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 9",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium            Hopper                    74.3 ± 1.4          99.3 ± 0.3     86.7 ± 7.4",
+     "notes": "column header 'HD-K8'; std = standard error over 5 seeds. HD-K4 (default) column duplicates Table 2 main rows and is not re-emitted."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 79.6,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=1",
+     "config_conditions": {
+      "K": "1",
+      "H_high_level": "32",
+      "low_level_sequence_length": "n/a (K=1 reduces to flat Diffuser)",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium            Walker2d                  79.6 ± 0.6          84.0 ± 0.6     84.2 ± 0.5",
+     "notes": "column header 'K1 (Diffuser default)'; values identical to Diffuser column in Table 2 — this is the flat Diffuser baseline reproduced by the authors, listed here only because Table 8 frames it as the K ablation. std = standard error over 5 seeds."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 84.2,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=8",
+     "config_conditions": {
+      "K": "8",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 9",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium            Walker2d                  79.6 ± 0.6          84.0 ± 0.6     84.2 ± 0.5",
+     "notes": "column header 'HD-K8'; std = standard error over 5 seeds. HD-K4 (default) column duplicates Table 2 main rows and is not re-emitted."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 37.7,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=1",
+     "config_conditions": {
+      "K": "1",
+      "H_high_level": "32",
+      "low_level_sequence_length": "n/a (K=1 reduces to flat Diffuser)",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium-Replay     HalfCheetah               37.7 ± 0.5          38.1 ± 0.7     39.5 ± 0.4",
+     "notes": "column header 'K1 (Diffuser default)'; values identical to Diffuser column in Table 2 — this is the flat Diffuser baseline reproduced by the authors, listed here only because Table 8 frames it as the K ablation. std = standard error over 5 seeds."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 39.5,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=8",
+     "config_conditions": {
+      "K": "8",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 9",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium-Replay     HalfCheetah               37.7 ± 0.5          38.1 ± 0.7     39.5 ± 0.4",
+     "notes": "column header 'HD-K8'; std = standard error over 5 seeds. HD-K4 (default) column duplicates Table 2 main rows and is not re-emitted."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 93.6,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=1",
+     "config_conditions": {
+      "K": "1",
+      "H_high_level": "32",
+      "low_level_sequence_length": "n/a (K=1 reduces to flat Diffuser)",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium-Replay     Hopper                    93.6 ± 0.4          94.7 ± 0.7     91.3 ± 1.3",
+     "notes": "column header 'K1 (Diffuser default)'; values identical to Diffuser column in Table 2 — this is the flat Diffuser baseline reproduced by the authors, listed here only because Table 8 frames it as the K ablation. std = standard error over 5 seeds."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 91.3,
+     "std": 1.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=8",
+     "config_conditions": {
+      "K": "8",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 9",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium-Replay     Hopper                    93.6 ± 0.4          94.7 ± 0.7     91.3 ± 1.3",
+     "notes": "column header 'HD-K8'; std = standard error over 5 seeds. HD-K4 (default) column duplicates Table 2 main rows and is not re-emitted."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 70.6,
+     "std": 1.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=1",
+     "config_conditions": {
+      "K": "1",
+      "H_high_level": "32",
+      "low_level_sequence_length": "n/a (K=1 reduces to flat Diffuser)",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium-Replay     Walker2d                  70.6 ± 1.6          84.1 ± 2.2     76.4 ± 2.7",
+     "notes": "column header 'K1 (Diffuser default)'; values identical to Diffuser column in Table 2 — this is the flat Diffuser baseline reproduced by the authors, listed here only because Table 8 frames it as the K ablation. std = standard error over 5 seeds."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 76.4,
+     "std": 2.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "K=8",
+     "config_conditions": {
+      "K": "8",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 9",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 8",
+     "line_quote": "       Medium-Replay     Walker2d                  70.6 ± 1.6          84.1 ± 2.2     76.4 ± 2.7",
+     "notes": "column header 'HD-K8'; std = standard error over 5 seeds. HD-K4 (default) column duplicates Table 2 main rows and is not re-emitted."
+    }
+   ]
+  },
+  {
+   "method_name": "HD",
+   "is_own_method": true,
+   "one_paragraph_description": "Hierarchical Diffuser: same two-level planner but the high-level Sparse Diffuser models only the subsampled states (every K-th state, actions removed) with a guidance function that predicts the full-trajectory return; low-level Diffuser refines each subgoal-to-subgoal segment.",
+   "conventional_lineage_hint": "diffusion-based planning / hierarchical planning for offline RL ('we introduce a diffusion-based hierarchical planning framework for decision-making problems ... on standard offline-RL benchmarks')",
+   "global_conditions": {
+    "K_jump_length": {
+     "value": "4 (Gym-MuJoCo); 15 (long-horizon tasks)",
+     "quote": "• We set K = 15 for the long-horizon planning tasks, while for the Gym-MuJoCo, we use K = 4.",
+     "location": "Appendix A"
+    },
+    "H_high_level_planning_horizon": {
+     "value": "32 (MuJoCo locomotion)",
+     "quote": "• Aligning closely with the settings used by Diffuser, we employ a planning horizon of H = 32",
+     "location": "Appendix A; also Table 9 'Hopper-Medium-Expert 32 32'"
+    },
+    "low_level_sequence_length": {
+     "value": "K + 1",
+     "quote": "• The sequence modeling at the low-level is the same as Diffuser except that we are using a sequence length of K + 1.",
+     "location": "Appendix A"
+    },
+    "guidance_scale_omega": {
+     "value": "chosen from {0.1, 0.01, 0.001, 0.0001}; per-task choice not reported",
+     "quote": "{0.1, 0.01, 0.001, 0.0001}, during the planning phase.",
+     "location": "Appendix A"
+    },
+    "guidance_type": {
+     "value": "classifier-guidance with learned return predictor J_phi (gradient guidance); high-level guidance J_phi^SD-DA predicts return of the full trajectory",
+     "quote": "Sampling from p̃θ (x) is achieved similarly as classifier guidance (Dhariwal & Nichol, 2021; Sohl-",
+     "location": "Section 2 / Section 3"
+    },
+    "K_ablation_sweep": {
+     "value": "{1, 4, 8} (Table 8)",
+     "quote": "       Dataset           Environment     K1 (Diffuser default)   HD-K4 (default)         HD-K8",
+     "location": "Table 8 (Appendix)"
+    },
+    "codebase": {
+     "value": "official Diffuser code, other settings inherited",
+     "quote": "• We build our Hierarchical Diffuser upon the officially released Diffuser code obtained from",
+     "location": "Appendix A"
+    },
+    "diffusion_steps": {
+     "value": "not stated (Diffuser defaults implied)",
+     "quote": "(no line states the number of denoising steps)",
+     "location": "n/a"
+    },
+    "subgoal_conditioning_at_low_level": {
+     "value": "endpoints fixed to subgoals at each denoising step",
+     "quote": "To ensure that the generated x(i) indeed has gi and gi+1 as its endpoints, we set siK = gi and",
+     "location": "Section 3.2"
+    },
+    "replanning": {
+     "value": "per-step replanning where required: sample x(0), execute a0, replan",
+     "quote": "can be generated in parallel. In environments that require per-step replanning, we only need to sample",
+     "location": "Section 3.2"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "5 planning seeds",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated",
+    "quote": "Table 4 does not state seeds; Table 2 protocol: 'over 5 planning seeds.'",
+    "location": "Table 2 caption; Table 8 caption"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "We evaluate on Gym-MuJoCo and FrankaKitchen (Fu et al., 2020), which emphasize the ability to learn from data of varying quality and to generalize to",
+    "location": "Section 4.2; no '-v0'/'-v2' string in the text"
+   },
+   "rows": [
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 93.4,
+     "std": 3.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "K": "4",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 5",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 4",
+     "line_quote": "            Gym-MuJoCo            77.5       80.7      81.7                 Hopper            101.7         88.8     93.4±3.1   94.7±0.7",
+     "notes": "Table 4 'RL Performance / HD' column (high-level planner without dense actions); dataset is Medium-Replay per text: 'We conduct the experiment on the Medium-Replay dataset'. Columns 101.7/88.8 are guidance-function validation loss (Jϕ), not scores. Number of seeds for Table 4 not stated; assumed same protocol as Table 2."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 77.2,
+     "std": 3.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "K": "4",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 5",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 4",
+     "line_quote": "            Maze2D               119.5      133.4     139.9                 Walker2d          166.1        133.0     77.2±3.3   84.1±2.2",
+     "notes": "Table 4 'RL Performance / HD' column (high-level planner without dense actions); dataset is Medium-Replay per text: 'We conduct the experiment on the Medium-Replay dataset'. Columns 101.7/88.8 are guidance-function validation loss (Jϕ), not scores. Number of seeds for Table 4 not stated; assumed same protocol as Table 2."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 37.5,
+     "std": 1.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "K": "4",
+      "H_high_level": "32",
+      "low_level_sequence_length": "K+1 = 5",
+      "guidance_scale": "selected from {0.1, 0.01, 0.001, 0.0001}"
+     },
+     "table": "Table 4",
+     "line_quote": "            Multi2D              129.4      145.8     149.9                 HalfCheetah       228.5        208.2     37.5±1.7   38.1±0.7",
+     "notes": "Table 4 'RL Performance / HD' column (high-level planner without dense actions); dataset is Medium-Replay per text: 'We conduct the experiment on the Medium-Replay dataset'. Columns 101.7/88.8 are guidance-function validation loss (Jϕ), not scores. Number of seeds for Table 4 not stated; assumed same protocol as Table 2."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BC",
+  "CQL",
+  "IQL",
+  "DT",
+  "TT",
+  "MOReL",
+  "Diffuser",
+  "HDMI",
+  "BCQ",
+  "BEAR",
+  "RvS-G"
+ ],
+ "problems": [
+  "D4RL dataset version (v0/v2) never stated.",
+  "Table 2 '±' is unlabeled; Table 8 (identical values in HD-K4 column) says 'mean and standard error over 5 random seeds' -> std field is standard error, not standard deviation.",
+  "Per-task guidance scale omega is not reported (only the candidate set {0.1, 0.01, 0.001, 0.0001}).",
+  "Number of diffusion/denoising steps, network width, kernel size, batch size, learning rate, training steps are not stated; the paper says it builds on the official Diffuser code and lists only the changes.",
+  "Table 8 'K1 (Diffuser default)' column equals the Diffuser baseline column in Table 2; emitted as config K=1 rows with a caveat note since Table 8 frames it as the K ablation.",
+  "Table 3 (Diffuser/SD/HD) reports only averages over Gym-MuJoCo -> skipped per rule 4; no per-dataset SD rows exist for locomotion.",
+  "Table 4 seed count not stated; dataset (Medium-Replay) inferred from the surrounding text, not from the table itself.",
+  "Random and expert datasets not evaluated.",
+  "Horizon ablation for locomotion exists only for Diffuser kernel size (Figure 2) -> excluded; no H sweep for HD on locomotion."
+ ]
+}

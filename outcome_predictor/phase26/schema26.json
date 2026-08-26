@@ -1,0 +1,23 @@
+{
+ "numeric_conditions": [
+  "env_steps",
+  "replay_ratio",
+  "batch_size",
+  "learning_rate",
+  "n_step",
+  "discount",
+  "hidden_dim",
+  "num_layers",
+  "imagination_horizon",
+  "num_simulations",
+  "model_params",
+  "n_seeds",
+  "eval_episodes"
+ ],
+ "categorical_conditions": [
+  "sticky_actions",
+  "data_augmentation",
+  "checkpoint_selection"
+ ],
+ "exclude_config_labels": []
+}

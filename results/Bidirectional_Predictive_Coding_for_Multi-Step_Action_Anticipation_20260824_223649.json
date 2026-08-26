@@ -1,0 +1,115 @@
+{
+  "paper": "Bidirectional Predictive Coding for Multi-Step Action Anticipation",
+  "timestamp": "20260824_223649",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 24.11,
+  "abstract": "We propose a bidirectional predictive coding framework for action anticipation in egocentric video. Our model encodes visual observations into a latent representation using a bidirectional transformer. A forward predictor forecasts the next action state, while a backward predictor refines the latent representation using future context. Both predictors are trained with a contrastive loss that encourages temporal consistency. The system fails when actions have high variability and the forward predictor's uncertainty propagates to the backward pass.",
+  "source": "test:abstract [unknown] live-prediction",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits \u2014\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We describe a speech enhancement system. A recurrent network estimates a spectral\nmask from noisy audio, the mask is applied to the spectrogram, and the result is inverted back to\na waveform. The method struggles at very low signal-to-noise ratios, where it introduces musical\nnoise artifacts.\nJSON: {\"name\": \"Mask-Based Speech Enhancement\", \"operations\": [\"estimate\", \"mask\", \"invert\"], \"loss\": null, \"failure\": \"musical noise artifacts at very low signal-to-noise ratios\"}\n\nExample\nDescription: We index a document collection with an inverted index. Each document is tokenized,\ntokens are stemmed, and a posting list is built per term. Queries are answered by intersecting\nposting lists and ranking by BM25.\nJSON: {\"name\": \"Inverted Index Retrieval\", \"operations\": [\"tokenize\", \"stem\", \"intersect\", \"rank\"], \"loss\": null, \"failure\": null}\n\nRules for \"failure\": extract it only when the Description itself states a limitation, instability,\nor breakdown condition (for example \"diverges when\", \"struggles with\", \"fails under\"). Quote the\nDescription's own words. If the Description states no weakness, \"failure\" is null \u2014 that is the\nnormal case, not a fallback. Never reuse wording from the examples.\n\nNow do the same for:\nDescription: We propose a bidirectional predictive coding framework for action anticipation in egocentric video. Our model encodes visual observations into a latent representation using a bidirectional transformer. A forward predictor forecasts the next action state, while a backward predictor refines the latent representation using future context. Both predictors are trained with a contrastive loss that encourages temporal consistency. The system fails when actions have high variability and the forward predictor's uncertainty propagates to the backward pass.\nJSON:\n",
+  "raw_response": "{\"name\": \"Bidirectional Predictive Coding for Action Anticipation\", \"operations\": [\"encode\", \"forecast\", \"refine\", \"train\"], \"loss\": \"contrastive loss\", \"failure\": \"system fails when actions have high variability and the forward predictor's uncertainty propagates to the backward pass\"}",
+  "data": {
+    "name": "Bidirectional Predictive Coding for Action Anticipation",
+    "operations": [
+      "encode",
+      "forecast",
+      "refine",
+      "train"
+    ],
+    "loss": "contrastive loss",
+    "failure": "system fails when actions have high variability and the forward predictor's uncertainty propagates to the backward pass"
+  },
+  "semantic_ops": [
+    {
+      "op": "encode",
+      "object_type": "latent",
+      "context": "unspecified",
+      "quote": "We propose a bidirectional predictive coding framework...using a bidirectional transformer.",
+      "grounded": true
+    },
+    {
+      "op": "forecast",
+      "object_type": "state",
+      "context": "temporal",
+      "quote": "A forward predictor forecasts the next action state",
+      "grounded": true
+    },
+    {
+      "op": "refine",
+      "object_type": "latent",
+      "context": "temporal",
+      "quote": "A backward predictor refines the latent representation using future context",
+      "grounded": true
+    },
+    {
+      "op": "train",
+      "object_type": "parameter",
+      "context": "stochastic",
+      "quote": "Both predictors are trained with a contrastive loss that encourages temporal consistency.",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_model": "qwen3:8b",
+  "semantic_ops_pass2": [
+    {
+      "op": "encode",
+      "object_type": "latent",
+      "context": "unspecified",
+      "quote": "encodes visual observations into a latent representation",
+      "grounded": true
+    },
+    {
+      "op": "forecast",
+      "object_type": "state",
+      "context": "unspecified",
+      "quote": "forecasts the next action state",
+      "grounded": true
+    },
+    {
+      "op": "refine",
+      "object_type": "latent",
+      "context": "unspecified",
+      "quote": "refines the latent representation using future context",
+      "grounded": true
+    },
+    {
+      "op": "train",
+      "object_type": "parameter",
+      "context": "unspecified",
+      "quote": "trained with a contrastive loss",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_pass2_model": "qwen3:8b",
+  "semantic_ops_v2": [
+    {
+      "op": "encode",
+      "object_type": "latent",
+      "context": "unspecified",
+      "quote": "We propose a bidirectional predictive coding framework for action anticipation in egocentric video.",
+      "grounded": true
+    },
+    {
+      "op": "forecast",
+      "object_type": "state",
+      "context": "temporal",
+      "quote": "A forward predictor forecasts the next action state",
+      "grounded": true
+    },
+    {
+      "op": "refine",
+      "object_type": "latent",
+      "context": "temporal",
+      "quote": "A backward predictor refines the latent representation using future context",
+      "grounded": true
+    },
+    {
+      "op": "train",
+      "object_type": "parameter",
+      "context": "stochastic",
+      "quote": "Both predictors are trained with a contrastive loss that encourages temporal consistency",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_v2_model": "qwen3:8b"
+}

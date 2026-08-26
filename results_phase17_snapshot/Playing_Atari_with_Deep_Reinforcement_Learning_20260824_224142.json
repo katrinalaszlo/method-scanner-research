@@ -1,0 +1,189 @@
+{
+  "paper": "Playing Atari with Deep Reinforcement Learning",
+  "timestamp": "20260824_224142",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 19.91,
+  "abstract": "Deep Reinforcement Learning Recent breakthroughs in computer vision and speech recognition have relied on efficiently training deep neural networks on very large training sets. The most successful approaches are trained directly from the raw inputs, using lightweight updates based on stochastic gradient descent. By feeding sufficient data into deep neural networks, it is often possible to learn better representations than handcrafted features [11]. These successes motivate our approach to reinforcement learning. Our goal is to connect a reinforcement learning algorithm to a deep neural network which operates directly on RGB images and efficiently process training data by using stochastic gradient updates. Tesauro\u2019s TD-Gammon architecture provides a starting point for such an approach. This architecture updates the parameters of a network that estimates the value function, directly from on-policy samples of experience, st , at , rt , st+1 , at+1 , drawn from the algorithm\u2019s interactions with the environment (or by self-play, in the case of backgammon). Since this approach was able to outperform the best human backgammon players 20 years ago, it is natural to wonder whether two decades of hardware improvements, coupled with modern deep neural network architectures and scalable RL algorithms might produce significant progress. In contrast to TD-Gammon and similar online approaches, we utilize a technique known as experience replay [13] where we store the agent\u2019s experiences at each time-step, et = (st , at , rt , st+1 ) in a data-set D = e1 , ..., eN , pooled over many episodes into a replay memory. During the inner loop of the algorithm, we apply Q-learning updates, or minibatch updates, to samples of experience, e \u223c D, drawn at random from the pool of stored samples. After performing experience replay, the agent selects and executes an action according to an \u000f-greedy policy. Since using histories of arbitrary length as inputs to a neural network can be difficult, our Q-function instead works on fixed length representation of histories produced by a function \u03c6. The full algorithm, which we call deep Q-learning, is presented in Algorithm 1. This approach has several advantages over standard online Q-learning [23]. First, each step of experience is potentially used in many weight updates, which allows for greater data efficiency. 4 Algorithm 1 Deep Q-learning with Experience Replay Initialize replay memory D to capacity N Initialize action-value function Q with random weights for episode = 1, M do Initialise sequence s1 = {x1 } and preprocessed sequenced \u03c61 = \u03c6(s1 ) for t = 1, T do With probability \u000f select a random action at otherwise select at = maxa Q\u2217 (\u03c6(st ), a; \u03b8) Execute action at in emulator and observe reward rt and image xt+1 Set st+1 = st , at , xt+1 and preprocess \u03c6t+1 = \u03c6(st+1 ) Store transition (\u03c6t , at , rt , \u03c6t+1 ) in D Sample random minibatch of transitions (\u03c6j , aj , rj , \u03c6j+1 ) from D \u001a rj for terminal \u03c6j+1 Set yj = rj + \u03b3 maxa0 Q(\u03c6j+1 , a0 ; \u03b8) for non-terminal \u03c6j+1 2 Perform a gradient descent step on (yj \u2212 Q(\u03c6j , aj ; \u03b8)) according to equation 3 end for end for Second, learning directly from consecutive samples is inefficient, due to the strong correlations between the samples; randomizing the samples breaks these correlations and therefore reduces the variance of the updates. Third, when learning on-policy the current parameters determine the next data sample that the parameters are trained on. For example, if the maximizing action is to move left then the training samples will be dominated by samples from the left-hand side; if the maximizing action then switches to the right then the training distribution will also switch. It is easy to see how unwanted feedback loops may arise and the parameters could get stuck in a poor local minimum, or even diverge catastrophically [25]. By using experience replay the behavior distribution is averaged over many of its previous states, smoothing out learning and avoiding oscillations or divergence in the parameters. Note that when learning by experience replay, it is necessary to learn off-policy (because our current parameters are different to those used to generate the sample), which motivates the choice of Q-learning. In practice, our algorithm only stores the last N experience tuples in the replay memory, and samples uniformly at random from D when performing updates. This approach is in some respects limited since the memory buffer does not differentiate important transitions and always overwrites with recent transitions due to the finite memory size N . Similarly, the uniform sampling gives equal importance to all transitions in the replay memory. A more sophisticated sampling strategy might emphasize transitions from which we can learn the most, similar to prioritized sweeping [17]. 4.1 Preprocessing and Model Architecture Working directly with raw Atari frames, which are 210 \u00d7 160 pixel images with a 128 color palette, can be computationally demanding, so we apply a basic preprocessing step aimed at reducing the input dimensionality. The raw frames are preprocessed by first converting their RGB representation to gray-scale and down-sampling it to a 110\u00d784 image. The final input representation is obtained by cropping an 84 \u00d7 84 region of the image that roughly captures the playing area. The final cropping stage is only required because we use the GPU implementation of 2D convolutions from [11], which expects square inputs. For the experiments in this paper, the function \u03c6 from algorithm 1 applies this preprocessing to the last 4 frames of a history and stacks them to produce the input to the Q-function. There are several possible ways of parameterizing Q using a neural network. Since Q maps historyaction pairs to scalar estimates of their Q-value, the history and the action have been used as inputs to the neural network by some previous approaches [20, 12]. The main drawback of this type of architecture is that a separate forward pass is required to compute the Q-value of each action, resulting in a cost that scales linearly with the number of actions. We instead use an architecture in which there is a separate output unit for each possible action, and only the state representation is an input to the neural network. The outputs correspond to the predicted Q-values of the individual action for the input state. The main advantage of this type of architecture is the ability to compute Q-values for all possible actions in a given state with only a single forward pass through the network. 5 We now describe the exact architecture used for all seven Atari games. The input to the neural network consists is an 84 \u00d7 84 \u00d7 4 image produced by \u03c6. The first hidden layer convolves 16 8 \u00d7 8 filters with stride 4 with the input image and applies a rectifier nonlinearity [10, 18]. The second hidden layer convolves 32 4 \u00d7 4 filters with stride 2, again followed by a rectifier nonlinearity. The final hidden layer is fully-connected and consists of 256 rectifier units. The output layer is a fullyconnected linear layer with a single output for each valid action. The number of valid actions varied between 4 and 18 on the games we considered. We refer to convolutional networks trained with our approach as Deep Q-Networks (DQN). 5 Experiments So far, we have performed experiments on seven popular ATARI games \u2013 Beam Rider, Breakout, Enduro, Pong, Q*bert, Seaquest, Space Invaders. We use the same network architecture, learning algorithm and hyperparameters settings across all seven games, showing that our approach is robust enough to work on a variety of games without incorporating game-specific information. While we evaluated our agents on the real and unmodified games, we made one change to the reward structure of the games during training only. Since the scale of scores varies greatly from game to game, we fixed all positive rewards to be 1 and all negative rewards to be \u22121, leaving 0 rewards unchanged. Clipping the rewards in this manner limits the scale of the error derivatives and makes it easier to use the same learning rate across multiple games. At the same time, it could affect the performance of our agent since it cannot differentiate between rewards of different magnitude. In these experiments, we used the RMSProp algorithm with minibatches of size 32. The behavior policy during training was \u000f-greedy with \u000f annealed linearly from 1 to 0.1 over the first million frames, and fixed at 0.1 thereafter. We trained for a total of 10 million frames and used a replay memory of one million most recent frames. Following previous approaches to playing Atari games, we also use a simple frame-skipping technique [3]. More precisely, the agent sees and selects actions on every k th frame instead of every frame, and its last action is repeated on skipped frames. Since running the emulator forward for one step requires much less computation than having the agent select an action, this technique allows the agent to play roughly k times more games without significantly",
+  "source": "arxiv:1312.5602 [policy-learning] heading: Deep Reinforcement Learning",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits \u2014\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We describe a speech enhancement system. A recurrent network estimates a spectral\nmask from noisy audio, the mask is applied to the spectrogram, and the result is inverted back to\na waveform. The method struggles at very low signal-to-noise ratios, where it introduces musical\nnoise artifacts.\nJSON: {\"name\": \"Mask-Based Speech Enhancement\", \"operations\": [\"estimate\", \"mask\", \"invert\"], \"loss\": null, \"failure\": \"musical noise artifacts at very low signal-to-noise ratios\"}\n\nExample\nDescription: We index a document collection with an inverted index. Each document is tokenized,\ntokens are stemmed, and a posting list is built per term. Queries are answered by intersecting\nposting lists and ranking by BM25.\nJSON: {\"name\": \"Inverted Index Retrieval\", \"operations\": [\"tokenize\", \"stem\", \"intersect\", \"rank\"], \"loss\": null, \"failure\": null}\n\nRules for \"failure\": extract it only when the Description itself states a limitation, instability,\nor breakdown condition (for example \"diverges when\", \"struggles with\", \"fails under\"). Quote the\nDescription's own words. If the Description states no weakness, \"failure\" is null \u2014 that is the\nnormal case, not a fallback. Never reuse wording from the examples.\n\nNow do the same for:\nDescription: Deep Reinforcement Learning Recent breakthroughs in computer vision and speech recognition have relied on efficiently training deep neural networks on very large training sets. The most successful approaches are trained directly from the raw inputs, using lightweight updates based on stochastic gradient descent. By feeding sufficient data into deep neural networks, it is often possible to learn better representations than handcrafted features [11]. These successes motivate our approach to reinforcement learning. Our goal is to connect a reinforcement learning algorithm to a deep neural network which operates directly on RGB images and efficiently process training data by using stochastic gradient updates. Tesauro\u2019s TD-Gammon architecture provides a starting point for such an approach. This architecture updates the parameters of a network that estimates the value function, directly from on-policy samples of experience, st , at , rt , st+1 , at+1 , drawn from the algorithm\u2019s interactions with the environment (or by self-play, in the case of backgammon). Since this approach was able to outperform the best human backgammon players 20 years ago, it is natural to wonder whether two decades of hardware improvements, coupled with modern deep neural network architectures and scalable RL algorithms might produce significant progress. In contrast to TD-Gammon and similar online approaches, we utilize a technique known as experience replay [13] where we store the agent\u2019s experiences at each time-step, et = (st , at , rt , st+1 ) in a data-set D = e1 , ..., eN , pooled over many episodes into a replay memory. During the inner loop of the algorithm, we apply Q-learning updates, or minibatch updates, to samples of experience, e \u223c D, drawn at random from the pool of stored samples. After performing experience replay, the agent selects and executes an action according to an \u000f-greedy policy. Since using histories of arbitrary length as inputs to a neural network can be difficult, our Q-function instead works on fixed length representation of histories produced by a function \u03c6. The full algorithm, which we call deep Q-learning, is presented in Algorithm 1. This approach has several advantages over standard online Q-learning [23]. First, each step of experience is potentially used in many weight updates, which allows for greater data efficiency. 4 Algorithm 1 Deep Q-learning with Experience Replay Initialize replay memory D to capacity N Initialize action-value function Q with random weights for episode = 1, M do Initialise sequence s1 = {x1 } and preprocessed sequenced \u03c61 = \u03c6(s1 ) for t = 1, T do With probability \u000f select a random action at otherwise select at = maxa Q\u2217 (\u03c6(st ), a; \u03b8) Execute action at in emulator and observe reward rt and image xt+1 Set st+1 = st , at , xt+1 and preprocess \u03c6t+1 = \u03c6(st+1 ) Store transition (\u03c6t , at , rt , \u03c6t+1 ) in D Sample random minibatch of transitions (\u03c6j , aj , rj , \u03c6j+1 ) from D \u001a rj for terminal \u03c6j+1 Set yj = rj + \u03b3 maxa0 Q(\u03c6j+1 , a0 ; \u03b8) for non-terminal \u03c6j+1 2 Perform a gradient descent step on (yj \u2212 Q(\u03c6j , aj ; \u03b8)) according to equation 3 end for end for Second, learning directly from consecutive samples is inefficient, due to the strong correlations between the samples; randomizing the samples breaks these correlations and therefore reduces the variance of the updates. Third, when learning on-policy the current parameters determine the next data sample that the parameters are trained on. For example, if the maximizing action is to move left then the training samples will be dominated by samples from the left-hand side; if the maximizing action then switches to the right then the training distribution will also switch. It is easy to see how unwanted feedback loops may arise and the parameters could get stuck in a poor local minimum, or even diverge catastrophically [25]. By using experience replay the behavior distribution is averaged over many of its previous states, smoothing out learning and avoiding oscillations or divergence in the parameters. Note that when learning by experience replay, it is necessary to learn off-policy (because our current parameters are different to those used to generate the sample), which motivates the choice of Q-learning. In practice, our algorithm only stores the last N experience tuples in the replay memory, and samples uniformly at random from D when performing updates. This approach is in some respects limited since the memory buffer does not differentiate important transitions and always overwrites with recent transitions due to the finite memory size N . Similarly, the uniform sampling gives equal importance to all transitions in the replay memory. A more sophisticated sampling strategy might emphasize transitions from which we can learn the most, similar to prioritized sweeping [17]. 4.1 Preprocessing and Model Architecture Working directly with raw Atari frames, which are 210 \u00d7 160 pixel images with a 128 color palette, can be computationally demanding, so we apply a basic preprocessing step aimed at reducing the input dimensionality. The raw frames are preprocessed by first converting their RGB representation to gray-scale and down-sampling it to a 110\u00d784 image. The final input representation is obtained by cropping an 84 \u00d7 84 region of the image that roughly captures the playing area. The final cropping stage is only required because we use the GPU implementation of 2D convolutions from [11], which expects square inputs. For the experiments in this paper, the function \u03c6 from algorithm 1 applies this preprocessing to the last 4 frames of a history and stacks them to produce the input to the Q-function. There are several possible ways of parameterizing Q using a neural network. Since Q maps historyaction pairs to scalar estimates of their Q-value, the history and the action have been used as inputs to the neural network by some previous approaches [20, 12]. The main drawback of this type of architecture is that a separate forward pass is required to compute the Q-value of each action, resulting in a cost that scales linearly with the number of actions. We instead use an architecture in which there is a separate output unit for each possible action, and only the state representation is an input to the neural network. The outputs correspond to the predicted Q-values of the individual action for the input state. The main advantage of this type of architecture is the ability to compute Q-values for all possible actions in a given state with only a single forward pass through the network. 5 We now describe the exact architecture used for all seven Atari games. The input to the neural network consists is an 84 \u00d7 84 \u00d7 4 image produced by \u03c6. The first hidden layer convolves 16 8 \u00d7 8 filters with stride 4 with the input image and applies a rectifier nonlinearity [10, 18]. The second hidden layer convolves 32 4 \u00d7 4 filters with stride 2, again followed by a rectifier nonlinearity. The final hidden layer is fully-connected and consists of 256 rectifier units. The output layer is a fullyconnected linear layer with a single output for each valid action. The number of valid actions varied between 4 and 18 on the games we considered. We refer to convolutional networks trained with our approach as Deep Q-Networks (DQN). 5 Experiments So far, we have performed experiments on seven popular ATARI games \u2013 Beam Rider, Breakout, Enduro, Pong, Q*bert, Seaquest, Space Invaders. We use the same network architecture, learning algorithm and hyperparameters settings across all seven games, showing that our approach is robust enough to work on a variety of games without incorporating game-specific information. While we evaluated our agents on the real and unmodified games, we made one change to the reward structure of the games during training only. Since the scale of scores varies greatly from game to game, we fixed all positive rewards to be 1 and all negative rewards to be \u22121, leaving 0 rewards unchanged. Clipping the rewards in this manner limits the scale of the error derivatives and makes it easier to use the same learning rate across multiple games. At the same time, it could affect the performance of our agent since it cannot differentiate between rewards of different magnitude. In these experiments, we used the RMSProp algorithm with minibatches of size 32. The behavior policy during training was \u000f-greedy with \u000f annealed linearly from 1 to 0.1 over the first million frames, and fixed at 0.1 thereafter. We trained for a total of 10 million frames and used a replay memory of one million most recent frames. Following previous approaches to playing Atari games, we also use a simple frame-skipping technique [3]. More precisely, the agent sees and selects actions on every k th frame instead of every frame, and its last action is repeated on skipped frames. Since running the emulator forward for one step requires much less computation than having the agent select an action, this technique allows the agent to play roughly k times more games without significantly\nJSON:\n",
+  "raw_response": "{\n  \"name\": \"Deep Q-Learning\",\n  \"operations\": [\"store\", \"sample\", \"update\", \"select\", \"execute\", \"preprocess\", \"crop\", \"convolve\", \"rectify\", \"connect\", \"output\"],\n  \"loss\": \"mean squared error\",\n  \"failure\": \"the memory buffer does not differentiate important transitions and always overwrites with recent transitions due to the finite memory size N\"\n}",
+  "data": {
+    "name": "Deep Q-Learning",
+    "operations": [
+      "store",
+      "sample",
+      "update",
+      "select",
+      "execute",
+      "preprocess",
+      "crop",
+      "convolve",
+      "rectify",
+      "connect",
+      "output"
+    ],
+    "loss": "mean squared error",
+    "failure": "the memory buffer does not differentiate important transitions and always overwrites with recent transitions due to the finite memory size N"
+  },
+  "semantic_ops": [
+    {
+      "op": "store",
+      "object_type": "state",
+      "context": "temporal",
+      "quote": "Store transition (\u03c6t , at , rt , \u03c6t+1 ) in D",
+      "grounded": true
+    },
+    {
+      "op": "sample",
+      "object_type": "sample",
+      "context": "stochastic",
+      "quote": "Sample random minibatch of transitions (\u03c6j , aj , rj , \u03c6j+1 ) from D",
+      "grounded": true
+    },
+    {
+      "op": "update",
+      "object_type": "parameter",
+      "context": "stochastic",
+      "quote": "Perform a gradient descent step on (yj \u2212 Q(\u03c6j , aj ; \u03b8))",
+      "grounded": true
+    },
+    {
+      "op": "select",
+      "object_type": "action",
+      "context": "temporal",
+      "quote": "select a random action at otherwise select at = maxa Q\u2217 (\u03c6(st ), a; \u03b8)",
+      "grounded": true
+    },
+    {
+      "op": "execute",
+      "object_type": "action",
+      "context": "temporal",
+      "quote": "Execute action at in emulator and observe reward rt and image xt+1",
+      "grounded": true
+    },
+    {
+      "op": "preprocess",
+      "object_type": "input",
+      "context": "spatial",
+      "quote": "The raw frames are preprocessed by first converting their RGB representation to gray-scale",
+      "grounded": true
+    },
+    {
+      "op": "crop",
+      "object_type": "input",
+      "context": "spatial",
+      "quote": "The final input representation is obtained by cropping an 84 \u00d7 84 region of the image",
+      "grounded": true
+    },
+    {
+      "op": "convolve",
+      "object_type": "input",
+      "context": "spatial",
+      "quote": "The first hidden layer convolves 16 8 \u00d7 8 filters with stride 4 with the input image",
+      "grounded": true
+    },
+    {
+      "op": "rectify",
+      "object_type": "distribution",
+      "context": "nonlinear",
+      "quote": "applies a rectifier nonlinearity [10, 18]",
+      "grounded": true
+    },
+    {
+      "op": "connect",
+      "object_type": "parameter",
+      "context": "unspecified",
+      "quote": "",
+      "grounded": false
+    },
+    {
+      "op": "output",
+      "object_type": "parameter",
+      "context": "unspecified",
+      "quote": "",
+      "grounded": false
+    }
+  ],
+  "semantic_ops_model": "qwen3:8b",
+  "semantic_ops_pass2": [
+    {
+      "op": "store",
+      "object_type": "sample",
+      "context": "unspecified",
+      "quote": "Store transition (\u03c6t , at , rt , \u03c6t+1 ) in D",
+      "grounded": true
+    },
+    {
+      "op": "sample",
+      "object_type": "sample",
+      "context": "unspecified",
+      "quote": "Sample random minibatch of transitions (\u03c6j , aj , rj , \u03c6j+1 ) from D",
+      "grounded": true
+    },
+    {
+      "op": "update",
+      "object_type": "parameter",
+      "context": "unspecified",
+      "quote": "Perform a gradient descent step on (yj \u2212 Q(\u03c6j , aj ; \u03b8)) according to equation 3",
+      "grounded": true
+    },
+    {
+      "op": "select",
+      "object_type": "action",
+      "context": "unspecified",
+      "quote": "With probability \u000f select a random action at otherwise select at = maxa Q\u2217 (\u03c6(st ), a; \u03b8)",
+      "grounded": true
+    },
+    {
+      "op": "execute",
+      "object_type": "action",
+      "context": "unspecified",
+      "quote": "Execute action at in emulator and observe reward rt and image xt+1",
+      "grounded": true
+    },
+    {
+      "op": "preprocess",
+      "object_type": "input",
+      "context": "unspecified",
+      "quote": "The raw frames are preprocessed by first converting their RGB representation to gray-scale and down-sampling it to a 110\u00d784 image",
+      "grounded": true
+    },
+    {
+      "op": "crop",
+      "object_type": "input",
+      "context": "unspecified",
+      "quote": "The final input representation is obtained by cropping an 84 \u00d7 84 region of the image that roughly captures the playing area",
+      "grounded": true
+    },
+    {
+      "op": "convolve",
+      "object_type": "input",
+      "context": "unspecified",
+      "quote": "The first hidden layer convolves 16 8 \u00d7 8 filters with stride 4 with the input image and applies a rectifier nonlinearity",
+      "grounded": true
+    },
+    {
+      "op": "rectify",
+      "object_type": "distribution",
+      "context": "unspecified",
+      "quote": "again followed by a rectifier nonlinearity",
+      "grounded": true
+    },
+    {
+      "op": "connect",
+      "object_type": "parameter",
+      "context": "unspecified",
+      "quote": "The output layer is a fullyconnected linear layer with a single output for each valid action",
+      "grounded": true
+    },
+    {
+      "op": "output",
+      "object_type": "parameter",
+      "context": "unspecified",
+      "quote": "The outputs correspond to the predicted Q-values of the individual action for the input state",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_pass2_model": "qwen3:8b"
+}

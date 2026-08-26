@@ -1,0 +1,140 @@
+
+======================================== Deep Variational Bayes
+source: test:1605.06432 [unseen] heading: DEEP VARIATIONAL BAYES FILTERS
+ops: ['reparametrize', 'infer', 'compute transition', 'predict']
+loss: lower bound objective function | failure: the problems outlined in Section 2 are overcome by construction
+semantic_ops         ['reparametrize@other', 'infer@parameter', 'compute transition@state', 'predict@input']
+semantic_ops_pass2   ['reparametrize@unknown', 'infer@parameter', 'compute transition@state', 'predict@input']
+--- lexical
+  1.00  pc-learning       Spiking Neural Predictive Coding for Continu   [predict]
+  1.00  pc-neuro          Dendritic predictive coding: A theory of cor   [predict]
+  1.00  pc-neuro          Predictive Coding Light+: learning to predic   [predict]
+  0.78  pc-neuro  (n=3, max 1.00)
+  0.31  pc-learning  (n=8, max 1.00)
+  0.28  worldmodels  (n=6, max 0.50)
+  0.27  jepa  (n=5, max 0.50)
+  0.23  diffusion  (n=5, max 0.50)
+  0.23  state-estimation  (n=8, max 0.50)
+  0.19  particle  (n=5, max 0.50)
+  0.07  control  (n=5, max 0.33)
+  0.00  policy-learning  (n=5, max 0.00)
+--- strict
+  0.17  diffusion         Denoising Diffusion Implicit Models            [predict@parameter]
+  0.17  diffusion         Denoising Diffusion Probabilistic Models       [predict@parameter]
+  0.17  pc-neuro          Deep Predictive Coding Networks for Video Pr   [predict@input]
+  0.10  pc-neuro  (n=3, max 0.17)
+  0.07  diffusion  (n=5, max 0.17)
+  0.00  control  (n=5, max 0.00)
+  0.00  jepa  (n=5, max 0.00)
+  0.00  particle  (n=5, max 0.00)
+  0.00  pc-learning  (n=8, max 0.00)
+  0.00  policy-learning  (n=5, max 0.00)
+  0.00  state-estimation  (n=8, max 0.00)
+  0.00  worldmodels  (n=6, max 0.00)
+--- relaxed
+  0.17  diffusion         Denoising Diffusion Implicit Models            [predict@parameter]
+  0.17  diffusion         Denoising Diffusion Probabilistic Models       [predict@parameter]
+  0.17  pc-neuro          Deep Predictive Coding Networks for Video Pr   [predict@input]
+  0.10  pc-neuro  (n=3, max 0.17)
+  0.07  diffusion  (n=5, max 0.17)
+  0.00  control  (n=5, max 0.00)
+  0.00  jepa  (n=5, max 0.00)
+  0.00  particle  (n=5, max 0.00)
+  0.00  pc-learning  (n=8, max 0.00)
+  0.00  policy-learning  (n=5, max 0.00)
+  0.00  state-estimation  (n=8, max 0.00)
+  0.00  worldmodels  (n=6, max 0.00)
+
+======================================== Practical Bayesian Optimization
+source: test:1206.2944 [unseen] fallback: 20% window
+ops: ['predict', 'acquire', 'optimize']
+loss: expected improvement | failure: does not require its own tuning parameter
+semantic_ops         ['predict@distribution', 'acquire@distribution', 'optimize@distribution']
+semantic_ops_pass2   ['predict@distribution', 'acquire@sample', 'optimize@action']
+--- lexical
+  0.67  pc-learning       Predictive Coding Can Do Exact Backpropagati   [predict, train]
+  0.67  worldmodels       Learning Latent Dynamics for Planning from P   [predict, train]
+  0.50  control           Deep Residual Learning for Image Recognition   [train]
+  0.42  pc-neuro  (n=3, max 0.50)
+  0.38  worldmodels  (n=6, max 0.67)
+  0.29  pc-learning  (n=8, max 0.67)
+  0.20  policy-learning  (n=5, max 0.50)
+  0.20  jepa  (n=5, max 0.33)
+  0.17  diffusion  (n=5, max 0.33)
+  0.16  state-estimation  (n=8, max 0.33)
+  0.15  control  (n=5, max 0.50)
+  0.14  particle  (n=5, max 0.33)
+--- strict
+  0.20  control           Efficient Estimation of Word Representations   [predict@distribution]
+  0.20  worldmodels       Mastering Diverse Domains through World Mode   [predict@distribution]
+  0.17  pc-learning       Predictive Coding: a Theoretical and Experim   [predict@distribution]
+  0.04  control  (n=5, max 0.20)
+  0.03  worldmodels  (n=6, max 0.20)
+  0.02  pc-learning  (n=8, max 0.17)
+  0.00  diffusion  (n=5, max 0.00)
+  0.00  jepa  (n=5, max 0.00)
+  0.00  particle  (n=5, max 0.00)
+  0.00  pc-neuro  (n=3, max 0.00)
+  0.00  policy-learning  (n=5, max 0.00)
+  0.00  state-estimation  (n=8, max 0.00)
+--- relaxed
+  0.20  control           Efficient Estimation of Word Representations   [predict@stochastic_object]
+  0.20  worldmodels       Mastering Diverse Domains through World Mode   [predict@stochastic_object]
+  0.17  pc-learning       Predictive Coding: a Theoretical and Experim   [predict@stochastic_object]
+  0.04  control  (n=5, max 0.20)
+  0.03  worldmodels  (n=6, max 0.20)
+  0.02  pc-learning  (n=8, max 0.17)
+  0.00  diffusion  (n=5, max 0.00)
+  0.00  jepa  (n=5, max 0.00)
+  0.00  particle  (n=5, max 0.00)
+  0.00  pc-neuro  (n=3, max 0.00)
+  0.00  policy-learning  (n=5, max 0.00)
+  0.00  state-estimation  (n=8, max 0.00)
+
+======================================== Model-Agnostic Meta-Learning
+source: test:1703.03400 [unseen] heading: Model-Agnostic Meta-Learning
+ops: ['sample', 'evaluate', 'update', 'optimize']
+loss: mean-squared error | failure: overfitting
+semantic_ops         ['sample@other', 'evaluate@other', 'update@parameter', 'optimize@parameter']
+Traceback (most recent call last):
+  File "<stdin>", line 7, in <module>
+KeyError: 'semantic_ops_pass2'
+--- lexical
+  0.67  pc-learning       Constrained Predictive Coding as a Biologica   [correct, train]
+  0.50  pc-learning       Predictive Coding Can Do Exact Backpropagati   [correct, train]
+  0.50  policy-learning   Playing Atari with Deep Reinforcement Learni   [correct, sample]
+  0.31  particle  (n=5, max 0.40)
+  0.31  pc-learning  (n=8, max 0.67)
+  0.30  policy-learning  (n=5, max 0.50)
+  0.18  diffusion  (n=5, max 0.25)
+  0.15  worldmodels  (n=6, max 0.25)
+  0.14  state-estimation  (n=8, max 0.33)
+  0.13  control  (n=5, max 0.33)
+  0.07  jepa  (n=5, max 0.20)
+  0.07  pc-neuro  (n=3, max 0.20)
+--- strict
+  0.40  pc-learning       Constrained Predictive Coding as a Biologica   [correct@parameter, train@parameter]
+  0.20  pc-learning       Understanding and Improving Optimization in    [correct@parameter]
+  0.17  control           Adam: A Method for Stochastic Optimization     [correct@parameter]
+  0.17  pc-learning  (n=8, max 0.40)
+  0.10  policy-learning  (n=5, max 0.17)
+  0.06  jepa  (n=5, max 0.17)
+  0.03  state-estimation  (n=8, max 0.14)
+  0.03  control  (n=5, max 0.17)
+  0.03  particle  (n=5, max 0.14)
+  0.02  worldmodels  (n=6, max 0.14)
+  0.00  diffusion  (n=5, max 0.00)
+  0.00  pc-neuro  (n=3, max 0.00)
+--- relaxed
+  0.40  pc-learning       Constrained Predictive Coding as a Biologica   [correct@parameter, train@parameter]
+  0.20  pc-learning       Understanding and Improving Optimization in    [correct@parameter]
+  0.17  control           Adam: A Method for Stochastic Optimization     [correct@parameter]
+  0.17  pc-learning  (n=8, max 0.40)
+  0.10  policy-learning  (n=5, max 0.17)
+  0.06  jepa  (n=5, max 0.17)
+  0.03  state-estimation  (n=8, max 0.14)
+  0.03  control  (n=5, max 0.17)
+  0.03  particle  (n=5, max 0.14)
+  0.02  worldmodels  (n=6, max 0.14)
+  0.00  diffusion  (n=5, max 0.00)
+  0.00  pc-neuro  (n=3, max 0.00)

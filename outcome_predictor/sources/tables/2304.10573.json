@@ -1,0 +1,567 @@
+{
+ "arxiv_id": "2304.10573",
+ "title": "IDQL: Implicit Q-Learning as an Actor-Critic Method with Diffusion Policies",
+ "methods": [
+  {
+   "method_name": "IDQL-A",
+   "is_own_method": true,
+   "one_paragraph_description": "Train Q and V with IQL expectile loss (tau) on the offline dataset; separately train a diffusion (DDPM, LN_Resnet score net, T=5 VP schedule) behavior-cloning policy mu(a|s). At runtime, sample N actions from the diffusion behavior model and execute the argmax under Q (one-hot reweighting of the implicit policy). '-A' = any amount of tuning / reported results.",
+   "conventional_lineage_hint": "offline RL (implicit Q-learning generalized as an actor-critic method with diffusion policies; 'we generalize IQL into an actor-critic method')",
+   "global_conditions": {
+    "learning_rate": {
+     "value": "3e-4",
+     "quote": "LR (For all networks)                                 3e-4",
+     "location": "Appendix E table"
+    },
+    "critic_batch_size": {
+     "value": "256",
+     "quote": "Critc Batch Size                                      256",
+     "location": "Appendix E table"
+    },
+    "actor_batch_size": {
+     "value": "1024",
+     "quote": "Actor Batch Size                                     1024",
+     "location": "Appendix E table"
+    },
+    "expectile_tau": {
+     "value": "0.7 (locomotion)",
+     "quote": "τ Expectiles                           0.7 (locomotion), 0.9 (antmaze)",
+     "location": "Appendix E table"
+    },
+    "target_critic_ema": {
+     "value": "0.005",
+     "quote": "Target Critic EMA                                    0.005",
+     "location": "Appendix E table"
+    },
+    "diffusion_steps_T": {
+     "value": "5",
+     "quote": "T                                                      5",
+     "location": "Appendix E table"
+    },
+    "beta_schedule": {
+     "value": "Variance Preserving",
+     "quote": "Beta schedule                              Variance Preserving [43]",
+     "location": "Appendix E table"
+    },
+    "dropout_rate": {
+     "value": "0.1",
+     "quote": "Dropout Rate [42]                                    0.1",
+     "location": "Appendix E table"
+    },
+    "num_residual_blocks": {
+     "value": "3",
+     "quote": "Number Residual Blocks                              3",
+     "location": "Appendix E table"
+    },
+    "actor_lr_schedule": {
+     "value": "cosine decay over number of actor grad steps",
+     "quote": "Actor Cosine Decay [32]                  Number of Actor Grad Steps",
+     "location": "Appendix E table"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "Optimizer                                         Adam [23]",
+     "location": "Appendix E table"
+    },
+    "critic_value_network": {
+     "value": "2 layer MLP, hidden 256, ReLU",
+     "quote": "The critic and value network follow the same parameterization as in IQL [26] (2 Layer MLP with hidden size 256 and ReLU activations).",
+     "location": "Appendix E"
+    },
+    "actor_architecture": {
+     "value": "LN_Resnet, hidden dim 256, n=3 blocks",
+     "quote": "We depict the architecture used in the LN_Resnet described in Section 5. We use hidden dim size 256 and n = 3 blocks for our practical implementation.",
+     "location": "Appendix G"
+    },
+    "reward_preprocessing": {
+     "value": "standardized rewards for locomotion",
+     "quote": "As in IQL, we standardize the rewards for the locomotion tasks and we subtract rewards by one for the antmaze tasks.",
+     "location": "Appendix D.1"
+    },
+    "action_selection": {
+     "value": "argmax over N diffusion samples by Q",
+     "quote": "In practice, we also found that simply taking the action with the highest Q-value tends to yield better performance at evaluation time, which corresponds to selecting w(s, a) to be a one-hot.",
+     "location": "Section 4.2"
+    },
+    "num_action_samples_N": {
+     "value": "128",
+     "quote": "N                               32 (antmaze \"-A\"), 128 (loco \"-A\"), 64 (\"-1\")",
+     "location": "Appendix E table"
+    },
+    "critic_grad_steps": {
+     "value": "1.5e6",
+     "quote": "Critic Grad Steps                          1.5e6 (\"-A\"), 1e6 (\"-1\")",
+     "location": "Appendix E table"
+    },
+    "actor_grad_steps": {
+     "value": "3e6",
+     "quote": "Actor Grad Steps                            3e6 (\"-A\"), 2e6 (\"-1\")",
+     "location": "Appendix E table"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "10",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not explicitly stated (paper criticizes methods that 'take the max of their evaluation curve', Appendix D.2/F.1)",
+    "quote": "Table 4: Standard evaluation for offline RL. IDQL performs on par or better than other SOTA offline RL methods. Algorithm names are shortened to save space. Results for our method are averaged over 10 seeds.",
+    "location": "Table 4 caption (Appendix F)"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "locomotion-v2 total      698.5      692.4      791.2          739.2    674.3    629.5    741.2     711.6",
+    "location": "Table 1 (also Figure axis labels e.g. 'halfcheetah-medium-v2')"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-med",
+     "outcome": 51.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "128",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1.5e6",
+      "actor_grad_steps": "3e6"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-med           44.0       47.4       51.1           51.0     46.4     47.6     50.6      49.7",
+     "notes": "printed as 'halfcheetah-med' = halfcheetah-medium. Header: 'Dataset        CQL-A       IQL-A     DQL-A         IDQL-A     CQL-1    IQL-1    DQL-1    IDQL-1'. No std reported. Same IDQL-A values repeated in Table 4 (Appendix F) column 'IDQL'."
+    },
+    {
+     "dataset": "hopper-med",
+     "outcome": 65.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "128",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1.5e6",
+      "actor_grad_steps": "3e6"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-med                58.5       66.3       90.5           65.4     64.4     63.7     75.2      63.1",
+     "notes": "printed as 'hopper-med' = hopper-medium. Header: 'Dataset        CQL-A       IQL-A     DQL-A         IDQL-A     CQL-1    IQL-1    DQL-1    IDQL-1'. No std reported. Same IDQL-A values repeated in Table 4 (Appendix F) column 'IDQL'."
+    },
+    {
+     "dataset": "walker2d-med",
+     "outcome": 82.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "128",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1.5e6",
+      "actor_grad_steps": "3e6"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-med              72.5       78.3       87.0           82.5     81.6     81.9     83.4      80.2",
+     "notes": "printed as 'walker2d-med' = walker2d-medium. Header: 'Dataset        CQL-A       IQL-A     DQL-A         IDQL-A     CQL-1    IQL-1    DQL-1    IDQL-1'. No std reported. Same IDQL-A values repeated in Table 4 (Appendix F) column 'IDQL'."
+    },
+    {
+     "dataset": "halfcheetah-med-rep",
+     "outcome": 45.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "128",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1.5e6",
+      "actor_grad_steps": "3e6"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-med-rep       45.5       44.2       47.8           45.9     45.4     43.1     45.8      45.1",
+     "notes": "printed as 'halfcheetah-med-rep' = halfcheetah-medium-replay. Header: 'Dataset        CQL-A       IQL-A     DQL-A         IDQL-A     CQL-1    IQL-1    DQL-1    IDQL-1'. No std reported. Same IDQL-A values repeated in Table 4 (Appendix F) column 'IDQL'."
+    },
+    {
+     "dataset": "hopper-med-rep",
+     "outcome": 92.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "128",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1.5e6",
+      "actor_grad_steps": "3e6"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-med-rep            95.0       94.7      101.3           92.1     88.5     42.5     94.5      82.4",
+     "notes": "printed as 'hopper-med-rep' = hopper-medium-replay. Header: 'Dataset        CQL-A       IQL-A     DQL-A         IDQL-A     CQL-1    IQL-1    DQL-1    IDQL-1'. No std reported. Same IDQL-A values repeated in Table 4 (Appendix F) column 'IDQL'."
+    },
+    {
+     "dataset": "walker2d-med-rep",
+     "outcome": 85.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "128",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1.5e6",
+      "actor_grad_steps": "3e6"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-med-rep          77.2       73.9       95.5           85.1     74.5     78.4     86.7      79.8",
+     "notes": "printed as 'walker2d-med-rep' = walker2d-medium-replay. Header: 'Dataset        CQL-A       IQL-A     DQL-A         IDQL-A     CQL-1    IQL-1    DQL-1    IDQL-1'. No std reported. Same IDQL-A values repeated in Table 4 (Appendix F) column 'IDQL'."
+    },
+    {
+     "dataset": "halfcheetah-med-exp",
+     "outcome": 95.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "128",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1.5e6",
+      "actor_grad_steps": "3e6"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-med-exp       91.6       86.7       96.8           95.9     64.6     88.1     93.3      94.4",
+     "notes": "printed as 'halfcheetah-med-exp' = halfcheetah-medium-expert. Header: 'Dataset        CQL-A       IQL-A     DQL-A         IDQL-A     CQL-1    IQL-1    DQL-1    IDQL-1'. No std reported. Same IDQL-A values repeated in Table 4 (Appendix F) column 'IDQL'."
+    },
+    {
+     "dataset": "hopper-med-exp",
+     "outcome": 108.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "128",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1.5e6",
+      "actor_grad_steps": "3e6"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-med-exp           105.4       91.5      111.1          108.6     99.3     73.7    102.1     105.3",
+     "notes": "printed as 'hopper-med-exp' = hopper-medium-expert. Header: 'Dataset        CQL-A       IQL-A     DQL-A         IDQL-A     CQL-1    IQL-1    DQL-1    IDQL-1'. No std reported. Same IDQL-A values repeated in Table 4 (Appendix F) column 'IDQL'."
+    },
+    {
+     "dataset": "walker2d-med-exp",
+     "outcome": 112.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "128",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1.5e6",
+      "actor_grad_steps": "3e6"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-med-exp         108.8      109.6      110.1          112.7    109.6    110.5    109.6     111.6",
+     "notes": "printed as 'walker2d-med-exp' = walker2d-medium-expert. Header: 'Dataset        CQL-A       IQL-A     DQL-A         IDQL-A     CQL-1    IQL-1    DQL-1    IDQL-1'. No std reported. Same IDQL-A values repeated in Table 4 (Appendix F) column 'IDQL'."
+    }
+   ]
+  },
+  {
+   "method_name": "IDQL-1",
+   "is_own_method": true,
+   "one_paragraph_description": "Train Q and V with IQL expectile loss (tau) on the offline dataset; separately train a diffusion (DDPM, LN_Resnet score net, T=5 VP schedule) behavior-cloning policy mu(a|s). At runtime, sample N actions from the diffusion behavior model and execute the argmax under Q (one-hot reweighting of the implicit policy). '-1' = one-hyperparameter regime: only tau tuned per domain (tau=0.7 for all locomotion).",
+   "conventional_lineage_hint": "offline RL (implicit Q-learning generalized as an actor-critic method with diffusion policies; 'we generalize IQL into an actor-critic method')",
+   "global_conditions": {
+    "learning_rate": {
+     "value": "3e-4",
+     "quote": "LR (For all networks)                                 3e-4",
+     "location": "Appendix E table"
+    },
+    "critic_batch_size": {
+     "value": "256",
+     "quote": "Critc Batch Size                                      256",
+     "location": "Appendix E table"
+    },
+    "actor_batch_size": {
+     "value": "1024",
+     "quote": "Actor Batch Size                                     1024",
+     "location": "Appendix E table"
+    },
+    "expectile_tau": {
+     "value": "0.7 (locomotion)",
+     "quote": "τ Expectiles                           0.7 (locomotion), 0.9 (antmaze)",
+     "location": "Appendix E table"
+    },
+    "target_critic_ema": {
+     "value": "0.005",
+     "quote": "Target Critic EMA                                    0.005",
+     "location": "Appendix E table"
+    },
+    "diffusion_steps_T": {
+     "value": "5",
+     "quote": "T                                                      5",
+     "location": "Appendix E table"
+    },
+    "beta_schedule": {
+     "value": "Variance Preserving",
+     "quote": "Beta schedule                              Variance Preserving [43]",
+     "location": "Appendix E table"
+    },
+    "dropout_rate": {
+     "value": "0.1",
+     "quote": "Dropout Rate [42]                                    0.1",
+     "location": "Appendix E table"
+    },
+    "num_residual_blocks": {
+     "value": "3",
+     "quote": "Number Residual Blocks                              3",
+     "location": "Appendix E table"
+    },
+    "actor_lr_schedule": {
+     "value": "cosine decay over number of actor grad steps",
+     "quote": "Actor Cosine Decay [32]                  Number of Actor Grad Steps",
+     "location": "Appendix E table"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "Optimizer                                         Adam [23]",
+     "location": "Appendix E table"
+    },
+    "critic_value_network": {
+     "value": "2 layer MLP, hidden 256, ReLU",
+     "quote": "The critic and value network follow the same parameterization as in IQL [26] (2 Layer MLP with hidden size 256 and ReLU activations).",
+     "location": "Appendix E"
+    },
+    "actor_architecture": {
+     "value": "LN_Resnet, hidden dim 256, n=3 blocks",
+     "quote": "We depict the architecture used in the LN_Resnet described in Section 5. We use hidden dim size 256 and n = 3 blocks for our practical implementation.",
+     "location": "Appendix G"
+    },
+    "reward_preprocessing": {
+     "value": "standardized rewards for locomotion",
+     "quote": "As in IQL, we standardize the rewards for the locomotion tasks and we subtract rewards by one for the antmaze tasks.",
+     "location": "Appendix D.1"
+    },
+    "action_selection": {
+     "value": "argmax over N diffusion samples by Q",
+     "quote": "In practice, we also found that simply taking the action with the highest Q-value tends to yield better performance at evaluation time, which corresponds to selecting w(s, a) to be a one-hot.",
+     "location": "Section 4.2"
+    },
+    "num_action_samples_N": {
+     "value": "64",
+     "quote": "N                               32 (antmaze \"-A\"), 128 (loco \"-A\"), 64 (\"-1\")",
+     "location": "Appendix E table"
+    },
+    "critic_grad_steps": {
+     "value": "1e6",
+     "quote": "Critic Grad Steps                          1.5e6 (\"-A\"), 1e6 (\"-1\")",
+     "location": "Appendix E table"
+    },
+    "actor_grad_steps": {
+     "value": "2e6",
+     "quote": "Actor Grad Steps                            3e6 (\"-A\"), 2e6 (\"-1\")",
+     "location": "Appendix E table"
+    },
+    "expectile_tau_sweep": {
+     "value": "{0.6,0.7,0.8,0.9}, best per domain -> 0.7 locomotion",
+     "quote": "for IQL and IDQL, we swept over the expectile τ ∈ {0.6, 0.7, 0.8, 0.9}. For each domain (locomotion and antmaze), we select the best-performing hyperparameter (e.g. τ = 0.7 for locomotion and τ = 0.9 for antmaze).",
+     "location": "Appendix D.2"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "10",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not explicitly stated (paper criticizes methods that 'take the max of their evaluation curve', Appendix D.2/F.1)",
+    "quote": "Table 4: Standard evaluation for offline RL. IDQL performs on par or better than other SOTA offline RL methods. Algorithm names are shortened to save space. Results for our method are averaged over 10 seeds.",
+    "location": "Table 4 caption (Appendix F)"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "locomotion-v2 total      698.5      692.4      791.2          739.2    674.3    629.5    741.2     711.6",
+    "location": "Table 1 (also Figure axis labels e.g. 'halfcheetah-medium-v2')"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-med",
+     "outcome": 49.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "one-hyperparameter (tau=0.7 locomotion)",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "64",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1e6",
+      "actor_grad_steps": "2e6"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-med           44.0       47.4       51.1           51.0     46.4     47.6     50.6      49.7",
+     "notes": "printed as 'halfcheetah-med' = halfcheetah-medium. No std reported."
+    },
+    {
+     "dataset": "hopper-med",
+     "outcome": 63.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "one-hyperparameter (tau=0.7 locomotion)",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "64",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1e6",
+      "actor_grad_steps": "2e6"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-med                58.5       66.3       90.5           65.4     64.4     63.7     75.2      63.1",
+     "notes": "printed as 'hopper-med' = hopper-medium. No std reported."
+    },
+    {
+     "dataset": "walker2d-med",
+     "outcome": 80.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "one-hyperparameter (tau=0.7 locomotion)",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "64",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1e6",
+      "actor_grad_steps": "2e6"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-med              72.5       78.3       87.0           82.5     81.6     81.9     83.4      80.2",
+     "notes": "printed as 'walker2d-med' = walker2d-medium. No std reported."
+    },
+    {
+     "dataset": "halfcheetah-med-rep",
+     "outcome": 45.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "one-hyperparameter (tau=0.7 locomotion)",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "64",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1e6",
+      "actor_grad_steps": "2e6"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-med-rep       45.5       44.2       47.8           45.9     45.4     43.1     45.8      45.1",
+     "notes": "printed as 'halfcheetah-med-rep' = halfcheetah-medium-replay. No std reported."
+    },
+    {
+     "dataset": "hopper-med-rep",
+     "outcome": 82.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "one-hyperparameter (tau=0.7 locomotion)",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "64",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1e6",
+      "actor_grad_steps": "2e6"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-med-rep            95.0       94.7      101.3           92.1     88.5     42.5     94.5      82.4",
+     "notes": "printed as 'hopper-med-rep' = hopper-medium-replay. No std reported."
+    },
+    {
+     "dataset": "walker2d-med-rep",
+     "outcome": 79.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "one-hyperparameter (tau=0.7 locomotion)",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "64",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1e6",
+      "actor_grad_steps": "2e6"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-med-rep          77.2       73.9       95.5           85.1     74.5     78.4     86.7      79.8",
+     "notes": "printed as 'walker2d-med-rep' = walker2d-medium-replay. No std reported."
+    },
+    {
+     "dataset": "halfcheetah-med-exp",
+     "outcome": 94.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "one-hyperparameter (tau=0.7 locomotion)",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "64",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1e6",
+      "actor_grad_steps": "2e6"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-med-exp       91.6       86.7       96.8           95.9     64.6     88.1     93.3      94.4",
+     "notes": "printed as 'halfcheetah-med-exp' = halfcheetah-medium-expert. No std reported."
+    },
+    {
+     "dataset": "hopper-med-exp",
+     "outcome": 105.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "one-hyperparameter (tau=0.7 locomotion)",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "64",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1e6",
+      "actor_grad_steps": "2e6"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-med-exp           105.4       91.5      111.1          108.6     99.3     73.7    102.1     105.3",
+     "notes": "printed as 'hopper-med-exp' = hopper-medium-expert. No std reported."
+    },
+    {
+     "dataset": "walker2d-med-exp",
+     "outcome": 111.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "one-hyperparameter (tau=0.7 locomotion)",
+     "config_conditions": {
+      "expectile_tau": "0.7",
+      "num_action_samples_N": "64",
+      "diffusion_steps_T": "5",
+      "critic_grad_steps": "1e6",
+      "actor_grad_steps": "2e6"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-med-exp         108.8      109.6      110.1          112.7    109.6    110.5    109.6     111.6",
+     "notes": "printed as 'walker2d-med-exp' = walker2d-medium-expert. No std reported."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "CQL-A",
+  "IQL-A",
+  "DQL-A",
+  "CQL-1",
+  "IQL-1",
+  "DQL-1",
+  "%BC",
+  "DT",
+  "TD3",
+  "CQL",
+  "IQL",
+  "EQL",
+  "SfBC",
+  "DQL"
+ ],
+ "problems": [
+  "Seed count (10) is only stated in the Table 4 caption (Appendix F); Table 1 caption does not state seeds. Table 4 IDQL column is numerically identical to Table 1 IDQL-A, so treated as the same runs.",
+  "No std/uncertainty reported for any D4RL table row.",
+  "Number of evaluation episodes per seed not stated anywhere in the text.",
+  "Ablations over N (Figure 4), T and beta schedule (Figure 5), batch size (Figure 6), AWR weighting (Figure 7), capacity/dropout/layernorm (Figure 8) are figures only; not extracted.",
+  "Quantile (tau=0.6) and exponential (alpha=1.0) critic-loss variants are listed in Appendix E but their D4RL per-dataset scores appear only in figures (Figure 4 / Section 6.3), not tables; not extracted.",
+  "Dataset names printed in shortened form ('halfcheetah-med', 'hopper-med-rep', ...); canonical names noted per row."
+ ]
+}

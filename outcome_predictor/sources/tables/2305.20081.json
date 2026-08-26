@@ -1,0 +1,1540 @@
+{
+ "arxiv_id": "2305.20081",
+ "title": "Efficient Diffusion Policies for Offline Reinforcement Learning",
+ "methods": [
+  {
+   "method_name": "EDP (Diffusion-QL + EDP)",
+   "is_own_method": true,
+   "one_paragraph_description": "Efficient Diffusion Policy (EDP): DDPM noise-prediction policy trained with action approximation (reconstruct a clean action from a noised dataset action in one network pass instead of running the K-step chain), sampled with DPM-Solver (15 model calls); at evaluation, energy-based action selection over N=10 sampled actions weighted by exp(Q). Trained with the Diffusion-QL objective (TD loss + weighted policy loss) with K=1000; reported with OMS metric.",
+   "conventional_lineage_hint": "offline RL, diffusion policy class ('Diffusion policy has emerged as an expressive policy class for offline reinforcement learning'); plug-in for direct (TD3) and likelihood-based (CRR, IQL) policy optimization",
+   "global_conditions": {
+    "backbone": {
+     "value": "3-layer MLP, hidden 256, Mish",
+     "quote": "We keep the backbone network architecture the same for all tasks and algorithms, which is a 3-layer MLP (hidden size 256) with Mish [23] activation function following Diffusion-QL [37].",
+     "location": "Section 5, Experimental Setup"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "We use the Adam [13] to optimize both diffusion policy and the Q networks.",
+     "location": "Section 5"
+    },
+    "epochs": {
+     "value": "2000 (Gym-locomotion)",
+     "quote": "The models are trained for 2000 epochs on Gym-locomotion and 1000 epochs on the other three domains.",
+     "location": "Section 5 / Table 3"
+    },
+    "iterations_per_epoch": {
+     "value": "1000",
+     "quote": "Each epoch consists of 1000 iterations of policy updates with batch size 256.",
+     "location": "Section 5"
+    },
+    "batch_size": {
+     "value": "256",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3"
+    },
+    "learning_rate": {
+     "value": "0.0003",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3 (columns: Learning rate, Gradient norm clipping, Loss weight, Epochs, Batch size)"
+    },
+    "gradient_norm_clipping": {
+     "value": "5",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3"
+    },
+    "loss_weight": {
+     "value": "1.0",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3"
+    },
+    "sampler": {
+     "value": "DPM-Solver, third-order, 15 model calls",
+     "quote": "For DPM-Solver [20], we use the third-order version and set the model call steps to 15.",
+     "location": "Section 5"
+    },
+    "sampler_steps": {
+     "value": "15",
+     "quote": "The performance gradually plateaus after 15 model calls. Therefore, we use 15 in our main experiments.",
+     "location": "Section 5.3, DPM-Solver"
+    },
+    "diffusion_steps_K": {
+     "value": "1000",
+     "quote": "This enables EDP to use a larger K (1000 in our experiments) to train diffusion policy on the more fine-grained scale.",
+     "location": "Section 4.4 Efficiency"
+    },
+    "eas_num_actions_N": {
+     "value": "10",
+     "quote": "In our main experiments, we set the number of actions to 10 by trading off the performance and computation efficiency.",
+     "location": "Section 5.3, Energy-Based Action Selection"
+    },
+    "action_selection": {
+     "value": "energy-based action selection: sample N actions, pick one with weights ∝ exp(Q)",
+     "quote": "EAS first samples N actions from πθ by using any samplers (i.e., DPM-Solver), then sample one of them with weights proportional to eQ(s,a) .",
+     "location": "Section 4.5"
+    },
+    "seeds": {
+     "value": "5",
+     "quote": "Throughout this paper, the results are reported by averaging 5 random seeds.",
+     "location": "Section 5"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "5",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "RAT: running average of evaluation over ten consecutive checkpoints, last value reported (Table 2 / Table 5 'Average'); OMS: best checkpoint over training (Table 4 / Table 5 'Best')",
+    "quote": "RAT calculates the running average of evaluation performance for ten consecutive checkpoints during training and reports the last score as the final performance. | online model selection (OMS), proposed by Diffusion-QL [37], selects the best-performing model throughout the whole training process.",
+    "location": "Section 5, Evaluation Protocal"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "halfcheetah-medium-v2    42.6    42.5    42.6    43.5   48.4     44.0 48.3    52.1     44.0    49.2    47.4      48.1",
+    "location": "Table 2 dataset names"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-v2",
+     "outcome": 52.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS, K=1000",
+     "config_conditions": {
+      "diffusion_steps_K": "1000",
+      "evaluation_metric": "OMS (best checkpoint)"
+     },
+     "table": "Table 4",
+     "line_quote": "halfcheetah-medium-v2                 51.5           52.3        52.8",
+     "notes": "Table 4 columns: Diffusion-QL | DQL (JAX) | EDP; this is the 'EDP' column (Diffusion-QL objective with efficient diffusion policy). OMS metric = best checkpoint over training. No std reported."
+    },
+    {
+     "dataset": "hopper-medium-v2",
+     "outcome": 98.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS, K=1000",
+     "config_conditions": {
+      "diffusion_steps_K": "1000",
+      "evaluation_metric": "OMS (best checkpoint)"
+     },
+     "table": "Table 4",
+     "line_quote": "hopper-medium-v2                    96.6           95.3        98.6",
+     "notes": "Table 4 columns: Diffusion-QL | DQL (JAX) | EDP; this is the 'EDP' column (Diffusion-QL objective with efficient diffusion policy). OMS metric = best checkpoint over training. No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-v2",
+     "outcome": 89.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS, K=1000",
+     "config_conditions": {
+      "diffusion_steps_K": "1000",
+      "evaluation_metric": "OMS (best checkpoint)"
+     },
+     "table": "Table 4",
+     "line_quote": "walker2d-medium-v2                   87.3           86.9        89.6",
+     "notes": "Table 4 columns: Diffusion-QL | DQL (JAX) | EDP; this is the 'EDP' column (Diffusion-QL objective with efficient diffusion policy). OMS metric = best checkpoint over training. No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay-v2",
+     "outcome": 50.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS, K=1000",
+     "config_conditions": {
+      "diffusion_steps_K": "1000",
+      "evaluation_metric": "OMS (best checkpoint)"
+     },
+     "table": "Table 4",
+     "line_quote": "halfcheetah-medium-replay-v2              48.3           50.3        50.4",
+     "notes": "Table 4 columns: Diffusion-QL | DQL (JAX) | EDP; this is the 'EDP' column (Diffusion-QL objective with efficient diffusion policy). OMS metric = best checkpoint over training. No std reported."
+    },
+    {
+     "dataset": "hopper-medium-replay-v2",
+     "outcome": 102.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS, K=1000",
+     "config_conditions": {
+      "diffusion_steps_K": "1000",
+      "evaluation_metric": "OMS (best checkpoint)"
+     },
+     "table": "Table 4",
+     "line_quote": "hopper-medium-replay-v2                102.0          101.8       102.7",
+     "notes": "Table 4 columns: Diffusion-QL | DQL (JAX) | EDP; this is the 'EDP' column (Diffusion-QL objective with efficient diffusion policy). OMS metric = best checkpoint over training. No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-replay-v2",
+     "outcome": 97.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS, K=1000",
+     "config_conditions": {
+      "diffusion_steps_K": "1000",
+      "evaluation_metric": "OMS (best checkpoint)"
+     },
+     "table": "Table 4",
+     "line_quote": "walker2d-medium-replay-v2                98.0           96.3        97.7",
+     "notes": "Table 4 columns: Diffusion-QL | DQL (JAX) | EDP; this is the 'EDP' column (Diffusion-QL objective with efficient diffusion policy). OMS metric = best checkpoint over training. No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert-v2",
+     "outcome": 97.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS, K=1000",
+     "config_conditions": {
+      "diffusion_steps_K": "1000",
+      "evaluation_metric": "OMS (best checkpoint)"
+     },
+     "table": "Table 4",
+     "line_quote": "halfcheetah-medium-expert-v2              97.2           97.3        97.1",
+     "notes": "Table 4 columns: Diffusion-QL | DQL (JAX) | EDP; this is the 'EDP' column (Diffusion-QL objective with efficient diffusion policy). OMS metric = best checkpoint over training. No std reported."
+    },
+    {
+     "dataset": "hopper-medium-expert-v2",
+     "outcome": 112.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS, K=1000",
+     "config_conditions": {
+      "diffusion_steps_K": "1000",
+      "evaluation_metric": "OMS (best checkpoint)"
+     },
+     "table": "Table 4",
+     "line_quote": "hopper-medium-expert-v2                112.3          113.1       112.0",
+     "notes": "Table 4 columns: Diffusion-QL | DQL (JAX) | EDP; this is the 'EDP' column (Diffusion-QL objective with efficient diffusion policy). OMS metric = best checkpoint over training. No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-expert-v2",
+     "outcome": 112.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS, K=1000",
+     "config_conditions": {
+      "diffusion_steps_K": "1000",
+      "evaluation_metric": "OMS (best checkpoint)"
+     },
+     "table": "Table 4",
+     "line_quote": "walker2d-medium-expert-v2               111.2          111.5       112.0",
+     "notes": "Table 4 columns: Diffusion-QL | DQL (JAX) | EDP; this is the 'EDP' column (Diffusion-QL objective with efficient diffusion policy). OMS metric = best checkpoint over training. No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-v2",
+     "outcome": 85.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS, K=100, action approximation",
+     "config_conditions": {
+      "diffusion_steps_K": "100",
+      "action_approximation": "yes",
+      "evaluation_metric": "OMS (best checkpoint)"
+     },
+     "table": "Table 7",
+     "line_quote": "walker2d-medium-v2             86.9           85.5",
+     "notes": "Table 7 header 'OMS K=100  DDPM  Action Approx'; this is the 'Action Approx' column. 'DDPM' column equals Table 4 'DQL (JAX)'."
+    },
+    {
+     "dataset": "walker2d-medium-reply-v2",
+     "outcome": 93.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS, K=100, action approximation",
+     "config_conditions": {
+      "diffusion_steps_K": "100",
+      "action_approximation": "yes",
+      "evaluation_metric": "OMS (best checkpoint)"
+     },
+     "table": "Table 7",
+     "line_quote": "walker2d-medium-reply-v2          96.3           93.3",
+     "notes": "Table 7 header 'OMS K=100  DDPM  Action Approx'; this is the 'Action Approx' column. 'DDPM' column (86.9/96.3/111.5) equals Table 4 'DQL (JAX)'. Dataset printed with typo 'walker2d-medium-reply-v2' = walker2d-medium-replay-v2."
+    },
+    {
+     "dataset": "walker2d-medium-expert-v2",
+     "outcome": 111.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS, K=100, action approximation",
+     "config_conditions": {
+      "diffusion_steps_K": "100",
+      "action_approximation": "yes",
+      "evaluation_metric": "OMS (best checkpoint)"
+     },
+     "table": "Table 7",
+     "line_quote": "walker2d-medium-expert-v2        111.5          111.1",
+     "notes": "Table 7 header 'OMS K=100  DDPM  Action Approx'; this is the 'Action Approx' column. 'DDPM' column equals Table 4 'DQL (JAX)'."
+    }
+   ]
+  },
+  {
+   "method_name": "EDP + TD3",
+   "is_own_method": true,
+   "one_paragraph_description": "Efficient Diffusion Policy (EDP): DDPM noise-prediction policy trained with action approximation (reconstruct a clean action from a noised dataset action in one network pass instead of running the K-step chain), sampled with DPM-Solver (15 model calls); at evaluation, energy-based action selection over N=10 sampled actions weighted by exp(Q). Policy improvement by direct policy optimization (TD3+BC-style).",
+   "conventional_lineage_hint": "offline RL, diffusion policy class ('Diffusion policy has emerged as an expressive policy class for offline reinforcement learning'); plug-in for direct (TD3) and likelihood-based (CRR, IQL) policy optimization",
+   "global_conditions": {
+    "backbone": {
+     "value": "3-layer MLP, hidden 256, Mish",
+     "quote": "We keep the backbone network architecture the same for all tasks and algorithms, which is a 3-layer MLP (hidden size 256) with Mish [23] activation function following Diffusion-QL [37].",
+     "location": "Section 5, Experimental Setup"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "We use the Adam [13] to optimize both diffusion policy and the Q networks.",
+     "location": "Section 5"
+    },
+    "epochs": {
+     "value": "2000 (Gym-locomotion)",
+     "quote": "The models are trained for 2000 epochs on Gym-locomotion and 1000 epochs on the other three domains.",
+     "location": "Section 5 / Table 3"
+    },
+    "iterations_per_epoch": {
+     "value": "1000",
+     "quote": "Each epoch consists of 1000 iterations of policy updates with batch size 256.",
+     "location": "Section 5"
+    },
+    "batch_size": {
+     "value": "256",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3"
+    },
+    "learning_rate": {
+     "value": "0.0003",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3 (columns: Learning rate, Gradient norm clipping, Loss weight, Epochs, Batch size)"
+    },
+    "gradient_norm_clipping": {
+     "value": "5",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3"
+    },
+    "loss_weight": {
+     "value": "1.0",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3"
+    },
+    "sampler": {
+     "value": "DPM-Solver, third-order, 15 model calls",
+     "quote": "For DPM-Solver [20], we use the third-order version and set the model call steps to 15.",
+     "location": "Section 5"
+    },
+    "sampler_steps": {
+     "value": "15",
+     "quote": "The performance gradually plateaus after 15 model calls. Therefore, we use 15 in our main experiments.",
+     "location": "Section 5.3, DPM-Solver"
+    },
+    "diffusion_steps_K": {
+     "value": "1000",
+     "quote": "This enables EDP to use a larger K (1000 in our experiments) to train diffusion policy on the more fine-grained scale.",
+     "location": "Section 4.4 Efficiency"
+    },
+    "eas_num_actions_N": {
+     "value": "10",
+     "quote": "In our main experiments, we set the number of actions to 10 by trading off the performance and computation efficiency.",
+     "location": "Section 5.3, Energy-Based Action Selection"
+    },
+    "action_selection": {
+     "value": "energy-based action selection: sample N actions, pick one with weights ∝ exp(Q)",
+     "quote": "EAS first samples N actions from πθ by using any samplers (i.e., DPM-Solver), then sample one of them with weights proportional to eQ(s,a) .",
+     "location": "Section 4.5"
+    },
+    "seeds": {
+     "value": "5",
+     "quote": "Throughout this paper, the results are reported by averaging 5 random seeds.",
+     "location": "Section 5"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "5",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "RAT: running average of evaluation over ten consecutive checkpoints, last value reported (Table 2 / Table 5 'Average'); OMS: best checkpoint over training (Table 4 / Table 5 'Best')",
+    "quote": "RAT calculates the running average of evaluation performance for ten consecutive checkpoints during training and reports the last score as the final performance. | online model selection (OMS), proposed by Diffusion-QL [37], selects the best-performing model throughout the whole training process.",
+    "location": "Section 5, Evaluation Protocal"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "halfcheetah-medium-v2    42.6    42.5    42.6    43.5   48.4     44.0 48.3    52.1     44.0    49.2    47.4      48.1",
+    "location": "Table 2 dataset names"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-v2",
+     "outcome": 52.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-medium-v2    42.6    42.5    42.6    43.5   48.4     44.0 48.3    52.1     44.0    49.2    47.4      48.1",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'TD3+BC EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "hopper-medium-v2",
+     "outcome": 81.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-medium-v2       52.9    56.9    67.6    57.0   59.6     58.5 59.3    81.9     58.5    78.7    66.3      63.1",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'TD3+BC EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-v2",
+     "outcome": 86.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-medium-v2      75.3    75.0    74.0    72.4   81.8     72.5 83.7    86.9     72.5    82.5    78.3      85.4",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'TD3+BC EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay-v2",
+     "outcome": 49.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-medium-replay-v2 36.6    40.6    36.6    40.5   38.1     45.5 44.6    49.4     45.5    43.5    44.2      43.8",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'TD3+BC EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "hopper-medium-replay-v2",
+     "outcome": 101.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-medium-replay-v2    18.1    75.9    82.7    37.2   97.5     95.0 60.9    101.0    95.0    99.0    94.7      99.1",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'TD3+BC EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-replay-v2",
+     "outcome": 94.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-medium-replay-v2 26.0      62.5    66.6    27.0   49.5     77.2 81.8    94.9     77.2    63.3    73.9      84.0",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'TD3+BC EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert-v2",
+     "outcome": 95.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-medium-expert-v2 55.2     92.9    86.8   42.8    93.4    91.6 90.7    95.5     91.6    85.6    86.7      86.7",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'TD3+BC EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "hopper-medium-expert-v2",
+     "outcome": 97.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-medium-expert-v2    52.5    110.9   107.6   55.8   103.3   105.4 98.0    97.4    105.4    92.9    91.5      99.6",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'TD3+BC EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-expert-v2",
+     "outcome": 110.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-medium-expert-v2 107.5     109.0   108.1   74.5   113.0   108.8 110.1   110.2   108.8   110.1   109.6     109.0",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'TD3+BC EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-v2",
+     "outcome": 52.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "halfcheetah-medium-v2                               52.1         52.8        49.2         50.2           48.1       48.7",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + TD3 Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "hopper-medium-v2",
+     "outcome": 98.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "hopper-medium-v2                                  81.9         98.6        78.7         95.0           63.1       97.3",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + TD3 Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-v2",
+     "outcome": 89.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "walker2d-medium-v2                                 86.9         89.6        82.5         85.8           85.4       88.7",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + TD3 Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay-v2",
+     "outcome": 50.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "halfcheetah-medium-replay-v2                            49.4         50.4        43.5         47.8           43.8       45.5",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + TD3 Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "hopper-medium-replay-v2",
+     "outcome": 102.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "hopper-medium-replay-v2                              101.0        102.7        99.0        101.7           99.1      100.9",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + TD3 Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-replay-v2",
+     "outcome": 97.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "walker2d-medium-replay-v2                              94.9         97.7        63.3         89.8           84.0       93.4",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + TD3 Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert-v2",
+     "outcome": 97.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "halfcheetah-medium-expert-v2                            95.5         97.1        85.6         93.5           86.7       80.9",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + TD3 Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "hopper-medium-expert-v2",
+     "outcome": 112.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "hopper-medium-expert-v2                               97.4        112.0        92.9        109.4           99.6       95.7",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + TD3 Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-expert-v2",
+     "outcome": 112.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "TD3",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "walker2d-medium-expert-v2                             110.2        112.0       110.1        112.3          109.0      111.5",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + TD3 Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    }
+   ]
+  },
+  {
+   "method_name": "EDP + CRR",
+   "is_own_method": true,
+   "one_paragraph_description": "Efficient Diffusion Policy (EDP): DDPM noise-prediction policy trained with action approximation (reconstruct a clean action from a noised dataset action in one network pass instead of running the K-step chain), sampled with DPM-Solver (15 model calls); at evaluation, energy-based action selection over N=10 sampled actions weighted by exp(Q). Policy improvement by likelihood-based CRR (advantage-weighted) using the approximated-action Gaussian likelihood.",
+   "conventional_lineage_hint": "offline RL, diffusion policy class ('Diffusion policy has emerged as an expressive policy class for offline reinforcement learning'); plug-in for direct (TD3) and likelihood-based (CRR, IQL) policy optimization",
+   "global_conditions": {
+    "backbone": {
+     "value": "3-layer MLP, hidden 256, Mish",
+     "quote": "We keep the backbone network architecture the same for all tasks and algorithms, which is a 3-layer MLP (hidden size 256) with Mish [23] activation function following Diffusion-QL [37].",
+     "location": "Section 5, Experimental Setup"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "We use the Adam [13] to optimize both diffusion policy and the Q networks.",
+     "location": "Section 5"
+    },
+    "epochs": {
+     "value": "2000 (Gym-locomotion)",
+     "quote": "The models are trained for 2000 epochs on Gym-locomotion and 1000 epochs on the other three domains.",
+     "location": "Section 5 / Table 3"
+    },
+    "iterations_per_epoch": {
+     "value": "1000",
+     "quote": "Each epoch consists of 1000 iterations of policy updates with batch size 256.",
+     "location": "Section 5"
+    },
+    "batch_size": {
+     "value": "256",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3"
+    },
+    "learning_rate": {
+     "value": "0.0003",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3 (columns: Learning rate, Gradient norm clipping, Loss weight, Epochs, Batch size)"
+    },
+    "gradient_norm_clipping": {
+     "value": "5",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3"
+    },
+    "loss_weight": {
+     "value": "1.0",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3"
+    },
+    "sampler": {
+     "value": "DPM-Solver, third-order, 15 model calls",
+     "quote": "For DPM-Solver [20], we use the third-order version and set the model call steps to 15.",
+     "location": "Section 5"
+    },
+    "sampler_steps": {
+     "value": "15",
+     "quote": "The performance gradually plateaus after 15 model calls. Therefore, we use 15 in our main experiments.",
+     "location": "Section 5.3, DPM-Solver"
+    },
+    "diffusion_steps_K": {
+     "value": "1000",
+     "quote": "This enables EDP to use a larger K (1000 in our experiments) to train diffusion policy on the more fine-grained scale.",
+     "location": "Section 4.4 Efficiency"
+    },
+    "eas_num_actions_N": {
+     "value": "10",
+     "quote": "In our main experiments, we set the number of actions to 10 by trading off the performance and computation efficiency.",
+     "location": "Section 5.3, Energy-Based Action Selection"
+    },
+    "action_selection": {
+     "value": "energy-based action selection: sample N actions, pick one with weights ∝ exp(Q)",
+     "quote": "EAS first samples N actions from πθ by using any samplers (i.e., DPM-Solver), then sample one of them with weights proportional to eQ(s,a) .",
+     "location": "Section 4.5"
+    },
+    "seeds": {
+     "value": "5",
+     "quote": "Throughout this paper, the results are reported by averaging 5 random seeds.",
+     "location": "Section 5"
+    },
+    "crr_beta": {
+     "value": "1",
+     "quote": "In our experiment, we found using a fixed standard deviation, an identity matrix of σ = I, β = 1, and sample size N = 10 generally produce a good performance.",
+     "location": "Appendix A.2"
+    },
+    "crr_sigma": {
+     "value": "I",
+     "quote": "In our experiment, we found using a fixed standard deviation, an identity matrix of σ = I, β = 1, and sample size N = 10 generally produce a good performance.",
+     "location": "Appendix A.2"
+    },
+    "crr_advantage_samples_N": {
+     "value": "10",
+     "quote": "In our experiment, we found using a fixed standard deviation, an identity matrix of σ = I, β = 1, and sample size N = 10 generally produce a good performance.",
+     "location": "Appendix A.2"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "5",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "RAT: running average of evaluation over ten consecutive checkpoints, last value reported (Table 2 / Table 5 'Average'); OMS: best checkpoint over training (Table 4 / Table 5 'Best')",
+    "quote": "RAT calculates the running average of evaluation performance for ten consecutive checkpoints during training and reports the last score as the final performance. | online model selection (OMS), proposed by Diffusion-QL [37], selects the best-performing model throughout the whole training process.",
+    "location": "Section 5, Evaluation Protocal"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "halfcheetah-medium-v2    42.6    42.5    42.6    43.5   48.4     44.0 48.3    52.1     44.0    49.2    47.4      48.1",
+    "location": "Table 2 dataset names"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-v2",
+     "outcome": 49.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-medium-v2    42.6    42.5    42.6    43.5   48.4     44.0 48.3    52.1     44.0    49.2    47.4      48.1",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'CRR EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "hopper-medium-v2",
+     "outcome": 78.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-medium-v2       52.9    56.9    67.6    57.0   59.6     58.5 59.3    81.9     58.5    78.7    66.3      63.1",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'CRR EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-v2",
+     "outcome": 82.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-medium-v2      75.3    75.0    74.0    72.4   81.8     72.5 83.7    86.9     72.5    82.5    78.3      85.4",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'CRR EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay-v2",
+     "outcome": 43.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-medium-replay-v2 36.6    40.6    36.6    40.5   38.1     45.5 44.6    49.4     45.5    43.5    44.2      43.8",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'CRR EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "hopper-medium-replay-v2",
+     "outcome": 99.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-medium-replay-v2    18.1    75.9    82.7    37.2   97.5     95.0 60.9    101.0    95.0    99.0    94.7      99.1",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'CRR EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-replay-v2",
+     "outcome": 63.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-medium-replay-v2 26.0      62.5    66.6    27.0   49.5     77.2 81.8    94.9     77.2    63.3    73.9      84.0",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'CRR EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert-v2",
+     "outcome": 85.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-medium-expert-v2 55.2     92.9    86.8   42.8    93.4    91.6 90.7    95.5     91.6    85.6    86.7      86.7",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'CRR EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "hopper-medium-expert-v2",
+     "outcome": 92.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-medium-expert-v2    52.5    110.9   107.6   55.8   103.3   105.4 98.0    97.4    105.4    92.9    91.5      99.6",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'CRR EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-expert-v2",
+     "outcome": 110.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-medium-expert-v2 107.5     109.0   108.1   74.5   113.0   108.8 110.1   110.2   108.8   110.1   109.6     109.0",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'CRR EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-v2",
+     "outcome": 50.2,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "halfcheetah-medium-v2                               52.1         52.8        49.2         50.2           48.1       48.7",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + CRR Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "hopper-medium-v2",
+     "outcome": 95.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "hopper-medium-v2                                  81.9         98.6        78.7         95.0           63.1       97.3",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + CRR Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-v2",
+     "outcome": 85.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "walker2d-medium-v2                                 86.9         89.6        82.5         85.8           85.4       88.7",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + CRR Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay-v2",
+     "outcome": 47.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "halfcheetah-medium-replay-v2                            49.4         50.4        43.5         47.8           43.8       45.5",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + CRR Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "hopper-medium-replay-v2",
+     "outcome": 101.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "hopper-medium-replay-v2                              101.0        102.7        99.0        101.7           99.1      100.9",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + CRR Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-replay-v2",
+     "outcome": 89.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "walker2d-medium-replay-v2                              94.9         97.7        63.3         89.8           84.0       93.4",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + CRR Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert-v2",
+     "outcome": 93.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "halfcheetah-medium-expert-v2                            95.5         97.1        85.6         93.5           86.7       80.9",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + CRR Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "hopper-medium-expert-v2",
+     "outcome": 109.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "hopper-medium-expert-v2                               97.4        112.0        92.9        109.4           99.6       95.7",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + CRR Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-expert-v2",
+     "outcome": 112.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "CRR",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "walker2d-medium-expert-v2                             110.2        112.0       110.1        112.3          109.0      111.5",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + CRR Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    }
+   ]
+  },
+  {
+   "method_name": "EDP + IQL",
+   "is_own_method": true,
+   "one_paragraph_description": "Efficient Diffusion Policy (EDP): DDPM noise-prediction policy trained with action approximation (reconstruct a clean action from a noised dataset action in one network pass instead of running the K-step chain), sampled with DPM-Solver (15 model calls); at evaluation, energy-based action selection over N=10 sampled actions weighted by exp(Q). Policy improvement by likelihood-based IQL (expectile tau=0.7) using the approximated-action Gaussian likelihood.",
+   "conventional_lineage_hint": "offline RL, diffusion policy class ('Diffusion policy has emerged as an expressive policy class for offline reinforcement learning'); plug-in for direct (TD3) and likelihood-based (CRR, IQL) policy optimization",
+   "global_conditions": {
+    "backbone": {
+     "value": "3-layer MLP, hidden 256, Mish",
+     "quote": "We keep the backbone network architecture the same for all tasks and algorithms, which is a 3-layer MLP (hidden size 256) with Mish [23] activation function following Diffusion-QL [37].",
+     "location": "Section 5, Experimental Setup"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "We use the Adam [13] to optimize both diffusion policy and the Q networks.",
+     "location": "Section 5"
+    },
+    "epochs": {
+     "value": "2000 (Gym-locomotion)",
+     "quote": "The models are trained for 2000 epochs on Gym-locomotion and 1000 epochs on the other three domains.",
+     "location": "Section 5 / Table 3"
+    },
+    "iterations_per_epoch": {
+     "value": "1000",
+     "quote": "Each epoch consists of 1000 iterations of policy updates with batch size 256.",
+     "location": "Section 5"
+    },
+    "batch_size": {
+     "value": "256",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3"
+    },
+    "learning_rate": {
+     "value": "0.0003",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3 (columns: Learning rate, Gradient norm clipping, Loss weight, Epochs, Batch size)"
+    },
+    "gradient_norm_clipping": {
+     "value": "5",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3"
+    },
+    "loss_weight": {
+     "value": "1.0",
+     "quote": "Locomotion                      0.0003                   5                      1.0        2000           256",
+     "location": "Table 3"
+    },
+    "sampler": {
+     "value": "DPM-Solver, third-order, 15 model calls",
+     "quote": "For DPM-Solver [20], we use the third-order version and set the model call steps to 15.",
+     "location": "Section 5"
+    },
+    "sampler_steps": {
+     "value": "15",
+     "quote": "The performance gradually plateaus after 15 model calls. Therefore, we use 15 in our main experiments.",
+     "location": "Section 5.3, DPM-Solver"
+    },
+    "diffusion_steps_K": {
+     "value": "1000",
+     "quote": "This enables EDP to use a larger K (1000 in our experiments) to train diffusion policy on the more fine-grained scale.",
+     "location": "Section 4.4 Efficiency"
+    },
+    "eas_num_actions_N": {
+     "value": "10",
+     "quote": "In our main experiments, we set the number of actions to 10 by trading off the performance and computation efficiency.",
+     "location": "Section 5.3, Energy-Based Action Selection"
+    },
+    "action_selection": {
+     "value": "energy-based action selection: sample N actions, pick one with weights ∝ exp(Q)",
+     "quote": "EAS first samples N actions from πθ by using any samplers (i.e., DPM-Solver), then sample one of them with weights proportional to eQ(s,a) .",
+     "location": "Section 4.5"
+    },
+    "seeds": {
+     "value": "5",
+     "quote": "Throughout this paper, the results are reported by averaging 5 random seeds.",
+     "location": "Section 5"
+    },
+    "expectile_tau": {
+     "value": "0.7",
+     "quote": "parameters, we use a temperature of β = 1, a fixed standard deviation σ = I, and for expectile ratio τ , we use τ = 0.9 for antmaze-v0 environments and τ = 0.7 for other tasks.",
+     "location": "Appendix A.3"
+    },
+    "iql_beta": {
+     "value": "1",
+     "quote": "parameters, we use a temperature of β = 1, a fixed standard deviation σ = I, and for expectile ratio τ , we use τ = 0.9 for antmaze-v0 environments and τ = 0.7 for other tasks.",
+     "location": "Appendix A.3"
+    },
+    "double_q": {
+     "value": "yes",
+     "quote": "In practical implementations, we also adopt double Q learning for IQL, where we replace the Q(s, a) in Eqn. 22 with min(Q1 (s, a), Q2 (s, a))",
+     "location": "Appendix A.3"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "5",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "RAT: running average of evaluation over ten consecutive checkpoints, last value reported (Table 2 / Table 5 'Average'); OMS: best checkpoint over training (Table 4 / Table 5 'Best')",
+    "quote": "RAT calculates the running average of evaluation performance for ten consecutive checkpoints during training and reports the last score as the final performance. | online model selection (OMS), proposed by Diffusion-QL [37], selects the best-performing model throughout the whole training process.",
+    "location": "Section 5, Evaluation Protocal"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "halfcheetah-medium-v2    42.6    42.5    42.6    43.5   48.4     44.0 48.3    52.1     44.0    49.2    47.4      48.1",
+    "location": "Table 2 dataset names"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-v2",
+     "outcome": 48.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-medium-v2    42.6    42.5    42.6    43.5   48.4     44.0 48.3    52.1     44.0    49.2    47.4      48.1",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'IQL EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "hopper-medium-v2",
+     "outcome": 63.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-medium-v2       52.9    56.9    67.6    57.0   59.6     58.5 59.3    81.9     58.5    78.7    66.3      63.1",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'IQL EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-v2",
+     "outcome": 85.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-medium-v2      75.3    75.0    74.0    72.4   81.8     72.5 83.7    86.9     72.5    82.5    78.3      85.4",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'IQL EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay-v2",
+     "outcome": 43.8,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-medium-replay-v2 36.6    40.6    36.6    40.5   38.1     45.5 44.6    49.4     45.5    43.5    44.2      43.8",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'IQL EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "hopper-medium-replay-v2",
+     "outcome": 99.1,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-medium-replay-v2    18.1    75.9    82.7    37.2   97.5     95.0 60.9    101.0    95.0    99.0    94.7      99.1",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'IQL EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-replay-v2",
+     "outcome": 84.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-medium-replay-v2 26.0      62.5    66.6    27.0   49.5     77.2 81.8    94.9     77.2    63.3    73.9      84.0",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'IQL EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert-v2",
+     "outcome": 86.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-medium-expert-v2 55.2     92.9    86.8   42.8    93.4    91.6 90.7    95.5     91.6    85.6    86.7      86.7",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'IQL EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "hopper-medium-expert-v2",
+     "outcome": 99.6,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-medium-expert-v2    52.5    110.9   107.6   55.8   103.3   105.4 98.0    97.4    105.4    92.9    91.5      99.6",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'IQL EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-expert-v2",
+     "outcome": 109.0,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (RAT)",
+     "config_conditions": {
+      "evaluation_metric": "RAT",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-medium-expert-v2 107.5     109.0   108.1   74.5   113.0   108.8 110.1   110.2   108.8   110.1   109.6     109.0",
+     "notes": "12 numeric columns: Dataset             BC     10%BC    DT     AWAC OneStep CQL | TD3+BC FF, TD3+BC EDP, CRR FF, CRR EDP, IQL FF, IQL EDP; this value is the 'IQL EDP' column. RAT metric (running average over ten consecutive checkpoints, last value). Same values appear in Table 5 'Average' column. No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-v2",
+     "outcome": 48.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "halfcheetah-medium-v2                               52.1         52.8        49.2         50.2           48.1       48.7",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + IQL Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "hopper-medium-v2",
+     "outcome": 97.3,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "hopper-medium-v2                                  81.9         98.6        78.7         95.0           63.1       97.3",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + IQL Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-v2",
+     "outcome": 88.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "walker2d-medium-v2                                 86.9         89.6        82.5         85.8           85.4       88.7",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + IQL Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay-v2",
+     "outcome": 45.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "halfcheetah-medium-replay-v2                            49.4         50.4        43.5         47.8           43.8       45.5",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + IQL Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "hopper-medium-replay-v2",
+     "outcome": 100.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "hopper-medium-replay-v2                              101.0        102.7        99.0        101.7           99.1      100.9",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + IQL Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-replay-v2",
+     "outcome": 93.4,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "walker2d-medium-replay-v2                              94.9         97.7        63.3         89.8           84.0       93.4",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + IQL Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert-v2",
+     "outcome": 80.9,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "halfcheetah-medium-expert-v2                            95.5         97.1        85.6         93.5           86.7       80.9",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + IQL Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "hopper-medium-expert-v2",
+     "outcome": 95.7,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "hopper-medium-expert-v2                               97.4        112.0        92.9        109.4           99.6       95.7",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + IQL Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    },
+    {
+     "dataset": "walker2d-medium-expert-v2",
+     "outcome": 111.5,
+     "std": null,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "OMS (Best)",
+     "config_conditions": {
+      "evaluation_metric": "OMS",
+      "base_learner": "IQL",
+      "expectile_tau": "0.7",
+      "diffusion_steps_K": "1000",
+      "eas_num_actions_N": "10",
+      "sampler_steps": "15"
+     },
+     "table": "Table 5",
+     "line_quote": "walker2d-medium-expert-v2                             110.2        112.0       110.1        112.3          109.0      111.5",
+     "notes": "Table 5 columns: EDP + TD3 (Average, Best), EDP + CRR (Average, Best), EDP + IQL (Average, Best); this value is 'EDP + IQL Best' = OMS (online model selection, best checkpoint over training). No std reported."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BC",
+  "10%BC",
+  "DT",
+  "AWAC",
+  "OneStep",
+  "CQL",
+  "TD3+BC FF",
+  "CRR FF",
+  "IQL FF",
+  "Diffusion-QL",
+  "DQL (JAX)",
+  "TD3+EAS",
+  "TD3"
+ ],
+ "problems": [
+  "Table 2 header is split across two lines ('TD3+BC / CRR / IQL' over 'FF EDP' pairs); column mapping (13 tokens per row: name + 12 numbers) inferred positionally and cross-checked against Table 5 'Average' columns, which match exactly.",
+  "No std/uncertainty reported for any row.",
+  "Episodes per seed not stated.",
+  "Per-run diffusion steps K: 'K = 1000' stated in Sec 4.4 and Table 1 text for EDP; whether K=1000 also applies to the TD3/CRR/IQL runs of Table 2 is not stated explicitly (assumed same 'main experiments' config).",
+  "Table 6 'TD3+Diff' column is numerically identical to EDP + TD3 RAT (Table 2/5); not duplicated. 'TD3+EAS' and 'TD3' columns are feed-forward baselines.",
+  "Table 7 'DDPM' column (K=100) equals Table 4 'DQL (JAX)' (Diffusion-QL reimplementation), treated as baseline; only 'Action Approx' column extracted. Dataset printed with typo 'walker2d-medium-reply-v2'.",
+  "Ablations on number of EAS actions (Figure 4), DPM-Solver steps (Figure 5), policy scaling tau (Figure 6), initial noise scale (Figure 7) are figures only; not extracted.",
+  "Table 1 reports domain averages only (locomotion 90.3 for EDP); skipped."
+ ]
+}

@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Method Scanner</title>
+<style>
+  :root { --bg:#0f1115; --panel:#171a21; --line:#272b35; --text:#e6e8ee; --dim:#8b90a0; --accent:#7aa2f7; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.5 ui-sans-serif,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--text); }
+  header { padding:16px 24px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:12px; }
+  h1 { font-size:16px; margin:0; }
+  header span { color:var(--dim); font-size:12px; }
+  main { max-width:760px; margin:0 auto; padding:24px; }
+  nav { display:flex; gap:4px; padding:0 24px; border-bottom:1px solid var(--line); }
+  nav button { background:none; color:var(--dim); font-weight:600; border-radius:0; padding:10px 14px;
+    border-bottom:2px solid transparent; margin-bottom:-1px; }
+  nav button.active { color:var(--text); border-bottom-color:var(--accent); }
+  section[hidden] { display:none; }
+  label { display:block; font-size:12px; color:var(--dim); margin-bottom:6px; }
+  input, textarea { width:100%; background:var(--panel); border:1px solid var(--line); color:var(--text);
+    border-radius:6px; padding:10px; font:inherit; margin-bottom:14px; }
+  textarea { min-height:220px; resize:vertical; font-family:ui-monospace,monospace; font-size:13px; }
+  button { background:var(--accent); border:0; color:#0f1115; font-weight:600; padding:9px 16px;
+    border-radius:6px; cursor:pointer; font:inherit; font-weight:600; }
+  button:disabled { opacity:.5; cursor:default; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:14px; margin-bottom:12px; }
+  .card h3 { margin:0 0 4px; font-size:14px; }
+  .meta { color:var(--dim); font-size:12px; margin-bottom:10px; }
+  .row { display:flex; gap:8px; margin-bottom:4px; }
+  .row b { color:var(--dim); font-weight:400; min-width:82px; font-size:12px; }
+  .ops span { display:inline-block; background:#222735; border:1px solid var(--line); border-radius:4px;
+    padding:1px 7px; margin:0 4px 4px 0; font-size:12px; }
+  .err { border-color:#c05252; }
+  .ops .canon { border-color:var(--accent); color:var(--accent); }
+  .ops .unmapped { border-style:dashed; color:var(--dim); }
+  .ops .headmatch { border-bottom:2px solid var(--accent); }
+  .hist h2 { font-size:13px; color:var(--dim); font-weight:600; margin:0 0 10px; text-transform:uppercase; letter-spacing:.05em; }
+  .hist .card { cursor:default; }
+  .del { float:right; background:none; color:var(--dim); border:1px solid var(--line); padding:2px 8px;
+    font-size:11px; margin-left:6px; }
+  details summary { cursor:pointer; color:var(--dim); font-size:12px; margin-top:8px; }
+  details pre { white-space:pre-wrap; font-size:12px; color:var(--dim); margin:8px 0 0; }
+  pre.prompt { white-space:pre-wrap; font:12px/1.5 ui-monospace,monospace; color:var(--dim);
+    background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:10px; margin:8px 0 0; }
+  .promptbox { margin-top:16px; }
+  .promptbox summary { cursor:pointer; color:var(--dim); font-size:12px; }
+  .batch { margin-top:20px; padding-top:16px; border-top:1px solid var(--line); }
+  .batch input[type=file] { padding:8px; font-size:12px; }
+  .batch button { margin-right:8px; }
+  .drop { border:1px dashed var(--line); border-radius:8px; padding:18px; text-align:center;
+    color:var(--dim); font-size:12px; margin-bottom:12px; }
+  .drop.over { border-color:var(--accent); color:var(--text); }
+  button.ghost { background:none; color:var(--accent); border:1px solid var(--line); }
+</style>
+</head>
+<body>
+<header><h1>Method Scanner</h1><span>qwen3:8b via Ollama</span></header>
+<nav>
+  <button id="tab-extract" class="active">Extract</button>
+  <button id="tab-history">History (<span id="count">0</span>)</button>
+</nav>
+<main>
+  <section id="panel-extract">
+    <label for="paper">Paper name</label>
+    <input id="paper" placeholder="Kalman_Filter_1960">
+    <label for="abstract">Abstract</label>
+    <textarea id="abstract" placeholder="Paste the abstract here…"></textarea>
+    <button id="go">Extract</button>
+    <details class="promptbox">
+      <summary>Current prompt</summary>
+      <div class="meta" style="margin-top:8px"><code>{text_snippet}</code> is replaced with the abstract.</div>
+      <pre id="sysprompt" class="prompt"></pre>
+      <pre id="userprompt" class="prompt"></pre>
+    </details>
+    <div class="batch">
+      <label>Batch</label>
+      <div id="drop" class="drop">
+        Drop a <b>.csv</b> (<code>paper</code>, <code>abstract</code> columns) or <b>.txt</b> files here —
+        a .txt holding CSV runs as a batch, a plain one fills the form
+      </div>
+      <input type="file" id="csvfile" accept=".csv,.txt,text/csv,text/plain" multiple hidden>
+      <button id="upload">Upload file</button>
+      <button id="template" class="ghost">Download template</button>
+    </div>
+    <div id="out" style="margin-top:16px"></div>
+  </section>
+  <section class="hist" id="panel-history" hidden>
+    <p><button id="download-hist" class="ghost">Download CSV</button></p>
+    <div id="hist"></div>
+  </section>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+function fmtTime(ts) {
+  if (!ts || ts.length < 15) return ts || '';
+  return `${ts.slice(0,4)}-${ts.slice(4,6)}-${ts.slice(6,8)} ${ts.slice(9,11)}:${ts.slice(11,13)}:${ts.slice(13,15)}`;
+}
+
+function card(item, withDelete) {
+  const d = item.data || {};
+  const head = new Set(item.head_matched_ops || []);
+  const src = item.source ? ` · ${esc(item.source)}` : '';
+  const ops = (d.operations || []).map(o => `<span class="${head.has(o) ? 'headmatch' : ''}" title="${head.has(o) ? 'mapped by head verb' : ''}">${esc(o)}</span>`).join('') || '<i style="color:var(--dim)">none</i>';
+  const canon = (item.canonical_ops || []).map(o => `<span class="canon">${esc(o)}</span>`).join('')
+    + (item.unmapped_ops || []).map(o => `<span class="unmapped" title="not in vocabulary">${esc(o)}</span>`).join('')
+    || '<i style="color:var(--dim)">none</i>';
+  const took = item.elapsed_seconds != null ? ` · ${item.elapsed_seconds}s` : '';
+  const del = withDelete ? `<button class="del" data-file="${esc(item.file)}">delete</button>` : '';
+  const rerun = withDelete && item.abstract
+    ? `<button class="del rerun" data-file="${esc(item.file)}">re-run</button>` : '';
+  const legacy = withDelete && !item.user_prompt
+    ? `<div class="meta" style="margin-top:8px">Prompt and raw response weren't recorded for this run.</div>` : '';
+  const abs = item.abstract ? `<details><summary>Abstract</summary><pre>${esc(item.abstract)}</pre></details>` : '';
+  const raw = item.raw_response ? `<details><summary>Raw response</summary><pre>${esc(item.raw_response)}</pre></details>` : '';
+  const prompt = item.user_prompt ? `<details><summary>Prompt</summary><pre>${esc(item.system_prompt || '')}\n---\n${esc(item.user_prompt)}</pre></details>` : '';
+  return `<div class="card">${del}${rerun}
+    <h3>${esc(item.paper || 'untitled')}</h3>
+    <div class="meta">${fmtTime(item.timestamp)}${took}${src}</div>
+    <div class="row"><b>name</b><span>${esc(d.name ?? '—')}</span></div>
+    <div class="row"><b>operations</b><span class="ops">${ops}</span></div>
+    <div class="row"><b>canonical</b><span class="ops">${canon}</span></div>
+    <div class="row"><b>loss</b><span>${esc(d.loss ?? '—')}</span></div>
+    <div class="row"><b>failure</b><span>${esc(d.failure ?? '—')}${item.failure_flag ? ` <i style="color:var(--dim)" title="${esc(item.failure_flag)}">(nulled: ${esc(item.failure_flag.split(':')[0])})</i>` : ''}</span></div>
+    ${abs}${raw}${prompt}${legacy}</div>`;
+}
+
+async function loadHistory() {
+  const r = await fetch('/api/results').then(r => r.json());
+  $('count').textContent = r.results.length;
+  $('hist').innerHTML = r.results.map(i => card(i, true)).join('')
+    || '<div class="card" style="color:var(--dim)">Nothing extracted yet.</div>';
+  document.querySelectorAll('.del:not(.rerun)').forEach(b => b.onclick = async () => {
+    await fetch('/api/results/' + b.dataset.file, {method: 'DELETE'});
+    loadHistory();
+  });
+  document.querySelectorAll('.rerun').forEach(b => b.onclick = async () => {
+    b.disabled = true;
+    b.textContent = 're-running…';
+    const res = await fetch('/api/rerun', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({file: b.dataset.file})
+    }).then(r => r.json());
+    if (!res.success) { b.disabled = false; b.textContent = 're-run'; alert(res.error || 'rerun failed'); return; }
+    loadHistory();
+  });
+}
+
+function showTab(name) {
+  ['extract', 'history'].forEach(n => {
+    $('panel-' + n).hidden = n !== name;
+    $('tab-' + n).classList.toggle('active', n === name);
+  });
+}
+$('tab-extract').onclick = () => showTab('extract');
+$('tab-history').onclick = () => showTab('history');
+
+async function loadPrompt() {
+  const p = await fetch('/api/prompt').then(r => r.json());
+  $('sysprompt').textContent = p.system_prompt;
+  $('userprompt').textContent = p.user_prompt.trim();
+}
+
+$('go').onclick = async () => {
+  if (pendingCsv) { runBatch(pendingCsv); return; }
+  const abstract = $('abstract').value.trim();
+  if (!abstract) { $('out').innerHTML = '<div class="card err">Paste an abstract first.</div>'; return; }
+  $('go').disabled = true;
+  $('go').textContent = 'Extracting…';
+  $('out').innerHTML = '<div class="card" style="color:var(--dim)">Running llama3.2:3b…</div>';
+  try {
+    const res = await fetch('/api/extract', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({paper: $('paper').value, abstract})
+    }).then(r => r.json());
+    if (res.success) {
+      $('out').innerHTML = card(res.result, false);
+      loadHistory();
+    } else {
+      $('out').innerHTML = `<div class="card err"><h3>Extraction failed</h3>
+        <div class="meta">${esc(res.error || 'unknown error')}</div>
+        <pre style="white-space:pre-wrap;font-size:12px;color:var(--dim)">${esc(res.raw || '')}</pre></div>`;
+    }
+  } catch (e) {
+    $('out').innerHTML = `<div class="card err">${esc(e.message)}</div>`;
+  }
+  $('go').disabled = false;
+  $('go').textContent = 'Extract';
+};
+
+let pendingCsv = null;
+
+function downloadCsv() { window.location = '/api/results.csv'; }
+$('download-hist').onclick = downloadCsv;
+$('template').onclick = () => { window.location = '/api/template.csv'; };
+
+$('upload').onclick = () => $('csvfile').click();
+$('csvfile').onchange = () => { handleFiles($('csvfile').files); $('csvfile').value = ''; };
+
+const drop = $('drop');
+['dragenter', 'dragover'].forEach(e => drop.addEventListener(e, ev => {
+  ev.preventDefault(); drop.classList.add('over');
+}));
+['dragleave', 'drop'].forEach(e => drop.addEventListener(e, ev => {
+  ev.preventDefault(); drop.classList.remove('over');
+}));
+drop.addEventListener('drop', ev => handleFiles(ev.dataTransfer.files));
+
+function csvCell(v) { return '"' + String(v).replace(/"/g, '""') + '"'; }
+
+async function handleFiles(fileList) {
+  const files = [...fileList];
+  if (!files.length) return;
+  const bad = files.find(f => !/\.(csv|txt)$/i.test(f.name));
+  if (bad) { $('out').innerHTML = `<div class="card err">${esc(bad.name)} is not a .csv or .txt.</div>`; return; }
+
+  // a .txt holding CSV (header row naming an abstract column) is treated as CSV
+  const read = await Promise.all(files.map(async f => ({name: f.name, text: (await f.text()).trim()})));
+  const looksCsv = f => /\.csv$/i.test(f.name) ||
+    (f.text.split('\n')[0].includes(',') && /\babstract\b/i.test(f.text.split('\n')[0]));
+  const csvs = read.filter(looksCsv);
+  const plains = read.filter(f => !looksCsv(f));
+
+  // a single plain .txt just fills the form — nothing runs until you hit Extract
+  if (!csvs.length && plains.length === 1) {
+    $('paper').value = plains[0].name.replace(/\.txt$/i, '');
+    $('abstract').value = plains[0].text;
+    $('out').innerHTML = `<div class="card" style="color:var(--dim)">Loaded ${esc(plains[0].name)}. Hit Extract.</div>`;
+    return;
+  }
+
+  let csv = '';
+  for (const f of csvs) csv += f.text + '\n';
+  if (plains.length) {
+    if (!csv) csv = 'paper,abstract\n';
+    for (const f of plains) {
+      csv += csvCell(f.name.replace(/\.txt$/i, '')) + ',' + csvCell(f.text) + '\n';
+    }
+  }
+  stageBatch(csv);
+}
+
+// quote-aware row count so multi-line abstracts don't inflate it
+function countRows(csv) {
+  let rows = 0, inQuotes = false, cell = false;
+  for (let i = 0; i < csv.length; i++) {
+    const c = csv[i];
+    if (c === '"') { inQuotes = !inQuotes; cell = true; }
+    else if (c === '\n' && !inQuotes) { if (cell) rows++; cell = false; }
+    else if (c !== '\r') { cell = true; }
+  }
+  if (cell) rows++;
+  return Math.max(0, rows - 1);
+}
+
+function stageBatch(csv) {
+  pendingCsv = csv;
+  const n = countRows(csv);
+  $('go').textContent = `Extract ${n} row${n === 1 ? '' : 's'}`;
+  $('out').innerHTML = `<div class="card"><h3>${n} row${n === 1 ? '' : 's'} ready</h3>
+    <div class="meta">Nothing has run yet — hit Extract.</div>
+    <button id="cancelbatch" class="ghost">Cancel</button></div>`;
+  $('cancelbatch').onclick = clearBatch;
+}
+
+function clearBatch() {
+  pendingCsv = null;
+  $('go').textContent = 'Extract';
+  $('out').innerHTML = '';
+}
+
+async function runBatch(csv) {
+  $('go').disabled = true;
+  $('go').textContent = 'Extracting…';
+  $('out').innerHTML = '<div class="card" style="color:var(--dim)">Extracting each row…</div>';
+  try {
+    const res = await fetch('/api/batch', {
+      method: 'POST',
+      headers: {'Content-Type': 'text/csv'},
+      body: csv
+    }).then(r => r.json());
+    if (res.success) {
+      const failed = res.rows.filter(r => !r.success)
+        .map(r => `<div class="row"><b>${esc(r.paper)}</b><span>${esc(r.error)}</span></div>`).join('');
+      $('out').innerHTML = `<div class="card"><h3>Batch done</h3>
+        <div class="meta">${res.extracted} of ${res.total} extracted</div>${failed}</div>`;
+      loadHistory();
+    } else {
+      $('out').innerHTML = `<div class="card err">${esc(res.error || 'batch failed')}</div>`;
+    }
+  } catch (e) {
+    $('out').innerHTML = `<div class="card err">${esc(e.message)}</div>`;
+  }
+  $('go').disabled = false;
+  pendingCsv = null;
+  $('go').textContent = 'Extract';
+}
+
+loadHistory();
+loadPrompt();
+</script>
+</body>
+</html>

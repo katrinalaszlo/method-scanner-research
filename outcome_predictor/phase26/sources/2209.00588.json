@@ -1,0 +1,684 @@
+{
+  "arxiv_id": "2209.00588",
+  "title": "Transformers are Sample-Efficient World Models",
+  "methods": [
+    {
+      "method_name": "IRIS",
+      "is_own_method": true,
+      "one_paragraph_description": "Data-efficient agent that learns entirely in the imagination of a world model composed of a discrete autoencoder (VQ-VAE style, 16 tokens per 64x64 frame, vocabulary 512) and an autoregressive GPT-like Transformer that predicts next frame tokens, reward and episode end. The actor-critic (CNN + LSTM, DreamerV2 objectives: lambda-returns, REINFORCE with entropy) is trained on imagined trajectories of horizon H=20 rolled out from real frames; at runtime the policy observes reconstructed frames and samples actions.",
+      "conventional_lineage_hint": "'learning in the imagination of a world model'; 'a new state of the art for methods without lookahead search' (Abstract) — model-based RL / world models / Transformers for sequence modeling",
+      "global_conditions": {
+        "environment_steps": {
+          "value": "100k actions (500 collection epochs x 200 env steps)",
+          "quote": "# Collection epochs                 500",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "environment_steps_per_epoch": {
+          "value": 200,
+          "quote": "Environment steps per epoch         200",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "epochs": {
+          "value": 600,
+          "quote": "Epochs                              600",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "collection_epsilon_greedy": {
+          "value": 0.01,
+          "quote": "Collection epsilon-greedy           0.01",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "eval_sampling_temperature": {
+          "value": 0.5,
+          "quote": "Eval sampling temperature            0.5",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "start_autoencoder_after_epochs": {
+          "value": 5,
+          "quote": "Start autoencoder after epochs        5",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "start_transformer_after_epochs": {
+          "value": 25,
+          "quote": "Start transformer after epochs       25",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "start_actor_critic_after_epochs": {
+          "value": 50,
+          "quote": "Start actor-critic after epochs      50",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "autoencoder_batch_size": {
+          "value": 256,
+          "quote": "Autoencoder batch size              256",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "transformer_batch_size": {
+          "value": 64,
+          "quote": "Transformer batch size               64",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "actor_critic_batch_size": {
+          "value": 64,
+          "quote": "Actor-critic batch size              64",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "training_steps_per_epoch": {
+          "value": 200,
+          "quote": "Training steps per epoch            200",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "learning_rate": {
+          "value": "1e-4",
+          "quote": "Learning rate                      1e-4",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "optimizer": {
+          "value": "Adam beta1 0.9 beta2 0.999",
+          "quote": "Optimizer                          Adam",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "max_gradient_norm": {
+          "value": 10.0,
+          "quote": "Max gradient norm                   10.0",
+          "location": "Table 5 (Appendix A.3)"
+        },
+        "frame_dimensions": {
+          "value": "64 x 64",
+          "quote": "Frame dimensions (h, w)               64 × 64",
+          "location": "Table 2 (Appendix A.1)"
+        },
+        "encoder_layers": {
+          "value": 4,
+          "quote": "Layers                                    4",
+          "location": "Table 2 (Appendix A.1)"
+        },
+        "encoder_residual_blocks_per_layer": {
+          "value": 2,
+          "quote": "Residual blocks per layer                 2",
+          "location": "Table 2 (Appendix A.1)"
+        },
+        "encoder_conv_channels": {
+          "value": 64,
+          "quote": "Channels in convolutions                 64",
+          "location": "Table 2 (Appendix A.1)"
+        },
+        "vocabulary_size": {
+          "value": 512,
+          "quote": "Vocabulary size (N)                  512",
+          "location": "Table 3 (Appendix A.1)"
+        },
+        "tokens_per_frame": {
+          "value": 16,
+          "quote": "Tokens per frame (K)                  16",
+          "location": "Table 3 (Appendix A.1)"
+        },
+        "token_embedding_dimension": {
+          "value": 512,
+          "quote": "Token embedding dimension (d)        512",
+          "location": "Table 3 (Appendix A.1)"
+        },
+        "transformer_timesteps": {
+          "value": 20,
+          "quote": "Timesteps (L)                    20",
+          "location": "Table 4 (Appendix A.2)"
+        },
+        "transformer_embedding_dimension": {
+          "value": 256,
+          "quote": "Embedding dimension (D)         256",
+          "location": "Table 4 (Appendix A.2)"
+        },
+        "transformer_layers": {
+          "value": 10,
+          "quote": "Layers (M)                       10",
+          "location": "Table 4 (Appendix A.2)"
+        },
+        "transformer_attention_heads": {
+          "value": 4,
+          "quote": "Attention heads                   4",
+          "location": "Table 4 (Appendix A.2)"
+        },
+        "weight_decay": {
+          "value": 0.01,
+          "quote": "Weight decay                    0.01",
+          "location": "Table 4 (Appendix A.2)"
+        },
+        "dropout": {
+          "value": "0.1 (embedding, attention, residual)",
+          "quote": "Embedding dropout               0.1",
+          "location": "Table 4 (Appendix A.2)"
+        },
+        "actor_critic_lstm_hidden": {
+          "value": 512,
+          "quote": "and 2x2 max-pooling with stride 2. The dimension of the LSTM hidden state is 512. Before starting",
+          "location": "Appendix A.3"
+        },
+        "burn_in_frames": {
+          "value": 20,
+          "quote": "the imagination procedure from a given frame, we burn-in (Kapturowski et al., 2019) the 20 previous",
+          "location": "Appendix A.3"
+        },
+        "imagination_horizon": {
+          "value": 20,
+          "quote": "Imagination horizon (H)        20",
+          "location": "Table 6 (Appendix B)"
+        },
+        "discount": {
+          "value": 0.995,
+          "quote": "γ                            0.995",
+          "location": "Table 6 (Appendix B)"
+        },
+        "lambda": {
+          "value": 0.95,
+          "quote": "λ                             0.95",
+          "location": "Table 6 (Appendix B)"
+        },
+        "entropy_coefficient_eta": {
+          "value": 0.001,
+          "quote": "η                            0.001",
+          "location": "Table 6 (Appendix B)"
+        },
+        "compute": {
+          "value": "8x A100 40GB; ~3.5 GPU-days per environment",
+          "quote": "GPU, training takes around 7 days, resulting in an average of 3.5 days per environment.",
+          "location": "Appendix G"
+        }
+      },
+      "per_dataset_conditions": {
+        "Freeway": {
+          "sampling_temperature": {
+            "value": 0.01,
+            "quote": "0.01 for Freeway, in order to avoid random walks that would not be conducive to learning in the early",
+            "location": "Appendix H"
+          }
+        }
+      },
+      "evaluation_protocol": {
+        "seeds": "5 runs",
+        "episodes_per_seed": "100 episodes at end of training",
+        "checkpoint_selection": "last (end of training)",
+        "quote": "runs for CURL, DrQ, SPR, and 5 existing runs for SimPLe). Finally, we evaluate IRIS by computing | an average over 100 episodes collected at the end of training for each game (5 runs).",
+        "location": "Section 3.2"
+      },
+      "dataset_version": {
+        "value": "Atari 100k: 100k actions per environment; eval 100 episodes at end of training, 5 runs; sticky actions and frame skip not stated",
+        "quote": "a wide range of agent capabilities. In this benchmark, an agent is only allowed 100k actions in | each environment. This constraint is roughly equivalent to 2 hours of human gameplay.",
+        "location": "Section 3.1"
+      },
+      "rows": [
+        {
+          "dataset": "Alien",
+          "outcome": 420.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Alien                  227.8    7127.7     530.0          808.5      616.9    711.0     865.2     841.9       420.0",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Amidar",
+          "outcome": 143.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Amidar                   5.8    1719.5      38.8          148.6       74.3    113.7     137.8     179.7       143.0",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Assault",
+          "outcome": 1524.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Assault                222.4     742.0     500.1         1263.1      527.2    500.9     579.6     565.6      1524.4",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Asterix",
+          "outcome": 853.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Asterix                210.0    8503.3    1734.0        25557.8     1128.3    567.2     763.6     962.5       853.6",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "BankHeist",
+          "outcome": 53.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  BankHeist               14.2     753.1     192.5          351.0       34.2     65.3     232.9     345.4        53.1",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "BattleZone",
+          "outcome": 13074.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  BattleZone            2360.0   37187.5    7687.5        13871.2     4031.2   8997.8   10165.3   14834.1     13074.0",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Boxing",
+          "outcome": 70.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Boxing                   0.1      12.1      15.1           52.7        7.8      0.9       9.0      35.7        70.1",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Breakout",
+          "outcome": 83.7,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Breakout                 1.7      30.5      48.0          414.1       16.4      2.6      19.8      19.6        83.7",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "ChopperCommand",
+          "outcome": 1565.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  ChopperCommand         811.0    7387.8    1350.0         1117.3      979.4    783.5     844.6     946.3      1565.0",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "CrazyClimber",
+          "outcome": 59324.2,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  CrazyClimber         10780.5   35829.4   56937.0        83940.2    62583.6   9154.4   21539.0   36700.5     59324.2",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "DemonAttack",
+          "outcome": 2034.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  DemonAttack            152.1    1971.0    3527.0        13003.9      208.1    646.5    1321.5     517.6      2034.4",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Freeway",
+          "outcome": 31.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Freeway                  0.0      29.6      21.8           21.8       16.7     28.3      20.3      19.3        31.1",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Frostbite",
+          "outcome": 259.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Frostbite               65.2    4334.7     255.0          296.3      236.9   1226.5    1014.2    1170.7       259.1",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Gopher",
+          "outcome": 2236.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Gopher                 257.6    2412.5    1256.0         3260.3      596.8    400.9     621.6     660.6      2236.1",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Hero",
+          "outcome": 7037.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Hero                  1027.0   30826.4    3095.0         9315.9     2656.6   4987.7    4167.9    5858.6      7037.4",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Jamesbond",
+          "outcome": 462.7,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Jamesbond               29.0     302.8      87.5          517.0      100.5    331.0     349.1     366.5       462.7",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Kangaroo",
+          "outcome": 838.2,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Kangaroo                52.0    3035.0      62.5          724.1       51.2    740.2    1088.4    3617.4       838.2",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Krull",
+          "outcome": 6616.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Krull                 1598.0    2665.5    4890.8         5663.3     2204.8   3049.2    4402.1    3681.6      6616.4",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "KungFuMaster",
+          "outcome": 21759.8,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  KungFuMaster           258.5   22736.3   18813.0        30944.8    14862.5   8155.6   11467.4   14783.2     21759.8",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "MsPacman",
+          "outcome": 999.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  MsPacman               307.3    6951.6    1265.6         1281.2     1480.0   1064.0    1218.1    1318.4       999.1",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Pong",
+          "outcome": 14.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Pong                   -20.7      14.6      -6.7           20.1       12.8    -18.5      -9.1      -5.4        14.6",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "PrivateEye",
+          "outcome": 100.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  PrivateEye              24.9   69571.3      56.3           96.7       35.0     81.9       3.5      86.0       100.0",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Qbert",
+          "outcome": 745.7,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Qbert                  163.9   13455.0    3952.0        13781.9     1288.8    727.0    1810.7     866.3       745.7",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "RoadRunner",
+          "outcome": 9614.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  RoadRunner              11.5    7845.0    2500.0        17751.3     5640.6   5006.1   11211.4   12213.1      9614.6",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Seaquest",
+          "outcome": 661.3,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  Seaquest                68.4   42054.7     208.0         1100.2      683.3    315.2     352.3     558.1       661.3",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "UpNDown",
+          "outcome": 3546.2,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {},
+          "table": "Table 1",
+          "line_quote": "  UpNDown                533.4   11693.2    2896.9        17264.2     3350.3   2646.4    4324.5   10859.2      3546.2",
+          "notes": "raw return; column 'IRIS (ours)'; mean over 5 runs x 100 episodes at end of training; no std in table"
+        },
+        {
+          "dataset": "Alien",
+          "outcome": 570.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "64 tokens per frame",
+          "config_conditions": {
+            "tokens_per_frame": 64
+          },
+          "table": "Table 7",
+          "line_quote": "         Alien         227.8   7127.7    616.9   711.0    865.2   841.9             420.0              570.0",
+          "notes": "raw return; IRIS trained with 64 tokens per frame instead of 16; 'IRIS (16 tokens)' column equals Table 1 main; seeds not stated for Table 7"
+        },
+        {
+          "dataset": "Asterix",
+          "outcome": 1890.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "64 tokens per frame",
+          "config_conditions": {
+            "tokens_per_frame": 64
+          },
+          "table": "Table 7",
+          "line_quote": "         Asterix       210.0   8503.3   1128.3   567.2    763.6   962.5             853.6             1890.4",
+          "notes": "raw return; IRIS trained with 64 tokens per frame instead of 16; 'IRIS (16 tokens)' column equals Table 1 main; seeds not stated for Table 7"
+        },
+        {
+          "dataset": "BankHeist",
+          "outcome": 282.5,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "64 tokens per frame",
+          "config_conditions": {
+            "tokens_per_frame": 64
+          },
+          "table": "Table 7",
+          "line_quote": "         BankHeist      14.2    753.1     34.2    65.3    232.9   345.4              53.1              282.5",
+          "notes": "raw return; IRIS trained with 64 tokens per frame instead of 16; 'IRIS (16 tokens)' column equals Table 1 main; seeds not stated for Table 7"
+        }
+      ]
+    }
+  ],
+  "reference_scores": {
+    "Alien": {
+      "random": 227.8,
+      "human": 7127.7,
+      "line_quote": "  Alien                  227.8    7127.7     530.0          808.5      616.9    711.0     865.2     841.9       420.0"
+    },
+    "Amidar": {
+      "random": 5.8,
+      "human": 1719.5,
+      "line_quote": "  Amidar                   5.8    1719.5      38.8          148.6       74.3    113.7     137.8     179.7       143.0"
+    },
+    "Assault": {
+      "random": 222.4,
+      "human": 742.0,
+      "line_quote": "  Assault                222.4     742.0     500.1         1263.1      527.2    500.9     579.6     565.6      1524.4"
+    },
+    "Asterix": {
+      "random": 210.0,
+      "human": 8503.3,
+      "line_quote": "  Asterix                210.0    8503.3    1734.0        25557.8     1128.3    567.2     763.6     962.5       853.6"
+    },
+    "BankHeist": {
+      "random": 14.2,
+      "human": 753.1,
+      "line_quote": "  BankHeist               14.2     753.1     192.5          351.0       34.2     65.3     232.9     345.4        53.1"
+    },
+    "BattleZone": {
+      "random": 2360.0,
+      "human": 37187.5,
+      "line_quote": "  BattleZone            2360.0   37187.5    7687.5        13871.2     4031.2   8997.8   10165.3   14834.1     13074.0"
+    },
+    "Boxing": {
+      "random": 0.1,
+      "human": 12.1,
+      "line_quote": "  Boxing                   0.1      12.1      15.1           52.7        7.8      0.9       9.0      35.7        70.1"
+    },
+    "Breakout": {
+      "random": 1.7,
+      "human": 30.5,
+      "line_quote": "  Breakout                 1.7      30.5      48.0          414.1       16.4      2.6      19.8      19.6        83.7"
+    },
+    "ChopperCommand": {
+      "random": 811.0,
+      "human": 7387.8,
+      "line_quote": "  ChopperCommand         811.0    7387.8    1350.0         1117.3      979.4    783.5     844.6     946.3      1565.0"
+    },
+    "CrazyClimber": {
+      "random": 10780.5,
+      "human": 35829.4,
+      "line_quote": "  CrazyClimber         10780.5   35829.4   56937.0        83940.2    62583.6   9154.4   21539.0   36700.5     59324.2"
+    },
+    "DemonAttack": {
+      "random": 152.1,
+      "human": 1971.0,
+      "line_quote": "  DemonAttack            152.1    1971.0    3527.0        13003.9      208.1    646.5    1321.5     517.6      2034.4"
+    },
+    "Freeway": {
+      "random": 0.0,
+      "human": 29.6,
+      "line_quote": "  Freeway                  0.0      29.6      21.8           21.8       16.7     28.3      20.3      19.3        31.1"
+    },
+    "Frostbite": {
+      "random": 65.2,
+      "human": 4334.7,
+      "line_quote": "  Frostbite               65.2    4334.7     255.0          296.3      236.9   1226.5    1014.2    1170.7       259.1"
+    },
+    "Gopher": {
+      "random": 257.6,
+      "human": 2412.5,
+      "line_quote": "  Gopher                 257.6    2412.5    1256.0         3260.3      596.8    400.9     621.6     660.6      2236.1"
+    },
+    "Hero": {
+      "random": 1027.0,
+      "human": 30826.4,
+      "line_quote": "  Hero                  1027.0   30826.4    3095.0         9315.9     2656.6   4987.7    4167.9    5858.6      7037.4"
+    },
+    "Jamesbond": {
+      "random": 29.0,
+      "human": 302.8,
+      "line_quote": "  Jamesbond               29.0     302.8      87.5          517.0      100.5    331.0     349.1     366.5       462.7"
+    },
+    "Kangaroo": {
+      "random": 52.0,
+      "human": 3035.0,
+      "line_quote": "  Kangaroo                52.0    3035.0      62.5          724.1       51.2    740.2    1088.4    3617.4       838.2"
+    },
+    "Krull": {
+      "random": 1598.0,
+      "human": 2665.5,
+      "line_quote": "  Krull                 1598.0    2665.5    4890.8         5663.3     2204.8   3049.2    4402.1    3681.6      6616.4"
+    },
+    "KungFuMaster": {
+      "random": 258.5,
+      "human": 22736.3,
+      "line_quote": "  KungFuMaster           258.5   22736.3   18813.0        30944.8    14862.5   8155.6   11467.4   14783.2     21759.8"
+    },
+    "MsPacman": {
+      "random": 307.3,
+      "human": 6951.6,
+      "line_quote": "  MsPacman               307.3    6951.6    1265.6         1281.2     1480.0   1064.0    1218.1    1318.4       999.1"
+    },
+    "Pong": {
+      "random": -20.7,
+      "human": 14.6,
+      "line_quote": "  Pong                   -20.7      14.6      -6.7           20.1       12.8    -18.5      -9.1      -5.4        14.6"
+    },
+    "PrivateEye": {
+      "random": 24.9,
+      "human": 69571.3,
+      "line_quote": "  PrivateEye              24.9   69571.3      56.3           96.7       35.0     81.9       3.5      86.0       100.0"
+    },
+    "Qbert": {
+      "random": 163.9,
+      "human": 13455.0,
+      "line_quote": "  Qbert                  163.9   13455.0    3952.0        13781.9     1288.8    727.0    1810.7     866.3       745.7"
+    },
+    "RoadRunner": {
+      "random": 11.5,
+      "human": 7845.0,
+      "line_quote": "  RoadRunner              11.5    7845.0    2500.0        17751.3     5640.6   5006.1   11211.4   12213.1      9614.6"
+    },
+    "Seaquest": {
+      "random": 68.4,
+      "human": 42054.7,
+      "line_quote": "  Seaquest                68.4   42054.7     208.0         1100.2      683.3    315.2     352.3     558.1       661.3"
+    },
+    "UpNDown": {
+      "random": 533.4,
+      "human": 11693.2,
+      "line_quote": "  UpNDown                533.4   11693.2    2896.9        17264.2     3350.3   2646.4    4324.5   10859.2      3546.2"
+    }
+  },
+  "baseline_rows_seen": [
+    "Random",
+    "Human",
+    "MuZero",
+    "EfficientZero",
+    "SimPLe",
+    "CURL",
+    "DrQ",
+    "SPR"
+  ],
+  "problems": [
+    "Sticky actions / frame skip / no-op starts not stated in text.",
+    "Table 8 'IRIS (10M)' column (10M env steps, 1:50 optimization ratio) excluded — not Atari 100k. Its 'IRIS (100k)' column duplicates Table 1.",
+    "No per-game std reported; Figure 5 gives bootstrap CIs on aggregates only."
+  ]
+}

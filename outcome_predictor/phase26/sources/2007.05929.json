@@ -1,0 +1,1155 @@
+{
+  "arxiv_id": "2007.05929",
+  "title": "Data-Efficient Reinforcement Learning with Self-Predictive Representations",
+  "methods": [
+    {
+      "method_name": "SPR",
+      "is_own_method": true,
+      "one_paragraph_description": "SPR (Self-Predictive Representations) trains a Rainbow/DQN agent with an auxiliary self-supervised loss: an online encoder produces latent states, a learned transition model predicts latent representations K=5 steps into the future given actions, and predictions are matched (cosine loss via projection/prediction heads) to targets from a target encoder that is an exponential moving average of the online encoder. With augmentation (random shifts + intensity), tau=0 (target = online encoder); without augmentation, tau=0.99 and dropout 0.5. Total loss = RL loss + 2 * SPR loss. The paper reports both 'SPR' (with aug) and 'SPR (no Aug)'.",
+      "conventional_lineage_hint": "self-supervised representation learning for sample-efficient model-free deep RL from pixels ('augment reward maximization with self-supervised objectives'); Rainbow-based (van Hasselt et al. 2019 data-efficient Rainbow)",
+      "global_conditions": {
+        "gray_scaling": {
+          "value": "True",
+          "quote": "Gray-scaling                                                                      True",
+          "location": "Table 3 (Appendix A)"
+        },
+        "observation_down_sampling": {
+          "value": "84x84",
+          "quote": "Observation down-sampling                                                      84x84",
+          "location": "Table 3 (Appendix A)"
+        },
+        "frames_stacked": {
+          "value": "4",
+          "quote": "Frames stacked                                                                         4",
+          "location": "Table 3 (Appendix A)"
+        },
+        "action_repetitions": {
+          "value": "4",
+          "quote": "Action repetitions                                                                     4",
+          "location": "Table 3 (Appendix A)"
+        },
+        "reward_clipping": {
+          "value": "[-1, 1]",
+          "quote": "Reward clipping                                                                 [-1, 1]",
+          "location": "Table 3 (Appendix A)"
+        },
+        "terminal_on_loss_of_life": {
+          "value": "True",
+          "quote": "Terminal on loss of life                                                          True",
+          "location": "Table 3 (Appendix A)"
+        },
+        "max_frames_per_episode": {
+          "value": "108K",
+          "quote": "Max frames per episode                                                           108K",
+          "location": "Table 3 (Appendix A)"
+        },
+        "update": {
+          "value": "Distributional Q",
+          "quote": "Update                                                               Distributional Q",
+          "location": "Table 3 (Appendix A)"
+        },
+        "dueling": {
+          "value": "True",
+          "quote": "Dueling                                                                           True",
+          "location": "Table 3 (Appendix A)"
+        },
+        "support_of_q_distribution": {
+          "value": "51",
+          "quote": "Support of Q-distribution                                                            51",
+          "location": "Table 3 (Appendix A)"
+        },
+        "discount_factor": {
+          "value": "0.99",
+          "quote": "Discount factor                                                                    0.99",
+          "location": "Table 3 (Appendix A)"
+        },
+        "minibatch_size": {
+          "value": "32",
+          "quote": "Minibatch size                                                                        32",
+          "location": "Table 3 (Appendix A)"
+        },
+        "optimizer": {
+          "value": "Adam",
+          "quote": "Optimizer                                                                       Adam",
+          "location": "Table 3 (Appendix A)"
+        },
+        "optimizer_learning_rate": {
+          "value": "0.0001",
+          "quote": "Optimizer: learning rate                                                       0.0001",
+          "location": "Table 3 (Appendix A)"
+        },
+        "optimizer_beta1": {
+          "value": "0.9",
+          "quote": "Optimizer: β1                                                                       0.9",
+          "location": "Table 3 (Appendix A)"
+        },
+        "optimizer_beta2": {
+          "value": "0.999",
+          "quote": "Optimizer: β2                                                                    0.999",
+          "location": "Table 3 (Appendix A)"
+        },
+        "optimizer_epsilon": {
+          "value": "0.00015",
+          "quote": "Optimizer: \u000f                                                                 0.00015",
+          "location": "Table 3 (Appendix A)"
+        },
+        "max_gradient_norm": {
+          "value": "10",
+          "quote": "Max gradient norm                                                                     10",
+          "location": "Table 3 (Appendix A)"
+        },
+        "priority_exponent": {
+          "value": "0.5",
+          "quote": "Priority exponent                                                                    0.5",
+          "location": "Table 3 (Appendix A)"
+        },
+        "priority_correction": {
+          "value": "0.4 → 1",
+          "quote": "Priority correction                                                          0.4 → 1",
+          "location": "Table 3 (Appendix A)"
+        },
+        "exploration": {
+          "value": "Noisy nets",
+          "quote": "Exploration                                                                Noisy nets",
+          "location": "Table 3 (Appendix A)"
+        },
+        "noisy_nets_parameter": {
+          "value": "0.5",
+          "quote": "Noisy nets parameter                                                                 0.5",
+          "location": "Table 3 (Appendix A)"
+        },
+        "training_steps": {
+          "value": "100K",
+          "quote": "Training steps                                                                   100K",
+          "location": "Table 3 (Appendix A)"
+        },
+        "evaluation_trajectories": {
+          "value": "100",
+          "quote": "Evaluation trajectories                                                             100",
+          "location": "Table 3 (Appendix A)"
+        },
+        "min_replay_size_for_sampling": {
+          "value": "2000",
+          "quote": "Min replay size for sampling                                                      2000",
+          "location": "Table 3 (Appendix A)"
+        },
+        "replay_period_every": {
+          "value": "1 step",
+          "quote": "Replay period every                                                             1 step",
+          "location": "Table 3 (Appendix A)"
+        },
+        "updates_per_step": {
+          "value": "2",
+          "quote": "Updates per step                                                                       2",
+          "location": "Table 3 (Appendix A)"
+        },
+        "multi_step_return_length": {
+          "value": "10",
+          "quote": "Multi-step return length                                                             10",
+          "location": "Table 3 (Appendix A)"
+        },
+        "q_network_channels": {
+          "value": "32, 64, 64",
+          "quote": "Q network: channels                                                        32, 64, 64",
+          "location": "Table 3 (Appendix A)"
+        },
+        "q_network_filter_size": {
+          "value": "8 × 8, 4 × 4, 3 × 3",
+          "quote": "Q network: filter size                                           8 × 8, 4 × 4, 3 × 3",
+          "location": "Table 3 (Appendix A)"
+        },
+        "q_network_stride": {
+          "value": "4, 2, 1",
+          "quote": "Q network: stride                                                               4, 2, 1",
+          "location": "Table 3 (Appendix A)"
+        },
+        "data_augmentation_with_aug": {
+          "value": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+          "quote": "Non-linearity                                                                   ReLU /                  Target network: update period                                                          1",
+          "location": "Table 3 (With Augmentation column)"
+        },
+        "data_augmentation_without_aug": {
+          "value": "None",
+          "quote": "Non-linearity                                                                   ReLU",
+          "location": "Table 3 (Without Augmentation column)"
+        },
+        "dropout": {
+          "value": "0 (with aug) / 0.5 (without aug)",
+          "quote": "K (Prediction Depth)                                                                   5",
+          "location": "Table 3"
+        },
+        "tau_ema_coefficient": {
+          "value": "0 (with aug) / 0.99 (without aug)",
+          "quote": "Parameter                              With Augmentation      Without Augmentation",
+          "location": "Table 3"
+        },
+        "seeds": {
+          "value": "10",
+          "quote": "environment steps. The results are recorded at the end of training and averaged over 10 random seeds.",
+          "location": "Table 4 caption"
+        },
+        "encoder": {
+          "value": "3-layer convolutional encoder from Mnih et al. (2015)",
+          "quote": "with four exceptions. We follow DrQ (Yarats et al., 2021) by: using the 3-layer convolutional encoder",
+          "location": "Section 2.5"
+        },
+        "gradient_steps_per_env_step": {
+          "value": "2",
+          "quote": "using a separate DQN target network when using augmentation. We also perform two gradient steps per environment step instead of one. We show results for this configuration with and without",
+          "location": "Section 2.5"
+        },
+        "lambda_spr_loss": {
+          "value": "2",
+          "quote": "augmentation is disabled and τ = 0 when enabled. For Ltotal   θ    = LRL         SPR",
+          "location": "Section 2.5"
+        },
+        "predictor_q": {
+          "value": "linear layer",
+          "quote": "noisy parameters. Finally, we parameterize the predictor q as a linear layer. We use τ = 0.99 when",
+          "location": "Section 2.5"
+        }
+      },
+      "per_dataset_conditions": {},
+      "evaluation_protocol": {
+        "seeds": "10",
+        "episodes_per_seed": "100 evaluation trajectories",
+        "checkpoint_selection": "last (end of training)",
+        "quote": "Table 4: Mean episodic returns on the 26 Atari games considered by Kaiser et al. (2019) after 100k environment steps. The results are recorded at the end of training and averaged over 10 random seeds. | Replay period every                                                             1 step | 2018), we recommend evaluating over 100 episodes irrespective of their length. Moreover, to address findings from Henderson et al. (2018) that comparisons based on small numbers of random seeds are unreliable, we average our results over ten random seeds, twice as many as most previous works.",
+        "location": "Table 4 caption; Table 3; Section 4.1"
+      },
+      "dataset_version": {
+        "value": "Atari 100k: 100k environment steps = 400k frames (action repeat 4); 100 evaluation episodes per run; sticky actions: not stated",
+        "quote": "for most other methods except CURL, which uses 20. Each method is allowed access to only 100k | Min replay size for sampling                                                      2000 | Replay period every                                                             1 step | Frames stacked                                                                         4",
+        "location": "Figure 1 caption; Table 3"
+      },
+      "rows": [
+        {
+          "dataset": "Alien",
+          "outcome": 801.5,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Alien                        227.8    7127.7     616.9    739.9      824.7      558.2     771.2       847.2          801.5",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Alien",
+          "outcome": 847.2,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Alien                        227.8    7127.7     616.9    739.9      824.7      558.2     771.2       847.2          801.5",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Amidar",
+          "outcome": 176.3,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Amidar                         5.8    1719.5      88.0     188.6      82.8       142.1     102.8       142.7         176.3",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Amidar",
+          "outcome": 142.7,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Amidar                         5.8    1719.5      88.0     188.6      82.8       142.1     102.8       142.7         176.3",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Assault",
+          "outcome": 571.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Assault                      222.4     742.0     527.2    431.2      351.9      600.6     452.4       665.0          571.0",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Assault",
+          "outcome": 665.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Assault                      222.4     742.0     527.2    431.2      351.9      600.6     452.4       665.0          571.0",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Asterix",
+          "outcome": 977.8,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Asterix                     210.0     8503.3    1128.3     470.8     628.5       734.5     603.5       820.2         977.8",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Asterix",
+          "outcome": 820.2,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Asterix                     210.0     8503.3    1128.3     470.8     628.5       734.5     603.5       820.2         977.8",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Bank Heist",
+          "outcome": 380.9,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Bank Heist                    14.2    753.1       34.2     51.0      182.1      131.6     168.9       425.6          380.9",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Bank Heist",
+          "outcome": 425.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Bank Heist                    14.2    753.1       34.2     51.0      182.1      131.6     168.9       425.6          380.9",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "BattleZone",
+          "outcome": 16651.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " BattleZone                  2360.0   37187.5    5184.4   10124.6    4060.6     14870.0   12954.0     10738.0       16651.0",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "BattleZone",
+          "outcome": 10738.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " BattleZone                  2360.0   37187.5    5184.4   10124.6    4060.6     14870.0   12954.0     10738.0       16651.0",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Boxing",
+          "outcome": 35.8,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Boxing                        0.1      12.1       9.1       0.2       2.5         1.2       6.0        12.7           35.8",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Boxing",
+          "outcome": 12.7,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Boxing                        0.1      12.1       9.1       0.2       2.5         1.2       6.0        12.7           35.8",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Breakout",
+          "outcome": 17.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Breakout                       1.7     30.5      16.4       1.9       9.8         4.9      16.1        12.9           17.1",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Breakout",
+          "outcome": 12.9,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Breakout                       1.7     30.5      16.4       1.9       9.8         4.9      16.1        12.9           17.1",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "ChopperCommand",
+          "outcome": 974.8,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " ChopperCommand              811.0     7387.8    1246.9     861.8    1033.3      1058.5     780.3       667.3         974.8",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "ChopperCommand",
+          "outcome": 667.3,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " ChopperCommand              811.0     7387.8    1246.9     861.8    1033.3      1058.5     780.3       667.3         974.8",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Crazy Climber",
+          "outcome": 42923.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Crazy Climber              10780.5   35829.4   62583.6   16185.3    21327.8    12146.5   20516.5     43391.0       42923.6",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Crazy Climber",
+          "outcome": 43391.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Crazy Climber              10780.5   35829.4   62583.6   16185.3    21327.8    12146.5   20516.5     43391.0       42923.6",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Demon Attack",
+          "outcome": 545.2,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Demon Attack                152.1     1971.0     208.1    508.0      711.8      817.6     1113.4      370.1          545.2",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Demon Attack",
+          "outcome": 370.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Demon Attack                152.1     1971.0     208.1    508.0      711.8      817.6     1113.4      370.1          545.2",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Freeway",
+          "outcome": 24.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Freeway                       0.0      29.6      20.3       27.9      25.0        26.7      9.8        16.1           24.4",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Freeway",
+          "outcome": 16.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Freeway                       0.0      29.6      20.3       27.9      25.0        26.7      9.8        16.1           24.4",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Frostbite",
+          "outcome": 1821.5,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Frostbite                     65.2    4334.7     254.7    866.8      231.6     1181.3     331.1      1657.4         1821.5",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Frostbite",
+          "outcome": 1657.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Frostbite                     65.2    4334.7     254.7    866.8      231.6     1181.3     331.1      1657.4         1821.5",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Gopher",
+          "outcome": 715.2,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Gopher                       257.6    2412.5     771.0    349.5      778.0      669.3     636.3       774.5          715.2",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Gopher",
+          "outcome": 774.5,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Gopher                       257.6    2412.5     771.0    349.5      778.0      669.3     636.3       774.5          715.2",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Hero",
+          "outcome": 7019.2,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Hero                        1027.0   30826.4    2656.6    6857.0    6458.8      6279.3    3736.3      5707.4        7019.2",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Hero",
+          "outcome": 5707.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Hero                        1027.0   30826.4    2656.6    6857.0    6458.8      6279.3    3736.3      5707.4        7019.2",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Jamesbond",
+          "outcome": 365.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Jamesbond                     29.0     302.8     125.3     301.6     112.3      471.0      236.0       367.2         365.4",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Jamesbond",
+          "outcome": 367.2,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Jamesbond                     29.0     302.8     125.3     301.6     112.3      471.0      236.0       367.2         365.4",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Kangaroo",
+          "outcome": 3276.4,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Kangaroo                      52.0    3035.0     323.1    779.3      605.4      872.5     940.6      1359.5         3276.4",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Kangaroo",
+          "outcome": 1359.5,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Kangaroo                      52.0    3035.0     323.1    779.3      605.4      872.5     940.6      1359.5         3276.4",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Krull",
+          "outcome": 3688.9,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Krull                       1598.0    2665.5    4539.9    2851.5    3277.9      4229.6    4018.1      3123.1        3688.9",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Krull",
+          "outcome": 3123.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Krull                       1598.0    2665.5    4539.9    2851.5    3277.9      4229.6    4018.1      3123.1        3688.9",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Kung Fu Master",
+          "outcome": 13192.7,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Kung Fu Master               258.5   22736.3   17257.2   14346.1     5722.2    14307.8    9111.0     15469.7       13192.7",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Kung Fu Master",
+          "outcome": 15469.7,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Kung Fu Master               258.5   22736.3   17257.2   14346.1     5722.2    14307.8    9111.0     15469.7       13192.7",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Ms Pacman",
+          "outcome": 1313.2,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Ms Pacman                    307.3    6951.6    1480.0    1204.1     941.9      1465.5     960.5      1247.7        1313.2",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Ms Pacman",
+          "outcome": 1247.7,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Ms Pacman                    307.3    6951.6    1480.0    1204.1     941.9      1465.5     960.5      1247.7        1313.2",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Pong",
+          "outcome": -5.9,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Pong                         -20.7      14.6     12.8      -19.3      1.3        -16.5      -8.5       -16.0          -5.9",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Pong",
+          "outcome": -16.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Pong                         -20.7      14.6     12.8      -19.3      1.3        -16.5      -8.5       -16.0          -5.9",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Private Eye",
+          "outcome": 124.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Private Eye                   24.9   69571.3      58.3      97.8     100.0      218.4      -13.6       52.6          124.0",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Private Eye",
+          "outcome": 52.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Private Eye                   24.9   69571.3      58.3      97.8     100.0      218.4      -13.6       52.6          124.0",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Qbert",
+          "outcome": 669.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Qbert                        163.9   13455.0    1288.8    1152.9     509.3      1042.4     854.4       606.6         669.1",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Qbert",
+          "outcome": 606.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Qbert                        163.9   13455.0    1288.8    1152.9     509.3      1042.4     854.4       606.6         669.1",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Road Runner",
+          "outcome": 14220.5,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Road Runner                   11.5    7845.0    5640.6    9600.0    2696.7      5661.0    8895.1     10511.0       14220.5",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Road Runner",
+          "outcome": 10511.0,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Road Runner                   11.5    7845.0    5640.6    9600.0    2696.7      5661.0    8895.1     10511.0       14220.5",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Seaquest",
+          "outcome": 583.1,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Seaquest                      68.4   42054.7    683.3      354.1     286.9       384.5     301.2       580.8         583.1",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Seaquest",
+          "outcome": 580.8,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Seaquest                      68.4   42054.7    683.3      354.1     286.9       384.5     301.2       580.8         583.1",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        },
+        {
+          "dataset": "Up N Down",
+          "outcome": 28138.5,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "main",
+          "config_conditions": {
+            "data_augmentation": "Random shifts (±4 pixels) & Intensity(scale=0.05)",
+            "dropout": "0",
+            "tau_ema": "0"
+          },
+          "table": "Table 4",
+          "line_quote": " Up N Down                    533.4   11693.2    3350.3    2877.4    2847.6      2955.2    3180.8      6604.6       28138.5",
+          "notes": "raw mean episodic return; column 'SPR'; no per-game std reported"
+        },
+        {
+          "dataset": "Up N Down",
+          "outcome": 6604.6,
+          "std": null,
+          "outcome_is_mean_over_seeds": true,
+          "config_label": "no_aug",
+          "config_conditions": {
+            "data_augmentation": "None",
+            "dropout": "0.5",
+            "tau_ema": "0.99"
+          },
+          "table": "Table 4",
+          "line_quote": " Up N Down                    533.4   11693.2    3350.3    2877.4    2847.6      2955.2    3180.8      6604.6       28138.5",
+          "notes": "raw mean episodic return; column 'SPR (no Aug)'; no per-game std reported"
+        }
+      ]
+    }
+  ],
+  "reference_scores": {
+    "Alien": {
+      "random": 227.8,
+      "human": 7127.7,
+      "line_quote": " Alien                        227.8    7127.7     616.9    739.9      824.7      558.2     771.2       847.2          801.5"
+    },
+    "Amidar": {
+      "random": 5.8,
+      "human": 1719.5,
+      "line_quote": " Amidar                         5.8    1719.5      88.0     188.6      82.8       142.1     102.8       142.7         176.3"
+    },
+    "Assault": {
+      "random": 222.4,
+      "human": 742.0,
+      "line_quote": " Assault                      222.4     742.0     527.2    431.2      351.9      600.6     452.4       665.0          571.0"
+    },
+    "Asterix": {
+      "random": 210.0,
+      "human": 8503.3,
+      "line_quote": " Asterix                     210.0     8503.3    1128.3     470.8     628.5       734.5     603.5       820.2         977.8"
+    },
+    "Bank Heist": {
+      "random": 14.2,
+      "human": 753.1,
+      "line_quote": " Bank Heist                    14.2    753.1       34.2     51.0      182.1      131.6     168.9       425.6          380.9"
+    },
+    "BattleZone": {
+      "random": 2360.0,
+      "human": 37187.5,
+      "line_quote": " BattleZone                  2360.0   37187.5    5184.4   10124.6    4060.6     14870.0   12954.0     10738.0       16651.0"
+    },
+    "Boxing": {
+      "random": 0.1,
+      "human": 12.1,
+      "line_quote": " Boxing                        0.1      12.1       9.1       0.2       2.5         1.2       6.0        12.7           35.8"
+    },
+    "Breakout": {
+      "random": 1.7,
+      "human": 30.5,
+      "line_quote": " Breakout                       1.7     30.5      16.4       1.9       9.8         4.9      16.1        12.9           17.1"
+    },
+    "ChopperCommand": {
+      "random": 811.0,
+      "human": 7387.8,
+      "line_quote": " ChopperCommand              811.0     7387.8    1246.9     861.8    1033.3      1058.5     780.3       667.3         974.8"
+    },
+    "Crazy Climber": {
+      "random": 10780.5,
+      "human": 35829.4,
+      "line_quote": " Crazy Climber              10780.5   35829.4   62583.6   16185.3    21327.8    12146.5   20516.5     43391.0       42923.6"
+    },
+    "Demon Attack": {
+      "random": 152.1,
+      "human": 1971.0,
+      "line_quote": " Demon Attack                152.1     1971.0     208.1    508.0      711.8      817.6     1113.4      370.1          545.2"
+    },
+    "Freeway": {
+      "random": 0.0,
+      "human": 29.6,
+      "line_quote": " Freeway                       0.0      29.6      20.3       27.9      25.0        26.7      9.8        16.1           24.4"
+    },
+    "Frostbite": {
+      "random": 65.2,
+      "human": 4334.7,
+      "line_quote": " Frostbite                     65.2    4334.7     254.7    866.8      231.6     1181.3     331.1      1657.4         1821.5"
+    },
+    "Gopher": {
+      "random": 257.6,
+      "human": 2412.5,
+      "line_quote": " Gopher                       257.6    2412.5     771.0    349.5      778.0      669.3     636.3       774.5          715.2"
+    },
+    "Hero": {
+      "random": 1027.0,
+      "human": 30826.4,
+      "line_quote": " Hero                        1027.0   30826.4    2656.6    6857.0    6458.8      6279.3    3736.3      5707.4        7019.2"
+    },
+    "Jamesbond": {
+      "random": 29.0,
+      "human": 302.8,
+      "line_quote": " Jamesbond                     29.0     302.8     125.3     301.6     112.3      471.0      236.0       367.2         365.4"
+    },
+    "Kangaroo": {
+      "random": 52.0,
+      "human": 3035.0,
+      "line_quote": " Kangaroo                      52.0    3035.0     323.1    779.3      605.4      872.5     940.6      1359.5         3276.4"
+    },
+    "Krull": {
+      "random": 1598.0,
+      "human": 2665.5,
+      "line_quote": " Krull                       1598.0    2665.5    4539.9    2851.5    3277.9      4229.6    4018.1      3123.1        3688.9"
+    },
+    "Kung Fu Master": {
+      "random": 258.5,
+      "human": 22736.3,
+      "line_quote": " Kung Fu Master               258.5   22736.3   17257.2   14346.1     5722.2    14307.8    9111.0     15469.7       13192.7"
+    },
+    "Ms Pacman": {
+      "random": 307.3,
+      "human": 6951.6,
+      "line_quote": " Ms Pacman                    307.3    6951.6    1480.0    1204.1     941.9      1465.5     960.5      1247.7        1313.2"
+    },
+    "Pong": {
+      "random": -20.7,
+      "human": 14.6,
+      "line_quote": " Pong                         -20.7      14.6     12.8      -19.3      1.3        -16.5      -8.5       -16.0          -5.9"
+    },
+    "Private Eye": {
+      "random": 24.9,
+      "human": 69571.3,
+      "line_quote": " Private Eye                   24.9   69571.3      58.3      97.8     100.0      218.4      -13.6       52.6          124.0"
+    },
+    "Qbert": {
+      "random": 163.9,
+      "human": 13455.0,
+      "line_quote": " Qbert                        163.9   13455.0    1288.8    1152.9     509.3      1042.4     854.4       606.6         669.1"
+    },
+    "Road Runner": {
+      "random": 11.5,
+      "human": 7845.0,
+      "line_quote": " Road Runner                   11.5    7845.0    5640.6    9600.0    2696.7      5661.0    8895.1     10511.0       14220.5"
+    },
+    "Seaquest": {
+      "random": 68.4,
+      "human": 42054.7,
+      "line_quote": " Seaquest                      68.4   42054.7    683.3      354.1     286.9       384.5     301.2       580.8         583.1"
+    },
+    "Up N Down": {
+      "random": 533.4,
+      "human": 11693.2,
+      "line_quote": " Up N Down                    533.4   11693.2    3350.3    2877.4    2847.6      2955.2    3180.8      6604.6       28138.5"
+    }
+  },
+  "baseline_rows_seen": [
+    "SimPLe",
+    "DER",
+    "OTRainbow",
+    "CURL",
+    "DrQ"
+  ],
+  "problems": [
+    "Ablation tables 2, 5, 6, 7 report only aggregate (mean/median human-normalized and DQN-normalized) scores, not per-game scores, so no ablation rows (1-step SPR, non-temporal SPR, no-stopgradient, etc.) could be extracted.",
+    "Table 3 row 'Optimizer: ' has the epsilon symbol dropped by pdftotext (value 0.00015).",
+    "Sticky actions not mentioned anywhere in the paper.",
+    "No per-game standard deviations reported.",
+    "Human/random scores are 'from Wang et al. (2016)' (line 415), not measured by this paper."
+  ]
+}

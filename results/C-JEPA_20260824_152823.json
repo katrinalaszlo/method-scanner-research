@@ -1,0 +1,20 @@
+{
+  "paper": "C-JEPA",
+  "timestamp": "20260824_152823",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 4.13,
+  "abstract": "Causal-JEPA (C-JEPA) introduces object-level masking in the feature space to learn world models that capture causal structure. The method uses an encoder to map observations to object-centric representations. A mask predictor intervenes on selected object representations, and a predictor forecasts the resulting future states. A contrastive loss encourages the model to distinguish causal interventions from non-causal correlations. C-JEPA demonstrates improved generalization and robustness on tasks requiring reasoning about object interactions and causal relationships.",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits \u2014\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We present a self-supervised approach that predicts the representation of one view\nfrom another. Predicting in representation space avoids pixel reconstruction, but without an\nasymmetric design the encoder collapses to a constant output. We use a stop-gradient to prevent this.\nJSON: {\"name\": \"Latent Prediction\", \"operations\": [\"encode\", \"predict\"], \"loss\": null, \"failure\": \"representation collapse without an asymmetric design\"}\n\nNow do the same for:\nDescription: Causal-JEPA (C-JEPA) introduces object-level masking in the feature space to learn world models that capture causal structure. The method uses an encoder to map observations to object-centric representations. A mask predictor intervenes on selected object representations, and a predictor forecasts the resulting future states. A contrastive loss encourages the model to distinguish causal interventions from non-causal correlations. C-JEPA demonstrates improved generalization and robustness on tasks requiring reasoning about object interactions and causal relationships.\nJSON:\n",
+  "raw_response": "{\"name\": \"Causal-JEPA\", \"operations\": [\"encode\", \"intervene\", \"forecast\"], \"loss\": \"contrastive loss\", \"failure\": null}",
+  "data": {
+    "name": "Causal-JEPA",
+    "operations": [
+      "encode",
+      "intervene",
+      "forecast"
+    ],
+    "loss": "contrastive loss",
+    "failure": null
+  }
+}

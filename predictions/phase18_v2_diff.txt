@@ -1,0 +1,94 @@
+A Simple Framework for Contrastive Learning    changed 0/4
+Adam: A Method for Stochastic Optimization     changed 0/3
+Adaptive Neural Unscented Kalman Filter        changed 4/7
+    compute covariance matrix@state    -> compute covariance matrix@error
+    compute cross-covariance matrix@state -> compute cross-covariance matrix@error
+    compute kalman gain@state          -> compute kalman gain@error
+    compute new covariance@state       -> compute new covariance@error
+Asynchronous Methods for Deep Reinforcement    changed 0/5
+Attention Is All You Need                      changed 0/4
+Backprop KF: Learning Discriminative Determi   changed 0/5
+Bidirectional Predictive Coding for Multi-St   changed 0/4
+Black box variational inference for state sp   changed 1/3
+    compute@gradient                   -> compute@other
+Bootstrap your own latent: A new approach to   changed 1/5
+    normalize@latent                   -> normalize@sample
+Constrained Predictive Coding as a Biologica   changed 1/3
+    improve@parameter                  -> improve@gradient
+Deep Kalman Filters                            changed 0/3
+Deep Predictive Coding Networks for Video Pr   changed 1/3
+    compare@state                      -> compare@input
+Deep Residual Learning for Image Recognition   changed 0/3
+Deep Robust Kalman Filter                      changed 1/6
+    compute robust target label@other  -> compute robust target label@value
+Deep Unsupervised Learning using Nonequilibr   changed 0/3
+Deep Variational Bayes Filters: Unsupervised   changed 0/4
+Dendritic predictive coding: A theory of cor   changed 0/4
+Denoising Diffusion Implicit Models            changed 1/3
+    sample@state                       -> sample@distribution
+Denoising Diffusion Probabilistic Models       changed 2/3
+    predict@parameter                  -> predict@latent
+    sample@sample                      -> sample@state
+Differentiable Particle Filters: End-to-End    changed 0/6
+Dream to Control: Learning Behaviors by Late   changed 1/3
+    act@action                         -> act@state
+Efficient Estimation of Word Representations   changed 1/3
+    classify@sample                    -> classify@distribution
+Elucidating the Design Space of Diffusion-Ba   changed 0/3
+Exploring Simple Siamese Representation Lear   changed 0/4
+KalmanNet: Neural Network Aided Kalman Filte   changed 0/4
+Learning Latent Dynamics for Planning from P   changed 0/4
+Linear Variational State-Space Filtering       changed 0/2
+Mastering Atari with Discrete World Models     changed 1/3
+    train@action                       -> train@parameter
+Mastering Diverse Domains through World Mode   changed 2/3
+    predict@distribution               -> predict@reward
+    reconstruct@distribution           -> reconstruct@input
+Meta-SGD: Learning to Learn Quickly for Few-   changed 1/5
+    sample@other                       -> sample@task
+Model-Agnostic Meta-Learning for Fast Adapta   changed 1/4
+    sample@other                       -> sample@task
+Neural Kalman Filtering                        changed 1/4
+    correct@parameter                  -> correct@state
+On First-Order Meta-Learning Algorithms        changed 1/4
+    sample@other                       -> sample@task
+On the relationship between predictive codin   changed 0/3
+PKF: Probabilistic Data Association Kalman F   changed 0/3
+Particle Filter Networks with Application to   changed 1/4
+    differentiable particle filtering@distribution -> differentiable particle filtering@other
+Particle Filter Recurrent Neural Networks      changed 1/4
+    predict@state                      -> predict@value
+Playing Atari with Deep Reinforcement Learni   changed 3/11
+    store@state                        -> store@sample
+    rectify@distribution               -> rectify@input
+    output@parameter                   -> output@value
+Practical Bayesian Optimization of Machine L   changed 2/3
+    acquire@distribution               -> acquire@value
+    improve@distribution               -> improve@action
+Predictive Coding Can Do Exact Backpropagati   changed 2/4
+    predict@state                      -> predict@value
+    train@error                        -> train@parameter
+Predictive Coding Light+: learning to predic   changed 0/4
+Predictive Coding Networks and Inference Lea   changed 0/3
+Predictive Coding: Towards a Future of Deep    changed 0/4
+Predictive Coding: a Theoretical and Experim   changed 0/4
+Proximal Policy Optimization Algorithms        changed 2/3
+    evaluate@state                     -> evaluate@value
+    construct surrogate loss@parameter -> construct surrogate loss@value
+Revisiting Feature Prediction for Learning V   changed 0/3
+Score-Based Generative Modeling through Stoc   changed 0/4
+Self-Supervised Learning from Images with a    changed 0/3
+Soft Actor-Critic: Off-Policy Maximum Entrop   changed 2/4
+    evaluate@state                     -> evaluate@value
+    improve@other                      -> improve@policy
+Spiking Neural Predictive Coding for Continu   changed 0/3
+The Neural Particle Filter                     changed 0/4
+Trust Region Policy Optimization               changed 2/3
+    evaluate@state                     -> evaluate@value
+    improve@parameter                  -> improve@value
+Understanding and Improving Optimization in    changed 0/2
+Variational Tracking and Prediction with Gen   changed 1/4
+    discover@latent                    -> discover@other
+Very Deep Convolutional Networks for Large-S   changed 1/4
+    rectify@parameter                  -> rectify@state
+World Models                                   changed 0/4

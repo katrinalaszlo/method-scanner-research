@@ -1,0 +1,484 @@
+{
+ "arxiv_id": "2005.13239",
+ "title": "MOPO: Model-based Offline Policy Optimization",
+ "methods": [
+  {
+   "method_name": "MOPO",
+   "is_own_method": true,
+   "one_paragraph_description": "Learns an ensemble of N Gaussian probabilistic dynamics models on the offline data, then runs MBPO-style short (h-step) model rollouts from dataset states with a SAC policy, using a reward penalized by the uncertainty of the dynamics: r_tilde(s,a) = r_hat(s,a) - lambda * max_i ||Sigma_phi^i(s,a)||_F (maximum std of the ensemble). Policy is trained with SAC on a mix of real data and penalized model rollouts (Algorithm 2).",
+   "conventional_lineage_hint": "model-based offline RL (paper: 'we propose to modify the existing model-based RL methods by applying them with rewards artificially penalized by the uncertainty of the dynamics'; 'largely follows MBPO')",
+   "global_conditions": {
+    "ensemble_size_trained": {
+     "value": "7",
+     "quote": "Across all domains, we train an ensemble of 7 models and pick the best 5 models based on their",
+     "location": "Appendix G.2"
+    },
+    "ensemble_size_used_elites": {
+     "value": "5 (best of 7 by hold-out prediction error)",
+     "quote": "Across all domains, we train an ensemble of 7 models and pick the best 5 models based on their prediction error on a hold-out set of 1000 transitions in the offline dataset. Each of the model in the",
+     "location": "Appendix G.2"
+    },
+    "holdout_set_size": {
+     "value": "1000 transitions",
+     "quote": "prediction error on a hold-out set of 1000 transitions in the offline dataset. Each of the model in the",
+     "location": "Appendix G.2"
+    },
+    "dynamics_model_architecture": {
+     "value": "4-layer feedforward NN, 200 hidden units, two-head mean/variance output, spectral normalization",
+     "quote": "ensemble is parametrized as a 4-layer feedforward neural network with 200 hidden units and after the last hidden layer, the model outputs the mean and variance using a two-head architecture. Spectral normalization [45] is applied to all layers except the head that outputs the model variance.",
+     "location": "Appendix G.2"
+    },
+    "uncertainty_estimator": {
+     "value": "max over ensemble of Frobenius norm of predicted std",
+     "quote": "i=1 kΣφ (s, a)kF , the maximum standard deviation of the learned models in the ensemble. We use the maximum of the ensemble elements rather than the mean to be more",
+     "location": "Section 4.3"
+    },
+    "sac_batch_size": {
+     "value": "256",
+     "quote": "For the SAC updates, we sample a batch of 256 transitions, 5% of them from Denv and the rest of them from Dmodel . We also perform ablation studies on the percentage of the real data in a batch for",
+     "location": "Appendix G.2"
+    },
+    "real_data_ratio_in_batch": {
+     "value": "5% from D_env, rest from D_model",
+     "quote": "For the SAC updates, we sample a batch of 256 transitions, 5% of them from Denv and the rest of them from Dmodel . We also perform ablation studies on the percentage of the real data in a batch for",
+     "location": "Appendix G.2"
+    },
+    "hyperparameter_search": {
+     "value": "(h, lambda) in {1,5}^2, best final performance over 3 seeds; exceptions halfcheetah-random and walker2d-medium-expert",
+     "quote": "For the D4RL datasets, the rollout length h and penalty coefficient λ are given in Table 6. We search over (h, λ) ∈ {1, 5}2 and report the best final performance, averaged over 3 seeds. The only exceptions are halfcheetah-random and walker2d-medium-expert, where other penalty coefficients were found to work better.",
+     "location": "Appendix G.2"
+    }
+   },
+   "per_dataset_conditions": {
+    "halfcheetah-random": {
+     "rollout_length_h": {
+      "value": "5",
+      "quote": "random         halfcheetah           5, 0.5        5",
+      "location": "Table 6 (Appendix G.2)"
+     },
+     "penalty_coefficient_lambda": {
+      "value": "0.5",
+      "quote": "random         halfcheetah           5, 0.5        5",
+      "location": "Table 6 (Appendix G.2)"
+     }
+    },
+    "hopper-random": {
+     "rollout_length_h": {
+      "value": "5",
+      "quote": "random         hopper                 5, 1         5",
+      "location": "Table 6 (Appendix G.2)"
+     },
+     "penalty_coefficient_lambda": {
+      "value": "1",
+      "quote": "random         hopper                 5, 1         5",
+      "location": "Table 6 (Appendix G.2)"
+     }
+    },
+    "walker2d-random": {
+     "rollout_length_h": {
+      "value": "1",
+      "quote": "random         walker2d               1, 1         5",
+      "location": "Table 6 (Appendix G.2)"
+     },
+     "penalty_coefficient_lambda": {
+      "value": "1",
+      "quote": "random         walker2d               1, 1         5",
+      "location": "Table 6 (Appendix G.2)"
+     }
+    },
+    "halfcheetah-medium": {
+     "rollout_length_h": {
+      "value": "1",
+      "quote": "medium         halfcheetah            1, 1         5",
+      "location": "Table 6 (Appendix G.2)"
+     },
+     "penalty_coefficient_lambda": {
+      "value": "1",
+      "quote": "medium         halfcheetah            1, 1         5",
+      "location": "Table 6 (Appendix G.2)"
+     }
+    },
+    "hopper-medium": {
+     "rollout_length_h": {
+      "value": "5",
+      "quote": "medium         hopper                 5, 5         5",
+      "location": "Table 6 (Appendix G.2)"
+     },
+     "penalty_coefficient_lambda": {
+      "value": "5",
+      "quote": "medium         hopper                 5, 5         5",
+      "location": "Table 6 (Appendix G.2)"
+     }
+    },
+    "walker2d-medium": {
+     "rollout_length_h": {
+      "value": "5",
+      "quote": "medium         walker2d               5, 5         5",
+      "location": "Table 6 (Appendix G.2)"
+     },
+     "penalty_coefficient_lambda": {
+      "value": "5",
+      "quote": "medium         walker2d               5, 5         5",
+      "location": "Table 6 (Appendix G.2)"
+     }
+    },
+    "halfcheetah-medium-replay": {
+     "rollout_length_h": {
+      "value": "5",
+      "quote": "mixed          halfcheetah            5, 1         5",
+      "location": "Table 6 (Appendix G.2)"
+     },
+     "penalty_coefficient_lambda": {
+      "value": "1",
+      "quote": "mixed          halfcheetah            5, 1         5",
+      "location": "Table 6 (Appendix G.2)"
+     }
+    },
+    "hopper-medium-replay": {
+     "rollout_length_h": {
+      "value": "5",
+      "quote": "mixed          hopper                 5, 1         5",
+      "location": "Table 6 (Appendix G.2)"
+     },
+     "penalty_coefficient_lambda": {
+      "value": "1",
+      "quote": "mixed          hopper                 5, 1         5",
+      "location": "Table 6 (Appendix G.2)"
+     }
+    },
+    "walker2d-medium-replay": {
+     "rollout_length_h": {
+      "value": "1",
+      "quote": "mixed          walker2d               1, 1         1",
+      "location": "Table 6 (Appendix G.2)"
+     },
+     "penalty_coefficient_lambda": {
+      "value": "1",
+      "quote": "mixed          walker2d               1, 1         1",
+      "location": "Table 6 (Appendix G.2)"
+     }
+    },
+    "halfcheetah-medium-expert": {
+     "rollout_length_h": {
+      "value": "5",
+      "quote": "med-expert     halfcheetah            5, 1         5",
+      "location": "Table 6 (Appendix G.2)"
+     },
+     "penalty_coefficient_lambda": {
+      "value": "1",
+      "quote": "med-expert     halfcheetah            5, 1         5",
+      "location": "Table 6 (Appendix G.2)"
+     }
+    },
+    "hopper-medium-expert": {
+     "rollout_length_h": {
+      "value": "5",
+      "quote": "med-expert     hopper                 5, 1         5",
+      "location": "Table 6 (Appendix G.2)"
+     },
+     "penalty_coefficient_lambda": {
+      "value": "1",
+      "quote": "med-expert     hopper                 5, 1         5",
+      "location": "Table 6 (Appendix G.2)"
+     }
+    },
+    "walker2d-medium-expert": {
+     "rollout_length_h": {
+      "value": "1",
+      "quote": "med-expert     walker2d               1, 2         1",
+      "location": "Table 6 (Appendix G.2)"
+     },
+     "penalty_coefficient_lambda": {
+      "value": "2",
+      "quote": "med-expert     walker2d               1, 2         1",
+      "location": "Table 6 (Appendix G.2)"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "6",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "last iteration of training",
+    "quote": "Table 1: Results for D4RL datasets. Each number is the normalized score proposed in [18] of the policy at the last iteration of training, averaged over 6 random seeds, ± standard deviation. The scores are undiscounted",
+    "location": "Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "no '-v0'/'-v2' string found in text; only 'we evaluate our method on a large subset of datasets in the D4RL benchmark [18]' (line 462)",
+    "location": "Section 5.1"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 35.4,
+     "std": 2.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rollout_length_h": "5",
+      "penalty_coefficient_lambda": "0.5"
+     },
+     "table": "Table 1",
+     "line_quote": "random          halfcheetah        2.1        35.4 ± 2.5      30.7 ± 3.9    30.5       25.5        28.1",
+     "notes": "printed as 'random halfcheetah'; paper's 'mixed' = D4RL medium-replay, 'med-expert' = medium-expert. Normalized score."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 11.7,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rollout_length_h": "5",
+      "penalty_coefficient_lambda": "1"
+     },
+     "table": "Table 1",
+     "line_quote": "random          hopper             1.6        11.7 ± 0.4       4.5 ± 6.0    11.3        9.5        12.0",
+     "notes": "printed as 'random hopper'; paper's 'mixed' = D4RL medium-replay, 'med-expert' = medium-expert. Normalized score."
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 13.6,
+     "std": 2.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rollout_length_h": "1",
+      "penalty_coefficient_lambda": "1"
+     },
+     "table": "Table 1",
+     "line_quote": "random          walker2d           9.8        13.6 ± 2.6       8.6 ± 8.1     4.1        6.7         0.5",
+     "notes": "printed as 'random walker2d'; paper's 'mixed' = D4RL medium-replay, 'med-expert' = medium-expert. Normalized score."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.3,
+     "std": 1.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rollout_length_h": "1",
+      "penalty_coefficient_lambda": "1"
+     },
+     "table": "Table 1",
+     "line_quote": "medium          halfcheetah       36.1        42.3 ± 1.6     28.3 ± 22.7    -4.3       38.6        45.5",
+     "notes": "printed as 'medium halfcheetah'; paper's 'mixed' = D4RL medium-replay, 'med-expert' = medium-expert. Normalized score."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 28.0,
+     "std": 12.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rollout_length_h": "5",
+      "penalty_coefficient_lambda": "5"
+     },
+     "table": "Table 1",
+     "line_quote": "medium          hopper            29.0       28.0 ± 12.4       4.9 ± 3.3     0.8       47.6        32.3",
+     "notes": "printed as 'medium hopper'; paper's 'mixed' = D4RL medium-replay, 'med-expert' = medium-expert. Normalized score."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 17.8,
+     "std": 19.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rollout_length_h": "5",
+      "penalty_coefficient_lambda": "5"
+     },
+     "table": "Table 1",
+     "line_quote": "medium          walker2d           6.6       17.8 ± 19.3      12.7 ± 7.6     0.9       33.2        81.3",
+     "notes": "printed as 'medium walker2d'; paper's 'mixed' = D4RL medium-replay, 'med-expert' = medium-expert. Normalized score."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 53.1,
+     "std": 2.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rollout_length_h": "5",
+      "penalty_coefficient_lambda": "1"
+     },
+     "table": "Table 1",
+     "line_quote": "mixed           halfcheetah       38.4        53.1 ± 2.0     47.3 ± 12.6    -2.4       36.2        45.9",
+     "notes": "printed as 'mixed halfcheetah'; paper's 'mixed' = D4RL medium-replay, 'med-expert' = medium-expert. Normalized score."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 67.5,
+     "std": 24.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rollout_length_h": "5",
+      "penalty_coefficient_lambda": "1"
+     },
+     "table": "Table 1",
+     "line_quote": "mixed           hopper            11.8       67.5 ± 24.7     49.8 ± 30.4     1.9       10.8         0.9",
+     "notes": "printed as 'mixed hopper'; paper's 'mixed' = D4RL medium-replay, 'med-expert' = medium-expert. Normalized score."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 39.0,
+     "std": 9.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rollout_length_h": "1",
+      "penalty_coefficient_lambda": "1"
+     },
+     "table": "Table 1",
+     "line_quote": "mixed           walker2d          11.3        39.0 ± 9.6     22.2 ± 12.7     3.5       25.3         0.8",
+     "notes": "printed as 'mixed walker2d'; paper's 'mixed' = D4RL medium-replay, 'med-expert' = medium-expert. Normalized score."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 63.3,
+     "std": 38.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rollout_length_h": "5",
+      "penalty_coefficient_lambda": "1"
+     },
+     "table": "Table 1",
+     "line_quote": "med-expert      halfcheetah       35.8       63.3 ±38.0        9.7 ± 9.5     1.8       51.7        45.3",
+     "notes": "printed as 'med-expert halfcheetah'; paper's 'mixed' = D4RL medium-replay, 'med-expert' = medium-expert. Normalized score."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 23.7,
+     "std": 6.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rollout_length_h": "5",
+      "penalty_coefficient_lambda": "1"
+     },
+     "table": "Table 1",
+     "line_quote": "med-expert      hopper           111.9        23.7 ± 6.0     56.0 ± 34.5     1.6        4.0         0.8",
+     "notes": "printed as 'med-expert hopper'; paper's 'mixed' = D4RL medium-replay, 'med-expert' = medium-expert. Normalized score."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 44.6,
+     "std": 12.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "rollout_length_h": "1",
+      "penalty_coefficient_lambda": "2"
+     },
+     "table": "Table 1",
+     "line_quote": "med-expert      walker2d           6.4       44.6 ± 12.9       7.6 ± 3.7    -0.1       26.0        66.6",
+     "notes": "printed as 'med-expert walker2d'; paper's 'mixed' = D4RL medium-replay, 'med-expert' = medium-expert. Normalized score."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 6405.8,
+     "std": 35,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (Table 3 raw return)",
+     "config_conditions": {},
+     "table": "Table 3",
+     "line_quote": "MOPO                      6405.8 ± 35        1916.4 ± 611       4016.6 ± 144       2530.9 ± 137",
+     "notes": "raw return (average undiscounted return, not normalized); dataset printed as 'halfcheetah-mixed'; 6 seeds"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 1916.4,
+     "std": 611,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (Table 3 raw return)",
+     "config_conditions": {},
+     "table": "Table 3",
+     "line_quote": "MOPO                      6405.8 ± 35        1916.4 ± 611       4016.6 ± 144       2530.9 ± 137",
+     "notes": "raw return (average undiscounted return, not normalized); dataset printed as 'walker2d-mixed'; 6 seeds"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 6448.7,
+     "std": 115,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "ens. pen. (ensemble disagreement penalty)",
+     "config_conditions": {
+      "reward_penalty_type": "ensemble disagreement (max_i ||mu_i - mu_bar||)"
+     },
+     "table": "Table 3",
+     "line_quote": "MOPO, ens. pen.          6448.7 ± 115        1923.6 ± 752       3577.3 ± 461       2256.0 ± 288",
+     "notes": "raw return (average undiscounted return, not normalized); dataset printed as 'halfcheetah-mixed'; 6 seeds"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 1923.6,
+     "std": 752,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "ens. pen. (ensemble disagreement penalty)",
+     "config_conditions": {
+      "reward_penalty_type": "ensemble disagreement (max_i ||mu_i - mu_bar||)"
+     },
+     "table": "Table 3",
+     "line_quote": "MOPO, ens. pen.          6448.7 ± 115        1923.6 ± 752       3577.3 ± 461       2256.0 ± 288",
+     "notes": "raw return (average undiscounted return, not normalized); dataset printed as 'walker2d-mixed'; 6 seeds"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 6409.1,
+     "std": 429,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "no pen. (no reward penalty)",
+     "config_conditions": {
+      "reward_penalty_type": "none"
+     },
+     "table": "Table 3",
+     "line_quote": "MOPO, no pen.            6409.1 ± 429        1421.2 ± 359      −980.8 ± 5625          18.6 ± 49",
+     "notes": "raw return (average undiscounted return, not normalized); dataset printed as 'halfcheetah-mixed'; 6 seeds"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 1421.2,
+     "std": 359,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "no pen. (no reward penalty)",
+     "config_conditions": {
+      "reward_penalty_type": "none"
+     },
+     "table": "Table 3",
+     "line_quote": "MOPO, no pen.            6409.1 ± 429        1421.2 ± 359      −980.8 ± 5625          18.6 ± 49",
+     "notes": "raw return (average undiscounted return, not normalized); dataset printed as 'walker2d-mixed'; 6 seeds"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 6984.0,
+     "std": 148,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "true pen. (oracle uncertainty penalty)",
+     "config_conditions": {
+      "reward_penalty_type": "oracle/true model error"
+     },
+     "table": "Table 3",
+     "line_quote": "MBPO                    5598.4 ± 1285        1021.8 ± 586      2971.4 ± 1262          13.6 ± 65",
+     "notes": "raw return (average undiscounted return, not normalized); dataset printed as 'halfcheetah-mixed'; 6 seeds"
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BC",
+  "MBPO",
+  "SAC",
+  "BEAR",
+  "BRAC-v (Table 1)",
+  "MBPO, no ens. (Table 3)"
+ ],
+ "problems": [
+  "Table 1 gives 6 seeds but Appendix G.2 says the (h, lambda) search was 'averaged over 3 seeds' — the 3 seeds refer to the search, 6 seeds to the reported number; recorded as stated.",
+  "Number of evaluation episodes per seed not stated anywhere.",
+  "D4RL dataset version (v0/v2) never stated. Paper's 'mixed' dataset type is mapped to 'medium-replay' by the extractor (MOPO calls it mixed; COMBO/MOReL tables reuse these same MOPO numbers under 'medium-replay').",
+  "Table 3 ablation rows are raw (unnormalized) returns; MOPO 'true pen.' has N/A on walker2d-mixed so no row emitted.",
+  "Table 1 std for halfcheetah med-expert printed as '63.3 ±38.0' (no space); read as std 38.0."
+ ]
+}

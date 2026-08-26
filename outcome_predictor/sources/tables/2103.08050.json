@@ -1,0 +1,271 @@
+{
+ "arxiv_id": "2103.08050",
+ "title": "Offline Reinforcement Learning with Fisher Divergence Critic Regularization",
+ "methods": [
+  {
+   "method_name": "F-BRC",
+   "is_own_method": true,
+   "one_paragraph_description": "Fisher-BRC (Behavior Regularized Critic): parameterizes the critic as log of a fitted behavior policy mu(a|s) plus a learned state-action offset O_theta(s,a); trains with the SAC-style TD loss on O+log mu plus a gradient penalty lambda*E||grad_a O||^2 on the offset (equivalent to Fisher divergence regularization). Actor is SAC-style, maximizing the regularized critic. Requires pretraining a behavior density model.",
+   "conventional_lineage_hint": "offline RL; behavior regularization ('Behavior regularization is a prominent approach to offline' RL, Section 2); model-free actor-critic; 'connections with energy-based models'",
+   "global_conditions": {
+    "lambda_gradient_penalty": {
+     "value": "0.1",
+     "quote": "tion in (4) still holds, since even if µ is trained on a sparse   Unless otherwise noted, we set λ = 0.1 as the regularization subset of all possible actions, the fact that it is a normal-     coefficient.",
+     "location": "Section 4.1 (right column)"
+    },
+    "network": {
+     "value": "3-layer MLP, 256 hidden units, actor and critic (following CQL)",
+     "quote": "Following CQL we increased network size for the actor and the critic to 3 layer MLP with 256 hidden units.",
+     "location": "Appendix A, Actor and critic learning"
+    },
+    "base_algorithm_hyperparameters": {
+     "value": "default SAC hyperparameters, no entropy in rewards",
+     "quote": "Actor and critic learning Our implementation is based on Soft Actor Critic (Haarnoja et al., 2019). As in CQL we do not add entropy to the rewards and we modify the critic loss to accommodate the additional regularization term. We use default SAC hyper parameters without additional tuning, in contrast to CQL and BRAC which tune policy learning rate.",
+     "location": "Appendix A"
+    },
+    "training_steps": {
+     "value": "1 million",
+     "quote": "the tasks. Notably, many of the baseline algorithms exhibit                                                      total training time for 1 million steps for Fisher-BRC is",
+     "location": "Section 5.2, Convergence speed"
+    },
+    "survival_bonus_lambda_cql": {
+     "value": "5",
+     "quote": "comparison. We choose the same value λcql = 5 as in CQL.",
+     "location": "Appendix A, Survival bonus"
+    },
+    "behavior_policy_model": {
+     "value": "conditional Mixture of Gaussians, 5 components, tanh squashing; 3-layer MLP 256 relu; Adam 1e6 steps, lr 1e-3 decayed x10 at 8e5 and 9e5 steps",
+     "quote": "Behavior policy We fit the behavior model using a conditional Mixture of Gaussians (Bishop, 1994) with tanh squash- ing (Haarnoja et al., 2017). We use 5 mixture components. We train the density model with Adam optimizer (Kingma & Ba, 2014) for 106 steps and starting from learning rate 10−3 and decreasing it by 10 at 8 · 105 and 9 · 105 gradient update steps. Similar to BRAC we train the behavior actor with SAC-style entropy regularization with the same target entropy. We parameterize the model as a 3 layer MLP with relu activations and 256 hidden units.",
+     "location": "Appendix A, Behavior policy"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "5",
+    "episodes_per_seed": "10",
+    "checkpoint_selection": "last (end of training, without early stopping)",
+    "quote": "implementation of (Kumar et al., 2020); and the results for CQL (Ours) are from our own re-implementation of CQL. For all methods we run ourselves, we plot the normalized returns at the end of training (without early stopping) computed over 5 seeds. For every seed we run evaluation for 10 episodes.",
+    "location": "Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "(no line states the D4RL version; dataset names use '-mixed', e.g. line 413: 'halfcheetah-mixed          38.4                 45.6     45.9   42.3 ± 0.9                              44.9 ± 1.1   42.0 ± 1.1                             43.2 ± 1.5')",
+    "location": "Table 1"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 33.3,
+     "std": 1.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-random         30.5                 23.5     28.1    6.3 ± 4.0                              27.1 ± 1.3   20.7 ± 0.6                             33.3 ± 1.3",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 11.3,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-random              11.3                 11.1     12.0   10.8 ± 0.3                              10.6 ± 0.1   10.4 ± 0.1                             11.3 ± 0.2",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes."
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 1.5,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-random             4.1                  0.8      0.5    8.1 ± 5.5                               1.1 ± 2.2   10.0 ± 4.6                              1.5 ± 0.7",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 41.3,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-medium         36.1                 44.0     45.5   44.6 ± 0.8                              40.3 ± 0.3   38.9 ± 0.3                             41.3 ± 0.3",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 78.8,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-medium             6.6                 72.7     81.3 41.0 ± 29.4                               77.3 ± 3.8   69.2 ± 8.3                             78.8 ± 1.0",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 99.4,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-medium              29.0                 31.2     32.3 48.8 ± 26.8                              42.2 ± 15.5   30.5 ± 0.7                             99.4 ± 0.3",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes."
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome": 108.4,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-expert        107.0                  3.8     −1.1            -                             54.4 ± 45.8 103.5 ± 1.3                             108.4 ± 0.5",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes. MBOP column is '-' on this line (3 ± cells); F-BRC is still the last ± cell."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 112.3,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-expert             109.0                  6.6      3.7            -                             67.7 ± 54.7 112.2 ± 0.2                             112.3 ± 0.1",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes. MBOP column is '-' on this line (3 ± cells); F-BRC is still the last ± cell."
+    },
+    {
+     "dataset": "walker2d-expert",
+     "outcome": 103.0,
+     "std": 5.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-expert           125.7                 −0.2     −0.0            -                             84.7 ± 42.7 107.2 ± 3.8                             103.0 ± 5.0",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes. MBOP column is '-' on this line (3 ± cells); F-BRC is still the last ± cell."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 93.3,
+     "std": 10.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-medium-expert 35.8                  43.8     45.3 105.9 ± 17.8                              21.7 ± 6.8   58.6 ± 8.7                            93.3 ± 10.2",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 105.2,
+     "std": 3.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-medium-expert     11.3                 −0.3      0.9 70.2 ± 36.2                             104.0 ± 10.1 104.6 ± 10.4                            105.2 ± 3.9",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 112.4,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-medium-expert      111.9                  1.1      0.8 55.1 ± 44.3                              111.3 ± 2.1 112.4 ± 0.2                             112.4 ± 0.3",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes."
+    },
+    {
+     "dataset": "halfcheetah-mixed",
+     "outcome": 43.2,
+     "std": 1.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "halfcheetah-mixed          38.4                 45.6     45.9   42.3 ± 0.9                              44.9 ± 1.1   42.0 ± 1.1                             43.2 ± 1.5",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes. Dataset printed as '-mixed' (v0-era D4RL naming); paper does not state its mapping to medium-replay."
+    },
+    {
+     "dataset": "hopper-mixed",
+     "outcome": 35.6,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "hopper-mixed               11.8                  0.7      0.8   12.4 ± 5.8                              31.6 ± 3.6   29.0 ± 0.5                             35.6 ± 1.0",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes. Dataset printed as '-mixed' (v0-era D4RL naming); paper does not state its mapping to medium-replay."
+    },
+    {
+     "dataset": "walker2d-mixed",
+     "outcome": 41.8,
+     "std": 7.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "lambda": "0.1"
+     },
+     "table": "Table 1",
+     "line_quote": "walker2d-mixed             11.3                 −0.3      0.9    9.7 ± 5.3                              16.8 ± 3.1   16.5 ± 4.9                             41.8 ± 7.9",
+     "notes": "column 'F-BRC (Ours)' (last column); normalized return at end of training, 5 seeds x 10 episodes. Dataset printed as '-mixed' (v0-era D4RL naming); paper does not state its mapping to medium-replay."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BC",
+  "BRAC-p",
+  "BRAC-v",
+  "MBOP",
+  "CQL (GitHub)",
+  "CQL (Ours)"
+ ],
+ "problems": [
+  "line 408 parsed 3 ± cells, expected 4 (MBOP, CQL GitHub, CQL Ours, F-BRC); skipped: 'hopper-expert             109.0                  6.6      3.7            -                             67.7 ± 54.7 112.2 ± 0.2                             112.3 ± 0.1'",
+  "line 409 parsed 3 ± cells, expected 4 (MBOP, CQL GitHub, CQL Ours, F-BRC); skipped: 'walker2d-expert           125.7                 −0.2     −0.0            -                             84.7 ± 42.7 107.2 ± 3.8                             103.0 ± 5.0'",
+  "Dataset version never stated (no 'v0'/'v2'/'version' string in the text). Dataset names use the '-mixed' convention, which is the D4RL v0-era naming, but the paper does not say so; marked unknown.",
+  "Gradient-penalty ablation (lambda in {0.0, 0.1, 1.0}) is reported only as learning-curve plots (Figure 2, Figure 4 in Appendix B) — no numeric values; excluded. Appendix C critic regularization ablation is also figure-only.",
+  "Table 1 layout: for several rows the MBOP column is glued to the BRAC-v column (e.g. '81.3 41.0 ± 29.4'), but the F-BRC column is the last '±' cell on every line and unambiguous.",
+  "Batch size, learning rate, discount, tau for the actor/critic are not printed; paper says 'default SAC hyper parameters without additional tuning' (Appendix A).",
+  "Checkpoint selection: 'end of training (without early stopping)'."
+ ]
+}

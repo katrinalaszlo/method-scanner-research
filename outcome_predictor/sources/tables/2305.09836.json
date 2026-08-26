@@ -1,0 +1,2742 @@
+{
+ "arxiv_id": "2305.09836",
+ "title": "Revisiting the Minimalist Approach to Offline Reinforcement Learning",
+ "methods": [
+  {
+   "method_name": "ReBRAC",
+   "is_own_method": true,
+   "one_paragraph_description": "Revisited BRAC: TD3+BC with decoupled behavior-regularization penalties (beta1 MSE penalty on the actor, beta2 penalty on the critic), three hidden layers in actor and critic, LayerNorm between critic layers, larger batch (1024) with scaled learning rate on Gym-MuJoCo, and adjusted discount on AntMaze. At runtime it is a deterministic TD3-style actor-critic.",
+   "conventional_lineage_hint": "offline RL; 'a more general version of BRAC built on top of the TD3+BC algorithm' (Section 3); ensemble-free, behavior-regularized actor-critic",
+   "global_conditions": {
+    "optimizer": {
+     "value": "Adam",
+     "quote": "optimizer                             Adam Kingma & Ba (2014)",
+     "location": "Table 10"
+    },
+    "batch_size": {
+     "value": "1024 on Gym-MuJoCo",
+     "quote": "batch size                            1024 on Gym-MuJoCo, 256 on other",
+     "location": "Table 10"
+    },
+    "learning_rate": {
+     "value": "1e-3 on Gym-MuJoCo (all networks)",
+     "quote": "learning rate (all networks)          1e-3 on Gym-MuJoCo, 3e-4 on Adroit and V-D4RL, 1e-4 on Antmaze",
+     "location": "Table 10"
+    },
+    "tau": {
+     "value": "5e-3",
+     "quote": "tau (τ )                              5e-3",
+     "location": "Table 10"
+    },
+    "hidden_dim": {
+     "value": "256",
+     "quote": "hidden dim (all networks)             256",
+     "location": "Table 10"
+    },
+    "num_hidden_layers": {
+     "value": "3",
+     "quote": "num hidden layers (all networks)      3",
+     "location": "Table 10"
+    },
+    "discount": {
+     "value": "0.99 on Gym-MuJoCo",
+     "quote": "gamma (γ)                             0.999 on AntMaze, 0.99 on other",
+     "location": "Table 10"
+    },
+    "nonlinearity": {
+     "value": "ReLU",
+     "quote": "nonlinearity                          ReLU",
+     "location": "Table 10"
+    },
+    "layernorm": {
+     "value": "LayerNorm between each layer of the critic networks",
+     "quote": "using offline datasets in online RL. Following these works, in our approach, we also apply LayerNorm between each layer of the critic networks.",
+     "location": "Section 3, LayerNorm"
+    },
+    "training_steps": {
+     "value": "1 million",
+     "quote": "Gym-MuJoCo and v1 for Adroit. The agents were trained for one million steps and evaluated over ten episodes.",
+     "location": "Appendix A"
+    },
+    "beta1_search_grid": {
+     "value": "{0.001, 0.01, 0.05, 0.1}",
+     "quote": "For ReBRAC, we fine-tuned the β1 parameter for the actor, which was selected from 0.001, 0.01, 0.05, 0.1. Similarly, the β2 parameter for the critic was selected from a range of",
+     "location": "Appendix A"
+    },
+    "beta2_search_grid": {
+     "value": "{0, 0.001, 0.01, 0.1, 0.5}",
+     "quote": "0.001, 0.01, 0.05, 0.1. Similarly, the β2 parameter for the critic was selected from a range of 0, 0.001, 0.01, 0.1, 0.5. The selected best parameters for each dataset are reported in Table 11.",
+     "location": "Appendix A"
+    },
+    "base_algorithm": {
+     "value": "TD3+BC with decoupled actor/critic BRAC-style penalties",
+     "quote": "met in the offline RL literature (Table 1). Our approach is a more general version of BRAC built on top of the TD3+BC (Fujimoto & Gu, 2021) algorithm with different modifications in design while",
+     "location": "Section 3"
+    }
+   },
+   "per_dataset_conditions": {
+    "halfcheetah-random": {
+     "beta1_actor_penalty": {
+      "value": "0.001",
+      "quote": "halfcheetah-random                   0.001           0.1",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.1",
+      "quote": "halfcheetah-random                   0.001           0.1",
+      "location": "Table 11"
+     }
+    },
+    "halfcheetah-medium": {
+     "beta1_actor_penalty": {
+      "value": "0.001",
+      "quote": "halfcheetah-medium                   0.001         0.01",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.01",
+      "quote": "halfcheetah-medium                   0.001         0.01",
+      "location": "Table 11"
+     }
+    },
+    "halfcheetah-expert": {
+     "beta1_actor_penalty": {
+      "value": "0.01",
+      "quote": "halfcheetah-expert                    0.01         0.01",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.01",
+      "quote": "halfcheetah-expert                    0.01         0.01",
+      "location": "Table 11"
+     }
+    },
+    "halfcheetah-medium-expert": {
+     "beta1_actor_penalty": {
+      "value": "0.01",
+      "quote": "halfcheetah-medium-expert             0.01           0.1",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.1",
+      "quote": "halfcheetah-medium-expert             0.01           0.1",
+      "location": "Table 11"
+     }
+    },
+    "halfcheetah-medium-replay": {
+     "beta1_actor_penalty": {
+      "value": "0.01",
+      "quote": "halfcheetah-medium-replay             0.01        0.001",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.001",
+      "quote": "halfcheetah-medium-replay             0.01        0.001",
+      "location": "Table 11"
+     }
+    },
+    "halfcheetah-full-replay": {
+     "beta1_actor_penalty": {
+      "value": "0.001",
+      "quote": "halfcheetah-full-replay              0.001           0.1",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.1",
+      "quote": "halfcheetah-full-replay              0.001           0.1",
+      "location": "Table 11"
+     }
+    },
+    "hopper-random": {
+     "beta1_actor_penalty": {
+      "value": "0.001",
+      "quote": "hopper-random                        0.001         0.01",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.01",
+      "quote": "hopper-random                        0.001         0.01",
+      "location": "Table 11"
+     }
+    },
+    "hopper-medium": {
+     "beta1_actor_penalty": {
+      "value": "0.01",
+      "quote": "hopper-medium                         0.01        0.001",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.001",
+      "quote": "hopper-medium                         0.01        0.001",
+      "location": "Table 11"
+     }
+    },
+    "hopper-expert": {
+     "beta1_actor_penalty": {
+      "value": "0.1",
+      "quote": "hopper-expert                           0.1       0.001",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.001",
+      "quote": "hopper-expert                           0.1       0.001",
+      "location": "Table 11"
+     }
+    },
+    "hopper-medium-expert": {
+     "beta1_actor_penalty": {
+      "value": "0.1",
+      "quote": "hopper-medium-expert                    0.1        0.01",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.01",
+      "quote": "hopper-medium-expert                    0.1        0.01",
+      "location": "Table 11"
+     }
+    },
+    "hopper-medium-replay": {
+     "beta1_actor_penalty": {
+      "value": "0.05",
+      "quote": "hopper-medium-replay                  0.05           0.5",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.5",
+      "quote": "hopper-medium-replay                  0.05           0.5",
+      "location": "Table 11"
+     }
+    },
+    "hopper-full-replay": {
+     "beta1_actor_penalty": {
+      "value": "0.01",
+      "quote": "hopper-full-replay                    0.01         0.01",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.01",
+      "quote": "hopper-full-replay                    0.01         0.01",
+      "location": "Table 11"
+     }
+    },
+    "walker2d-random": {
+     "beta1_actor_penalty": {
+      "value": "0.01",
+      "quote": "walker2d-random                       0.01           0.0",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.0",
+      "quote": "walker2d-random                       0.01           0.0",
+      "location": "Table 11"
+     }
+    },
+    "walker2d-medium": {
+     "beta1_actor_penalty": {
+      "value": "0.05",
+      "quote": "walker2d-medium                       0.05           0.1",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.1",
+      "quote": "walker2d-medium                       0.05           0.1",
+      "location": "Table 11"
+     }
+    },
+    "walker2d-expert": {
+     "beta1_actor_penalty": {
+      "value": "0.01",
+      "quote": "walker2d-expert                       0.01           0.5",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.5",
+      "quote": "walker2d-expert                       0.01           0.5",
+      "location": "Table 11"
+     }
+    },
+    "walker2d-medium-expert": {
+     "beta1_actor_penalty": {
+      "value": "0.01",
+      "quote": "walker2d-medium-expert                0.01          0.01",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.01",
+      "quote": "walker2d-medium-expert                0.01          0.01",
+      "location": "Table 11"
+     }
+    },
+    "walker2d-medium-replay": {
+     "beta1_actor_penalty": {
+      "value": "0.05",
+      "quote": "walker2d-medium-replay                0.05          0.01",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.01",
+      "quote": "walker2d-medium-replay                0.05          0.01",
+      "location": "Table 11"
+     }
+    },
+    "walker2d-full-replay": {
+     "beta1_actor_penalty": {
+      "value": "0.01",
+      "quote": "walker2d-full-replay                  0.01          0.01",
+      "location": "Table 11"
+     },
+     "beta2_critic_penalty": {
+      "value": "0.01",
+      "quote": "walker2d-full-replay                  0.01          0.01",
+      "location": "Table 11"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "10 unseen training seeds (hyperparameters tuned over 4 training seeds); ablations 4 unseen seeds",
+    "episodes_per_seed": "10",
+    "checkpoint_selection": "last",
+    "quote": "Following Wu et al. (2022), we tune hyperparameters over four seeds (referred to as training seeds) and evaluate the best parameters over ten new seeds (referred to as unseen training seeds), reporting the average performance of the last checkpoints for D4RL tasks. On V-D4RL, we use two and five | Gym-MuJoCo and v1 for Adroit. The agents were trained for one million steps and evaluated over ten episodes.",
+    "location": "Section 4 / Appendix A"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "Gym-MuJoCo and Adroit tasks. Our study utilized the latest version of the datasets – v2 for Gym-MuJoCo and v1 for Adroit. The agents were trained for one million steps and evaluated over",
+    "location": "Appendix A"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 29.5,
+     "std": 1.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.1",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-random             30.9 ± 0.4       19.5 ± 0.8       31.1 ± 3.5       27.6 ± 2.1         29.5 ± 1.5",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 65.6,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.01",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-medium             54.7 ± 0.9       50.0 ± 0.2       46.9 ± 0.4       66.4 ± 1.4         65.6 ± 1.0",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome": 105.9,
+     "std": 1.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-expert             93.4 ± 0.4       95.5 ± 2.1       97.3 ± 1.1      102.6 ± 4.2        105.9 ± 1.7",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 101.1,
+     "std": 5.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.1",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-medium-expert      89.1 ± 5.6       92.7 ± 2.8       95.0 ± 1.4      108.1 ± 1.5        101.1 ± 5.2",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 51.0,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.001",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-medium-replay      45.0 ± 1.1       42.1 ± 3.6       45.3 ± 0.3       51.2 ± 3.2         51.0 ± 0.8",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "halfcheetah-full-replay",
+     "outcome": 82.1,
+     "std": 1.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.1",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "halfcheetah-full-replay        75.0 ± 2.5       75.0 ± 0.7       76.9 ± 0.9       81.2 ± 1.3         82.1 ± 1.1",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 8.1,
+     "std": 2.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.01",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-random                   8.5 ± 0.7     10.1 ± 5.9          5.3 ± 0.6      19.6 ± 12.4          8.1 ± 2.4",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 102.0,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.001",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-medium                  60.9 ± 7.6     65.2 ± 4.2         61.9 ± 6.4      91.1 ± 10.1        102.0 ± 1.0",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 100.1,
+     "std": 8.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.1",
+      "beta2_critic_penalty": "0.001",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-expert                 109.6 ± 3.7    108.8 ± 3.1        106.5 ± 9.1      109.8 ± 0.5        100.1 ± 8.3",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 107.0,
+     "std": 6.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.1",
+      "beta2_critic_penalty": "0.01",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-medium-expert          87.8 ± 10.5    85.5 ± 29.7        96.9 ± 15.1      109.8 ± 0.6        107.0 ± 6.4",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 98.1,
+     "std": 5.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.5",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-medium-replay          55.1 ± 31.7    89.6 ± 13.2         86.3 ± 7.3       97.2 ± 9.0         98.1 ± 5.3",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "hopper-full-replay",
+     "outcome": 107.1,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "hopper-full-replay            97.9 ± 17.5   104.4 ± 10.8        101.9 ± 0.6      107.4 ± 0.8        107.1 ± 0.4",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 18.4,
+     "std": 4.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.0",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-random                 2.0 ± 3.6       11.3 ± 7.0        5.1 ± 1.7       18.7 ± 6.9         18.4 ± 4.5",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 82.5,
+     "std": 3.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.1",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-medium                77.7 ± 2.9       80.7 ± 3.4       79.5 ± 3.2       92.7 ± 1.2         82.5 ± 3.6",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "walker2d-expert",
+     "outcome": 112.3,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.5",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-expert               110.0 ± 0.6      96.9 ± 32.3      109.3 ± 0.1     104.5 ± 22.8        112.3 ± 0.2",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 111.6,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-medium-expert        110.4 ± 0.6      112.1 ± 0.5      109.1 ± 0.2     104.6 ± 11.2        111.6 ± 0.3",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 77.3,
+     "std": 7.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.01",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-medium-replay        68.0 ± 19.2       75.4 ± 9.3      76.8 ± 10.0       89.4 ± 3.8         77.3 ± 7.9",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "walker2d-full-replay",
+     "outcome": 102.2,
+     "std": 1.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01",
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 2",
+     "line_quote": "walker2d-full-replay           90.3 ± 5.4       97.5 ± 1.4       94.2 ± 1.9      105.3 ± 3.2        102.2 ± 1.7",
+     "notes": "column 'ReBRAC, our'; final (last checkpoint) score averaged over 10 unseen training seeds; std across seeds"
+    },
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 31.4,
+     "std": 2.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "halfcheetah-random                   29.5 ± 1.5        31.4 ± 2.7",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 66.1,
+     "std": 1.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "halfcheetah-medium                   65.6 ± 1.0        66.1 ± 1.2",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome": 104.1,
+     "std": 3.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "halfcheetah-expert                  105.9 ± 1.7       104.1 ± 3.7",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 100.9,
+     "std": 4.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "halfcheetah-medium-expert           101.1 ± 5.2       100.9 ± 4.7",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 54.7,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "halfcheetah-medium-replay            51.0 ± 0.8        54.7 ± 1.0",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "halfcheetah-full-replay",
+     "outcome": 81.5,
+     "std": 1.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "halfcheetah-full-replay              82.1 ± 1.1        81.5 ± 1.6",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 8.2,
+     "std": 2.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "hopper-random                         8.1 ± 2.4         8.2 ± 2.2",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 102.4,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "hopper-medium                       102.0 ± 1.0       102.4 ± 0.2",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 99.7,
+     "std": 11.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "hopper-expert                       100.1 ± 8.3       99.7 ± 11.7",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 107.7,
+     "std": 6.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "hopper-medium-expert                107.0 ± 6.4       107.7 ± 6.4",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 91.0,
+     "std": 15.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "hopper-medium-replay                 98.1 ± 5.3       91.0 ± 15.3",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "hopper-full-replay",
+     "outcome": 106.7,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "hopper-full-replay                  107.1 ± 0.4       106.7 ± 0.5",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 0.0,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "walker2d-random                      18.4 ± 4.5         0.0 ± 0.7",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 81.8,
+     "std": 4.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "walker2d-medium                      82.5 ± 3.6        81.8 ± 4.7",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "walker2d-expert",
+     "outcome": 110.7,
+     "std": 3.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "walker2d-expert                     112.3 ± 0.2       110.7 ± 3.2",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 100.6,
+     "std": 34.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "walker2d-medium-expert              111.6 ± 0.3      100.6 ± 34.3",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 80.2,
+     "std": 8.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "walker2d-medium-replay               77.3 ± 7.9        80.2 ± 8.1",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "walker2d-full-replay",
+     "outcome": 101.2,
+     "std": 2.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "normalization=FeatureNorm (ReBRAC + FN)",
+     "config_conditions": {
+      "normalization": "FeatureNorm instead of LayerNorm",
+      "batch_size": "1024",
+      "num_hidden_layers": "3"
+     },
+     "table": "Table 19",
+     "line_quote": "walker2d-full-replay                102.2 ± 1.7       101.2 ± 2.7",
+     "notes": "Appendix D variant; hyperparameters re-tuned on same grid, per-dataset beta values for FN variant not printed; ReBRAC + LN column equals Table 2 main"
+    },
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 32.0,
+     "std": 1.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o LN                                               32.0 ± 1.5 (+7.0%)       64.3 ± 4.1 (-1.5%)                                     61.7 ± 20.4 (-41.5%)              86.7 ± 0.9 (-16.3%)                     52.8 ± 2.4 (+4.1%)                               82.1 ± 2.1 (+0.2%)          63.2 (-13.1%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 64.3,
+     "std": 4.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o LN                                               32.0 ± 1.5 (+7.0%)       64.3 ± 4.1 (-1.5%)                                     61.7 ± 20.4 (-41.5%)              86.7 ± 0.9 (-16.3%)                     52.8 ± 2.4 (+4.1%)                               82.1 ± 2.1 (+0.2%)          63.2 (-13.1%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome": 61.7,
+     "std": 20.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o LN                                               32.0 ± 1.5 (+7.0%)       64.3 ± 4.1 (-1.5%)                                     61.7 ± 20.4 (-41.5%)              86.7 ± 0.9 (-16.3%)                     52.8 ± 2.4 (+4.1%)                               82.1 ± 2.1 (+0.2%)          63.2 (-13.1%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 86.7,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o LN                                               32.0 ± 1.5 (+7.0%)       64.3 ± 4.1 (-1.5%)                                     61.7 ± 20.4 (-41.5%)              86.7 ± 0.9 (-16.3%)                     52.8 ± 2.4 (+4.1%)                               82.1 ± 2.1 (+0.2%)          63.2 (-13.1%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 52.8,
+     "std": 2.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o LN                                               32.0 ± 1.5 (+7.0%)       64.3 ± 4.1 (-1.5%)                                     61.7 ± 20.4 (-41.5%)              86.7 ± 0.9 (-16.3%)                     52.8 ± 2.4 (+4.1%)                               82.1 ± 2.1 (+0.2%)          63.2 (-13.1%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-full-replay",
+     "outcome": 82.1,
+     "std": 2.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o LN                                               32.0 ± 1.5 (+7.0%)       64.3 ± 4.1 (-1.5%)                                     61.7 ± 20.4 (-41.5%)              86.7 ± 0.9 (-16.3%)                     52.8 ± 2.4 (+4.1%)                               82.1 ± 2.1 (+0.2%)          63.2 (-13.1%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 27.8,
+     "std": 3.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o layer                                            27.8 ± 3.4 (-7.0%)       65.0 ± 1.6 (-0.4%)                                     74.4 ± 26.7 (-29.5%)              86.7 ± 8.8 (-16.3%)                     50.4 ± 0.7 (-0.5%)                               80.9 ± 1.1 (-1.2%)          64.1 (-11.9%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 65.0,
+     "std": 1.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o layer                                            27.8 ± 3.4 (-7.0%)       65.0 ± 1.6 (-0.4%)                                     74.4 ± 26.7 (-29.5%)              86.7 ± 8.8 (-16.3%)                     50.4 ± 0.7 (-0.5%)                               80.9 ± 1.1 (-1.2%)          64.1 (-11.9%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome": 74.4,
+     "std": 26.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o layer                                            27.8 ± 3.4 (-7.0%)       65.0 ± 1.6 (-0.4%)                                     74.4 ± 26.7 (-29.5%)              86.7 ± 8.8 (-16.3%)                     50.4 ± 0.7 (-0.5%)                               80.9 ± 1.1 (-1.2%)          64.1 (-11.9%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 86.7,
+     "std": 8.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o layer                                            27.8 ± 3.4 (-7.0%)       65.0 ± 1.6 (-0.4%)                                     74.4 ± 26.7 (-29.5%)              86.7 ± 8.8 (-16.3%)                     50.4 ± 0.7 (-0.5%)                               80.9 ± 1.1 (-1.2%)          64.1 (-11.9%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 50.4,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o layer                                            27.8 ± 3.4 (-7.0%)       65.0 ± 1.6 (-0.4%)                                     74.4 ± 26.7 (-29.5%)              86.7 ± 8.8 (-16.3%)                     50.4 ± 0.7 (-0.5%)                               80.9 ± 1.1 (-1.2%)          64.1 (-11.9%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-full-replay",
+     "outcome": 80.9,
+     "std": 1.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o layer                                            27.8 ± 3.4 (-7.0%)       65.0 ± 1.6 (-0.4%)                                     74.4 ± 26.7 (-29.5%)              86.7 ± 8.8 (-16.3%)                     50.4 ± 0.7 (-0.5%)                               80.9 ± 1.1 (-1.2%)          64.1 (-11.9%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 31.8,
+     "std": 4.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o actor penalty                                    31.8 ± 4.1 (+6.3%)       64.5 ± 0.7 (-1.2%)                                       4.3 ± 4.3 (-95.9%)             71.6 ± 12.3 (-30.9%)                   38.0 ± 27.2 (-25.0%)                             59.3 ± 41.3 (-27.5%)          44.9 (-38.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 64.5,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o actor penalty                                    31.8 ± 4.1 (+6.3%)       64.5 ± 0.7 (-1.2%)                                       4.3 ± 4.3 (-95.9%)             71.6 ± 12.3 (-30.9%)                   38.0 ± 27.2 (-25.0%)                             59.3 ± 41.3 (-27.5%)          44.9 (-38.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome": 4.3,
+     "std": 4.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o actor penalty                                    31.8 ± 4.1 (+6.3%)       64.5 ± 0.7 (-1.2%)                                       4.3 ± 4.3 (-95.9%)             71.6 ± 12.3 (-30.9%)                   38.0 ± 27.2 (-25.0%)                             59.3 ± 41.3 (-27.5%)          44.9 (-38.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 71.6,
+     "std": 12.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o actor penalty                                    31.8 ± 4.1 (+6.3%)       64.5 ± 0.7 (-1.2%)                                       4.3 ± 4.3 (-95.9%)             71.6 ± 12.3 (-30.9%)                   38.0 ± 27.2 (-25.0%)                             59.3 ± 41.3 (-27.5%)          44.9 (-38.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 38.0,
+     "std": 27.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o actor penalty                                    31.8 ± 4.1 (+6.3%)       64.5 ± 0.7 (-1.2%)                                       4.3 ± 4.3 (-95.9%)             71.6 ± 12.3 (-30.9%)                   38.0 ± 27.2 (-25.0%)                             59.3 ± 41.3 (-27.5%)          44.9 (-38.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-full-replay",
+     "outcome": 59.3,
+     "std": 41.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o actor penalty                                    31.8 ± 4.1 (+6.3%)       64.5 ± 0.7 (-1.2%)                                       4.3 ± 4.3 (-95.9%)             71.6 ± 12.3 (-30.9%)                   38.0 ± 27.2 (-25.0%)                             59.3 ± 41.3 (-27.5%)          44.9 (-38.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 28.1,
+     "std": 1.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o critic penalty                                   28.1 ± 1.6 (-6.0%)       65.7 ± 1.4 (+0.6%)                                      104.2 ± 5.9 (-1.3%)              100.5 ± 3.1 (-3.0%)                      50.7 ± 0.1 (0.0%)                               81.7 ± 1.2 (-0.2%)           71.8 (-1.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 65.7,
+     "std": 1.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o critic penalty                                   28.1 ± 1.6 (-6.0%)       65.7 ± 1.4 (+0.6%)                                      104.2 ± 5.9 (-1.3%)              100.5 ± 3.1 (-3.0%)                      50.7 ± 0.1 (0.0%)                               81.7 ± 1.2 (-0.2%)           71.8 (-1.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome": 104.2,
+     "std": 5.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o critic penalty                                   28.1 ± 1.6 (-6.0%)       65.7 ± 1.4 (+0.6%)                                      104.2 ± 5.9 (-1.3%)              100.5 ± 3.1 (-3.0%)                      50.7 ± 0.1 (0.0%)                               81.7 ± 1.2 (-0.2%)           71.8 (-1.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 100.5,
+     "std": 3.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o critic penalty                                   28.1 ± 1.6 (-6.0%)       65.7 ± 1.4 (+0.6%)                                      104.2 ± 5.9 (-1.3%)              100.5 ± 3.1 (-3.0%)                      50.7 ± 0.1 (0.0%)                               81.7 ± 1.2 (-0.2%)           71.8 (-1.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 50.7,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o critic penalty                                   28.1 ± 1.6 (-6.0%)       65.7 ± 1.4 (+0.6%)                                      104.2 ± 5.9 (-1.3%)              100.5 ± 3.1 (-3.0%)                      50.7 ± 0.1 (0.0%)                               81.7 ± 1.2 (-0.2%)           71.8 (-1.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-full-replay",
+     "outcome": 81.7,
+     "std": 1.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o critic penalty                                   28.1 ± 1.6 (-6.0%)       65.7 ± 1.4 (+0.6%)                                      104.2 ± 5.9 (-1.3%)              100.5 ± 3.1 (-3.0%)                      50.7 ± 0.1 (0.0%)                               81.7 ± 1.2 (-0.2%)           71.8 (-1.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 21.0,
+     "std": 15.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o large batch                                    21.0 ± 15.7 (-29.7%)       65.8 ± 0.7 (+0.7%)                                     62.6 ± 24.3 (-40.7%)              85.2 ± 7.3 (-17.8%)                      50.7 ± 1.1 (0.0%)                                81.9 ± 1.4 (0.0%)          61.2 (-15.9%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 65.8,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o large batch                                    21.0 ± 15.7 (-29.7%)       65.8 ± 0.7 (+0.7%)                                     62.6 ± 24.3 (-40.7%)              85.2 ± 7.3 (-17.8%)                      50.7 ± 1.1 (0.0%)                                81.9 ± 1.4 (0.0%)          61.2 (-15.9%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome": 62.6,
+     "std": 24.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o large batch                                    21.0 ± 15.7 (-29.7%)       65.8 ± 0.7 (+0.7%)                                     62.6 ± 24.3 (-40.7%)              85.2 ± 7.3 (-17.8%)                      50.7 ± 1.1 (0.0%)                                81.9 ± 1.4 (0.0%)          61.2 (-15.9%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 85.2,
+     "std": 7.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o large batch                                    21.0 ± 15.7 (-29.7%)       65.8 ± 0.7 (+0.7%)                                     62.6 ± 24.3 (-40.7%)              85.2 ± 7.3 (-17.8%)                      50.7 ± 1.1 (0.0%)                                81.9 ± 1.4 (0.0%)          61.2 (-15.9%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 50.7,
+     "std": 1.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o large batch                                    21.0 ± 15.7 (-29.7%)       65.8 ± 0.7 (+0.7%)                                     62.6 ± 24.3 (-40.7%)              85.2 ± 7.3 (-17.8%)                      50.7 ± 1.1 (0.0%)                                81.9 ± 1.4 (0.0%)          61.2 (-15.9%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-full-replay",
+     "outcome": 81.9,
+     "std": 1.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC w/o large batch                                    21.0 ± 15.7 (-29.7%)       65.8 ± 0.7 (+0.7%)                                     62.6 ± 24.3 (-40.7%)              85.2 ± 7.3 (-17.8%)                      50.7 ± 1.1 (0.0%)                                81.9 ± 1.4 (0.0%)          61.2 (-15.9%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 29.9,
+     "std": 1.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC                                                                 29.9 ± 1.2              65.3 ± 1.1                                              105.6 ± 1.5                     103.7 ± 3.9                                               50.7 ± 0.6                          81.9 ± 1.4             72.8",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 65.3,
+     "std": 1.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC                                                                 29.9 ± 1.2              65.3 ± 1.1                                              105.6 ± 1.5                     103.7 ± 3.9                                               50.7 ± 0.6                          81.9 ± 1.4             72.8",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome": 105.6,
+     "std": 1.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC                                                                 29.9 ± 1.2              65.3 ± 1.1                                              105.6 ± 1.5                     103.7 ± 3.9                                               50.7 ± 0.6                          81.9 ± 1.4             72.8",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 103.7,
+     "std": 3.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC                                                                 29.9 ± 1.2              65.3 ± 1.1                                              105.6 ± 1.5                     103.7 ± 3.9                                               50.7 ± 0.6                          81.9 ± 1.4             72.8",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 50.7,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC                                                                 29.9 ± 1.2              65.3 ± 1.1                                              105.6 ± 1.5                     103.7 ± 3.9                                               50.7 ± 0.6                          81.9 ± 1.4             72.8",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "halfcheetah-full-replay",
+     "outcome": 81.9,
+     "std": 1.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 33",
+     "line_quote": "ReBRAC                                                                 29.9 ± 1.2              65.3 ± 1.1                                              105.6 ± 1.5                     103.7 ± 3.9                                               50.7 ± 0.6                          81.9 ± 1.4             72.8",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 12.2,
+     "std": 13.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o LN                                             12.2 ± 13.3 (+79.4%)       1.0 ± 0.6 (-99.0%)                                      111.1 ± 1.0 (+21.6%)             112.4 ± 0.7 (+2.3%)                      57.4 ± 25.0 (-38.5%)                            107.2 ± 2.0 (+0.4%)         66.8 (-21.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 1.0,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o LN                                             12.2 ± 13.3 (+79.4%)       1.0 ± 0.6 (-99.0%)                                      111.1 ± 1.0 (+21.6%)             112.4 ± 0.7 (+2.3%)                      57.4 ± 25.0 (-38.5%)                            107.2 ± 2.0 (+0.4%)         66.8 (-21.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 111.1,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.1",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o LN                                             12.2 ± 13.3 (+79.4%)       1.0 ± 0.6 (-99.0%)                                      111.1 ± 1.0 (+21.6%)             112.4 ± 0.7 (+2.3%)                      57.4 ± 25.0 (-38.5%)                            107.2 ± 2.0 (+0.4%)         66.8 (-21.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 112.4,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.1",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o LN                                             12.2 ± 13.3 (+79.4%)       1.0 ± 0.6 (-99.0%)                                      111.1 ± 1.0 (+21.6%)             112.4 ± 0.7 (+2.3%)                      57.4 ± 25.0 (-38.5%)                            107.2 ± 2.0 (+0.4%)         66.8 (-21.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 57.4,
+     "std": 25.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.5"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o LN                                             12.2 ± 13.3 (+79.4%)       1.0 ± 0.6 (-99.0%)                                      111.1 ± 1.0 (+21.6%)             112.4 ± 0.7 (+2.3%)                      57.4 ± 25.0 (-38.5%)                            107.2 ± 2.0 (+0.4%)         66.8 (-21.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-full-replay",
+     "outcome": 107.2,
+     "std": 2.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o LN                                             12.2 ± 13.3 (+79.4%)       1.0 ± 0.6 (-99.0%)                                      111.1 ± 1.0 (+21.6%)             112.4 ± 0.7 (+2.3%)                      57.4 ± 25.0 (-38.5%)                            107.2 ± 2.0 (+0.4%)         66.8 (-21.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 8.8,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o layer                                            8.8 ± 0.6 (+29.4%)      101.8 ± 0.2 (+0.4%)                                      103.7 ± 5.1 (+13.5%)             104.1 ± 7.7 (-5.3%)                        97.5 ± 3.5 (+4.5%)                            106.5 ± 0.3 (-0.3%)          87.0 (+2.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 101.8,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o layer                                            8.8 ± 0.6 (+29.4%)      101.8 ± 0.2 (+0.4%)                                      103.7 ± 5.1 (+13.5%)             104.1 ± 7.7 (-5.3%)                        97.5 ± 3.5 (+4.5%)                            106.5 ± 0.3 (-0.3%)          87.0 (+2.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 103.7,
+     "std": 5.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.1",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o layer                                            8.8 ± 0.6 (+29.4%)      101.8 ± 0.2 (+0.4%)                                      103.7 ± 5.1 (+13.5%)             104.1 ± 7.7 (-5.3%)                        97.5 ± 3.5 (+4.5%)                            106.5 ± 0.3 (-0.3%)          87.0 (+2.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 104.1,
+     "std": 7.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.1",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o layer                                            8.8 ± 0.6 (+29.4%)      101.8 ± 0.2 (+0.4%)                                      103.7 ± 5.1 (+13.5%)             104.1 ± 7.7 (-5.3%)                        97.5 ± 3.5 (+4.5%)                            106.5 ± 0.3 (-0.3%)          87.0 (+2.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 97.5,
+     "std": 3.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.5"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o layer                                            8.8 ± 0.6 (+29.4%)      101.8 ± 0.2 (+0.4%)                                      103.7 ± 5.1 (+13.5%)             104.1 ± 7.7 (-5.3%)                        97.5 ± 3.5 (+4.5%)                            106.5 ± 0.3 (-0.3%)          87.0 (+2.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-full-replay",
+     "outcome": 106.5,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o layer                                            8.8 ± 0.6 (+29.4%)      101.8 ± 0.2 (+0.4%)                                      103.7 ± 5.1 (+13.5%)             104.1 ± 7.7 (-5.3%)                        97.5 ± 3.5 (+4.5%)                            106.5 ± 0.3 (-0.3%)          87.0 (+2.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 7.5,
+     "std": 4.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o actor penalty                                    7.5 ± 4.6 (+10.3%)       1.7 ± 1.2 (-98.3%)                                        1.1 ± 0.5 (-98.8%)              1.6 ± 1.6 (-98.5%)                       24.4 ± 8.7 (-73.8%)                           27.7 ± 23.4 (-74.1%)         10.6 (-87.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 1.7,
+     "std": 1.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o actor penalty                                    7.5 ± 4.6 (+10.3%)       1.7 ± 1.2 (-98.3%)                                        1.1 ± 0.5 (-98.8%)              1.6 ± 1.6 (-98.5%)                       24.4 ± 8.7 (-73.8%)                           27.7 ± 23.4 (-74.1%)         10.6 (-87.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 1.1,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o actor penalty                                    7.5 ± 4.6 (+10.3%)       1.7 ± 1.2 (-98.3%)                                        1.1 ± 0.5 (-98.8%)              1.6 ± 1.6 (-98.5%)                       24.4 ± 8.7 (-73.8%)                           27.7 ± 23.4 (-74.1%)         10.6 (-87.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 1.6,
+     "std": 1.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o actor penalty                                    7.5 ± 4.6 (+10.3%)       1.7 ± 1.2 (-98.3%)                                        1.1 ± 0.5 (-98.8%)              1.6 ± 1.6 (-98.5%)                       24.4 ± 8.7 (-73.8%)                           27.7 ± 23.4 (-74.1%)         10.6 (-87.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 24.4,
+     "std": 8.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.5"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o actor penalty                                    7.5 ± 4.6 (+10.3%)       1.7 ± 1.2 (-98.3%)                                        1.1 ± 0.5 (-98.8%)              1.6 ± 1.6 (-98.5%)                       24.4 ± 8.7 (-73.8%)                           27.7 ± 23.4 (-74.1%)         10.6 (-87.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-full-replay",
+     "outcome": 27.7,
+     "std": 23.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o actor penalty                                    7.5 ± 4.6 (+10.3%)       1.7 ± 1.2 (-98.3%)                                        1.1 ± 0.5 (-98.8%)              1.6 ± 1.6 (-98.5%)                       24.4 ± 8.7 (-73.8%)                           27.7 ± 23.4 (-74.1%)         10.6 (-87.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 7.4,
+     "std": 1.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o critic penalty                                    7.4 ± 1.1 (+8.8%)      102.3 ± 0.5 (+0.9%)                                      103.4 ± 8.6 (+13.1%)             111.2 ± 0.7 (+1.2%)                      83.1 ± 30.9 (-10.9%)                            107.5 ± 0.1 (+0.7%)          85.8 (+1.1%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 102.3,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o critic penalty                                    7.4 ± 1.1 (+8.8%)      102.3 ± 0.5 (+0.9%)                                      103.4 ± 8.6 (+13.1%)             111.2 ± 0.7 (+1.2%)                      83.1 ± 30.9 (-10.9%)                            107.5 ± 0.1 (+0.7%)          85.8 (+1.1%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 103.4,
+     "std": 8.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.1"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o critic penalty                                    7.4 ± 1.1 (+8.8%)      102.3 ± 0.5 (+0.9%)                                      103.4 ± 8.6 (+13.1%)             111.2 ± 0.7 (+1.2%)                      83.1 ± 30.9 (-10.9%)                            107.5 ± 0.1 (+0.7%)          85.8 (+1.1%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 111.2,
+     "std": 0.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.1"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o critic penalty                                    7.4 ± 1.1 (+8.8%)      102.3 ± 0.5 (+0.9%)                                      103.4 ± 8.6 (+13.1%)             111.2 ± 0.7 (+1.2%)                      83.1 ± 30.9 (-10.9%)                            107.5 ± 0.1 (+0.7%)          85.8 (+1.1%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 83.1,
+     "std": 30.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.05"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o critic penalty                                    7.4 ± 1.1 (+8.8%)      102.3 ± 0.5 (+0.9%)                                      103.4 ± 8.6 (+13.1%)             111.2 ± 0.7 (+1.2%)                      83.1 ± 30.9 (-10.9%)                            107.5 ± 0.1 (+0.7%)          85.8 (+1.1%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-full-replay",
+     "outcome": 107.5,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o critic penalty                                    7.4 ± 1.1 (+8.8%)      102.3 ± 0.5 (+0.9%)                                      103.4 ± 8.6 (+13.1%)             111.2 ± 0.7 (+1.2%)                      83.1 ± 30.9 (-10.9%)                            107.5 ± 0.1 (+0.7%)          85.8 (+1.1%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 8.6,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o large batch                                      8.6 ± 0.5 (+26.5%)       98.9 ± 5.2 (-2.5%)                                       98.8 ± 13.4 (+8.1%)             107.8 ± 2.9 (-1.9%)                        96.2 ± 7.6 (+3.1%)                            106.6 ± 0.2 (-0.2%)          86.1 (+1.4%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 98.9,
+     "std": 5.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o large batch                                      8.6 ± 0.5 (+26.5%)       98.9 ± 5.2 (-2.5%)                                       98.8 ± 13.4 (+8.1%)             107.8 ± 2.9 (-1.9%)                        96.2 ± 7.6 (+3.1%)                            106.6 ± 0.2 (-0.2%)          86.1 (+1.4%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 98.8,
+     "std": 13.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.1",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o large batch                                      8.6 ± 0.5 (+26.5%)       98.9 ± 5.2 (-2.5%)                                       98.8 ± 13.4 (+8.1%)             107.8 ± 2.9 (-1.9%)                        96.2 ± 7.6 (+3.1%)                            106.6 ± 0.2 (-0.2%)          86.1 (+1.4%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 107.8,
+     "std": 2.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.1",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o large batch                                      8.6 ± 0.5 (+26.5%)       98.9 ± 5.2 (-2.5%)                                       98.8 ± 13.4 (+8.1%)             107.8 ± 2.9 (-1.9%)                        96.2 ± 7.6 (+3.1%)                            106.6 ± 0.2 (-0.2%)          86.1 (+1.4%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 96.2,
+     "std": 7.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.5"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o large batch                                      8.6 ± 0.5 (+26.5%)       98.9 ± 5.2 (-2.5%)                                       98.8 ± 13.4 (+8.1%)             107.8 ± 2.9 (-1.9%)                        96.2 ± 7.6 (+3.1%)                            106.6 ± 0.2 (-0.2%)          86.1 (+1.4%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-full-replay",
+     "outcome": 106.6,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC w/o large batch                                      8.6 ± 0.5 (+26.5%)       98.9 ± 5.2 (-2.5%)                                       98.8 ± 13.4 (+8.1%)             107.8 ± 2.9 (-1.9%)                        96.2 ± 7.6 (+3.1%)                            106.6 ± 0.2 (-0.2%)          86.1 (+1.4%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 6.8,
+     "std": 3.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.001",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC                                                                  6.8 ± 3.4              101.4 ± 1.5                                                91.4 ± 4.7                   109.9 ± 3.0                                               93.3 ± 7.5                          106.8±0.6              84.9",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 101.4,
+     "std": 1.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC                                                                  6.8 ± 3.4              101.4 ± 1.5                                                91.4 ± 4.7                   109.9 ± 3.0                                               93.3 ± 7.5                          106.8±0.6              84.9",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 91.4,
+     "std": 4.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.1",
+      "beta2_critic_penalty": "0.001"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC                                                                  6.8 ± 3.4              101.4 ± 1.5                                                91.4 ± 4.7                   109.9 ± 3.0                                               93.3 ± 7.5                          106.8±0.6              84.9",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 109.9,
+     "std": 3.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.1",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC                                                                  6.8 ± 3.4              101.4 ± 1.5                                                91.4 ± 4.7                   109.9 ± 3.0                                               93.3 ± 7.5                          106.8±0.6              84.9",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 93.3,
+     "std": 7.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.5"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC                                                                  6.8 ± 3.4              101.4 ± 1.5                                                91.4 ± 4.7                   109.9 ± 3.0                                               93.3 ± 7.5                          106.8±0.6              84.9",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "hopper-full-replay",
+     "outcome": 106.8,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 34",
+     "line_quote": "ReBRAC                                                                  6.8 ± 3.4              101.4 ± 1.5                                                91.4 ± 4.7                   109.9 ± 3.0                                               93.3 ± 7.5                          106.8±0.6              84.9",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 1.3,
+     "std": 1.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.0"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o LN                                               1.3 ± 1.5 (-93.9%)       84.3 ± 2.5 (+3.3%)                                      8.3 ± 3.1 (-92.6%)              52.7 ± 53.9 (-52.8%)                    78.9 ± 8.4 (+4.4%)                              61.1 ± 46.6 (-40.6%)          47.7 (-43.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 84.3,
+     "std": 2.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o LN                                               1.3 ± 1.5 (-93.9%)       84.3 ± 2.5 (+3.3%)                                      8.3 ± 3.1 (-92.6%)              52.7 ± 53.9 (-52.8%)                    78.9 ± 8.4 (+4.4%)                              61.1 ± 46.6 (-40.6%)          47.7 (-43.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-expert",
+     "outcome": 8.3,
+     "std": 3.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.5"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o LN                                               1.3 ± 1.5 (-93.9%)       84.3 ± 2.5 (+3.3%)                                      8.3 ± 3.1 (-92.6%)              52.7 ± 53.9 (-52.8%)                    78.9 ± 8.4 (+4.4%)                              61.1 ± 46.6 (-40.6%)          47.7 (-43.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 52.7,
+     "std": 53.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o LN                                               1.3 ± 1.5 (-93.9%)       84.3 ± 2.5 (+3.3%)                                      8.3 ± 3.1 (-92.6%)              52.7 ± 53.9 (-52.8%)                    78.9 ± 8.4 (+4.4%)                              61.1 ± 46.6 (-40.6%)          47.7 (-43.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 78.9,
+     "std": 8.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o LN                                               1.3 ± 1.5 (-93.9%)       84.3 ± 2.5 (+3.3%)                                      8.3 ± 3.1 (-92.6%)              52.7 ± 53.9 (-52.8%)                    78.9 ± 8.4 (+4.4%)                              61.1 ± 46.6 (-40.6%)          47.7 (-43.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-full-replay",
+     "outcome": 61.1,
+     "std": 46.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "layernorm=off",
+     "config_conditions": {
+      "layernorm": "false",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o LN                                               1.3 ± 1.5 (-93.9%)       84.3 ± 2.5 (+3.3%)                                      8.3 ± 3.1 (-92.6%)              52.7 ± 53.9 (-52.8%)                    78.9 ± 8.4 (+4.4%)                              61.1 ± 46.6 (-40.6%)          47.7 (-43.3%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o LN'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 11.4,
+     "std": 11.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.0"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o layer                                          11.4 ± 11.9 (-46.5%)       86.2 ± 0.9 (+5.6%)                                     112.1 ± 0.1 (-0.2%)               111.9 ± 0.2 (+0.2%)                   83.9 ± 5.4 (+11.0%)                               101.8 ± 0.9 (-1.0%)           84.5 (+0.4%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 86.2,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o layer                                          11.4 ± 11.9 (-46.5%)       86.2 ± 0.9 (+5.6%)                                     112.1 ± 0.1 (-0.2%)               111.9 ± 0.2 (+0.2%)                   83.9 ± 5.4 (+11.0%)                               101.8 ± 0.9 (-1.0%)           84.5 (+0.4%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-expert",
+     "outcome": 112.1,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.5"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o layer                                          11.4 ± 11.9 (-46.5%)       86.2 ± 0.9 (+5.6%)                                     112.1 ± 0.1 (-0.2%)               111.9 ± 0.2 (+0.2%)                   83.9 ± 5.4 (+11.0%)                               101.8 ± 0.9 (-1.0%)           84.5 (+0.4%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 111.9,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o layer                                          11.4 ± 11.9 (-46.5%)       86.2 ± 0.9 (+5.6%)                                     112.1 ± 0.1 (-0.2%)               111.9 ± 0.2 (+0.2%)                   83.9 ± 5.4 (+11.0%)                               101.8 ± 0.9 (-1.0%)           84.5 (+0.4%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 83.9,
+     "std": 5.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o layer                                          11.4 ± 11.9 (-46.5%)       86.2 ± 0.9 (+5.6%)                                     112.1 ± 0.1 (-0.2%)               111.9 ± 0.2 (+0.2%)                   83.9 ± 5.4 (+11.0%)                               101.8 ± 0.9 (-1.0%)           84.5 (+0.4%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-full-replay",
+     "outcome": 101.8,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "num_hidden_layers=2 (w/o extra layer)",
+     "config_conditions": {
+      "num_hidden_layers": "2",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o layer                                          11.4 ± 11.9 (-46.5%)       86.2 ± 0.9 (+5.6%)                                     112.1 ± 0.1 (-0.2%)               111.9 ± 0.2 (+0.2%)                   83.9 ± 5.4 (+11.0%)                               101.8 ± 0.9 (-1.0%)           84.5 (+0.4%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o layer'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 1.1,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.0"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o actor penalty                                    1.1 ± 0.9 (-94.8%)       1.7 ± 2.1 (-97.9%)                                      0.9 ± 1.1 (-99.2%)                0.8 ± 1.3 (-99.3%)                    8.9 ± 5.7 (-88.2%)                              64.2 ± 29.5 (-37.5%)          12.9 (-84.7%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 1.7,
+     "std": 2.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o actor penalty                                    1.1 ± 0.9 (-94.8%)       1.7 ± 2.1 (-97.9%)                                      0.9 ± 1.1 (-99.2%)                0.8 ± 1.3 (-99.3%)                    8.9 ± 5.7 (-88.2%)                              64.2 ± 29.5 (-37.5%)          12.9 (-84.7%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-expert",
+     "outcome": 0.9,
+     "std": 1.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.5"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o actor penalty                                    1.1 ± 0.9 (-94.8%)       1.7 ± 2.1 (-97.9%)                                      0.9 ± 1.1 (-99.2%)                0.8 ± 1.3 (-99.3%)                    8.9 ± 5.7 (-88.2%)                              64.2 ± 29.5 (-37.5%)          12.9 (-84.7%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 0.8,
+     "std": 1.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o actor penalty                                    1.1 ± 0.9 (-94.8%)       1.7 ± 2.1 (-97.9%)                                      0.9 ± 1.1 (-99.2%)                0.8 ± 1.3 (-99.3%)                    8.9 ± 5.7 (-88.2%)                              64.2 ± 29.5 (-37.5%)          12.9 (-84.7%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 8.9,
+     "std": 5.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o actor penalty                                    1.1 ± 0.9 (-94.8%)       1.7 ± 2.1 (-97.9%)                                      0.9 ± 1.1 (-99.2%)                0.8 ± 1.3 (-99.3%)                    8.9 ± 5.7 (-88.2%)                              64.2 ± 29.5 (-37.5%)          12.9 (-84.7%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-full-replay",
+     "outcome": 64.2,
+     "std": 29.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "actor_penalty=off (beta1=0)",
+     "config_conditions": {
+      "beta1_actor_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o actor penalty                                    1.1 ± 0.9 (-94.8%)       1.7 ± 2.1 (-97.9%)                                      0.9 ± 1.1 (-99.2%)                0.8 ± 1.3 (-99.3%)                    8.9 ± 5.7 (-88.2%)                              64.2 ± 29.5 (-37.5%)          12.9 (-84.7%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o actor penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 19.8,
+     "std": 3.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o critic penalty                                   19.8 ± 3.6 (-7.0%)        81.6 ± 9.2 (0.0%)                                     112.0 ± 0.1 (-0.3%)               111.6 ± 0.3 (-0.1%)                   87.0 ± 4.5 (+15.1%)                               103.5 ± 1.5 (+0.7%)           85.9 (+2.0%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 81.6,
+     "std": 9.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.05"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o critic penalty                                   19.8 ± 3.6 (-7.0%)        81.6 ± 9.2 (0.0%)                                     112.0 ± 0.1 (-0.3%)               111.6 ± 0.3 (-0.1%)                   87.0 ± 4.5 (+15.1%)                               103.5 ± 1.5 (+0.7%)           85.9 (+2.0%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-expert",
+     "outcome": 112.0,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o critic penalty                                   19.8 ± 3.6 (-7.0%)        81.6 ± 9.2 (0.0%)                                     112.0 ± 0.1 (-0.3%)               111.6 ± 0.3 (-0.1%)                   87.0 ± 4.5 (+15.1%)                               103.5 ± 1.5 (+0.7%)           85.9 (+2.0%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 111.6,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o critic penalty                                   19.8 ± 3.6 (-7.0%)        81.6 ± 9.2 (0.0%)                                     112.0 ± 0.1 (-0.3%)               111.6 ± 0.3 (-0.1%)                   87.0 ± 4.5 (+15.1%)                               103.5 ± 1.5 (+0.7%)           85.9 (+2.0%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 87.0,
+     "std": 4.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.05"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o critic penalty                                   19.8 ± 3.6 (-7.0%)        81.6 ± 9.2 (0.0%)                                     112.0 ± 0.1 (-0.3%)               111.6 ± 0.3 (-0.1%)                   87.0 ± 4.5 (+15.1%)                               103.5 ± 1.5 (+0.7%)           85.9 (+2.0%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-full-replay",
+     "outcome": 103.5,
+     "std": 1.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "critic_penalty=off (beta2=0)",
+     "config_conditions": {
+      "beta2_critic_penalty": "0 (disabled)",
+      "layernorm": "true (critic)",
+      "batch_size": "1024",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o critic penalty                                   19.8 ± 3.6 (-7.0%)        81.6 ± 9.2 (0.0%)                                     112.0 ± 0.1 (-0.3%)               111.6 ± 0.3 (-0.1%)                   87.0 ± 4.5 (+15.1%)                               103.5 ± 1.5 (+0.7%)           85.9 (+2.0%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o critic penalty'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 5.6,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.0"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o large batch                                      5.6 ± 0.2 (-73.7%)       84.8 ± 1.0 (+3.9%)                                     112.2 ± 0.2 (-0.1%)               110.9 ± 0.2 (-0.7%)                   71.7 ± 20.2 (-5.2%)                                97.7 ± 5.8 (-5.0%)           80.4 (-4.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 84.8,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o large batch                                      5.6 ± 0.2 (-73.7%)       84.8 ± 1.0 (+3.9%)                                     112.2 ± 0.2 (-0.1%)               110.9 ± 0.2 (-0.7%)                   71.7 ± 20.2 (-5.2%)                                97.7 ± 5.8 (-5.0%)           80.4 (-4.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-expert",
+     "outcome": 112.2,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.5"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o large batch                                      5.6 ± 0.2 (-73.7%)       84.8 ± 1.0 (+3.9%)                                     112.2 ± 0.2 (-0.1%)               110.9 ± 0.2 (-0.7%)                   71.7 ± 20.2 (-5.2%)                                97.7 ± 5.8 (-5.0%)           80.4 (-4.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 110.9,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o large batch                                      5.6 ± 0.2 (-73.7%)       84.8 ± 1.0 (+3.9%)                                     112.2 ± 0.2 (-0.1%)               110.9 ± 0.2 (-0.7%)                   71.7 ± 20.2 (-5.2%)                                97.7 ± 5.8 (-5.0%)           80.4 (-4.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 71.7,
+     "std": 20.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o large batch                                      5.6 ± 0.2 (-73.7%)       84.8 ± 1.0 (+3.9%)                                     112.2 ± 0.2 (-0.1%)               110.9 ± 0.2 (-0.7%)                   71.7 ± 20.2 (-5.2%)                                97.7 ± 5.8 (-5.0%)           80.4 (-4.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-full-replay",
+     "outcome": 97.7,
+     "std": 5.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "batch_size=256 (w/o large batch)",
+     "config_conditions": {
+      "batch_size": "256",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC w/o large batch                                      5.6 ± 0.2 (-73.7%)       84.8 ± 1.0 (+3.9%)                                     112.2 ± 0.2 (-0.1%)               110.9 ± 0.2 (-0.7%)                   71.7 ± 20.2 (-5.2%)                                97.7 ± 5.8 (-5.0%)           80.4 (-4.5%)",
+     "notes": "Appendix G ablation row 'ReBRAC w/o large batch'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 21.3,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.0"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC                                                                 21.3 ± 0.8              81.6 ± 3.9                                             112.3 ± 0.0                     111.7 ± 0.3                                               75.6±10.3                         102.8±0.9                 84.2",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 81.6,
+     "std": 3.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.1"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC                                                                 21.3 ± 0.8              81.6 ± 3.9                                             112.3 ± 0.0                     111.7 ± 0.3                                               75.6±10.3                         102.8±0.9                 84.2",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-expert",
+     "outcome": 112.3,
+     "std": 0.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.5"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC                                                                 21.3 ± 0.8              81.6 ± 3.9                                             112.3 ± 0.0                     111.7 ± 0.3                                               75.6±10.3                         102.8±0.9                 84.2",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 111.7,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC                                                                 21.3 ± 0.8              81.6 ± 3.9                                             112.3 ± 0.0                     111.7 ± 0.3                                               75.6±10.3                         102.8±0.9                 84.2",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 75.6,
+     "std": 10.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.05",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC                                                                 21.3 ± 0.8              81.6 ± 3.9                                             112.3 ± 0.0                     111.7 ± 0.3                                               75.6±10.3                         102.8±0.9                 84.2",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    },
+    {
+     "dataset": "walker2d-full-replay",
+     "outcome": 102.8,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (4 unseen training seeds, Appendix G rerun)",
+     "config_conditions": {
+      "batch_size": "1024",
+      "layernorm": "true (critic)",
+      "num_hidden_layers": "3",
+      "beta1_actor_penalty": "0.01",
+      "beta2_critic_penalty": "0.01"
+     },
+     "table": "Table 35",
+     "line_quote": "ReBRAC                                                                 21.3 ± 0.8              81.6 ± 3.9                                             112.3 ± 0.0                     111.7 ± 0.3                                               75.6±10.3                         102.8±0.9                 84.2",
+     "notes": "Appendix G ablation row 'ReBRAC'; averaged over 4 unseen training seeds (not 10); table header gives only dataset suffix, environment from caption. Per-dataset beta values for ablation rows assumed same as Table 11 (paper says 'each modification was disabled while keeping all the others')."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "TD3+BC",
+  "IQL",
+  "CQL",
+  "SAC-RND",
+  "SAC-N",
+  "EDAC",
+  "RORL",
+  "MSG",
+  "TD3+BC, paper",
+  "TD3+BC, our",
+  "TD3+BC, tuned"
+ ],
+ "problems": [
+  "Table 16 (line 1052) prints ReBRAC walker2d-random as '18.1 ± 4.5' whereas Table 2 (line 277) prints '18.4 ± 4.5' — inconsistency between the two restatements; Table 2 used for main row.",
+  "Table 8 gives only domain-level averages of ablations (not rows). Section 4.5 layer-depth sweep is AntMaze-only and in a figure (Figure 2) — excluded.",
+  "Table 11 lists beta values only for the main configuration; the FN variant (Table 19) was re-tuned on the same grid but its selected values are not printed.",
+  "Appendix F Expected Online Performance tables (Table 25+) are EOP under policy selection, not plain scores — excluded."
+ ]
+}

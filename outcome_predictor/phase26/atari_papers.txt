@@ -1,0 +1,18 @@
+# family  arxiv_id     title (Phase 26 Atari 100k corpus)
+atari  1903.00374  SimPLe
+atari  1906.05243  Data-Efficient Rainbow (van Hasselt et al.)
+atari  2003.10181  OTRainbow (Kielak)
+atari  2004.04136  CURL
+atari  2004.13649  DrQ
+atari  2007.05929  SPR
+atari  2106.04152  PlayVirtual
+atari  2111.00210  EfficientZero
+atari  2201.12096  MLR
+atari  2209.00588  IRIS
+atari  2303.07109  TWM
+atari  2301.04104  DreamerV3
+atari  2305.19452  BBF
+atari  2310.09615  STORM
+atari  2405.12399  DIAMOND
+atari  2403.00564  EfficientZero V2
+atari  2406.19320  Delta-IRIS

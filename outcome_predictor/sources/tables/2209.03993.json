@@ -1,0 +1,533 @@
+{
+ "arxiv_id": "2209.03993",
+ "title": "Q-learning Decision Transformer: Leveraging Dynamic Programming for Conditional Sequence Modelling in Offline RL",
+ "methods": [
+  {
+   "method_name": "QDT",
+   "is_own_method": true,
+   "one_paragraph_description": "QDT first trains a conservative Q-learning (CQL) agent on the offline dataset to obtain a conservative value function, then relabels the return-to-go (RTG) of every trajectory in the dataset using the learned value estimates (Algorithm 1: initialise last-state RTG to zero, walk backwards, replace RTG where the value estimate is larger), and finally trains a standard Decision Transformer on the relabelled dataset. At runtime it acts exactly like DT: conditioned on a target RTG, it autoregressively predicts actions from the last K (RTG, state, action) tokens.",
+   "conventional_lineage_hint": "conditional sequence modelling / reward-conditioned DT combined with dynamic programming (Q-learning); paper title: 'Leveraging Dynamic Programming for Conditional Sequence Modelling in Offline RL'",
+   "global_conditions": {
+    "dt_hyperparameters": {
+     "value": "same as Chen et al. (2021) DT source code (not re-listed for MuJoCo)",
+     "quote": "We use the same hyper-parameter settings as the original papers (Kumar et al., 2020; Chen et al., 2021). However, we did",
+     "location": "Appendix C.4"
+    },
+    "training_updates": {
+     "value": "100,000",
+     "quote": "QDT model is trained for 100,000 updates for MuJoCo Gym and 150,000 updates for maze2d with 64 batch size,",
+     "location": "Appendix C.3"
+    },
+    "batch_size": {
+     "value": "64",
+     "quote": "QDT model is trained for 100,000 updates for MuJoCo Gym and 150,000 updates for maze2d with 64 batch size,",
+     "location": "Appendix C.3"
+    },
+    "cql_training_updates": {
+     "value": "500,000",
+     "quote": "CQL We train the CQL model with five random seeds for 500,000 updates with 256 batch size, then evaluate the model at",
+     "location": "Appendix C.3"
+    },
+    "cql_batch_size": {
+     "value": "256",
+     "quote": "CQL We train the CQL model with five random seeds for 500,000 updates with 256 batch size, then evaluate the model at",
+     "location": "Appendix C.3"
+    },
+    "cql_discount": {
+     "value": "0.99",
+     "quote": "dataset for the MuJoCo Gym environment as it contains tra-               discount factor γ = 0.99 for CQL as per the original paper.",
+     "location": "Section 6 (two-column layout line)"
+    },
+    "cql_implementation": {
+     "value": "d3rlpy cql.py reproduce script, Kumar et al. (2020) hyperparameters",
+     "quote": "(d3rlpy/reproduce/offline/cql.py), and it uses the same hyperparameters as Kumar et al. (2020). For Mazed2d simulations,",
+     "location": "Appendix C.1"
+    }
+   },
+   "per_dataset_conditions": {
+    "*-medium": {
+     "cql_conservative_weight_alpha": {
+      "value": "10.0",
+      "quote": "For MuJoCo Gym environments, we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset.",
+      "location": "Appendix C.4"
+     }
+    },
+    "*-medium-replay": {
+     "cql_conservative_weight_alpha": {
+      "value": "5.0",
+      "quote": "For MuJoCo Gym environments, we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset.",
+      "location": "Appendix C.4"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "5 (each with its own trained CQL)",
+    "episodes_per_seed": "100",
+    "checkpoint_selection": "last (end of training)",
+    "quote": "then evaluate the model at the end of the training with 100 episode roll-outs – same as DT.",
+    "location": "Appendix C.3"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "medium and medium-replay v2 datasets. To demonstrate the",
+    "location": "Section 5.3; table rows printed as 'Hopper-v2' etc."
+   },
+   "rows": [
+    {
+     "dataset": "hopper-medium",
+     "outcome": 66.5,
+     "std": 6.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "10.0",
+      "seeds": "5"
+     },
+     "table": "Table 4",
+     "line_quote": "                               Hopper-v2        69.4 ± 13.1 64.6           60.3 ± 5.5 67.6 ± 1.0              66.5 ± 6.3",
+     "notes": "Last column = QDT Results. Rows grouped under vertical labels 'Medium' (first 3) and 'Replay' (last 3); medium-replay assignment confirmed by DT Ref column matching Chen et al. medium-replay values (82.7/36.6/66.6)."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.3,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "10.0",
+      "seeds": "5"
+     },
+     "table": "Table 4",
+     "line_quote": "                               HalfCheetah-v2   49.2 ± 0.5  49.1           42.1 ± 0.5 42.1 ± 0.1              42.3 ± 0.4",
+     "notes": "Last column = QDT Results. Rows grouped under vertical labels 'Medium' (first 3) and 'Replay' (last 3); medium-replay assignment confirmed by DT Ref column matching Chen et al. medium-replay values (82.7/36.6/66.6)."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 67.1,
+     "std": 3.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "10.0",
+      "seeds": "5"
+     },
+     "table": "Table 4",
+     "line_quote": "                               Walker2d-v2      83.0 ± 0.6  82.9           73.3 ± 2.5 74.0 ± 1.4              67.1 ± 3.2",
+     "notes": "Last column = QDT Results. Rows grouped under vertical labels 'Medium' (first 3) and 'Replay' (last 3); medium-replay assignment confirmed by DT Ref column matching Chen et al. medium-replay values (82.7/36.6/66.6)."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 52.1,
+     "std": 20.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "5.0",
+      "seeds": "5"
+     },
+     "table": "Table 4",
+     "line_quote": "                               Hopper-v2        96.2 ± 7.9  97.8           63.7 ± 12.2 82.7 ± 7.0             52.1 ± 20.3",
+     "notes": "Last column = QDT Results. Rows grouped under vertical labels 'Medium' (first 3) and 'Replay' (last 3); medium-replay assignment confirmed by DT Ref column matching Chen et al. medium-replay values (82.7/36.6/66.6)."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 35.6,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "5.0",
+      "seeds": "5"
+     },
+     "table": "Table 4",
+     "line_quote": "                               HalfCheetah-v2   49.8 ± 0.5  47.3           34.1 ± 1.1 36.6 ± 0.8              35.6 ± 0.5",
+     "notes": "Last column = QDT Results. Rows grouped under vertical labels 'Medium' (first 3) and 'Replay' (last 3); medium-replay assignment confirmed by DT Ref column matching Chen et al. medium-replay values (82.7/36.6/66.6)."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 58.2,
+     "std": 5.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "5.0",
+      "seeds": "5"
+     },
+     "table": "Table 4",
+     "line_quote": "                               Walker2d-v2      76.5 ± 21.1 86.1           60.2 ± 13.9 66.6 ± 3.0             58.2 ± 5.1",
+     "notes": "Last column = QDT Results. Rows grouped under vertical labels 'Medium' (first 3) and 'Replay' (last 3); medium-replay assignment confirmed by DT Ref column matching Chen et al. medium-replay values (82.7/36.6/66.6)."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 50.7,
+     "std": 5.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "delayed (sparse) reward",
+     "config_conditions": {
+      "reward": "delayed (sum of rewards at final timestep)",
+      "cql_conservative_weight_alpha": "10.0",
+      "seeds": "5"
+     },
+     "table": "Table 3",
+     "line_quote": "                               Hopper-v2        23.3 ± 1.0  5.2            57.3 ± 2.4 60.7 ± 4.5             50.7 ± 5.0",
+     "notes": "NOT standard D4RL: delayed-reward variant ('does not receive any reward along the trajectory and receives the sum of the rewards at the final time step'). Row grouping as in Table 4."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.4,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "delayed (sparse) reward",
+     "config_conditions": {
+      "reward": "delayed (sum of rewards at final timestep)",
+      "cql_conservative_weight_alpha": "10.0",
+      "seeds": "5"
+     },
+     "table": "Table 3",
+     "line_quote": "                               HalfCheetah-v2    1.0 ± 1.0   −             42.2 ± 0.2      −                 42.4 ± 0.5",
+     "notes": "NOT standard D4RL: delayed-reward variant ('does not receive any reward along the trajectory and receives the sum of the rewards at the final time step'). Row grouping as in Table 4."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 63.7,
+     "std": 6.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "delayed (sparse) reward",
+     "config_conditions": {
+      "reward": "delayed (sum of rewards at final timestep)",
+      "cql_conservative_weight_alpha": "10.0",
+      "seeds": "5"
+     },
+     "table": "Table 3",
+     "line_quote": "                               Walker2d-v2       0.0 ± 0.4   −             69.9 ± 2.0      −                 63.7 ± 6.4",
+     "notes": "NOT standard D4RL: delayed-reward variant ('does not receive any reward along the trajectory and receives the sum of the rewards at the final time step'). Row grouping as in Table 4."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 38.7,
+     "std": 26.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "delayed (sparse) reward",
+     "config_conditions": {
+      "reward": "delayed (sum of rewards at final timestep)",
+      "cql_conservative_weight_alpha": "5.0",
+      "seeds": "5"
+     },
+     "table": "Table 3",
+     "line_quote": "                               Hopper-v2         7.7 ± 5.9  2.0            50.8 ± 14.3 78.5 ± 3.7            38.7 ± 26.7",
+     "notes": "NOT standard D4RL: delayed-reward variant ('does not receive any reward along the trajectory and receives the sum of the rewards at the final time step'). Row grouping as in Table 4."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 32.8,
+     "std": 7.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "delayed (sparse) reward",
+     "config_conditions": {
+      "reward": "delayed (sum of rewards at final timestep)",
+      "cql_conservative_weight_alpha": "5.0",
+      "seeds": "5"
+     },
+     "table": "Table 3",
+     "line_quote": "                               HalfCheetah-v2    7.8 ± 6.9   −             33.0 ± 4.8      −                 32.8 ± 7.3",
+     "notes": "NOT standard D4RL: delayed-reward variant ('does not receive any reward along the trajectory and receives the sum of the rewards at the final time step'). Row grouping as in Table 4."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 29.6,
+     "std": 15.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "delayed (sparse) reward",
+     "config_conditions": {
+      "reward": "delayed (sum of rewards at final timestep)",
+      "cql_conservative_weight_alpha": "5.0",
+      "seeds": "5"
+     },
+     "table": "Table 3",
+     "line_quote": "                               Walker2d-v2       3.2 ± 1.7   −             51.6 ± 24.6     −                 29.6 ± 15.5",
+     "notes": "NOT standard D4RL: delayed-reward variant ('does not receive any reward along the trajectory and receives the sum of the rewards at the final time step'). Row grouping as in Table 4."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 46.9,
+     "std": 13.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "delayed (sparse) reward, alpha=100",
+     "config_conditions": {
+      "reward": "delayed (sum of rewards at final timestep)",
+      "cql_conservative_weight_alpha": "100"
+     },
+     "table": "Section 6 prose (Conservative weight paragraph)",
+     "line_quote": "Though this improves the QDT result from 29.6 ± 15.5 to",
+     "notes": "Value from prose, not a table; continuation line: '46.9 ± 13.8, it is still worse than DT.' Seeds not stated for this run. Delayed-reward variant."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 68.6,
+     "std": 7.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=10.0",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "10.0",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                Hopper-v2        68.6 ± 7.5          65.3 ± 1.3     57.5 ± 6.6",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 65.3,
+     "std": 1.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=5.0",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "5.0",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                Hopper-v2        68.6 ± 7.5          65.3 ± 1.3     57.5 ± 6.6",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 57.5,
+     "std": 6.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=2.5",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "2.5",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                Hopper-v2        68.6 ± 7.5          65.3 ± 1.3     57.5 ± 6.6",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.2,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=10.0",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "10.0",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                HalfCheetah-v2   42.2 ± 0.5         42.2 ± 0.05     42.1 ± 0.4",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.2,
+     "std": 0.05,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=5.0",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "5.0",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                HalfCheetah-v2   42.2 ± 0.5         42.2 ± 0.05     42.1 ± 0.4",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.1,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=2.5",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "2.5",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                HalfCheetah-v2   42.2 ± 0.5         42.2 ± 0.05     42.1 ± 0.4",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 65.9,
+     "std": 3.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=10.0",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "10.0",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                Walker2d-v2      65.9 ± 3.6         70.1 ± 2.4      68.8 ± 6.9",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 70.1,
+     "std": 2.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=5.0",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "5.0",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                Walker2d-v2      65.9 ± 3.6         70.1 ± 2.4      68.8 ± 6.9",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 68.8,
+     "std": 6.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=2.5",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "2.5",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                Walker2d-v2      65.9 ± 3.6         70.1 ± 2.4      68.8 ± 6.9",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 55.3,
+     "std": 28.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=5.0",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "5.0",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                Hopper-v2                           55.3 ± 28.0     40.2 ± 5.9         64.0 ± 22.9",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 40.2,
+     "std": 5.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=2.5",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "2.5",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                Hopper-v2                           55.3 ± 28.0     40.2 ± 5.9         64.0 ± 22.9",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 64.0,
+     "std": 22.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=1.25",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "1.25",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                Hopper-v2                           55.3 ± 28.0     40.2 ± 5.9         64.0 ± 22.9",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 35.7,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=5.0",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "5.0",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                HalfCheetah-v2                      35.7 ± 0.6      35.5 ± 0.4          33.0 ± 0.5",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 35.5,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=2.5",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "2.5",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                HalfCheetah-v2                      35.7 ± 0.6      35.5 ± 0.4          33.0 ± 0.5",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 33.0,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=1.25",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "1.25",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                HalfCheetah-v2                      35.7 ± 0.6      35.5 ± 0.4          33.0 ± 0.5",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 59.1,
+     "std": 2.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=5.0",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "5.0",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                Walker2d-v2                          59.1 ± 2.8     64.3 ± 5.9         45.2 ± 39.5",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 64.3,
+     "std": 5.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=2.5",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "2.5",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                Walker2d-v2                          59.1 ± 2.8     64.3 ± 5.9         45.2 ± 39.5",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 45.2,
+     "std": 39.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "alpha=1.25",
+     "config_conditions": {
+      "cql_conservative_weight_alpha": "1.25",
+      "seeds": "3"
+     },
+     "table": "Table 11",
+     "line_quote": "                                Walker2d-v2                          59.1 ± 2.8     64.3 ± 5.9         45.2 ± 39.5",
+     "notes": "Conservative-weight sweep over 3 seeds (not 5). Column-to-alpha mapping inferred from column positions plus text 'we start with α = 10.0 for medium dataset and α = 5.0 for medium-replay dataset ... Then, reduce these values'; medium rows fill columns α=10.0/5.0/2.5, medium-replay rows fill α=5.0/2.5/1.25 (first column blank in layout)."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "CQL (Results)",
+  "CQL (Ref.*1 Emmons et al. 2021)",
+  "CQL (Ref.*2 Chen et al. 2021)",
+  "DT (Results, reproduced by authors)",
+  "DT (Ref.*2 Chen et al. 2021)"
+ ],
+ "problems": [
+  "Context length K and target return for MuJoCo QDT are not stated numerically; paper only says it reuses the DT authors' code/hyperparameters (Chen et al. 2021). Only the toy simple-environment Table 7 lists K=2 / RTG=50 which is NOT MuJoCo.",
+  "Table 3/4 vertical group labels are garbled ('Medium Medium' then 'Replay'); dataset assignment resolved by row order and by matching the DT Ref column against Chen et al. values.",
+  "Table 11 alpha-sweep column assignment inferred from blank first cell in medium-replay rows plus text; see row notes.",
+  "The Table 4 main values are α=10 (medium) / α=5 (medium-replay) over 5 seeds while Table 11 α=10/α=5 columns are 3-seed reruns with different numbers (e.g. hopper-medium 66.5 vs 68.6) — both kept, labelled separately.",
+  "Only medium and medium-replay datasets evaluated; no medium-expert/random/expert."
+ ]
+}

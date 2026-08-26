@@ -1,0 +1,53 @@
+{
+  "_about": "Object types an operation can act on. Assigned per (paper, op) by semantic_type.py from the stored section text, never by a static op->type map: the same verb acts on different objects in different papers (H1 ablation, 2026-08-24). Additive: add types and groups, don't rename.",
+  "object_types": {
+    "state": "estimate of a dynamical system's hidden state (x_t, belief, track)",
+    "latent": "learned representation / embedding / feature vector",
+    "error": "prediction error or residual (target minus prediction)",
+    "gradient": "gradient of an objective w.r.t. parameters",
+    "parameter": "model weights or hyperparameters",
+    "noise": "noise variable or noise level (diffusion, SDE)",
+    "input": "raw observation: pixels, tokens, audio, measurement",
+    "action": "control action or policy output",
+    "reward": "reward / return / value signal",
+    "distribution": "probability distribution, density, score function, posterior",
+    "sample": "a drawn sample or particle set",
+    "other": "none of the above — leave raw, do not force"
+  },
+  "contexts": [
+    "linear",
+    "nonlinear",
+    "stochastic",
+    "deterministic",
+    "temporal",
+    "spatial",
+    "unspecified"
+  ],
+  "compatibility_groups": {
+    "_about": "Used by compare.py --semantic --relaxed. Types in one group count as a match. --strict requires identical types.",
+    "represented_state": [
+      "state",
+      "latent",
+      "trajectory"
+    ],
+    "learning_signal": [
+      "error",
+      "gradient",
+      "value"
+    ],
+    "stochastic_object": [
+      "noise",
+      "distribution",
+      "sample"
+    ],
+    "_v2_note": "value joins learning_signal: advantage/return is the RL analogue of a prediction error",
+    "_trajectory_note": "trajectory joins represented_state: a plan is a state sequence; relaxed treats predict@trajectory ~ predict@state/latent"
+  },
+  "object_types_v2": {
+    "_about": "Phase 18 additions for RL and meta-learning. Used by semantic_type.py --v2. v1 types unchanged. Final test 2026-08-25: trajectory added for planning / sequence-generation papers (Diffuser).",
+    "policy": "a policy / behaviour function or its parameters (pi, actor)",
+    "value": "a value function, Q-function, advantage, or expected return",
+    "task": "a task, environment instance, or episode drawn for (meta-)learning",
+    "trajectory": "a sequence of states and/or actions over time (a plan, rollout, path tau = s0 a0 s1 a1 ...); the whole sequence is the object, not one state"
+  }
+}

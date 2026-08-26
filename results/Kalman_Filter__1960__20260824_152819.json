@@ -1,0 +1,19 @@
+{
+  "paper": "Kalman Filter (1960)",
+  "timestamp": "20260824_152819",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 3.36,
+  "abstract": "The problem of estimating the state of a linear dynamic system from noisy measurements is considered. The solution is given by a recursive linear filtering algorithm. The current estimate of the state is updated by a linear combination of the previous estimate and the current measurement. The algorithm minimizes the mean square error of the estimate. The filter is optimal in the sense that it minimizes the variance of the estimation error. The computation of the optimal gains requires the solution of a matrix Riccati equation. The algorithm is presented in a form suitable for digital computer implementation.",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits \u2014\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We present a self-supervised approach that predicts the representation of one view\nfrom another. Predicting in representation space avoids pixel reconstruction, but without an\nasymmetric design the encoder collapses to a constant output. We use a stop-gradient to prevent this.\nJSON: {\"name\": \"Latent Prediction\", \"operations\": [\"encode\", \"predict\"], \"loss\": null, \"failure\": \"representation collapse without an asymmetric design\"}\n\nNow do the same for:\nDescription: The problem of estimating the state of a linear dynamic system from noisy measurements is considered. The solution is given by a recursive linear filtering algorithm. The current estimate of the state is updated by a linear combination of the previous estimate and the current measurement. The algorithm minimizes the mean square error of the estimate. The filter is optimal in the sense that it minimizes the variance of the estimation error. The computation of the optimal gains requires the solution of a matrix Riccati equation. The algorithm is presented in a form suitable for digital computer implementation.\nJSON:\n",
+  "raw_response": "{\"name\": \"Kalman Filter\", \"operations\": [\"update\", \"compute gains\"], \"loss\": \"mean square error\", \"failure\": null}",
+  "data": {
+    "name": "Kalman Filter",
+    "operations": [
+      "update",
+      "compute gains"
+    ],
+    "loss": "mean square error",
+    "failure": null
+  }
+}

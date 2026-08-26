@@ -1,0 +1,4 @@
+paper,arxiv_id,input,predicted_family,lexical_top_family,strict_top_family,strict_top_paper,strict_score,shared_tuples,verdict
+Deep Variational Bayes Filters,1605.06432,method section (heading),state-estimation,pc-neuro 0.78 (on predict alone),pc-neuro 0.10,PredNet,0.17,predict@input,WRONG - no family above 0.10; DVBF has no correct@state; it is a latent generative model and that family was dissolved in Phase 16
+Practical Bayesian Optimization,1206.2944,20% window,control / no match,pc-neuro 0.42 (misleading),control 0.04,word2vec,0.20,predict@distribution,RIGHT - no family above 0.04; lexical would have said pc-neuro/worldmodels at 0.67
+Model-Agnostic Meta-Learning,1703.03400,method section (heading),pc-learning or new,pc-learning 0.31,pc-learning 0.17,Constrained PC,0.40,correct@parameter + train@parameter,RIGHT but generic - matched on 'weights get updated'; MAML's defining ops (sample tasks; evaluate loss) are untyped (no task/objective object)

@@ -1,0 +1,310 @@
+{
+ "arxiv_id": "2106.01345",
+ "title": "Decision Transformer: Reinforcement Learning via Sequence Modeling",
+ "methods": [
+  {
+   "method_name": "DT (Ours)",
+   "is_own_method": true,
+   "one_paragraph_description": "Decision Transformer casts offline RL as conditional sequence modeling: a causal GPT transformer is fed the last K timesteps of (return-to-go, state, action) tokens with learned linear embeddings per modality plus a learned per-timestep positional embedding, and is trained with a supervised loss to predict actions. At test time the model is prompted with a desired target return; after each step the target return is decremented by the achieved reward and the process repeats until episode termination.",
+   "conventional_lineage_hint": "sequence modeling / return-conditioned behavior cloning; paper contrasts itself with 'conventional RL algorithms' and 'TD learning' (line 24-26: 'Unlike prior approaches to RL that fit value functions or compute policy gradients, Decision Transformer simply outputs the optimal actions by leveraging a causally masked Transformer').",
+   "global_conditions": {
+    "num_layers": {
+     "value": "3",
+     "quote": "                 Number of layers              3",
+     "location": "Table 9 (Appendix A.2.1)"
+    },
+    "num_attention_heads": {
+     "value": "1",
+     "quote": "                 Number of attention heads     1",
+     "location": "Table 9"
+    },
+    "embedding_dim": {
+     "value": "128",
+     "quote": "                 Embedding dimension           128",
+     "location": "Table 9"
+    },
+    "nonlinearity": {
+     "value": "ReLU",
+     "quote": "                 Nonlinearity function         ReLU",
+     "location": "Table 9"
+    },
+    "batch_size": {
+     "value": "64",
+     "quote": "                 Batch size                    64",
+     "location": "Table 9"
+    },
+    "context_length_K": {
+     "value": "20",
+     "quote": "                 Context length K              20 HalfCheetah, Hopper, Walker",
+     "location": "Table 9"
+    },
+    "dropout": {
+     "value": "0.1",
+     "quote": "                 Dropout                       0.1",
+     "location": "Table 9"
+    },
+    "learning_rate": {
+     "value": "1e-4",
+     "quote": "                 Learning rate                 10−4",
+     "location": "Table 9"
+    },
+    "grad_norm_clip": {
+     "value": "0.25",
+     "quote": "                 Grad norm clip                0.25",
+     "location": "Table 9"
+    },
+    "weight_decay": {
+     "value": "1e-4",
+     "quote": "                 Weight decay                  10−4",
+     "location": "Table 9"
+    },
+    "lr_schedule": {
+     "value": "Linear warmup for first 1e5 training steps",
+     "quote": "                 Learning rate decay           Linear warmup for first 105 training steps",
+     "location": "Table 9 (10^5 rendered as '105')"
+    },
+    "gradient_steps": {
+     "value": "1e5",
+     "quote": "were trained for 105 gradient steps using the AdamW optimizer [73] following PyTorch defaults.",
+     "location": "Appendix A.2.1 (10^5 rendered as '105')"
+    },
+    "optimizer": {
+     "value": "AdamW",
+     "quote": "were trained for 105 gradient steps using the AdamW optimizer [73] following PyTorch defaults.",
+     "location": "Appendix A.2.1"
+    },
+    "target_return_rule": {
+     "value": "expert performance per env, except HalfCheetah 50%",
+     "quote": "expert performance for each environment, except for HalfCheetah where we find 50% performance",
+     "location": "Appendix A.2.1"
+    }
+   },
+   "per_dataset_conditions": {
+    "halfcheetah-*": {
+     "return_to_go_conditioning": {
+      "value": "6000",
+      "quote": "                 Return-to-go conditioning     6000 HalfCheetah",
+      "location": "Table 9"
+     }
+    },
+    "hopper-*": {
+     "return_to_go_conditioning": {
+      "value": "3600",
+      "quote": "                                               3600 Hopper",
+      "location": "Table 9"
+     }
+    },
+    "walker2d-*": {
+     "return_to_go_conditioning": {
+      "value": "5000",
+      "quote": "                                               5000 Walker",
+      "location": "Table 9"
+     }
+    }
+   },
+   "evaluation_protocol": {
+    "seeds": "3",
+    "episodes_per_seed": "not stated",
+    "checkpoint_selection": "not stated",
+    "quote": "Table 2: Results for D4RL datasets3 . We report the mean and variance for three seeds.",
+    "location": "Table 2 caption"
+   },
+   "dataset_version": {
+    "value": "unknown",
+    "quote": "In this section, we consider the continuous control tasks from the D4RL benchmark [23].",
+    "location": "Section 4.2 — no '-v0'/'-v2' string anywhere in the text"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 86.8,
+     "std": 1.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "20",
+      "return_to_go_conditioning": "6000"
+     },
+     "table": "Table 2",
+     "line_quote": "          Medium-Expert        HalfCheetah     86.8 ± 1.3        62.4      53.4       41.9     52.7    59.9",
+     "notes": "Dataset printed as 'Medium-Expert / HalfCheetah' style; 'Walker' = walker2d. Std is over 3 seeds ('mean and variance for three seeds')."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 107.6,
+     "std": 1.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "20",
+      "return_to_go_conditioning": "3600"
+     },
+     "table": "Table 2",
+     "line_quote": "          Medium-Expert        Hopper          107.6 ± 1.8      111.0      96.3        0.8     27.1    79.6",
+     "notes": "Dataset printed as 'Medium-Expert / HalfCheetah' style; 'Walker' = walker2d. Std is over 3 seeds ('mean and variance for three seeds')."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 108.1,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "20",
+      "return_to_go_conditioning": "5000"
+     },
+     "table": "Table 2",
+     "line_quote": "          Medium-Expert        Walker         108.1 ± 0.2        98.7      40.1       81.6     53.8    36.6",
+     "notes": "Dataset printed as 'Medium-Expert / HalfCheetah' style; 'Walker' = walker2d. Std is over 3 seeds ('mean and variance for three seeds')."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.6,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "20",
+      "return_to_go_conditioning": "6000"
+     },
+     "table": "Table 2",
+     "line_quote": "          Medium               HalfCheetah       42.6 ± 0.1      44.4      41.7      46.3      37.4   43.1",
+     "notes": "Dataset printed as 'Medium-Expert / HalfCheetah' style; 'Walker' = walker2d. Std is over 3 seeds ('mean and variance for three seeds')."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 67.6,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "20",
+      "return_to_go_conditioning": "3600"
+     },
+     "table": "Table 2",
+     "line_quote": "          Medium               Hopper           67.6 ± 1.0       58.0      52.1      31.1      35.9   63.9",
+     "notes": "Dataset printed as 'Medium-Expert / HalfCheetah' style; 'Walker' = walker2d. Std is over 3 seeds ('mean and variance for three seeds')."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 74.0,
+     "std": 1.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "20",
+      "return_to_go_conditioning": "5000"
+     },
+     "table": "Table 2",
+     "line_quote": "          Medium               Walker            74.0 ± 1.4      79.2      59.1      81.1      17.4   77.3",
+     "notes": "Dataset printed as 'Medium-Expert / HalfCheetah' style; 'Walker' = walker2d. Std is over 3 seeds ('mean and variance for three seeds')."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 36.6,
+     "std": 0.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "20",
+      "return_to_go_conditioning": "6000"
+     },
+     "table": "Table 2",
+     "line_quote": "          Medium-Replay        HalfCheetah       36.6 ± 0.8      46.2      38.6      47.7      40.3     4.3",
+     "notes": "Dataset printed as 'Medium-Expert / HalfCheetah' style; 'Walker' = walker2d. Std is over 3 seeds ('mean and variance for three seeds')."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 82.7,
+     "std": 7.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "20",
+      "return_to_go_conditioning": "3600"
+     },
+     "table": "Table 2",
+     "line_quote": "          Medium-Replay        Hopper           82.7 ± 7.0       48.6      33.7       0.6      28.4    27.6",
+     "notes": "Dataset printed as 'Medium-Expert / HalfCheetah' style; 'Walker' = walker2d. Std is over 3 seeds ('mean and variance for three seeds')."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 66.6,
+     "std": 3.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "context_length_K": "20",
+      "return_to_go_conditioning": "5000"
+     },
+     "table": "Table 2",
+     "line_quote": "          Medium-Replay        Walker            66.6 ± 3.0       26.7      19.2       0.9      15.5    36.9",
+     "notes": "Dataset printed as 'Medium-Expert / HalfCheetah' style; 'Walker' = walker2d. Std is over 3 seeds ('mean and variance for three seeds')."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 107.3,
+     "std": 3.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "delayed (sparse) reward",
+     "config_conditions": {
+      "reward": "delayed (cumulative reward given only at final timestep)",
+      "context_length_K": "20",
+      "return_to_go_conditioning": "3600"
+     },
+     "table": "Table 7",
+     "line_quote": "      Medium-Expert                                        Hopper                     107.3 ± 3.5                                 9.0       59.9       102.6            107.6       111.0",
+     "notes": "NOT standard D4RL: dataset modified so agent 'does not receive any rewards along the trajectory, and instead receives the cumulative reward of the trajectory in the final timestep'. Not directly comparable to dense-reward rows."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 60.7,
+     "std": 4.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "delayed (sparse) reward",
+     "config_conditions": {
+      "reward": "delayed (cumulative reward given only at final timestep)",
+      "context_length_K": "20",
+      "return_to_go_conditioning": "3600"
+     },
+     "table": "Table 7",
+     "line_quote": "      Medium                                               Hopper                       60.7 ± 4.5                                5.2       63.9        65.9             67.6        58.0",
+     "notes": "NOT standard D4RL: dataset modified so agent 'does not receive any rewards along the trajectory, and instead receives the cumulative reward of the trajectory in the final timestep'. Not directly comparable to dense-reward rows."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 78.5,
+     "std": 3.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "delayed (sparse) reward",
+     "config_conditions": {
+      "reward": "delayed (cumulative reward given only at final timestep)",
+      "context_length_K": "20",
+      "return_to_go_conditioning": "3600"
+     },
+     "table": "Table 7",
+     "line_quote": "      Medium-Replay                                        Hopper                      78.5 ± 3.7                                 2.0       27.6        70.6             82.7        48.6",
+     "notes": "NOT standard D4RL: dataset modified so agent 'does not receive any rewards along the trajectory, and instead receives the cumulative reward of the trajectory in the final timestep'. Not directly comparable to dense-reward rows."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "CQL",
+  "BEAR",
+  "BRAC-v",
+  "AWR",
+  "BC",
+  "10%BC",
+  "25%BC",
+  "40%BC",
+  "100%BC"
+ ],
+ "problems": [
+  "Context-length ablation (Table 5, K=1 vs K=30/50) is reported for Atari games only (Breakout, Qbert, Pong, Seaquest); no gym-locomotion K ablation table exists, so no K=1 rows emitted.",
+  "Table 3 (%BC comparison) repeats the same DT numbers as Table 2 — not extracted as separate rows.",
+  "D4RL dataset version never stated (no v0/v2 string in text). QDT paper (2209.03993) line 571-573 says 'Chen et al. (2021) appears to evaluate their model with the v2 dataset' but that is external; recorded here as unknown.",
+  "Number of evaluation episodes per seed not stated; checkpoint selection not stated.",
+  "Table 7 delayed-reward rows included with config_label 'delayed (sparse) reward' — they are on a modified benchmark, flag before pooling with standard rows."
+ ]
+}

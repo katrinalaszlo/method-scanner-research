@@ -1,0 +1,19 @@
+{
+  "paper": "Information Spreading (EFT)",
+  "timestamp": "20260824_152815",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 3.56,
+  "abstract": "We study score-matching diffusion models with a convolutional architecture. We argue that the inductive bias of locality means that the machinery of effective field theory from physics can be usefully applied to describe the denoising dynamics. We apply this formalism first to a simple toy example which permits an analytical description, and thereafter to MNIST, and show that in both cases, the mutual information between two points grows in a manner predicted by a simple effective field theory of Brownian motion.",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits \u2014\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We present a self-supervised approach that predicts the representation of one view\nfrom another. Predicting in representation space avoids pixel reconstruction, but without an\nasymmetric design the encoder collapses to a constant output. We use a stop-gradient to prevent this.\nJSON: {\"name\": \"Latent Prediction\", \"operations\": [\"encode\", \"predict\"], \"loss\": null, \"failure\": \"representation collapse without an asymmetric design\"}\n\nNow do the same for:\nDescription: We study score-matching diffusion models with a convolutional architecture. We argue that the inductive bias of locality means that the machinery of effective field theory from physics can be usefully applied to describe the denoising dynamics. We apply this formalism first to a simple toy example which permits an analytical description, and thereafter to MNIST, and show that in both cases, the mutual information between two points grows in a manner predicted by a simple effective field theory of Brownian motion.\nJSON:\n",
+  "raw_response": "{\"name\": \"Score-Matching Diffusion Model\", \"operations\": [\"denoise\", \"describe\"], \"loss\": \"score matching\", \"failure\": \"none\"}",
+  "data": {
+    "name": "Score-Matching Diffusion Model",
+    "operations": [
+      "denoise",
+      "describe"
+    ],
+    "loss": "score matching",
+    "failure": null
+  }
+}

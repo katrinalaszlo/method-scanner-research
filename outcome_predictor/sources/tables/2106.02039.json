@@ -1,0 +1,496 @@
+{
+ "arxiv_id": "2106.02039",
+ "title": "Offline Reinforcement Learning as One Big Sequence Modeling Problem",
+ "methods": [
+  {
+   "method_name": "TT (uniform)",
+   "is_own_method": true,
+   "one_paragraph_description": "Trajectory Transformer discretizes each state/action/reward/reward-to-go dimension into tokens (uniform discretization), trains a GPT-style decoder autoregressively on the token stream, and at runtime plans with beam search: candidate sequences are scored by predicted cumulative reward plus the model's reward-to-go estimate (return-maximizing beam search), the first action of the best sequence is executed, and the search is repeated as a receding-horizon controller.",
+   "conventional_lineage_hint": "sequence modeling as offline RL / model-based planning ('we use beam search (Reddy, 1977), a ... in place of the trajectory optimizers common in model-based control'; 'Offline Reinforcement Learning as One Big Sequence Modeling Problem')",
+   "global_conditions": {
+    "num_layers": {
+     "value": "4",
+     "quote": "with four layers and four self-attention heads. The total input vocabulary of the model is V × (N +",
+     "location": "Appendix A"
+    },
+    "num_attention_heads": {
+     "value": "4",
+     "quote": "with four layers and four self-attention heads. The total input vocabulary of the model is V × (N +",
+     "location": "Appendix A"
+    },
+    "embedding_dim": {
+     "value": "128",
+     "quote": "is 128. Dropout is applied at the end of each block with probability 0.1.",
+     "location": "Appendix A"
+    },
+    "dropout": {
+     "value": "0.1",
+     "quote": "is 128. Dropout is applied at the end of each block with probability 0.1.",
+     "location": "Appendix A"
+    },
+    "learning_rate": {
+     "value": "2.5e-4",
+     "quote": "2.5 × 10−4 over the course of 2000 updates. We use a batch size of 256.",
+     "location": "Appendix A"
+    },
+    "lr_warmup_updates": {
+     "value": "2000",
+     "quote": "2.5 × 10−4 over the course of 2000 updates. We use a batch size of 256.",
+     "location": "Appendix A"
+    },
+    "batch_size": {
+     "value": "256",
+     "quote": "2.5 × 10−4 over the course of 2000 updates. We use a batch size of 256.",
+     "location": "Appendix A"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "0 through i − 1 of the state at timestep t, and similarly for at . We use the Adam optimizer (Kingma",
+     "location": "Section 3.1"
+    },
+    "training_epochs": {
+     "value": "80",
+     "quote": "Azure) for 80 epochs, taking approximately 6-12 hours (varying with dataset size) per model on one",
+     "location": "Appendix A (Hardware)"
+    },
+    "beam_width": {
+     "value": "256",
+     "quote": "    Beam width            maximum number of hypotheses retained during beam search          256",
+     "location": "Appendix E"
+    },
+    "planning_horizon": {
+     "value": "15",
+     "quote": "    Planning horizon      number of transitions predicted by the model during               15",
+     "location": "Appendix E"
+    },
+    "vocabulary_size": {
+     "value": "100",
+     "quote": "    Vocabulary size       number of bins used for autoregressive discretization             100",
+     "location": "Appendix E"
+    },
+    "context_size_transitions": {
+     "value": "5",
+     "quote": "    Context size          number of input (st , at , rt , Rt ) transitions                   5",
+     "location": "Appendix E"
+    },
+    "k_obs": {
+     "value": "1",
+     "quote": "    kobs                  top-k tokens from which observations are sampled                   1",
+     "location": "Appendix E"
+    },
+    "k_act": {
+     "value": "20",
+     "quote": "    kact                  top-k tokens from which actions                                   20",
+     "location": "Appendix E"
+    },
+    "discretization": {
+     "value": "uniform",
+     "quote": "   Dataset                                Environment       BC      MBOP        BRAC         CQL         DT          TT (uniform)    TT (quantile)",
+     "location": "Table 1 header; Section 3.1 defines Uniform vs Quantile"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "15 (5 independently trained Transformers × 3 trajectories each)",
+    "episodes_per_seed": "3 trajectories per trained model",
+    "checkpoint_selection": "not stated",
+    "quote": "tasks. Results for TT variants correspond to the mean and standard error over 15 random seeds (5 / independently trained Transformers and 3 trajectories per Transformer).",
+    "location": "Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "or better than the best prior offline reinforcement learning algorithms on D4RL locomotion (v2)",
+    "location": "Table 1 caption"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 40.8,
+     "std": 2.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "uniform",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Med-Expert                                HalfCheetah       59.9      105.9        41.9      91.6       86.8           40.8 ±2.3       95.0 ±0.2",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (uniform)'."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 106.0,
+     "std": 0.28,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "uniform",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Med-Expert                                Hopper            79.6       55.1         0.9     105.4      107.6         106.0 ±0.28      110.0 ±2.7",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (uniform)'."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 91.0,
+     "std": 2.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "uniform",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Med-Expert                                Walker2d          36.6       70.2        81.6     108.8      108.1           91.0 ±2.8      101.9 ±6.8",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (uniform)'."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 44.0,
+     "std": 0.31,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "uniform",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium                                    HalfCheetah       43.1       44.6        46.3       44.0       42.6         44.0 ±0.31       46.9 ±0.4",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (uniform)'."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 67.4,
+     "std": 2.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "uniform",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium                                    Hopper            63.9       48.8        31.3       58.5       67.6          67.4 ±2.9       61.1 ±3.6",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (uniform)'."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 81.3,
+     "std": 2.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "uniform",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium                                    Walker2d          77.3       41.0        81.1       72.5       74.0          81.3 ±2.1       79.0 ±2.8",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (uniform)'."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 44.1,
+     "std": 0.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "uniform",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Med-Replay                                HalfCheetah        4.3       42.3        47.7       45.5       36.6          44.1 ±0.9       41.9 ±2.5",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (uniform)'."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 99.4,
+     "std": 3.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "uniform",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Med-Replay                                Hopper            27.6       12.4         0.6       95.0       82.7          99.4 ±3.2       91.5 ±3.6",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (uniform)'."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 79.4,
+     "std": 3.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "uniform",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Med-Replay                                Walker2d          36.9        9.7         0.9       77.2       66.6          79.4 ±3.3       82.6 ±6.9",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (uniform)'."
+    }
+   ]
+  },
+  {
+   "method_name": "TT (quantile)",
+   "is_own_method": true,
+   "one_paragraph_description": "Trajectory Transformer discretizes each state/action/reward/reward-to-go dimension into tokens (quantile discretization), trains a GPT-style decoder autoregressively on the token stream, and at runtime plans with beam search: candidate sequences are scored by predicted cumulative reward plus the model's reward-to-go estimate (return-maximizing beam search), the first action of the best sequence is executed, and the search is repeated as a receding-horizon controller.",
+   "conventional_lineage_hint": "sequence modeling as offline RL / model-based planning ('we use beam search (Reddy, 1977), a ... in place of the trajectory optimizers common in model-based control'; 'Offline Reinforcement Learning as One Big Sequence Modeling Problem')",
+   "global_conditions": {
+    "num_layers": {
+     "value": "4",
+     "quote": "with four layers and four self-attention heads. The total input vocabulary of the model is V × (N +",
+     "location": "Appendix A"
+    },
+    "num_attention_heads": {
+     "value": "4",
+     "quote": "with four layers and four self-attention heads. The total input vocabulary of the model is V × (N +",
+     "location": "Appendix A"
+    },
+    "embedding_dim": {
+     "value": "128",
+     "quote": "is 128. Dropout is applied at the end of each block with probability 0.1.",
+     "location": "Appendix A"
+    },
+    "dropout": {
+     "value": "0.1",
+     "quote": "is 128. Dropout is applied at the end of each block with probability 0.1.",
+     "location": "Appendix A"
+    },
+    "learning_rate": {
+     "value": "2.5e-4",
+     "quote": "2.5 × 10−4 over the course of 2000 updates. We use a batch size of 256.",
+     "location": "Appendix A"
+    },
+    "lr_warmup_updates": {
+     "value": "2000",
+     "quote": "2.5 × 10−4 over the course of 2000 updates. We use a batch size of 256.",
+     "location": "Appendix A"
+    },
+    "batch_size": {
+     "value": "256",
+     "quote": "2.5 × 10−4 over the course of 2000 updates. We use a batch size of 256.",
+     "location": "Appendix A"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "0 through i − 1 of the state at timestep t, and similarly for at . We use the Adam optimizer (Kingma",
+     "location": "Section 3.1"
+    },
+    "training_epochs": {
+     "value": "80",
+     "quote": "Azure) for 80 epochs, taking approximately 6-12 hours (varying with dataset size) per model on one",
+     "location": "Appendix A (Hardware)"
+    },
+    "beam_width": {
+     "value": "256",
+     "quote": "    Beam width            maximum number of hypotheses retained during beam search          256",
+     "location": "Appendix E"
+    },
+    "planning_horizon": {
+     "value": "15",
+     "quote": "    Planning horizon      number of transitions predicted by the model during               15",
+     "location": "Appendix E"
+    },
+    "vocabulary_size": {
+     "value": "100",
+     "quote": "    Vocabulary size       number of bins used for autoregressive discretization             100",
+     "location": "Appendix E"
+    },
+    "context_size_transitions": {
+     "value": "5",
+     "quote": "    Context size          number of input (st , at , rt , Rt ) transitions                   5",
+     "location": "Appendix E"
+    },
+    "k_obs": {
+     "value": "1",
+     "quote": "    kobs                  top-k tokens from which observations are sampled                   1",
+     "location": "Appendix E"
+    },
+    "k_act": {
+     "value": "20",
+     "quote": "    kact                  top-k tokens from which actions                                   20",
+     "location": "Appendix E"
+    },
+    "discretization": {
+     "value": "quantile",
+     "quote": "   Dataset                                Environment       BC      MBOP        BRAC         CQL         DT          TT (uniform)    TT (quantile)",
+     "location": "Table 1 header; Section 3.1 defines Uniform vs Quantile"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "15 (5 independently trained Transformers × 3 trajectories each)",
+    "episodes_per_seed": "3 trajectories per trained model",
+    "checkpoint_selection": "not stated",
+    "quote": "tasks. Results for TT variants correspond to the mean and standard error over 15 random seeds (5 / independently trained Transformers and 3 trajectories per Transformer).",
+    "location": "Table 1 caption"
+   },
+   "dataset_version": {
+    "value": "v2",
+    "quote": "or better than the best prior offline reinforcement learning algorithms on D4RL locomotion (v2)",
+    "location": "Table 1 caption"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 95.0,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "quantile",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Med-Expert                                HalfCheetah       59.9      105.9        41.9      91.6       86.8           40.8 ±2.3       95.0 ±0.2",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (quantile)'."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 110.0,
+     "std": 2.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "quantile",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Med-Expert                                Hopper            79.6       55.1         0.9     105.4      107.6         106.0 ±0.28      110.0 ±2.7",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (quantile)'."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 101.9,
+     "std": 6.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "quantile",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Med-Expert                                Walker2d          36.6       70.2        81.6     108.8      108.1           91.0 ±2.8      101.9 ±6.8",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (quantile)'."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 46.9,
+     "std": 0.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "quantile",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium                                    HalfCheetah       43.1       44.6        46.3       44.0       42.6         44.0 ±0.31       46.9 ±0.4",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (quantile)'."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 61.1,
+     "std": 3.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "quantile",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium                                    Hopper            63.9       48.8        31.3       58.5       67.6          67.4 ±2.9       61.1 ±3.6",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (quantile)'."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 79.0,
+     "std": 2.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "quantile",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Medium                                    Walker2d          77.3       41.0        81.1       72.5       74.0          81.3 ±2.1       79.0 ±2.8",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (quantile)'."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 41.9,
+     "std": 2.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "quantile",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Med-Replay                                HalfCheetah        4.3       42.3        47.7       45.5       36.6          44.1 ±0.9       41.9 ±2.5",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (quantile)'."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 91.5,
+     "std": 3.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "quantile",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Med-Replay                                Hopper            27.6       12.4         0.6       95.0       82.7          99.4 ±3.2       91.5 ±3.6",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (quantile)'."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 82.6,
+     "std": 6.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "discretization": "quantile",
+      "beam_width": "256",
+      "planning_horizon": "15"
+     },
+     "table": "Table 1",
+     "line_quote": "Med-Replay                                Walker2d          36.9        9.7         0.9       77.2       66.6          79.4 ±3.3       82.6 ±6.9",
+     "notes": "± is standard ERROR (not std) over 15 random seeds (5 transformers × 3 trajectories). Column: 'TT (quantile)'."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BC",
+  "MBOP",
+  "BRAC",
+  "CQL",
+  "DT"
+ ],
+ "problems": [
+  "Discount factor γ for reward-to-go not given numerically anywhere in text.",
+  "Appendix E says 'In many environments, the beam width and horizon may be reduced to speed up planning without affecting performance' and refers to the reference implementation — so per-dataset beam/horizon may differ from the listed 256/15; not recoverable from text.",
+  "No beam-width / horizon ablation table on locomotion datasets; only Figure-based prediction-error ablations (Markovian variant, Fig. 3) which are not scores — excluded.",
+  "Imitation learning (Sec 4.2: 104% Hopper, 109% Walker2d) is a different task (likelihood-maximizing beam search, expert data) — excluded.",
+  "Checkpoint selection not stated."
+ ]
+}

@@ -1,0 +1,144 @@
+{
+  "paper": "Continuous control with deep reinforcement learning",
+  "timestamp": "20260825_001534",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 25.55,
+  "abstract": "A LGORITHM It is not possible to straightforwardly apply Q-learning to continuous action spaces, because in continuous spaces finding the greedy policy requires an optimization of at at every timestep; this optimization is too slow to be practical with large, unconstrained function approximators and nontrivial action spaces. Instead, here we used an actor-critic approach based on the DPG algorithm (Silver et al., 2014). The DPG algorithm maintains a parameterized actor function \u00b5(s|\u03b8\u00b5 ) which specifies the current policy by deterministically mapping states to a specific action. The critic Q(s, a) is learned using the Bellman equation as in Q-learning. The actor is updated by following the applying the chain rule to the expected return from the start distribution J with respect to the actor parameters: \u0002 \u0003 \u2207\u03b8\u00b5 J \u2248 Est \u223c\u03c1\u03b2 \u2207\u03b8\u00b5 Q(s, a|\u03b8Q )|s=st ,a=\u00b5(st |\u03b8\u00b5 ) (6) \u0002 \u0003 = Est \u223c\u03c1\u03b2 \u2207a Q(s, a|\u03b8Q )|s=st ,a=\u00b5(st ) \u2207\u03b8\u00b5 \u00b5(s|\u03b8\u00b5 )|s=st Silver et al. (2014) proved that this is the policy gradient, the gradient of the policy\u2019s performance 2 . As with Q learning, introducing non-linear function approximators means that convergence is no longer guaranteed. However, such approximators appear essential in order to learn and generalize on large state spaces. NFQCA (Hafner & Riedmiller, 2011), which uses the same update rules as DPG but with neural network function approximators, uses batch learning for stability, which is intractable for large networks. A minibatch version of NFQCA which does not reset the policy at each update, as would be required to scale to large networks, is equivalent to the original DPG, which we compare to here. Our contribution here is to provide modifications to DPG, inspired by the success of DQN, which allow it to use neural network function approximators to learn in large state and action spaces online. We refer to our algorithm as Deep DPG (DDPG, Algorithm 1). 2 In practice, as in commonly done in policy gradient implementations, we ignored the discount in the statevisitation distribution \u03c1\u03b2 . 3 Published as a conference paper at ICLR 2016 One challenge when using neural networks for reinforcement learning is that most optimization algorithms assume that the samples are independently and identically distributed. Obviously, when the samples are generated from exploring sequentially in an environment this assumption no longer holds. Additionally, to make efficient use of hardware optimizations, it is essential to learn in minibatches, rather than online. As in DQN, we used a replay buffer to address these issues. The replay buffer is a finite sized cache R. Transitions were sampled from the environment according to the exploration policy and the tuple (st , at , rt , st+1 ) was stored in the replay buffer. When the replay buffer was full the oldest samples were discarded. At each timestep the actor and critic are updated by sampling a minibatch uniformly from the buffer. Because DDPG is an off-policy algorithm, the replay buffer can be large, allowing the algorithm to benefit from learning across a set of uncorrelated transitions. Directly implementing Q learning (equation 4) with neural networks proved to be unstable in many environments. Since the network Q(s, a|\u03b8Q ) being updated is also used in calculating the target value (equation 5), the Q update is prone to divergence. Our solution is similar to the target network used in (Mnih et al., 2013) but modified for actor-critic and using \u201csoft\u201d target updates, rather than 0 directly copying the weights. We create a copy of the actor and critic networks, Q0 (s, a|\u03b8Q ) and 0 \u00b50 (s|\u03b8\u00b5 ) respectively, that are used for calculating the target values. The weights of these target networks are then updated by having them slowly track the learned networks: \u03b80 \u2190 \u03c4 \u03b8 + (1 \u2212 \u03c4 )\u03b80 with \u03c4 1. This means that the target values are constrained to change slowly, greatly improving the stability of learning. This simple change moves the relatively unstable problem of learning the action-value function closer to the case of supervised learning, a problem for which robust solutions exist. We found that having both a target \u00b50 and Q0 was required to have stable targets yi in order to consistently train the critic without divergence. This may slow learning, since the target network delays the propagation of value estimations. However, in practice we found this was greatly outweighed by the stability of learning. When learning from low dimensional feature vector observations, the different components of the observation may have different physical units (for example, positions versus velocities) and the ranges may vary across environments. This can make it difficult for the network to learn effectively and may make it difficult to find hyper-parameters which generalise across environments with different scales of state values. One approach to this problem is to manually scale the features so they are in similar ranges across environments and units. We address this issue by adapting a recent technique from deep learning called batch normalization (Ioffe & Szegedy, 2015). This technique normalizes each dimension across the samples in a minibatch to have unit mean and variance. In addition, it maintains a running average of the mean and variance to use for normalization during testing (in our case, during exploration or evaluation). In deep networks, it is used to minimize covariance shift during training, by ensuring that each layer receives whitened input. In the low-dimensional case, we used batch normalization on the state input and all layers of the \u00b5 network and all layers of the Q network prior to the action input (details of the networks are given in the supplementary material). With batch normalization, we were able to learn effectively across many different tasks with differing types of units, without needing to manually ensure the units were within a set range. A major challenge of learning in continuous action spaces is exploration. An advantage of offpolicies algorithms such as DDPG is that we can treat the problem of exploration independently from the learning algorithm. We constructed an exploration policy \u00b50 by adding noise sampled from a noise process N to our actor policy \u00b50 (st ) = \u00b5(st |\u03b8t\u00b5 ) + N (7) N can be chosen to suit the environment. As detailed in the supplementary materials we used an Ornstein-Uhlenbeck process (Uhlenbeck & Ornstein, 1930) to generate temporally correlated exploration for exploration efficiency in physical control problems with inertia (similar use of autocorrelated noise was introduced in (Wawrzyn\u0301ski, 2015)). 4 R ESULTS We constructed simulated physical environments of varying levels of difficulty to test our algorithm. This included classic reinforcement learning environments such as cartpole, as well as difficult, 4 Published as a conference paper at ICLR 2016 Algorithm 1 DDPG algorithm Randomly initialize critic network Q(s, a|\u03b8Q ) and actor \u00b5(s|\u03b8\u00b5 ) with weights \u03b8Q and \u03b8\u00b5 . 0 0 Initialize target network Q0 and \u00b50 with weights \u03b8Q \u2190 \u03b8Q , \u03b8\u00b5 \u2190 \u03b8\u00b5 Initialize replay buffer R for episode = 1, M do Initialize a random process N for action exploration Receive initial observation state s1 for t = 1, T do Select action at = \u00b5(st |\u03b8\u00b5 ) + Nt according to the current policy and exploration noise Execute action at and observe reward rt and observe new state st+1 Store transition (st , at , rt , st+1 ) in R Sample a random minibatch of N transitions (si , ai , ri , si+1 ) from R 0 0 Set yi = ri + \u03b3Q0 (si+1 , \u00b50 (si+1 |\u03b8\u00b5 )|\u03b8Q ) P Update critic by minimizing the loss: L = N1 i (yi \u2212 Q(si , ai |\u03b8Q ))2 Update the actor policy using the sampled policy gradient: 1 X \u2207\u03b8 \u00b5 J \u2248 \u2207a Q(s, a|\u03b8Q )|s=si ,a=\u00b5(si ) \u2207\u03b8\u00b5 \u00b5(s|\u03b8\u00b5 )|si N i Update the target networks: 0 0 0 0 \u03b8Q \u2190 \u03c4 \u03b8Q + (1 \u2212 \u03c4 )\u03b8Q \u03b8\u00b5 \u2190 \u03c4 \u03b8\u00b5 + (1 \u2212 \u03c4 )\u03b8\u00b5 end for end for high dimensional tasks such as gripper, tasks involving contacts such as puck striking (canada) and locomotion tasks such as cheetah (Wawrzyn\u0301ski, 2009). In all domains but cheetah the actions were torques applied to the actuated joints. These environments were simulated using MuJoCo (Todorov et al., 2012). Figure 1 shows renderings of some of the environments used in the task (the supplementary contains details of the environments and you can view some of the learned policies at https://goo.gl/J4PIAz). In all tasks, we ran experiments using both a low-dimensional state description (such as joint angles and positions) and high-dimensional renderings of the environment. As in DQN (Mnih et al., 2013; 2015), in order to make the problems approximately fully observable in the high dimensional environment we used action repeats. For each timestep of the agent, we step the simulation 3 timesteps, repeating the agent\u2019s action and rendering each time. Thus the observation reported to the agent contains 9 feature maps (the RGB of each of the 3 renderings) which allows the agent to infer velocities using the differences between frames.",
+  "source": "arxiv:1509.02971 [policy-gradient] heading: ALGORITHM",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits \u2014\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We describe a speech enhancement system. A recurrent network estimates a spectral\nmask from noisy audio, the mask is applied to the spectrogram, and the result is inverted back to\na waveform. The method struggles at very low signal-to-noise ratios, where it introduces musical\nnoise artifacts.\nJSON: {\"name\": \"Mask-Based Speech Enhancement\", \"operations\": [\"estimate\", \"mask\", \"invert\"], \"loss\": null, \"failure\": \"musical noise artifacts at very low signal-to-noise ratios\"}\n\nExample\nDescription: We index a document collection with an inverted index. Each document is tokenized,\ntokens are stemmed, and a posting list is built per term. Queries are answered by intersecting\nposting lists and ranking by BM25.\nJSON: {\"name\": \"Inverted Index Retrieval\", \"operations\": [\"tokenize\", \"stem\", \"intersect\", \"rank\"], \"loss\": null, \"failure\": null}\n\nRules for \"failure\": extract it only when the Description itself states a limitation, instability,\nor breakdown condition (for example \"diverges when\", \"struggles with\", \"fails under\"). Quote the\nDescription's own words. If the Description states no weakness, \"failure\" is null \u2014 that is the\nnormal case, not a fallback. Never reuse wording from the examples.\n\nNow do the same for:\nDescription: A LGORITHM It is not possible to straightforwardly apply Q-learning to continuous action spaces, because in continuous spaces finding the greedy policy requires an optimization of at at every timestep; this optimization is too slow to be practical with large, unconstrained function approximators and nontrivial action spaces. Instead, here we used an actor-critic approach based on the DPG algorithm (Silver et al., 2014). The DPG algorithm maintains a parameterized actor function \u00b5(s|\u03b8\u00b5 ) which specifies the current policy by deterministically mapping states to a specific action. The critic Q(s, a) is learned using the Bellman equation as in Q-learning. The actor is updated by following the applying the chain rule to the expected return from the start distribution J with respect to the actor parameters: \u0002 \u0003 \u2207\u03b8\u00b5 J \u2248 Est \u223c\u03c1\u03b2 \u2207\u03b8\u00b5 Q(s, a|\u03b8Q )|s=st ,a=\u00b5(st |\u03b8\u00b5 ) (6) \u0002 \u0003 = Est \u223c\u03c1\u03b2 \u2207a Q(s, a|\u03b8Q )|s=st ,a=\u00b5(st ) \u2207\u03b8\u00b5 \u00b5(s|\u03b8\u00b5 )|s=st Silver et al. (2014) proved that this is the policy gradient, the gradient of the policy\u2019s performance 2 . As with Q learning, introducing non-linear function approximators means that convergence is no longer guaranteed. However, such approximators appear essential in order to learn and generalize on large state spaces. NFQCA (Hafner & Riedmiller, 2011), which uses the same update rules as DPG but with neural network function approximators, uses batch learning for stability, which is intractable for large networks. A minibatch version of NFQCA which does not reset the policy at each update, as would be required to scale to large networks, is equivalent to the original DPG, which we compare to here. Our contribution here is to provide modifications to DPG, inspired by the success of DQN, which allow it to use neural network function approximators to learn in large state and action spaces online. We refer to our algorithm as Deep DPG (DDPG, Algorithm 1). 2 In practice, as in commonly done in policy gradient implementations, we ignored the discount in the statevisitation distribution \u03c1\u03b2 . 3 Published as a conference paper at ICLR 2016 One challenge when using neural networks for reinforcement learning is that most optimization algorithms assume that the samples are independently and identically distributed. Obviously, when the samples are generated from exploring sequentially in an environment this assumption no longer holds. Additionally, to make efficient use of hardware optimizations, it is essential to learn in minibatches, rather than online. As in DQN, we used a replay buffer to address these issues. The replay buffer is a finite sized cache R. Transitions were sampled from the environment according to the exploration policy and the tuple (st , at , rt , st+1 ) was stored in the replay buffer. When the replay buffer was full the oldest samples were discarded. At each timestep the actor and critic are updated by sampling a minibatch uniformly from the buffer. Because DDPG is an off-policy algorithm, the replay buffer can be large, allowing the algorithm to benefit from learning across a set of uncorrelated transitions. Directly implementing Q learning (equation 4) with neural networks proved to be unstable in many environments. Since the network Q(s, a|\u03b8Q ) being updated is also used in calculating the target value (equation 5), the Q update is prone to divergence. Our solution is similar to the target network used in (Mnih et al., 2013) but modified for actor-critic and using \u201csoft\u201d target updates, rather than 0 directly copying the weights. We create a copy of the actor and critic networks, Q0 (s, a|\u03b8Q ) and 0 \u00b50 (s|\u03b8\u00b5 ) respectively, that are used for calculating the target values. The weights of these target networks are then updated by having them slowly track the learned networks: \u03b80 \u2190 \u03c4 \u03b8 + (1 \u2212 \u03c4 )\u03b80 with \u03c4 1. This means that the target values are constrained to change slowly, greatly improving the stability of learning. This simple change moves the relatively unstable problem of learning the action-value function closer to the case of supervised learning, a problem for which robust solutions exist. We found that having both a target \u00b50 and Q0 was required to have stable targets yi in order to consistently train the critic without divergence. This may slow learning, since the target network delays the propagation of value estimations. However, in practice we found this was greatly outweighed by the stability of learning. When learning from low dimensional feature vector observations, the different components of the observation may have different physical units (for example, positions versus velocities) and the ranges may vary across environments. This can make it difficult for the network to learn effectively and may make it difficult to find hyper-parameters which generalise across environments with different scales of state values. One approach to this problem is to manually scale the features so they are in similar ranges across environments and units. We address this issue by adapting a recent technique from deep learning called batch normalization (Ioffe & Szegedy, 2015). This technique normalizes each dimension across the samples in a minibatch to have unit mean and variance. In addition, it maintains a running average of the mean and variance to use for normalization during testing (in our case, during exploration or evaluation). In deep networks, it is used to minimize covariance shift during training, by ensuring that each layer receives whitened input. In the low-dimensional case, we used batch normalization on the state input and all layers of the \u00b5 network and all layers of the Q network prior to the action input (details of the networks are given in the supplementary material). With batch normalization, we were able to learn effectively across many different tasks with differing types of units, without needing to manually ensure the units were within a set range. A major challenge of learning in continuous action spaces is exploration. An advantage of offpolicies algorithms such as DDPG is that we can treat the problem of exploration independently from the learning algorithm. We constructed an exploration policy \u00b50 by adding noise sampled from a noise process N to our actor policy \u00b50 (st ) = \u00b5(st |\u03b8t\u00b5 ) + N (7) N can be chosen to suit the environment. As detailed in the supplementary materials we used an Ornstein-Uhlenbeck process (Uhlenbeck & Ornstein, 1930) to generate temporally correlated exploration for exploration efficiency in physical control problems with inertia (similar use of autocorrelated noise was introduced in (Wawrzyn\u0301ski, 2015)). 4 R ESULTS We constructed simulated physical environments of varying levels of difficulty to test our algorithm. This included classic reinforcement learning environments such as cartpole, as well as difficult, 4 Published as a conference paper at ICLR 2016 Algorithm 1 DDPG algorithm Randomly initialize critic network Q(s, a|\u03b8Q ) and actor \u00b5(s|\u03b8\u00b5 ) with weights \u03b8Q and \u03b8\u00b5 . 0 0 Initialize target network Q0 and \u00b50 with weights \u03b8Q \u2190 \u03b8Q , \u03b8\u00b5 \u2190 \u03b8\u00b5 Initialize replay buffer R for episode = 1, M do Initialize a random process N for action exploration Receive initial observation state s1 for t = 1, T do Select action at = \u00b5(st |\u03b8\u00b5 ) + Nt according to the current policy and exploration noise Execute action at and observe reward rt and observe new state st+1 Store transition (st , at , rt , st+1 ) in R Sample a random minibatch of N transitions (si , ai , ri , si+1 ) from R 0 0 Set yi = ri + \u03b3Q0 (si+1 , \u00b50 (si+1 |\u03b8\u00b5 )|\u03b8Q ) P Update critic by minimizing the loss: L = N1 i (yi \u2212 Q(si , ai |\u03b8Q ))2 Update the actor policy using the sampled policy gradient: 1 X \u2207\u03b8 \u00b5 J \u2248 \u2207a Q(s, a|\u03b8Q )|s=si ,a=\u00b5(si ) \u2207\u03b8\u00b5 \u00b5(s|\u03b8\u00b5 )|si N i Update the target networks: 0 0 0 0 \u03b8Q \u2190 \u03c4 \u03b8Q + (1 \u2212 \u03c4 )\u03b8Q \u03b8\u00b5 \u2190 \u03c4 \u03b8\u00b5 + (1 \u2212 \u03c4 )\u03b8\u00b5 end for end for high dimensional tasks such as gripper, tasks involving contacts such as puck striking (canada) and locomotion tasks such as cheetah (Wawrzyn\u0301ski, 2009). In all domains but cheetah the actions were torques applied to the actuated joints. These environments were simulated using MuJoCo (Todorov et al., 2012). Figure 1 shows renderings of some of the environments used in the task (the supplementary contains details of the environments and you can view some of the learned policies at https://goo.gl/J4PIAz). In all tasks, we ran experiments using both a low-dimensional state description (such as joint angles and positions) and high-dimensional renderings of the environment. As in DQN (Mnih et al., 2013; 2015), in order to make the problems approximately fully observable in the high dimensional environment we used action repeats. For each timestep of the agent, we step the simulation 3 timesteps, repeating the agent\u2019s action and rendering each time. Thus the observation reported to the agent contains 9 feature maps (the RGB of each of the 3 renderings) which allows the agent to infer velocities using the differences between frames.\nJSON:\n",
+  "raw_response": "{\"name\": \"Deep Deterministic Policy Gradient\", \"operations\": [\"initialize\", \"sample\", \"update\", \"store\", \"select\", \"execute\", \"observe\", \"normalize\"], \"loss\": \"mean squared error\", \"failure\": \"learning the action-value function is prone to divergence\"}",
+  "data": {
+    "name": "Deep Deterministic Policy Gradient",
+    "operations": [
+      "initialize",
+      "sample",
+      "update",
+      "store",
+      "select",
+      "execute",
+      "observe",
+      "normalize"
+    ],
+    "loss": "mean squared error",
+    "failure": "learning the action-value function is prone to divergence"
+  },
+  "semantic_ops_v2": [
+    {
+      "op": "initialize",
+      "object_type": "parameter",
+      "context": "unspecified",
+      "quote": "Randomly initialize critic network Q(s, a|\u03b8Q ) and actor \u00b5(s|\u03b8\u00b5 ) with weights \u03b8Q and \u03b8\u00b5 .",
+      "grounded": true
+    },
+    {
+      "op": "sample",
+      "object_type": "sample",
+      "context": "stochastic",
+      "quote": "Sample a random minibatch of N transitions (si , ai , ri , si+1 ) from R",
+      "grounded": true
+    },
+    {
+      "op": "update",
+      "object_type": "parameter",
+      "context": "stochastic",
+      "quote": "Update the critic by minimizing the loss: L = 1/N \u2211i (yi \u2212 Q(si , ai |\u03b8Q ))2",
+      "grounded": false
+    },
+    {
+      "op": "store",
+      "object_type": "sample",
+      "context": "stochastic",
+      "quote": "Store transition (st , at , rt , st+1 ) in R",
+      "grounded": true
+    },
+    {
+      "op": "select",
+      "object_type": "action",
+      "context": "stochastic",
+      "quote": "Select action at = \u00b5(st |\u03b8\u00b5 ) + Nt according to the current policy and exploration noise",
+      "grounded": true
+    },
+    {
+      "op": "execute",
+      "object_type": "action",
+      "context": "deterministic",
+      "quote": "Execute action at and observe reward rt and observe new state st+1",
+      "grounded": true
+    },
+    {
+      "op": "observe",
+      "object_type": "state",
+      "context": "temporal",
+      "quote": "Receive initial observation state s1",
+      "grounded": true
+    },
+    {
+      "op": "normalize",
+      "object_type": "input",
+      "context": "stochastic",
+      "quote": "This technique normalizes each dimension across the samples in a minibatch to have unit mean and variance.",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_v2_model": "qwen3:8b",
+  "semantic_ops": [
+    {
+      "op": "initialize",
+      "object_type": "parameter",
+      "context": "unspecified",
+      "quote": "Randomly initialize critic network Q(s, a|\u03b8Q ) and actor \u00b5(s|\u03b8\u00b5 ) with weights \u03b8Q and \u03b8\u00b5 .",
+      "grounded": true
+    },
+    {
+      "op": "sample",
+      "object_type": "sample",
+      "context": "unspecified",
+      "quote": "Sample a random minibatch of N transitions (si , ai , ri , si+1 ) from R",
+      "grounded": true
+    },
+    {
+      "op": "update",
+      "object_type": "parameter",
+      "context": "unspecified",
+      "quote": "Update the critic by minimizing the loss: L = 1/N \u2211i (yi \u2212 Q(si , ai |\u03b8Q ))2",
+      "grounded": false
+    },
+    {
+      "op": "store",
+      "object_type": "sample",
+      "context": "unspecified",
+      "quote": "Store transition (st , at , rt , st+1 ) in R",
+      "grounded": true
+    },
+    {
+      "op": "select",
+      "object_type": "action",
+      "context": "unspecified",
+      "quote": "Select action at = \u00b5(st |\u03b8\u00b5 ) + Nt according to the current policy and exploration noise",
+      "grounded": true
+    },
+    {
+      "op": "execute",
+      "object_type": "action",
+      "context": "unspecified",
+      "quote": "Execute action at and observe reward rt and observe new state st+1",
+      "grounded": true
+    },
+    {
+      "op": "observe",
+      "object_type": "input",
+      "context": "unspecified",
+      "quote": "Receive initial observation state s1",
+      "grounded": true
+    },
+    {
+      "op": "normalize",
+      "object_type": "input",
+      "context": "unspecified",
+      "quote": "This technique normalizes each dimension across the samples in a minibatch to have unit mean and variance.",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_model": "qwen3:8b"
+}

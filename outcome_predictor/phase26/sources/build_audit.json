@@ -1,0 +1,86 @@
+{
+ "SimPLe": {
+  "excluded:Ours, deterministic": 36,
+  "excluded:Ours, det. recurrent": 36,
+  "included:main": 25,
+  "excluded:Ours, SD": 36,
+  "excluded:Ours, SD \u03b3 = 0.90": 36,
+  "excluded:Ours, SD \u03b3 = 0.95": 36,
+  "excluded:Ours, SD 100 steps": 36,
+  "excluded:Ours, SD 25 steps": 36,
+  "excluded:game Asteroids": 1,
+  "excluded:game Atlantis": 1,
+  "excluded:game BeamRider": 1,
+  "excluded:game Bowling": 1,
+  "excluded:game FishingDerby": 1,
+  "excluded:no reference frostbite": 1,
+  "excluded:game Gravitar": 1,
+  "excluded:game IceHockey": 1,
+  "excluded:game NameThisGame": 1,
+  "excluded:game Riverraid": 1,
+  "excluded:game YarsRevenge": 1
+ },
+ "DER": {
+  "included:main": 26
+ },
+ "OTRainbow": {
+  "included:main": 26
+ },
+ "CURL": {
+  "included:main": 26
+ },
+ "DrQ": {
+  "included:main": 26
+ },
+ "SPR": {
+  "included:main": 26,
+  "included:no_aug": 26
+ },
+ "PlayVirtual": {
+  "included:main": 26
+ },
+ "MLR": {
+  "included:main": 26
+ },
+ "EfficientZero": {
+  "included:main": 26,
+  "excluded:w.o. consistency": 26,
+  "excluded:w.o. value prefix": 26,
+  "excluded:w.o. off-policy correction": 26,
+  "excluded:Table 8/9 Full (separate run)": 8,
+  "excluded:Table 8 w.o. consistency": 8,
+  "included:no_aug": 8,
+  "excluded:Table 9 w.o. off-policy correction": 8,
+  "excluded:w.o. dynamic horizon": 8,
+  "excluded:w.o. MCTS root value": 8
+ },
+ "IRIS": {
+  "included:main": 26,
+  "excluded:64 tokens per frame": 3
+ },
+ "TWM": {
+  "included:main": 26
+ },
+ "DreamerV3": {
+  "included:main": 26
+ },
+ "BBF": {
+  "included:main": 26
+ },
+ "STORM": {
+  "included:main": 26,
+  "excluded:w/o demonstration trajectory": 1
+ },
+ "DIAMOND": {
+  "included:main": 26,
+  "excluded:denoising_steps=1": 10
+ },
+ "EfficientZeroV2": {
+  "included:main": 26,
+  "excluded:value_target=multi-step TD": 3,
+  "excluded:value_target=GAE": 3
+ },
+ "DeltaIRIS": {
+  "included:main": 26
+ }
+}

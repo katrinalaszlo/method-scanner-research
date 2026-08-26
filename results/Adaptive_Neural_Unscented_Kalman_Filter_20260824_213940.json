@@ -1,0 +1,181 @@
+{
+  "paper": "Adaptive Neural Unscented Kalman Filter",
+  "timestamp": "20260824_213940",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 57.5,
+  "abstract": "Compute the estimated measurement of each sigma point: z i,k+1|k = h(xi,k+1|k ), i = 0, ..., 2n (17) Compute the mean estimated measurement: z\u0302 k+1|k = 2n X wim z i,k+1|k (18) i=0 Compute the measurement covariance matrix: Sk+1 = 2n X wic \u03b4z i,k+1|k \u00b7 \u03b4z i,k+1|k T + Rk+1 Fig. 1: Our proposed ANUKF implemented on the DVL/INS fusion problem. (19) i=0 where \u03b4z i,k+1|k = z i,k+1|k \u2212 z\u0302 k+1|k , Rk+1 is the measurement process noise at step k + 1. Compute the cross-covariance matrix: Px,z k+1 = 2n X wic \u03b4xi,k+1|k \u00b7 \u03b4z Ti,k+1|k (20) i=0 where \u03b4xi,k+1|k = xi,k+1|k \u2212 x\u0302k+1|k and \u03b4z i,k+1|k = z i,k+1|k \u2212 z\u0302 k+1|k . Compute the Kalman gain: \u22121 Kk+1 = Px,z k+1 Sk+1 (21) Compute the new mean according to the observation zk+1 : x\u0302k+1|k+1 = x\u0302k|k+1 + Kk+1 (zk+1 \u2212 z\u0302 k+1|k ) (22) Compute the new covariance matrix using the Kalman gain: Pk+1|k+1 = Pk+1|k \u2212 Kk+1 Sk+1 Kk+1 T (23) Equation (13) introduces Qk+1 , the process noise covariance matrix at step k + 1, affecting directly Pk+1|k , the error covariance matrix. As noted, the process noise may change. It is critical to estimate it correctly, otherwise loss of accuracy or even divergence may occur. III. P ROPOSED A PPROACH To cope with real-time adaptive process noise covariance matrix estimation in nonlinear filtering, we propose ANUKF, an adaptive neural unscented Kalman filter. The motivation for our approach stems from the fact that although the UKF structure enables it to better handle nonlinear problems, it lacks the ability to cope with real-world varying uncertainty. By contrast, our ANUKF offers a simple and efficient neural network to learn the uncertainty of the process noise covariance using only inertial sensor readings. For demonstration purposes, we adopted the DVL and INS (DVL/INS) fusion problem but the proposed ANUKF can be applied to any inertial fusion problem. A block diagram of ANUKF for DVL/INS fusion is presented in Figure 1. The inertial sensor readings and the estimated velocity of the DVL are plugged into the UKF. Additional inputs to our regression network, ProcessNet, are the inertial readings. ANUKF outputs the adaptive process noise covariance matrix required by the UKF mechanism and gives the full estimated navigation solution. A. ANUKF for DVL/INS fusion The following 12 error state vector is used in the DVL/INS settings: \u0002 \u0003 \u03b4x = \u03b4v n \u03b4\u03a8n ba bg \u2208 R12\u00d71 (24) where \u03b4v n \u2208 R3 is the velocity error state vector, expressed in the navigation frame, \u03b4\u03a8n \u2208 R3 is the misalignment error state vector, expressed in the navigation frame, ba \u2208 R3 is the accelerometers residual bias vector expressed in the body frame, and bg \u2208 R3 is the gyroscope\u2019s residual bias vector expressed in the body frame. The body frame is an orthogonal axis set (x,y,z), centered on the reference point of the inertial measurements: the x-axis aligns with the AUV\u2019s longitudinal axis, pointing in the forward direction; the zaxis extends downward; and the y-axis extends outward, completing the right-hand orthogonal coordinate system. The inertial measurements are modeled with their true values, with the addition of bias and zero mean white Gaussian noise: f bib = f bib,t + ba + na (25) \u03c9 bib = \u03c9 bib,t + bg + ng (26) b where fib,t is the measured specific force vector, \u03c9 bib,t is the measured angular velocity expressed in the body frame, bi i = a, g is the bias vector of the accelerometer and gyroscope, respectively, and ni i = a, g is the zero mean white Gaussian noise of the accelerometer and gyroscope, respectively. The biases are modeled as random walk processes: b\u0307a = nab \u223c N (0, \u03c3ab 2 ) (27) b\u0307g = ngb \u223c N (0, \u03c3gb 2 ) (28) where \u03c3ab and \u03c3gb are the accelerometer and gyroscope Gaussian noise standard deviations, respectively. The UKF error state continuous time model is \u03b4\u0307x = F\u03b4x + G\u03b4w 12\u00d712 (29) where F \u2208 R is the system matrix (see [17] section 12.2.4), \u03b4w = [nTa nTg nab T ng b T ]T \u2208 R12\u00d71 is the system noise vector, and G \u2208 R12\u00d712 is the system noise distribution matrix \uf8ee n \uf8f9 Cb 03\u00d73 03\u00d73 03\u00d73 n \uf8ef03\u00d73 Cb 03\u00d73 03\u00d73 \uf8fa \uf8fa G=\uf8ef (30) \uf8f003\u00d73 03\u00d73 I3\u00d73 03\u00d73 \uf8fb 03\u00d73 03\u00d73 03\u00d73 I3\u00d73 4 with Cnb representing the rotation matrix from the body frame to the navigation frame, as calculated by the navigation algorithm, 03\u00d73 is the zero matrix, and I3\u00d73 is the identity matrix. The discrete process noise covariance is obtained based on the continuous process noise covariance and given by ([1] section 4.3.4): Qk+1 = Gk+1 \u00b7 Q\u2217k+1 \u00b7 GTk+1 (31) Q\u2217k+1 = diag(\u03b4\u03c9) \u2208 R12x12 (32) where The measurement, (22), requires the calculation of the mean estimated measurement (18). It depends on z i,k+1|k , the estimation of the velocity error vector in the body frame axes of sigma-point i, i = 0, ..., 2n, as shown in (17). To this end, we computed z i,k+1|k as follows: n z i,k+1|k = h(xi,k+1|k ) = Cbn \u00b7 C\u0302ni [v n + \u2206v\u0302 ni ] \u2212 Cbn \u00b7 v n , where the operation is defined elementwise (if x \u2208 Rm\u00d7n then also ReLU (x) \u2208 Rm\u00d7n ). Using a window size of w = 100, the first layer is defined by: 3 X l1 (i, k) =max([ dinpad (i : i + 2, j) j=1 \u2217 \u03981 (j, k, 1 : 3)T ] + b1 (k), 0) (35) i = 1, ...100, k = 1, ..., 30. where dinpad \u2208 R102\u00d73 is the padded input, dinpad (i : i+2, j) is the row vector [dinpad (i, j), dinpad (i + 1, j), dinpad (i + 2, j)],P\u2217 is the cross-correlation operator (if a, c \u2208 R3\u00d71 , aT \u2217 3 c = h=1 a(h) \u00b7 c(h)). l1 \u2208 R100\u00d730 , \u03981 \u2208 R3\u00d730\u00d73 , b1 \u2208 R30\u00d71 , and max is the ReLU operation. The second layer is defined by: 30 X l2 (i, k) =max([ l1pad (i : i + 2, j) j=1 \u2217 \u03982 (j, k, 1 : 3)T ] + b2 (k), 0) (36) i = 1, ...100, k = 1, ..., 30. i = 0, ..., 2n (33) where, Cnb is the computed rotation matrix from the navigation frame to the AUV body frame, C\u0302nni is the estimated misalignment (\u03b4\u03a8ni ) of sigma point i, v n is the computed velocity in the navigation frame, and \u2206v\u0302 ni is the estimated velocity error of sigma point i given in the navigation frame. with l2 \u2208 R100\u00d730 , l1pad \u2208 R102\u00d730 , \u03982 \u2208 R30\u00d730\u00d73 , and b2 \u2208 R30\u00d71 . The third layer, l3 \u2208 R50\u00d730 , is: l3 (i, k) =0.5 \u00b7 l2 (2 \u00b7 i \u2212 1, k) + l2 (2 \u00b7 i, k) i = 1, ...50, k = 1, ..., 30. (37) and the forth layer, l4 \u2208 R50\u00d730 , is: B. ProcessNet Structure The dynamic accelerometers and gyroscopes process noise covariance network architecture is described in Figure 2. Although the network structure is identical, the accelerometer ProcessNet and gyroscope ProcessNet differ in their input and output. The input to the accelerometer ProcessNet network at time step k is the accelerometer readings in a predefined window size and the output is the diagonal entries in the process noise covariance matrix that corresponds to the accelerometers. The dynamic gyroscope ProcessNet network architecture is similar to the accelerometer network but it has scale components to the input and the output, forcing the network to work with sufficiently large numbers. The network inputs at time step k are the gyroscope readings in a predefined window size and the output is the diagonal entries in the process noise covariance matrix that corresponds to the gyroscopes. Next, we defined the network layers, as shown in Figure 2. The network receives an input din \u2208 Rw\u00d73 , where 3 is the number of input channels and w is the window size length (number of samples in each input). Each layer is denoted by li , where i is the number of the layer, bi is the bias vector, and \u0398i represents the weights of layer i. We also used the rectified linear unit (ReLU) activation function between each layer defined by (34), followed by max/average pooling. 30 X l4 (i, k) =max([ l3pad (i : i + 2, j) j=1 \u2217 \u03983 (j, k, 1 : 3)T ] + b3 (k), 0) (38) i = 1, ...50, k = 1, ..., 30. where l3pad \u2208 R52\u00d730 , \u03983 \u2208 R30\u00d730\u00d73 , and b3 \u2208 R30\u00d71 . The fifth layer, l5 \u2208 R50\u00d730 , is defined by: 30 X l5 (i, k) =max([ l4pad (i : i + 2, j) j=1 \u2217 \u03984 (j, k, 1 : 3)T ] + b4 (k), 0) (39) i = 1, ...50, k = 1, ..., 30. where l4pad \u2208 R52\u00d730 ,",
+  "source": "arxiv:2503.05490 [state-estimation] heading: Compute the estimated measurement of each sigma",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits \u2014\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We describe a speech enhancement system. A recurrent network estimates a spectral\nmask from noisy audio, the mask is applied to the spectrogram, and the result is inverted back to\na waveform. The method struggles at very low signal-to-noise ratios, where it introduces musical\nnoise artifacts.\nJSON: {\"name\": \"Mask-Based Speech Enhancement\", \"operations\": [\"estimate\", \"mask\", \"invert\"], \"loss\": null, \"failure\": \"musical noise artifacts at very low signal-to-noise ratios\"}\n\nExample\nDescription: We index a document collection with an inverted index. Each document is tokenized,\ntokens are stemmed, and a posting list is built per term. Queries are answered by intersecting\nposting lists and ranking by BM25.\nJSON: {\"name\": \"Inverted Index Retrieval\", \"operations\": [\"tokenize\", \"stem\", \"intersect\", \"rank\"], \"loss\": null, \"failure\": null}\n\nRules for \"failure\": extract it only when the Description itself states a limitation, instability,\nor breakdown condition (for example \"diverges when\", \"struggles with\", \"fails under\"). Quote the\nDescription's own words. If the Description states no weakness, \"failure\" is null \u2014 that is the\nnormal case, not a fallback. Never reuse wording from the examples.\n\nNow do the same for:\nDescription: Compute the estimated measurement of each sigma point: z i,k+1|k = h(xi,k+1|k ), i = 0, ..., 2n (17) Compute the mean estimated measurement: z\u0302 k+1|k = 2n X wim z i,k+1|k (18) i=0 Compute the measurement covariance matrix: Sk+1 = 2n X wic \u03b4z i,k+1|k \u00b7 \u03b4z i,k+1|k T + Rk+1 Fig. 1: Our proposed ANUKF implemented on the DVL/INS fusion problem. (19) i=0 where \u03b4z i,k+1|k = z i,k+1|k \u2212 z\u0302 k+1|k , Rk+1 is the measurement process noise at step k + 1. Compute the cross-covariance matrix: Px,z k+1 = 2n X wic \u03b4xi,k+1|k \u00b7 \u03b4z Ti,k+1|k (20) i=0 where \u03b4xi,k+1|k = xi,k+1|k \u2212 x\u0302k+1|k and \u03b4z i,k+1|k = z i,k+1|k \u2212 z\u0302 k+1|k . Compute the Kalman gain: \u22121 Kk+1 = Px,z k+1 Sk+1 (21) Compute the new mean according to the observation zk+1 : x\u0302k+1|k+1 = x\u0302k|k+1 + Kk+1 (zk+1 \u2212 z\u0302 k+1|k ) (22) Compute the new covariance matrix using the Kalman gain: Pk+1|k+1 = Pk+1|k \u2212 Kk+1 Sk+1 Kk+1 T (23) Equation (13) introduces Qk+1 , the process noise covariance matrix at step k + 1, affecting directly Pk+1|k , the error covariance matrix. As noted, the process noise may change. It is critical to estimate it correctly, otherwise loss of accuracy or even divergence may occur. III. P ROPOSED A PPROACH To cope with real-time adaptive process noise covariance matrix estimation in nonlinear filtering, we propose ANUKF, an adaptive neural unscented Kalman filter. The motivation for our approach stems from the fact that although the UKF structure enables it to better handle nonlinear problems, it lacks the ability to cope with real-world varying uncertainty. By contrast, our ANUKF offers a simple and efficient neural network to learn the uncertainty of the process noise covariance using only inertial sensor readings. For demonstration purposes, we adopted the DVL and INS (DVL/INS) fusion problem but the proposed ANUKF can be applied to any inertial fusion problem. A block diagram of ANUKF for DVL/INS fusion is presented in Figure 1. The inertial sensor readings and the estimated velocity of the DVL are plugged into the UKF. Additional inputs to our regression network, ProcessNet, are the inertial readings. ANUKF outputs the adaptive process noise covariance matrix required by the UKF mechanism and gives the full estimated navigation solution. A. ANUKF for DVL/INS fusion The following 12 error state vector is used in the DVL/INS settings: \u0002 \u0003 \u03b4x = \u03b4v n \u03b4\u03a8n ba bg \u2208 R12\u00d71 (24) where \u03b4v n \u2208 R3 is the velocity error state vector, expressed in the navigation frame, \u03b4\u03a8n \u2208 R3 is the misalignment error state vector, expressed in the navigation frame, ba \u2208 R3 is the accelerometers residual bias vector expressed in the body frame, and bg \u2208 R3 is the gyroscope\u2019s residual bias vector expressed in the body frame. The body frame is an orthogonal axis set (x,y,z), centered on the reference point of the inertial measurements: the x-axis aligns with the AUV\u2019s longitudinal axis, pointing in the forward direction; the zaxis extends downward; and the y-axis extends outward, completing the right-hand orthogonal coordinate system. The inertial measurements are modeled with their true values, with the addition of bias and zero mean white Gaussian noise: f bib = f bib,t + ba + na (25) \u03c9 bib = \u03c9 bib,t + bg + ng (26) b where fib,t is the measured specific force vector, \u03c9 bib,t is the measured angular velocity expressed in the body frame, bi i = a, g is the bias vector of the accelerometer and gyroscope, respectively, and ni i = a, g is the zero mean white Gaussian noise of the accelerometer and gyroscope, respectively. The biases are modeled as random walk processes: b\u0307a = nab \u223c N (0, \u03c3ab 2 ) (27) b\u0307g = ngb \u223c N (0, \u03c3gb 2 ) (28) where \u03c3ab and \u03c3gb are the accelerometer and gyroscope Gaussian noise standard deviations, respectively. The UKF error state continuous time model is \u03b4\u0307x = F\u03b4x + G\u03b4w 12\u00d712 (29) where F \u2208 R is the system matrix (see [17] section 12.2.4), \u03b4w = [nTa nTg nab T ng b T ]T \u2208 R12\u00d71 is the system noise vector, and G \u2208 R12\u00d712 is the system noise distribution matrix \uf8ee n \uf8f9 Cb 03\u00d73 03\u00d73 03\u00d73 n \uf8ef03\u00d73 Cb 03\u00d73 03\u00d73 \uf8fa \uf8fa G=\uf8ef (30) \uf8f003\u00d73 03\u00d73 I3\u00d73 03\u00d73 \uf8fb 03\u00d73 03\u00d73 03\u00d73 I3\u00d73 4 with Cnb representing the rotation matrix from the body frame to the navigation frame, as calculated by the navigation algorithm, 03\u00d73 is the zero matrix, and I3\u00d73 is the identity matrix. The discrete process noise covariance is obtained based on the continuous process noise covariance and given by ([1] section 4.3.4): Qk+1 = Gk+1 \u00b7 Q\u2217k+1 \u00b7 GTk+1 (31) Q\u2217k+1 = diag(\u03b4\u03c9) \u2208 R12x12 (32) where The measurement, (22), requires the calculation of the mean estimated measurement (18). It depends on z i,k+1|k , the estimation of the velocity error vector in the body frame axes of sigma-point i, i = 0, ..., 2n, as shown in (17). To this end, we computed z i,k+1|k as follows: n z i,k+1|k = h(xi,k+1|k ) = Cbn \u00b7 C\u0302ni [v n + \u2206v\u0302 ni ] \u2212 Cbn \u00b7 v n , where the operation is defined elementwise (if x \u2208 Rm\u00d7n then also ReLU (x) \u2208 Rm\u00d7n ). Using a window size of w = 100, the first layer is defined by: 3 X l1 (i, k) =max([ dinpad (i : i + 2, j) j=1 \u2217 \u03981 (j, k, 1 : 3)T ] + b1 (k), 0) (35) i = 1, ...100, k = 1, ..., 30. where dinpad \u2208 R102\u00d73 is the padded input, dinpad (i : i+2, j) is the row vector [dinpad (i, j), dinpad (i + 1, j), dinpad (i + 2, j)],P\u2217 is the cross-correlation operator (if a, c \u2208 R3\u00d71 , aT \u2217 3 c = h=1 a(h) \u00b7 c(h)). l1 \u2208 R100\u00d730 , \u03981 \u2208 R3\u00d730\u00d73 , b1 \u2208 R30\u00d71 , and max is the ReLU operation. The second layer is defined by: 30 X l2 (i, k) =max([ l1pad (i : i + 2, j) j=1 \u2217 \u03982 (j, k, 1 : 3)T ] + b2 (k), 0) (36) i = 1, ...100, k = 1, ..., 30. i = 0, ..., 2n (33) where, Cnb is the computed rotation matrix from the navigation frame to the AUV body frame, C\u0302nni is the estimated misalignment (\u03b4\u03a8ni ) of sigma point i, v n is the computed velocity in the navigation frame, and \u2206v\u0302 ni is the estimated velocity error of sigma point i given in the navigation frame. with l2 \u2208 R100\u00d730 , l1pad \u2208 R102\u00d730 , \u03982 \u2208 R30\u00d730\u00d73 , and b2 \u2208 R30\u00d71 . The third layer, l3 \u2208 R50\u00d730 , is: l3 (i, k) =0.5 \u00b7 l2 (2 \u00b7 i \u2212 1, k) + l2 (2 \u00b7 i, k) i = 1, ...50, k = 1, ..., 30. (37) and the forth layer, l4 \u2208 R50\u00d730 , is: B. ProcessNet Structure The dynamic accelerometers and gyroscopes process noise covariance network architecture is described in Figure 2. Although the network structure is identical, the accelerometer ProcessNet and gyroscope ProcessNet differ in their input and output. The input to the accelerometer ProcessNet network at time step k is the accelerometer readings in a predefined window size and the output is the diagonal entries in the process noise covariance matrix that corresponds to the accelerometers. The dynamic gyroscope ProcessNet network architecture is similar to the accelerometer network but it has scale components to the input and the output, forcing the network to work with sufficiently large numbers. The network inputs at time step k are the gyroscope readings in a predefined window size and the output is the diagonal entries in the process noise covariance matrix that corresponds to the gyroscopes. Next, we defined the network layers, as shown in Figure 2. The network receives an input din \u2208 Rw\u00d73 , where 3 is the number of input channels and w is the window size length (number of samples in each input). Each layer is denoted by li , where i is the number of the layer, bi is the bias vector, and \u0398i represents the weights of layer i. We also used the rectified linear unit (ReLU) activation function between each layer defined by (34), followed by max/average pooling. 30 X l4 (i, k) =max([ l3pad (i : i + 2, j) j=1 \u2217 \u03983 (j, k, 1 : 3)T ] + b3 (k), 0) (38) i = 1, ...50, k = 1, ..., 30. where l3pad \u2208 R52\u00d730 , \u03983 \u2208 R30\u00d730\u00d73 , and b3 \u2208 R30\u00d71 . The fifth layer, l5 \u2208 R50\u00d730 , is defined by: 30 X l5 (i, k) =max([ l4pad (i : i + 2, j) j=1 \u2217 \u03984 (j, k, 1 : 3)T ] + b4 (k), 0) (39) i = 1, ...50, k = 1, ..., 30. where l4pad \u2208 R52\u00d730 ,\nJSON:\n",
+  "raw_response": "{\"name\": \"ANUKF\", \"operations\": [\"compute measurement\", \"compute mean measurement\", \"compute covariance matrix\", \"compute cross-covariance matrix\", \"compute Kalman gain\", \"compute new mean\", \"compute new covariance\"], \"loss\": null, \"failure\": \"loss of accuracy or even divergence may occur\"}",
+  "data": {
+    "name": "ANUKF",
+    "operations": [
+      "compute measurement",
+      "compute mean measurement",
+      "compute covariance matrix",
+      "compute cross-covariance matrix",
+      "compute Kalman gain",
+      "compute new mean",
+      "compute new covariance"
+    ],
+    "loss": null,
+    "failure": "loss of accuracy or even divergence may occur"
+  },
+  "semantic_ops": [
+    {
+      "op": "compute measurement",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "Compute the estimated measurement of each sigma point: z i,k+1|k = h(xi,k+1|k ), i = 0, ..., 2n",
+      "grounded": true
+    },
+    {
+      "op": "compute mean measurement",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "Compute the mean estimated measurement: z\u0302 k+1|k = 2n X wim z i,k+1|k",
+      "grounded": true
+    },
+    {
+      "op": "compute covariance matrix",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "Compute the measurement covariance matrix: Sk+1 = 2n X wic \u03b4z i,k+1|k \u00b7 \u03b4z i,k+1|k T + Rk+1",
+      "grounded": true
+    },
+    {
+      "op": "compute cross-covariance matrix",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "Compute the cross-covariance matrix: Px,z k+1 = 2n X wic \u03b4xi,k+1|k \u00b7 \u03b4z Ti,k+1|k",
+      "grounded": true
+    },
+    {
+      "op": "compute Kalman gain",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "Compute the Kalman gain: Kk+1 = Px,z k+1 Sk+1",
+      "grounded": false
+    },
+    {
+      "op": "compute new mean",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "Compute the new mean according to the observation zk+1 : x\u0302k+1|k+1 = x\u0302k|k+1 + Kk+1 (zk+1 \u2212 z\u0302 k+1|k )",
+      "grounded": true
+    },
+    {
+      "op": "compute new covariance",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "Compute the new covariance matrix using the Kalman gain: Pk+1|k+1 = Pk+1|k \u2212 Kk+1 Sk+1 Kk+1 T",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_model": "qwen3:8b",
+  "semantic_ops_pass2": [
+    {
+      "op": "compute measurement",
+      "object_type": "state",
+      "context": "linear",
+      "quote": "Compute the estimated measurement of each sigma point: z i,k+1|k = h(xi,k+1|k ), i = 0, ..., 2n",
+      "grounded": true
+    },
+    {
+      "op": "compute mean measurement",
+      "object_type": "state",
+      "context": "linear",
+      "quote": "Compute the mean estimated measurement: z\u0302 k+1|k = 2n X wim z i,k+1|k",
+      "grounded": true
+    },
+    {
+      "op": "compute covariance matrix",
+      "object_type": "state",
+      "context": "linear",
+      "quote": "Compute the measurement covariance matrix: Sk+1 = 2n X wic \u03b4z i,k+1|k \u00b7 \u03b4z i,k+1|k T + Rk+1",
+      "grounded": true
+    },
+    {
+      "op": "compute cross-covariance matrix",
+      "object_type": "state",
+      "context": "linear",
+      "quote": "Compute the cross-covariance matrix: Px,z k+1 = 2n X wic \u03b4xi,k+1|k \u00b7 \u03b4z Ti,k+1|k",
+      "grounded": true
+    },
+    {
+      "op": "compute Kalman gain",
+      "object_type": "state",
+      "context": "linear",
+      "quote": "Compute the Kalman gain: Kk+1 = Px,z k+1 Sk+1",
+      "grounded": false
+    },
+    {
+      "op": "compute new mean",
+      "object_type": "state",
+      "context": "linear",
+      "quote": "Compute the new mean according to the observation zk+1 : x\u0302k+1|k+1 = x\u0302k|k+1 + Kk+1 (zk+1 \u2212 z\u0302 k+1|k )",
+      "grounded": true
+    },
+    {
+      "op": "compute new covariance",
+      "object_type": "state",
+      "context": "linear",
+      "quote": "Compute the new covariance matrix using the Kalman gain: Pk+1|k+1 = Pk+1|k \u2212 Kk+1 Sk+1 Kk+1 T",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_pass2_model": "qwen3:8b",
+  "semantic_ops_v2": [
+    {
+      "op": "compute measurement",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "Compute the estimated measurement of each sigma point: z i,k+1|k = h(xi,k+1|k ), i = 0, ..., 2n",
+      "grounded": true
+    },
+    {
+      "op": "compute mean measurement",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "Compute the mean estimated measurement: z\u0302 k+1|k = 2n X wim z i,k+1|k",
+      "grounded": true
+    },
+    {
+      "op": "compute covariance matrix",
+      "object_type": "error",
+      "context": "nonlinear",
+      "quote": "Compute the measurement covariance matrix: Sk+1 = 2n X wic \u03b4z i,k+1|k \u00b7 \u03b4z i,k+1|k T + Rk+1",
+      "grounded": true
+    },
+    {
+      "op": "compute cross-covariance matrix",
+      "object_type": "error",
+      "context": "nonlinear",
+      "quote": "Compute the cross-covariance matrix: Px,z k+1 = 2n X wic \u03b4xi,k+1|k \u00b7 \u03b4z Ti,k+1|k",
+      "grounded": true
+    },
+    {
+      "op": "compute Kalman gain",
+      "object_type": "error",
+      "context": "nonlinear",
+      "quote": "Compute the Kalman gain: Kk+1 = Px,z k+1 Sk+1",
+      "grounded": false
+    },
+    {
+      "op": "compute new mean",
+      "object_type": "state",
+      "context": "nonlinear",
+      "quote": "Compute the new mean according to the observation zk+1 : x\u0302k+1|k+1 = x\u0302k|k+1 + Kk+1 (zk+1 \u2212 z\u0302 k+1|k )",
+      "grounded": true
+    },
+    {
+      "op": "compute new covariance",
+      "object_type": "error",
+      "context": "nonlinear",
+      "quote": "Compute the new covariance matrix using the Kalman gain: Pk+1|k+1 = Pk+1|k \u2212 Kk+1 Sk+1 Kk+1 T",
+      "grounded": true
+    }
+  ],
+  "semantic_ops_v2_model": "qwen3:8b"
+}

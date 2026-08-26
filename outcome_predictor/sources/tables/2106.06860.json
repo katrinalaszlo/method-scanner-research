@@ -1,0 +1,588 @@
+{
+ "arxiv_id": "2106.06860",
+ "title": "A Minimalist Approach to Offline Reinforcement Learning",
+ "methods": [
+  {
+   "method_name": "TD3+BC",
+   "is_own_method": true,
+   "one_paragraph_description": "TD3 with two changes: (1) a behavior-cloning MSE term added to the deterministic policy update, weighted against Q by lambda = alpha / mean|Q(s,a)| (estimated over the mini-batch); (2) state features normalized by per-feature dataset mean and std. Everything else is unmodified TD3.",
+   "conventional_lineage_hint": "offline RL ('present an offline RL algorithm which requires minimal modifications to a pre-existing deep RL algorithm'; TD3 + behavior cloning regularizer)",
+   "global_conditions": {
+    "alpha": {
+     "value": "2.5",
+     "quote": "TD3+BC Hyperparameters          α                               2.5",
+     "location": "Table 4 / Section 5 ('We use α = 2.5 in our experiments.')"
+    },
+    "alpha_tuning": {
+     "value": "tuned over (1, 2, 2.5, 3, 4) on Hopper-medium-v0 and Hopper-expert-v0, single held-out seed",
+     "quote": "For TD3+BC, only α was tuned in the range (1, 2, 2.5, 3, 4) on Hopper-medium-v0 and Hopper-expert-v0 on a single seed which was unused in final reported results.",
+     "location": "Appendix B"
+    },
+    "state_normalization": {
+     "value": "yes (per-feature mean/std of dataset)",
+     "quote": "Secondly, we normalize the features of every state in the provided dataset.",
+     "location": "Section 5"
+    },
+    "optimizer": {
+     "value": "Adam",
+     "quote": "Optimizer                       Adam [Kingma and Ba, 2014]",
+     "location": "Table 4"
+    },
+    "critic_learning_rate": {
+     "value": "3e-4",
+     "quote": "Critic learning rate            3e-4",
+     "location": "Table 4"
+    },
+    "actor_learning_rate": {
+     "value": "3e-4",
+     "quote": "Actor learning rate             3e-4",
+     "location": "Table 4"
+    },
+    "batch_size": {
+     "value": "256",
+     "quote": "Mini-batch size                 256",
+     "location": "Table 4"
+    },
+    "discount": {
+     "value": "0.99",
+     "quote": "Discount factor                 0.99",
+     "location": "Table 4"
+    },
+    "target_update_rate": {
+     "value": "5e-3",
+     "quote": "Target update rate              5e-3",
+     "location": "Table 4"
+    },
+    "policy_noise": {
+     "value": "0.2",
+     "quote": "Policy noise                    0.2",
+     "location": "Table 4"
+    },
+    "policy_noise_clipping": {
+     "value": "(-0.5, 0.5)",
+     "quote": "Policy noise clipping           (-0.5, 0.5)",
+     "location": "Table 4"
+    },
+    "policy_update_frequency": {
+     "value": "2",
+     "quote": "Policy update frequency         2",
+     "location": "Table 4"
+    },
+    "critic_hidden_dim": {
+     "value": "256",
+     "quote": "Critic hidden dim               256",
+     "location": "Table 4"
+    },
+    "critic_hidden_layers": {
+     "value": "2",
+     "quote": "Critic hidden layers            2",
+     "location": "Table 4"
+    },
+    "actor_hidden_dim": {
+     "value": "256",
+     "quote": "Actor hidden dim                256",
+     "location": "Table 4"
+    },
+    "actor_hidden_layers": {
+     "value": "2",
+     "quote": "Actor hidden layers             2",
+     "location": "Table 4"
+    },
+    "activation": {
+     "value": "ReLU",
+     "quote": "Critic activation function      ReLU",
+     "location": "Table 4"
+    },
+    "training_steps": {
+     "value": "1M time steps",
+     "quote": "We train each algorithm for 1 million time steps and evaluate every 5000 time steps.",
+     "location": "Section 6"
+    },
+    "eval_frequency": {
+     "value": "every 5000 time steps, 10 episodes",
+     "quote": "We train each algorithm for 1 million time steps and evaluate every 5000 time steps. Each evaluation consists of 10 episodes.",
+     "location": "Section 6"
+    }
+   },
+   "per_dataset_conditions": {},
+   "evaluation_protocol": {
+    "seeds": "5",
+    "episodes_per_seed": "10 per evaluation, averaged over final 10 evaluations (100 episodes)",
+    "checkpoint_selection": "last (average of final 10 evaluations)",
+    "quote": "Table 2: Average normalized score over the final 10 evaluations and 5 seeds.",
+    "location": "Table 2 caption / Section 6"
+   },
+   "dataset_version": {
+    "value": "v0",
+    "quote": "All D4RL datasets [Fu et al., 2020] use the v0 version.",
+    "location": "Appendix B (Table 9 re-runs on -v2: 'we re-run TD3+BC on the -v2 datasets')"
+   },
+   "rows": [
+    {
+     "dataset": "halfcheetah-random",
+     "outcome": 10.2,
+     "std": 1.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "HalfCheetah     2.0 ±0.1       23.5     2.2     21.7 ±0.9     32.2 ±2.2        10.2 ±1.3",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "hopper-random",
+     "outcome": 11.0,
+     "std": 0.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "Hopper          9.5 ±0.1      11.1     9.6      10.7 ±0.1     11.4 ±0.2        11.0 ±0.1",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "walker2d-random",
+     "outcome": 1.4,
+     "std": 1.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "Walker2d        1.2 ±0.2       0.8     5.1       2.7 ±1.2      0.6 ±0.6         1.4 ±1.6",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "halfcheetah-medium",
+     "outcome": 42.8,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "HalfCheetah    36.6 ±0.6      44.0     37.4     37.2 ±0.3     41.3 ±0.5        42.8 ±0.3",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "hopper-medium",
+     "outcome": 99.5,
+     "std": 1.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "Hopper         30.0 ±0.5       31.2    72.0     44.2 ±10.8    99.4 ±0.4        99.5 ±1.0",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "walker2d-medium",
+     "outcome": 79.7,
+     "std": 1.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "Walker2d       11.4 ±6.3      72.7     30.1     57.5 ±8.3     79.5 ±1.0        79.7 ±1.8",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay",
+     "outcome": 43.3,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "Medium    HalfCheetah    34.7 ±1.8      45.6         -    41.9 ±1.1     43.3 ±0.9        43.3 ±0.5",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "hopper-medium-replay",
+     "outcome": 31.4,
+     "std": 3.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "Hopper         19.7 ±5.9        0.7        -    28.6 ±0.9     35.6 ±2.5        31.4 ±3.0",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "walker2d-medium-replay",
+     "outcome": 25.2,
+     "std": 5.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "Walker2d        8.3 ±1.5       -0.3        -    15.8 ±2.6     42.6 ±7.0        25.2 ±5.1",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert",
+     "outcome": 97.9,
+     "std": 4.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "Medium    HalfCheetah    67.6 ±13.2      43.8    36.8     27.1 ±3.9     96.1 ±9.5        97.9 ±4.4",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "hopper-medium-expert",
+     "outcome": 112.2,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "Hopper         89.6 ±27.6       1.1    80.9    111.4 ±1.2     90.6 ±43.3      112.2 ±0.2",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "walker2d-medium-expert",
+     "outcome": 101.1,
+     "std": 9.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "Walker2d       12.0 ±5.8       -0.3    42.7     68.1 ±13.1   103.6 ±4.6       101.1 ±9.3",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "halfcheetah-expert",
+     "outcome": 105.7,
+     "std": 1.9,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "HalfCheetah   105.2 ±1.7        3.8    78.5     82.4 ±7.4    106.8 ±3.0       105.7 ±1.9",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "hopper-expert",
+     "outcome": 112.2,
+     "std": 0.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "Expert   Hopper        111.5 ±1.3        6.6    85.2    111.2 ±2.1    112.3 ±0.2       112.2 ±0.2",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "walker2d-expert",
+     "outcome": 105.7,
+     "std": 2.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v0"
+     },
+     "table": "Table 2",
+     "line_quote": "Walker2d       56.0 ±24.9      -0.2    57.0    103.8 ±7.6     79.9 ±32.4       105.7 ±2.7",
+     "notes": "Table 2 prints environment (e.g. 'HalfCheetah') under a dataset-group row label (Random/Medium/Medium Replay/Medium Expert/Expert); dataset name here is composed from group + environment. ± is std over seeds. v0 datasets."
+    },
+    {
+     "dataset": "halfcheetah-random-v2",
+     "outcome": 11.0,
+     "std": 1.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "HalfCheetah                -               11.0 ±1.1",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds."
+    },
+    {
+     "dataset": "hopper-random-v2",
+     "outcome": 8.5,
+     "std": 0.6,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "Random             Hopper                     -                8.5 ±0.6",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds."
+    },
+    {
+     "dataset": "walker2d-random-v2",
+     "outcome": 1.6,
+     "std": 1.7,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "Walker2d                   -                1.6 ±1.7",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds."
+    },
+    {
+     "dataset": "halfcheetah-medium-v2",
+     "outcome": 48.3,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "HalfCheetah           42.6 ±0.1            48.3 ±0.3",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds."
+    },
+    {
+     "dataset": "hopper-medium-v2",
+     "outcome": 59.3,
+     "std": 4.2,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium             Hopper                67.6 ±1              59.3 ±4.2",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds."
+    },
+    {
+     "dataset": "walker2d-medium-v2",
+     "outcome": 83.7,
+     "std": 2.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "Walker2d              74.0 ±1.4            83.7 ±2.1",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds."
+    },
+    {
+     "dataset": "halfcheetah-medium-replay-v2",
+     "outcome": 44.6,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "HalfCheetah           36.6 ±0.8            44.6 ±0.5",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds."
+    },
+    {
+     "dataset": "hopper-medium-replay-v2",
+     "outcome": 60.9,
+     "std": 18.8,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium-Replay          Hopper                82.7 ±7              60.9 ±18.8",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds."
+    },
+    {
+     "dataset": "walker2d-medium-replay-v2",
+     "outcome": 81.8,
+     "std": 5.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "Walker2d              66.6 ±3              81.8 ±5.5",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds."
+    },
+    {
+     "dataset": "halfcheetah-medium-expert-v2",
+     "outcome": 90.7,
+     "std": 4.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "HalfCheetah          86.8 ±1.3             90.7 ±4.3",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds."
+    },
+    {
+     "dataset": "hopper-medium-expert-v2",
+     "outcome": 98.0,
+     "std": 9.4,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "Medium-Expert          Hopper              107.6 ±1.8             98.0 ±9.4",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds."
+    },
+    {
+     "dataset": "walker2d-medium-expert-v2",
+     "outcome": 110.1,
+     "std": 0.5,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "Walker2d            108.1 ±0.2            110.1 ±0.5",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds."
+    },
+    {
+     "dataset": "halfcheetah-expert-v2",
+     "outcome": 96.7,
+     "std": 1.1,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "HalfCheetah                -               96.7 ±1.1",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds."
+    },
+    {
+     "dataset": "hopper-expert-v2",
+     "outcome": 107.8,
+     "std": 7.0,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "Expert            Hopper                     -              107.8 ±7",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds. Table prints '±7' for hopper-expert std (no decimal)."
+    },
+    {
+     "dataset": "walker2d-expert-v2",
+     "outcome": 110.2,
+     "std": 0.3,
+     "outcome_is_mean_over_seeds": true,
+     "config_label": "main (v2 datasets)",
+     "config_conditions": {
+      "alpha": "2.5",
+      "state_normalization": "yes",
+      "dataset_version": "v2"
+     },
+     "table": "Table 9",
+     "line_quote": "Walker2d                   -              110.2 ±0.3",
+     "notes": "Same algorithm/hyperparameters re-run on D4RL -v2 datasets (Appendix C.3). Dataset name composed from group + environment + '-v2'. ± is std over seeds."
+    }
+   ]
+  }
+ ],
+ "baseline_rows_seen": [
+  "BC",
+  "BRAC-p",
+  "AWAC",
+  "CQL",
+  "Fisher-BRC",
+  "DT"
+ ],
+ "problems": [
+  "Table 2 / Table 9 print environment names under group labels; dataset names were composed (group + environment). Layout is unambiguous (3 environments per group, in order HalfCheetah/Hopper/Walker2d).",
+  "Ablations (Figure 5 component ablation, Figure 6 alpha sweep alpha in {1,2,3,4}, Figure 7 normalization) are figure-only percent differences; not extracted.",
+  "Table 7 (50% random + 50% expert mixture) is not a standard D4RL dataset; skipped.",
+  "Table 9 hopper-expert std printed as '±7' without decimals."
+ ]
+}

@@ -1,0 +1,20 @@
+{
+  "paper": "DALI (Zero-Shot RL)",
+  "timestamp": "20260824_152804",
+  "model": "qwen3:8b",
+  "elapsed_seconds": 4.71,
+  "abstract": "Real-world reinforcement learning demands adaptation to unseen environmental conditions without costly retraining. Contextual Markov Decision Processes (cMDP) model this challenge, but existing methods often require explicit context variables (e.g., friction, gravity), limiting their use when contexts are latent or hard to measure. We introduce Dynamics-Aligned Latent Imagination (DALI), a framework integrated within the Dreamer architecture that infers latent context representations from agent-environment interactions. By training a self-supervised encoder to predict forward dynamics, DALI generates actionable representations conditioning the world model and policy, bridging perception and control.",
+  "system_prompt": "You are a structured data extractor. Output ONLY valid JSON. No explanations, no markdown.",
+  "user_prompt": "\nExtract the method structure. \"operations\" must name what the algorithm computes at runtime,\nnot what the authors do in the paper. \"loss\" is the objective the method optimizes, named as a\nloss function. \"failure\" is a weakness, limitation, or failure mode the description admits \u2014\nlook for words like collapse, degrade, fail, limited, struggle, unstable, accumulate, sensitive.\n\nExample\nDescription: In this paper we propose SORT. We formulate tracking as assignment: the tracker\npredicts each track's next box with a Kalman filter, matches detections to tracks by IoU, and\nupdates the track states. We show state-of-the-art results on MOT15.\nJSON: {\"name\": \"SORT\", \"operations\": [\"predict\", \"match\", \"update\"], \"loss\": null, \"failure\": null}\n\nExample\nDescription: We study a masked autoencoder. The encoder embeds visible patches, the decoder\nreconstructs the masked ones, and training minimizes mean squared error. Performance degrades\nat very high mask ratios.\nJSON: {\"name\": \"Masked Autoencoder\", \"operations\": [\"embed\", \"reconstruct\"], \"loss\": \"mean squared error\", \"failure\": \"performance degrades at very high mask ratios\"}\n\nExample\nDescription: We present a self-supervised approach that predicts the representation of one view\nfrom another. Predicting in representation space avoids pixel reconstruction, but without an\nasymmetric design the encoder collapses to a constant output. We use a stop-gradient to prevent this.\nJSON: {\"name\": \"Latent Prediction\", \"operations\": [\"encode\", \"predict\"], \"loss\": null, \"failure\": \"representation collapse without an asymmetric design\"}\n\nNow do the same for:\nDescription: Real-world reinforcement learning demands adaptation to unseen environmental conditions without costly retraining. Contextual Markov Decision Processes (cMDP) model this challenge, but existing methods often require explicit context variables (e.g., friction, gravity), limiting their use when contexts are latent or hard to measure. We introduce Dynamics-Aligned Latent Imagination (DALI), a framework integrated within the Dreamer architecture that infers latent context representations from agent-environment interactions. By training a self-supervised encoder to predict forward dynamics, DALI generates actionable representations conditioning the world model and policy, bridging perception and control.\nJSON:\n",
+  "raw_response": "{\"name\": \"Dynamics-Aligned Latent Imagination\", \"operations\": [\"infer\", \"predict\", \"condition\"], \"loss\": null, \"failure\": \"requires explicit context variables\"}",
+  "data": {
+    "name": "Dynamics-Aligned Latent Imagination",
+    "operations": [
+      "infer",
+      "predict",
+      "condition"
+    ],
+    "loss": null,
+    "failure": "requires explicit context variables"
+  }
+}
