@@ -1,0 +1,129 @@
+{
+ "arxiv_id": "2004.13649",
+ "section_how": "heading: Sample Efficient Reinforcement Learning from Pixels",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 15,
+ "n_invalid_object": 0,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "at \u223c \u03c0(\u00b7|st )",
+   "grounded": true
+  },
+  {
+   "op": "sample next state",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "s0t \u223c p(\u00b7|st , at )",
+   "grounded": true
+  },
+  {
+   "op": "store transition",
+   "canonical": "store transition",
+   "object": "trajectory",
+   "quote": "D \u2190 D \u222a (st , at , r(st , at ), s0t )",
+   "grounded": true
+  },
+  {
+   "op": "update critic",
+   "canonical": "correct",
+   "object": "value",
+   "quote": "U PDATE C RITIC(D)",
+   "grounded": true
+  },
+  {
+   "op": "sample mini batch",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "Sample a mini batch n i , ai , ri , si )}i=1 \u223c D",
+   "grounded": true
+  },
+  {
+   "op": "sample augmentation parameters",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "\u03bdi,k \u223c U(T ), i = 1..N, k = 1..K",
+   "grounded": true
+  },
+  {
+   "op": "sample action from policy",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "a0i,k \u223c \u03c0(\u00b7|f (s0i , \u03bdi,k ))",
+   "grounded": true
+  },
+  {
+   "op": "compute q estimate",
+   "canonical": "compute q estimate",
+   "object": "value",
+   "quote": "Q\u0302i = Q\u03b80 (si , ai ) or Q\u0302i = K k=1 Q\u03b80 (f (s0i , \u03bdi,k ), a0i,k )",
+   "grounded": true
+  },
+  {
+   "op": "compute target value",
+   "canonical": "compute target value",
+   "object": "value",
+   "quote": "yi \u2190 r(si , ai ) + \u03b3 Q\u0302i",
+   "grounded": true
+  },
+  {
+   "op": "sample q augmentation parameters",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "{\u03bdi,m |\u03bdi,m \u223c U(T ), i = 1..N, m = 1..M }",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "JQ (\u03b8) = N1 i=1 (Q\u03b8 (si , ai ) \u2212 yi )2 or JQ (\u03b8) = N1M i,m=1 (Q\u03b8 (f (si , \u03bdi,m ), ai ) \u2212 yi )2",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "\u03b8 \u2190 \u03b8 \u2212 \u03bb\u03b8 \u2207\u03b8 JQ (\u03b8)",
+   "grounded": true
+  },
+  {
+   "op": "update target network",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "\u03b80 \u2190 (1 \u2212 \u03c4 )\u03b80 + \u03c4 \u03b8",
+   "grounded": true
+  },
+  {
+   "op": "apply data augmentation",
+   "canonical": "apply data augmentation",
+   "object": "input",
+   "quote": "Data augmentation is applied to the samples for actor training as well.",
+   "grounded": true
+  },
+  {
+   "op": "sample state",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "s \u223c \u00b5(\u00b7)",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply data augmentation@input",
+  "compute q estimate@value",
+  "compute target value@value",
+  "correct@parameter",
+  "correct@value",
+  "evaluate@error",
+  "sample@noise",
+  "sample@policy",
+  "sample@state",
+  "sample@trajectory",
+  "store transition@trajectory"
+ ]
+}

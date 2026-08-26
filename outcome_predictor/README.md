@@ -40,3 +40,4 @@ Structure extraction needs `app.py` on :8000 and ollama `qwen3:8b` (see `run_sca
 |---|---|
 | `phase25/` | exploratory: clipped Ridge, dataset-first kNN, relaxed/bare vocab, within-dataset ranking (`results25.md`) |
 | `phase26/` | pre-registered second benchmark Atari 100k (`atari100k_dataset.csv`, `results26.md`) + long-section vocabulary test (`vocab_results.json`) |
+| `phase27/` | pre-registered full-operation extraction (closed ontology, ~15 tuples/method) re-evaluated on both benchmarks (`results27.md`) |

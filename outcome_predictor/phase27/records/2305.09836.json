@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "2305.09836",
+ "section_how": "heading: ReBRAC: Distilling Key Design Choices",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 24,
+ "n_invalid_object": 1,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "The use of deeper neural networks has been a critical factor in the success of many Deep Learning models",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "distribution",
+   "quote": "Q function is normalized to make the algorithm less sensitive to regularization parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We increased the batch size to 1024 samples and scaled the learning rate for D4RL Gym-MuJoCo tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "apply normalization",
+   "canonical": "apply normalization",
+   "object": "INVALID:layer",
+   "quote": "LayerNorm (Ba et al., 2016) is a widely used technique in deep learning that helps improve network convergence",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "The actor objective is shown in Equation (3), and the critic objective is shown in Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "The use of deeper neural networks has been a critical factor in the success of many Deep Learning models",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "We increased the batch size to 1024 samples and scaled the learning rate for D4RL Gym-MuJoCo tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "normalize@distribution",
+  "predict@reward",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@trajectory"
+ ]
+}

@@ -1,0 +1,115 @@
+{
+ "arxiv_id": "2302.01877",
+ "section_how": "heading: Method",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 13,
+ "n_invalid_object": 0,
+ "n_grounded": 13,
+ "ops": [
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "trajectory",
+   "quote": "the reward-to-go (return) J (\u03c4 0 )",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "denoted as e at = I(st , st+1 )",
+   "grounded": true
+  },
+  {
+   "op": "update state",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "e et+1 = T (e at to obtain the revised next state s st , e at )",
+   "grounded": true
+  },
+  {
+   "op": "filter trajectory",
+   "canonical": "filter trajectory",
+   "object": "trajectory",
+   "quote": "filters out the trajectories whose revised state s a too large difference from the generated st+1",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "trajectory",
+   "quote": "are then used to predict the reward by R s s, e a) with a",
+   "grounded": true
+  },
+  {
+   "op": "select trajectory",
+   "canonical": "select trajectory",
+   "object": "trajectory",
+   "quote": "are selected according to this reward",
+   "grounded": true
+  },
+  {
+   "op": "generate synthetic data",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "derive high-quality synthetic data to fine-tune the diffusion probabilistic model",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "trajectory",
+   "quote": "g = \u2207\u03c4 log p(O1:T | \u03c4 )|\u03c4 =\u00b5\u03b8",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "trajectory",
+   "quote": "\u00b5\u03b8 and \u03a3 are the mean and covariance of the Gaussian distribution respectively",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "the conditional diffusion process: p\u03b8 (\u03c4 i\u22121 |\u03c4 i , y(\u03c4 ))",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "trajectory",
+   "quote": "Ldenoise (\u03b8) := Ei,\u03c4 0 \u223cq,\u000f\u223cN [||\u000f \u2212 \u000f\u03b8 (\u03c4 i , i)||2 ]",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "\u03b8k\u2217 = arg min \u2212E\u03c4\u0302 k [log p\u03b8 (\u03c4\u0302 k |y(\u03c4\u0302 k ))] \u03b8",
+   "grounded": true
+  },
+  {
+   "op": "generate trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "\u03c4\u0302 k+1 = [\u03c4\u02c6k , D(R(\u03c4",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute gradient@trajectory",
+  "compute mean@trajectory",
+  "compute reward@trajectory",
+  "correct@parameter",
+  "correct@state",
+  "evaluate@trajectory",
+  "filter trajectory@trajectory",
+  "predict@trajectory",
+  "reconstruct@trajectory",
+  "sample@state",
+  "select trajectory@trajectory"
+ ]
+}

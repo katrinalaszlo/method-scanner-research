@@ -1,0 +1,205 @@
+{
+ "arxiv_id": "2303.07109",
+ "section_how": "heading: METHOD",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 25,
+ "n_invalid_object": 5,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "The observation encoder: zt \u223c p\u03c6 (zt | ot )",
+   "grounded": false
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "Observation decoder: o\u0302t \u223c p\u03c6 (o\u0302t | zt ).",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "INVALID:hidden",
+   "quote": "Reward predictor: r\u0302t \u223c p\u03c8 (r\u0302t | ht )",
+   "grounded": true
+  },
+  {
+   "op": "predict discount",
+   "canonical": "predict",
+   "object": "INVALID:hidden",
+   "quote": "Discount predictor: \u03b3\u0302t \u223c p\u03c8 (\u03b3\u0302t | ht )",
+   "grounded": true
+  },
+  {
+   "op": "predict latent",
+   "canonical": "predict",
+   "object": "INVALID:hidden",
+   "quote": "Latent state predictor: z\u0302t+1 \u223c p\u03c8 (z\u0302t+1 | ht ).",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "INVALID:history",
+   "quote": "Aggregation model: ht = f\u03c8 (zt\u2212`:t , at\u2212`:t , rt\u2212`:t\u22121 )",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "The next state is determined by sampling from p\u03c8 (z\u0302t+1 | ht ).",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "We optimize a self-supervised loss function for the observation model",
+   "grounded": true
+  },
+  {
+   "op": "compute entropy",
+   "canonical": "compute entropy",
+   "object": "latent",
+   "quote": "The entropy regularizes the latent states and prevents them from collapsing",
+   "grounded": true
+  },
+  {
+   "op": "compute cross entropy",
+   "canonical": "compute cross entropy",
+   "object": "distribution",
+   "quote": "The cross-entropy term for the observation model the consistency loss",
+   "grounded": true
+  },
+  {
+   "op": "compute log likelihood",
+   "canonical": "compute log likelihood",
+   "object": "input",
+   "quote": "The observation decoder is optimized via negative log-likelihood",
+   "grounded": true
+  },
+  {
+   "op": "compute advantage",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "We compute the advantages via Generalized Advantage Estimation",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We train two separate networks: an actor and a critic",
+   "grounded": true
+  },
+  {
+   "op": "apply entropy loss",
+   "canonical": "apply entropy loss",
+   "object": "policy",
+   "quote": "We penalize the objective of the actor with a slightly modified version of the usual entropy regularization term",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "The policy computes an action distribution \u03c0\u03b8 (at | xt )",
+   "grounded": true
+  },
+  {
+   "op": "encode state",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "The policy computes an action distribution \u03c0\u03b8 (at | xt ) given some view xt of the state",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "The dynamics model iteratively generates these M trajectories of length H based on actions provided by the policy",
+   "grounded": true
+  },
+  {
+   "op": "collect experience",
+   "canonical": "collect experience",
+   "object": "trajectory",
+   "quote": "We repeatedly (i) collect experience in the real environment with the current policy",
+   "grounded": true
+  },
+  {
+   "op": "sample dataset",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "After collecting new experience with the current policy, we improve the world model by sampling N sequences of length ` from D",
+   "grounded": true
+  },
+  {
+   "op": "update model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "After performing a world model update, we select M of the N \u00d7 ` observations and encode them into latent states to serve as initial states for new trajectories",
+   "grounded": true
+  },
+  {
+   "op": "compute softmax",
+   "canonical": "compute softmax",
+   "object": "INVALID:count",
+   "quote": "These counts are converted to probabilities using the softmax function",
+   "grounded": true
+  },
+  {
+   "op": "optimize loss",
+   "canonical": "improve",
+   "object": "error",
+   "quote": "We optimize the loss functions in Equations (3) and (4) using stochastic gradient descent",
+   "grounded": false
+  },
+  {
+   "op": "improve policy",
+   "canonical": "improve",
+   "object": "policy",
+   "quote": "The policy is improved with standard model-free objectives",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "We train two separate networks: an actor and a critic",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "We train two separate networks: an actor and a critic",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply entropy loss@policy",
+  "collect experience@trajectory",
+  "compute cross entropy@distribution",
+  "compute entropy@latent",
+  "compute gradient@parameter",
+  "compute log likelihood@input",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@value",
+  "improve@error",
+  "improve@policy",
+  "reconstruct@latent",
+  "sample@latent",
+  "sample@policy",
+  "sample@trajectory",
+  "train@parameter"
+ ]
+}

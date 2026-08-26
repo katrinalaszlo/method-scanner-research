@@ -1,0 +1,203 @@
+{
+ "arxiv_id": "2209.00588",
+ "section_how": "heading: METHOD",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 25,
+ "n_invalid_object": 4,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "The input image xt is first passed through a Convolutional Neural Network (CNN)",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "INVALID:token",
+   "quote": "The CNN decoder D : {1, . . . , N }K \u2192 Rh\u00d7w\u00d73 turns K tokens back into an image",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "INVALID:token",
+   "quote": "the index of the closest embedding vector in E",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "the reward r\u0302t \u223c pG r\u0302t | z\u2264t , a\u2264t",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:termination",
+   "quote": "the episode end d\u02c6t \u223c pG d\u02c6t | z\u2264t , a\u2264t",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:next observation",
+   "quote": "the next observation x\u0302t+1 = D(z\u0302t+1 ), with z\u0302t+1 \u223c pG (z\u0302t+1 | z0 , a0 , z\u03021 , a1 , . . . , z\u0302t , at )",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "The policy observes a reconstructed image observation x\u0302t and samples action at \u223c \u03c0(at |x\u0302\u2264t )",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We use a straight-through estimator (Bengio et al., 2013) to enable backpropagation training",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We use a straight-through estimator (Bengio et al., 2013) to enable backpropagation training",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "We train G in a self-supervised manner on segments of L time steps, sampled from past experience",
+   "grounded": true
+  },
+  {
+   "op": "minimize",
+   "canonical": "minimize",
+   "object": "error",
+   "quote": "We use a cross-entropy loss for the transition and termination predictors",
+   "grounded": true
+  },
+  {
+   "op": "minimize",
+   "canonical": "minimize",
+   "object": "error",
+   "quote": "We use a mean-squared error loss or a cross-entropy loss for the reward predictor",
+   "grounded": false
+  },
+  {
+   "op": "initialize",
+   "canonical": "initialize",
+   "object": "input",
+   "quote": "This imagination procedure is initialized with a real observation x0 sampled from past experience",
+   "grounded": true
+  },
+  {
+   "op": "rollout",
+   "canonical": "rollout",
+   "object": "trajectory",
+   "quote": "This imagination procedure is initialized with a real observation x0 sampled from past experience",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "we have a value network V that estimates V (x\u0302t ) \u2243 E\u03c0 r\u0302\u03c4",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "value",
+   "quote": "we have a value network V that estimates V (x\u0302t ) \u2243 E\u03c0 r\u0302\u03c4",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "we have a value network V that estimates V (x\u0302t ) \u2243 E\u03c0 r\u0302\u03c4",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "we have a value network V that estimates V (x\u0302t ) \u2243 E\u03c0 r\u0302\u03c4",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "the Transformer models the three following distributions",
+   "grounded": true
+  },
+  {
+   "op": "condition",
+   "canonical": "intervene",
+   "object": "distribution",
+   "quote": "the Transformer models the three following distributions",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "the Transformer models the three following distributions",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "We use a cross-entropy loss for the transition and termination predictors",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "We use a mean-squared error loss or a cross-entropy loss for the reward predictor",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "We use a cross-entropy loss for the transition and termination predictors",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "We use a mean-squared error loss or a cross-entropy loss for the reward predictor",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute@distribution",
+  "compute@error",
+  "compute@value",
+  "correct@parameter",
+  "correct@policy",
+  "correct@value",
+  "encode@input",
+  "initialize@input",
+  "intervene@distribution",
+  "minimize@error",
+  "predict@distribution",
+  "predict@reward",
+  "rollout@trajectory",
+  "sample@action"
+ ]
+}

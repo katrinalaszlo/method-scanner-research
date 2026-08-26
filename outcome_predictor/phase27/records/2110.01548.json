@@ -1,0 +1,172 @@
+{
+ "arxiv_id": "2110.01548",
+ "section_how": "heading: Uncertainty penalization with Q-ensemble",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 21,
+ "n_invalid_object": 3,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "compute target q value",
+   "canonical": "compute target q value",
+   "object": "state",
+   "quote": "y = r(s, a) + \u03b3 Ea0 \u223c\u03c0\u03b8 (\u00b7|s0 ) minj=1,2 Q\u03c60j (s0 , a0 )",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "Ea0 \u223c\u03c0\u03b8 (\u00b7|s0 )",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Update each Q-function Q\u03c6i with gradient descent using",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:q value",
+   "quote": "\u0012 Q\u03c6i (s, a) \u2212 y (r, s ) + \u2207\u03c6i \u00132",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "\u2207\u03c6i |B|",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Update each Q-function Q\u03c6i with gradient descent using",
+   "grounded": true
+  },
+  {
+   "op": "compute policy gradient",
+   "canonical": "compute policy gradient",
+   "object": "value",
+   "quote": "\u2207\u03b8 min Q\u03c6j (s, a\u0303\u03b8 (s)) \u2212 \u03b2 log \u03c0\u03b8 (a\u0303\u03b8 (s) | s)",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Update policy with gradient ascent using",
+   "grounded": true
+  },
+  {
+   "op": "sample state action",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "Es\u223cD,a\u223c\u03c0\u03b8 (\u00b7|s) [ N1 j=1 Q\u03c6j (s, a) \u2212 minj=1,...,N Q\u03c6j (s, a)]",
+   "grounded": false
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "INVALID:q value",
+   "quote": "Var Q\u03c6j (s, a) \u2212 \u03b2 log \u03c0\u03b8 (a | s)",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "\u2207a Q\u03c6j (s, a) \u2212 \u03b2 log \u03c0\u03b8 (a | s)",
+   "grounded": false
+  },
+  {
+   "op": "compute cosine similarity",
+   "canonical": "compute cosine similarity",
+   "object": "gradient",
+   "quote": "mini6=j h\u2207a Q\u03c6i (s, a), \u2207a Q\u03c6j (s, a)i",
+   "grounded": true
+  },
+  {
+   "op": "compute minimum cosine similarity",
+   "canonical": "compute minimum cosine similarity",
+   "object": "gradient",
+   "quote": "Minimum Cosine Similarity",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient alignment",
+   "canonical": "compute gradient alignment",
+   "object": "gradient",
+   "quote": "the input gradients of Q-functions \u2207a Q\u03c6j (s, a) are aligned",
+   "grounded": true
+  },
+  {
+   "op": "compute total variance",
+   "canonical": "compute total variance",
+   "object": "gradient",
+   "quote": "The total variance of the matrix Var \u2207a Q\u03c6j (s, a) is equal to",
+   "grounded": true
+  },
+  {
+   "op": "compute eigenvalue",
+   "canonical": "compute eigenvalue",
+   "object": "INVALID:matrix",
+   "quote": "maximize Es,a\u223cD \u03bbmin Var \u2207a Q\u03c6j (s, a)",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient diversity",
+   "canonical": "compute gradient diversity",
+   "object": "gradient",
+   "quote": "minimize Es,a\u223cD \u2207a Q\u03c6i (s, a), \u2207a Q\u03c6j (s, a)",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "gradient",
+   "quote": "JES (Q\u03c6 ) := Es,a\u223cD 1 N \u22121 X \u2207a Q\u03c6i (s, a), \u2207a Q\u03c6j (s, a) | {z } 1\u2264i6=j\u2264N",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "minimize Es,a\u223cD 1 N \u22121 X \u2207a Q\u03c6i (s, a), \u2207a Q\u03c6j (s, a) | {z } 1\u2264i6=j\u2264N",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "\u2207\u03c6i |B|",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "\u2207\u03b8 min Q\u03c6j (s, a\u0303\u03b8 (s)) \u2212 \u03b2 log \u03c0\u03b8 (a\u0303\u03b8 (s) | s)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute cosine similarity@gradient",
+  "compute gradient alignment@gradient",
+  "compute gradient diversity@gradient",
+  "compute gradient@error",
+  "compute minimum cosine similarity@gradient",
+  "compute policy gradient@value",
+  "compute target q value@state",
+  "compute total variance@gradient",
+  "correct@parameter",
+  "evaluate@gradient",
+  "sample@state",
+  "sample@trajectory"
+ ]
+}

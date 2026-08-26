@@ -1,0 +1,775 @@
+{
+ "arxiv_id": "2106.08909",
+ "section_how": "heading: Defining the algorithms",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 106,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "initialize parameters",
+   "canonical": "initialize parameters",
+   "object": "parameter",
+   "quote": "input :K, dataset DN , estimated b \u03c0\u22121 randomly.",
+   "grounded": true
+  },
+  {
+   "op": "set policy",
+   "canonical": "set policy",
+   "object": "policy",
+   "quote": "Set \u03c00 = \u03b2\u0302.",
+   "grounded": true
+  },
+  {
+   "op": "evaluate policy",
+   "canonical": "evaluate",
+   "object": "policy",
+   "quote": "Policy evaluation: Q",
+   "grounded": true
+  },
+  {
+   "op": "improve policy",
+   "canonical": "improve",
+   "object": "policy",
+   "quote": "Policy improvement: \u03c0k = I(Q",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we expect this improvement step to be regularized or constrained",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "aj \u223c \u03c0k\u22121 (\u00b7|s)",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Q b \u03c0k\u22121 (s, aj )",
+   "grounded": true
+  },
+  {
+   "op": "select action",
+   "canonical": "act",
+   "object": "action",
+   "quote": "\u03c0\u0302kM (a|s) = 1[a = arg max{Q",
+   "grounded": true
+  },
+  {
+   "op": "compute divergence",
+   "canonical": "compute divergence",
+   "object": "distribution",
+   "quote": "KL(\u03c0(\u00b7|si )k\u03b2\u0302(\u00b7|si ))",
+   "grounded": true
+  },
+  {
+   "op": "draw sample",
+   "canonical": "draw sample",
+   "object": "sample",
+   "quote": "we draw samples from \u03c0(\u00b7|si )",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "update gradient",
+   "canonical": "correct",
+   "object": "gradient",
+   "quote": "each iteration consists of one gradient step",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we train the evaluation procedure to convergence",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "value",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "value",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "value",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "value",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "value",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "value",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "value",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "value",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "value",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "value",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "value",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "value",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use a target network as in DDPG",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "act@action",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute divergence@distribution",
+  "compute gradient@gradient",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute trajectory@trajectory",
+  "compute value function@value",
+  "compute value@value",
+  "correct@gradient",
+  "correct@parameter",
+  "draw sample@sample",
+  "evaluate@policy",
+  "improve@policy",
+  "initialize parameters@parameter",
+  "sample@action",
+  "set policy@policy",
+  "train@parameter"
+ ]
+}

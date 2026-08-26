@@ -1,0 +1,201 @@
+{
+ "arxiv_id": "2106.02039",
+ "section_how": "heading: Reinforcement Learning and Control as Sequence Modeling",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 25,
+ "n_invalid_object": 12,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "A trajectory \u03c4 consists of T states, actions, and scalar rewards",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "action",
+   "quote": "A trajectory \u03c4 consists of T states, actions, and scalar rewards",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "reward",
+   "quote": "A trajectory \u03c4 consists of T states, actions, and scalar rewards",
+   "grounded": true
+  },
+  {
+   "op": "discretize",
+   "canonical": "discretize",
+   "object": "state",
+   "quote": "In the event of continuous states and actions, we discretize each dimension independently",
+   "grounded": true
+  },
+  {
+   "op": "discretize",
+   "canonical": "discretize",
+   "object": "action",
+   "quote": "In the event of continuous states and actions, we discretize each dimension independently",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "The objective maximized during training is: log P\u03b8 sit | s<i",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "The objective maximized during training is: log P\u03b8 ajt | a<j",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "The objective maximized during training is: log P\u03b8 rt | at , st , \u03c4<t",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "If the first action at in the sequence is enacted and beam search is repeated, we have a receding horizon-controller",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "The result of this procedure is a tokenized trajectory \u03c4",
+   "grounded": true
+  },
+  {
+   "op": "beam search",
+   "canonical": "beam search",
+   "object": "INVALID:sequence",
+   "quote": "The core algorithm providing the foundation of our planning techniques, beam search, is described in Algorithm 1 for generic sequences",
+   "grounded": true
+  },
+  {
+   "op": "condition",
+   "canonical": "intervene",
+   "object": "INVALID:sequence",
+   "quote": "We can use this directly as a goal-reaching method by conditioning on a desired final state sT",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We use the Adam optimizer (Kingma & Ba, 2015) with a learning rate of 2.5 \u00d7 10\u22124 to train parameters \u03b8",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:reward-to-go",
+   "quote": "During planning, we then have access to value estimates from our model to add to cumulative rewards",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "INVALID:transition",
+   "quote": "We sample full transitions (st , at , rt , Rt ) using likelihood-maximizing beam search",
+   "grounded": true
+  },
+  {
+   "op": "filter",
+   "canonical": "filter",
+   "object": "INVALID:sequence",
+   "quote": "We filter sequences of transitions by those with the highest cumulative reward plus reward-to-go estimate",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:log probability",
+   "quote": "We use the Adam optimizer (Kingma & Ba, 2015) with a learning rate of 2.5 \u00d7 10\u22124 to train parameters \u03b8",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "The result of this procedure is a tokenized trajectory \u03c4",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "During planning, we then have access to value estimates from our model to add to cumulative rewards",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:reward-to-go",
+   "quote": "We augment each transition in the training trajectories with reward-to-go: PT 0 Rt = t0 =t \u03b3 t \u2212t rt0",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:cumulative reward",
+   "quote": "We filter sequences of transitions by those with the highest cumulative reward plus reward-to-go estimate",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:sequence likelihood",
+   "quote": "We use the Adam optimizer (Kingma & Ba, 2015) with a learning rate of 2.5 \u00d7 10\u22124 to train parameters \u03b8",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:trajectory likelihood",
+   "quote": "The result of this procedure is a tokenized trajectory \u03c4",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:transition likelihood",
+   "quote": "We sample full transitions (st , at , rt , Rt ) using likelihood-maximizing beam search",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:sequence probability",
+   "quote": "We filter sequences of transitions by those with the highest cumulative reward plus reward-to-go estimate",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compute@distribution",
+  "compute@value",
+  "correct@parameter",
+  "discretize@action",
+  "discretize@state",
+  "encode@action",
+  "encode@reward",
+  "encode@state",
+  "predict@action",
+  "predict@reward",
+  "predict@state",
+  "sample@action",
+  "sample@trajectory"
+ ]
+}

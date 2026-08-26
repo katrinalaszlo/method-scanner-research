@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "2211.15657",
+ "section_how": "pinned: G ENERATIVE M ODELING WITH THE D ECISION",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 25,
+ "n_invalid_object": 4,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We encode the conditioning information y(\u03c4) as either a scalar or a one-hot vector",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "We compute \u00b5k\u22121 and \u03a3k\u22121 from a noisy sequence of states and a predicted noise",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "We sample xk\u22121 \u223c N (\u00b5k\u22121 , \u03b1\u03a3k\u22121 )",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "noise",
+   "quote": "We predict the noise as \u03f5\u0302\u03b8 := \u03f5\u03b8 (xk (\u03c4 ), y(\u03c4 ), k)",
+   "grounded": false
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We update the parameters of the model using the loss function",
+   "grounded": false
+  },
+  {
+   "op": "condition",
+   "canonical": "intervene",
+   "object": "state",
+   "quote": "We condition the diffusion process on characteristics y(\u03c4)",
+   "grounded": false
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "We generate an action according to the inverse dynamics model",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "We refine xk (\u03c4 ) into xk\u22121 (\u03c4 ) at each intermediate timestep",
+   "grounded": false
+  },
+  {
+   "op": "augment",
+   "canonical": "augment",
+   "object": "trajectory",
+   "quote": "We augment and extract the best portions of trajectories in the dataset",
+   "grounded": false
+  },
+  {
+   "op": "infer",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "We infer the action that should be taken to reach the most immediate predicted state",
+   "grounded": false
+  },
+  {
+   "op": "maintain",
+   "canonical": "maintain",
+   "object": "INVALID:history",
+   "quote": "We maintain a history of length C",
+   "grounded": false
+  },
+  {
+   "op": "initialize",
+   "canonical": "initialize",
+   "object": "state",
+   "quote": "We initialize xK (\u03c4 ) \u223c N (0, \u03b1I)",
+   "grounded": false
+  },
+  {
+   "op": "constrain",
+   "canonical": "constrain",
+   "object": "trajectory",
+   "quote": "We constrain plan to be consistent with history",
+   "grounded": false
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "INVALID:constraint",
+   "quote": "We can satisfy several constraints together",
+   "grounded": true
+  },
+  {
+   "op": "compose",
+   "canonical": "compose",
+   "object": "INVALID:skill",
+   "quote": "We may further compose these skills together during inference",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "We sample from the composed data distribution",
+   "grounded": false
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "We train the reverse diffusion process p\u03b8 and the inverse dynamics model f\u03d5",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "We predict the action using the inverse dynamics model",
+   "grounded": false
+  },
+  {
+   "op": "scale",
+   "canonical": "scale",
+   "object": "noise",
+   "quote": "We scale the variance by \u03b1 \u2208 [0, 1)",
+   "grounded": false
+  },
+  {
+   "op": "project",
+   "canonical": "project",
+   "object": "INVALID:conditioning",
+   "quote": "We project the conditioning information into a latent variable z \u2208 Rh",
+   "grounded": false
+  },
+  {
+   "op": "zero",
+   "canonical": "zero",
+   "object": "latent",
+   "quote": "We zero out the entries of z when y(\u03c4 ) = \u00d8",
+   "grounded": false
+  },
+  {
+   "op": "diffuse",
+   "canonical": "diffuse",
+   "object": "state",
+   "quote": "We diffuse only over states as defined below",
+   "grounded": false
+  },
+  {
+   "op": "estimate",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "We estimate the action at that led the state st to st+1",
+   "grounded": false
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "trajectory",
+   "quote": "We refine xk (\u03c4 ) into xk\u22121 (\u03c4 ) at each intermediate timestep",
+   "grounded": false
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "trajectory",
+   "quote": "We extract (st , st+1 ) from x0 (\u03c4 )",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "augment@trajectory",
+  "constrain@trajectory",
+  "correct@parameter",
+  "correct@state",
+  "correct@trajectory",
+  "diffuse@state",
+  "encode@input",
+  "extract@trajectory",
+  "initialize@state",
+  "intervene@state",
+  "predict@action",
+  "predict@noise",
+  "reconstruct@action",
+  "reconstruct@state",
+  "sample@state",
+  "sample@trajectory",
+  "scale@noise",
+  "train@parameter",
+  "zero@latent"
+ ]
+}

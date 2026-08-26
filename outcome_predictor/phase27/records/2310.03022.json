@@ -1,0 +1,222 @@
+{
+ "arxiv_id": "2310.03022",
+ "section_how": "heading: THE PROPOSED METHOD : DECISION CONV FORMER",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 28,
+ "n_invalid_object": 0,
+ "n_grounded": 28,
+ "ops": [
+  {
+   "op": "embed input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "It is subjected to a separate input embedding for each of RTG, state and action",
+   "grounded": true
+  },
+  {
+   "op": "form input sequence",
+   "canonical": "form input sequence",
+   "object": "input",
+   "quote": "The input sequence It is formed as It = (R\u0302t\u2212K+1 , st\u2212K+1 , at\u2212K+1 , ..., R\u0302t\u22121 , st\u22121 , at\u22121 , R\u0302t , st )",
+   "grounded": true
+  },
+  {
+   "op": "apply layer normalization",
+   "canonical": "apply layer normalization",
+   "object": "input",
+   "quote": "Tt passes through the convolution block stacked N times, each comprising two sub-blocks. The first sub-block involves layer normalization followed by token mixing through a convolution module",
+   "grounded": true
+  },
+  {
+   "op": "convolve sequence",
+   "canonical": "convolve sequence",
+   "object": "input",
+   "quote": "The convolution is performed for the time series in each column of Xt",
+   "grounded": true
+  },
+  {
+   "op": "apply filter",
+   "canonical": "apply filter",
+   "object": "input",
+   "quote": "The embeddings Tt defined above first go through layer normalization, yielding Xt = LN(Tt ) \u2208 R(3K\u22121)\u00d7d",
+   "grounded": true
+  },
+  {
+   "op": "compute convolution output",
+   "canonical": "compute convolution output",
+   "object": "input",
+   "quote": "The convolution output for the q-th column is given by",
+   "grounded": true
+  },
+  {
+   "op": "apply feed forward network",
+   "canonical": "apply feed forward network",
+   "object": "input",
+   "quote": "The second sub-block also involves layer normalization followed by a Feed Forward Network",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "the state tokens that have traversed all the blocks undergo a final projection to predict the next action",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "The learning process minimizes the error between the predicted action a\u0302t = \u03c0\u03b8 (R\u0302t\u2212K+1:t , st\u2212K+1:t , at\u2212K+1:t\u22121 ) and the true action at",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "The learning process minimizes the error between the predicted action a\u0302t = \u03c0\u03b8 (R\u0302t\u2212K+1:t , st\u2212K+1:t , at\u2212K+1:t\u22121 ) and the true action at",
+   "grounded": true
+  },
+  {
+   "op": "generate action",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "DC receives the current trajectory data, generates an action to obtain the next state and reward",
+   "grounded": true
+  },
+  {
+   "op": "subtract reward",
+   "canonical": "subtract reward",
+   "object": "reward",
+   "quote": "and subsequently subtracts the reward from the preceding RTG",
+   "grounded": true
+  },
+  {
+   "op": "apply layer normalization",
+   "canonical": "apply layer normalization",
+   "object": "input",
+   "quote": "The embeddings Tt defined above first go through layer normalization, yielding Xt = LN(Tt ) \u2208 R(3K\u22121)\u00d7d",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "The convolution is performed for the time series in each column of Xt",
+   "grounded": true
+  },
+  {
+   "op": "apply feed forward network",
+   "canonical": "apply feed forward network",
+   "object": "input",
+   "quote": "The second sub-block also involves layer normalization followed by a Feed Forward Network",
+   "grounded": true
+  },
+  {
+   "op": "compute convolution output",
+   "canonical": "compute convolution output",
+   "object": "input",
+   "quote": "The convolution output for the q-th column is given by",
+   "grounded": true
+  },
+  {
+   "op": "apply filter",
+   "canonical": "apply filter",
+   "object": "input",
+   "quote": "The embeddings Tt defined above first go through layer normalization, yielding Xt = LN(Tt ) \u2208 R(3K\u22121)\u00d7d",
+   "grounded": true
+  },
+  {
+   "op": "form input sequence",
+   "canonical": "form input sequence",
+   "object": "input",
+   "quote": "The input sequence It is formed as It = (R\u0302t\u2212K+1 , st\u2212K+1 , at\u2212K+1 , ..., R\u0302t\u22121 , st\u22121 , at\u22121 , R\u0302t , st )",
+   "grounded": true
+  },
+  {
+   "op": "embed input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "It is subjected to a separate input embedding for each of RTG, state and action",
+   "grounded": true
+  },
+  {
+   "op": "apply layer normalization",
+   "canonical": "apply layer normalization",
+   "object": "input",
+   "quote": "The embeddings Tt defined above first go through layer normalization, yielding Xt = LN(Tt ) \u2208 R(3K\u22121)\u00d7d",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "The convolution is performed for the time series in each column of Xt",
+   "grounded": true
+  },
+  {
+   "op": "apply feed forward network",
+   "canonical": "apply feed forward network",
+   "object": "input",
+   "quote": "The second sub-block also involves layer normalization followed by a Feed Forward Network",
+   "grounded": true
+  },
+  {
+   "op": "compute convolution output",
+   "canonical": "compute convolution output",
+   "object": "input",
+   "quote": "The convolution output for the q-th column is given by",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "the state tokens that have traversed all the blocks undergo a final projection to predict the next action",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "The learning process minimizes the error between the predicted action a\u0302t = \u03c0\u03b8 (R\u0302t\u2212K+1:t , st\u2212K+1:t , at\u2212K+1:t\u22121 ) and the true action at",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "The learning process minimizes the error between the predicted action a\u0302t = \u03c0\u03b8 (R\u0302t\u2212K+1:t , st\u2212K+1:t , at\u2212K+1:t\u22121 ) and the true action at",
+   "grounded": true
+  },
+  {
+   "op": "generate action",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "DC receives the current trajectory data, generates an action to obtain the next state and reward",
+   "grounded": true
+  },
+  {
+   "op": "subtract reward",
+   "canonical": "subtract reward",
+   "object": "reward",
+   "quote": "and subsequently subtracts the reward from the preceding RTG",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply convolution@input",
+  "apply feed forward network@input",
+  "apply filter@input",
+  "apply layer normalization@input",
+  "compare@error",
+  "compute convolution output@input",
+  "convolve sequence@input",
+  "correct@parameter",
+  "encode@input",
+  "form input sequence@input",
+  "predict@action",
+  "reconstruct@action",
+  "subtract reward@reward"
+ ]
+}

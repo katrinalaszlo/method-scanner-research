@@ -1,0 +1,745 @@
+{
+ "arxiv_id": "2004.04136",
+ "section_how": "heading: CURL Implementation",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 103,
+ "n_invalid_object": 0,
+ "n_grounded": 102,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "CURL uses instance discrimination with similarities to SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "augment",
+   "canonical": "augment",
+   "object": "input",
+   "quote": "CURL primarily relies on the random crop data augmentation",
+   "grounded": true
+  },
+  {
+   "op": "split",
+   "canonical": "split",
+   "object": "input",
+   "quote": "the anchor and positive observations are two different augmentations of the same image",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "CURL uses instance discrimination with similarities to SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "CURL uses instance discrimination with similarities to SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "CURL uses instance discrimination with similarities to SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "CURL employs the bi-linear inner-product sim(q, k) = q T W k",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the InfoNCE loss and requires minimal architectural adjustments",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the latent code receives gradients from both the contrastive ob- jective and the Q-function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update(f_q.params) # Adam update(W) # Adam",
+   "grounded": true
+  },
+  {
+   "op": "momentum update",
+   "canonical": "momentum update",
+   "object": "parameter",
+   "quote": "f_k.params = m*f_k.params+(1-m)*f_q.params",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a random square patch is cropped from the original rendering",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "the same random crop coordinates across all frames in the stack",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "CURL employs the bi-linear inner-product sim(q, k) = q T W k",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the InfoNCE loss and requires minimal architectural adjustments",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the latent code receives gradients from both the contrastive ob- jective and the Q-function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update(f_q.params) # Adam update(W) # Adam",
+   "grounded": true
+  },
+  {
+   "op": "momentum update",
+   "canonical": "momentum update",
+   "object": "parameter",
+   "quote": "f_k.params = m*f_k.params+(1-m)*f_q.params",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a random square patch is cropped from the original rendering",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "the same random crop coordinates across all frames in the stack",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "CURL employs the bi-linear inner-product sim(q, k) = q T W k",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Info, the InfoNCE loss and requires minimal architectural adjustments",
+   "grounded": false
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the latent code receives gradients from both the contrastive ob- jective and the Q-function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update(f_q.params) # Adam update(W) # Adam",
+   "grounded": true
+  },
+  {
+   "op": "momentum update",
+   "canonical": "momentum update",
+   "object": "parameter",
+   "quote": "f_k.params = m*f_k.params+(1-m)*f_q.params",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a random square patch is cropped from the original rendering",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "the same random crop coordinates across all frames in the stack",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "CURL employs the bi-linear inner-product sim(q, k) = q T W k",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the InfoNCE loss and requires minimal architectural adjustments",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the latent code receives gradients from both the contrastive ob- jective and the Q-function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update(f_q.params) # Adam update(W) # Adam",
+   "grounded": true
+  },
+  {
+   "op": "momentum update",
+   "canonical": "momentum update",
+   "object": "parameter",
+   "quote": "f_k.params = m*f_k.params+(1-m)*f_q.params",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a random square patch is cropped from the original rendering",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "the same random crop coordinates across all frames in the stack",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "CURL employs the bi-linear inner-product sim(q, k) = q T W k",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the InfoNCE loss and requires minimal architectural adjustments",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the latent code receives gradients from both the contrastive ob- jective and the Q-function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update(f_q.params) # Adam update(W) # Adam",
+   "grounded": true
+  },
+  {
+   "op": "momentum update",
+   "canonical": "momentum update",
+   "object": "parameter",
+   "quote": "f_k.params = m*f_k.params+(1-m)*f_q.params",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a random square patch is cropped from the original rendering",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "the same random crop coordinates across all frames in the stack",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "CURL employs the bi-linear inner-product sim(q, k) = q T W k",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the InfoNCE loss and requires minimal architectural adjustments",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the latent code receives gradients from both the contrastive ob- jective and the Q-function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update(f_q.params) # Adam update(W) # Adam",
+   "grounded": true
+  },
+  {
+   "op": "momentum update",
+   "canonical": "momentum update",
+   "object": "parameter",
+   "quote": "f_k.params = m*f_k.params+(1-m)*f_q.params",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a random square patch is cropped from the original rendering",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "the same random crop coordinates across all frames in the stack",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "CURL employs the bi-linear inner-product sim(q, k) = q T W k",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the InfoNCE loss and requires minimal architectural adjustments",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the latent code receives gradients from both the contrastive ob- jective and the Q-function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update(f_q.params) # Adam update(W) # Adam",
+   "grounded": true
+  },
+  {
+   "op": "momentum update",
+   "canonical": "momentum update",
+   "object": "parameter",
+   "quote": "f_k.params = m*f_k.params+(1-m)*f_q.params",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a random square patch is cropped from the original rendering",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "the same random crop coordinates across all frames in the stack",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "CURL employs the bi-linear inner-product sim(q, k) = q T W k",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the InfoNCE loss and requires minimal architectural adjustments",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the latent code receives gradients from both the contrastive ob- jective and the Q-function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update(f_q.params) # Adam update(W) # Adam",
+   "grounded": true
+  },
+  {
+   "op": "momentum update",
+   "canonical": "momentum update",
+   "object": "parameter",
+   "quote": "f_k.params = m*f_k.params+(1-m)*f_q.params",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a random square patch is cropped from the original rendering",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "the same random crop coordinates across all frames in the stack",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "CURL employs the bi-linear inner-product sim(q, k) = q T W k",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the InfoNCE loss and requires minimal architectural adjustments",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the latent code receives gradients from both the contrastive ob- jective and the Q-function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update(f_q.params) # Adam update(W) # Adam",
+   "grounded": true
+  },
+  {
+   "op": "momentum update",
+   "canonical": "momentum update",
+   "object": "parameter",
+   "quote": "f_k.params = m*f_k.params+(1-m)*f_q.params",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a random square patch is cropped from the original rendering",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "the same random crop coordinates across all frames in the stack",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "CURL employs the bi-linear inner-product sim(q, k) = q T W k",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the InfoNCE loss and requires minimal architectural adjustments",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the latent code receives gradients from both the contrastive ob- jective and the Q-function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update(f_q.params) # Adam update(W) # Adam",
+   "grounded": true
+  },
+  {
+   "op": "momentum update",
+   "canonical": "momentum update",
+   "object": "parameter",
+   "quote": "f_k.params = m*f_k.params+(1-m)*f_q.params",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a random square patch is cropped from the original rendering",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "the same random crop coordinates across all frames in the stack",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "CURL employs the bi-linear inner-product sim(q, k) = q T W k",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the InfoNCE loss and requires minimal architectural adjustments",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the latent code receives gradients from both the contrastive ob- jective and the Q-function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update(f_q.params) # Adam update(W) # Adam",
+   "grounded": true
+  },
+  {
+   "op": "momentum update",
+   "canonical": "momentum update",
+   "object": "parameter",
+   "quote": "f_k.params = m*f_k.params+(1-m)*f_q.params",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "loss.backward()",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "loss.backward()",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply augmentation@input",
+  "apply gradient@parameter",
+  "augment@input",
+  "compute gradient@gradient",
+  "compute similarity@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "momentum update@parameter",
+  "sample@input",
+  "split@input"
+ ]
+}

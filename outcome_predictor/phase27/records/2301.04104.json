@@ -1,0 +1,205 @@
+{
+ "arxiv_id": "2301.04104",
+ "section_how": "fallback: 20% window",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 25,
+ "n_invalid_object": 6,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "compute range",
+   "canonical": "compute range",
+   "object": "value",
+   "quote": "we compute the range from the 5th to the 95th return percentile over the return batch",
+   "grounded": true
+  },
+  {
+   "op": "smooth estimate",
+   "canonical": "smooth estimate",
+   "object": "INVALID:estimate",
+   "quote": "smooth out the estimate using an exponential moving average",
+   "grounded": true
+  },
+  {
+   "op": "normalize returns",
+   "canonical": "normalize returns",
+   "object": "value",
+   "quote": "return normalization with a denominator limit overcomes these challenges",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "Reconstructing inputs and predicting rewards and returns can be challenging",
+   "grounded": true
+  },
+  {
+   "op": "predict returns",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "Reconstructing inputs and predicting rewards and returns can be challenging",
+   "grounded": true
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "value",
+   "quote": "we learn to predict a transformed version of its targets y",
+   "grounded": false
+  },
+  {
+   "op": "inverse transformation",
+   "canonical": "inverse transformation",
+   "object": "INVALID:prediction",
+   "quote": "To read out predictions y\u0302 of the network, we apply the inverse transformation",
+   "grounded": true
+  },
+  {
+   "op": "compute symlog",
+   "canonical": "compute symlog",
+   "object": "value",
+   "quote": "symlog function compresses the magnitudes of both large positive and negative values",
+   "grounded": true
+  },
+  {
+   "op": "compute symexp",
+   "canonical": "compute symexp",
+   "object": "value",
+   "quote": "symexp function as its inverse",
+   "grounded": true
+  },
+  {
+   "op": "twohot encode",
+   "canonical": "twohot encode",
+   "object": "value",
+   "quote": "the network is trained on twohot encoded targets",
+   "grounded": true
+  },
+  {
+   "op": "softmax distribution",
+   "canonical": "softmax distribution",
+   "object": "INVALID:bin",
+   "quote": "the network outputs the logits for a softmax distribution over exponentially spaced bins",
+   "grounded": true
+  },
+  {
+   "op": "weighted average",
+   "canonical": "weighted average",
+   "object": "INVALID:bin",
+   "quote": "predictions are read out as the weighted average of the bin positions",
+   "grounded": true
+  },
+  {
+   "op": "categorical cross entropy",
+   "canonical": "categorical cross entropy",
+   "object": "value",
+   "quote": "the network is then trained to minimize the categorical cross entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "transform vector",
+   "canonical": "transform vector",
+   "object": "input",
+   "quote": "Dreamer transforms vector observations using the symlog functions",
+   "grounded": true
+  },
+  {
+   "op": "predict critic",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "employs the synexp twohot loss for the reward predictor and critic",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "Reconstructing inputs and predicting rewards and returns can be challenging",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "L(\u03b8) = \u2212 twohot(y)T log softmax(f (x, \u03b8))",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the network is then trained to minimize the categorical cross entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "Dreamer transforms vector observations using the symlog functions",
+   "grounded": true
+  },
+  {
+   "op": "apply loss",
+   "canonical": "apply loss",
+   "object": "error",
+   "quote": "the network is trained to minimize the categorical cross entropy loss",
+   "grounded": false
+  },
+  {
+   "op": "read out prediction",
+   "canonical": "read out prediction",
+   "object": "INVALID:prediction",
+   "quote": "To read out predictions y\u0302 of the network, we apply the inverse transformation",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "the network is then trained to minimize the categorical cross entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "update weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the network is then trained to minimize the categorical cross entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "L(\u03b8) = \u2212 twohot(y)T log softmax(f (x, \u03b8))",
+   "grounded": true
+  },
+  {
+   "op": "compute probability",
+   "canonical": "compute probability",
+   "object": "INVALID:bin",
+   "quote": "the network outputs the logits for a softmax distribution over exponentially spaced bins",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply loss@error",
+  "apply transformation@value",
+  "categorical cross entropy@value",
+  "compare@value",
+  "compute gradient@parameter",
+  "compute range@value",
+  "compute symexp@value",
+  "compute symlog@value",
+  "correct@parameter",
+  "evaluate@value",
+  "normalize returns@value",
+  "predict@reward",
+  "predict@value",
+  "reconstruct@input",
+  "train@parameter",
+  "transform vector@input",
+  "twohot encode@value"
+ ]
+}

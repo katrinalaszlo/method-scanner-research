@@ -1,0 +1,139 @@
+{
+ "arxiv_id": "1906.05243",
+ "section_how": "pinned: 4. Model-based algorithms at scale",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 16,
+ "n_invalid_object": 2,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "the policy determines the action",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "action",
+   "quote": "reward signal",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update the policy with data sampled from a learnt parametric model",
+   "grounded": false
+  },
+  {
+   "op": "sample transition",
+   "canonical": "sample",
+   "object": "parameter",
+   "quote": "data sampled from a learnt parametric model",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "state",
+   "quote": "action-value estimates which determine the policy",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "multi-step returns rather than the one-step return",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Q-learning (Watkins, 1989) to learn the action-value estimates",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "INVALID:replay",
+   "quote": "sampled from experience replay",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "reward",
+   "quote": "distributional 2 The actual number of reported model samples",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "noisy networks for exploration",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "state",
+   "quote": "a sequence of states and/or actions over time",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "value",
+   "quote": "the policy determines the action",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "distributional 2 The actual number of reported model samples",
+   "grounded": true
+  },
+  {
+   "op": "sample transition",
+   "canonical": "sample",
+   "object": "INVALID:replay",
+   "quote": "sampled from experience replay",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "multi-step returns rather than the one-step return",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "trajectory",
+   "quote": "multi-step returns (cf. Sutton, 1988; Sutton and Barto, 2018)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@distribution",
+  "compare@reward",
+  "compare@value",
+  "compute distribution@reward",
+  "compute policy@value",
+  "compute reward@action",
+  "compute trajectory@state",
+  "compute value@state",
+  "compute value@trajectory",
+  "correct@parameter",
+  "sample@parameter",
+  "sample@policy"
+ ]
+}

@@ -1,0 +1,196 @@
+{
+ "arxiv_id": "2403.00564",
+ "section_how": "heading: Method",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we sample K actions",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "a portion of these actions originates from the current policy pt",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "another portion is sampled from a prior distribution p\u2032t",
+   "grounded": true
+  },
+  {
+   "op": "construct action set",
+   "canonical": "construct action set",
+   "object": "action",
+   "quote": "we denote the complete action set as AS = [AS1 , AS2 ]",
+   "grounded": true
+  },
+  {
+   "op": "select action",
+   "canonical": "act",
+   "object": "action",
+   "quote": "the bandit process then selects the action a\u2217S from the action set AS",
+   "grounded": true
+  },
+  {
+   "op": "compute q value",
+   "canonical": "compute q value",
+   "object": "action",
+   "quote": "a\u2217S = arg maxa\u2208AS (q(s, a))",
+   "grounded": true
+  },
+  {
+   "op": "compute q value",
+   "canonical": "compute q value",
+   "object": "action",
+   "quote": "the first line holds because a\u2217S is the action with the highest q(s, a) in AS",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we use the mean of these empirical estimations as target values",
+   "grounded": false
+  },
+  {
+   "op": "estimate value",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "the expanding search tree generates imagined trajectories that provide bootstrapped samples for root value estimations",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the value estimation of a given state s0 can be derived from the empirical mean",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "V\u0302n (s0 ) = H(n) X \u03b3 t r\u0302t + \u03b3 H(n) V\u0302 (s\u0302H(n) )",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "PN V\u0302S (s0 ) = n=0 V\u0302n (s0 ) N",
+   "grounded": true
+  },
+  {
+   "op": "compute mixed value",
+   "canonical": "compute mixed value",
+   "object": "value",
+   "quote": "we introduce a mixed value target, combining multi-step TD-targets for early training and fresh experience sampling",
+   "grounded": true
+  },
+  {
+   "op": "compute mixed value",
+   "canonical": "compute mixed value",
+   "object": "value",
+   "quote": "Vmix = or is > |D| \u2212 T2",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we derive an upper bound for the value estimation error, taking into account model errors",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the error bounds of each estimation as max E \u2225s\u0302t \u2212 st \u22252 \u2264 \u03f52s",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "max E \u2225R(st ) \u2212 R\u2217 (st )\u22252 \u2264 \u03f52r",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "max E \u2225V(st ) \u2212 V \u2217 (st )\u22252 \u2264 \u03f52v",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "MSE\u03bd (V\u0302S ) \u2264 2 \u03b3 2t (Lr \u03f5s + \u03f52r ) + 2 \u03b3 2H(n) (L2V \u03f52s + \u03f52v )",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the estimation error bound will converge to 0 when the dynamic function approaches optimality",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "SVE provides a more accurate value estimation for off-policy data",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the utilization of a mixed value target decisively mitigates off-policy issues",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the mixed value target is defined as",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the value estimation method can be implemented within the same process as the policy reanalysis",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the expanding search tree generates imagined trajectories that provide bootstrapped samples for root value estimations",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "act@action",
+  "compare@error",
+  "compute mixed value@value",
+  "compute q value@action",
+  "compute value@value",
+  "construct action set@action",
+  "evaluate@value",
+  "sample@action"
+ ]
+}

@@ -1,0 +1,247 @@
+{
+ "arxiv_id": "2406.19320",
+ "section_how": "heading: Method",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 30,
+ "n_invalid_object": 0,
+ "n_grounded": 29,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "The encoder E : S(X \u00d7A)\u00d7X \u2192 Z K converts an image xt into zt = (zt1 , . . . , ztK ), a sequence of K discrete \u2206-tokens.",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "The CNN decoder D : S(X \u00d7 A) \u00d7 Z K \u2192 X reconstructs an image x\u0302t from past frames, actions and \u2206tokens (x0 , a0 , . . . , xt\u22121 , at\u22121 , zt ).",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "The dynamics model G outputs a categorical distribution on Z for the next \u2206-token z\u0302tk+1 \u223c pG (z\u0302tk+1 |x\u0303<t , z<t , a<t , zt\u2264k ).",
+   "grounded": true
+  },
+  {
+   "op": "predict termination",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "It also predicts distributions for rewards pG (r\u0302t |x\u0303\u2264t z\u2264t , a\u2264t ) and episode terminations pG (d\u02c6t |x\u0303\u2264t , z\u2264t , a\u2264t ).",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "The policy \u03c0 learns in the imagination POMDP of its world model, composed of the autoencoder (E, D) and the dynamics model G.",
+   "grounded": true
+  },
+  {
+   "op": "sample next state",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "The world model then predicts the reward r\u0302t , the episode end d\u02c6t , and the next observation x\u0302t+1 = D(x\u0302\u2264t , a\u0302\u2264t , z\u0302\u2264t , z\u0302t+1 ), with z\u0302t+1 \u223c pG (z\u0302t+1 |x\u0302\u2264t , a\u0302\u2264t , z\u0302\u2264t ).",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "The dynamics model G is parameterized by a stack of transformer encoder layers with causal self-attention (Vaswani et al., 2017; Radford et al., 2019).",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We use a straight-through estimator (Bengio et al., 2013) to enable backpropagation.",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "The CNN decoder D : S(X \u00d7 A) \u00d7 Z K \u2192 X reconstructs an image x\u0302t from past frames, actions and \u2206tokens (x0 , a0 , . . . , xt\u22121 , at\u22121 , zt ).",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Image and action tokens are embedded with learnt lookup tables.",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "action",
+   "quote": "Actions are embedded with a learnt lookup table and concatenated channel-wise with frames.",
+   "grounded": true
+  },
+  {
+   "op": "predict transition",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "The dynamics model G outputs a categorical distribution on Z for the next \u2206-token z\u0302tk+1 \u223c pG (z\u0302tk+1 |x\u0303<t , z<t , a<t , zt\u2264k ).",
+   "grounded": true
+  },
+  {
+   "op": "sample next token",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "The dynamics model G outputs a categorical distribution on Z for the next \u2206-token z\u0302tk+1 \u223c pG (z\u0302tk+1 |x\u0303<t , z<t , a<t , zt\u2264k ).",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "The dynamics model G outputs a categorical distribution on Z for the next \u2206-token z\u0302tk+1 \u223c pG (z\u0302tk+1 |x\u0303<t , z<t , a<t , zt\u2264k ).",
+   "grounded": true
+  },
+  {
+   "op": "compute termination",
+   "canonical": "compute termination",
+   "object": "value",
+   "quote": "It also predicts distributions for rewards pG (r\u0302t |x\u0303\u2264t z\u2264t , a\u2264t ) and episode terminations pG (d\u02c6t |x\u0303\u2264t , z\u2264t , a\u2264t ).",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "The model is trained with a cross-entropy loss on segments sampled from past experience.",
+   "grounded": true
+  },
+  {
+   "op": "update codebook",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "The codebook is updated with an exponential moving average (Razavi et al., 2019).",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "The model is trained with a cross-entropy loss on segments sampled from past experience.",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "The codebook is updated with an exponential moving average (Razavi et al., 2019).",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "The imagination procedure is initialized with a real observation x0 sampled from past experience, and is rolled out for H steps.",
+   "grounded": true
+  },
+  {
+   "op": "predict next state",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "The world model then predicts the reward r\u0302t , the episode end d\u02c6t , and the next observation x\u0302t+1 = D(x\u0302\u2264t , a\u0302\u2264t , z\u0302\u2264t , z\u0302t+1 ), with z\u0302t+1 \u223c pG (z\u0302t+1 |x\u0302\u2264t , a\u0302\u2264t , z\u0302\u2264t ).",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "A value baseline is trained to predict \u03bb-returns (Sutton & Barto, 2018) with the same discrete regression objective as for reward prediction.",
+   "grounded": true
+  },
+  {
+   "op": "optimize policy",
+   "canonical": "improve",
+   "object": "policy",
+   "quote": "The policy optimizes the REINFORCE with value baseline (Sutton & Barto, 2018) learning objective over imagined trajectories.",
+   "grounded": true
+  },
+  {
+   "op": "maximize entropy",
+   "canonical": "maximize entropy",
+   "object": "policy",
+   "quote": "Exploration is encouraged by adding an entropy maximization term to the policy\u2019s objective.",
+   "grounded": true
+  },
+  {
+   "op": "compute return",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "We compute FPS as the total number of environment frames collected divided by the training duration.",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "The imagination procedure is initialized with a real observation x0 sampled from past experience, and is rolled out for H steps.",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "The model is trained with a cross-entropy loss on segments sampled from past experience.",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "The model is trained with a cross-entropy loss on segments sampled from past experience.",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "The model is trained with a cross-entropy loss on segments sampled from past experience.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "The codebook is updated with an exponential moving average (Razavi et al., 2019).",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute gradient@error",
+  "compute reward@value",
+  "compute termination@value",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@action",
+  "encode@input",
+  "encode@state",
+  "evaluate@error",
+  "evaluate@value",
+  "improve@parameter",
+  "improve@policy",
+  "maximize entropy@policy",
+  "predict@distribution",
+  "predict@latent",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "sample@distribution",
+  "sample@latent",
+  "sample@policy",
+  "sample@trajectory"
+ ]
+}

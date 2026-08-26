@@ -1,0 +1,198 @@
+{
+ "arxiv_id": "2111.00210",
+ "section_how": "heading: EfficientZero",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 24,
+ "n_invalid_object": 5,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the output s\u0302t+1 from the dynamic function G should be the same as st+1",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:next-state",
+   "quote": "the output s\u0302t+1 from the dynamic function G should be the same as st+1",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "the output s\u0302t+1 from the dynamic function G should be the same as st+1",
+   "grounded": true
+  },
+  {
+   "op": "project",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "both of st+1 and s\u0302t+1 go through a common projector network",
+   "grounded": true
+  },
+  {
+   "op": "pull",
+   "canonical": "pull",
+   "object": "distribution",
+   "quote": "pull ot and ot+1 close to each other",
+   "grounded": true
+  },
+  {
+   "op": "apply",
+   "canonical": "apply",
+   "object": "INVALID:augmentation",
+   "quote": "applying augmentations to observations on the image helps to further improve the learned representation quality",
+   "grounded": true
+  },
+  {
+   "op": "unroll",
+   "canonical": "unroll",
+   "object": "INVALID:dynamic",
+   "quote": "we unroll the dynamic function recurrently for 5 further steps",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the predicted reward is always used in the estimation of the Q-value Q(s, a) in UCT",
+   "grounded": true
+  },
+  {
+   "op": "sum",
+   "canonical": "sum",
+   "object": "reward",
+   "quote": "the sum of rewards Pk\u22121 i i=0 \u03b3 rt+i as the value prefix",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the LSTM is supervised at every time step",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "the value prefix can be computed whenever a new state comes in",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "trajectory",
+   "quote": "the value target is computed by sampling a Pk\u22121 trajectory from the replay buffer",
+   "grounded": true
+  },
+  {
+   "op": "rollout",
+   "canonical": "rollout",
+   "object": "trajectory",
+   "quote": "the value target is computed by sampling a Pk\u22121 trajectory from the replay buffer",
+   "grounded": true
+  },
+  {
+   "op": "correct",
+   "canonical": "correct",
+   "object": "value",
+   "quote": "we propose to use rewards of a dynamic horizon l from the old trajectory",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "we propose to use the following value target: zt = l\u22121 X \u03b3 i ut+i + \u03b3 l \u03bdt+l",
+   "grounded": true
+  },
+  {
+   "op": "expand",
+   "canonical": "expand",
+   "object": "INVALID:tree",
+   "quote": "we redo an MCTS search with the current policy on the last state st+l",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "compute the empirical mean value at the root node",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "the value target is computed by sampling a Pk\u22121 trajectory from the replay buffer",
+   "grounded": true
+  },
+  {
+   "op": "simulate",
+   "canonical": "simulate",
+   "object": "INVALID:environment",
+   "quote": "we use the model to imagine an 'online experience'",
+   "grounded": false
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the LSTM is supervised at every time step",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "the predicted reward is always used in the estimation of the Q-value Q(s, a) in UCT",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "we report the raw performance on each game, as well as the mean and median of the human normalized score",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "distribution",
+   "quote": "the human normalized score is defined as: (scoreagent \u2212 scorerandom )/(scorehuman \u2212 scorerandom )",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "we compare our method to the following baselines",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@distribution",
+  "compare@state",
+  "compute@distribution",
+  "compute@value",
+  "correct@parameter",
+  "correct@value",
+  "encode@input",
+  "normalize@distribution",
+  "predict@reward",
+  "predict@trajectory",
+  "predict@value",
+  "project@latent",
+  "pull@distribution",
+  "rollout@trajectory",
+  "sample@trajectory",
+  "sum@reward",
+  "train@parameter"
+ ]
+}

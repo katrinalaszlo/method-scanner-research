@@ -1,0 +1,192 @@
+{
+ "arxiv_id": "2103.08050",
+ "section_how": "pinned: 4. Fisher-BRC",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "learn behavior policy",
+   "canonical": "train",
+   "object": "policy",
+   "quote": "Learn approximate \u00b5 using behavioral cloning.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Update \u03b8 using objective in eq. (7).",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Update \u03c6 using entropy-regularized objective Es\u223cD,a\u223c\u03c0\u03c6 (\u00b7|s) [O\u03b8 (s, a) + log \u00b5(a|s) + \u03b1H(\u03c0\u03c6 (\u00b7|s))].",
+   "grounded": true
+  },
+  {
+   "op": "compute q-value",
+   "canonical": "compute q-value",
+   "object": "value",
+   "quote": "Q(s, a) = V (s) + log \u00b5(a|s).",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03c6 Q\u03b8 (s, \u03c0\u03c6 (s)) = \u0002 \u0003 \u2207a O\u03b8 (s, a) + \u2207a log \u00b5(a|s) a=\u03c0 (s) \u2207\u03c6 \u03c0\u03c6 (s).",
+   "grounded": true
+  },
+  {
+   "op": "compute td error",
+   "canonical": "compute td error",
+   "object": "error",
+   "quote": "learn via standard TD error minimization (2).",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207a O\u03b8 (s, a) + \u2207a log \u00b5(a|s) a=\u03c0 (s) \u2207\u03c6 \u03c0\u03c6 (s).",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient penalty",
+   "canonical": "compute gradient penalty",
+   "object": "gradient",
+   "quote": "k\u2207a O\u03b8 (s, a)k2 .",
+   "grounded": true
+  },
+  {
+   "op": "compute expectation",
+   "canonical": "compute expectation",
+   "object": "distribution",
+   "quote": "E s\u223cD a\u223c\u03c0\u03c6 (\u00b7|s) [k\u2207a O\u03b8 (s, a)k2 ].",
+   "grounded": true
+  },
+  {
+   "op": "compute fisher divergence",
+   "canonical": "compute fisher divergence",
+   "object": "distribution",
+   "quote": "F (p(\u00b7), q(\u00b7)) = E k\u2207x log p(x) \u2212 \u2207x log q(x)k2 .",
+   "grounded": true
+  },
+  {
+   "op": "compute fisher divergence",
+   "canonical": "compute fisher divergence",
+   "object": "distribution",
+   "quote": "E s\u223cD a\u223c\u03c0emb (\u00b7|s) [k\u2207a log \u00b5(a|s) \u2212 \u2207a Q(s, a)k2 ].",
+   "grounded": false
+  },
+  {
+   "op": "compute expectation",
+   "canonical": "compute expectation",
+   "object": "distribution",
+   "quote": "E s\u223cD a\u223c\u03c0ebm (\u00b7|s) [k\u2207a O\u03b8 (s, a)k2 ].",
+   "grounded": false
+  },
+  {
+   "op": "compute kl divergence",
+   "canonical": "compute kl divergence",
+   "object": "distribution",
+   "quote": "DKL (\u00b5(\u00b7|s)|\u03c0emb (\u00b7|s)) = E a\u223c\u00b5(\u00b7|s) [log \u00b5(a|s) \u2212 log \u03c0emb (a|s)].",
+   "grounded": true
+  },
+  {
+   "op": "compute log probability",
+   "canonical": "compute log probability",
+   "object": "distribution",
+   "quote": "log \u00b5(a|s) \u2212 log \u03c0emb (a|s).",
+   "grounded": false
+  },
+  {
+   "op": "compute q-value",
+   "canonical": "compute q-value",
+   "object": "value",
+   "quote": "Q(s, a) := O\u03b8 (s, a) + log \u00b5(a|s).",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "a\u223c\u03c0\u03c6 (\u00b7|s).",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "a\u223c\u03c0emb (\u00b7|s).",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207a O\u03b8 (s, a) \u2212 \u2207a log \u00b5(a|s).",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207a log \u00b5(a|s) \u2212 \u2207a Q(s, a).",
+   "grounded": false
+  },
+  {
+   "op": "compute expectation",
+   "canonical": "compute expectation",
+   "object": "distribution",
+   "quote": "E s\u223cD a\u223c\u03c0ebm (\u00b7|s) [k\u2207a O\u03b8 (s, a)k2 ].",
+   "grounded": false
+  },
+  {
+   "op": "compute expectation",
+   "canonical": "compute expectation",
+   "object": "distribution",
+   "quote": "E s\u223cD a\u223c\u03c0\u03c6 (\u00b7|s) [k\u2207a O\u03b8 (s, a)k2 ].",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207a O\u03b8 (s, a) \u2212 \u2207a log \u00b5(a|s).",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207a log \u00b5(a|s) \u2212 \u2207a Q(s, a).",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207a O\u03b8 (s, a) \u2212 \u2207a log \u00b5(a|s).",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compute expectation@distribution",
+  "compute fisher divergence@distribution",
+  "compute gradient penalty@gradient",
+  "compute gradient@gradient",
+  "compute kl divergence@distribution",
+  "compute log probability@distribution",
+  "compute q-value@value",
+  "compute td error@error",
+  "correct@parameter",
+  "sample@action",
+  "train@policy"
+ ]
+}

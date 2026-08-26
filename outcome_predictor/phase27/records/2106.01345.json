@@ -1,0 +1,226 @@
+{
+ "arxiv_id": "2106.01345",
+ "section_how": "heading: Method",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 29,
+ "n_invalid_object": 10,
+ "n_grounded": 29,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "the state is fed into a convolutional encoder instead of a linear layer",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we learn a linear layer for each modality, which projects raw inputs to the embedding dimension",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "value",
+   "quote": "we learn a linear layer for each modality, which projects raw inputs to the embedding dimension",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "action",
+   "quote": "we learn a linear layer for each modality, which projects raw inputs to the embedding dimension",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "INVALID:time",
+   "quote": "an embedding for each timestep is learned and added to each token",
+   "grounded": true
+  },
+  {
+   "op": "interleave",
+   "canonical": "interleave",
+   "object": "INVALID:token",
+   "quote": "input_embeds = stack ( R_embedding , s_embedding , a_embedding )",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "INVALID:token",
+   "quote": "the tokens are then processed by a GPT [9] model",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "the prediction head corresponding to the input token st is trained to predict at",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "loss = mean (( a_preds - a )**2) # L2 loss for continuous actions",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "optimizer . zero_grad (); loss . backward (); optimizer . step ()",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "sample next action action = DecisionTransformer (R , s , a , t )[ -1]",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "new_s , r , done , _ = env . step ( action )",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "value",
+   "quote": "R = R + [ R [ -1] - r ] # decrement returns - to - go with reward",
+   "grounded": true
+  },
+  {
+   "op": "append",
+   "canonical": "append",
+   "object": "INVALID:sequence",
+   "quote": "s , a , t = s + [ new_s ] , a + [ action ] , t + [ len ( R )]",
+   "grounded": true
+  },
+  {
+   "op": "truncate",
+   "canonical": "truncate",
+   "object": "INVALID:sequence",
+   "quote": "R , s , a , t = R [ - K :] , ... # only keep context length of K",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "value",
+   "quote": "embed_R ( R ) + pos_embedding",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "embed_s ( s ) + pos_embedding",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "action",
+   "quote": "embed_a ( a ) + pos_embedding",
+   "grounded": true
+  },
+  {
+   "op": "interleave",
+   "canonical": "interleave",
+   "object": "INVALID:token",
+   "quote": "input_embeds = stack ( R_embedding , s_embedding , a_embedding )",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "INVALID:token",
+   "quote": "hidden_states = transformer ( input_embeds = input_embeds )",
+   "grounded": true
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "INVALID:hidden",
+   "quote": "a_hidden = unstack ( hidden_states ). actions",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "return pred_a ( a_hidden )",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "loss = mean (( a_preds - a )**2) # L2 loss for continuous actions",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "optimizer . zero_grad (); loss . backward (); optimizer . step ()",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "sample next action action = DecisionTransformer (R , s , a , t )[ -1]",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "new_s , r , done , _ = env . step ( action )",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "value",
+   "quote": "R = R + [ R [ -1] - r ] # decrement returns - to - go with reward",
+   "grounded": true
+  },
+  {
+   "op": "append",
+   "canonical": "append",
+   "object": "INVALID:sequence",
+   "quote": "s , a , t = s + [ new_s ] , a + [ action ] , t + [ len ( R )]",
+   "grounded": true
+  },
+  {
+   "op": "truncate",
+   "canonical": "truncate",
+   "object": "INVALID:sequence",
+   "quote": "R , s , a , t = R [ - K :] , ... # only keep context length of K",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute@error",
+  "correct@state",
+  "correct@value",
+  "encode@action",
+  "encode@input",
+  "encode@state",
+  "encode@value",
+  "predict@action",
+  "reconstruct@action"
+ ]
+}

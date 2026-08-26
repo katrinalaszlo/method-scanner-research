@@ -1,0 +1,196 @@
+{
+ "arxiv_id": "2006.04779",
+ "section_how": "heading: The Conservative Q-Learning (CQL) Framework",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 24,
+ "n_invalid_object": 9,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "compute bellman error",
+   "canonical": "compute bellman error",
+   "object": "value",
+   "quote": "we use the empirical Bellman operator, B\u0302 \u03c0 , instead of the actual Bellman operator, B \u03c0",
+   "grounded": false
+  },
+  {
+   "op": "minimize expected q-value",
+   "canonical": "minimize expected q-value",
+   "object": "INVALID:state-action",
+   "quote": "we learn a conservative, lower-bound Q-function by additionally minimizing Q-values alongside a standard Bellman error objective",
+   "grounded": true
+  },
+  {
+   "op": "update q-function",
+   "canonical": "correct",
+   "object": "value",
+   "quote": "Q\u0302k+1 \u2190 arg min \u03b1 Es\u223cD,a\u223c\u00b5(a|s) [Q(s, a)] + Q \u0014\u0010 \u00112 \u0015 1 , Es,a\u223cD Q(s, a) \u2212 B\u0302\u03c0 Q\u0302k (s, a) 2",
+   "grounded": true
+  },
+  {
+   "op": "compute expected q-value",
+   "canonical": "compute expected q-value",
+   "object": "INVALID:state-action",
+   "quote": "we learn a conservative, lower-bound Q-function by additionally minimizing Q-values alongside a standard Bellman error objective",
+   "grounded": true
+  },
+  {
+   "op": "maximize expected q-value",
+   "canonical": "maximize expected q-value",
+   "object": "INVALID:state-action",
+   "quote": "we can improve the bound by introducing an additional Q-value maximization term under the data distribution, \u03c0\u03b2 (a|s)",
+   "grounded": true
+  },
+  {
+   "op": "compute q-value",
+   "canonical": "compute q-value",
+   "object": "INVALID:state-action",
+   "quote": "we learn a conservative, lower-bound Q-function by additionally minimizing Q-values alongside a standard Bellman error objective",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:state-action",
+   "quote": "we learn a conservative, lower-bound Q-function by additionally minimizing Q-values alongside a standard Bellman error objective",
+   "grounded": true
+  },
+  {
+   "op": "compute concentration error",
+   "canonical": "compute concentration error",
+   "object": "INVALID:state-action",
+   "quote": "we use concentration properties of B\u0302 \u03c0 to control this error",
+   "grounded": true
+  },
+  {
+   "op": "compute lower bound",
+   "canonical": "compute lower bound",
+   "object": "INVALID:q-value",
+   "quote": "the resulting Q-function, Q\u0302\u03c0 := limk\u2192\u221e Q\u0302k , lower-bounds Q\u03c0 at all (s, a)",
+   "grounded": true
+  },
+  {
+   "op": "compute expected value",
+   "canonical": "compute expected value",
+   "object": "policy",
+   "quote": "we aim to estimate the value V \u03c0 (s) of a target policy \u03c0 given access to a dataset, D",
+   "grounded": true
+  },
+  {
+   "op": "compute policy value",
+   "canonical": "compute policy value",
+   "object": "policy",
+   "quote": "we aim to estimate the value V \u03c0 (s) of a target policy \u03c0 given access to a dataset, D",
+   "grounded": true
+  },
+  {
+   "op": "compute q-function bound",
+   "canonical": "compute q-function bound",
+   "object": "INVALID:q-value",
+   "quote": "the resulting Q-function, Q\u0302\u03c0 := limk\u2192\u221e Q\u0302k , lower-bounds Q\u03c0 at all (s, a)",
+   "grounded": true
+  },
+  {
+   "op": "compute policy improvement",
+   "canonical": "compute policy improvement",
+   "object": "policy",
+   "quote": "we could alternate between performing full off-policy evaluation for each policy iterate, \u03c0\u0302 k , and one step of policy improvement",
+   "grounded": true
+  },
+  {
+   "op": "compute policy distribution",
+   "canonical": "compute policy distribution",
+   "object": "policy",
+   "quote": "we could alternate between performing full off-policy evaluation for each policy iterate, \u03c0\u0302 k , and one step of policy improvement",
+   "grounded": true
+  },
+  {
+   "op": "compute regularization term",
+   "canonical": "compute regularization term",
+   "object": "distribution",
+   "quote": "we can further generalize the result in Theorem 3.2 to the case of both linear function approximators and non-linear neural network function approximators",
+   "grounded": true
+  },
+  {
+   "op": "compute kl divergence",
+   "canonical": "compute kl divergence",
+   "object": "distribution",
+   "quote": "if we choose R(\u00b5) to be the KL-divergence against a prior distribution, \u03c1(a|s), i.e., R(\u00b5) = \u2212DKL (\u00b5, \u03c1)",
+   "grounded": true
+  },
+  {
+   "op": "compute exponential weighted average",
+   "canonical": "compute exponential weighted average",
+   "object": "action",
+   "quote": "if \u03c1(a|s) is chosen to be the previous policy \u03c0\u0302 k\u22121 , the first term in Equation 4 is replaced by an exponential weighted average of Q-values of actions from the chosen \u03c0\u0302 k\u22121 (a|s)",
+   "grounded": true
+  },
+  {
+   "op": "compute policy update",
+   "canonical": "compute policy update",
+   "object": "policy",
+   "quote": "we could alternate between performing full off-policy evaluation for each policy iterate, \u03c0\u0302 k , and one step of policy improvement",
+   "grounded": true
+  },
+  {
+   "op": "compute policy constraint",
+   "canonical": "compute policy constraint",
+   "object": "policy",
+   "quote": "the policy \u03c0 k (a|s) \u221d exp(Q\u0302k (s, a)), is constrained to be closer to the dataset distribution, \u03c0\u0302\u03b2 (a|s)",
+   "grounded": true
+  },
+  {
+   "op": "compute gap expansion",
+   "canonical": "compute gap expansion",
+   "object": "INVALID:q-value",
+   "quote": "CQL Q-function update is \"gap-expanding\", by which we mean that the difference in Q-values at in-distribution actions and over-optimistically erroneous out-of-distribution actions is higher than the corresponding difference under the actual Q-function",
+   "grounded": false
+  },
+  {
+   "op": "compute empirical return",
+   "canonical": "compute empirical return",
+   "object": "policy",
+   "quote": "we define empirical return of any policy \u03c0, J(\u03c0, M\u0302 ), which is equal to the discounted return of a policy \u03c0 in the empirical MDP, M\u0302 , that is induced by the transitions observed in the dataset D",
+   "grounded": true
+  },
+  {
+   "op": "compute policy objective",
+   "canonical": "compute policy objective",
+   "object": "policy",
+   "quote": "we first show that CQL (Equation 2) optimizes a well-defined penalized RL empirical objective",
+   "grounded": true
+  },
+  {
+   "op": "compute policy penalty",
+   "canonical": "compute policy penalty",
+   "object": "policy",
+   "quote": "we also ensure that the learned policy \u03c0 is not too different from the behavior policy, \u03c0\u0302\u03b2 via a penalty that depends on DCQL",
+   "grounded": false
+  },
+  {
+   "op": "compute policy optimization",
+   "canonical": "compute policy optimization",
+   "object": "policy",
+   "quote": "we first show that CQL (Equation 2) optimizes a well-defined penalized RL empirical objective",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute bellman error@value",
+  "compute empirical return@policy",
+  "compute expected value@policy",
+  "compute exponential weighted average@action",
+  "compute kl divergence@distribution",
+  "compute policy constraint@policy",
+  "compute policy distribution@policy",
+  "compute policy improvement@policy",
+  "compute policy objective@policy",
+  "compute policy optimization@policy",
+  "compute policy penalty@policy",
+  "compute policy update@policy",
+  "compute policy value@policy",
+  "compute regularization term@distribution",
+  "correct@value"
+ ]
+}

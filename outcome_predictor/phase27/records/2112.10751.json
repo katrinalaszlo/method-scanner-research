@@ -1,0 +1,155 @@
+{
+ "arxiv_id": "2112.10751",
+ "section_how": "pinned: R EINFORCEMENT L EARNING VIA S UPERVISED",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 18,
+ "n_invalid_object": 0,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "Randomly sample trajectories: \u03c4 \u223c D.",
+   "grounded": true
+  },
+  {
+   "op": "sample time index",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "Sample time index for each trajetory, t \u223c [1, H], and",
+   "grounded": true
+  },
+  {
+   "op": "sample outcome",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "sample a corresponding outcome: \u03c9 \u223c f (\u03c9 | \u03c4t:H ).",
+   "grounded": true
+  },
+  {
+   "op": "concatenate input",
+   "canonical": "concatenate input",
+   "object": "state",
+   "quote": "condition on either the reward-to-go [26, 38] or a goal state [18, 19, 29] by merely concatenating with the input state",
+   "grounded": true
+  },
+  {
+   "op": "initialize policy",
+   "canonical": "initialize policy",
+   "object": "policy",
+   "quote": "Initialize policy \u03c0\u03b8 (a | s, \u03c9).",
+   "grounded": true
+  },
+  {
+   "op": "train policy",
+   "canonical": "train",
+   "object": "policy",
+   "quote": "find the outcome-conditioned policy \u03c0\u03b8 (at | st , \u03c9) that optimizes max \u03b8",
+   "grounded": true
+  },
+  {
+   "op": "compute expectation",
+   "canonical": "compute expectation",
+   "object": "distribution",
+   "quote": "E\u03c9\u223cf (\u03c9|\u03c4t:H ) [log \u03c0\u03b8 (at | st , \u03c9)].",
+   "grounded": true
+  },
+  {
+   "op": "iterate training",
+   "canonical": "iterate training",
+   "object": "parameter",
+   "quote": "while not converged do",
+   "grounded": true
+  },
+  {
+   "op": "collect data",
+   "canonical": "collect data",
+   "object": "trajectory",
+   "quote": "using a random policy to collect training data",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we report scores in the range [0, 100].",
+   "grounded": true
+  },
+  {
+   "op": "normalize score",
+   "canonical": "normalize score",
+   "object": "task",
+   "quote": "normalize the score according to 100 \u00b7 expert\u2212random",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we show that our simple implementation achieves performance competitive with prior work",
+   "grounded": true
+  },
+  {
+   "op": "tune capacity",
+   "canonical": "tune capacity",
+   "object": "parameter",
+   "quote": "tuning capacity and regularization, suggesting that overfitting and underfitting are major challenges for RvS",
+   "grounded": true
+  },
+  {
+   "op": "apply dropout",
+   "canonical": "apply dropout",
+   "object": "parameter",
+   "quote": "dropout sometimes has no effect (pusher), it improves performance in some tasks (kitchen-complete) and worsens performance in other tasks",
+   "grounded": true
+  },
+  {
+   "op": "validate model",
+   "canonical": "validate model",
+   "object": "error",
+   "quote": "validation set error does correlate with performance",
+   "grounded": true
+  },
+  {
+   "op": "optimize hyperparameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "hyperparameter optimization is especially important in the offline RL setting",
+   "grounded": true
+  },
+  {
+   "op": "increase network width",
+   "canonical": "increase network width",
+   "object": "parameter",
+   "quote": "incrementally increase network width until performance saturates",
+   "grounded": true
+  },
+  {
+   "op": "add regularization",
+   "canonical": "add regularization",
+   "object": "parameter",
+   "quote": "try adding a bit of dropout regularization (e.g., dropout p = 0.1)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "add regularization@parameter",
+  "apply dropout@parameter",
+  "collect data@trajectory",
+  "compute expectation@distribution",
+  "concatenate input@state",
+  "evaluate@task",
+  "improve@parameter",
+  "increase network width@parameter",
+  "initialize policy@policy",
+  "iterate training@parameter",
+  "normalize score@task",
+  "sample@trajectory",
+  "train@parameter",
+  "train@policy",
+  "tune capacity@parameter",
+  "validate model@error"
+ ]
+}

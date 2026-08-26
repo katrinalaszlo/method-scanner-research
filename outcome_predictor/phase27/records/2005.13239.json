@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "2005.13239",
+ "section_how": "heading: MOPO: Model-Based Offline Policy Optimization",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "input",
+   "quote": "the return under the estimated dynamics",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "the error of this estimator depends on",
+   "grounded": true
+  },
+  {
+   "op": "bound error",
+   "canonical": "bound error",
+   "object": "error",
+   "quote": "we bound the return from below by the return of a constructed model MDP",
+   "grounded": false
+  },
+  {
+   "op": "maximize return",
+   "canonical": "maximize return",
+   "object": "value",
+   "quote": "we maximize the conservative estimation of the return",
+   "grounded": true
+  },
+  {
+   "op": "estimate dynamics",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "the error of M c influences the uncertainty of the total return",
+   "grounded": true
+  },
+  {
+   "op": "compute uncertainty",
+   "canonical": "compute uncertainty",
+   "object": "distribution",
+   "quote": "the quantity G\u03c0M c(s, a) plays a key role linking the estimation error",
+   "grounded": true
+  },
+  {
+   "op": "replace error",
+   "canonical": "replace error",
+   "object": "error",
+   "quote": "we will replace G\u03c0M c by an upper bound that depends solely on the error of the dynamics",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "distribution",
+   "quote": "dF is the integral probability metric",
+   "grounded": true
+  },
+  {
+   "op": "compute total variation",
+   "canonical": "compute total variation",
+   "object": "distribution",
+   "quote": "if we assume that the reward function is bounded",
+   "grounded": false
+  },
+  {
+   "op": "compute lipschitz distance",
+   "canonical": "compute lipschitz distance",
+   "object": "distribution",
+   "quote": "if we assume that VM is Lv -Lipschitz",
+   "grounded": true
+  },
+  {
+   "op": "define error estimator",
+   "canonical": "define error estimator",
+   "object": "error",
+   "quote": "we say u : S \u00d7 A \u2192 R is an admissible error estimator",
+   "grounded": true
+  },
+  {
+   "op": "compute penalized reward",
+   "canonical": "compute penalized reward",
+   "object": "reward",
+   "quote": "we define the uncertainty-penalized reward r\u0303(s, a) := r(s, a) \u2212 \u03bbu(s, a)",
+   "grounded": true
+  },
+  {
+   "op": "define mdp",
+   "canonical": "define mdp",
+   "object": "task",
+   "quote": "we define the uncertainty-penalized MDP M f",
+   "grounded": true
+  },
+  {
+   "op": "optimize policy",
+   "canonical": "improve",
+   "object": "policy",
+   "quote": "we optimize the policy on the uncertainty-penalized MDP M f",
+   "grounded": true
+  },
+  {
+   "op": "compute model error",
+   "canonical": "compute model error",
+   "object": "error",
+   "quote": "\u000fu (\u03c0) characterizes how erroneous the model is along trajectories",
+   "grounded": true
+  },
+  {
+   "op": "define optimal policy",
+   "canonical": "define optimal policy",
+   "object": "policy",
+   "quote": "\u03c0 \u03b4 := arg max \u03b7M (\u03c0) (9) \u03c0:\u000fu (\u03c0)\u2264\u03b4",
+   "grounded": true
+  },
+  {
+   "op": "compute performance guarantee",
+   "canonical": "compute performance guarantee",
+   "object": "value",
+   "quote": "the learned policy \u03c0\u0302 in MOPO (Algorithm 1) satisfies \u03b7M (\u03c0\u0302) \u2265 sup{\u03b7M (\u03c0) \u2212 2\u03bb\u000fu (\u03c0)}",
+   "grounded": true
+  },
+  {
+   "op": "compute uncertainty penalty",
+   "canonical": "compute uncertainty penalty",
+   "object": "error",
+   "quote": "the penalty coefficient \u03bb is a user-chosen hyperparameter",
+   "grounded": false
+  },
+  {
+   "op": "compute ensemble variance",
+   "canonical": "compute ensemble variance",
+   "object": "noise",
+   "quote": "u(s, a) = maxN i=1 k\u03a3\u03c6 (s, a)kF",
+   "grounded": true
+  },
+  {
+   "op": "compute penalized reward",
+   "canonical": "compute penalized reward",
+   "object": "reward",
+   "quote": "the practical uncertainty-penalized reward of MOPO is computed as r\u0303(s, a) = r\u0302(s, a) \u2212 \u03bb maxi=1,...,N k\u03a3i\u03c6 (s, a)kF",
+   "grounded": true
+  },
+  {
+   "op": "train dynamics model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we learn an ensemble of N dynamics models",
+   "grounded": false
+  },
+  {
+   "op": "compute reward mean",
+   "canonical": "compute reward mean",
+   "object": "reward",
+   "quote": "r\u0302 is the mean of the predicted reward output by Tb",
+   "grounded": true
+  },
+  {
+   "op": "update policy",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "we run any RL algorithm on M f until convergence",
+   "grounded": false
+  },
+  {
+   "op": "compute uncertainty",
+   "canonical": "compute uncertainty",
+   "object": "error",
+   "quote": "we use the maximum of the ensemble elements rather than the mean",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "bound error@error",
+  "compare@distribution",
+  "compute distance@distribution",
+  "compute ensemble variance@noise",
+  "compute lipschitz distance@distribution",
+  "compute model error@error",
+  "compute penalized reward@reward",
+  "compute performance guarantee@value",
+  "compute reward mean@reward",
+  "compute reward@input",
+  "compute total variation@distribution",
+  "compute uncertainty penalty@error",
+  "compute uncertainty@distribution",
+  "compute uncertainty@error",
+  "correct@policy",
+  "define error estimator@error",
+  "define mdp@task",
+  "define optimal policy@policy",
+  "improve@policy",
+  "maximize return@value",
+  "predict@state",
+  "replace error@error",
+  "train@parameter"
+ ]
+}

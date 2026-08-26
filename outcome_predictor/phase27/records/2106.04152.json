@@ -1,0 +1,187 @@
+{
+ "arxiv_id": "2106.04152",
+ "section_how": "heading: Cycle-Consistent Virtual Trajectories for Representation Learning in RL",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the input observation st into low-dimensional latent state representation zt",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "predict the future latent state based on the current state and the action",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "predict the previous state based on the current state and the previous action",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "summing over difference (error) between the predicted representations z\u0302t+k and observed representations z\u0303t+k",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the prediction loss by summing over difference (error) between the predicted representations z\u0302t+k and observed representations z\u0303t+k",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the cycle consistency loss as: M Lcyc = 1 X dM (z0t , zt ). M m=1",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "randomly sample M sets of actions in the action space A",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "generate a forward trajectory and a corresponding backward trajectory",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "enforce a consistency constraint between the start state zt and the end state z0t",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the overall training objective of our method is as below: Ltotal = Lrl + \u03bbpred Lpred + \u03bbcyc Lcyc",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the prediction loss (see Eq. (2))",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the cycle consistency loss (see Eq. (4))",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the distance metric on space M and z0t is the prediction of zt after experiencing a sequence of actions in forward prediction and backward prediction",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the distance metric as in SPR [44]",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "randomly sample an action from the discrete action space at each step",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "actions randomly sampled from the uniform distribution of the continuous action space",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the distance metric dM on space M and study the influence on performance",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the distance metric on space M and z0t is the prediction of zt after experiencing a sequence of actions in forward prediction and backward prediction",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the distance metric on space M and study the influence on performance",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the distance metric on space M and study the influence on performance",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the distance metric on space M and study the influence on performance",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the distance metric on space M and study the influence on performance",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the distance metric on space M and study the influence on performance",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the distance metric on space M and study the influence on performance",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compute@error",
+  "correct@parameter",
+  "encode@input",
+  "predict@latent",
+  "reconstruct@trajectory",
+  "sample@action"
+ ]
+}

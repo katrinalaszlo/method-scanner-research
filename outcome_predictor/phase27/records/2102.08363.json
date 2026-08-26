@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2102.08363",
+ "section_how": "heading: Conservative Offline Model-Based Policy Optimization",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "state",
+   "quote": "Train the probabilistic dynamics model Tb\u03b8 (s0 , r|s, a) = N (\u00b5\u03b8 (s, a), \u03a3\u03b8 (s, a)) on D.",
+   "grounded": true
+  },
+  {
+   "op": "initialize buffer",
+   "canonical": "initialize buffer",
+   "object": "state",
+   "quote": "Initialize the replay buffer Dmodel \u2190 \u2205.",
+   "grounded": true
+  },
+  {
+   "op": "collect rollouts",
+   "canonical": "collect rollouts",
+   "object": "state",
+   "quote": "Collect model rollouts by sampling from \u00b5 and Tb\u03b8 starting from states in D.",
+   "grounded": true
+  },
+  {
+   "op": "add rollouts",
+   "canonical": "add rollouts",
+   "object": "state",
+   "quote": "Add model rollouts to Dmodel .",
+   "grounded": true
+  },
+  {
+   "op": "evaluate policy",
+   "canonical": "evaluate",
+   "object": "policy",
+   "quote": "Conservatively evaluate \u03c0\u03c6i by repeatedly solving eq. 2 to obtain Q\u0302\u03c8\u03c6 using samples from D \u222a Dmodel .",
+   "grounded": true
+  },
+  {
+   "op": "improve policy",
+   "canonical": "improve",
+   "object": "policy",
+   "quote": "Improve policy under state marginal of df by solving eq. 3 to obtain \u03c0\u03c6i+1 .",
+   "grounded": true
+  },
+  {
+   "op": "sample states",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "Samples from c d\u00b5f (s, a) can be obtained by rolling out \u03c0 in M.",
+   "grounded": false
+  },
+  {
+   "op": "interpolate distributions",
+   "canonical": "interpolate distributions",
+   "object": "distribution",
+   "quote": "d\u00b5f (s, a) := f d(s, a) + (1 \u2212 f ) d\u00b5c(s, a), M",
+   "grounded": true
+  },
+  {
+   "op": "update q-values",
+   "canonical": "correct",
+   "object": "value",
+   "quote": "When updating Q-values with the Bellman backup, we use a mixture of both the model-generated data and the real data.",
+   "grounded": true
+  },
+  {
+   "op": "learn q-function",
+   "canonical": "train",
+   "object": "value",
+   "quote": "We will show in Section 4 that the Q function learned by repeating the recursion in Eq. 2 provides a lower bound on the true Q function.",
+   "grounded": true
+  },
+  {
+   "op": "sample states",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "Samples from c d\u00b5f (s, a) can be obtained by rolling out \u03c0 in M.",
+   "grounded": false
+  },
+  {
+   "op": "compute q-values",
+   "canonical": "compute q-values",
+   "object": "value",
+   "quote": "Q\u0302 k+1 \u0014\u0010 \u00112\u0015 1 \u03c0 k b 0 \u2190arg min \u03b2 Es,a\u223c\u03c1(s,a) [Q(s, a)]\u2212Es,a\u223cD [Q(s, a)] + Es,a,s \u223cdf Q(s, a)\u2212 B Q\u0302 (s, a) . (2) Q 2 \u0001",
+   "grounded": true
+  },
+  {
+   "op": "compute penalty",
+   "canonical": "compute penalty",
+   "object": "error",
+   "quote": "Eq. 4 effectively applies a penalty that depends on the three distributions appearing in the COMBO critic training objective (Eq. 2).",
+   "grounded": true
+  },
+  {
+   "op": "compute expectation",
+   "canonical": "compute expectation",
+   "object": "error",
+   "quote": "\u03bd(\u03c1, f ) := Es,a\u223c\u03c1(s,a) [\u03c1(s, a) \u2212 d(s, a)] / df (s, a).",
+   "grounded": false
+  },
+  {
+   "op": "update policy",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "\u03c0 0 \u2190 arg max Es\u223c\u03c1,a\u223c\u03c0(\u00b7|s) Q\u0302\u03c0 (s, a) (3) \u03c0",
+   "grounded": true
+  },
+  {
+   "op": "approximate argmax",
+   "canonical": "approximate argmax",
+   "object": "policy",
+   "quote": "When policies are parameterized with neural networks, we approximate the arg max with a few steps of gradient descent.",
+   "grounded": true
+  },
+  {
+   "op": "regularize policy",
+   "canonical": "regularize policy",
+   "object": "policy",
+   "quote": "Entropy regularization can also be used to prevent the policy from becoming degenerate if required [17].",
+   "grounded": true
+  },
+  {
+   "op": "select hyperparameters",
+   "canonical": "select hyperparameters",
+   "object": "parameter",
+   "quote": "We search over a small discrete set of hyperparameters for each task, and use the value of the regularization term Es,a\u223c\u03c1(s,a) [Q(s, a)]\u2212Es,a\u223cD [Q(s, s)] (shown in Eq. 2) to pick hyperparameters in an entirely offline fashion.",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "state",
+   "quote": "The model is trained via maximum likelihood.",
+   "grounded": true
+  },
+  {
+   "op": "augment distribution",
+   "canonical": "augment",
+   "object": "distribution",
+   "quote": "We augment \u03c1 with states sampled from the offline dataset, which shows more stable improvement in practice.",
+   "grounded": true
+  },
+  {
+   "op": "compute lower bound",
+   "canonical": "compute lower bound",
+   "object": "value",
+   "quote": "COMBO optimizes a lower bound on the expected return of the learned policy.",
+   "grounded": true
+  },
+  {
+   "op": "compute policy improvement",
+   "canonical": "compute policy improvement",
+   "object": "policy",
+   "quote": "COMBO guarantees policy improvement beyond the behavior policy.",
+   "grounded": true
+  },
+  {
+   "op": "compute safety guarantee",
+   "canonical": "compute safety guarantee",
+   "object": "policy",
+   "quote": "Proposition 4.3 (\u03b6-safe policy improvement). Let \u03c0\u0302out (a|s) be the policy obtained by COMBO.",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "distribution",
+   "quote": "DCQL denotes a notion of probabilistic distance between policies [29] which we discuss further in Appendix A.4.",
+   "grounded": true
+  },
+  {
+   "op": "compute policy performance",
+   "canonical": "compute policy performance",
+   "object": "value",
+   "quote": "J(\u03c0\u0302out , M) \u2265 J(\u03c0\u03b2 , M) \u2212 \u03b6, with probability at least 1 \u2212 \u03b4.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "add rollouts@state",
+  "approximate argmax@policy",
+  "augment@distribution",
+  "collect rollouts@state",
+  "compute distance@distribution",
+  "compute expectation@error",
+  "compute lower bound@value",
+  "compute penalty@error",
+  "compute policy improvement@policy",
+  "compute policy performance@value",
+  "compute q-values@value",
+  "compute safety guarantee@policy",
+  "correct@policy",
+  "correct@value",
+  "evaluate@policy",
+  "improve@policy",
+  "initialize buffer@state",
+  "interpolate distributions@distribution",
+  "regularize policy@policy",
+  "sample@state",
+  "select hyperparameters@parameter",
+  "train@state",
+  "train@value"
+ ]
+}

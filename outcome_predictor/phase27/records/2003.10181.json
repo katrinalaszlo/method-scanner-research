@@ -1,0 +1,613 @@
+{
+ "arxiv_id": "2003.10181",
+ "section_how": "heading: DATA EFFICIENCY OF STANDARD APPROACHES",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 85,
+ "n_invalid_object": 0,
+ "n_grounded": 85,
+ "ops": [
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "collect reward",
+   "canonical": "collect reward",
+   "object": "action",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the algorithm performs a single update of the network for every 4 interactions with the environment",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "collect reward@action",
+  "compare@reward",
+  "correct@parameter",
+  "sample@policy"
+ ]
+}

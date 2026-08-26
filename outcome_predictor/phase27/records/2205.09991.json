@@ -1,0 +1,201 @@
+{
+ "arxiv_id": "2205.09991",
+ "section_how": "heading: Planning with Diffusion",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 24,
+ "n_invalid_object": 2,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "the iterative denoising process of a diffusion model lends itself to flexible conditioning",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "sampling from perturbed distributions of the form: p\u0303\u03b8 (\u03c4 ) \u221d p\u03b8 (\u03c4 )h(\u03c4 )",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "trajectory",
+   "quote": "we design Diffuser to predict all timesteps of a plan concurrently",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "distribution",
+   "quote": "\u00b5 \u2190 \u00b5\u03b8 (\u03c4 i )",
+   "grounded": true
+  },
+  {
+   "op": "guide",
+   "canonical": "guide",
+   "object": "trajectory",
+   "quote": "guide using gradients of return",
+   "grounded": true
+  },
+  {
+   "op": "constrain",
+   "canonical": "constrain",
+   "object": "state",
+   "quote": "constrain first state of plan",
+   "grounded": true
+  },
+  {
+   "op": "execute",
+   "canonical": "act",
+   "object": "action",
+   "quote": "Execute first action of plan",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "gradient",
+   "quote": "gradients of J\u03c6 are used to guide the trajectory sampling procedure",
+   "grounded": true
+  },
+  {
+   "op": "modify",
+   "canonical": "modify",
+   "object": "distribution",
+   "quote": "modifying the means \u00b5 of the reverse process",
+   "grounded": true
+  },
+  {
+   "op": "initialize",
+   "canonical": "initialize",
+   "object": "trajectory",
+   "quote": "initialize plan \u03c4 N \u223c N (0, I)",
+   "grounded": true
+  },
+  {
+   "op": "corrupt",
+   "canonical": "corrupt",
+   "object": "trajectory",
+   "quote": "\u03c4 i is the trajectory \u03c4 0 corrupted with noise \u000f",
+   "grounded": true
+  },
+  {
+   "op": "approximate",
+   "canonical": "approximate",
+   "object": "distribution",
+   "quote": "the reverse diffusion process transitions can be approximated as Gaussian",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "We use the simplified objective for training the \u000fmodel",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "L(\u03b8) = Ei,\u000f,\u03c4 0 k\u000f \u2212 \u000f\u03b8 (\u03c4 i , i)k2",
+   "grounded": true
+  },
+  {
+   "op": "schedule",
+   "canonical": "schedule",
+   "object": "distribution",
+   "quote": "Reverse process covariances \u03a3i follow the cosine schedule",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "We first train a diffusion model p\u03b8 (\u03c4 ) on the states and actions",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "We then train a separate model J\u03c6 to predict the cumulative rewards",
+   "grounded": true
+  },
+  {
+   "op": "condition",
+   "canonical": "intervene",
+   "object": "trajectory",
+   "quote": "conditioning by-inpainting because all sampled trajectories should begin at the current state",
+   "grounded": false
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we can generate trajectories via iterated refinements to local consistency",
+   "grounded": false
+  },
+  {
+   "op": "stitch",
+   "canonical": "stitch",
+   "object": "trajectory",
+   "quote": "it can stitch together snippets of trajectories from the training data",
+   "grounded": false
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "INVALID:horizon",
+   "quote": "the horizon can be updated after training by changing the dimensionality of the input noise",
+   "grounded": true
+  },
+  {
+   "op": "compose",
+   "canonical": "compose",
+   "object": "task",
+   "quote": "Diffuser can be composed with new reward functions to plan for tasks unseen during training",
+   "grounded": true
+  },
+  {
+   "op": "plan",
+   "canonical": "plan",
+   "object": "trajectory",
+   "quote": "the planning routine in Algorithm 1 is closely tied to the specific affordances of diffusion models",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "INVALID:performance",
+   "quote": "we evaluate Diffuser on the capabilities we would like from a data-driven planner",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "act@action",
+  "approximate@distribution",
+  "compose@task",
+  "compute@error",
+  "compute@gradient",
+  "constrain@state",
+  "correct@distribution",
+  "corrupt@trajectory",
+  "guide@trajectory",
+  "initialize@trajectory",
+  "intervene@trajectory",
+  "modify@distribution",
+  "plan@trajectory",
+  "predict@reward",
+  "predict@trajectory",
+  "reconstruct@trajectory",
+  "sample@trajectory",
+  "schedule@distribution",
+  "stitch@trajectory",
+  "train@parameter"
+ ]
+}

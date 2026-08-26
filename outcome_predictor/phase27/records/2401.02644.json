@@ -1,0 +1,196 @@
+{
+ "arxiv_id": "2401.02644",
+ "section_how": "pinned: H IERARCHICAL D IFFUSER",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "we generate the first action a0 of the plan",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we use the low-level planner to generate a dense trajectory that connects them",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "the guidance function J\u03d5SD (xSD ) predicts the return R(xSD ) for each segment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we train a diffusion model p\u03b8SD-DA (xSD-DA ) to capture the distribution of xSD-DA in the offline dataset",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we sample from the perturbed distribution p\u0303\u03b8SD (xSD ) \u221d p\u03b8SD (xSD ) exp (J\u03d5SD (xSD ))",
+   "grounded": false
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we train a diffusion model p\u03b8SD-DA (xSD-DA ) to capture the distribution of xSD-DA in the offline dataset",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the gradient \u2207xSD J\u03d5SD will direct toward a subgoal sequence that is part of high-return trajectories",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "trajectory",
+   "quote": "the guidance function J\u03d5SD (xSD ) predicts the return R(xSD ) for each segment",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we use the low-level planner to generate a dense trajectory that connects them",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we sample from the perturbed distribution p\u0303\u03b8SD (xSD ) \u221d p\u03b8SD (xSD ) exp (J\u03d5SD (xSD ))",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we use the low-level planner to generate a dense trajectory that connects them",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we sample from the perturbed distribution p\u0303\u03b8SD (xSD ) \u221d p\u03b8SD (xSD ) exp (J\u03d5SD (xSD ))",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we use the low-level planner to generate a dense trajectory that connects them",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we sample from the perturbed distribution p\u0303\u03b8SD (xSD ) \u221d p\u03b8SD (xSD ) exp (J\u03d5SD (xSD ))",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we use the low-level planner to generate a dense trajectory that connects them",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we sample from the perturbed distribution p\u0303\u03b8SD (xSD ) \u221d p\u03b8SD (xSD ) exp (J\u03d5SD (xSD ))",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we use the low-level planner to generate a dense trajectory that connects them",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we sample from the perturbed distribution p\u0303\u03b8SD (xSD ) \u221d p\u03b8SD (xSD ) exp (J\u03d5SD (xSD ))",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we use the low-level planner to generate a dense trajectory that connects them",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we sample from the perturbed distribution p\u0303\u03b8SD (xSD ) \u221d p\u03b8SD (xSD ) exp (J\u03d5SD (xSD ))",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we use the low-level planner to generate a dense trajectory that connects them",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we sample from the perturbed distribution p\u0303\u03b8SD (xSD ) \u221d p\u03b8SD (xSD ) exp (J\u03d5SD (xSD ))",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we use the low-level planner to generate a dense trajectory that connects them",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we sample from the perturbed distribution p\u0303\u03b8SD (xSD ) \u221d p\u03b8SD (xSD ) exp (J\u03d5SD (xSD ))",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we use the low-level planner to generate a dense trajectory that connects them",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "correct@parameter",
+  "encode@input",
+  "predict@distribution",
+  "predict@trajectory",
+  "reconstruct@trajectory",
+  "sample@policy",
+  "sample@sample"
+ ]
+}

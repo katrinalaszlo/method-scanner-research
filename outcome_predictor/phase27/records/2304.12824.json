@@ -1,0 +1,495 @@
+{
+ "arxiv_id": "2304.12824",
+ "section_how": "pinned: 5. Q-Guided Policy Optimization for Offl",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 68,
+ "n_invalid_object": 0,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "Rewriting Eq. (12) to condition all distributions on state s",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we denote \u00b50 := \u00b5, \u03c00 := \u03c0, a0 := a at time t = 0",
+   "grounded": true
+  },
+  {
+   "op": "diffuse",
+   "canonical": "diffuse",
+   "object": "action",
+   "quote": "we construct a forward diffusion process to simultaneously diffuse \u00b50 and \u03c00 into the same noise distribution",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "our desired policy \u03c0 \u2217 follows \u03c0 \u2217 (a|s) \u221d \u00b5(a|s) e\u03b2Q\u03c8 (s,a)",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we sample data from the joint distribution \u00b5(s, a) or the marginal distribution \u00b5(s)",
+   "grounded": false
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "we pre-generate a support action set D\u00b5\u03b8 using the already learned behavior model \u00b5\u03b8 (at |s, t)",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5,\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we estimate the objective in (19) with D\u00b5\u03b8 : min Et,s,\u03f5 \u2212 \u03d5 K X i=1",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compute@error",
+  "diffuse@action",
+  "encode@state",
+  "predict@value",
+  "reconstruct@action",
+  "sample@action"
+ ]
+}

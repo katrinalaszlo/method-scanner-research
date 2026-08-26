@@ -1,0 +1,199 @@
+{
+ "arxiv_id": "2011.07213",
+ "section_how": "heading: Method",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "we use a conditional variational autoencoder (CVAE) to model the behavior policy p(a|s)",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the decoder p\u03b2 (a|s, z) provides a mapping from the latent space to the action space",
+   "grounded": false
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "the latent policy has the flexibility of choosing the latent actions",
+   "grounded": true
+  },
+  {
+   "op": "project",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "use the pretrained decoder p\u03b2 (a|s, z) to project the latent action into the actual action space",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "latent",
+   "quote": "the policy uses a tanh activation at the output layer to limit the max latent action",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Optimize \u03b1 and \u03b2 using Equation 4",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "generate a latent action using the latent policy",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "Decode latent actions using the decoder at+1 = D\u03b2 (\u03c8t+1 )",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "Set y = \u03bb mini=1,2 Q0\u03c6i (st+1 , at+1 ) + (1 \u2212 \u03bb) maxi=1,2 Q0\u03c6i (st+1 , at+1 )",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Update critic by minimizing: L = (Q\u03c6i (s, a) \u2212 (r + \u03b3y))2 for i = 1, 2",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Update actor according to Equation 2",
+   "grounded": true
+  },
+  {
+   "op": "copy",
+   "canonical": "copy",
+   "object": "parameter",
+   "quote": "Update target networks: \u03b80 \u2190 \u03c4 \u03b8 + (1 \u2212 \u03c4 )\u03b80 , \u03c60i \u2190 \u03c4 \u03c6i + (1 \u2212 \u03c4 )\u03c60i for i = 1, 2",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "policy",
+   "quote": "Initialize the latent policy network \u03c0\u03b8 , critic networks Q\u03c61 , Q\u03c62 and their corresponding target networks",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "Initialize encoder E\u03b1 and decoder D\u03b2 with parameters \u03b1 and \u03b2",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "INVALID:state-action",
+   "quote": "Sample a minibatch of k state-action pairs (st , at ) from D",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "Update critic by minimizing: L = (Q\u03c6i (s, a) \u2212 (r + \u03b3y))2 for i = 1, 2",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "Set y = \u03bb mini=1,2 Q0\u03c6i (st+1 , at+1 ) + (1 \u2212 \u03bb) maxi=1,2 Q0\u03c6i (st+1 , at+1 )",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "Update critic by minimizing: L = (Q\u03c6i (s, a) \u2212 (r + \u03b3y))2 for i = 1, 2",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "Set y = \u03bb mini=1,2 Q0\u03c6i (st+1 , at+1 ) + (1 \u2212 \u03bb) maxi=1,2 Q0\u03c6i (st+1 , at+1 )",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "Update critic by minimizing: L = (Q\u03c6i (s, a) \u2212 (r + \u03b3y))2 for i = 1, 2",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "Set y = \u03bb mini=1,2 Q0\u03c6i (st+1 , at+1 ) + (1 \u2212 \u03bb) maxi=1,2 Q0\u03c6i (st+1 , at+1 )",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "Update critic by minimizing: L = (Q\u03c6i (s, a) \u2212 (r + \u03b3y))2 for i = 1, 2",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "Set y = \u03bb mini=1,2 Q0\u03c6i (st+1 , at+1 ) + (1 \u2212 \u03bb) maxi=1,2 Q0\u03c6i (st+1 , at+1 )",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "Update critic by minimizing: L = (Q\u03c6i (s, a) \u2212 (r + \u03b3y))2 for i = 1, 2",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "Set y = \u03bb mini=1,2 Q0\u03c6i (st+1 , at+1 ) + (1 \u2212 \u03bb) maxi=1,2 Q0\u03c6i (st+1 , at+1 )",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "clip@latent",
+  "compute@error",
+  "compute@value",
+  "copy@parameter",
+  "correct@parameter",
+  "encode@state",
+  "project@latent",
+  "reconstruct@latent",
+  "sample@latent",
+  "train@parameter",
+  "train@policy"
+ ]
+}

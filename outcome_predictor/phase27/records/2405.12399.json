@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2405.12399",
+ "section_how": "heading: Method",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We concatenate these past observations to the next noisy observation channel-wise",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "The RL agent involves an actor-critic network parameterized by a shared CNN - LSTM with policy and value heads",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "We use Euler\u2019s method to be effective without incurring the cost of additional NFE required by higher order samplers",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "We use a standard U-Net 2D for the vector field F\u03b8",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "The policy \u03c0\u03d5 is trained with REINFORCE with a value baseline",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "We use a separate model R\u03c8 consisting of standard CNN and LSTM layers to handle partial observability",
+   "grounded": true
+  },
+  {
+   "op": "condition",
+   "canonical": "intervene",
+   "object": "latent",
+   "quote": "We concatenate these past observations to the next noisy observation channel-wise",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "input",
+   "quote": "We input actions through adaptive group normalization layers",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "Combining Equations 5 and 6 provides insight into the training objective of F\u03b8",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "We use a Bellman error with \u03bb-returns to train the value network V\u03d5",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "Karras et al. (2022) sample the noise level \u03c3(\u03c4 ) from an empirically chosen log-normal distribution",
+   "grounded": true
+  },
+  {
+   "op": "mix",
+   "canonical": "mix",
+   "object": "INVALID:signal",
+   "quote": "The network training target adaptively mixes signal and noise depending on the degradation level \u03c3(\u03c4 )",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "L(\u03b8) = E \u2225 F\u03b8 c\u03c4in x\u03c4t+1 , yt\u03c4 \u2212 \u03c4 x0t+1 \u2212 c\u03c4skip x\u03c4t+1 \u22252",
+   "grounded": true
+  },
+  {
+   "op": "precondition",
+   "canonical": "precondition",
+   "object": "input",
+   "quote": "The preconditioners c\u03c4in and c\u03c4out are selected to keep the network\u2019s input and output at unit variance",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "noise",
+   "quote": "c\u03c4noise is an empirical transformation of the noise level",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "gradient",
+   "quote": "The policy \u03c0\u03d5 is trained with REINFORCE with a value baseline",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "reward",
+   "quote": "We provide stratified bootstrap confidence intervals for the mean and IQM",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "There are many possible sampling methods to generate the next observation from the trained diffusion model",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "We use a standard U-Net 2D for the vector field F\u03b8",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "The improved training objective described in Equation 7 gives a better estimate of the score function",
+   "grounded": true
+  },
+  {
+   "op": "interpolate",
+   "canonical": "interpolate",
+   "object": "action",
+   "quote": "Single-step denoising interpolates between possible outcomes and results in blurry predictions",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "trajectory",
+   "quote": "We use a standard U-Net 2D for the vector field F\u03b8",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "We use a standard U-Net 2D for the vector field F\u03b8",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "The score model is equivalent to a denoising autoencoder trained with an L2 reconstruction loss",
+   "grounded": false
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "We use a standard U-Net 2D for the vector field F\u03b8",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@reward",
+  "compute@distribution",
+  "compute@error",
+  "compute@gradient",
+  "compute@reward",
+  "correct@parameter",
+  "encode@input",
+  "interpolate@action",
+  "intervene@latent",
+  "normalize@input",
+  "precondition@input",
+  "predict@distribution",
+  "predict@trajectory",
+  "predict@value",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@trajectory",
+  "train@parameter",
+  "transform@noise"
+ ]
+}

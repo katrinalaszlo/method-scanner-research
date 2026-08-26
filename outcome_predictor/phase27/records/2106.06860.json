@@ -1,0 +1,165 @@
+{
+ "arxiv_id": "2106.06860",
+ "section_how": "heading: A Minimalist Offline RL Algorithm",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 19,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "normalize features",
+   "canonical": "normalize features",
+   "object": "state",
+   "quote": "we normalize the features of every state in the provided dataset",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "state",
+   "quote": "let \u00b5i be the mean and standard deviation, respectively, of the ith feature across the dataset",
+   "grounded": false
+  },
+  {
+   "op": "compute standard deviation",
+   "canonical": "compute standard deviation",
+   "object": "state",
+   "quote": "let \u00b5i \u03c3i be the mean and standard deviation, respectively, of the ith feature across the dataset",
+   "grounded": true
+  },
+  {
+   "op": "normalize state feature",
+   "canonical": "normalize state feature",
+   "object": "state",
+   "quote": "si = si \u2212 \u00b5i / \u03c3i + \u000f",
+   "grounded": false
+  },
+  {
+   "op": "compute q value",
+   "canonical": "compute q value",
+   "object": "state",
+   "quote": "define the scalar \u03bb as: \u03bb= 1 P N \u03b1 . (si ,ai ) |Q(si , ai )|",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we add a behavior cloning regularization term to the standard policy update step of TD3",
+   "grounded": true
+  },
+  {
+   "op": "update policy",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "\u03c0 = argmax E(s,a)\u223cD \u03bb Q(s, \u03c0(s)) \u2212 (\u03c0(s) \u2212 a) .",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient \u2207a Q(s, a) will also be dependent on the scale of Q",
+   "grounded": true
+  },
+  {
+   "op": "scale loss",
+   "canonical": "scale loss",
+   "object": "error",
+   "quote": "this formulation has the added benefit of normalizing the learning rate across tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the policy outputs an action",
+   "grounded": false
+  },
+  {
+   "op": "evaluate q value",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "the policy maximizes the Q value",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the reward signal is used in the policy update step",
+   "grounded": false
+  },
+  {
+   "op": "compute policy gradient",
+   "canonical": "compute policy gradient",
+   "object": "gradient",
+   "quote": "the gradient of the policy update is computed",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the parameters of the policy are updated using the gradient",
+   "grounded": false
+  },
+  {
+   "op": "compute q function",
+   "canonical": "compute q function",
+   "object": "value",
+   "quote": "the Q function is computed during the policy update step",
+   "grounded": false
+  },
+  {
+   "op": "compute loss term",
+   "canonical": "compute loss term",
+   "object": "error",
+   "quote": "the BC term is at most 4",
+   "grounded": true
+  },
+  {
+   "op": "compute normalization term",
+   "canonical": "compute normalization term",
+   "object": "error",
+   "quote": "we define the scalar \u03bb as: \u03bb= 1 P N \u03b1 . (si ,ai ) |Q(si , ai )|",
+   "grounded": true
+  },
+  {
+   "op": "estimate mean term",
+   "canonical": "predict",
+   "object": "error",
+   "quote": "in practice, we estimate this mean term over mini-batches",
+   "grounded": true
+  },
+  {
+   "op": "compute action difference",
+   "canonical": "compute action difference",
+   "object": "action",
+   "quote": "the BC term is (\u03c0(s) \u2212 a)",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compute action difference@action",
+  "compute gradient@gradient",
+  "compute loss term@error",
+  "compute mean@state",
+  "compute normalization term@error",
+  "compute policy gradient@gradient",
+  "compute q function@value",
+  "compute q value@state",
+  "compute reward@reward",
+  "compute standard deviation@state",
+  "correct@parameter",
+  "correct@policy",
+  "evaluate@error",
+  "evaluate@value",
+  "normalize features@state",
+  "normalize state feature@state",
+  "predict@error",
+  "sample@action",
+  "scale loss@error"
+ ]
+}

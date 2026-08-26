@@ -1,0 +1,564 @@
+{
+ "arxiv_id": "2208.06193",
+ "section_how": "heading: DIFFUSION Q- LEARNING",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 77,
+ "n_invalid_object": 0,
+ "n_grounded": 47,
+ "ops": [
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "We first sample aN \u223c N (0, I) and then from the reverse diffusion chain parameterized by \u03b8",
+   "grounded": true
+  },
+  {
+   "op": "predict noise",
+   "canonical": "predict",
+   "object": "noise",
+   "quote": "We follow Ho et al. (2020) to parameterize p\u03b8 (ai\u22121 | ai , s) as a noise prediction model",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "action",
+   "quote": "\u00b5\u03b8 (ai , s, i) = \u221a1\u03b1i ai \u2212 \u221a1\u2212 \u03b1\u0304 \u03b8 i",
+   "grounded": true
+  },
+  {
+   "op": "compute covariance",
+   "canonical": "compute covariance",
+   "object": "noise",
+   "quote": "\u03a3\u03b8 (ai , s, i) = \u03b2i I",
+   "grounded": true
+  },
+  {
+   "op": "denoise action",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "ai\u22121 | ai = \u221aa\u03b1i \u2212 \u221a \u03b2i \u03f5\u03b8 (ai , s, i) + \u03b2i \u03f5",
+   "grounded": true
+  },
+  {
+   "op": "sample noise",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "\u03f5 \u223c N (0, I)",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Ld (\u03b8) = Ei\u223cU ,\u03f5\u223cN (0,I),(s,a)\u223cD ||\u03f5 \u2212 \u03f5\u03b8 ( \u03b1\u0304i a + 1 \u2212 \u03b1\u0304i \u03f5, s, i)||2",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Ld (\u03b8) can efficiently be optimized by sampling a single diffusion step i for each data point",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "Sample a0t+1 \u223c \u03c0\u03b8\u2032 (at+1 | st+1 ) by Equation (1)",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Update Q\u03d51 and Q\u03d52 by Equation (4)",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "Sample a0t \u223c \u03c0\u03b8 (at | st ) by Equation (1)",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Update policy by minimizing Equation (3)",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "\u03b8\u2032 = \u03c1\u03b8\u2032 + (1 \u2212 \u03c1)\u03b8, \u03d5\u2032i = \u03c1\u03d5\u2032i + (1 \u2212 \u03c1)\u03d5i for i = {1, 2}",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "r(st , at ) + \u03b3 mini=1,2 Q\u03d5\u2032i (st+1 , at+1 ) \u2212 Q\u03d5i (st , at )",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the Q-value function itself is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Lq (\u03b8) = \u2212\u03b1 \u00b7 Es\u223cD,a0 \u223c\u03c0\u03b8 Q\u03d5 (s, a0 )",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "L(\u03b8) = Ld (\u03b8) + Lq (\u03b8) = Ld (\u03b8) \u2212 \u03b1 \u00b7 Es\u223cD,a0 \u223c\u03c0\u03b8 Q\u03d5 (s, a0 )",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backprop, through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the gradient of the Q-value function with respect to the action is backpropagated through the whole diffusion chain",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Q-value function is learned in a conventional way, minimizing the Bellman operator",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compute covariance@noise",
+  "compute gradient@gradient",
+  "compute mean@action",
+  "compute reward@reward",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "predict@noise",
+  "reconstruct@action",
+  "sample@action",
+  "sample@noise"
+ ]
+}

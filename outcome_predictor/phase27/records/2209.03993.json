@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "2209.03993",
+ "section_how": "heading: Method",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 25,
+ "n_invalid_object": 3,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "state",
+   "quote": "the state value is computed for the current state with 3",
+   "grounded": true
+  },
+  {
+   "op": "compare value",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "the value function is compared (V\u0302 (st )) against the RTG value for the current state (Rt )",
+   "grounded": true
+  },
+  {
+   "op": "update reward",
+   "canonical": "correct",
+   "object": "INVALID:rt",
+   "quote": "R\u03c4 \u22121 \u2190 r\u03c4 \u22121 + max(R\u03c4 , V\u0302 (s\u03c4 ))",
+   "grounded": true
+  },
+  {
+   "op": "propagate reward",
+   "canonical": "transmit",
+   "object": "trajectory",
+   "quote": "we repeat this process until the initial state is reached",
+   "grounded": true
+  },
+  {
+   "op": "relabel rtg",
+   "canonical": "relabel rtg",
+   "object": "INVALID:rtg",
+   "quote": "we replace the RTGs values when the RTG in the trajectory is lower than the lower bound",
+   "grounded": true
+  },
+  {
+   "op": "regenerate rtg",
+   "canonical": "regenerate rtg",
+   "object": "trajectory",
+   "quote": "we regenerate the RTG for the input sequence ({R\u0302t\u2212K+1 , \u00b7 \u00b7 \u00b7 , R\u0302t\u22121 , R\u0302t }) by copying the last RTG (R\u0302t = Rt )",
+   "grounded": true
+  },
+  {
+   "op": "apply reward recursion",
+   "canonical": "apply reward recursion",
+   "object": "trajectory",
+   "quote": "we repeatedly apply R\u0302t\u2032 = rt\u2032 + R\u0302t\u2032 +1 backwards until t\u2032 = t \u2212 K + 1",
+   "grounded": false
+  },
+  {
+   "op": "learn q function",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we employ the CQL framework for the offline Q-learning algorithm",
+   "grounded": true
+  },
+  {
+   "op": "update q function",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Q\u0302k+1 \u2190 \u0001 arg min \u03b1 Es\u223cD,a\u223c\u00b5(a|s) [Q(s, a)] \u2212 Es,a\u223cD [Q(s, a)] Q \u0014\u0010 \u00112 \u0015 1 + E s, a, s\u2032 \u223c D r(s, a) + \u03b3 Q\u0302k (s\u2032 , a\u2032 ) \u2212 Q(s, a) , 2 \u2032 \u2032 \u2032 a \u223c \u00b5(a |s )",
+   "grounded": true
+  },
+  {
+   "op": "initialize rtg",
+   "canonical": "initialize rtg",
+   "object": "INVALID:rtg",
+   "quote": "we initialise the last state RTG to zero (RT = 0)",
+   "grounded": true
+  },
+  {
+   "op": "output action",
+   "canonical": "output action",
+   "object": "action",
+   "quote": "DT outputs the next action (at )",
+   "grounded": true
+  },
+  {
+   "op": "transform sequence",
+   "canonical": "transform sequence",
+   "object": "trajectory",
+   "quote": "DT employs Transformer architecture (Vaswani et al., 2017)",
+   "grounded": true
+  },
+  {
+   "op": "condition on sequence",
+   "canonical": "intervene",
+   "object": "trajectory",
+   "quote": "DT outputs desired future actions from the target sum of future rewards RTGs, past states and actions",
+   "grounded": true
+  },
+  {
+   "op": "compute q function",
+   "canonical": "compute q function",
+   "object": "state",
+   "quote": "the learned value function V\u0302 (st ) = Ea\u223c\u03c0(a|st ) [Q\u0302(st , a)]",
+   "grounded": true
+  },
+  {
+   "op": "update trajectory",
+   "canonical": "correct",
+   "object": "trajectory",
+   "quote": "we repeat this process until the initial state is reached",
+   "grounded": true
+  },
+  {
+   "op": "propagate reward backwards",
+   "canonical": "transmit",
+   "object": "trajectory",
+   "quote": "we start the following process from the end of the trajectory to the initial state backwards in time",
+   "grounded": true
+  },
+  {
+   "op": "compute total reward",
+   "canonical": "compute total reward",
+   "object": "trajectory",
+   "quote": "at all the non-terminal states and put the total reward at the terminal state",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "DT employs Transformer architecture (Vaswani et al., 2017)",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "trajectory",
+   "quote": "DT outputs desired future actions from the target sum of future rewards RTGs, past states and actions",
+   "grounded": true
+  },
+  {
+   "op": "update model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Q\u0302k+1 \u2190 \u0001 arg min \u03b1 Es\u223cD,a\u223c\u00b5(a|s) [Q(s, a)] \u2212 Es,a\u223cD [Q(s, a)] Q \u0014\u0010 \u00112 \u0015 1 + E s, a, s\u2032 \u223c D r(s, a) + \u03b3 Q\u0302k (s\u2032 , a\u2032 ) \u2212 Q(s, a) , 2 \u2032 \u2032 \u2032 a \u223c \u00b5(a |s )",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "trajectory",
+   "quote": "we repeat this process until the initial state is reached",
+   "grounded": true
+  },
+  {
+   "op": "update reward sequence",
+   "canonical": "correct",
+   "object": "trajectory",
+   "quote": "we regenerate the RTG for the input sequence ({R\u0302t\u2212K+1 , \u00b7 \u00b7 \u00b7 , R\u0302t\u22121 , R\u0302t }) by copying the last RTG (R\u0302t = Rt )",
+   "grounded": true
+  },
+  {
+   "op": "apply reward recursion backwards",
+   "canonical": "apply reward recursion backwards",
+   "object": "trajectory",
+   "quote": "we repeatedly apply R\u0302t\u2032 = rt\u2032 + R\u0302t\u2032 +1 backwards until t\u2032 = t \u2212 K + 1",
+   "grounded": false
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "state",
+   "quote": "the learned value function V\u0302 (st ) = Ea\u223c\u03c0(a|st ) [Q\u0302(st , a)]",
+   "grounded": true
+  },
+  {
+   "op": "update value function",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "we repeat this process until the initial state is reached",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply reward recursion backwards@trajectory",
+  "apply reward recursion@trajectory",
+  "compare@value",
+  "compute q function@state",
+  "compute reward@trajectory",
+  "compute total reward@trajectory",
+  "compute value function@state",
+  "compute value@state",
+  "correct@parameter",
+  "correct@state",
+  "correct@trajectory",
+  "intervene@trajectory",
+  "output action@action",
+  "predict@trajectory",
+  "regenerate rtg@trajectory",
+  "train@parameter",
+  "transform sequence@trajectory",
+  "transmit@trajectory"
+ ]
+}

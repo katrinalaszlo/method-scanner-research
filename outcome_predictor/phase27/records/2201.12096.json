@@ -1,0 +1,67 @@
+{
+ "arxiv_id": "2201.12096",
+ "section_how": "heading: Approach",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 7,
+ "n_invalid_object": 1,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "mask",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "we perform a random spatial-temporal masking (i.e., cube masking) on the sequence of consecutive observations in the pixel space.",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we encode the masked sequence and the original sequence from observations to latent states with an encoder and a momentum encoder, respectively.",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we adopt two encoders to learn state representations from masked observations and original observations respectively.",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we adopt a transformer-based latent decoder to infer the reconstruction results via a global message passing where the actions and temporal information are exploited.",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "the online encoder in our MLR predicts the information of the masked contents from the unmasked contents.",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "action",
+   "quote": "Each action token is embedded as a feature vector with the same dimension as the state token using an embedding layer.",
+   "grounded": true
+  },
+  {
+   "op": "add",
+   "canonical": "add",
+   "object": "INVALID:token",
+   "quote": "the inputs of latent decoder can be mathematically represented as follows: x = [s\u0303t , at , s\u0303t+1 , at+1 , \u00b7 \u00b7 \u00b7 , s\u0303t+K\u22121 , at+K\u22121 ] + [pt , pt , pt+1 , pt+1 , \u00b7 \u00b7 \u00b7 , pt+K\u22121 , pt+K\u22121 ].",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "encode@action",
+  "encode@input",
+  "mask@input",
+  "predict@latent",
+  "reconstruct@latent"
+ ]
+}

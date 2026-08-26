@@ -1,0 +1,199 @@
+{
+ "arxiv_id": "2208.10291",
+ "section_how": "heading: METHOD",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 24,
+ "n_invalid_object": 1,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "token xt is processed by a causal Transformer",
+   "grounded": true
+  },
+  {
+   "op": "pool",
+   "canonical": "pool",
+   "object": "latent",
+   "quote": "apply a 1-dimensional max pooling",
+   "grounded": true
+  },
+  {
+   "op": "quantize",
+   "canonical": "quantize",
+   "object": "latent",
+   "quote": "after vector quantization in Equation (1)",
+   "grounded": true
+  },
+  {
+   "op": "tile",
+   "canonical": "tile",
+   "object": "latent",
+   "quote": "latent variables are then tiled L times",
+   "grounded": true
+  },
+  {
+   "op": "concatenate",
+   "canonical": "concatenate",
+   "object": "state",
+   "quote": "concatenate the state and embedding vector for the codes",
+   "grounded": true
+  },
+  {
+   "op": "project",
+   "canonical": "project",
+   "object": "distribution",
+   "quote": "apply a linear projection to provide state information to the decoder",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "the decoder then reconstructs the trajectory \u03c4\u0302",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "trajectory",
+   "quote": "the reconstruction loss is the mean squared error over the input trajectories",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "sample N latent variable sequences autoregressively",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "these latent variable sequences will then be turned into trajectories \u03c4n",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "trajectory",
+   "quote": "we score \u03c4 with the following function g",
+   "grounded": true
+  },
+  {
+   "op": "compute return",
+   "canonical": "evaluate",
+   "object": "trajectory",
+   "quote": "the first part (in red) of the score function is the predicted return-to-go",
+   "grounded": true
+  },
+  {
+   "op": "compute penalty",
+   "canonical": "compute penalty",
+   "object": "distribution",
+   "quote": "the second part (in blue) is a term that penalizes out-of-distribution plans",
+   "grounded": true
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "trajectory",
+   "quote": "select the trajectory that gives the best return",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we obtain a sample trajectory \u03c4\u0302 = (x\u03021 , . . . , x\u0302T ) from decoder h",
+   "grounded": true
+  },
+  {
+   "op": "plan",
+   "canonical": "plan",
+   "object": "trajectory",
+   "quote": "we can select the optimal one according to the objective function Equation (3)",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "sample according to the prior distribution and select the trajectory that gives the best return",
+   "grounded": true
+  },
+  {
+   "op": "expand",
+   "canonical": "expand",
+   "object": "trajectory",
+   "quote": "we can apply a planning algorithm like beam search for more efficient optimization",
+   "grounded": true
+  },
+  {
+   "op": "keep",
+   "canonical": "keep",
+   "object": "INVALID:partial",
+   "quote": "TAP beam search always keeps B best partial latent code sequences",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "samples E new latent actions conditioned on the partial codes",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "the decoder then reconstructs the trajectory \u03c4\u0302 := (x\u03021 , x\u03022 , . . . , x\u0302T )",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "the first part (in red) of the score function is the predicted return-to-go",
+   "grounded": true
+  },
+  {
+   "op": "penalize",
+   "canonical": "penalize",
+   "object": "distribution",
+   "quote": "the second part (in blue) is a term that penalizes out-of-distribution plans",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "latent",
+   "quote": "we can optimize latent actions z in order to find an optimal plan",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute penalty@distribution",
+  "compute@value",
+  "concatenate@state",
+  "encode@input",
+  "evaluate@trajectory",
+  "expand@trajectory",
+  "improve@latent",
+  "penalize@distribution",
+  "plan@trajectory",
+  "pool@latent",
+  "project@distribution",
+  "quantize@latent",
+  "reconstruct@latent",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@latent",
+  "select@trajectory",
+  "tile@latent"
+ ]
+}

@@ -1,0 +1,426 @@
+{
+ "arxiv_id": "2304.10573",
+ "section_how": "heading: Implicit Q-Learning as an Actor-Critic Method",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 58,
+ "n_invalid_object": 0,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "V \u2217 (s) = arg min Ea\u223c\u00b5(a|s) [f (Q(s, a) \u2212 V (s))]",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "\u03c8 \u2190 \u03c8 \u2212 \u03bb\u2207\u03c8 LfV (\u03c8) (Equation 6)",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "\u03b8 \u2190 \u03b8 \u2212 \u03bb\u2207\u03b8 LQ (\u03b8) (Equation 2)",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "\u03c6 \u2190 \u03c6 \u2212 \u03bb\u2207\u03c6 L\u00b5 (\u03c6) (Equation 4)",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "Sample ai \u223c \u00b5\u03c6 (a|s), i = 1, . . . , N",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "Compute w(s, ai ) using Eqns. 9, 10, 12, or 13",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "distribution",
+   "quote": "Normalize: pi = Pw(s,a j w(s,aj )",
+   "grounded": true
+  },
+  {
+   "op": "select action",
+   "canonical": "act",
+   "object": "action",
+   "quote": "Select ataken as a categorical from pi",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "V \u2217 (s) = arg min Ea\u223c\u03c0imp (a|s) [(Q(s, a) \u2212 V (s))2 ]",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w2\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V\u03c42 (s))|",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w1\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V1\u03c4 (s))| / |Q(s, a) \u2212 V\u03c41 (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "wexp (s, a) = \u03b1| exp \u03b1(Q(s, a) \u2212 Vexp (s)) \u2212 1| / |Q(s, a) \u2212 Vexp (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Vexp (s) = log \u03b1 a exp(\u03b1Q(s, a) + log \u00b5(a|s))",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "V \u2217 (s) = arg min Ea\u223c\u03c0imp (a|s) [(Q(s, a) \u2212 V (s))2 ]",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w2\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V\u03c42 (s))|",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w1\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V1\u03c4 (s))| / |Q(s, a) \u2212 V\u03c41 (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "wexp (s, a) = \u03b1| exp \u03b1(Q(s, a) \u2212 Vexp (s)) \u2212 1| / |Q(s, a) \u2212 Vexp (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Vexp (s) = log \u03b1 a exp(\u03b1Q(s, a) + log \u00b5(a|s))",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "V \u2217 (s) = arg min Ea\u223c\u03c0imp (a|s) [(Q(s, a) \u2212 V (s))2 ]",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w2\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V\u03c42 (s))|",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w1\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V1\u03c4 (s))| / |Q(s, a) \u2212 V\u03c41 (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "wexp (s, a) = \u03b1| exp \u03b1(Q(s, a) \u2212 Vexp (s)) \u2212 1| / |Q(s, a) \u2212 Vexp (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Vexp (s) = log \u03b1 a exp(\u03b1Q(s, a) + log \u00b5(a|s))",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "V \u2217 (s) = arg min Ea\u223c\u03c0imp (a|s) [(Q(s, a) \u2212 V (s))2 ]",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w2\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V\u03c42 (s))|",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w1\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V1\u03c4 (s))| / |Q(s, a) \u2212 V\u03c41 (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "wexp (s, a) = \u03b1| exp \u03b1(Q(s, a) \u2212 Vexp (s)) \u2212 1| / |Q(s, a) \u2212 Vexp (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Vexp (s) = log \u03b1 a exp(\u03b1Q(s, a) + log \u00b5(a|s))",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "V \u2217 (s) = arg min Ea\u223c\u03c0imp (a|s) [(Q(s, a) \u2212 V (s))2 ]",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w2\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V\u03c42 (s))|",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w1\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V1\u03c4 (s))| / |Q(s, a) \u2212 V\u03c41 (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "wexp (s, a) = \u03b1| exp \u03b1(Q(s, a) \u2212 Vexp (s)) \u2212 1| / |Q(s, a) \u2212 Vexp (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Vexp (s) = log \u03b1 a exp(\u03b1Q(s, a) + log \u00b5(a|s))",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "V \u2217 (s) = arg min Ea\u223c\u03c0imp (a|s) [(Q(s, a) \u2212 V (s))2 ]",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w2\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V\u03c42 (s))|",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w1\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V1\u03c4 (s))| / |Q(s, a) \u2212 V\u03c41 (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "wexp (s, a) = \u03b1| exp \u03b1(Q(s, a) \u2212 Vexp (s)) \u2212 1| / |Q(s, a) \u2212 Vexp (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Vexp (s) = log \u03b1 a exp(\u03b1Q(s, a) + log \u00b5(a|s))",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "V \u2217 (s) = arg min Ea\u223c\u03c0imp (a|s) [(Q(s, a) \u2212 V (s))2 ]",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w2\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V\u03c42 (s))|",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w1\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V1\u03c4 (s))| / |Q(s, a) \u2212 V\u03c41 (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "wexp (s, a) = \u03b1| exp \u03b1(Q(s, a) \u2212 Vexp (s)) \u2212 1| / |Q(s, a) \u2212 Vexp (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Vexp (s) = log \u03b1 a exp(\u03b1Q(s, a) + log \u00b5(a|s))",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "V \u2217 (s) = arg min Ea\u223c\u03c0imp (a|s) [(Q(s, a) \u2212 V (s))2 ]",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w2\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V\u03c42 (s))|",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w1\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V1\u03c4 (s))| / |Q(s, a) \u2212 V\u03c41 (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "wexp (s, a) = \u03b1| exp \u03b1(Q(s, a) \u2212 Vexp (s)) \u2212 1| / |Q(s, a) \u2212 Vexp (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Vexp (s) = log \u03b1 a exp(\u03b1Q(s, a) + log \u00b5(a|s))",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "V \u2217 (s) = arg min Ea\u223c\u03c0imp (a|s) [(Q(s, a) \u2212 V (s))2 ]",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w2\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V\u03c42 (s))|",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w1\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V1\u03c4 (s))| / |Q(s, a) \u2212 V\u03c41 (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "wexp (s, a) = \u03b1| exp \u03b1(Q(s, a) \u2212 Vexp (s)) \u2212 1| / |Q(s, a) \u2212 Vexp (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Vexp (s) = log \u03b1 a exp(\u03b1Q(s, a) + log \u00b5(a|s))",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "V \u2217 (s) = arg min Ea\u223c\u03c0imp (a|s) [(Q(s, a) \u2212 V (s))2 ]",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w2\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V\u03c42 (s))|",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "w1\u03c4 (s, a) = |\u03c4 \u2212 1(Q(s, a) < V1\u03c4 (s))| / |Q(s, a) \u2212 V\u03c41 (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "wexp (s, a) = \u03b1| exp \u03b1(Q(s, a) \u2212 Vexp (s)) \u2212 1| / |Q(s, a) \u2212 Vexp (s)|",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Vexp (s) = log \u03b1 a exp(\u03b1Q(s, a) + log \u00b5(a|s))",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "act@action",
+  "compare@value",
+  "compute value@value",
+  "compute weight@sample",
+  "correct@parameter",
+  "normalize@distribution",
+  "sample@action"
+ ]
+}

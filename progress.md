@@ -178,3 +178,8 @@ Phase 19 per Kat — policy-gradient split is the clear one.
 - 26a Atari 100k: 17 papers scanned + tables extracted with provenance; 475 rows / 17 methods / 26 games, outcome = 100×HNS from each paper's own Random/Human. Pre-registered clipped Ridge: D 87.9 < B 111.0 (11/17), D < E 115.4 (11/17). Dataset-first kNN: D 78.5 ≈ B 79.0, E 73.5 best. Same shape as D4RL under Phase 25 predictors
 - 26b vocab: 2500-word sections needed `num_ctx 8192` (app.py, semantic_type.py; default context silently truncated — old server had to be killed, it was still bound to :8000). Shared tuples 11→19 but ops/paper stay ~4; MAE unchanged. Bottleneck = ops emitted per paper, not section length
 - SimPLe/DER re-pinned; superseded records in phase26/superseded_records. `results26.md`
+
+### Phase 27 (`outcome_predictor/phase27/`)
+- Single-pass full-operation extraction, closed 15-type ontology, 2500-word sections, num_ctx 8192. 44 papers, 0 failures. Tuples/method 3.7→14.7, shared 11→55 (D4RL); 4.2→14.3, 9→42 (Atari)
+- Structure alone now beats mean baseline (C<A 20/27 D4RL, 10/17 Atari) — small. Structure+conditions unchanged (D4RL 22.0 vs 22.4; Atari 88.2 vs 87.9). kNN: Atari D 78.5→75.2, lineage still ≥
+- Closes the sparse-vocabulary explanation. Structure carries lineage-level information, redundant with dataset+conditions. Next real test is a paired within-method design (component swap → score change), not cross-method regression. `results27.md`

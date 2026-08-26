@@ -1,0 +1,205 @@
+{
+ "arxiv_id": "2005.05951",
+ "section_how": "heading: Algorithmic Framework",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "learn dynamics model",
+   "canonical": "train",
+   "object": "state",
+   "quote": "Learn approximate dynamics model P\u0302 : S \u00d7 A \u2192 S using D.",
+   "grounded": true
+  },
+  {
+   "op": "construct usad",
+   "canonical": "construct usad",
+   "object": "state",
+   "quote": "Construct \u03b1-USAD, U \u03b1 : S \u00d7 A \u2192 {TRUE, FALSE} using D",
+   "grounded": true
+  },
+  {
+   "op": "construct pessimistic mdp",
+   "canonical": "construct pessimistic mdp",
+   "object": "state",
+   "quote": "Construct the pessimistic MDP M\u0302p = {S \u222a HALT, A, rp , P\u0302p , \u03c1\u03020 , \u03b3} (see Definition 2).",
+   "grounded": true
+  },
+  {
+   "op": "behavior cloning",
+   "canonical": "behavior cloning",
+   "object": "action",
+   "quote": "Use a behavior cloning approach to estimate the behavior policy \u03c0\u0302b .",
+   "grounded": true
+  },
+  {
+   "op": "plan",
+   "canonical": "plan",
+   "object": "policy",
+   "quote": "\u03c0out \u2190 PLANNER(M\u0302p , \u03c0init = \u03c0\u0302b )",
+   "grounded": true
+  },
+  {
+   "op": "compute total variation distance",
+   "canonical": "compute total variation distance",
+   "object": "distribution",
+   "quote": "DT V (P\u0302 (\u00b7|s, a), P (\u00b7|s, a)) denotes the total variation distance between P\u0302 (\u00b7|s, a) and P (\u00b7|s, a).",
+   "grounded": false
+  },
+  {
+   "op": "detect unknown state-action",
+   "canonical": "detect unknown state-action",
+   "object": "state",
+   "quote": "U \u03b1 (s, a) = P\u0302 (\u00b7|s, a), P (\u00b7|s, a) \u2264 \u03b1 can be guaranteed FALSE (i.e. Known) if DT V TRUE (i.e. Unknown) otherwise",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "rp (s, a) = \u2212\u03ba if U \u03b1 (s, a) = TRUE",
+   "grounded": false
+  },
+  {
+   "op": "compute transition",
+   "canonical": "transition",
+   "object": "state",
+   "quote": "P\u0302p (s |s, a) = \u03b4(s0 = HALT) \u2212\u03ba if s = HALT or s = HALT",
+   "grounded": false
+  },
+  {
+   "op": "compute hitting time",
+   "canonical": "compute hitting time",
+   "object": "trajectory",
+   "quote": "The hitting time T(s,a) is defined as the first time action a is taken at state s by \u03c0 on M",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "The value of any policy \u03c0 on the original MDP M and its (\u03b1, Rmax )-pessimistic MDP M\u0302p satisfies",
+   "grounded": true
+  },
+  {
+   "op": "compute suboptimality",
+   "canonical": "compute suboptimality",
+   "object": "value",
+   "quote": "J\u03c1\u02c60 (\u03c0, M\u0302p ) \u2265 J\u03c10 (\u03c0, M) \u2212 2\u03b3Rmax 2Rmax \u00b7 DT V (\u03c10 , \u03c1\u02c60 ) \u2212 \u00b7 \u03b1",
+   "grounded": true
+  },
+  {
+   "op": "compute reward bound",
+   "canonical": "compute reward bound",
+   "object": "reward",
+   "quote": "J\u03c1\u02c60 (\u03c0, M\u0302p ) \u2264 J\u03c10 (\u03c0, M) + 2\u03b3Rmax 2Rmax \u00b7 DT V (\u03c10 , \u03c1\u02c60 ) + \u00b7 \u03b1",
+   "grounded": true
+  },
+  {
+   "op": "compute policy value",
+   "canonical": "compute policy value",
+   "object": "value",
+   "quote": "J\u03c10 (\u03c0 \u2217 , M) \u2212 J\u03c10 (\u03c0out , M) \u2264 \u000f\u03c0 + 4Rmax 4\u03b3Rmax 2Rmax \u00b7 DT V (\u03c10 , \u03c1\u02c60 ) + \u00b7\u03b1+ \u00b7 E \u03b3 TU",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution shift",
+   "canonical": "compute distribution shift",
+   "object": "distribution",
+   "quote": "the sub-optimality bound depends on the coverage of the offline dataset and overlap with the optimal policy",
+   "grounded": false
+  },
+  {
+   "op": "compute sampling error",
+   "canonical": "compute sampling error",
+   "object": "error",
+   "quote": "\u000fn is an error term related to finite samples that goes to zero as n \u2192 \u221e",
+   "grounded": false
+  },
+  {
+   "op": "compute optimization error",
+   "canonical": "compute optimization error",
+   "object": "error",
+   "quote": "\u000f\u03c0 can be made small with additional compute to find the optimal policy in the learned model",
+   "grounded": false
+  },
+  {
+   "op": "compute ensemble discrepancy",
+   "canonical": "compute ensemble discrepancy",
+   "object": "state",
+   "quote": "disc(s, a) = maxi,j f\u03c6i (s, a) \u2212 f\u03c6j (s, a) 2",
+   "grounded": true
+  },
+  {
+   "op": "detect unknown state-action practical",
+   "canonical": "detect unknown state-action practical",
+   "object": "state",
+   "quote": "Upractical (s, a) = FALSE (i.e. Known) if disc(s, a) \u2264 threshold",
+   "grounded": false
+  },
+  {
+   "op": "compute policy value bound",
+   "canonical": "compute policy value bound",
+   "object": "value",
+   "quote": "J\u03c10 (\u03c0 \u2217 , M) \u2212 J\u03c10 (\u03c0out , M) \u2264 \u000f\u03c0 + 2Rmax 2Rmax \u00b7 d\u03c0 ,M (U) + \u000f n",
+   "grounded": true
+  },
+  {
+   "op": "compute lower bound",
+   "canonical": "compute lower bound",
+   "object": "value",
+   "quote": "Rmax \u000f J\u03c10 (\u03c0 \u2217 , M) \u2212 J\u03c10 (\u03c0\u0302, M) \u2265 \u00b7 1",
+   "grounded": true
+  },
+  {
+   "op": "compute upper bound",
+   "canonical": "compute upper bound",
+   "object": "value",
+   "quote": "J\u03c10 (\u03c0b , M) \u2212 J\u03c10 (\u03c0out , M) \u2264 \u000f\u03c0 + \u000fn",
+   "grounded": true
+  },
+  {
+   "op": "compute policy improvement",
+   "canonical": "compute policy improvement",
+   "object": "policy",
+   "quote": "MOReL learns a policy that improves over the behavioral policy with high probability",
+   "grounded": true
+  },
+  {
+   "op": "compute log probability",
+   "canonical": "compute log probability",
+   "object": "distribution",
+   "quote": "log \u03c0b (1 \u2212 \u03b3)\u03c10,min n (1 \u2212 \u03b3)2 pmin dmin \u00b7n is an error term related to finite samples that goes to zero as n \u2192 \u221e",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "behavior cloning@action",
+  "compute distribution shift@distribution",
+  "compute ensemble discrepancy@state",
+  "compute hitting time@trajectory",
+  "compute log probability@distribution",
+  "compute lower bound@value",
+  "compute optimization error@error",
+  "compute policy improvement@policy",
+  "compute policy value bound@value",
+  "compute policy value@value",
+  "compute reward bound@reward",
+  "compute reward@reward",
+  "compute sampling error@error",
+  "compute suboptimality@value",
+  "compute total variation distance@distribution",
+  "compute upper bound@value",
+  "compute value@value",
+  "construct pessimistic mdp@state",
+  "construct usad@state",
+  "detect unknown state-action practical@state",
+  "detect unknown state-action@state",
+  "plan@policy",
+  "train@state",
+  "transition@state"
+ ]
+}

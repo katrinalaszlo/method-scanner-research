@@ -1,0 +1,189 @@
+{
+ "arxiv_id": "2305.20081",
+ "section_how": "heading: Efficient Diffusion Policy",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 22,
+ "n_invalid_object": 0,
+ "n_grounded": 15,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we encode timestep k with sinusoidal embedding",
+   "grounded": false
+  },
+  {
+   "op": "concatenate",
+   "canonical": "concatenate",
+   "object": "latent",
+   "quote": "we concatenate it with the noisy action ak and the conditional state s",
+   "grounded": false
+  },
+  {
+   "op": "predict noise",
+   "canonical": "predict",
+   "object": "noise",
+   "quote": "\u03f5\u03b8 is a parametric model",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "we perform one-step denoising to it",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we need to draw samples from K different Gaussian distributions sequentially",
+   "grounded": true
+  },
+  {
+   "op": "reparametrize",
+   "canonical": "reparametrize",
+   "object": "sample",
+   "quote": "we use the reparametrization trick",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the expectation is taken over all diffusion steps from clean action to pure noise",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we need to forward and backward through the network once each iteration",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we can easily and efficiently train a diffusion policy in a behavior-cloning manner",
+   "grounded": true
+  },
+  {
+   "op": "compute q value",
+   "canonical": "compute q value",
+   "object": "value",
+   "quote": "the next action a\u2032 \u223c \u03c0\u03b8 (\u00b7|s\u2032 )",
+   "grounded": true
+  },
+  {
+   "op": "optimize objective",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "we propose to replace the DDPM sampling in Eqn. (4) with DPM-Solver",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we can have the objective: \u0014 k \u0015 \u0001 2 \u03b2 \u00b7 f (Q\u03d5 (s, a)) k Ek,\u03f5,(a,s) \u03f5 \u2212 \u03f5\u03b8 a , k; s . (12) 2\u03b1k (1 \u2212 \u03b1\u0304k\u22121 )",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "we can only randomly draw a sample from the underlying distribution",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "distribution",
+   "quote": "sample one of them with weights proportional to eQ(s,a)",
+   "grounded": true
+  },
+  {
+   "op": "compute log likelihood",
+   "canonical": "compute log likelihood",
+   "object": "distribution",
+   "quote": "we propose to replace it with an approximated policy \u03c0\u0302\u03b8 (a|s) \u225c N (a\u03020 , I)",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we get the following objective: h i 2 Ek,\u03f5,(a,s) f (Q\u03d5 (s, a)) a \u2212 a\u03020 . (13) 5",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "we can only randomly draw a sample from the underlying distribution",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the goal of (offline) RL is to learn a policy that can maximize the cumulative return or values",
+   "grounded": true
+  },
+  {
+   "op": "compute q loss",
+   "canonical": "compute q loss",
+   "object": "value",
+   "quote": "we calculate the loss function based on sampled actions",
+   "grounded": false
+  },
+  {
+   "op": "compute policy gradient",
+   "canonical": "compute policy gradient",
+   "object": "gradient",
+   "quote": "we backpropagate through the sampling process for network update",
+   "grounded": false
+  },
+  {
+   "op": "compute policy improvement",
+   "canonical": "compute policy improvement",
+   "object": "policy",
+   "quote": "the policy improvement for diffusion policies is modified as follows",
+   "grounded": true
+  },
+  {
+   "op": "compute policy evaluation",
+   "canonical": "compute policy evaluation",
+   "object": "value",
+   "quote": "policy evaluation learns a Q network by minimizing the TD error LTD (\u03d5)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute gradient@gradient",
+  "compute log likelihood@distribution",
+  "compute policy evaluation@value",
+  "compute policy gradient@gradient",
+  "compute policy improvement@policy",
+  "compute q loss@value",
+  "compute q value@value",
+  "compute reward@reward",
+  "compute weight@distribution",
+  "concatenate@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "improve@parameter",
+  "predict@noise",
+  "reconstruct@action",
+  "reparametrize@sample",
+  "sample@action",
+  "sample@distribution",
+  "sample@trajectory"
+ ]
+}

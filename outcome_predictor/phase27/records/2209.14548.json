@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "2209.14548",
+ "section_how": "heading: METHOD",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we use an importance sampling technique",
+   "grounded": true
+  },
+  {
+   "op": "evaluate action",
+   "canonical": "evaluate",
+   "object": "action",
+   "quote": "evaluate these action candidates with a learned critic Q\u03c6",
+   "grounded": true
+  },
+  {
+   "op": "resample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "an action is resampled from M candidates with exp (\u03b1Q\u03c6 (s, a)) being the sampling weights",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "s\u03b8 is trained to denoise at := \u03b1t a + \u03c3t \u000f into the unperturbed action a",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "r(s, a) + \u03b3Es0 \u223cP (\u00b7|s,a),a0 \u223c\u03c0(\u00b7|s0 ) Q(s0 , a0 )",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "arg min \u03b8 E(s,a)\u223cD\u00b5 ,\u000f,t [k\u03c3t s\u03b8 (\u03b1t a + \u03c3t \u000f, s, t) + \u000fk22 ]",
+   "grounded": true
+  },
+  {
+   "op": "calculate error",
+   "canonical": "calculate error",
+   "object": "error",
+   "quote": "arg min \u03c6 E(sn ,an )\u223cD\u00b5 kQ\u03c6 (sn , an ) \u2212 Rn(k\u22121) k22",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "arg min \u03c6 E(sn ,an )\u223cD\u00b5 kQ\u03c6 (sn , an ) \u2212 Rn(k\u22121) k22",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "max{(T \u00b5 )n T \u03c0 Q(s, a), n\u22650}",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "arg min \u03b8 E(s,a)\u223cD\u00b5 ,\u000f,t [k\u03c3t s\u03b8 (\u03b1t a + \u03c3t \u000f, s, t) + \u000fk22 ]",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "we can rewrite Equation 11 in a recursive manner to calculate the Q-learning targets",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "arg min \u03c6 E(sn ,an )\u223cD\u00b5 kQ\u03c6 (sn , an ) \u2212 Rn(k\u22121) k22",
+   "grounded": true
+  },
+  {
+   "op": "update model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "arg min \u03b8 E(s,a)\u223cD\u00b5 ,\u000f,t [k\u03c3t s\u03b8 (\u03b1t a + \u03c3t \u000f, s, t) + \u000fk22 ]",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "arg min \u03c6 E(sn ,an )\u223cD\u00b5 kQ\u03c6 (sn , an ) \u2212 Rn(k\u22121) k22",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "arg min \u03b8 E(s,a)\u223cD\u00b5 ,\u000f,t [k\u03c3t s\u03b8 (\u03b1t a + \u03c3t \u000f, s, t) + \u000fk22 ]",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "r(s, a) + \u03b3Es0 \u223cP (\u00b7|s,a),a0 \u223c\u03c0(\u00b7|s0 ) Q(s0 , a0 )",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "we use an importance sampling technique",
+   "grounded": true
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "value",
+   "quote": "max{(T \u00b5 )n T \u03c0 Q(s, a), n\u22650}",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "arg min \u03b8 E(s,a)\u223cD\u00b5 ,\u000f,t [k\u03c3t s\u03b8 (\u03b1t a + \u03c3t \u000f, s, t) + \u000fk22 ]",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we can rewrite Equation 11 in a recursive manner to calculate the Q-learning targets",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "arg min \u03c6 E(sn ,an )\u223cD\u00b5 kQ\u03c6 (sn , an ) \u2212 Rn(k\u22121) k22",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "arg min \u03c6 E(sn ,an )\u223cD\u00b5 kQ\u03c6 (sn , an ) \u2212 Rn(k\u22121) k22",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "arg min \u03c6 E(sn ,an )\u223cD\u00b5 kQ\u03c6 (sn , an ) \u2212 Rn(k\u22121) k22",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "arg min \u03b8 E(s,a)\u223cD\u00b5 ,\u000f,t [k\u03c3t s\u03b8 (\u03b1t a + \u03c3t \u000f, s, t) + \u000fk22 ]",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "r(s, a) + \u03b3Es0 \u223cP (\u00b7|s,a),a0 \u223c\u03c0(\u00b7|s0 ) Q(s0 , a0 )",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "calculate error@error",
+  "compare@error",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "compute value function@value",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@action",
+  "evaluate@error",
+  "predict@reward",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@trajectory"
+ ]
+}

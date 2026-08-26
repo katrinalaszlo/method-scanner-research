@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "2305.19452",
+ "section_how": "heading: Method",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "reset parameters",
+   "canonical": "reset parameters",
+   "object": "parameter",
+   "quote": "we move them 50% towards the random target",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we use the AdamW optimizer",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we use the AdamW optimizer",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "we use the AdamW optimizer",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "SR-SPR is able to scale up its replay ratio",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "update target network",
+   "canonical": "correct",
+   "object": "value",
+   "quote": "we use an exponential moving average target network",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "compute replay ratio",
+   "canonical": "compute replay ratio",
+   "object": "INVALID:replay",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we use the IQM metric",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "correct@value",
+  "evaluate@error",
+  "reconstruct@noise",
+  "reset parameters@parameter",
+  "sample@action",
+  "sample@sample",
+  "sample@trajectory"
+ ]
+}

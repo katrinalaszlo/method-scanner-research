@@ -1,0 +1,71 @@
+{
+ "arxiv_id": "2110.06169",
+ "section_how": "heading: IMPLICIT Q-LEARNING",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "L(\u03b8) = E(s,a,s0 ,a0 )\u223cD [(r(s, a) + \u03b3Q\u03b8\u0302 (s0 , a0 ) \u2212 Q\u03b8 (s, a))2 ].",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "\u03b8 \u2190 \u03b8 \u2212 \u03bbQ \u2207\u03b8 LQ (\u03b8)",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "L(\u03b8) = E(s,a,s0 ,a0 )\u223cD [L\u03c42 (r(s, a) + \u03b3Q\u03b8\u0302 (s0 , a0 ) \u2212 Q\u03b8 (s, a))].",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "LV (\u03c8) = E(s,a) \u223cD [L\u03c42 (Q\u03b8\u0302 (s, a) \u2212 V\u03c8 (s))].",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "\u03c8 \u2190 \u03c8 \u2212 \u03bbV \u2207\u03c8 LV (\u03c8)",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "LQ (\u03b8) = E(s,a,s0 ) \u223cD [(r(s, a) + \u03b3V\u03c8 (s0 ) \u2212 Q\u03b8 (s, a))2 ].",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "L\u03c0 (\u03c6) = E(s,a) \u223cD [exp(\u03b2(Q\u03b8\u0302 (s, a) \u2212 V\u03c8 (s))) log \u03c0\u03c6 (a|s)]",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "\u03c6 \u2190 \u03c6 \u2212 \u03bb\u03c0 \u2207\u03c6 L\u03c0 (\u03c6)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "evaluate@error"
+ ]
+}

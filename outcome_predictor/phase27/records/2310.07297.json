@@ -1,0 +1,296 @@
+{
+ "arxiv_id": "2310.07297",
+ "section_how": "heading: PRACTICAL ALGORITHM",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 40,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "min LV (\u03b6) = E(s,a)\u223cD\u00b5 [L\u03c42 (Q\u03d5 (s, a) \u2212 V\u03b6 (s))], where L\u03c42 (u) = |\u03c4 \u2212 1(u < 0)|u2",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "min LQ (\u03d5) = E(s,a,s\u2032 )\u223cD\u00b5 \u2225r(s, a) + \u03b3V\u03b6 (s\u2032 ) \u2212 Q\u03d5 (s, a)\u222522",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "min LV (\u03b6) = E(s,a)\u223cD\u00b5 [L\u03c42 (Q\u03d5 (s, a) \u2212 V\u03b6 (s))], where L\u03c42 (u) = |\u03c4 \u2212 1(u < 0)|u2",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "min L\u00b5 (\u03c8) = Et,\u03f5,(s,a)\u223cD\u00b5 \u2225\u03f5\u03c8 (at |s, t) \u2212 \u03f5\u222522 at =\u03b1t a+\u03c3t \u03f5",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "at =\u03b1t a + \u03c3t \u03f5",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Ls,urr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "max Lsurr \u03c0 (\u03b8) = Es,a\u223c\u03c0\u03b8 Q\u03d5 (s, a) \u2212 \u03b8 1 \u03c3t Et,s \u03c9(t) DKL [\u03c0t,\u03b8 (\u00b7|s)||\u00b5t (\u00b7|s)] , \u03b2 \u03b1t",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "\u2207\u03b8 Lsurr \u03c0 (\u03b8) \u2248 Es \u2207a Q\u03d5 (s, a)|a=\u03c0\u03b8 (s) \u2212 \u03b2 subtracted baseline",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compute gradient@gradient",
+  "evaluate@error",
+  "sample@action"
+ ]
+}

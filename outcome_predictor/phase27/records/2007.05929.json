@@ -1,0 +1,196 @@
+{
+ "arxiv_id": "2007.05929",
+ "section_how": "heading: METHOD",
+ "section_words": 2500,
+ "model": "qwen3:8b",
+ "n_ops": 24,
+ "n_invalid_object": 7,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "We use an online encoder fo to transform observed states st into representations zt",
+   "grounded": true
+  },
+  {
+   "op": "augment",
+   "canonical": "augment",
+   "object": "input",
+   "quote": "We augment each observation st independently when using data augmentation",
+   "grounded": true
+  },
+  {
+   "op": "project",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "We use online and target projection heads go and gm to project online and target representations to a smaller latent space",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "We generate a sequence of K predictions z\u0302t+1:t+K of future state representations z\u0303t+1:t+K using an action-conditioned transition model h",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "latent",
+   "quote": "We compute z\u0303t+1:t+K by applying the target encoder fm to the observed future states st+1:t+K",
+   "grounded": true
+  },
+  {
+   "op": "apply",
+   "canonical": "apply",
+   "object": "INVALID:projection",
+   "quote": "We apply an additional prediction head q to the online projections to predict the target projections",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:similarity",
+   "quote": "We compute the future prediction loss for SPR by summing over cosine similarities between the predicted and observed representations",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "The update rule for \u03b8m is: \u03b8m \u2190 \u03c4 \u03b8m + (1 \u2212 \u03c4 )\u03b8o",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "We compute the future prediction loss for SPR by summing over cosine similarities between the predicted and observed representations",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "During training, we combine the SPR loss with the Q-learning loss for Rainbow",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "value",
+   "quote": "\u03b8m \u2190 \u03c4 \u03b8o + (1 \u2212 \u03c4 )\u03b8m",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "We sample a minibatch of sequences of (s, a, r, s0 ) \u223c B",
+   "grounded": false
+  },
+  {
+   "op": "apply",
+   "canonical": "apply",
+   "object": "INVALID:augmentation",
+   "quote": "We use the same set of image augmentations as in DrQ from Yarats et al. (2021)",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "INVALID:activation",
+   "quote": "We normalize activations to lie in [0, 1] at the output of the convolutional encoder and transition model",
+   "grounded": true
+  },
+  {
+   "op": "apply",
+   "canonical": "apply",
+   "object": "INVALID:dropout",
+   "quote": "We find that SPR performs better when dropout with probability 0.5 is applied at each layer in the online and target encoders",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "latent",
+   "quote": "We reuse the first layer of the DQN MLP head as the SPR projection head go",
+   "grounded": true
+  },
+  {
+   "op": "concatenate",
+   "canonical": "concatenate",
+   "object": "value",
+   "quote": "When using dueling DQN, go concatenates the outputs of the first layers of the value and advantage heads",
+   "grounded": false
+  },
+  {
+   "op": "parameterize",
+   "canonical": "parameterize",
+   "object": "INVALID:predictor",
+   "quote": "We parameterize the predictor q as a linear layer",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "For Ltotal = LRL \u03b8 + \u03bbL\u03b8 , we use \u03bb = 2",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "Our implementation uses rlpyt and PyTorch",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "We use the Q-learning loss to compute the reward signal for the agent",
+   "grounded": false
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "The Q-learning loss affects fo and the Q-learning head, which contains additional layers specific to Rainbow",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "trajectory",
+   "quote": "We compute z\u0303t+1:t+K by applying the target encoder fm to the observed future states st+1:t+K",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:projection",
+   "quote": "We apply an additional prediction head q to the online projections to predict the target projections",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "augment@input",
+  "compute@error",
+  "compute@latent",
+  "compute@reward",
+  "compute@trajectory",
+  "concatenate@value",
+  "correct@parameter",
+  "correct@policy",
+  "correct@value",
+  "encode@state",
+  "predict@latent",
+  "project@latent",
+  "sample@action",
+  "train@parameter"
+ ]
+}
