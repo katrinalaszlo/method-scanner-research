@@ -1,0 +1,10 @@
+{
+ "variant_id": "1903.00374|SimPLe|Ours, deterministic",
+ "paper_id": "1903.00374",
+ "change_type": "hyperparameter",
+ "affected_idx": [],
+ "affected_tuples": [],
+ "n_ops": 21,
+ "reason": "The variant modifies hyperparameters such as 'world_model', 'world_model_training', 'gamma', and 'rollout_length_N', but does not remove, replace, or add any operations.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [],\n  \"reason\": \"The variant modifies hyperparameters such as 'world_model', 'world_model_training', 'gamma', and 'rollout_length_N', but does not remove, replace, or add any operations.\"\n}"
+}

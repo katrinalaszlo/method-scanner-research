@@ -1,0 +1,10 @@
+{
+ "variant_id": "2304.10573|IDQL-1|one-hyperparameter (tau=0.7 locomotion)",
+ "paper_id": "2304.10573",
+ "change_type": "hyperparameter",
+ "affected_idx": [],
+ "affected_tuples": [],
+ "n_ops": 58,
+ "reason": "The variant introduces hyperparameters such as expectile_tau, num_action_samples_N, diffusion_steps_T, etc., but does not remove, replace, or add any operations from the original method.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [],\n  \"reason\": \"The variant introduces hyperparameters such as expectile_tau, num_action_samples_N, diffusion_steps_T, etc., but does not remove, replace, or add any operations from the original method.\"\n}"
+}

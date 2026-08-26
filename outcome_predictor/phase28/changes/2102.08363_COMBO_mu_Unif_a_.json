@@ -1,0 +1,16 @@
+{
+ "variant_id": "2102.08363|COMBO|mu=Unif(a)",
+ "paper_id": "2102.08363",
+ "change_type": "other",
+ "affected_idx": [
+  3,
+  11
+ ],
+ "affected_tuples": [
+  "collect rollouts@state",
+  "sample@state"
+ ],
+ "n_ops": 25,
+ "reason": "The variant replaces the rollout policy with a uniform distribution over actions, which affects operations 3 and 11.",
+ "raw": "{\n  \"change_type\": \"other\",\n  \"affected\": [3, 11],\n  \"reason\": \"The variant replaces the rollout policy with a uniform distribution over actions, which affects operations 3 and 11.\"\n}"
+}

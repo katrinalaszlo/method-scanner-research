@@ -1,0 +1,20 @@
+{
+ "variant_id": "2403.00564|EZ-V2|value_target=GAE",
+ "paper_id": "2403.00564",
+ "change_type": "replace",
+ "affected_idx": [
+  13,
+  14,
+  22,
+  23,
+  24,
+  25
+ ],
+ "affected_tuples": [
+  "compute mixed value@value",
+  "compute value@value"
+ ],
+ "n_ops": 25,
+ "reason": "The variant replaces the mixed value target with a GAE (Generalized Advantage Estimation) value target, which changes the computation of the value estimation.",
+ "raw": "{\n  \"change_type\": \"replace\",\n  \"affected\": [13, 14, 22, 23, 24, 25],\n  \"reason\": \"The variant replaces the mixed value target with a GAE (Generalized Advantage Estimation) value target, which changes the computation of the value estimation.\"\n}"
+}

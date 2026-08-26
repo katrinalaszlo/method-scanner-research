@@ -1,0 +1,14 @@
+{
+ "variant_id": "2111.00210|EfficientZero|Table 9 w.o. off-policy correction",
+ "paper_id": "2111.00210",
+ "change_type": "remove",
+ "affected_idx": [
+  14
+ ],
+ "affected_tuples": [
+  "sample@trajectory"
+ ],
+ "n_ops": 19,
+ "reason": "The variant removes the operation 'correct @ value' which involves using rewards of a dynamic horizon l from the old trajectory.",
+ "raw": "{\n  \"change_type\": \"remove\",\n  \"affected\": [14],\n  \"reason\": \"The variant removes the operation 'correct @ value' which involves using rewards of a dynamic horizon l from the old trajectory.\"\n}"
+}

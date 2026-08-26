@@ -1,0 +1,16 @@
+{
+ "variant_id": "2305.09836|ReBRAC|normalization=FeatureNorm (ReBRAC + FN)",
+ "paper_id": "2305.09836",
+ "change_type": "hyperparameter",
+ "affected_idx": [
+  2,
+  4
+ ],
+ "affected_tuples": [
+  "correct@parameter",
+  "normalize@distribution"
+ ],
+ "n_ops": 23,
+ "reason": "The variant changes the normalization method from LayerNorm to FeatureNorm and adjusts hyperparameters such as batch size and number of hidden layers.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [2, 4, 24],\n  \"reason\": \"The variant changes the normalization method from LayerNorm to FeatureNorm and adjusts hyperparameters such as batch size and number of hidden layers.\"\n}"
+}

@@ -1,0 +1,26 @@
+{
+ "variant_id": "2111.00210|EfficientZero|w.o. value prefix",
+ "paper_id": "2111.00210",
+ "change_type": "remove",
+ "affected_idx": [
+  9,
+  11,
+  12,
+  13,
+  14,
+  15,
+  18
+ ],
+ "affected_tuples": [
+  "compute@distribution",
+  "compute@value",
+  "correct@parameter",
+  "correct@value",
+  "normalize@distribution",
+  "predict@trajectory",
+  "sample@trajectory"
+ ],
+ "n_ops": 19,
+ "reason": "The variant removes the value prefix computation and related operations, including the computation of the value target and trajectory sampling.",
+ "raw": "{\n  \"change_type\": \"remove\",\n  \"affected\": [9, 11, 12, 13, 14, 15, 18],\n  \"reason\": \"The variant removes the value prefix computation and related operations, including the computation of the value target and trajectory sampling.\"\n}"
+}

@@ -1,0 +1,10 @@
+{
+ "variant_id": "1903.00374|SimPLe|Ours, SD 25 steps",
+ "paper_id": "1903.00374",
+ "change_type": "hyperparameter",
+ "affected_idx": [],
+ "affected_tuples": [],
+ "n_ops": 21,
+ "reason": "The variant modifies hyperparameters such as 'gamma', 'rollout_length_N', and 'world_model_training' without removing, replacing, or adding any operations.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [],\n  \"reason\": \"The variant modifies hyperparameters such as 'gamma', 'rollout_length_N', and 'world_model_training' without removing, replacing, or adding any operations.\"\n}"
+}

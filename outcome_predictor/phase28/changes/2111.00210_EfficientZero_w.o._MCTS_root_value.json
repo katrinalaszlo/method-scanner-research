@@ -1,0 +1,14 @@
+{
+ "variant_id": "2111.00210|EfficientZero|w.o. MCTS root value",
+ "paper_id": "2111.00210",
+ "change_type": "remove",
+ "affected_idx": [
+  17
+ ],
+ "affected_tuples": [
+  "compute@distribution"
+ ],
+ "n_ops": 19,
+ "reason": "The variant removes operations related to computing and comparing distributions, including the computation of the empirical mean value at the root node and the comparison to baselines.",
+ "raw": "{\n  \"change_type\": \"remove\",\n  \"affected\": [17, 22, 23, 24],\n  \"reason\": \"The variant removes operations related to computing and comparing distributions, including the computation of the empirical mean value at the root node and the comparison to baselines.\"\n}"
+}

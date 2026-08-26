@@ -1,0 +1,10 @@
+{
+ "variant_id": "2208.10291|TAP|horizon=3",
+ "paper_id": "2208.10291",
+ "change_type": "hyperparameter",
+ "affected_idx": [],
+ "affected_tuples": [],
+ "n_ops": 23,
+ "reason": "The variant changes the planning horizon from 15 to 3, which is a hyperparameter adjustment without altering the operations.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [],\n  \"reason\": \"The variant changes the planning horizon from 15 to 3, which is a hyperparameter adjustment without altering the operations.\"\n}"
+}

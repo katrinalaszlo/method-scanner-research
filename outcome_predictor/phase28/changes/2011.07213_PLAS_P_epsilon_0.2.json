@@ -1,0 +1,10 @@
+{
+ "variant_id": "2011.07213|PLAS+P|epsilon=0.2",
+ "paper_id": "2011.07213",
+ "change_type": "hyperparameter",
+ "affected_idx": [],
+ "affected_tuples": [],
+ "n_ops": 24,
+ "reason": "The variant introduces hyperparameters such as epsilon, actor_learning_rate, critic_learning_rate, and others, but does not remove, replace, or add any operations from the original method.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [],\n  \"reason\": \"The variant introduces hyperparameters such as epsilon, actor_learning_rate, critic_learning_rate, and others, but does not remove, replace, or add any operations from the original method.\"\n}"
+}

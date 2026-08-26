@@ -1,0 +1,20 @@
+{
+ "variant_id": "2211.15657|CondMLPDiffuser|main",
+ "paper_id": "2211.15657",
+ "change_type": "remove",
+ "affected_idx": [
+  2,
+  8,
+  13,
+  16
+ ],
+ "affected_tuples": [
+  "correct@state",
+  "reconstruct@state",
+  "sample@trajectory",
+  "scale@noise"
+ ],
+ "n_ops": 21,
+ "reason": "The variant removes operations related to trajectory-level diffusion, such as reconstructing, refining, and sampling trajectories, as it focuses on action diffusion without trajectory-level components.",
+ "raw": "{\n  \"change_type\": \"remove\",\n  \"affected\": [2, 8, 13, 16, 24, 25],\n  \"reason\": \"The variant removes operations related to trajectory-level diffusion, such as reconstructing, refining, and sampling trajectories, as it focuses on action diffusion without trajectory-level components.\"\n}"
+}

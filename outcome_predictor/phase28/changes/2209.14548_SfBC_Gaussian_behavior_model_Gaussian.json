@@ -1,0 +1,10 @@
+{
+ "variant_id": "2209.14548|SfBC + Gaussian|behavior model = Gaussian",
+ "paper_id": "2209.14548",
+ "change_type": "hyperparameter",
+ "affected_idx": [],
+ "affected_tuples": [],
+ "n_ops": 25,
+ "reason": "The variant changes the behavior model from a diffusion model to a Gaussian policy model, which is a hyperparameter change rather than modifying the operations themselves.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [],\n  \"reason\": \"The variant changes the behavior model from a diffusion model to a Gaussian policy model, which is a hyperparameter change rather than modifying the operations themselves.\"\n}"
+}

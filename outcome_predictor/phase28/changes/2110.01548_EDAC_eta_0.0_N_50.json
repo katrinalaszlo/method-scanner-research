@@ -1,0 +1,10 @@
+{
+ "variant_id": "2110.01548|EDAC|eta=0.0, N=50",
+ "paper_id": "2110.01548",
+ "change_type": "hyperparameter",
+ "affected_idx": [],
+ "affected_tuples": [],
+ "n_ops": 18,
+ "reason": "The variant only changes the hyperparameters 'eta' and 'N', without removing, replacing, or adding any operations.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [],\n  \"reason\": \"The variant only changes the hyperparameters 'eta' and 'N', without removing, replacing, or adding any operations.\"\n}"
+}

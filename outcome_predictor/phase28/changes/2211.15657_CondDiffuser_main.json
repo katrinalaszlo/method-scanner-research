@@ -1,0 +1,18 @@
+{
+ "variant_id": "2211.15657|CondDiffuser|main",
+ "paper_id": "2211.15657",
+ "change_type": "remove",
+ "affected_idx": [
+  7,
+  17,
+  18
+ ],
+ "affected_tuples": [
+  "diffuse@state",
+  "reconstruct@action",
+  "zero@latent"
+ ],
+ "n_ops": 21,
+ "reason": "The variant removes operations related to inverse dynamics models and the training of the reverse diffusion process and inverse dynamics model.",
+ "raw": "{\n  \"change_type\": \"remove\",\n  \"affected\": [7, 17, 18, 23, 25],\n  \"reason\": \"The variant removes operations related to inverse dynamics models and the training of the reverse diffusion process and inverse dynamics model.\"\n}"
+}

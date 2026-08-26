@@ -1,0 +1,22 @@
+{
+ "variant_id": "2208.06193|BC-Diffusion|main",
+ "paper_id": "2208.06193",
+ "change_type": "remove",
+ "affected_idx": [
+  19,
+  21,
+  37,
+  43,
+  49,
+  55,
+  61,
+  67,
+  73
+ ],
+ "affected_tuples": [
+  "evaluate@error"
+ ],
+ "n_ops": 77,
+ "reason": "The variant removes the Q-learning term, which includes operations related to evaluating and minimizing the Bellman error and combining losses.",
+ "raw": "{\n  \"change_type\": \"remove\",\n  \"affected\": [19, 21, 37, 43, 49, 55, 61, 67, 73, 79],\n  \"reason\": \"The variant removes the Q-learning term, which includes operations related to evaluating and minimizing the Bellman error and combining losses.\"\n}"
+}

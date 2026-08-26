@@ -1,0 +1,20 @@
+{
+ "variant_id": "2111.00210|EfficientZero|w.o. consistency",
+ "paper_id": "2111.00210",
+ "change_type": "remove",
+ "affected_idx": [
+  3,
+  14,
+  15,
+  17
+ ],
+ "affected_tuples": [
+  "compute@distribution",
+  "correct@parameter",
+  "project@latent",
+  "sample@trajectory"
+ ],
+ "n_ops": 19,
+ "reason": "The variant removes operations related to consistency, distribution computation, and comparison, as well as reward prediction and normalization, which aligns with the 'raw score' description.",
+ "raw": "{\n  \"change_type\": \"remove\",\n  \"affected\": [3, 14, 15, 17, 21, 22, 23, 24],\n  \"reason\": \"The variant removes operations related to consistency, distribution computation, and comparison, as well as reward prediction and normalization, which aligns with the 'raw score' description.\"\n}"
+}

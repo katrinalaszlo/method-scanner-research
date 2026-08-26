@@ -1,0 +1,14 @@
+{
+ "variant_id": "2305.09836|ReBRAC|batch_size=256 (w/o large batch)",
+ "paper_id": "2305.09836",
+ "change_type": "hyperparameter",
+ "affected_idx": [
+  4
+ ],
+ "affected_tuples": [
+  "correct@parameter"
+ ],
+ "n_ops": 23,
+ "reason": "The variant changes the batch size and learning rate scaling, which are hyperparameters affecting operations 4 and 24.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [4, 24],\n  \"reason\": \"The variant changes the batch size and learning rate scaling, which are hyperparameters affecting operations 4 and 24.\"\n}"
+}

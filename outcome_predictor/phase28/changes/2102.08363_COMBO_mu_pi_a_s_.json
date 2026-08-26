@@ -1,0 +1,36 @@
+{
+ "variant_id": "2102.08363|COMBO|mu=pi(a|s)",
+ "paper_id": "2102.08363",
+ "change_type": "other",
+ "affected_idx": [
+  3,
+  4,
+  11,
+  15,
+  16,
+  18,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "affected_tuples": [
+  "add rollouts@state",
+  "approximate argmax@policy",
+  "augment@distribution",
+  "collect rollouts@state",
+  "compute distance@distribution",
+  "compute lower bound@value",
+  "compute policy improvement@policy",
+  "compute policy performance@value",
+  "compute safety guarantee@policy",
+  "correct@policy",
+  "sample@state",
+  "select hyperparameters@parameter"
+ ],
+ "n_ops": 25,
+ "reason": "The variant modifies the rollout policy to use \u03bc = \u03c0(a|s), which affects several operations related to sampling, policy improvement, and performance evaluation.",
+ "raw": "{\n  \"change_type\": \"other\",\n  \"affected\": [3, 4, 11, 15, 16, 18, 20, 21, 22, 23, 24, 25],\n  \"reason\": \"The variant modifies the rollout policy to use \u03bc = \u03c0(a|s), which affects several operations related to sampling, policy improvement, and performance evaluation.\"\n}"
+}

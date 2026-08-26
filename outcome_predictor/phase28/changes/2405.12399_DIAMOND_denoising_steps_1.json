@@ -1,0 +1,10 @@
+{
+ "variant_id": "2405.12399|DIAMOND|denoising_steps=1",
+ "paper_id": "2405.12399",
+ "change_type": "hyperparameter",
+ "affected_idx": [],
+ "affected_tuples": [],
+ "n_ops": 24,
+ "reason": "The variant changes the denoising_steps hyperparameter from its default value to 1, which affects the number of denoising steps but does not remove, replace, or add any operations.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [],\n  \"reason\": \"The variant changes the denoising_steps hyperparameter from its default value to 1, which affects the number of denoising steps but does not remove, replace, or add any operations.\"\n}"
+}

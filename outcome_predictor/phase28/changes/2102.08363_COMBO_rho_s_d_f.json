@@ -1,0 +1,27 @@
+{
+ "variant_id": "2102.08363|COMBO|rho(s)=d_f",
+ "paper_id": "2102.08363",
+ "change_type": "other",
+ "affected_idx": [
+  1,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "affected_tuples": [
+  "augment@distribution",
+  "compute distance@distribution",
+  "compute lower bound@value",
+  "compute policy improvement@policy",
+  "compute policy performance@value",
+  "compute safety guarantee@policy",
+  "train@state"
+ ],
+ "n_ops": 25,
+ "reason": "The variant changes the state distribution rho(s) to d_f, which affects several operations related to distribution computation, policy improvement, and performance evaluation.",
+ "raw": "{\n  \"change_type\": \"other\",\n  \"affected\": [1, 19, 20, 21, 22, 23, 24, 25],\n  \"reason\": \"The variant changes the state distribution rho(s) to d_f, which affects several operations related to distribution computation, policy improvement, and performance evaluation.\"\n}"
+}

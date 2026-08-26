@@ -1,0 +1,16 @@
+{
+ "variant_id": "2111.00210|EfficientZero|w.o. dynamic horizon",
+ "paper_id": "2111.00210",
+ "change_type": "remove",
+ "affected_idx": [
+  14,
+  15
+ ],
+ "affected_tuples": [
+  "correct@parameter",
+  "sample@trajectory"
+ ],
+ "n_ops": 19,
+ "reason": "The variant removes the dynamic horizon computation, which involves operations 14 and 15.",
+ "raw": "{\n  \"change_type\": \"remove\",\n  \"affected\": [14, 15],\n  \"reason\": \"The variant removes the dynamic horizon computation, which involves operations 14 and 15.\"\n}"
+}

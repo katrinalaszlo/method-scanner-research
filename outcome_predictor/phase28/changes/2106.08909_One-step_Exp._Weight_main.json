@@ -1,0 +1,10 @@
+{
+ "variant_id": "2106.08909|One-step Exp. Weight|main",
+ "paper_id": "2106.08909",
+ "change_type": "hyperparameter",
+ "affected_idx": [],
+ "affected_tuples": [],
+ "n_ops": 106,
+ "reason": "The variant primarily changes hyperparameters and settings, such as tau, weight_clip, and training steps, without removing, replacing, or adding core operations.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [],\n  \"reason\": \"The variant primarily changes hyperparameters and settings, such as tau, weight_clip, and training steps, without removing, replacing, or adding core operations.\"\n}"
+}

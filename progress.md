@@ -183,3 +183,9 @@ Phase 19 per Kat — policy-gradient split is the clear one.
 - Single-pass full-operation extraction, closed 15-type ontology, 2500-word sections, num_ctx 8192. 44 papers, 0 failures. Tuples/method 3.7→14.7, shared 11→55 (D4RL); 4.2→14.3, 9→42 (Atari)
 - Structure alone now beats mean baseline (C<A 20/27 D4RL, 10/17 Atari) — small. Structure+conditions unchanged (D4RL 22.0 vs 22.4; Atari 88.2 vs 87.9). kNN: Atari D 78.5→75.2, lineage still ≥
 - Closes the sparse-vocabulary explanation. Structure carries lineage-level information, redundant with dataset+conditions. Next real test is a paired within-method design (component swap → score change), not cross-method regression. `results27.md`
+
+### Phase 28 (`outcome_predictor/phase28/`)
+- Paired within-method design: 880 main-vs-variant pairs, 22 papers, 96 variants (+Phase 23 sampler swaps). LLM change-mapper marks affected Phase 27 ops
+- Leave-one-paper-out clipped Ridge on signed delta: A 39.8 / B 28.5 / C 40.1 / D 29.2 mean per-paper MAE. D<B 12/22, C<A 14/22. Not supported
+- Sign accuracy 0.75 for all models incl. mean baseline (ablations mostly hurt). Only 31/96 variants touch any op per mapper
+- Conclusion across 24–28: bag-of-tuples structure is a taxonomy (lineage-level), not an outcome predictor, cross-method or within-method. `results28.md`

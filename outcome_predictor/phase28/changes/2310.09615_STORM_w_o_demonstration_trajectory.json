@@ -1,0 +1,14 @@
+{
+ "variant_id": "2310.09615|STORM|w/o demonstration trajectory",
+ "paper_id": "2310.09615",
+ "change_type": "remove",
+ "affected_idx": [
+  1
+ ],
+ "affected_tuples": [
+  "collect data@trajectory"
+ ],
+ "n_ops": 17,
+ "reason": "The variant removes the operation of collecting data from a demonstration trajectory.",
+ "raw": "{\n  \"change_type\": \"remove\",\n  \"affected\": [1],\n  \"reason\": \"The variant removes the operation of collecting data from a demonstration trajectory.\"\n}"
+}

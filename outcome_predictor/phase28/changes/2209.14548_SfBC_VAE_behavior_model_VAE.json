@@ -1,0 +1,10 @@
+{
+ "variant_id": "2209.14548|SfBC + VAE|behavior model = VAE",
+ "paper_id": "2209.14548",
+ "change_type": "other",
+ "affected_idx": [],
+ "affected_tuples": [],
+ "n_ops": 25,
+ "reason": "The variant replaces the diffusion behavior model with a VAE behavior model, but does not remove, replace, or add any of the listed operations.",
+ "raw": "{\n  \"change_type\": \"other\",\n  \"affected\": [],\n  \"reason\": \"The variant replaces the diffusion behavior model with a VAE behavior model, but does not remove, replace, or add any of the listed operations.\"\n}"
+}

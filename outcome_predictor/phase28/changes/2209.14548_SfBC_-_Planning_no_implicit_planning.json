@@ -1,0 +1,27 @@
+{
+ "variant_id": "2209.14548|SfBC - Planning|no implicit planning",
+ "paper_id": "2209.14548",
+ "change_type": "remove",
+ "affected_idx": [
+  1,
+  3,
+  11,
+  17,
+  20,
+  21,
+  23,
+  25
+ ],
+ "affected_tuples": [
+  "compare@error",
+  "compute action@action",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "evaluate@error",
+  "sample@action",
+  "sample@trajectory"
+ ],
+ "n_ops": 25,
+ "reason": "The variant removes operations related to implicit planning and Q-learning targets, replacing them with vanilla one-step Q-learning targets.",
+ "raw": "{\n  \"change_type\": \"remove\",\n  \"affected\": [1, 3, 11, 17, 20, 21, 23, 25],\n  \"reason\": \"The variant removes operations related to implicit planning and Q-learning targets, replacing them with vanilla one-step Q-learning targets.\"\n}"
+}

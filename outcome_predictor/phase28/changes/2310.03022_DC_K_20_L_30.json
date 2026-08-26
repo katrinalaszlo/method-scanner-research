@@ -1,0 +1,10 @@
+{
+ "variant_id": "2310.03022|DC|K=20, L=30",
+ "paper_id": "2310.03022",
+ "change_type": "hyperparameter",
+ "affected_idx": [],
+ "affected_tuples": [],
+ "n_ops": 28,
+ "reason": "The variant modifies the hyperparameters K and L, which are used in operations 2, 18, 20, 21, 23, and 18, but does not remove, replace, or add any operations.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [],\n  \"reason\": \"The variant modifies the hyperparameters K and L, which are used in operations 2, 18, 20, 21, 23, and 18, but does not remove, replace, or add any operations.\"\n}"
+}

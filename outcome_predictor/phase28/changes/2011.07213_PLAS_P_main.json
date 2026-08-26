@@ -1,0 +1,10 @@
+{
+ "variant_id": "2011.07213|PLAS+P|main",
+ "paper_id": "2011.07213",
+ "change_type": "hyperparameter",
+ "affected_idx": [],
+ "affected_tuples": [],
+ "n_ops": 24,
+ "reason": "The variant introduces hyperparameters such as actor_learning_rate, critic_learning_rate, cvae_learning_rate, optimizer, cvae_encoder_decoder_hidden, cvae_training_steps, cvae_batch_size, policy_critic_perturbation_hidden, tau, lambda_clipped_double_q, policy_training_steps, and policy_batch_size, which are not explicitly mentioned in the original method's operations.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [],\n  \"reason\": \"The variant introduces hyperparameters such as actor_learning_rate, critic_learning_rate, cvae_learning_rate, optimizer, cvae_encoder_decoder_hidden, cvae_training_steps, cvae_batch_size, policy_critic_perturbation_hidden, tau, lambda_clipped_double_q, policy_training_steps, and policy_batch_size, which are not explicitly mentioned in the original method's operations.\"\n}"
+}

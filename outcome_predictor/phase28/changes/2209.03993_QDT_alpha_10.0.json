@@ -1,0 +1,10 @@
+{
+ "variant_id": "2209.03993|QDT|alpha=10.0",
+ "paper_id": "2209.03993",
+ "change_type": "hyperparameter",
+ "affected_idx": [],
+ "affected_tuples": [],
+ "n_ops": 22,
+ "reason": "The variant modifies the hyperparameter 'cql_conservative_weight_alpha' but does not remove, replace, or add any operations.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [],\n  \"reason\": \"The variant modifies the hyperparameter 'cql_conservative_weight_alpha' but does not remove, replace, or add any operations.\"\n}"
+}

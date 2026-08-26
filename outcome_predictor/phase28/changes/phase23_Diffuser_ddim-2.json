@@ -1,0 +1,23 @@
+{
+ "variant_id": "phase23|Diffuser|ddim-2",
+ "paper_id": "2205.09991",
+ "change_type": "hyperparameter",
+ "affected_idx": [
+  2,
+  16,
+  18,
+  19,
+  20,
+  22
+ ],
+ "affected_tuples": [
+  "intervene@trajectory",
+  "plan@trajectory",
+  "reconstruct@trajectory",
+  "sample@trajectory",
+  "stitch@trajectory"
+ ],
+ "n_ops": 22,
+ "reason": "The variant replaces the stochastic DDPM reverse-process sampler with the deterministic DDIM sampler, changing the number of steps and the sampling method, while keeping other operations unchanged.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [2, 16, 18, 19, 20, 22, 23],\n  \"reason\": \"The variant replaces the stochastic DDPM reverse-process sampler with the deterministic DDIM sampler, changing the number of steps and the sampling method, while keeping other operations unchanged.\"\n}"
+}

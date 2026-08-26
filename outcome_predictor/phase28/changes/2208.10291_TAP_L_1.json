@@ -1,0 +1,28 @@
+{
+ "variant_id": "2208.10291|TAP|L=1",
+ "paper_id": "2208.10291",
+ "change_type": "hyperparameter",
+ "affected_idx": [
+  4,
+  15,
+  17,
+  18,
+  20,
+  21,
+  22,
+  23
+ ],
+ "affected_tuples": [
+  "compute@value",
+  "expand@trajectory",
+  "improve@latent",
+  "penalize@distribution",
+  "reconstruct@latent",
+  "reconstruct@trajectory",
+  "sample@latent",
+  "tile@latent"
+ ],
+ "n_ops": 23,
+ "reason": "The variant sets L=1, which affects operations involving tiling, sampling, reconstructing, and planning, but does not remove or replace them, only changes the numeric setting.",
+ "raw": "{\n  \"change_type\": \"hyperparameter\",\n  \"affected\": [4, 15, 17, 18, 20, 21, 22, 23, 24],\n  \"reason\": \"The variant sets L=1, which affects operations involving tiling, sampling, reconstructing, and planning, but does not remove or replace them, only changes the numeric setting.\"\n}"
+}
