@@ -1,0 +1,124 @@
+{
+ "n_papers": 893,
+ "n_pairs": 4927,
+ "n_boards": 25,
+ "L_dims": 109,
+ "S_dims": 2457,
+ "board_held_out": {
+  "chance": {
+   "acc": 0.5,
+   "per_board_mean": 0.5,
+   "n": 9854
+  },
+  "T": {
+   "acc": 0.7108,
+   "per_board_mean": 0.7113,
+   "n": 9854
+  },
+  "L": {
+   "acc": 0.5652,
+   "per_board_mean": 0.5657,
+   "n": 9854
+  },
+  "E": {
+   "acc": 0.6647,
+   "per_board_mean": 0.6654,
+   "n": 9854
+  },
+  "S": {
+   "acc": 0.6031,
+   "per_board_mean": 0.6029,
+   "n": 9854
+  },
+  "T+L": {
+   "acc": 0.712,
+   "per_board_mean": 0.7124,
+   "n": 9854
+  },
+  "T+E": {
+   "acc": 0.7254,
+   "per_board_mean": 0.7261,
+   "n": 9854
+  },
+  "T+S": {
+   "acc": 0.71,
+   "per_board_mean": 0.7106,
+   "n": 9854
+  },
+  "T+L+S": {
+   "acc": 0.7107,
+   "per_board_mean": 0.7111,
+   "n": 9854
+  },
+  "T+L+E": {
+   "acc": 0.7183,
+   "per_board_mean": 0.7188,
+   "n": 9854
+  },
+  "T+L+E+S": {
+   "acc": 0.7118,
+   "per_board_mean": 0.7123,
+   "n": 9854
+  }
+ },
+ "within_board": {
+  "chance": {
+   "acc": 0.5,
+   "per_board_mean": 0.5,
+   "n": 9854
+  },
+  "T": {
+   "acc": 0.7108,
+   "per_board_mean": 0.7113,
+   "n": 9854
+  },
+  "L": {
+   "acc": 0.6141,
+   "per_board_mean": 0.6141,
+   "n": 9854
+  },
+  "E": {
+   "acc": 0.7901,
+   "per_board_mean": 0.7902,
+   "n": 9854
+  },
+  "S": {
+   "acc": 0.8726,
+   "per_board_mean": 0.8726,
+   "n": 9854
+  },
+  "T+L": {
+   "acc": 0.7281,
+   "per_board_mean": 0.7286,
+   "n": 9854
+  },
+  "T+E": {
+   "acc": 0.8159,
+   "per_board_mean": 0.8162,
+   "n": 9854
+  },
+  "T+S": {
+   "acc": 0.8821,
+   "per_board_mean": 0.8821,
+   "n": 9854
+  },
+  "T+L+S": {
+   "acc": 0.8895,
+   "per_board_mean": 0.8894,
+   "n": 9854
+  },
+  "T+L+E": {
+   "acc": 0.8291,
+   "per_board_mean": 0.8292,
+   "n": 9854
+  },
+  "T+L+E+S": {
+   "acc": 0.8981,
+   "per_board_mean": 0.8979,
+   "n": 9854
+  }
+ },
+ "H1_TLS_gt_TL": false,
+ "H2_S_gt_chance": true,
+ "H3_TLES_gt_TLE": false
+}

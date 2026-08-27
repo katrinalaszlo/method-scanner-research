@@ -1,0 +1,81 @@
+{
+ "n_papers": 900,
+ "n_pairs": 5000,
+ "n_boards": 25,
+ "L_dims": 109,
+ "S_dims": 0,
+ "board_held_out": {
+  "chance": {
+   "acc": 0.5,
+   "per_board_mean": 0.5,
+   "n": 10000
+  },
+  "T": {
+   "acc": 0.7114,
+   "per_board_mean": 0.7114,
+   "n": 10000
+  },
+  "L": {
+   "acc": 0.5658,
+   "per_board_mean": 0.5658,
+   "n": 10000
+  },
+  "E": {
+   "acc": 0.669,
+   "per_board_mean": 0.669,
+   "n": 10000
+  },
+  "T+L": {
+   "acc": 0.709,
+   "per_board_mean": 0.709,
+   "n": 10000
+  },
+  "T+E": {
+   "acc": 0.7274,
+   "per_board_mean": 0.7274,
+   "n": 10000
+  },
+  "T+L+E": {
+   "acc": 0.7198,
+   "per_board_mean": 0.7198,
+   "n": 10000
+  }
+ },
+ "within_board": {
+  "chance": {
+   "acc": 0.5,
+   "per_board_mean": 0.5,
+   "n": 10000
+  },
+  "T": {
+   "acc": 0.7114,
+   "per_board_mean": 0.7114,
+   "n": 10000
+  },
+  "L": {
+   "acc": 0.6099,
+   "per_board_mean": 0.6099,
+   "n": 10000
+  },
+  "E": {
+   "acc": 0.7978,
+   "per_board_mean": 0.7978,
+   "n": 10000
+  },
+  "T+L": {
+   "acc": 0.7287,
+   "per_board_mean": 0.7287,
+   "n": 10000
+  },
+  "T+E": {
+   "acc": 0.8146,
+   "per_board_mean": 0.8146,
+   "n": 10000
+  },
+  "T+L+E": {
+   "acc": 0.8296,
+   "per_board_mean": 0.8296,
+   "n": 10000
+  }
+ }
+}
