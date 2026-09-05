@@ -1,0 +1,114 @@
+{
+ "arxiv_id": "2304.01552",
+ "source": "abstract",
+ "words": 179,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 14,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "the outer-loop process learns a shared initialization",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the outer-loop process learns a shared initialization",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "the inner-loop process optimizes task-specific weights",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the inner-loop process optimizes task-specific weights",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "controlling the inner-loop's gradient descent with a meta-learned preconditioner",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "controlling the inner-loop's gradient descent with a meta-learned preconditioner",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "the preconditioner can be shown to be a Riemannian metric",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the preconditioner can be shown to be a Riemann,ian metric",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "the geometry-adaptive preconditioner is effective for improving the inner-loop optimization",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the geometry-adaptive preconditioner is effective for improving the inner-loop optimization",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "GAP outperforms the state-of-the-art MAML family",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "GAP outperforms the state-of-the-art MAML family",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "GAP outperforms the state-of-the-art MAML family and preconditioned gradient descent-MAML (PGD-MAML) family",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "GAP outperforms the state-of-the-art MAML family and preconditioned gradient descent-MAML (PGD-MAML) family",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute gradient@error",
+  "correct@parameter"
+ ]
+}

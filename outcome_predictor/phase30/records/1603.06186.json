@@ -1,0 +1,69 @@
+{
+ "arxiv_id": "1603.06186",
+ "source": "abstract",
+ "words": 146,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 8,
+ "n_grounded": 2,
+ "ops": [
+  {
+   "op": "compute laplacian",
+   "canonical": "compute laplacian",
+   "object": "INVALID:graph",
+   "quote": "At the heart of the MLG construction is another new graph kernel",
+   "grounded": true
+  },
+  {
+   "op": "lift kernel",
+   "canonical": "lift kernel",
+   "object": "INVALID:graph",
+   "quote": "the FLG kernel has the property that it can lift a base kernel",
+   "grounded": false
+  },
+  {
+   "op": "apply kernel",
+   "canonical": "apply kernel",
+   "object": "INVALID:subgraph",
+   "quote": "The MLG kernel applies such FLG kernels to subgraphs recursively",
+   "grounded": true
+  },
+  {
+   "op": "construct hierarchy",
+   "canonical": "construct hierarchy",
+   "object": "INVALID:subgraph",
+   "quote": "by building a hierarchy of nested subgraphs",
+   "grounded": false
+  },
+  {
+   "op": "project randomly",
+   "canonical": "project",
+   "object": "INVALID:kernel",
+   "quote": "we also introduce a randomized projection procedure",
+   "grounded": false
+  },
+  {
+   "op": "compute kernel",
+   "canonical": "compute kernel",
+   "object": "INVALID:graph",
+   "quote": "the FLG kernel has the property that it can lift a base kernel",
+   "grounded": false
+  },
+  {
+   "op": "compute base kernel",
+   "canonical": "compute base kernel",
+   "object": "INVALID:vertex",
+   "quote": "the FLG kernel has the property that it can lift a base kernel",
+   "grounded": false
+  },
+  {
+   "op": "compute nested subgraph",
+   "canonical": "compute nested subgraph",
+   "object": "INVALID:graph",
+   "quote": "by building a hierarchy of nested subgraphs",
+   "grounded": false
+  }
+ ],
+ "tuples": []
+}

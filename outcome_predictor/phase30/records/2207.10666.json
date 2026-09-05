@@ -1,0 +1,201 @@
+{
+ "arxiv_id": "2207.10666",
+ "source": "abstract",
+ "words": 223,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 6,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "compute logits",
+   "canonical": "compute logits",
+   "object": "INVALID:teacher model",
+   "quote": "The logits of large teacher models are sparsified",
+   "grounded": true
+  },
+  {
+   "op": "store data",
+   "canonical": "store data",
+   "object": "INVALID:logits",
+   "quote": "The logits of large teacher models are sparsified and stored in disk",
+   "grounded": true
+  },
+  {
+   "op": "scale down model",
+   "canonical": "scale down model",
+   "object": "INVALID:student model",
+   "quote": "The tiny student transformers are automatically scaled down",
+   "grounded": true
+  },
+  {
+   "op": "apply distillation",
+   "canonical": "apply distillation",
+   "object": "INVALID:pretraining",
+   "quote": "we apply distillation during pretraining for knowledge transfer",
+   "grounded": true
+  },
+  {
+   "op": "compute parameters",
+   "canonical": "compute parameters",
+   "object": "parameter",
+   "quote": "The tiny student transformers are automatically scaled down from a large pretrained model with computation and parameter constraints",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "INVALID:student model",
+   "quote": "TinyViT achieves a top-1 accuracy of 84.8% on ImageNet-1k with only 21M parameters",
+   "grounded": false
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "TinyViT achieves a top-1 accuracy of 84.8% on ImageNet-1k with only 21M parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "parameter",
+   "quote": "TinyViT achieves a top-1 accuracy of 84.8% on ImageNet-1k with only 21M parameters",
+   "grounded": false
+  },
+  {
+   "op": "increase resolution",
+   "canonical": "increase resolution",
+   "object": "input",
+   "quote": "Increasing image resolutions, TinyViT can reach 86.5% accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "parameter",
+   "quote": "Increasing image resolutions, TinyViT can reach 86.5% accuracy",
+   "grounded": true
+  },
+  {
+   "op": "transfer knowledge",
+   "canonical": "transfer knowledge",
+   "object": "parameter",
+   "quote": "The central idea is to transfer knowledge from large pretrained models to small ones",
+   "grounded": true
+  },
+  {
+   "op": "pretrain model",
+   "canonical": "pretrain model",
+   "object": "INVALID:student model",
+   "quote": "we apply distillation during pretraining for knowledge transfer",
+   "grounded": true
+  },
+  {
+   "op": "compute parameters",
+   "canonical": "compute parameters",
+   "object": "parameter",
+   "quote": "TinyViT can reach 86.5% accuracy, being slightly better than Swin-L while using only 11% parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "parameter",
+   "quote": "TinyViT can reach 86.5% accuracy, being slightly better than Swin-L while using only 11% parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute parameters",
+   "canonical": "compute parameters",
+   "object": "parameter",
+   "quote": "TinyViT achieves a top-1 accuracy of 84.8% on ImageNet-1k with only 21M parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "parameter",
+   "quote": "TinyViT achieves a top-1 accuracy of 84.8% on ImageNet-1k with only 21M parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute parameters",
+   "canonical": "compute parameters",
+   "object": "parameter",
+   "quote": "TinyViT can reach 86.5% accuracy, being slightly better than Swin-L while using only 11% parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "parameter",
+   "quote": "TinyViT can reach 86.5% accuracy, being slightly better than Swin-L while using only 11% parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute parameters",
+   "canonical": "compute parameters",
+   "object": "parameter",
+   "quote": "TinyViT achieves a top-1 accuracy of 84.8% on ImageNet-1k with only 21M parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "parameter",
+   "quote": "TinyViT achieves a top-1 accuracy of 84.8% on ImageNet-1k with only 21M parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute parameters",
+   "canonical": "compute parameters",
+   "object": "parameter",
+   "quote": "TinyViT can reach 86.5% accuracy, being slightly better than Swin-L while using only 11% parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "parameter",
+   "quote": "TinyViT can reach 86.5% accuracy, being slightly better than Swin-L while using only 11% parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute parameters",
+   "canonical": "compute parameters",
+   "object": "parameter",
+   "quote": "TinyViT achieves a top-1 accuracy of 84.8% on ImageNet-1k with only 21M parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "parameter",
+   "quote": "TinyViT achieves a top-1 accuracy of 84.8% on ImageNet-1k with only 21M parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute parameters",
+   "canonical": "compute parameters",
+   "object": "parameter",
+   "quote": "TinyViT can reach 86.5% accuracy, being slightly better than Swin-L while using only 11% parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "parameter",
+   "quote": "TinyViT can reach 86.5% accuracy, being slightly better than Swin-L while using only 11% parameters",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute accuracy@parameter",
+  "compute parameters@parameter",
+  "evaluate@parameter",
+  "increase resolution@input",
+  "transfer knowledge@parameter"
+ ]
+}

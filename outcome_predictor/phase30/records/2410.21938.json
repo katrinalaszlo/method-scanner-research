@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2410.21938",
+ "source": "abstract",
+ "words": 197,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "enormous volumes of unlabeled single-camera records are available",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "single-camera data is used only for self-supervised pre-training",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "new loss functions that are adapted for joint use",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "effective training of our method is achieved through",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "new loss functions that are adapted for joint use",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "jointly trained on a mixture of limited labeled multi-camera",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "high generalization ability and outperforms state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "experiments show that ReMix has a high generalization",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@reward",
+  "sample@input",
+  "sample@trajectory"
+ ]
+}

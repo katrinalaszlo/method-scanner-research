@@ -1,0 +1,141 @@
+{
+ "arxiv_id": "1906.09826",
+ "source": "abstract",
+ "words": 181,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "semantic segmentation using deep convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "factorized convolution unit (FCU)",
+   "grounded": true
+  },
+  {
+   "op": "compute residual",
+   "canonical": "compute residual",
+   "object": "state",
+   "quote": "residual layers",
+   "grounded": true
+  },
+  {
+   "op": "split feature",
+   "canonical": "split feature",
+   "object": "latent",
+   "quote": "transform-split-transform-merge strategy",
+   "grounded": true
+  },
+  {
+   "op": "apply dilation",
+   "canonical": "apply dilation",
+   "object": "latent",
+   "quote": "dilated convolutions with different rate",
+   "grounded": true
+  },
+  {
+   "op": "merge feature",
+   "canonical": "merge feature",
+   "object": "latent",
+   "quote": "transform-split-transform-merge strategy",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "parallel counterparts (PFCU)",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "model has nearly 1.6M parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "latent",
+   "quote": "semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "generate prediction",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "real-time semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "speed and accuracy trade-off",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "experiments demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "experiments demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "output result",
+   "canonical": "output result",
+   "object": "state",
+   "quote": "real-time semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "track performance",
+   "canonical": "track performance",
+   "object": "task",
+   "quote": "experiments demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "compute fps",
+   "canonical": "compute fps",
+   "object": "trajectory",
+   "quote": "performed over 62 FPS",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "apply dilation@latent",
+  "backpropagate@gradient",
+  "compute fps@trajectory",
+  "compute output@latent",
+  "compute residual@state",
+  "correct@parameter",
+  "evaluate@error",
+  "merge feature@latent",
+  "output result@state",
+  "process input@input",
+  "reconstruct@state",
+  "split feature@latent",
+  "track performance@task"
+ ]
+}

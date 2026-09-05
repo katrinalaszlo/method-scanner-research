@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "1910.12003",
+ "source": "abstract",
+ "words": 198,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose to disentangle identity-related and -unrelated features",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we introduce a new generative adversarial network",
+   "grounded": true
+  },
+  {
+   "op": "shuffle",
+   "canonical": "shuffle",
+   "object": "latent",
+   "quote": "we propose an identity-shuffling technique",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "factorizes these features using identification labels",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "generative adversarial network",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "experimental results demonstrate the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "significantly outperforming the state of the art",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we propose to disentangle identity-related and -unrelated features",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "factorizes these features using identification labels",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "experimental results demonstrate the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "factorizes these features using identification labels",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we propose an identity-shuffling technique",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "significantly outperforming the state of the art",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we propose to disentangel identity-related and -unrelated features",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "factorizes these features using identification labels",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "experimental results demonstrate the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we propose to disentangle identity-related and -unrelated features",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "factorizes these features using identification labels",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "significantly outperforming the state of the art",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we propose an identity-shuffling technique",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "factorizes these features using identification labels",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "significantly outperforming the state of the art",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we propose to disentangle identity-related and -unrelated features",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "factorizes these features using identification labels",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "experimental results demonstrate the effectiveness",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@distribution",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@distribution",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "sample@sample",
+  "shuffle@latent"
+ ]
+}

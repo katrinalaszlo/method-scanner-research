@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "2104.06770",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 2,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "extract detailed person descriptions (attributes labels) and visual features",
+   "grounded": false
+  },
+  {
+   "op": "construct graph",
+   "canonical": "construct graph",
+   "object": "latent",
+   "quote": "aggregate detailed person descriptions (attributes labels) and visual features into a graph",
+   "grounded": true
+  },
+  {
+   "op": "apply graph convolution",
+   "canonical": "apply graph convolution",
+   "object": "INVALID:graph",
+   "quote": "utilize Graph Convolutional Networks to learn the topological structure",
+   "grounded": true
+  },
+  {
+   "op": "compute node embeddings",
+   "canonical": "compute node embeddings",
+   "object": "INVALID:graph",
+   "quote": "learn the topological structure of the visual signature of a person",
+   "grounded": true
+  },
+  {
+   "op": "combine embeddings",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "integrate the graph into a multi-branch multi-task framework",
+   "grounded": false
+  },
+  {
+   "op": "predict identity",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the extensive experiments are conducted to demonstrate the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our approach achieves competitive results among the state of the art",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "construct graph@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@state"
+ ]
+}

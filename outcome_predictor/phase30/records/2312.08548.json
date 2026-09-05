@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2312.08548",
+ "source": "abstract",
+ "words": 177,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We propose a novel image-text alignment module for improved feature extraction",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "we develop the Inverse Multi-Attentive Feature Refinement (IMAFR) module",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "enhancing feature learning capabilities by aggregating spatial information",
+   "grounded": false
+  },
+  {
+   "op": "align",
+   "canonical": "align",
+   "object": "distribution",
+   "quote": "a novel image-text alignment module for improved feature extraction",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "a specialized decoder using classification-based bins",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "demonstrate its performance in the context of single-image depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "Comprehensive experiments conducted on established datasets show",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the resulting architecture is suitable for a wide variety of tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "align@distribution",
+  "compute@error",
+  "correct@latent",
+  "correct@parameter",
+  "encode@input",
+  "predict@value",
+  "reconstruct@latent"
+ ]
+}

@@ -1,0 +1,165 @@
+{
+ "arxiv_id": "2011.13244",
+ "source": "abstract",
+ "words": 196,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 7,
+ "n_grounded": 15,
+ "ops": [
+  {
+   "op": "render",
+   "canonical": "render",
+   "object": "input",
+   "quote": "we integrate MVTN in a novel adaptive multi-view pipeline that can render either 3D meshes or point clouds.",
+   "grounded": true
+  },
+  {
+   "op": "regress",
+   "canonical": "regress",
+   "object": "INVALID:view",
+   "quote": "we propose to learn those view-points.",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "INVALID:information",
+   "quote": "those methods learn different ways to aggregate information from multiple views.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "MVTN can be trained end-to-end along with any multi-view network for 3D shape classification.",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "MVTN can be trained end-to-end along with any multi-view network for 3D shape classification.",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "INVALID:view",
+   "quote": "we propose to learn those view-points.",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "we introduce the Multi-View Transformation Network (MVTN) that regresses optimal view-points for 3D shape recognition.",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "INVALID:shape",
+   "quote": "MVTN exhibits clear performance gains in the tasks of 3D shape classification and 3D shape retrieval.",
+   "grounded": true
+  },
+  {
+   "op": "retrieve",
+   "canonical": "retrieve",
+   "object": "INVALID:shape",
+   "quote": "MVTN exhibits clear performance gains in the tasks of 3D shape classification and 3D shape retrieval.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "MVTN achieves state-of-the-art performance on ModelNet40, ShapeNet Core55, and the most recent and realistic ScanObjectNN dataset.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we show that MVTN can provide network robustness against rotation and occlusion in the 3D domain.",
+   "grounded": false
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "INVALID:performance",
+   "quote": "MVTN achieves state-of-the-art performance on ModelNet40, ShapeNet Core55, and the most recent and realistic ScanObjectNN dataset.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "we show that MVTN can provide network robustness against rotation and occlusion in the 3D domain.",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:view",
+   "quote": "we introduce the Multi-View Transformation Network (MVTN) that regresses optimal view-points for 3D shape recognition.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "MVTN exhibits clear performance gains in the tasks of 3D shape classification and 3D shape retrieval.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "MVTN achieves state-of-the-art performance on ModelNet40, ShapeNet Core55, and the most recent and realistic ScanObjectNN dataset.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "trajectory",
+   "quote": "we show that MVTN can provide network robustness against rotation and occlusion in the 3D domain.",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "sample",
+   "quote": "we show that MVTN can provide network robustness against rotation and occlusion in the 3D domain.",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "MVTN can be trained end-to-end along with any multi-view network for 3D shape classification.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "we show that MVTN can provide network robustness against rotation and occlusion in the 3D domain.",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compute@distribution",
+  "compute@error",
+  "compute@reward",
+  "compute@sample",
+  "compute@task",
+  "compute@trajectory",
+  "compute@value",
+  "correct@parameter",
+  "reconstruct@input",
+  "render@input",
+  "transform@input"
+ ]
+}

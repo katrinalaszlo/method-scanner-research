@@ -1,0 +1,142 @@
+{
+ "arxiv_id": "2312.00360",
+ "source": "abstract",
+ "words": 265,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 0,
+ "n_grounded": 15,
+ "ops": [
+  {
+   "op": "generate prompt",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "MPG works to fuse the features from different modalities in a compact manner",
+   "grounded": true
+  },
+  {
+   "op": "inject prompt",
+   "canonical": "inject prompt",
+   "object": "latent",
+   "quote": "multi-level multimodal prompts that are injected into the frozen backbone",
+   "grounded": true
+  },
+  {
+   "op": "adapt feature",
+   "canonical": "adapt feature",
+   "object": "latent",
+   "quote": "MPG adapts prompted multimodal features in the frozen backbone",
+   "grounded": true
+  },
+  {
+   "op": "fuse feature",
+   "canonical": "fuse feature",
+   "object": "latent",
+   "quote": "MPG works to fuse the features from different modalities in a compact manner",
+   "grounded": true
+  },
+  {
+   "op": "generate adapter",
+   "canonical": "reconstruct",
+   "object": "parameter",
+   "quote": "we present two prompt learning modules, comprising multimodal prompt generator (MPG) and multimodal feature adapter (MFA)",
+   "grounded": true
+  },
+  {
+   "op": "apply adapter",
+   "canonical": "apply adapter",
+   "object": "latent",
+   "quote": "MFA adapts prompted multimodal features in the frozen backbone",
+   "grounded": false
+  },
+  {
+   "op": "combine feature",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "MPG works to fuse the features from different modalities in a compact manner",
+   "grounded": true
+  },
+  {
+   "op": "decode output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "Using a simple decoder (3.27M parameters)",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "DPLNet achieves new state-of-the-art performance or is on a par with other complex approaches",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "only a few trainable parameters (3.88M, 4.4% of the pre-trained backbone parameters) are introduced",
+   "grounded": true
+  },
+  {
+   "op": "propagate gradient",
+   "canonical": "transmit",
+   "object": "gradient",
+   "quote": "DPLNet achieves new state-of-the-art performance or is on a par with other complex approaches",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "DPLNet achieves new state-of-the-art performance or is on a par with other complex approaches",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "DPLNet achieves new state-of-the-art performance or is on a par with other complex approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "DPLNet achieves new state-of-the-art performance or is on a par with other complex approaches",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "DPLNet is general and applicable to other multimodal tasks such as salient object detection and video semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "sample output",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "DPLNet outperforms many complicated models",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "adapt feature@latent",
+  "aggregate@latent",
+  "apply adapter@latent",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "fuse feature@latent",
+  "inject prompt@latent",
+  "predict@distribution",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reconstruct@parameter",
+  "sample@sample",
+  "train@parameter",
+  "transmit@gradient"
+ ]
+}

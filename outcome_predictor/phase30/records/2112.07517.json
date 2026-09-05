@@ -1,0 +1,172 @@
+{
+ "arxiv_id": "2112.07517",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we verify that it is critical for the network to be informative on what domain features are invariant",
+   "grounded": true
+  },
+  {
+   "op": "store features",
+   "canonical": "store features",
+   "object": "latent",
+   "quote": "implementation requires convenient constructions of two kinds of memory banks",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "we propose a novel 'jury' mechanism, which is particularly effective in learning useful semantic feature commonalities",
+   "grounded": false
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "implementation requires convenient constructions of two kinds of memory banks",
+   "grounded": true
+  },
+  {
+   "op": "update memory",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "implementation requires convenient constructions of two kinds of memory banks",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we verify that it is critical for the network to be informative on what domain features are invariant",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "implementation requires convenient constructions of two kinds of memory banks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "implementation requires convenient constructions of two kinds of memory banks",
+   "grounded": true
+  },
+  {
+   "op": "sample feature",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "we propose a novel 'jury' mechanism, which is particularly effective in learning useful semantic feature commonalities",
+   "grounded": false
+  },
+  {
+   "op": "denoise features",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we verify that it is critical for the network to be informative on what domain features are invariant",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we verify that it is critical for the network to be informative on what domain features are invariant",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "we verify that it is critical for the network to be informative on what domain features are invariant",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "implementation requires convenient constructions of two kinds of memory banks",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "implementation requires convenient constructions of two kinds of memory banks",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we verify that it is critical for the network to be informative on what domain features are invariant",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "empirical results show that our proposed framework surpasses the state-of-the-art methods by clear margins",
+   "grounded": true
+  },
+  {
+   "op": "store trajectory",
+   "canonical": "store trajectory",
+   "object": "trajectory",
+   "quote": "implementation requires convenient constructions of two kinds of memory banks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we verify that it is critical for the network to be informative on what domain features are invariant",
+   "grounded": true
+  },
+  {
+   "op": "resample features",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we propose a novel 'jury' mechanism, which is particularly effective in learning useful semantic feature commonalities",
+   "grounded": false
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "implementation requires convenient constructions of two kinds of memory banks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute similarity@latent",
+  "compute task@task",
+  "correct@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@value",
+  "reconstruct@latent",
+  "sample@distribution",
+  "sample@sample",
+  "store features@latent",
+  "store trajectory@trajectory"
+ ]
+}

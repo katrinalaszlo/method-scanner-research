@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "1908.10553",
+ "source": "abstract",
+ "words": 210,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "the performance is limited by unidentified moving objects",
+   "grounded": true
+  },
+  {
+   "op": "apply loss",
+   "canonical": "apply loss",
+   "object": "error",
+   "quote": "we propose a geometry consistency loss for scale-consistent predictions",
+   "grounded": false
+  },
+  {
+   "op": "generate mask",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "an induced self-discovered mask for handling moving objects",
+   "grounded": true
+  },
+  {
+   "op": "filter input",
+   "canonical": "filter input",
+   "object": "input",
+   "quote": "handling moving objects and occlusions",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "our depth estimator achieves the state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "predict motion",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "ego-motion network is able to predict a globally scale-consistent camera trajectory",
+   "grounded": true
+  },
+  {
+   "op": "track trajectory",
+   "canonical": "track trajectory",
+   "object": "trajectory",
+   "quote": "predict a globally scale-consistent camera trajectory for long video sequences",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "trajectory",
+   "quote": "the resulting visual odometry accuracy is competitive",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply loss@error",
+  "compute accuracy@trajectory",
+  "filter input@input",
+  "predict@state",
+  "reconstruct@input",
+  "track trajectory@trajectory"
+ ]
+}

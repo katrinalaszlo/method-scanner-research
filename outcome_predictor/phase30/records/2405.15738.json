@@ -1,0 +1,162 @@
+{
+ "arxiv_id": "2405.15738",
+ "source": "abstract",
+ "words": 200,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 11,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "compresses high-resolution images into information-rich visual features",
+   "grounded": true
+  },
+  {
+   "op": "compress",
+   "canonical": "compress",
+   "object": "INVALID:visual token",
+   "quote": "reducing redundancy",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update it to bridge the gap",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "INVALID:stage",
+   "quote": "train a successive stage to further compress the visual tokens",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:visual token",
+   "quote": "generating only 576 visual tokens",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "input",
+   "quote": "support inputs of 1536x1536 resolution",
+   "grounded": true
+  },
+  {
+   "op": "map",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "replace Vision Transformer (ViT)",
+   "grounded": true
+  },
+  {
+   "op": "reduce",
+   "canonical": "reduce",
+   "object": "INVALID:redundancy",
+   "quote": "mitigate this issue",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "employ ConvNeXt, a hierarchical backbone, as the visual encoder",
+   "grounded": false
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "propose two critical optimizations",
+   "grounded": true
+  },
+  {
+   "op": "enhance",
+   "canonical": "enhance",
+   "object": "INVALID:capability",
+   "quote": "enhance the capabilities of ConvLLaVA",
+   "grounded": true
+  },
+  {
+   "op": "bridge",
+   "canonical": "bridge",
+   "object": "INVALID:gap",
+   "quote": "update it to bridge the gap",
+   "grounded": true
+  },
+  {
+   "op": "scale",
+   "canonical": "scale",
+   "object": "input",
+   "quote": "support inputs of arbitrary aspect ratios",
+   "grounded": false
+  },
+  {
+   "op": "handle",
+   "canonical": "handle",
+   "object": "input",
+   "quote": "capable of handling images of arbitrary aspect ratios",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "replace Vision Transformer (ViT)",
+   "grounded": true
+  },
+  {
+   "op": "compress",
+   "canonical": "compress",
+   "object": "INVALID:token",
+   "quote": "train a successive stage to further compress the visual tokens",
+   "grounded": true
+  },
+  {
+   "op": "reduce",
+   "canonical": "reduce",
+   "object": "INVALID:token",
+   "quote": "reducing redundancy",
+   "grounded": true
+  },
+  {
+   "op": "map",
+   "canonical": "encode",
+   "object": "INVALID:resolution",
+   "quote": "support inputs of 1536x1536 resolution",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "INVALID:resolution",
+   "quote": "support inputs of arbitrary aspect ratios",
+   "grounded": false
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "INVALID:resolution",
+   "quote": "support inputs of 1536x1536 resolution",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "encode@input",
+  "encode@state",
+  "handle@input",
+  "improve@parameter",
+  "process@input",
+  "scale@input",
+  "transform@input"
+ ]
+}

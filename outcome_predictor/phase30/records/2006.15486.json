@@ -1,0 +1,74 @@
+{
+ "arxiv_id": "2006.15486",
+ "source": "abstract",
+ "words": 175,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 4,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "assign label",
+   "canonical": "assign label",
+   "object": "INVALID:query",
+   "quote": "assign query samples to the nearest class prototype",
+   "grounded": false
+  },
+  {
+   "op": "compute pairwise term",
+   "canonical": "compute pairwise term",
+   "object": "INVALID:query",
+   "quote": "pairwise Laplacian term encouraging nearby query samples",
+   "grounded": true
+  },
+  {
+   "op": "update label",
+   "canonical": "correct",
+   "object": "INVALID:query",
+   "quote": "subject to supervision constraints from the support set",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "minimize a quadratic binary-assignment function",
+   "grounded": true
+  },
+  {
+   "op": "optimize loss",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "derive a computationally efficient bound optimizer",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "computes independent (parallel) updates for each query sample",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "following a simple cross-entropy training on the base classes",
+   "grounded": true
+  },
+  {
+   "op": "predict label",
+   "canonical": "predict",
+   "object": "INVALID:query",
+   "quote": "transductive inference does not re-train the base model",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "evaluate@error",
+  "improve@parameter",
+  "train@parameter"
+ ]
+}

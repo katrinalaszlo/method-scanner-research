@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2105.11610",
+ "source": "abstract",
+ "words": 154,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we propose a geometry consistency loss",
+   "grounded": true
+  },
+  {
+   "op": "apply mask",
+   "canonical": "apply mask",
+   "object": "input",
+   "quote": "we propose a self-discovered mask",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "scale-consistent prediction at inference time",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the efficacy of each component",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "demonstrate the efficacy of each component",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "integrated into the ORB-SLAM2 system",
+   "grounded": true
+  },
+  {
+   "op": "track trajectory",
+   "canonical": "track trajectory",
+   "object": "trajectory",
+   "quote": "more robust and accurate tracking",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "high-quality depth estimation results",
+   "grounded": true
+  },
+  {
+   "op": "denoise signal",
+   "canonical": "reconstruct",
+   "object": "error",
+   "quote": "cause noisy signals during training",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "scale-consistent prediction at inference time",
+   "grounded": true
+  },
+  {
+   "op": "integrate model",
+   "canonical": "integrate model",
+   "object": "parameter",
+   "quote": "readily integrated into the ORB-SLAM2 system",
+   "grounded": true
+  },
+  {
+   "op": "evaluate quality",
+   "canonical": "evaluate",
+   "object": "distribution",
+   "quote": "provide several demos for qualitative evaluation",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "generalizes well to the KAIST dataset",
+   "grounded": true
+  },
+  {
+   "op": "predict trajectory",
+   "canonical": "predict",
+   "object": "trajectory",
+   "quote": "hybrid Pseudo-RGBD SLAM shows compelling results",
+   "grounded": true
+  },
+  {
+   "op": "compute mask",
+   "canonical": "compute mask",
+   "object": "input",
+   "quote": "automatically localize moving objects",
+   "grounded": true
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "state",
+   "quote": "scale-consistent prediction at inference time",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "penalizes the inconsistency of predicted depths",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "self-discovered mask to automatically localize",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "probability distribution, density, score function",
+   "grounded": false
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "drawn sample or particle set",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply mask@input",
+  "apply transformation@state",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute mask@input",
+  "compute reward@reward",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@distribution",
+  "evaluate@error",
+  "integrate model@parameter",
+  "predict@state",
+  "predict@trajectory",
+  "reconstruct@error",
+  "reconstruct@sample",
+  "reconstruct@state",
+  "sample@action",
+  "sample@input",
+  "track trajectory@trajectory"
+ ]
+}

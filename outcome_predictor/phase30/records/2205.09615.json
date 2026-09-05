@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2205.09615",
+ "source": "abstract",
+ "words": 93,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "accuracy is discontinuous and cannot be directly optimized using gradient ascent.",
+   "grounded": true
+  },
+  {
+   "op": "sample output",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "introducing stochasticity to a model's output",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "error",
+   "quote": "optimizing expected accuracy, i.e. accuracy of the stochastic model",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "popular methods minimize cross-entropy, hinge loss, or other surrogate losses",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed optimization method is a powerful alternative to widely used classification losses",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "classification tasks are usually evaluated in terms of accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "popular methods minimize cross-entropy, hinge loss, or other surrogate losses",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the proposed optimization method is a powerful alternative to widely used classification losses",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "compute accuracy@error",
+  "compute gradient@gradient",
+  "correct@parameter",
+  "evaluate@error",
+  "sample@distribution"
+ ]
+}

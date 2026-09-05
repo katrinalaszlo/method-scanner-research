@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2106.13797",
+ "source": "abstract",
+ "words": 114,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "Transformer recently has presented encouraging progress in computer vision.",
+   "grounded": true
+  },
+  {
+   "op": "embed input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "adding three designs, including (1) linear complexity attention layer.",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "convolutional feed-forward network.",
+   "grounded": true
+  },
+  {
+   "op": "generate feature map",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "reduces the computational complexity of PVT v1 to linear.",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "achieves significant improvements on fundamental vision tasks.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "achieves comparable or better performances than recent works.",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "classification, detection, and segmentation.",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "facilitate state-of-the-art Transformer researches in computer vision.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply convolution@latent",
+  "compute attention@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@distribution",
+  "reconstruct@distribution",
+  "reconstruct@latent"
+ ]
+}

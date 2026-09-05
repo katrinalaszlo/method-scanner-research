@@ -1,0 +1,203 @@
+{
+ "arxiv_id": "2105.05633",
+ "source": "abstract",
+ "words": 200,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 1,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we build on the recent Vision Transformer (ViT) and extend it to semantic segmentation.",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "our approach allows to model global context already at the first layer and throughout the network.",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we obtain class labels from these embeddings with a point-wise linear decoder or a mask transformer decoder.",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "we obtain class labels from these embeddings with a point-wise linear decoder or a mask transformer decoder.",
+   "grounded": false
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "we obtain class labels from these embeddings with a point-wise linear decoder or a mask transformer decoder.",
+   "grounded": false
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "we obtain class labels from these embeddings with a point-wise linear decoder or a mask transformer decoder.",
+   "grounded": false
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:mask",
+   "quote": "the performance can be further improved by a mask transformer generating class masks.",
+   "grounded": true
+  },
+  {
+   "op": "fine-tune",
+   "canonical": "fine-tune",
+   "object": "parameter",
+   "quote": "we leverage models pre-trained for image classification and show that we can fine-tune them on moderate sized datasets available for semantic segmentation.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "we conduct an extensive ablation study to show the impact of the different parameters, in particular the performance is better for large models and small patch sizes.",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we conduct an extensive ablation study to show the impact of the different parameters, in particular the performance is better for large models and small patch sizes.",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "Segmenter attains excellent results for semantic segmentation. It outperforms the state of the art on both ADE20K and Pascal Context datasets and is competitive on Cityscapes.",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "action",
+   "quote": "we obtain class labels from these embeddings with a point-wise linear decoder or a mask transformer decoder.",
+   "grounded": false
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "we obtain class labels from these embeddings with a point-wise linear decoder or a mask transformer decoder.",
+   "grounded": false
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "we obtain class labels from these embeddings with a point-wise linear decoder or a mask transformer decoder.",
+   "grounded": false
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "input",
+   "quote": "we build on the recent Vision Transformer (ViT) and extend it to semantic segmentation.",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "we build on the recent Vision Transformer (ViT) and extend it to semantic segmentation.",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "we obtain class labels from these embeddings with a point-wise linear decoder or a mask transformer decoder.",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we conduct an extensive ablation study to show the impact of the different parameters, in particular the performance is better for large models and small patch sizes.",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we leverage models pre-trained for image classification and show that we can fine-tune them on moderate sized datasets available for semantic segmentation.",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "the performance can be further improved by a mask transformer generating class masks.",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "sample",
+   "quote": "we obtain class labels from these embeddings with a point-wise linear decoder or a mask transformer decoder.",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "the performance can be further improved by a mask transformer generating class masks.",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we obtain class labels from these embeddings with a point-wise linear decoder or a mask transformer decoder.",
+   "grounded": false
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "error",
+   "quote": "we conduct an extensive ablation study to show the impact of the different parameters, in particular the performance is better for large models and small patch sizes.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@distribution",
+  "aggregate@sample",
+  "classify@input",
+  "compare@task",
+  "compute@error",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "extract@latent",
+  "fine-tune@parameter",
+  "output@action",
+  "predict@distribution",
+  "process@input",
+  "reconstruct@distribution",
+  "reconstruct@latent",
+  "sample@distribution",
+  "sample@sample",
+  "transform@input",
+  "transform@latent",
+  "transmit@error"
+ ]
+}

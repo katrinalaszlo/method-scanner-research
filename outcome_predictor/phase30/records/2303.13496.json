@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "2303.13496",
+ "source": "abstract",
+ "words": 203,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "We measure the effectiveness of pre-pretraining on 10 different visual recognition tasks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Pre-pretraining consistently improves both the model convergence and the downstream transfer performance",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "Typically, state-of-the-art foundation models are pretrained using large scale (weakly) supervised datasets",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We introduce an additional pre-pretraining stage that is simple and uses the self-supervised MAE technique",
+   "grounded": true
+  },
+  {
+   "op": "predict input",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "MAE has only been shown to scale with the size of models",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "We measure the effectiveness of pre-pretraining on 10 different visual recognition tasks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Our study reveals that model initialization plays a significant role",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "Pre-pretraining consistently improves both the model convergence and the downstream transfer performance",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "We measure the effectiveness of pre-pretraining on 10 different visual recognition tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Our largest model achieves new state-of-the-art results on iNaturalist-18",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "Our largest model achieves new state-of-the-art results on iNaturalist-18",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "We introduce an additional pre-pretraining stage that is simple and uses the self-supervised MAE technique",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "We measure the effectiveness of pre-pretraining on 10 different visual recognition tasks",
+   "grounded": true
+  },
+  {
+   "op": "initialize parameters",
+   "canonical": "initialize parameters",
+   "object": "parameter",
+   "quote": "We introduce an additional pre-pretraining stage that is simple and uses the self-supervised MAE technique",
+   "grounded": true
+  },
+  {
+   "op": "scale parameters",
+   "canonical": "scale parameters",
+   "object": "parameter",
+   "quote": "While MAE has only been shown to scale with the size of models",
+   "grounded": true
+  },
+  {
+   "op": "scale data",
+   "canonical": "scale data",
+   "object": "INVALID:data",
+   "quote": "We find that it scales with the size of the training dataset as well",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "Pre-pretraining consistently improves both the model convergence and the downstream transfer performance",
+   "grounded": true
+  },
+  {
+   "op": "test model",
+   "canonical": "test model",
+   "object": "task",
+   "quote": "We measure the effectiveness of pre-pretraining on 10 different visual recognition tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "Our largest model achieves new state-of-the-art results on iNaturalist-18",
+   "grounded": true
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "task",
+   "quote": "Our largest model achieves new state-of-the-art results on iNaturalist-18",
+   "grounded": true
+  },
+  {
+   "op": "compute recall",
+   "canonical": "compute recall",
+   "object": "task",
+   "quote": "Our largest model achieves new state-of-the-art results on iNaturalist-18",
+   "grounded": true
+  },
+  {
+   "op": "compute f1 score",
+   "canonical": "compute f1 score",
+   "object": "task",
+   "quote": "Our largest model achieves new state-of-the-art results on iNaturalist-18",
+   "grounded": true
+  },
+  {
+   "op": "compute auc",
+   "canonical": "compute auc",
+   "object": "task",
+   "quote": "Our largest model achieves new state-of-the-art results on iNaturalist-18",
+   "grounded": true
+  },
+  {
+   "op": "compute map",
+   "canonical": "compute map",
+   "object": "task",
+   "quote": "Our largest model achieves new state-of-the-art results on iNaturalist-18",
+   "grounded": true
+  },
+  {
+   "op": "compute iou",
+   "canonical": "compute iou",
+   "object": "task",
+   "quote": "Our largest model achieves new state-of-the-art results on iNaturalist-18",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute accuracy@task",
+  "compute auc@task",
+  "compute f1 score@task",
+  "compute iou@task",
+  "compute map@task",
+  "compute precision@task",
+  "compute recall@task",
+  "compute reward@reward",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "initialize parameters@parameter",
+  "predict@input",
+  "reconstruct@input",
+  "sample@input",
+  "scale parameters@parameter",
+  "test model@task",
+  "train@parameter"
+ ]
+}

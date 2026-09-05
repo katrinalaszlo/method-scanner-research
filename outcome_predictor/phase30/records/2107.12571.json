@@ -1,0 +1,208 @@
+{
+ "arxiv_id": "2107.12571",
+ "source": "abstract",
+ "words": 178,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "a discriminatively pretrained encoder",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "multi-scale generative decoders",
+   "grounded": true
+  },
+  {
+   "op": "compute likelihood",
+   "canonical": "compute likelihood",
+   "object": "latent",
+   "quote": "explicitly estimate likelihood of the encoded features",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "anomaly detection with localization",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "anomaly detection with localization",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "multi-scale generative decoders",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "explicitly estimate likelihood of the encoded features",
+   "grounded": true
+  },
+  {
+   "op": "compute anomaly score",
+   "canonical": "compute anomaly score",
+   "object": "input",
+   "quote": "anomaly detection with localization",
+   "grounded": true
+  },
+  {
+   "op": "localize anomaly",
+   "canonical": "localize anomaly",
+   "object": "input",
+   "quote": "anomaly detection with localization",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "discriminatively pretrained encoder",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "discriminatively pretrained encoder",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "discrim. pretrained encoder",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "multi-scale generative decoders",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "conditional normalizing flow",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "multi-scale generative decoders",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "anomaly detection with localization",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "input",
+   "quote": "anomaly detection with localization",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "input",
+   "quote": "anomaly detection with localization",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "input",
+   "quote": "anomaly detection with localization",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "input",
+   "quote": "anomaly detection with localization",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "input",
+   "quote": "anomaly detection with localization",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "anomaly detection with localization",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "input",
+   "quote": "anomaly detection with localization",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "input",
+   "quote": "anomaly detection with localization",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "input",
+   "quote": "anomaly detection with localization",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@input",
+  "compute anomaly score@input",
+  "compute distribution@input",
+  "compute distribution@latent",
+  "compute gradient@parameter",
+  "compute likelihood@latent",
+  "compute policy@input",
+  "compute reward@input",
+  "compute sample@input",
+  "compute task@input",
+  "compute trajectory@input",
+  "compute value@input",
+  "correct@parameter",
+  "encode@input",
+  "localize anomaly@input",
+  "predict@input",
+  "reconstruct@latent",
+  "sample@latent"
+ ]
+}

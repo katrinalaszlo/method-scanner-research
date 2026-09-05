@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1904.08889",
+ "source": "abstract",
+ "words": 166,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute kernel points",
+   "canonical": "compute kernel points",
+   "object": "parameter",
+   "quote": "The convolution weights of KPConv are located in Euclidean space by kernel points",
+   "grounded": true
+  },
+  {
+   "op": "apply kernel points",
+   "canonical": "apply kernel points",
+   "object": "input",
+   "quote": "applied to the input points close to them",
+   "grounded": true
+  },
+  {
+   "op": "learn kernel points",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "these locations are continuous in space and can be learned by the network",
+   "grounded": true
+  },
+  {
+   "op": "subsample points",
+   "canonical": "subsample points",
+   "object": "input",
+   "quote": "Thanks to a regular subsampling strategy, KPConv is also efficient",
+   "grounded": true
+  },
+  {
+   "op": "process points",
+   "canonical": "process points",
+   "object": "input",
+   "quote": "KPConv is a new design of point convolution, i.e. that operates on point clouds",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our networks outperform state-of-the-art classification and segmentation approaches",
+   "grounded": true
+  },
+  {
+   "op": "generate features",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "We also offer ablation studies and visualizations to provide understanding",
+   "grounded": true
+  },
+  {
+   "op": "adapt kernel points",
+   "canonical": "adapt kernel points",
+   "object": "parameter",
+   "quote": "KPConv can be extended to deformable convolutions that learn to adapt kernel points to local geometry",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "adapt kernel points@parameter",
+  "apply kernel points@input",
+  "compute kernel points@parameter",
+  "correct@parameter",
+  "process points@input",
+  "reconstruct@latent",
+  "subsample points@input",
+  "train@parameter"
+ ]
+}

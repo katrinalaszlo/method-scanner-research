@@ -1,0 +1,216 @@
+{
+ "arxiv_id": "2102.08604",
+ "source": "abstract",
+ "words": 237,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the simple empirical risk minimization (ERM) approach works comparable to or even outperforms previous methods",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the simple empirical risk minimization (ERM) approach works comparable to or even outperforms previous methods",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the simple empirical risk minimization (ERM) approach works comparable to or even outperforms previous methods",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the simple empirical risk minimization (ERM) approach works comparable to or even outperforms previous methods",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the simple empirical risk minimization (ERM) approach works comparable to or even outperforms previous methods",
+   "grounded": true
+  },
+  {
+   "op": "average parameters",
+   "canonical": "average parameters",
+   "object": "parameter",
+   "quote": "SWAD finds flatter minima and suffers less from overfitting than does the vanilla SWA",
+   "grounded": true
+  },
+  {
+   "op": "sample weight",
+   "canonical": "sample",
+   "object": "parameter",
+   "quote": "SWAD finds flatter min,ima and suffers less from overfitting than does the vanilla SWA",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute state",
+   "canonical": "compute state",
+   "object": "state",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "noise",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "SWAD shows state-of-the-art performances on five DG benchmarks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "average parameters@parameter",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute noise@noise",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute state@state",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "sample@action",
+  "sample@parameter"
+ ]
+}

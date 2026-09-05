@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1706.02413",
+ "source": "abstract",
+ "words": 172,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 2,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we introduce a hierarchical neural network",
+   "grounded": true
+  },
+  {
+   "op": "partition",
+   "canonical": "partition",
+   "object": "state",
+   "quote": "apply PointNet recursively on a nested partitioning",
+   "grounded": false
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "state",
+   "quote": "exploiting metric space distances",
+   "grounded": false
+  },
+  {
+   "op": "learn feature",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "learn local features with increasing contextual scales",
+   "grounded": false
+  },
+  {
+   "op": "combine feature",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "adaptively combine features from multiple scales",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "propose novel set learning layers",
+   "grounded": false
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our network is able to learn deep point set features",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "results significantly better than state-of-the-art",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute distance@state",
+  "correct@parameter",
+  "encode@input",
+  "partition@state",
+  "predict@value",
+  "train@latent"
+ ]
+}

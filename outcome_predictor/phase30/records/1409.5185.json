@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "1409.5185",
+ "source": "abstract",
+ "words": 156,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:classification",
+   "quote": "minimizes classification error",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "introduce companion objective to the individual hidden layers",
+   "grounded": false
+  },
+  {
+   "op": "propagate gradient",
+   "canonical": "transmit",
+   "object": "gradient",
+   "quote": "extend techniques from stochastic gradient methods",
+   "grounded": false
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "studying a new formulation in deep networks",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "convolutional neural networks (CNN) style architectures",
+   "grounded": false
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "discriminativeness and robustness of learned features",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "effectiveness in training due to the presence of the exploding and vanishing gradients",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate error",
+   "canonical": "backpropagate error",
+   "object": "error",
+   "quote": "make the learning process of hidden layers direct and transparent",
+   "grounded": false
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "transparency of the intermediate layers to the overall classification",
+   "grounded": false
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "different strategy to layer-wise pre-training",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "analyze our algorithm",
+   "grounded": true
+  },
+  {
+   "op": "update gradient",
+   "canonical": "correct",
+   "object": "gradient",
+   "quote": "our experimental result on benchmark datasets shows significant performance gain",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "all state-of-the-art results on MNIST, CIFAR-10, CIFAR-100, and SVHN",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "simultaneously minimizes classification error",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "effectiveness in training due to the presence of the exploding and vanishing gradients",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "our method is evident and our experimental result on benchmark datasets shows significant performance gain",
+   "grounded": false
+  },
+  {
+   "op": "predict state",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "transparency of the intermediate layers to the overall classification",
+   "grounded": false
+  },
+  {
+   "op": "encode state",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "discriminativeness and robustness of learned features",
+   "grounded": true
+  },
+  {
+   "op": "denoise state",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "effectiveness in training due to the presence of the exploding and vanishing gradients",
+   "grounded": true
+  },
+  {
+   "op": "resample state",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "different strategy to layer-wise pre-training",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "transparency of the intermediate layers to the overall classification",
+   "grounded": false
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "discriminativeness and robustness of learned features",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "effectiveness in training due to the presence of the exploding and vanishing gradients",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate gradient",
+   "canonical": "backpropagate gradient",
+   "object": "gradient",
+   "quote": "extend techniques from stochastic gradient methods",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "introduce companion objective to the individual hidden layers",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate error@error",
+  "backpropagate gradient@gradient",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute task@task",
+  "compute value@value",
+  "correct@gradient",
+  "correct@parameter",
+  "encode@input",
+  "encode@state",
+  "evaluate@error",
+  "predict@distribution",
+  "predict@reward",
+  "predict@state",
+  "reconstruct@input",
+  "reconstruct@state",
+  "sample@action",
+  "sample@input",
+  "sample@state",
+  "transmit@gradient"
+ ]
+}

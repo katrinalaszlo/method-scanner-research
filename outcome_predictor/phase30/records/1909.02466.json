@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "1909.02466",
+ "source": "abstract",
+ "words": 122,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "formulating detector training as a maximum likelihood estimation (MLE) procedure",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "formulating detector training as a maximum likelihood estimation (MLE) procedure",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "FreeAnchor is implemented by optimizing detection customized likelihood",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "allowing objects to match anchors in a flexible manner",
+   "grounded": true
+  },
+  {
+   "op": "match anchor",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "breaking IoU restriction, allowing objects to match anchors in a flexible manner",
+   "grounded": false
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Modern CNN-based object detectors assign anchors for ground-truth objects",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "FreeAnchor targets at learning features which best explain a class of objects",
+   "grounded": true
+  },
+  {
+   "op": "compute likelihood",
+   "canonical": "compute likelihood",
+   "object": "distribution",
+   "quote": "FreeAnchor is implemented by optimizing detection customized likelihood",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "allowing objects to match anchors in a flexible manner",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "Free, no restriction on anchor matching",
+   "grounded": false
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "formulating detector training as a maximum likelihood estimation (MLE) procedure",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "FreeAnchor is implemented by optimizing detection customized likelihood",
+   "grounded": true
+  },
+  {
+   "op": "generate trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "FreeAnchor is implemented by optimizing detection customized likelihood",
+   "grounded": true
+  },
+  {
+   "op": "evaluate task",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Experiments on COCO demonstrate that FreeAnchor consistently outperforms",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "formulating detector training as a maximum likelihood estimation (MLE) procedure",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "FreeAnchor is implemented by optimizing detection customized likelihood",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "FreeAnchor targets at learning features which best explain a class of objects",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "formulating detector training as a maximum likelihood estimation (MLE) procedure",
+   "grounded": true
+  },
+  {
+   "op": "update model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "FreeAnchor is implemented by optimizing detection customized likelihood",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "FreeAnchor is implemented by optimizing detection customized likelihood",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "FreeAnchor is implemented by optimizing detection customized likelihood",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "allowing objects to match anchors in a flexible manner",
+   "grounded": true
+  },
+  {
+   "op": "denoise trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "FreeAnchor is implemented by optimizing detection customized likelihood",
+   "grounded": true
+  },
+  {
+   "op": "evaluate distribution",
+   "canonical": "evaluate",
+   "object": "distribution",
+   "quote": "FreeAnchor targets at learning features which best explain a class of objects",
+   "grounded": true
+  },
+  {
+   "op": "resample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "FreeAnchor is implemented by optimizing detection customized likelihood",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compare@latent",
+  "compute gradient@gradient",
+  "compute likelihood@distribution",
+  "compute reward@reward",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@distribution",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@action",
+  "predict@distribution",
+  "predict@reward",
+  "predict@value",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@sample",
+  "sample@trajectory"
+ ]
+}

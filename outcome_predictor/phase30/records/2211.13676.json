@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2211.13676",
+ "source": "abstract",
+ "words": 249,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "using a single perceptual loss is insufficient",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "produce the corresponding SR output",
+   "grounded": true
+  },
+  {
+   "op": "infer objective",
+   "canonical": "predict",
+   "object": "error",
+   "quote": "infer an optimal objective map",
+   "grounded": false
+  },
+  {
+   "op": "apply objective",
+   "canonical": "apply objective",
+   "object": "error",
+   "quote": "apply a target objective map",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the generative model is trained",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "objective trajectory representing a set",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the generative model is trained",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the generative model is trained",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "using a single perceptual loss is insufficient",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "the generative model is trained",
+   "grounded": true
+  },
+  {
+   "op": "predict objective",
+   "canonical": "predict",
+   "object": "error",
+   "quote": "infer an optimal objective map",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the generative model is trained",
+   "grounded": true
+  },
+  {
+   "op": "denoise image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "generate plausible results",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "generate plausible results",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "error",
+   "quote": "outperforms state-of-the-art perception-driven SR methods",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "the generative model is trained",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "produce the corresponding SR output",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the generative model is trained",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "the generative model is trained",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "objective trajectory representing a set",
+   "grounded": true
+  },
+  {
+   "op": "train predictive model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the predictive model is trained",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "the predictive model is trained",
+   "grounded": true
+  },
+  {
+   "op": "compute objective map",
+   "canonical": "compute objective map",
+   "object": "error",
+   "quote": "infer an optimal objective map",
+   "grounded": false
+  },
+  {
+   "op": "apply objective map",
+   "canonical": "apply objective map",
+   "object": "error",
+   "quote": "apply a target objective map",
+   "grounded": false
+  },
+  {
+   "op": "generate trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "objective trajectory representing a set",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply objective map@error",
+  "apply objective@error",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute metric@error",
+  "compute objective map@error",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@parameter",
+  "improve@parameter",
+  "predict@error",
+  "reconstruct@input",
+  "reconstruct@sample",
+  "reconstruct@trajectory",
+  "sample@distribution",
+  "sample@trajectory",
+  "train@parameter"
+ ]
+}

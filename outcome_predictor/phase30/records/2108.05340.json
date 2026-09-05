@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2108.05340",
+ "source": "abstract",
+ "words": 192,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "split features",
+   "canonical": "split features",
+   "object": "input",
+   "quote": "We first split the features into multiple local parts",
+   "grounded": true
+  },
+  {
+   "op": "learn attention",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "learn the corresponding attentions",
+   "grounded": true
+  },
+  {
+   "op": "merge attention",
+   "canonical": "merge attention",
+   "object": "latent",
+   "quote": "merge local attentions",
+   "grounded": true
+  },
+  {
+   "op": "stack attention",
+   "canonical": "stack attention",
+   "object": "latent",
+   "quote": "stack these merged attentions with the residual connection",
+   "grounded": true
+  },
+  {
+   "op": "apply residual",
+   "canonical": "apply residual",
+   "object": "latent",
+   "quote": "stack these merged attentions with the residual connection",
+   "grounded": true
+  },
+  {
+   "op": "compute attention map",
+   "canonical": "compute attention map",
+   "object": "distribution",
+   "quote": "our attention pyramid exploits the attention regions",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "split the features into multiple local parts",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "learn the corresponding attentions",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "merge local attent,ions and stack these merged attentions",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "stack these merged attentions with the residual connection",
+   "grounded": true
+  },
+  {
+   "op": "apply attention mechanism",
+   "canonical": "apply attention mechanism",
+   "object": "latent",
+   "quote": "implement our attention pyramid method in two different attention mechanisms",
+   "grounded": true
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "distribution",
+   "quote": "our attention pyramid exploits the attention regions",
+   "grounded": true
+  },
+  {
+   "op": "aggregate attention",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "merge local attentions and stack these merged attentions",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed attention pyramid is a lightweight plug-and-play module",
+   "grounded": true
+  },
+  {
+   "op": "apply channel-wise attention",
+   "canonical": "apply channel-wise attention",
+   "object": "latent",
+   "quote": "implement our attention pyramid method in two different attention mechanisms",
+   "grounded": true
+  },
+  {
+   "op": "apply spatial attention",
+   "canonical": "apply spatial attention",
+   "object": "latent",
+   "quote": "implement our attention pyramid method in two different attention mechanisms",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "imitate the process of human visual perception",
+   "grounded": false
+  },
+  {
+   "op": "compute representation",
+   "canonical": "compute representation",
+   "object": "latent",
+   "quote": "split the features into multiple local parts",
+   "grounded": true
+  },
+  {
+   "op": "compute attention regions",
+   "canonical": "compute attention regions",
+   "object": "distribution",
+   "quote": "our attention pyramid exploits the attention regions",
+   "grounded": true
+  },
+  {
+   "op": "compute attention pyramid",
+   "canonical": "compute attention pyramid",
+   "object": "latent",
+   "quote": "stack these merged attentions with the residual connection",
+   "grounded": true
+  },
+  {
+   "op": "apply attention pyramid",
+   "canonical": "apply attention pyramid",
+   "object": "latent",
+   "quote": "the proposed attention pyramid is a lightweight plug-and-play module",
+   "grounded": true
+  },
+  {
+   "op": "compute attention output",
+   "canonical": "compute attention output",
+   "object": "latent",
+   "quote": "stack these merged attentions with the residual connection",
+   "grounded": true
+  },
+  {
+   "op": "compute attention features",
+   "canonical": "compute attention features",
+   "object": "latent",
+   "quote": "split the features into multiple local parts",
+   "grounded": true
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "distribution",
+   "quote": "our attention pyramid exploits the attention regions",
+   "grounded": true
+  },
+  {
+   "op": "compute attention map",
+   "canonical": "compute attention map",
+   "object": "distribution",
+   "quote": "our attention pyramid exploits the attention regions",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention mechanism@latent",
+  "apply attention pyramid@latent",
+  "apply attention@latent",
+  "apply channel-wise attention@latent",
+  "apply residual@latent",
+  "apply spatial attention@latent",
+  "compute attention features@latent",
+  "compute attention map@distribution",
+  "compute attention output@latent",
+  "compute attention pyramid@latent",
+  "compute attention regions@distribution",
+  "compute attention weights@distribution",
+  "compute representation@latent",
+  "compute similarity@distribution",
+  "correct@parameter",
+  "encode@input",
+  "merge attention@latent",
+  "reconstruct@latent",
+  "split features@input",
+  "stack attention@latent",
+  "train@latent"
+ ]
+}

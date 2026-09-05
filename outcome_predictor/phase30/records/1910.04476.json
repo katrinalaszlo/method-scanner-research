@@ -1,0 +1,141 @@
+{
+ "arxiv_id": "1910.04476",
+ "source": "abstract",
+ "words": 200,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose an Attention based Back Projection Network (ABPN}",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "latent",
+   "quote": "deeper and wider networks can extract richer feature maps",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the more complex network we have, the more time consumption is required",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we propose an Attention based Back Projection Network (ABPN}",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose an Attention based Back Projection Network (ABPN}",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the back projection mechanism can be further developed for SR",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "enhanced back projection blocks are suggested to iteratively update low- and high-resolution feature residues",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "a good SR image should be close to the original LR image after down-sampling",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we propose a Refined Back Projection Block (RBPB}",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "we propose a Refined Back Projection Block (RBP. B}",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we propose a Refined Back Projection Block (RBPB}",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "distribution",
+   "quote": "inspired by recent studies on attention models, we propose a Spatial Attention Block (SAB}",
+   "grounded": true
+  },
+  {
+   "op": "compute cross-correlation",
+   "canonical": "compute cross-correlation",
+   "object": "distribution",
+   "quote": "we propose a Spatial Attention Block (SAB}",
+   "grounded": true
+  },
+  {
+   "op": "refine output",
+   "canonical": "correct",
+   "object": "trajectory",
+   "quote": "we propose a Refined Back Projection Block (RBPB}",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "we propose a Refined Back Projection Block (RBPB}",
+   "grounded": true
+  },
+  {
+   "op": "compare output",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "extensive experiments on some public and AIM2019 Image Super-Resolution Challenge datasets show that the proposed ABPN can provide state-of-the-art or even better performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@distribution",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute cross-correlation@distribution",
+  "compute value@value",
+  "correct@parameter",
+  "correct@trajectory",
+  "encode@input",
+  "extract feature@latent",
+  "predict@reward",
+  "reconstruct@distribution",
+  "reconstruct@noise",
+  "reconstruct@state",
+  "sample@action",
+  "sample@sample"
+ ]
+}

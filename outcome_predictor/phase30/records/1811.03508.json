@@ -1,0 +1,12 @@
+{
+ "arxiv_id": "1811.03508",
+ "source": "abstract",
+ "words": 286,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 0,
+ "n_invalid_object": 0,
+ "n_grounded": 0,
+ "ops": [],
+ "tuples": []
+}

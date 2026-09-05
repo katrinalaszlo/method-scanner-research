@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "1911.10194",
+ "source": "abstract",
+ "words": 211,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "aiming to establish a solid baseline for bottom-up methods",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the semantic segmentation branch is the same as the typical design of any semantic segmentation model",
+   "grounded": true
+  },
+  {
+   "op": "apply dual aspp",
+   "canonical": "apply dual aspp",
+   "object": "latent",
+   "quote": "adopting the dual-ASPP and dual-decoder structures specific to semantic",
+   "grounded": false
+  },
+  {
+   "op": "generate semantic features",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the semantic segmentation branch is the same as the typical design of any semantic segmentation model",
+   "grounded": true
+  },
+  {
+   "op": "apply dual decoder",
+   "canonical": "apply dual decoder",
+   "object": "latent",
+   "quote": "adopting the dual-ASPP and dual-decoder structures specific to semantic",
+   "grounded": false
+  },
+  {
+   "op": "generate instance features",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the instance segmentation branch is class-agnostic, involving a simple instance center regression",
+   "grounded": true
+  },
+  {
+   "op": "regress instance center",
+   "canonical": "regress instance center",
+   "object": "latent",
+   "quote": "the instance segmentation branch is class-agnostic, involving a simple instance center regression",
+   "grounded": true
+  },
+  {
+   "op": "combine semantic and instance",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "our single Panoptic-DeepLab simultaneously ranks first at all three Cityscapes benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "produce segmentation map",
+   "canonical": "produce segmentation map",
+   "object": "distribution",
+   "quote": "our single Panoptic-DeepLab simultaneously ranks first at all three Cityscapes benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "output panoptic segmentation",
+   "canonical": "output panoptic segmentation",
+   "object": "distribution",
+   "quote": "our single Panoptic-DeepLab simultaneously ranks first at all three Cityscapes benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "run inference",
+   "canonical": "run inference",
+   "object": "input",
+   "quote": "equipped with MobileNetV3, Panoptic-DeepLab runs nearly in real-time",
+   "grounded": true
+  },
+  {
+   "op": "process image",
+   "canonical": "process image",
+   "object": "input",
+   "quote": "equipped with MobileNetV3, Panoptic-DeepLab runs nearly in real-time",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "equipped with MobileNetV3, Panoptic-DeepLab runs nearly in real-time",
+   "grounded": true
+  },
+  {
+   "op": "compute performance metrics",
+   "canonical": "compute performance metrics",
+   "object": "distribution",
+   "quote": "our single Panoptic-DeepLab simultaneously ranks first at all three Cityscapes benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "distribution",
+   "quote": "our single Panoptic-DeepLab simultaneously ranks first at all three Cityscapes benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute miou",
+   "canonical": "compute miou",
+   "object": "distribution",
+   "quote": "our single Panoptic-DeepLab simultaneously ranks first at all three Cityscapes benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute ap",
+   "canonical": "compute ap",
+   "object": "distribution",
+   "quote": "our single Panoptic-DeepLab simultaneously ranks first at all three Cityscapes benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute pq",
+   "canonical": "compute pq",
+   "object": "distribution",
+   "quote": "our single Panoptic-DeepLab simultaneously ranks first at all three Cityscapes benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "aggregate results",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "our single Panoptic-DeepLab simultaneously ranks first at all three Cityscapes benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "output results",
+   "canonical": "output results",
+   "object": "distribution",
+   "quote": "our single Panoptic-DeepLab simultaneously ranks first at all three Cityscapes benchmarks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@distribution",
+  "aggregate@latent",
+  "apply dual aspp@latent",
+  "apply dual decoder@latent",
+  "compute ap@distribution",
+  "compute miou@distribution",
+  "compute performance metrics@distribution",
+  "compute pq@distribution",
+  "encode@input",
+  "evaluate@distribution",
+  "output panoptic segmentation@distribution",
+  "output results@distribution",
+  "process image@input",
+  "process input@input",
+  "produce segmentation map@distribution",
+  "reconstruct@distribution",
+  "reconstruct@latent",
+  "regress instance center@latent",
+  "run inference@input"
+ ]
+}

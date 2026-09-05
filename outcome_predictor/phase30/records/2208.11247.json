@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2208.11247",
+ "source": "abstract",
+ "words": 184,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "we propose SwinFIR to extend SwinIR by replacing Fast Fourier Convolution (FFC) components",
+   "grounded": true
+  },
+  {
+   "op": "compute frequency domain",
+   "canonical": "compute frequency domain",
+   "object": "input",
+   "quote": "Fast Fourier Convolution (FFC) components, which have the image-wide receptive field",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "our feature ensemble method enables the performance of the model to be considerably enhanced",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we also revisit other advanced techniques, i.e, data augmentation, pre-training, and feature ensemble to improve the effect of image reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we applied our algorithm on multiple popular large-scale benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "input",
+   "quote": "we achieved state-of-the-art performance comparing to the existing methods",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "our feature ensemble method enables the performance of the model to be considerably enhanced",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we also revisit other advanced techniques, i.e, data augmentation, pre-training, and feature ensemble to improve the effect of image reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "we applied our algorithm on multiple popular large-scale benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "apply data augmentation",
+   "canonical": "apply data augmentation",
+   "object": "input",
+   "quote": "we also revisit other advanced techniques, i.e, data augmentation, pre-training, and feature ensemble to improve the effect of image reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we also revisit other advanced techniques, i.e, data augmentation, pre-training, and feature ensemble to improve the effect of image reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we also revisit other advanced techniques, i.e, data augmentation, pre-training, and feature ensemble to improve the effect of image reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "we also revisit other advanced, techniques, i.e, data augmentation, pre-training, and feature ensemble to improve the effect of image reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "we applied our algorithm on multiple popular large-scale benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "we achieved state-of-the-art performance comparing to the existing methods",
+   "grounded": false
+  },
+  {
+   "op": "store result",
+   "canonical": "store result",
+   "object": "input",
+   "quote": "we applied our algorithm on multiple popular large-scale benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute psnr",
+   "canonical": "compute psnr",
+   "object": "input",
+   "quote": "our SwinFIR achieves the PSNR of 32.83 dB on Manga109 dataset",
+   "grounded": true
+  },
+  {
+   "op": "log metrics",
+   "canonical": "log metrics",
+   "object": "error",
+   "quote": "we achieved state-of-the-art performance comparing to the existing methods",
+   "grounded": false
+  },
+  {
+   "op": "load data",
+   "canonical": "load data",
+   "object": "input",
+   "quote": "we applied our algorithm on multiple popular large-scale benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "we applied our algorithm on multiple popular large-scale benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "apply pre-training",
+   "canonical": "apply pre-training",
+   "object": "parameter",
+   "quote": "we also revisit other advanced techniques, i.e, data augmentation, pre-training, and feature ensemble to improve the effect of image reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "apply feature ensemble",
+   "canonical": "apply feature ensemble",
+   "object": "latent",
+   "quote": "our feature ensemble method enables the performance of the model to be considerably enhanced",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we also revisit other advanced techniques, i.e, data augmentation, pre-training, and feature ensemble to improve the effect of image reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "we also revisit other advanced techniques, i.e, data augmentation, pre-training, and feature ensemble to improve the effect of image reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "update model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we also revisit other advanced techniques, i.e, data augmentation, pre-training, and feature ensemble to improve the effect of image reconstruction",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "apply data augmentation@input",
+  "apply feature ensemble@latent",
+  "apply pre-training@parameter",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compare@error",
+  "compare@input",
+  "compute frequency domain@input",
+  "compute gradient@gradient",
+  "compute psnr@input",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@input",
+  "improve@parameter",
+  "load data@input",
+  "log metrics@error",
+  "predict@input",
+  "process input@input",
+  "reconstruct@input",
+  "sample@input",
+  "store result@input",
+  "train@parameter"
+ ]
+}

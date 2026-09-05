@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2109.02934",
+ "source": "abstract",
+ "words": 175,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "gradient",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  },
+  {
+   "op": "align loss landscapes",
+   "canonical": "align loss landscapes",
+   "object": "parameter",
+   "quote": "Fishr eventually aligns the domain-level loss landscapes locally around the final weights",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Fishr eventually aligns the domain-level loss landscapes locally around the final weights",
+   "grounded": true
+  },
+  {
+   "op": "compute covariance",
+   "canonical": "compute covariance",
+   "object": "gradient",
+   "quote": "the close relations between the gradient covariance, the Fisher Information and the Hessian of the loss",
+   "grounded": true
+  },
+  {
+   "op": "compute fisher information",
+   "canonical": "compute fisher information",
+   "object": "error",
+   "quote": "the close relations between the gradient covariance, the Fisher Information and the Hessian of the loss",
+   "grounded": true
+  },
+  {
+   "op": "compute hessian",
+   "canonical": "compute hessian",
+   "object": "error",
+   "quote": "the close relations between the gradient covariance, the Fisher Information and the Hessian of the loss",
+   "grounded": true
+  },
+  {
+   "op": "regularize loss",
+   "canonical": "regularize loss",
+   "object": "gradient",
+   "quote": "we introduce a new regularization - named Fishr - that enforces domain invariance in the space of the gradients of the loss",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  },
+  {
+   "op": "sample gradient",
+   "canonical": "sample",
+   "object": "error",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient variance",
+   "canonical": "compute gradient variance",
+   "object": "error",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  },
+  {
+   "op": "match variances",
+   "canonical": "compare",
+   "object": "gradient",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient covariance",
+   "canonical": "compute gradient covariance",
+   "object": "error",
+   "quote": "the close relations between the gradient covariance, the Fisher Information and the Hessian of the loss",
+   "grounded": true
+  },
+  {
+   "op": "compute fisher information matrix",
+   "canonical": "compute fisher information matrix",
+   "object": "error",
+   "quote": "the close relations between the gradient covariance, the Fisher, Information and the Hessian of the loss",
+   "grounded": true
+  },
+  {
+   "op": "compute hessian matrix",
+   "canonical": "compute hessian matrix",
+   "object": "error",
+   "quote": "the close relations between the gradient covariance, the Fisher Information and the Hessian of the loss",
+   "grounded": true
+  },
+  {
+   "op": "update model parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Fishr eventually aligns the domain-level loss landscapes locally around the final weights",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "input",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient direction",
+   "canonical": "compute gradient direction",
+   "object": "error",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient magnitude",
+   "canonical": "compute gradient magnitude",
+   "object": "error",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient norm",
+   "canonical": "compute gradient norm",
+   "object": "error",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient variance across domains",
+   "canonical": "compute gradient variance across domains",
+   "object": "error",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient variance per domain",
+   "canonical": "compute gradient variance per domain",
+   "object": "error",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient variance ratio",
+   "canonical": "compute gradient variance ratio",
+   "object": "error",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient variance difference",
+   "canonical": "compute gradient variance difference",
+   "object": "error",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient variance similarity",
+   "canonical": "compute gradient variance similarity",
+   "object": "error",
+   "quote": "the domain-level variances of gradients are matched across training domains",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align loss landscapes@parameter",
+  "compare@error",
+  "compare@gradient",
+  "compute covariance@gradient",
+  "compute fisher information matrix@error",
+  "compute fisher information@error",
+  "compute gradient covariance@error",
+  "compute gradient direction@error",
+  "compute gradient magnitude@error",
+  "compute gradient norm@error",
+  "compute gradient variance across domains@error",
+  "compute gradient variance difference@error",
+  "compute gradient variance per domain@error",
+  "compute gradient variance ratio@error",
+  "compute gradient variance similarity@error",
+  "compute gradient variance@error",
+  "compute gradient@error",
+  "compute hessian matrix@error",
+  "compute hessian@error",
+  "compute variance@gradient",
+  "correct@parameter",
+  "evaluate@input",
+  "regularize loss@gradient",
+  "sample@error"
+ ]
+}

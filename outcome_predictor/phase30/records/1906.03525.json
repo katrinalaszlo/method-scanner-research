@@ -1,0 +1,203 @@
+{
+ "arxiv_id": "1906.03525",
+ "source": "abstract",
+ "words": 162,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 6,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute affinity",
+   "canonical": "compute affinity",
+   "object": "task",
+   "quote": "pattern-affinitive pairs recur much frequently across different tasks",
+   "grounded": true
+  },
+  {
+   "op": "calculate non-local relationships",
+   "canonical": "calculate non-local relationships",
+   "object": "task",
+   "quote": "the former integrates cross-task affinity patterns to adapt to each task",
+   "grounded": true
+  },
+  {
+   "op": "diffuse patterns",
+   "canonical": "diffuse",
+   "object": "INVALID:feature space",
+   "quote": "the latter performs an iterative diffusion in the feature space",
+   "grounded": true
+  },
+  {
+   "op": "regularize learning",
+   "canonical": "regularize learning",
+   "object": "task",
+   "quote": "the learning of each task can be regularized and boosted",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "jointly predict depth, surface normal and semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "predict surface normal",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "jointly predict depth, surface normal and semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "predict semantic segmentation",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "jointly predict depth, surface normal and semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "integrate cross-task affinity",
+   "canonical": "integrate cross-task affinity",
+   "object": "task",
+   "quote": "the former integrates cross-task affinity patterns to adapt to each task",
+   "grounded": true
+  },
+  {
+   "op": "spread cross-task affinity",
+   "canonical": "spread cross-task affinity",
+   "object": "task",
+   "quote": "cross-task affinity patterns can be widely-spread within the task",
+   "grounded": true
+  },
+  {
+   "op": "adapt to task",
+   "canonical": "adapt to task",
+   "object": "task",
+   "quote": "the former integrates cross-task affinity patterns to adapt to each task",
+   "grounded": true
+  },
+  {
+   "op": "boost learning",
+   "canonical": "boost learning",
+   "object": "task",
+   "quote": "the learning of each task can be regularized and boosted",
+   "grounded": true
+  },
+  {
+   "op": "diffuse similar patterns",
+   "canonical": "diffuse",
+   "object": "INVALID:feature space",
+   "quote": "the latter performs an iterative diffusion in the feature space",
+   "grounded": true
+  },
+  {
+   "op": "propagate cross-task patterns",
+   "canonical": "transmit",
+   "object": "task",
+   "quote": "the former integrates cross-task affinity patterns to adapt to each task",
+   "grounded": true
+  },
+  {
+   "op": "propagate task-specific patterns",
+   "canonical": "transmit",
+   "object": "INVALID:feature space",
+   "quote": "the latter performs an iterative diffusion in the feature space",
+   "grounded": true
+  },
+  {
+   "op": "combine task-level affinities",
+   "canonical": "aggregate",
+   "object": "task",
+   "quote": "the learning of each task can be regular, and boosted by the complementary task-level affinities",
+   "grounded": true
+  },
+  {
+   "op": "diffuse affinity patterns",
+   "canonical": "diffuse",
+   "object": "INVALID:feature space",
+   "quote": "the latter performs an iterative diffusion in the feature space",
+   "grounded": true
+  },
+  {
+   "op": "regularize task learning",
+   "canonical": "regularize task learning",
+   "object": "task",
+   "quote": "the learning of each task can be regularized and boosted",
+   "grounded": true
+  },
+  {
+   "op": "boost task learning",
+   "canonical": "boost task learning",
+   "object": "task",
+   "quote": "the learning of each task can be regularized and boosted",
+   "grounded": true
+  },
+  {
+   "op": "diffuse cross-task patterns",
+   "canonical": "diffuse",
+   "object": "INVALID:feature space",
+   "quote": "the latter performs an iterative diffusion in the feature space",
+   "grounded": true
+  },
+  {
+   "op": "spread task-specific patterns",
+   "canonical": "spread task-specific patterns",
+   "object": "task",
+   "quote": "cross-task affinity patterns can be widely-spread within the task",
+   "grounded": true
+  },
+  {
+   "op": "adapt to cross-task patterns",
+   "canonical": "adapt to cross-task patterns",
+   "object": "task",
+   "quote": "the former integrates cross-task affinity patterns to adapt to each task",
+   "grounded": true
+  },
+  {
+   "op": "spread cross-task affinity",
+   "canonical": "spread cross-task affinity",
+   "object": "task",
+   "quote": "cross-task affinity patterns can be widely-spread within the task",
+   "grounded": true
+  },
+  {
+   "op": "combine cross-task affinities",
+   "canonical": "aggregate",
+   "object": "task",
+   "quote": "the learning of each task can be regularized and boosted by the complementary task-level affinities",
+   "grounded": true
+  },
+  {
+   "op": "diffuse task-specific patterns",
+   "canonical": "diffuse",
+   "object": "INVALID:feature space",
+   "quote": "the latter performs an iterative diffusion in the feature space",
+   "grounded": true
+  },
+  {
+   "op": "propagate cross-task affinity",
+   "canonical": "transmit",
+   "object": "task",
+   "quote": "the former integrates cross-task affinity patterns to adapt to each task",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "adapt to cross-task patterns@task",
+  "adapt to task@task",
+  "aggregate@task",
+  "boost learning@task",
+  "boost task learning@task",
+  "calculate non-local relationships@task",
+  "compute affinity@task",
+  "integrate cross-task affinity@task",
+  "predict@state",
+  "regularize learning@task",
+  "regularize task learning@task",
+  "spread cross-task affinity@task",
+  "spread task-specific patterns@task",
+  "transmit@task"
+ ]
+}

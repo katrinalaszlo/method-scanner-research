@@ -1,0 +1,125 @@
+{
+ "arxiv_id": "2104.04899",
+ "source": "abstract",
+ "words": 176,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 14,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we design a novel loss function named cross-IOU loss",
+   "grounded": true
+  },
+  {
+   "op": "predict anchor",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "LSNet predicts an anchor point",
+   "grounded": true
+  },
+  {
+   "op": "predict landmark",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "LSNet predicts a set of landmarks",
+   "grounded": false
+  },
+  {
+   "op": "compute cross-iou",
+   "canonical": "compute cross-iou",
+   "object": "error",
+   "quote": "computes the cross-IOU of each anchor point-landmark pair",
+   "grounded": true
+  },
+  {
+   "op": "approximate global iou",
+   "canonical": "approximate global iou",
+   "object": "error",
+   "quote": "to approximate the global IOU between the prediction and ground-truth",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the key to optimizing the LSNet lies in the ability of fitting various scales",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Based on a deep neural network as the backbone",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "the backbone predicts an anchor point and a set of landmarks",
+   "grounded": false
+  },
+  {
+   "op": "aggregate landmarks",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "the flexibly located and accurately predicted landmarks also enable LSNet to incorporate richer contextual information",
+   "grounded": true
+  },
+  {
+   "op": "compute contextual information",
+   "canonical": "compute contextual information",
+   "object": "distribution",
+   "quote": "to incorporate richer contextual information for visual recognition",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "LSNet predicts an anchor point and a set of landmarks which together define the shape of the target object",
+   "grounded": true
+  },
+  {
+   "op": "compute box ap",
+   "canonical": "compute box ap",
+   "object": "value",
+   "quote": "set the new state-of-the-art accuracy for anchor-free object detection",
+   "grounded": true
+  },
+  {
+   "op": "compute mask ap",
+   "canonical": "compute mask ap",
+   "object": "value",
+   "quote": "set the new state-of-the-art accuracy for instance segmentation",
+   "grounded": true
+  },
+  {
+   "op": "detect multi-scale poses",
+   "canonical": "detect multi-scale poses",
+   "object": "task",
+   "quote": "shows promising performance in detecting multi-scale human poses",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@distribution",
+  "approximate global iou@error",
+  "compute box ap@value",
+  "compute contextual information@distribution",
+  "compute cross-iou@error",
+  "compute mask ap@value",
+  "correct@parameter",
+  "detect multi-scale poses@task",
+  "encode@input",
+  "encode@latent",
+  "evaluate@error",
+  "predict@state",
+  "reconstruct@state"
+ ]
+}

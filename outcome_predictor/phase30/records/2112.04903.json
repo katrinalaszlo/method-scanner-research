@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2112.04903",
+ "source": "abstract",
+ "words": 139,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute feature",
+   "canonical": "compute feature",
+   "object": "state",
+   "quote": "the ISL module can dynamically integrate the local structural information into the point features",
+   "grounded": true
+  },
+  {
+   "op": "partition region",
+   "canonical": "partition region",
+   "object": "state",
+   "quote": "a differentiable region partition scheme",
+   "grounded": true
+  },
+  {
+   "op": "select representative",
+   "canonical": "select representative",
+   "object": "state",
+   "quote": "a representative point-based strategy",
+   "grounded": true
+  },
+  {
+   "op": "compute relation",
+   "canonical": "compute relation",
+   "object": "INVALID:region",
+   "quote": "captures inter-region relations adaptively and efficiently",
+   "grounded": true
+  },
+  {
+   "op": "aggregate feature",
+   "canonical": "aggregate",
+   "object": "INVALID:region",
+   "quote": "dynamically integrate the local structural information",
+   "grounded": true
+  },
+  {
+   "op": "combine feature",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "the ISL module can dynamically integrate the local structural information",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Extensive experiments on several 3D benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "shape classification, keypoint estimation, and part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Extensive experiments on several 3D benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Extensive experiments on several 3D benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Extensive experiments on several 3D benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "shape classification, keypoint estimation, and part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Extensive experiments on several 3D benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "store result",
+   "canonical": "store result",
+   "object": "state",
+   "quote": "shape classification, keypoint estimation, and part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "shape classification, keypoint estimation, and part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "shape classification, keypoint, and part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "task",
+   "quote": "shape classification, keypoint estimation, and part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute recall",
+   "canonical": "compute recall",
+   "object": "task",
+   "quote": "shape classification, keypoint estimation, and part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute f1",
+   "canonical": "compute f1",
+   "object": "task",
+   "quote": "shape classification, keypoint estimation, and part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute mae",
+   "canonical": "compute mae",
+   "object": "error",
+   "quote": "shape classification, keypoint estimation, and part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute iou",
+   "canonical": "compute iou",
+   "object": "task",
+   "quote": "shape classification, keypoint estimation, and part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute auc",
+   "canonical": "compute auc",
+   "object": "distribution",
+   "quote": "shape classification, keypoint estimation, and part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute confidence",
+   "canonical": "compute confidence",
+   "object": "distribution",
+   "quote": "shape classification, keypoint estimation, and part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "distribution",
+   "quote": "shape classification, keypoint estimation, and part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute entropy",
+   "canonical": "compute entropy",
+   "object": "distribution",
+   "quote": "shape classification, keypoint estimation, and part segmentation",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute accuracy@task",
+  "compute auc@distribution",
+  "compute confidence@distribution",
+  "compute entropy@distribution",
+  "compute f1@task",
+  "compute feature@state",
+  "compute iou@task",
+  "compute mae@error",
+  "compute precision@task",
+  "compute recall@task",
+  "compute variance@distribution",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "partition region@state",
+  "predict@state",
+  "reconstruct@state",
+  "select representative@state",
+  "store result@state"
+ ]
+}

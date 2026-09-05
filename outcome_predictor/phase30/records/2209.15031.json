@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2209.15031",
+ "source": "abstract",
+ "words": 209,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "input",
+   "quote": "applying multiple transformations to the input data",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "empirical and theoretical evidence that the indiscriminate use of data augmentation can introduce biases",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "Monte Carlo Markov Chain (MCMC) sampling to solve it",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "a practical algorithm that not only does away with a priori searches for augmentation distributions",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "achieves state-of-the-art results in automatic data augmentation benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "data augmentation while solving the learning task",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "Monte, Carlo Markov Chain (MCMC) sampling to solve it",
+   "grounded": false
+  },
+  {
+   "op": "evaluate distribution",
+   "canonical": "evaluate",
+   "object": "distribution",
+   "quote": "formulates data augmentation as an invariance-constrained learning problem",
+   "grounded": true
+  },
+  {
+   "op": "track trajectory",
+   "canonical": "track trajectory",
+   "object": "trajectory",
+   "quote": "gather insights on the actual symmetries underlying a learning task",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "achieves state-of-the-art results in automatic data augmentation benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "dynamically controls if and when data augmentation is applied",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Monte Carlo Markov Chain (MCMC) sampling to solve it",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "formulates data augmentation as an invariance-constrained learning problem",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "a practical algorithm that not only does away with a priori searches for augmentation distributions",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "formulates data augmentation as an invariance-constrained learning problem",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "gather insights on the actual symmetries underlying a learning task",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "applying multiple transformations to the input data",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "empirical and theoretical evidence that the indiscriminate use of data augmentation can introduce biases",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "achieves state-of-the-art results in automatic data augmentation benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "dynamically controls if and when data augmentation is applied",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply transformation@input",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@distribution",
+  "predict@reward",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@distribution",
+  "sample@sample",
+  "track trajectory@trajectory"
+ ]
+}

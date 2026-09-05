@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "2007.09933",
+ "source": "abstract",
+ "words": 157,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "extract motion features",
+   "canonical": "extract motion features",
+   "object": "state",
+   "quote": "we replace external and heavy computation of optical flows with internal and light-weight learning of motion features",
+   "grounded": true
+  },
+  {
+   "op": "establish correspondences",
+   "canonical": "establish correspondences",
+   "object": "state",
+   "quote": "it learns to establish correspondences across frames and convert them into motion features",
+   "grounded": true
+  },
+  {
+   "op": "convert correspondences",
+   "canonical": "convert correspondences",
+   "object": "state",
+   "quote": "it learns to establish correspondences across frames and convert them into motion features",
+   "grounded": true
+  },
+  {
+   "op": "feed motion features",
+   "canonical": "feed motion features",
+   "object": "state",
+   "quote": "motion features, which are readily fed to the next downstream layer for better prediction",
+   "grounded": true
+  },
+  {
+   "op": "compute optical flow",
+   "canonical": "compute optical flow",
+   "object": "state",
+   "quote": "most state-of-the-art neural models for video classification incorporate motion information typically using optical flows extracted by a separate off-the-shelf method",
+   "grounded": true
+  },
+  {
+   "op": "learn motion features",
+   "canonical": "train",
+   "object": "state",
+   "quote": "we replace external and heavy computation of optical flows with internal and light-weight learning of motion features",
+   "grounded": true
+  },
+  {
+   "op": "process video input",
+   "canonical": "process video input",
+   "object": "input",
+   "quote": "most state-of-the-art neural models for video classification incorporate motion information typically using optical flows extracted by a separate off-the-shelf method",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we demonstrate that the proposed method provides a significant gain on four standard benchmarks for action recognition with only a small amount of additional cost",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose a trainable neural module, dubbed MotionSqueeze, for effective motion feature extraction",
+   "grounded": true
+  },
+  {
+   "op": "train neural module",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we propose a trainable neural module, dubbed MotionSqueeze, for effective motion feature extraction",
+   "grounded": true
+  },
+  {
+   "op": "compute gradients",
+   "canonical": "compute gradients",
+   "object": "gradient",
+   "quote": "we propose a trainable neural module, dubbed MotionSqueeze, for effective motion feature extraction",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate gradients",
+   "canonical": "backpropagate gradients",
+   "object": "gradient",
+   "quote": "we propose a trainable neural, module, dubbed MotionSqueeze, for effective motion feature extraction",
+   "grounded": false
+  },
+  {
+   "op": "apply gradients",
+   "canonical": "apply gradients",
+   "object": "parameter",
+   "quote": "we propose a trainable neural module, dubbed MotionSqueeze, for effective motion feature extraction",
+   "grounded": true
+  },
+  {
+   "op": "compute prediction",
+   "canonical": "compute prediction",
+   "object": "state",
+   "quote": "motion features, which are readily fed to the next downstream layer for better prediction",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we demonstrate that the proposed method provides a significant gain on four standard benchmarks for action recognition with only a small amount of additional cost",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we demonstrate that the proposed method provides a significant gain on four standard benchmarks for action recognition with only a small amount of additional cost",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we demonstrate that the proposed method provides a significant gain on four standard benchmarks for action recognition with only a small amount of additional cost",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we demonstrate that the proposed method provides a significant gain on four standard benchmarks for action recognition with only a small amount of additional cost",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we demonstrate that the proposed method provides a significant gain on four standard benchmarks for action recognition with only a small amount of additional cost",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we demonstrate that the proposed method provides a significant gain on four standard benchmarks for action recognition with only a small amount of additional cost",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we demonstrate that the proposed method provides a significant gain on four standard benchmarks for action recognition with only a small amount of additional cost",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "we demonstrate that the proposed method provides a significant gain on four standard benchmarks for action recognition with only a small amount of additional cost",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "most state-of-the-art neural models for video classification incorporate motion information typically using optical flows extracted by a separate off-the-shelf method",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "noise",
+   "quote": "we replace external and heavy computation of optical flows with internal and light-weight learning of motion features",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradients@parameter",
+  "backpropagate gradients@gradient",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute gradients@gradient",
+  "compute input@input",
+  "compute noise@noise",
+  "compute optical flow@state",
+  "compute policy@policy",
+  "compute prediction@state",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "convert correspondences@state",
+  "correct@parameter",
+  "establish correspondences@state",
+  "evaluate@error",
+  "extract motion features@state",
+  "feed motion features@state",
+  "process video input@input",
+  "train@parameter",
+  "train@state"
+ ]
+}

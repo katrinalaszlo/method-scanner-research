@@ -1,0 +1,164 @@
+{
+ "arxiv_id": "2211.13977",
+ "source": "abstract",
+ "words": 231,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 1,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Pre-trained vision-language models like CLIP have recently shown superior performances",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the image encoder is able to represent data as vectors in the feature embedding",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the image and text encoders from CLIP keep fixed",
+   "grounded": false
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the ID-specific text tokens and their encoder become static",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "only the text tokens are optimized from scratch by the contrastive loss",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "With the help of the designed loss in the downstream task",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "only the text tokens are optimized from scratch by the contrastive loss",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the image encoder is able to represent data as vectors in the feature embedding",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:text",
+   "quote": "give them to the text encoder to form ambiguous descriptions",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "a set of learnable text tokens for each ID",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "the contrastive loss computed within a batch",
+   "grounded": true
+  },
+  {
+   "op": "apply loss",
+   "canonical": "apply loss",
+   "object": "error",
+   "quote": "the image encoder is able to represent data as vectors in the feature embedding",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "only the text tokens are optimized from scratch by the contrastive loss",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "the image encoder is able to represent data as vectors in the feature embedding",
+   "grounded": true
+  },
+  {
+   "op": "initialize",
+   "canonical": "initialize",
+   "object": "parameter",
+   "quote": "only the text tokens are optimized from scratch by the contrastive loss",
+   "grounded": true
+  },
+  {
+   "op": "initialize",
+   "canonical": "initialize",
+   "object": "parameter",
+   "quote": "the ID-specific text tokens and their encoder become static",
+   "grounded": true
+  },
+  {
+   "op": "freeze",
+   "canonical": "freeze",
+   "object": "parameter",
+   "quote": "the image and text encoders from CLIP keep fixed",
+   "grounded": false
+  },
+  {
+   "op": "freeze",
+   "canonical": "freeze",
+   "object": "parameter",
+   "quote": "the ID-specific text tokens and their encoder become static",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the contrastive loss computed within a batch",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the designed loss in the downstream task",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "apply loss@error",
+  "compute@error",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "freeze@parameter",
+  "improve@parameter",
+  "initialize@parameter",
+  "sample@sample"
+ ]
+}

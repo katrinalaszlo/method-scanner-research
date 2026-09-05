@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2211.03679",
+ "source": "abstract",
+ "words": 205,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute attention map",
+   "canonical": "compute attention map",
+   "object": "state",
+   "quote": "designing two modules for predicting body part attention maps",
+   "grounded": false
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "producing body part-based features of the ReID target",
+   "grounded": true
+  },
+  {
+   "op": "generate distribution",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "GiLt, a novel training scheme for learning part-based representations",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "standard ReID training objectives using identity labels are not adapted to local feature learning",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "GiLt, a novel training scheme for learning part-based representations",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "our proposed method, which outperforms state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "extensive experiments on popular holistic and occluded datasets show the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "outperforms state-of-the-art methods by 0.7% mAP and 5.6% rank-1 accuracy",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compute attention map@state",
+  "compute value@value",
+  "correct@parameter",
+  "encode@latent",
+  "predict@reward",
+  "reconstruct@distribution",
+  "sample@action"
+ ]
+}

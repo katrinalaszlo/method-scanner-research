@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "1909.08245",
+ "source": "abstract",
+ "words": 156,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Our method learns semantic and shape biased representations",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "Our method learns semantic and shape biased representations",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "integrate domain diversification and jigsaw puzzles",
+   "grounded": false
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "integrate domain diversification and jigsaw puzzles",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "action",
+   "quote": "the model to explore this environment autonom,ously",
+   "grounded": true
+  },
+  {
+   "op": "store",
+   "canonical": "store",
+   "object": "trajectory",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "distribution",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "initialize",
+   "canonical": "initialize",
+   "object": "parameter",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "policy",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "reward",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "value",
+   "quote": "the model to explore this environment autonomously",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@latent",
+  "compute@distribution",
+  "compute@error",
+  "compute@policy",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "initialize@parameter",
+  "normalize@distribution",
+  "predict@reward",
+  "reconstruct@action",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "reconstruct@reward",
+  "reconstruct@state",
+  "reconstruct@value",
+  "sample@action",
+  "sample@sample",
+  "select@action",
+  "store@trajectory",
+  "transform@state"
+ ]
+}

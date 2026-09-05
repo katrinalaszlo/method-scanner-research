@@ -1,0 +1,205 @@
+{
+ "arxiv_id": "2411.14279",
+ "source": "abstract",
+ "words": 207,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "Large vision-language models (LVLMs) have achieved impressive results",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "enhances the integration of visual inputs across the model",
+   "grounded": true
+  },
+  {
+   "op": "apply dual attention",
+   "canonical": "apply dual attention",
+   "object": "latent",
+   "quote": "MDA introduces a parallel dual-attention mechanism",
+   "grounded": true
+  },
+  {
+   "op": "generate soft prompt",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "IFG introduces a learnable soft visual prompt",
+   "grounded": true
+  },
+  {
+   "op": "replace input",
+   "canonical": "replace input",
+   "object": "input",
+   "quote": "to replace visual inputs, designed to compel LVLMs",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "comprehensive experiments demonstrate that our method",
+   "grounded": true
+  },
+  {
+   "op": "decode output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "proposes a novel decoding strategy using the soft visual prompt",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "enhancing visual comprehension and reducing hallucinations",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "to mitigate the model's over-reliance on adjacent text inputs",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "comprehensive experiments demonstrate that our method",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "to replace visual inputs, designed to compel LVLMs",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "proposes a novel decoding strategy using the soft visual prompt",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "enhancing visual comprehension and reducing hallucinations",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "to mitigate the model's over-reliance on adjacent text inputs",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "to replace visual inputs, designed to compel LVLMs",
+   "grounded": true
+  },
+  {
+   "op": "update distribution",
+   "canonical": "correct",
+   "object": "distribution",
+   "quote": "proposes a novel decoding strategy using the soft visual prompt",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "enhancing visual comprehension and reducing hallucinations",
+   "grounded": true
+  },
+  {
+   "op": "evaluate error",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "comprehensive experiments demonstrate that our method",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "proposes a novel decoding strategy using the soft visual prompt",
+   "grounded": true
+  },
+  {
+   "op": "store parameters",
+   "canonical": "store parameters",
+   "object": "parameter",
+   "quote": "comprehensive experiments demonstrate that our method",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "enhancing visual comprehension and reducing hallucinations",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "enhancing visual comprehension and reducing hallucinations",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "proposes a novel decoding strategy using the soft visual prompt",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "MDA introduces a parallel dual-attention mechanism",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply dual attention@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@distribution",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@value",
+  "process input@input",
+  "reconstruct@distribution",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "replace input@input",
+  "sample@action",
+  "sample@sample",
+  "store parameters@parameter"
+ ]
+}

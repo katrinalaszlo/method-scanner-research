@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "2212.03229",
+ "source": "abstract",
+ "words": 83,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "turn a ViT encoder into an efficient video model",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "sparsely sampling the inputs",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the model is easily scalable and can be adapted to large-scale pre-trained ViTs",
+   "grounded": true
+  },
+  {
+   "op": "forward pass",
+   "canonical": "forward pass",
+   "object": "input",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the model achieves SOTA results",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "sparsely sampling the inputs",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the model is able to do training and inference from both inputs",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "forward pass@input",
+  "predict@latent",
+  "reconstruct@noise",
+  "sample@input"
+ ]
+}

@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "1901.03353",
+ "source": "abstract",
+ "words": 147,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "making the loss function adaptive and more stable",
+   "grounded": true
+  },
+  {
+   "op": "predict mask",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "integrating instance mask prediction for the first time",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the detection component of RetinaMask has the same computational cost as the original RetinaNet",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improving training for the state-of-the-art single-shot detector",
+   "grounded": true
+  },
+  {
+   "op": "apply normalization",
+   "canonical": "apply normalization",
+   "object": "input",
+   "quote": "Adding Group Normalization increases the performance of RetinaMask-101 to 41.7 mAP",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "COCO test-dev results are up to 41.4 mAP for RetinaMask-101 vs 39.1mAP for RetinaNet-101",
+   "grounded": false
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "trajectory",
+   "quote": "the runtime is the same during evaluation",
+   "grounded": false
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "the detection component of RetinaMask has the same computational cost as the original RetinaNet",
+   "grounded": true
+  },
+  {
+   "op": "compute map",
+   "canonical": "compute map",
+   "object": "task",
+   "quote": "COCO test-dev results are up to 41.4 mAP for RetinaMask-101 vs 39.1mAP for RetinaNet-101",
+   "grounded": false
+  },
+  {
+   "op": "include example",
+   "canonical": "include example",
+   "object": "task",
+   "quote": "including additional hard examples in training",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the detection component of RetinaMask has the same computational cost as the original RetinaNet",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the detection component of RetinaMask has the same computational cost as the original RetinaNet",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "improving training for the state-of-the-art single-shot detector",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "the detection component of RetinaMask has the same computational cost as the original RetinaNet",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the detection component of RetinaMask has the same computational cost as the original RetinaNet",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the detection component of RetinaMask has the same computational cost as the original RetinaNet",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "the detection component of RetinaMask has the same computational cost as the original RetinaNet",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the detection component of RetinaMask has the same computational cost as the original RetinaNet",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the detection component of RetinaMask has the same computational cost as the original RetinaNet",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "the detection component of RetinaMask has the same computational cost as the original RetinaNet",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply normalization@input",
+  "backpropagate@gradient",
+  "compute accuracy@task",
+  "compute distribution@distribution",
+  "compute map@task",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@trajectory",
+  "include example@task",
+  "predict@latent",
+  "process input@input",
+  "reconstruct@action",
+  "reconstruct@noise",
+  "sample@action"
+ ]
+}

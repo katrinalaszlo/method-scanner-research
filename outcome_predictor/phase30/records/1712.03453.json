@@ -1,0 +1,74 @@
+{
+ "arxiv_id": "1712.03453",
+ "source": "abstract",
+ "words": 178,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 4,
+ "n_grounded": 3,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "ORPM outputs a fixed number of maps which encode the 3D joint locations",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:pose",
+   "quote": "ORPM outputs a fixed number of maps which encode the 3D joint locations",
+   "grounded": false
+  },
+  {
+   "op": "associate",
+   "canonical": "associate",
+   "object": "INVALID:body part",
+   "quote": "Body part associations allow us to infer 3D pose for an arbitrary number of people",
+   "grounded": true
+  },
+  {
+   "op": "infer",
+   "canonical": "predict",
+   "object": "INVALID:pose",
+   "quote": "Body part associations allow us to infer 3D pose for an arbitrary number of people",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "We synthesize a large corpus of multi-person images by compositing images of individual people",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "To train our approach we introduce MuCo-3DHP",
+   "grounded": false
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "We evaluate our method on our new challenging 3D annotated multi-person test set",
+   "grounded": false
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "INVALID:pose",
+   "quote": "ORPM outputs a fixed number of maps which encode the 3D joint locations",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "encode@input",
+  "evaluate@parameter",
+  "reconstruct@input",
+  "train@parameter"
+ ]
+}

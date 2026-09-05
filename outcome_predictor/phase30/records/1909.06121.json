@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1909.06121",
+ "source": "abstract",
+ "words": 158,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "project feature",
+   "canonical": "project",
+   "object": "input",
+   "quote": "projecting the feature into a new, lower-dimensional space",
+   "grounded": true
+  },
+  {
+   "op": "model interaction",
+   "canonical": "model interaction",
+   "object": "latent",
+   "quote": "all pairwise interactions can be modelled",
+   "grounded": true
+  },
+  {
+   "op": "reproject feature",
+   "canonical": "reproject feature",
+   "object": "latent",
+   "quote": "before reprojecting into the original space",
+   "grounded": true
+  },
+  {
+   "op": "model spatial relationships",
+   "canonical": "model spatial relationships",
+   "object": "state",
+   "quote": "the first component models spatial relationships between pixels",
+   "grounded": true
+  },
+  {
+   "op": "model channel dependencies",
+   "canonical": "model channel dependencies",
+   "object": "latent",
+   "quote": "the second models interdependencies along the channel dimensions",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "substantial benefits over a strong baseline",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "achieves state-of-the-art results on both Cityscapes",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "evaluate@error",
+  "model channel dependencies@latent",
+  "model interaction@latent",
+  "model spatial relationships@state",
+  "project@input",
+  "reconstruct@distribution",
+  "reproject feature@latent"
+ ]
+}

@@ -1,0 +1,91 @@
+{
+ "arxiv_id": "1903.11851",
+ "source": "abstract",
+ "words": 276,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 3,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "compute distribution divergence",
+   "canonical": "compute distribution divergence",
+   "object": "INVALID:feature set",
+   "quote": "minimize the distribution divergence between two sets",
+   "grounded": true
+  },
+  {
+   "op": "align samples",
+   "canonical": "align samples",
+   "object": "sample",
+   "quote": "samples in the less reliable set are better aligned with aid of OT metric",
+   "grounded": true
+  },
+  {
+   "op": "generate feature representation",
+   "canonical": "reconstruct",
+   "object": "INVALID:reliable set",
+   "quote": "the choice of generating an effective feature representation for the reliable set is further investigated",
+   "grounded": false
+  },
+  {
+   "op": "apply optimal transport",
+   "canonical": "apply optimal transport",
+   "object": "sample",
+   "quote": "introduce the optimal transport (OT) theory into the framework",
+   "grounded": true
+  },
+  {
+   "op": "compare feature sets",
+   "canonical": "compare",
+   "object": "INVALID:feature set",
+   "quote": "for each category, it is assumed that there are two feature sets",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "incorporated with such a plug-and-play intertwin, we achieve an evident improvement",
+   "grounded": true
+  },
+  {
+   "op": "classify object",
+   "canonical": "classify",
+   "object": "state",
+   "quote": "a well-trained model should classify objects with a unanimous score for every category",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "high-level semantic features should be as much alike as possible among samples",
+   "grounded": true
+  },
+  {
+   "op": "embed feature",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "we refer to this mutual learning process as feature intertwiner and embed it into object detection",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the reliable set could guide the feature learning of the less reliable set during training",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align samples@sample",
+  "apply optimal transport@sample",
+  "classify@state",
+  "correct@parameter",
+  "encode@latent",
+  "extract feature@input",
+  "train@parameter"
+ ]
+}

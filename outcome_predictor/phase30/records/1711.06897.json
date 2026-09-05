@@ -1,0 +1,130 @@
+{
+ "arxiv_id": "1711.06897",
+ "source": "abstract",
+ "words": 215,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 12,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "filter anchors",
+   "canonical": "filter anchors",
+   "object": "INVALID:anchor",
+   "quote": "filter out negative anchors to reduce search space for the classifier",
+   "grounded": false
+  },
+  {
+   "op": "adjust anchor location",
+   "canonical": "correct",
+   "object": "INVALID:anchor",
+   "quote": "coarsely adjust the locations and sizes of anchors",
+   "grounded": true
+  },
+  {
+   "op": "adjust anchor size",
+   "canonical": "correct",
+   "object": "INVALID:anchor",
+   "quote": "coarsely adjust the locations and sizes of anchors",
+   "grounded": true
+  },
+  {
+   "op": "refine anchors",
+   "canonical": "correct",
+   "object": "INVALID:anchor",
+   "quote": "the former aims to ... provide better initialization for the subsequent regressor",
+   "grounded": false
+  },
+  {
+   "op": "input anchors",
+   "canonical": "input anchors",
+   "object": "INVALID:anchor",
+   "quote": "the latter module takes the refined anchors as the input",
+   "grounded": false
+  },
+  {
+   "op": "regress object location",
+   "canonical": "regress object location",
+   "object": "INVALID:anchor",
+   "quote": "further improve the regression and predict multi-class label",
+   "grounded": true
+  },
+  {
+   "op": "regress object size",
+   "canonical": "regress object size",
+   "object": "INVALID:anchor",
+   "quote": "further improve the regression and predict multi-class label",
+   "grounded": true
+  },
+  {
+   "op": "predict object class",
+   "canonical": "predict",
+   "object": "INVALID:anchor",
+   "quote": "further improve the regression and predict multi-class label",
+   "grounded": true
+  },
+  {
+   "op": "transfer features",
+   "canonical": "transfer features",
+   "object": "latent",
+   "quote": "design a transfer connection block to transfer the features",
+   "grounded": true
+  },
+  {
+   "op": "predict object location",
+   "canonical": "predict",
+   "object": "INVALID:object",
+   "quote": "transfer the features in the anchor refinement module to predict locations",
+   "grounded": true
+  },
+  {
+   "op": "predict object size",
+   "canonical": "predict",
+   "object": "INVALID:object",
+   "quote": "transfer the features in the anchor refinement module to predict locations",
+   "grounded": true
+  },
+  {
+   "op": "predict object class",
+   "canonical": "predict",
+   "object": "INVALID:object",
+   "quote": "transfer the features in the anchor refinement module to predict locations",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "multi-task loss function enables us to train the whole network in an end-to-end way",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "multi-task loss function enables us to train the whole network in an end-to-end way",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "multi-task loss function enables us to train the whole network in an end-to-end way",
+   "grounded": true
+  },
+  {
+   "op": "detect object",
+   "canonical": "detect object",
+   "object": "INVALID:object",
+   "quote": "the latter module takes the refined anchors as the input from the former to further improve the regression and predict multi-class label",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "correct@parameter",
+  "evaluate@error",
+  "transfer features@latent"
+ ]
+}

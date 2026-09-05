@@ -1,0 +1,169 @@
+{
+ "arxiv_id": "1811.11168",
+ "source": "abstract",
+ "words": 197,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 4,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute deformation",
+   "canonical": "compute deformation",
+   "object": "input",
+   "quote": "the spatial support for its neural features conforms more closely than regular ConvNets to object structure",
+   "grounded": false
+  },
+  {
+   "op": "apply deformation",
+   "canonical": "apply deformation",
+   "object": "input",
+   "quote": "the spatial support for its neural features conforms more closely than regular ConvNets to object structure",
+   "grounded": false
+  },
+  {
+   "op": "modulate deformation",
+   "canonical": "modulate deformation",
+   "object": "input",
+   "quote": "introducing a modulation mechanism that expands the scope of deformation modeling",
+   "grounded": true
+  },
+  {
+   "op": "generate feature map",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "the spatial support for its neural features conforms more closely than regular ConvNets to object structure",
+   "grounded": false
+  },
+  {
+   "op": "compute feature similarity",
+   "canonical": "compute feature similarity",
+   "object": "INVALID:feature map",
+   "quote": "a proposed feature mimicking scheme that helps the network to learn features that reflect the object focus",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we guide network training via a proposed feature mimicking scheme",
+   "grounded": false
+  },
+  {
+   "op": "predict feature",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "helps the network to learn features that reflect the object focus and classification power of R-CNN features",
+   "grounded": false
+  },
+  {
+   "op": "compare feature",
+   "canonical": "compare",
+   "object": "INVALID:feature map",
+   "quote": "helps the network to learn features that reflect the object focus and classification power of R-CNN features",
+   "grounded": false
+  },
+  {
+   "op": "refine feature",
+   "canonical": "correct",
+   "object": "INVALID:feature map",
+   "quote": "helps the network to learn features that reflect the object focus and classification power of R-CNN features",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "INVALID:feature map",
+   "quote": "produces leading results on the COCO benchmark for object detection and instance segmentation",
+   "grounded": true
+  },
+  {
+   "op": "detect object",
+   "canonical": "detect object",
+   "object": "input",
+   "quote": "produces leading results on the COCO benchmark for object detection and instance segmentation",
+   "grounded": true
+  },
+  {
+   "op": "segment instance",
+   "canonical": "segment instance",
+   "object": "input",
+   "quote": "produces leading results on the COCO benchmark for object detection and instance segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we guide network training via a proposed feature mimicking scheme",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we guide network training via a proposed feature mimicking scheme",
+   "grounded": false
+  },
+  {
+   "op": "update weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we guide network training via a proposed feature mimicking scheme",
+   "grounded": false
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "more comprehensive integration of deformable convolution within the network",
+   "grounded": true
+  },
+  {
+   "op": "compute spatial support",
+   "canonical": "compute spatial support",
+   "object": "input",
+   "quote": "the spatial support for its neural features conforms more closely than regular ConvNets to object structure",
+   "grounded": false
+  },
+  {
+   "op": "filter irrelevant content",
+   "canonical": "filter irrelevant content",
+   "object": "input",
+   "quote": "this support may nevertheless extend well beyond the region of interest, causing features to be influenced by irrelevant image content",
+   "grounded": true
+  },
+  {
+   "op": "enhance modeling power",
+   "canonical": "enhance modeling power",
+   "object": "parameter",
+   "quote": "enhanced through a more comprehensive integration of deformable convolution within the network",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we guide network training via a proposed feature mimicking scheme",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply convolution@input",
+  "apply deformation@input",
+  "backpropagate@gradient",
+  "compute deformation@input",
+  "compute spatial support@input",
+  "correct@parameter",
+  "detect object@input",
+  "enhance modeling power@parameter",
+  "evaluate@error",
+  "filter irrelevant content@input",
+  "modulate deformation@input",
+  "predict@input",
+  "reconstruct@input",
+  "segment instance@input",
+  "train@parameter"
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "1707.08254",
+ "source": "abstract",
+ "words": 228,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "convert input",
+   "canonical": "convert input",
+   "object": "input",
+   "quote": "transform all the fully connected layers to convolutional layers",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "the model weights were transferred from the popular neural net",
+   "grounded": false
+  },
+  {
+   "op": "apply dilation",
+   "canonical": "apply dilation",
+   "object": "latent",
+   "quote": "use dilated convolution for decreasing the parameters",
+   "grounded": true
+  },
+  {
+   "op": "upsample",
+   "canonical": "upsample",
+   "object": "latent",
+   "quote": "utilizes deconvolutional layers for upsampling",
+   "grounded": true
+  },
+  {
+   "op": "add stride",
+   "canonical": "add stride",
+   "object": "input",
+   "quote": "add finer strides and attach four skip architectures",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "element-wise summed with the deconvolutional layers in steps",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "extracting finer features and conducting supervised training tends to increase the complexity",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we train and test on different sparse and fine data-sets",
+   "grounded": false
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "show how better our model performs in this tasks",
+   "grounded": true
+  },
+  {
+   "op": "inference",
+   "canonical": "inference",
+   "object": "input",
+   "quote": "our model has a faster inference time and consumes less memory",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "add stride@input",
+  "aggregate@latent",
+  "apply convolution@input",
+  "apply dilation@latent",
+  "compare@error",
+  "convert input@input",
+  "correct@parameter",
+  "inference@input",
+  "predict@value",
+  "upsample@latent"
+ ]
+}

@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "1712.09926",
+ "source": "abstract",
+ "words": 106,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 3,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "retrieve shift",
+   "canonical": "retrieve shift",
+   "object": "task",
+   "quote": "task-specific shifts retrieved from a memory module",
+   "grounded": true
+  },
+  {
+   "op": "apply shift",
+   "canonical": "apply shift",
+   "object": "INVALID:activation",
+   "quote": "modify their activation values with task-specific shifts",
+   "grounded": false
+  },
+  {
+   "op": "store shift",
+   "canonical": "store shift",
+   "object": "INVALID:memory",
+   "quote": "memory module, which is populated rapidly based on limited task experience",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "sample task",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "models augmented with conditionally shifted neurons achieve state-of-the-art results",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "update memory",
+   "canonical": "correct",
+   "object": "INVALID:memory",
+   "quote": "memory module, which is populated rapidly based on limited task experience",
+   "grounded": false
+  },
+  {
+   "op": "initialize shift",
+   "canonical": "initialize shift",
+   "object": "task",
+   "quote": "task-specific shifts retrieved from a memory module",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "predict shift",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "task-specific shifts retrieved from a memory module",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "apply this mechanism in the framework of meta,learning",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "apply this mechanism in the framework of metalearning",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "initialize shift@task",
+  "predict@task",
+  "reconstruct@noise",
+  "retrieve shift@task",
+  "sample@action",
+  "sample@sample",
+  "sample@task"
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "1712.00726",
+ "source": "abstract",
+ "words": 242,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "set threshold",
+   "canonical": "set threshold",
+   "object": "task",
+   "quote": "an intersection over union (IoU) threshold is required to define positives and negatives",
+   "grounded": true
+  },
+  {
+   "op": "train detector",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "an object detector, trained with low IoU threshold, e.g. 0.5, usually produces noisy detections",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "detection performance tends to degrade with increasing the IoU thresholds",
+   "grounded": false
+  },
+  {
+   "op": "resample hypotheses",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the resampling of progressively improved hypotheses guarantees that all detectors have a positive set of examples of equivalent size",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the detectors are trained stage by stage, leveraging the observation that the output of a detector is a good distribution for training the next higher quality detector",
+   "grounded": true
+  },
+  {
+   "op": "predict hypothesis",
+   "canonical": "predict",
+   "object": "sample",
+   "quote": "the same cascade procedure is applied at inference, enabling a closer match between the hypotheses and the detector quality of each stage",
+   "grounded": false
+  },
+  {
+   "op": "select hypothesis",
+   "canonical": "select hypothesis",
+   "object": "sample",
+   "quote": "the detectors are trained stage by stage, leveraging the observation that the output of a detector is a good distribution for training the next higher quality detector",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the output of a detector is a good distribution for training the next higher quality detector",
+   "grounded": true
+  },
+  {
+   "op": "apply threshold",
+   "canonical": "apply threshold",
+   "object": "sample",
+   "quote": "the resampling of progressively improved hypotheses guarantees that all detectors have a positive set of examples of equivalent size",
+   "grounded": true
+  },
+  {
+   "op": "generate detection",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "a simple implementation of the Cascade R-CNN is shown to surpass all single-model object detectors on the challenging COCO dataset",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply threshold@sample",
+  "compare@error",
+  "compute distribution@distribution",
+  "correct@parameter",
+  "predict@sample",
+  "reconstruct@sample",
+  "sample@sample",
+  "select hypothesis@sample",
+  "set threshold@task",
+  "train@parameter"
+ ]
+}

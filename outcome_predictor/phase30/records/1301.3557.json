@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1301.3557",
+ "source": "abstract",
+ "words": 91,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "sample activation",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "randomly picking the activation within each pooling region",
+   "grounded": true
+  },
+  {
+   "op": "compute multinomial distribution",
+   "canonical": "compute multinomial distribution",
+   "object": "state",
+   "quote": "given by the activities within the pooling region",
+   "grounded": false
+  },
+  {
+   "op": "select activation",
+   "canonical": "select activation",
+   "object": "state",
+   "quote": "randomly picking the activation within each pooling region",
+   "grounded": true
+  },
+  {
+   "op": "apply pooling",
+   "canonical": "apply pooling",
+   "object": "state",
+   "quote": "replace the conventional deterministic pooling operations",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "can be combined with other regularization approaches",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "can be combined with other regularization approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "achieve state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "can be combined with other regularization approaches",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply pooling@state",
+  "backpropagate@gradient",
+  "compute gradient@parameter",
+  "compute multinomial distribution@state",
+  "correct@parameter",
+  "evaluate@error",
+  "sample@state",
+  "select activation@state"
+ ]
+}

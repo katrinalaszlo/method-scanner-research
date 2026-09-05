@@ -1,0 +1,93 @@
+{
+ "arxiv_id": "2204.12511",
+ "source": "abstract",
+ "words": 172,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we propose a simple framework, named PolyLoss",
+   "grounded": true
+  },
+  {
+   "op": "combine terms",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "view and design loss functions as a linear combination",
+   "grounded": true
+  },
+  {
+   "op": "adjust weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the importance of different polynomial bases to be easily adjusted",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our Poly-1 formulation outperforms the cross-entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Extensive experimental results show that the optimal choice",
+   "grounded": true
+  },
+  {
+   "op": "select hyperparameter",
+   "canonical": "select hyperparameter",
+   "object": "parameter",
+   "quote": "simply by introducing one extra hyperparameter",
+   "grounded": true
+  },
+  {
+   "op": "apply polynomial basis",
+   "canonical": "apply polynomial basis",
+   "object": "error",
+   "quote": "view and design loss functions as a linear combination",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the importance of different polynomial bases to be easily adjusted",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "our Poly-1 formulation outperforms the cross-entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "our Poly-1 formulation outperforms the cross-entropy loss",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "apply polynomial basis@error",
+  "backpropagate@gradient",
+  "compute gradient@gradient",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "select hyperparameter@parameter",
+  "train@parameter"
+ ]
+}

@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "1908.07678",
+ "source": "abstract",
+ "words": 164,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "we report the state-of-the-art performance of 81.3 mIoU on the Cityscapes test set.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we report the state-of-the-art performance of 81.3 mIoU on the Cityscapes test set.",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "APNB leverages a pyramid sampling module into the non-local block to largely reduce the computation and memory consumption without sacrificing the performance.",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "APNB leverages a pyramid sampling module into the non-local block to largely reduce the computation and memory consumption without sacrificing the performance.",
+   "grounded": true
+  },
+  {
+   "op": "fuse features",
+   "canonical": "fuse features",
+   "object": "latent",
+   "quote": "AFNB is adapted from APNB to fuse the features of different levels under a sufficient consideration of long range dependencies and thus considerably improves the performance.",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "AFNB is adapted from APNB to fuse the features of different levels under a sufficient consideration of long range dependencies and thus considerably improves the performance.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "APNB leverages a pyramid sampling module into the non, local block to largely reduce the computation and memory consumption without sacrificing the performance.",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "we report the state-of-the-art performance of 81.3 mIoU on the Cityscapes test set.",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "APNB leverages a pyramid sampling module into the non-local block to largely reduce the computation and memory consumption without sacrificing the performance.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we report the state-of-the-art performance of 81.3 mIoU on the Cityscapes test set.",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we report the state-of-the-art performance of 81.3 mIoU on the Cityscapes test set.",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "AFNB is adapted from APNB to fuse the features of different levels under a sufficient consideration of long range dependencies and thus considerably improves the performance.",
+   "grounded": true
+  },
+  {
+   "op": "sample noise",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "APNB leverages a pyramid sampling module into the non-local block to largely reduce the computation and memory consumption without sacrificing the performance.",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we report the state-of-the-art performance of 81.3 mIoU on the Cityscapes test set.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "APNB leverages a pyramid sampling module into the non-local block to largely reduce the computation and memory consumption without sacrificing the performance.",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "AFNB is adapted from APNB to fuse the features of different levels under a sufficient consideration of long range dependencies and thus considerably improves the performance.",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we report the state-of-the-art performance of 81.3 mIoU on the Cityscapes test set.",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "APNB leverages a pyramid sampling module into the non-local block to largely reduce the computation and memory consumption without sacrificing the performance.",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we report the state-of-the-art performance of 81.3 mIoU on the Cityscapes test set.",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "AFNB is adapted from APNB to fuse the features of different levels under a sufficient consideration of long range dependencies and thus considerably improves the performance.",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we report the state-of-the-art performance of 81.3 mIoU on the Cityscapes test set.",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "AFNB is adapted from APNB to fuse the features of different levels under a sufficient consideration of long range dependencies and thus considerably improves the performance.",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "APNB leverages a pyramid sampling module into the non-local block to largely reduce the computation and memory consumption without sacrificing the performance.",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we report the state-of-the-art performance of 81.3 mIoU on the Cityscapes test set.",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "AFNB is adapted from APNB to fuse the features of different levels under a sufficient consideration of long range dependencies and thus considerably improves the performance.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "fuse features@latent",
+  "predict@task",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "sample@latent",
+  "sample@noise",
+  "sample@sample"
+ ]
+}

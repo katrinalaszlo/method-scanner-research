@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2501.01770",
+ "source": "abstract",
+ "words": 183,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "update proxy",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "PUM first uses pose features to update the implicit pose proxy",
+   "grounded": true
+  },
+  {
+   "op": "invoke proxy",
+   "canonical": "invoke proxy",
+   "object": "latent",
+   "quote": "PIM then invocates and integrates the pose proxy with the pose sequence",
+   "grounded": true
+  },
+  {
+   "op": "integrate proxy",
+   "canonical": "integrate proxy",
+   "object": "latent",
+   "quote": "PIM then invocates and integrates the pose proxy with the pose sequence",
+   "grounded": true
+  },
+  {
+   "op": "enhance semantics",
+   "canonical": "enhance semantics",
+   "object": "state",
+   "quote": "enhance the motion semantics of each pose",
+   "grounded": true
+  },
+  {
+   "op": "map sequence to proxy",
+   "canonical": "encode",
+   "object": "trajectory",
+   "quote": "leverages the above mapping between the pose sequence and pose proxy",
+   "grounded": true
+  },
+  {
+   "op": "enhance correlation",
+   "canonical": "enhance correlation",
+   "object": "trajectory",
+   "quote": "enhance the temporal correlation of the whole pose sequence",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "PUM first uses pose features to update the implicit pose proxy",
+   "grounded": true
+  },
+  {
+   "op": "store information",
+   "canonical": "store information",
+   "object": "latent",
+   "quote": "enabling it to store representative information from the pose sequence",
+   "grounded": true
+  },
+  {
+   "op": "combine sequence and proxy",
+   "canonical": "aggregate",
+   "object": "trajectory",
+   "quote": "invocates and integrates the pose proxy with the pose sequence",
+   "grounded": true
+  },
+  {
+   "op": "compute correlation",
+   "canonical": "compute correlation",
+   "object": "trajectory",
+   "quote": "enhance the temporal correlation of the whole pose sequence",
+   "grounded": true
+  },
+  {
+   "op": "generate representation",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "implicit pose proxy as an intermediate representation",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "PUM first uses pose features to update the implicit pose proxy",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "leverages the above mapping between the pose sequence and pose proxy",
+   "grounded": true
+  },
+  {
+   "op": "process sequence",
+   "canonical": "process sequence",
+   "object": "trajectory",
+   "quote": "invocates and integrates the pose proxy with the pose sequence",
+   "grounded": true
+  },
+  {
+   "op": "refine representation",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "enabling it to store representative information from the pose sequence",
+   "grounded": true
+  },
+  {
+   "op": "compute mapping",
+   "canonical": "compute mapping",
+   "object": "trajectory",
+   "quote": "leverages the above mapping between the pose sequence and pose proxy",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "PUM first uses pose features to update the implicit pose proxy",
+   "grounded": true
+  },
+  {
+   "op": "build correlation",
+   "canonical": "build correlation",
+   "object": "trajectory",
+   "quote": "each proxy within the implicit pose proxy can build one temporal correlation",
+   "grounded": true
+  },
+  {
+   "op": "refine correlation",
+   "canonical": "correct",
+   "object": "trajectory",
+   "quote": "enhance the temporal correlation of the whole pose sequence",
+   "grounded": true
+  },
+  {
+   "op": "construct representation",
+   "canonical": "construct representation",
+   "object": "latent",
+   "quote": "implicit pose proxy as an intermediate representation",
+   "grounded": true
+  },
+  {
+   "op": "compute semantics",
+   "canonical": "compute semantics",
+   "object": "state",
+   "quote": "enhance the motion semantics of each pose",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "PUM first uses pose features to update the implicit pose proxy",
+   "grounded": true
+  },
+  {
+   "op": "enhance motion",
+   "canonical": "enhance motion",
+   "object": "state",
+   "quote": "enhance the motion semantics of each pose",
+   "grounded": true
+  },
+  {
+   "op": "compute temporal correlation",
+   "canonical": "compute temporal correlation",
+   "object": "trajectory",
+   "quote": "enhance the temporal correlation of the whole pose sequence",
+   "grounded": true
+  },
+  {
+   "op": "refine temporal correlation",
+   "canonical": "correct",
+   "object": "trajectory",
+   "quote": "enhance the temporal correlation of the whole pose sequence",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "aggregate@trajectory",
+  "apply attention@latent",
+  "build correlation@trajectory",
+  "compute correlation@trajectory",
+  "compute mapping@trajectory",
+  "compute semantics@state",
+  "compute temporal correlation@trajectory",
+  "construct representation@latent",
+  "correct@latent",
+  "correct@parameter",
+  "correct@trajectory",
+  "encode@input",
+  "encode@trajectory",
+  "enhance correlation@trajectory",
+  "enhance motion@state",
+  "enhance semantics@state",
+  "integrate proxy@latent",
+  "invoke proxy@latent",
+  "process sequence@trajectory",
+  "reconstruct@latent",
+  "store information@latent"
+ ]
+}

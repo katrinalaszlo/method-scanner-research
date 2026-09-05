@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2305.08386",
+ "source": "abstract",
+ "words": 199,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "language-image pre-training is an effective technique",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "establish the correspondence between the person-related image regions",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "aims to establish the correspondence between the person-related image regions",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we elaborately design three pretext tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "mine fine-grained attribute information of the person body",
+   "grounded": true
+  },
+  {
+   "op": "contrast",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "correlate the cross-modal representations at the identity level",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:text",
+   "quote": "construct a large-scale person dataset with image-text pairs",
+   "grounded": true
+  },
+  {
+   "op": "pretrain",
+   "canonical": "pretrain",
+   "object": "parameter",
+   "quote": "we pre-train PLIP on SYNTH-PEDES",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "evaluate our models by spanning downstream person-centric tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "shows great ability in the zero-shot and domain generalization settings",
+   "grounded": true
+  },
+  {
+   "op": "map",
+   "canonical": "encode",
+   "object": "distribution",
+   "quote": "correlate the cross-modal representations at the identity level",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "shows great ability in the zero-shot and domain generalization settings",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "language-image pre-training is an effective technique",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "mine fine-grained attribute information of the person body",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we elaborately design three pretext tasks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we pre-train PLIP on SYNTH-PEDES",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "shows great ability in the zero, zero-shot and domain generalization settings",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "shows great ability in the zero-shot and domain generalization settings",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "mine fine-grained attribute information of the person body",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "shows great ability in the zero-shot and domain generalization settings",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "evaluate our models by spanning downstream person-centric tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "shows great ability in the zero-shot and domain generalization settings",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "correlate the cross-modal representations at the identity level",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "evaluate our models by spanning downstream person-centric tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "we pre-train PLIP on SYNTH-PEDES",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@distribution",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@distribution",
+  "encode@input",
+  "evaluate@task",
+  "predict@distribution",
+  "predict@reward",
+  "pretrain@parameter",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2307.10984",
+ "source": "abstract",
+ "words": 261,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "transform camera",
+   "canonical": "transform camera",
+   "object": "input",
+   "quote": "we propose a canonical camera space transformation module",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "monocular models can be stably trained with over 8 million images",
+   "grounded": true
+  },
+  {
+   "op": "project latent",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "explicitly addresses the ambiguity problems",
+   "grounded": true
+  },
+  {
+   "op": "compute depth",
+   "canonical": "compute depth",
+   "object": "latent",
+   "quote": "zero-shot generalization to in-the-wild images",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "SOTA performance of our method on 7 zero-shot benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "resample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "plugging in our model relieves the scale drift issues",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "monocular models can be stably trained with over 8 million images",
+   "grounded": true
+  },
+  {
+   "op": "denoise depth",
+   "canonical": "reconstruct",
+   "object": "INVALID:depth",
+   "quote": "accurate recovery of metric 3D structures",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "leading to high-quality metric scale dense mapping",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "zero-shot generalization by learning affine-invariant depths",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate error",
+   "canonical": "backpropagate error",
+   "object": "gradient",
+   "quote": "monocular models can be stably trained with over 8 million images",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "plugging in our model relieves the scale drift issues",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "paving the way for plausible single-image metrology",
+   "grounded": true
+  },
+  {
+   "op": "evaluate reward",
+   "canonical": "evaluate",
+   "object": "reward",
+   "quote": "the potential benefits extend to downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "store trajectory",
+   "canonical": "store trajectory",
+   "object": "trajectory",
+   "quote": "our method enables the accurate recovery of metric 3D structures",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "zero-shot generalization to in-the-wild images",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "monocular models can be stably trained with over 8 million images",
+   "grounded": true
+  },
+  {
+   "op": "denoise trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "plugging in our model relieves the scale drift issues",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "the potential benefits extend to downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "resample state",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "plugging in our model relieves the scale drift issues",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "SOTA performance of our method on 7 zero-shot benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "denoise state",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "accurate recovery of metric 3D structures",
+   "grounded": true
+  },
+  {
+   "op": "update gradient",
+   "canonical": "correct",
+   "object": "gradient",
+   "quote": "monocular models can be stably trained with over 8 million images",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "plugging in our model relieves the scale drift issues",
+   "grounded": false
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "plugging in our model relieves the scale drift issues",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate error@gradient",
+  "clip gradient@gradient",
+  "compare@error",
+  "compute depth@latent",
+  "compute distribution@distribution",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@gradient",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@reward",
+  "predict@state",
+  "project@latent",
+  "reconstruct@state",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@state",
+  "sample@trajectory",
+  "store trajectory@trajectory",
+  "transform camera@input"
+ ]
+}

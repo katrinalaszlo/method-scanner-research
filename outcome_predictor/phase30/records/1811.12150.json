@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1811.12150",
+ "source": "abstract",
+ "words": 147,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 3,
+ "ops": [
+  {
+   "op": "apply global average pooling",
+   "canonical": "apply global average pooling",
+   "object": "input",
+   "quote": "Global average pooling (GAP) allows to localize discriminative information for recognition [40].",
+   "grounded": true
+  },
+  {
+   "op": "extract feature map activations",
+   "canonical": "extract feature map activations",
+   "object": "input",
+   "quote": "While GAP helps the convolution neural network to attend to the most discriminative features of an object...",
+   "grounded": true
+  },
+  {
+   "op": "model spatial relations",
+   "canonical": "model spatial relations",
+   "object": "latent",
+   "quote": "we argue that it is advantageous to attend to the global configuration of the object by modeling spatial relations among high-level features.",
+   "grounded": true
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "latent",
+   "quote": "our spatial attention layer consistently improves the performance over the model without it.",
+   "grounded": false
+  },
+  {
+   "op": "aggregate attention weights",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "our spatial attention layer introducing spatial relations among the feature map activations back to the model.",
+   "grounded": false
+  },
+  {
+   "op": "combine with feature map",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "our spatial attention layer introducing spatial relations among the feature map activations back to the model.",
+   "grounded": false
+  },
+  {
+   "op": "produce final representation",
+   "canonical": "produce final representation",
+   "object": "latent",
+   "quote": "our spatial attention layer consistently improves the performance over the model without it.",
+   "grounded": false
+  },
+  {
+   "op": "compute rank-1 accuracy",
+   "canonical": "compute rank-1 accuracy",
+   "object": "distribution",
+   "quote": "Results on four benchmarks demonstrate a superiority of our model over the state-of-the-art achieving rank-1 accuracy of 94.7% on Market-1501...",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply global average pooling@input",
+  "compute attention weights@latent",
+  "compute rank-1 accuracy@distribution",
+  "extract feature map activations@input",
+  "model spatial relations@latent",
+  "produce final representation@latent"
+ ]
+}

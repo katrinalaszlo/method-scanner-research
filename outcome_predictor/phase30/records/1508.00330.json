@@ -1,0 +1,201 @@
+{
+ "arxiv_id": "1508.00330",
+ "source": "abstract",
+ "words": 286,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 1,
+ "n_grounded": 11,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "the combination of deep learning models and piecewise linear activation functions allows for the estimation of exponentially complex functions",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "these subnetworks avoid overfitting with an implicit regularization scheme based on the fact that they must share their parameters with other subnetworks",
+   "grounded": false
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "the combination of deep learning models and piecewise linear activation functions allows for the estimation of exponentially complex functions with the use of a large number of subnetworks specialized in the classification of similar input examples",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we notice that these models assume a balanced initial distribution of data points with respect to the domain of the piecewise linear activation function",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the combination of deep learning models and piecewise linear activation functions allows for the estimation of exponentially complex functions with the use of a large number of subnetworks specialized in the classification of similar input examples",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the combination of deep learning models and piecewise linear activation functions allows for the estimation of exponentially complex functions with the use of a large number of subnetworks specialized in the classification of similar input examples",
+   "grounded": true
+  },
+  {
+   "op": "apply normalization",
+   "canonical": "apply normalization",
+   "object": "input",
+   "quote": "we propose the introduction of batch normalisation units into deep feedforward neural networks with piecewise linear activations",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "input",
+   "quote": "we notice that these models assume a balanced initial distribution of data points with respect to the domain of the piecewise linear activation function",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "input",
+   "quote": "the combination of deep learning models and piecewise linear activation functions allows for the estimation of exponentially complex functions with the use of a large number of subnetworks specialized in the classification of similar input examples",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we show that by introducing maxout and batch normalisation units to the network in network model results in a model that produces classification results that are better than or comparable to the current state of the art in CIFAR-10, CIFAR-100, MNIST, and SVHN datasets",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "we notice that these models assume a balanced initial distribution of data points with respect to the domain of the piecewise linear activation function",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "value",
+   "quote": "we notice that these models assume a balanced initial distribution of data points with respect to the domain of the piecewise linear activation function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose the introduction of batch normalisation units into deep feedforward neural networks with piecewise linear activations",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "value",
+   "quote": "we notice that these models assume a balanced initial distribution of data points with respect to the domain of the piecewise linear activation function",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "value",
+   "quote": "we notice that these models assume a balanced initial distribution of data points with respect to the domain of the piecewise linear activation function",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we show that by introducing maxout and batch normalisation units to the network in network model results in a model that produces classification results that are better than or comparable to the current state of the art in CIFAR-10, CIFAR-100, MNIST, and SVHN datasets",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "trajectory",
+   "quote": "we show that by introducing maxout and batch normalisation units to the network in network model results in a model that produces classification results that are better than or comparable to the current state of the art in CIFAR-10, CIFAR-100, MNIST, and SVHN datasets",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "trajectory",
+   "quote": "we show that by introducing maxout and batch normalisation units to the network in network model results in a model that produces classification results that are better than or comparable to the current state of the art in CIFAR-10, CIFAR-100, MNIST, and SVHN datasets",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we show that by introducing maxout and batch normalisation units to the network in network model results in a model that produces classification results that are better than or comparable to the current state of the art in CIFAR-10, CIFAR-100, MNIST, and SVHN datasets",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "trajectory",
+   "quote": "we show that by introducing maxout and batch normalisation units to the network in network model results in a model that produces classification results that are better than or comparable to the current state of the art in CIFAR-10, CIFAR-100, MNIST, and SVHN datasets",
+   "grounded": false
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "trajectory",
+   "quote": "we show that by introducing maxout and batch normalisation units to the network in network model results in a model that produces classification results that are better than or comparable to the current state of the art in CIFAR-10, CIFAR-100, MNIST, and SVHN datasets",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "we show that by introducing maxout and batch normalisation units to the network in network model results in a model that produces classification results that are better than or comparable to the current state of the art in CIFAR-10, CIFAR-100, MNIST, and SVHN datasets",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "distribution",
+   "quote": "we show that by introducing maxout and batch normalisation units to the network in network model results in a model that produces classification results that are better than or comparable to the current state of the art in CIFAR-10, CIFAR-100, MNIST, and SVHN datasets",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we show that by introducing maxout and batch normalisation units to the network in network model results in a model that produces classification results that are better than or comparable to the current state of the art in CIFAR-10, CIFAR-100, MNIST, and SVHN datasets",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply normalization@input",
+  "backpropagate@gradient",
+  "compare@distribution",
+  "compare@trajectory",
+  "compare@value",
+  "compute distribution@input",
+  "compute distribution@trajectory",
+  "compute distribution@value",
+  "compute gradient@distribution",
+  "compute gradient@gradient",
+  "compute gradient@trajectory",
+  "compute gradient@value",
+  "compute latent@input",
+  "compute latent@trajectory",
+  "compute latent@value",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "sample@input"
+ ]
+}

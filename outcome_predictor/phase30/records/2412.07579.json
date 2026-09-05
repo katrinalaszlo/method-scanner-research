@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "2412.07579",
+ "source": "abstract",
+ "words": 206,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 3,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "using an encoder as teacher",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "using a decoder as student",
+   "grounded": false
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the student decoder generates anomaly-free features",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "the teacher encoder effectively distinguishes between normal and abnormal features",
+   "grounded": true
+  },
+  {
+   "op": "inject",
+   "canonical": "inject",
+   "object": "INVALID:information",
+   "quote": "Guided Information Injection is designed to filter and transfer features",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the absence of skip connections results in a loss of fine details during feature reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "the added expert network enhances the student's ability to generate normal features",
+   "grounded": true
+  },
+  {
+   "op": "distill",
+   "canonical": "distill",
+   "object": "INVALID:knowledge",
+   "quote": "simultaneous distillation of both the teacher encoder and student decoder",
+   "grounded": true
+  },
+  {
+   "op": "filter",
+   "canonical": "filter",
+   "object": "latent",
+   "quote": "Guided Information Injection is designed to filter and transfer features",
+   "grounded": true
+  },
+  {
+   "op": "transfer",
+   "canonical": "transfer",
+   "object": "latent",
+   "quote": "Guided Information Injection is designed to filter and transfer features",
+   "grounded": true
+  },
+  {
+   "op": "minimize",
+   "canonical": "minimize",
+   "object": "error",
+   "quote": "minimizing false positives",
+   "grounded": true
+  },
+  {
+   "op": "enhance",
+   "canonical": "enhance",
+   "object": "latent",
+   "quote": "the added expert network enhances the student's ability to generate normal features",
+   "grounded": true
+  },
+  {
+   "op": "differentiate",
+   "canonical": "differentiate",
+   "object": "latent",
+   "quote": "the teacher encoder effectively distinguishes between normal and abnormal features",
+   "grounded": true
+  },
+  {
+   "op": "reduce",
+   "canonical": "reduce",
+   "object": "error",
+   "quote": "reducing missed detections",
+   "grounded": true
+  },
+  {
+   "op": "improve",
+   "canonical": "improve",
+   "object": "INVALID:reconstruction",
+   "quote": "improving detail reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the added expert network enhances the student's ability to generate normal features",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the absence of skip connections results in a loss of fine details during feature reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the added expert network enhances the student's ability to generate normal features",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "the student decoder generates anomaly-free features",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "minimizing false positives",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the added expert network enhances the student's ability to generate normal features",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "the absence of skip connections results in a loss of fine details during feature reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "improving detail reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "improving detail reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "error",
+   "quote": "minimizing false positives",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@latent",
+  "compute@error",
+  "compute@value",
+  "correct@latent",
+  "correct@parameter",
+  "differentiate@latent",
+  "encode@state",
+  "enhance@latent",
+  "evaluate@error",
+  "filter@latent",
+  "improve@parameter",
+  "minimize@error",
+  "reconstruct@latent",
+  "reconstruct@sample",
+  "reduce@error",
+  "train@parameter",
+  "transfer@latent",
+  "transmit@error"
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2211.16175",
+ "source": "abstract",
+ "words": 211,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "input",
+   "quote": "similarity between the image and the prompt sentence",
+   "grounded": true
+  },
+  {
+   "op": "extract context",
+   "canonical": "extract context",
+   "object": "input",
+   "quote": "based on exhaustive text cues in \"[CONTEXT]\"",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:context",
+   "quote": "get the context distribution contained in the image",
+   "grounded": true
+  },
+  {
+   "op": "compute kld",
+   "canonical": "compute kld",
+   "object": "distribution",
+   "quote": "minimizing the Kullback-Leibler Divergence (KLD) between context distributions",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "regularizes the model during fine-tuning to capture the context information",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "makes the context-aware ability of CLIP inherited into downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "achieves both higher In-Distribution (ID) and Out-Of-Distribution (OOD) accuracy",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "surpasses previous Domain Generalization (DG) methods and gets 78.5% averaged accuracy",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute accuracy@task",
+  "compute kld@distribution",
+  "compute similarity@input",
+  "correct@parameter",
+  "evaluate@task",
+  "extract context@input",
+  "predict@input"
+ ]
+}

@@ -1,0 +1,188 @@
+{
+ "arxiv_id": "2007.08103",
+ "source": "abstract",
+ "words": 238,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 18,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "INVALID:anchor",
+   "quote": "calculate the scores of anchors conditioned on the model",
+   "grounded": true
+  },
+  {
+   "op": "fit distribution",
+   "canonical": "fit distribution",
+   "object": "distribution",
+   "quote": "fit a probability distribution to these scores",
+   "grounded": true
+  },
+  {
+   "op": "assign sample",
+   "canonical": "assign sample",
+   "object": "INVALID:anchor",
+   "quote": "separated into positive and negative samples according to their probabilities",
+   "grounded": true
+  },
+  {
+   "op": "predict iou",
+   "canonical": "predict",
+   "object": "INVALID:box",
+   "quote": "predict the Intersection-over-Unions of detected boxes",
+   "grounded": true
+  },
+  {
+   "op": "compute quality",
+   "canonical": "compute quality",
+   "object": "INVALID:localization",
+   "quote": "predict the Intersection-over-Unions of detected boxes as a measure of localization quality",
+   "grounded": true
+  },
+  {
+   "op": "combine score",
+   "canonical": "aggregate",
+   "object": "INVALID:quality",
+   "quote": "the combined score of classification and localization qualities serving as a box selection metric",
+   "grounded": true
+  },
+  {
+   "op": "select box",
+   "canonical": "select box",
+   "object": "INVALID:box",
+   "quote": "the combined score of classification and localization qualities serving as a box selection metric in non-maximum suppression",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "The model is then trained with anchors separated into positive and negative samples according to their probabilities",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "The proposed methods only add a single convolutional layer to RetinaNet baseline",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "The model is then trained with anchors separated into positive and negative samples according to their probabilities",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "The model is then trained with anchors separated into positive and negative samples according to their probabilities",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "The model is then trained with anchors separated into positive and negative samples according to their probabilities",
+   "grounded": true
+  },
+  {
+   "op": "evaluate metric",
+   "canonical": "evaluate",
+   "object": "INVALID:quality",
+   "quote": "the combined score of classification and localization qualities serving as a box selection metric in non-maximum suppression",
+   "grounded": true
+  },
+  {
+   "op": "compute iou",
+   "canonical": "compute iou",
+   "object": "INVALID:box",
+   "quote": "predict the Intersection-over-Unions of detected boxes as a measure of localization quality",
+   "grounded": true
+  },
+  {
+   "op": "select action",
+   "canonical": "act",
+   "object": "INVALID:box",
+   "quote": "the combined score of classification and localization qualities serving as a box selection metric in non-maximum suppression",
+   "grounded": true
+  },
+  {
+   "op": "non-maximum suppression",
+   "canonical": "non-maximum suppression",
+   "object": "INVALID:box",
+   "quote": "the combined score of classification and localization qualities serving as a box selection metric in non-maximum suppression",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "INVALID:quality",
+   "quote": "the combined score of classification and localization qualities serving as a box selection metric in non-maximum suppression",
+   "grounded": true
+  },
+  {
+   "op": "compare metric",
+   "canonical": "compare",
+   "object": "INVALID:quality",
+   "quote": "the combined score of classification and localization qualities serving as a box selection metric in non-maximum suppression",
+   "grounded": true
+  },
+  {
+   "op": "compute localization",
+   "canonical": "compute localization",
+   "object": "INVALID:quality",
+   "quote": "predict the Intersection-over-Unions of detected boxes as a measure of localization quality",
+   "grounded": true
+  },
+  {
+   "op": "compute classification",
+   "canonical": "compute classification",
+   "object": "INVALID:quality",
+   "quote": "the combined score of classification and localization qualities serving as a box selection metric in non-maximum suppression",
+   "grounded": true
+  },
+  {
+   "op": "compute box",
+   "canonical": "compute box",
+   "object": "INVALID:selection",
+   "quote": "the combined score of classification and localization qualities serving as a box selection metric in non-maximum suppression",
+   "grounded": true
+  },
+  {
+   "op": "select box",
+   "canonical": "select box",
+   "object": "INVALID:box",
+   "quote": "the combined score of classification and localization qualities serving as a box selection metric in non-maximum suppression",
+   "grounded": true
+  },
+  {
+   "op": "compute box",
+   "canonical": "compute box",
+   "object": "INVALID:quality",
+   "quote": "the combined score of classification and localization qualities serving as a box selection metric in non-maximum suppression",
+   "grounded": true
+  },
+  {
+   "op": "compute box",
+   "canonical": "compute box",
+   "object": "INVALID:selection",
+   "quote": "the combined score of classification and localization qualities serving as a box selection metric in non-maximum suppression",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply convolution@latent",
+  "backpropagate@gradient",
+  "correct@parameter",
+  "evaluate@error",
+  "fit distribution@distribution",
+  "train@parameter"
+ ]
+}

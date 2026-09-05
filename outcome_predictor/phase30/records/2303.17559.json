@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2303.17559",
+ "source": "abstract",
+ "words": 169,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "sample noise",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "progressively removing noise from a random Gaussian distribution",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "progressively removing noise from a random Gaussian distribution",
+   "grounded": true
+  },
+  {
+   "op": "predict map",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "diffusion pipeline for dense visual predictions",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "efficiently extends the denoising diffusion process",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "without task-specific design and architecture customization",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "without tricks, DDP achieves state-of-the-art or competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "without tricks, DDP achieves state-of-the-art or competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "diffusion pipeline for dense visual predictions",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "shows attractive properties such as dynamic inference",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "shows attractive properties such as dynamic inference",
+   "grounded": true
+  },
+  {
+   "op": "track state",
+   "canonical": "track state",
+   "object": "state",
+   "quote": "diffusion pipeline for dense visual predictions",
+   "grounded": false
+  },
+  {
+   "op": "estimate value",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "shows attractive properties such as dynamic inference",
+   "grounded": true
+  },
+  {
+   "op": "compute uncertainty",
+   "canonical": "compute uncertainty",
+   "object": "distribution",
+   "quote": "shows attractive properties such as uncertainty awareness",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "diffusion pipeline for dense visual predictions",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "diffusion pipeline for dense visual predictions",
+   "grounded": false
+  },
+  {
+   "op": "denoise trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "diffusion pipeline for dense visual predictions",
+   "grounded": false
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "diffusion pipeline for dense visual predictions",
+   "grounded": false
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "diffusion pipeline for dense visual predictions",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "shows attractive properties such as dynamic inference",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "diffusion pipeline for dense visual predictions",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "shows attractive, properties such as dynamic inference",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "without task-specific design and architecture customization",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "without tricks, DDP achieves state-of-the-art or competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "without tricks, DDP achieves state-of-the-art or competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "diffusion pipeline for dense visual predictions",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute uncertainty@distribution",
+  "correct@parameter",
+  "evaluate@value",
+  "predict@distribution",
+  "reconstruct@distribution",
+  "reconstruct@latent",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@noise",
+  "sample@sample",
+  "track state@state"
+ ]
+}

@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2108.01901",
+ "source": "abstract",
+ "words": 202,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "extract such more representative features",
+   "grounded": true
+  },
+  {
+   "op": "aggregate feature",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "aggregate them in a bidirectional pyramid structure",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "cooperated by attention modules",
+   "grounded": true
+  },
+  {
+   "op": "regularize parameter",
+   "canonical": "regularize parameter",
+   "object": "parameter",
+   "quote": "cross orthogonality regularization",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "update parameters",
+   "grounded": false
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "introducing less than 1.5M extra parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "extensive experimental results",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "update parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "outperforms state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "person Re-Identification (Re-ID) requires the model to focus",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "person Re-Identification (Re-ID) requires the model to focus",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "pyramid network as affiliated branch",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "empirically proves that pyramid network as affiliated branch",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "person Re-ID tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "cooperated by attention modules",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "pyramid network as affiliated branch",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "extensive experimental results",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "introducing less than 1.5M extra parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "extract such more representative features",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "aggregate them in a bidirectional pyramid structure",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "update parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "outperforms state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "person Re-Identification (Re-ID) requires the model to focus",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "pyramid network as affiliated branch",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "empirically proves that pyramid network as affiliated branch",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention@latent",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute gradient@parameter",
+  "compute input@input",
+  "compute latent@latent",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "extract feature@input",
+  "regularize parameter@parameter",
+  "sample@action"
+ ]
+}

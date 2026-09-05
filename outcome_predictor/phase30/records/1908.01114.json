@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1908.01114",
+ "source": "abstract",
+ "words": 154,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "input",
+   "quote": "attention mechanism has been shown to be effective for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "aggregate channels",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "a pair of complementary attention modules, focusing on channel aggregation",
+   "grounded": true
+  },
+  {
+   "op": "aware position",
+   "canonical": "aware position",
+   "object": "latent",
+   "quote": "a pair of complementary attention modules, focusing on channel aggregation and position awareness",
+   "grounded": true
+  },
+  {
+   "op": "enforce orthogonality",
+   "canonical": "enforce orthogonality",
+   "object": "parameter",
+   "quote": "a new efficient form of orthogonality constraint is derived to enforce orthogonly on both hidden activations and weights",
+   "grounded": true
+  },
+  {
+   "op": "regularize diversity",
+   "canonical": "regularize diversity",
+   "object": "latent",
+   "quote": "enforcing diversity could greatly complement the power of attention",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "latent",
+   "quote": "the learned attentive feature embeddings which are often not naturally diverse nor uncorrelated, will compromise the retrieval performance based on the Euclidean distance",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose an Attentive but Diverse Network (ABD-Net), which seamlessly integrates attention modules and diversity regularization throughout the entire network",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we verify that the proposed attentive and diverse terms each contributes to the performance gains of ABD-Net",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "aware position@latent",
+  "compute attention@input",
+  "compute distance@latent",
+  "correct@parameter",
+  "enforce orthogonality@parameter",
+  "evaluate@error",
+  "regularize diversity@latent"
+ ]
+}

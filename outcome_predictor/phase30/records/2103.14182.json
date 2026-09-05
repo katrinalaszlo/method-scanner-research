@@ -1,0 +1,172 @@
+{
+ "arxiv_id": "2103.14182",
+ "source": "abstract",
+ "words": 144,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we exploit temporal information in videos",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "we propose a self-attention module",
+   "grounded": false
+  },
+  {
+   "op": "apply self-attention",
+   "canonical": "apply self-attention",
+   "object": "latent",
+   "quote": "we propose a self-attention module",
+   "grounded": false
+  },
+  {
+   "op": "aggregate dependencies",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "jointly considers short-range and long-range dependencies",
+   "grounded": true
+  },
+  {
+   "op": "forecast motion",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "we model human motion with a forecasting module",
+   "grounded": true
+  },
+  {
+   "op": "predict next state",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "allows the transition between adjacent frames to be smooth",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "resulting in temporally coherent estimations",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "extensive experimental results show",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our algorithm performs favorably against",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "allows the transition between adjacent frames to be smooth",
+   "grounded": true
+  },
+  {
+   "op": "denoise latent",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "resulting in temporally coherent estimations",
+   "grounded": true
+  },
+  {
+   "op": "resample latent",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "resulting in temporally coherent estimations",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate error",
+   "canonical": "backpropagate error",
+   "object": "gradient",
+   "quote": "extensive experimental results show",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "our algorithm performs favorably against",
+   "grounded": true
+  },
+  {
+   "op": "apply non-linearity",
+   "canonical": "apply non-linearity",
+   "object": "latent",
+   "quote": "we propose a self-attention module",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "allows the transition between adjacent frames to be smooth",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "resulting in temporally coherent estim, estimations",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "resulting in temporally coherent estimations",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we model human motion with a forecasting module",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "allows the transition between adjacent frames to be smooth",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply non-linearity@latent",
+  "apply self-attention@latent",
+  "backpropagate error@gradient",
+  "clip gradient@gradient",
+  "compare@latent",
+  "compute distribution@distribution",
+  "compute latent@latent",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@latent",
+  "reconstruct@latent",
+  "sample@action",
+  "sample@latent"
+ ]
+}

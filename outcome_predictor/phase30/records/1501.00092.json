@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "1501.00092",
+ "source": "abstract",
+ "words": 137,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "take input",
+   "canonical": "take input",
+   "object": "input",
+   "quote": "takes the low-resolution image as the input",
+   "grounded": true
+  },
+  {
+   "op": "output high-resolution",
+   "canonical": "output high-resolution",
+   "object": "input",
+   "quote": "outputs the high-resolution one",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "jointly optimizes all layers",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "jointly optimizes all layers",
+   "grounded": false
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "takes the low-resolution image as the input",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "outputs the high-resolution one",
+   "grounded": false
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "deep convolutional neural network",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "traditional sparse-coding-based SR methods",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "jointly optimizes all layers",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "extend our network to cope with three color channels",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "state-of-the-art restoration quality",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "fast speed for practical on-line usage",
+   "grounded": false
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "end-to-end mapping between the low/high-resolution images",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "traditional sparse-coding-based SR methods",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "jointly optimizes all layers",
+   "grounded": false
+  },
+  {
+   "op": "adjust weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "jointly optimizes all layers",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "input",
+   "quote": "state-of-the-art restoration quality",
+   "grounded": true
+  },
+  {
+   "op": "process latent",
+   "canonical": "process latent",
+   "object": "latent",
+   "quote": "deep convolutional neural network",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "input",
+   "quote": "deep convolutional neural network",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "input",
+   "quote": "state-of-the-art restoration quality",
+   "grounded": true
+  },
+  {
+   "op": "apply pooling",
+   "canonical": "apply pooling",
+   "object": "input",
+   "quote": "deep convolutional neural network",
+   "grounded": true
+  },
+  {
+   "op": "apply normalization",
+   "canonical": "apply normalization",
+   "object": "input",
+   "quote": "deep convolution, neural network",
+   "grounded": false
+  },
+  {
+   "op": "apply dropout",
+   "canonical": "apply dropout",
+   "object": "input",
+   "quote": "deep convolutional neural network",
+   "grounded": true
+  },
+  {
+   "op": "apply upsampling",
+   "canonical": "apply upsampling",
+   "object": "input",
+   "quote": "deep convolutional neural network",
+   "grounded": true
+  },
+  {
+   "op": "apply transposition",
+   "canonical": "apply transposition",
+   "object": "input",
+   "quote": "deep convolutional neural network",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply activation@input",
+  "apply convolution@input",
+  "apply dropout@input",
+  "apply normalization@input",
+  "apply pooling@input",
+  "apply transposition@input",
+  "apply upsampling@input",
+  "backpropagate@gradient",
+  "compare@input",
+  "compute distribution@input",
+  "compute gradient@parameter",
+  "compute value@input",
+  "correct@parameter",
+  "evaluate@error",
+  "improve@parameter",
+  "output high-resolution@input",
+  "predict@input",
+  "process input@input",
+  "process latent@latent",
+  "reconstruct@input",
+  "sample@input",
+  "take input@input"
+ ]
+}

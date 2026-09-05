@@ -1,0 +1,171 @@
+{
+ "arxiv_id": "1805.02704",
+ "source": "abstract",
+ "words": 150,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "we note that many state-of-the-art deep SR architectures can be reformulated as a single-state recurrent neural network",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we note that many state-of-the-art deep SR architectures can be reformulated as a single-state recurrent neural network",
+   "grounded": true
+  },
+  {
+   "op": "generate latent",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "we explore new structures for SR based on this compact RNN view",
+   "grounded": true
+  },
+  {
+   "op": "exchange signal",
+   "canonical": "exchange signal",
+   "object": "state",
+   "quote": "Recurrent signals are exchanged between these states in both directions",
+   "grounded": true
+  },
+  {
+   "op": "update state",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "Recurrent signals are exchanged between these states in both directions",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "we explore new structures for SR based on this compact RNN view",
+   "grounded": true
+  },
+  {
+   "op": "combine signals",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "DSRN exploits both low-resolution (LR) and high-resolution (HR) signals jointly",
+   "grounded": true
+  },
+  {
+   "op": "generate high resolution",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "DSRN exploits both low-resolution (LR) and high-resolution (HR) signals jointly",
+   "grounded": true
+  },
+  {
+   "op": "generate low resolution",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "DSRN exploits both low-resolution (LR) and high, resolution (HR) signals jointly",
+   "grounded": true
+  },
+  {
+   "op": "feedback signal",
+   "canonical": "feedback signal",
+   "object": "state",
+   "quote": "Recurrent signals are exchanged between these states in both directions",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "we explore new structures for SR based on this compact RNN view",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "we explore new structures for SR based on this compact RNN view",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we explore new structures for SR based on this compact RNN view",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "we explore new structures for SR based on this compact RNN view",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Extensive quantitative and qualitative evaluations on benchmark datasets and on a recent challenge demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "Extensive quantitative and qualitative evaluations on benchmark datasets and on a recent challenge demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "compute memory",
+   "canonical": "compute memory",
+   "object": "task",
+   "quote": "Extensive quantitative and qualitative evaluations on benchmark datasets and on a recent challenge demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "Extensive quantitative and qualitative evaluations on benchmark datasets and on a recent challenge demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "output result",
+   "canonical": "output result",
+   "object": "state",
+   "quote": "we explore new structures for SR based on this compact RNN view",
+   "grounded": true
+  },
+  {
+   "op": "store output",
+   "canonical": "store output",
+   "object": "state",
+   "quote": "we explore new structures for SR based on this compact RNN view",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "compare@state",
+  "compare@task",
+  "compute accuracy@task",
+  "compute memory@task",
+  "correct@parameter",
+  "correct@state",
+  "encode@input",
+  "evaluate@task",
+  "exchange signal@state",
+  "feedback signal@state",
+  "output result@state",
+  "predict@state",
+  "process input@input",
+  "reconstruct@state",
+  "sample@state",
+  "store output@state"
+ ]
+}

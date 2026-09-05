@@ -1,0 +1,193 @@
+{
+ "arxiv_id": "2403.13447",
+ "source": "abstract",
+ "words": 172,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 23,
+ "n_invalid_object": 2,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "transforms visual features into text-like tokens",
+   "grounded": true
+  },
+  {
+   "op": "project",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "adaptive tuning of the projector",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "parameter",
+   "quote": "generates adaptive parameter shifts",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "dynamic projector and LLM modeling",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "two-stage training",
+   "grounded": true
+  },
+  {
+   "op": "tune",
+   "canonical": "tune",
+   "object": "parameter",
+   "quote": "adaptive tuning of the projector and LLM parameters",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "INVALID:expert",
+   "quote": "dynamic visual expert and language expert",
+   "grounded": true
+  },
+  {
+   "op": "map",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "static vision-language mapper",
+   "grounded": false
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "HyperNetworks generates adaptive parameter shifts",
+   "grounded": false
+  },
+  {
+   "op": "adapt",
+   "canonical": "adapt",
+   "object": "parameter",
+   "quote": "dynamic projector and LLM modeling",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "enabling dynamic projector and LLM modeling",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "two-stage training",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "HyperNetworks generates adaptive parameter shifts",
+   "grounded": false
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "parameter",
+   "quote": "generates adaptive parameter shifts",
+   "grounded": true
+  },
+  {
+   "op": "scale",
+   "canonical": "scale",
+   "object": "parameter",
+   "quote": "scaling up Multimodal Large Language Models",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "input",
+   "quote": "transforms visual features into text-like tokens",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "static vision-language mapper",
+   "grounded": false
+  },
+  {
+   "op": "modulate",
+   "canonical": "modulate",
+   "object": "parameter",
+   "quote": "HyperNetworks generates adaptive parameter shifts",
+   "grounded": false
+  },
+  {
+   "op": "adjust",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "dynamic projector and LLM modeling",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "two-stage training",
+   "grounded": true
+  },
+  {
+   "op": "integrate",
+   "canonical": "integrate",
+   "object": "INVALID:expert",
+   "quote": "dynamic visual expert and language expert",
+   "grounded": true
+  },
+  {
+   "op": "initialize",
+   "canonical": "initialize",
+   "object": "parameter",
+   "quote": "HyperNetworks generates adaptive parameter shifts",
+   "grounded": false
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "experiments demonstrate that our solution significantly surpasses LLaVA",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "adapt@parameter",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "encode@state",
+  "evaluate@parameter",
+  "improve@parameter",
+  "initialize@parameter",
+  "modulate@parameter",
+  "predict@distribution",
+  "process@input",
+  "project@latent",
+  "reconstruct@parameter",
+  "sample@parameter",
+  "scale@parameter",
+  "train@parameter",
+  "transform@state",
+  "tune@parameter"
+ ]
+}

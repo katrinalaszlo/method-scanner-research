@@ -1,0 +1,191 @@
+{
+ "arxiv_id": "2105.02465",
+ "source": "abstract",
+ "words": 241,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 23,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:pose",
+   "quote": "take the estimation error as feedback",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "INVALID:pose",
+   "quote": "generate more diverse and harder poses",
+   "grounded": true
+  },
+  {
+   "op": "adjust geometry",
+   "canonical": "correct",
+   "object": "INVALID:pose",
+   "quote": "adjust various geometry factors",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "INVALID:augmentor",
+   "quote": "can be jointly optimized with the 3D pose estimator",
+   "grounded": true
+  },
+  {
+   "op": "evaluate plausibility",
+   "canonical": "evaluate",
+   "object": "INVALID:pose",
+   "quote": "evaluate local joint-angle plausibility",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "INVALID:estimator",
+   "quote": "jointly optimized with the 3D pose estimator",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "INVALID:pose",
+   "quote": "generate more diverse and harder poses",
+   "grounded": true
+  },
+  {
+   "op": "learn parameters",
+   "canonical": "train",
+   "object": "INVALID:augmentor",
+   "quote": "learns to adjust various geometry factors",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "INVALID:pose",
+   "quote": "improve generalization of the trained 2D-to-3D pose estimator",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "INVALID:pose",
+   "quote": "generate more diverse and harder poses",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "INVALID:pose",
+   "quote": "generate more diverse and harder poses",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "INVALID:pose",
+   "quote": "improve generalization of the trained 2D-to-3D pose estimator",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "INVALID:pose",
+   "quote": "generate more diverse and harder poses",
+   "grounded": true
+  },
+  {
+   "op": "update distribution",
+   "canonical": "correct",
+   "object": "INVALID:pose",
+   "quote": "generate more diverse and harder poses",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "jointly optimized with the 3D pose estimator",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "jointly optimized with the 3D pose estimator",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "INVALID:pose",
+   "quote": "learns to augment the available training poses",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:pose",
+   "quote": "take the estimation error as feedback",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "INVALID:estimator",
+   "quote": "improve generalization of the trained 2D-to-3D pose estimator",
+   "grounded": true
+  },
+  {
+   "op": "evaluate task",
+   "canonical": "evaluate",
+   "object": "INVALID:pose",
+   "quote": "generate more diverse and harder poses",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "INVALID:pose",
+   "quote": "generate more diverse and harder poses",
+   "grounded": true
+  },
+  {
+   "op": "compute parameters",
+   "canonical": "compute parameters",
+   "object": "INVALID:augmentor",
+   "quote": "learns to adjust various geometry factors",
+   "grounded": true
+  },
+  {
+   "op": "update policy",
+   "canonical": "correct",
+   "object": "INVALID:augmentor",
+   "quote": "learns to adjust various geometry factors",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:pose",
+   "quote": "improve generalization of the trained 2D-to-3D pose estimator",
+   "grounded": true
+  },
+  {
+   "op": "sample noise",
+   "canonical": "sample",
+   "object": "INVALID:pose",
+   "quote": "generate more diverse and harder poses",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute gradient@parameter"
+ ]
+}

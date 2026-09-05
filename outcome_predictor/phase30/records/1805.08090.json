@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1805.08090",
+ "source": "abstract",
+ "words": 118,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 3,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "applications are quickly spreading in multi-cross-domains",
+   "grounded": true
+  },
+  {
+   "op": "construct graph",
+   "canonical": "construct graph",
+   "object": "input",
+   "quote": "we design our GCAPS-CNN model to solve especially graph classification problem",
+   "grounded": true
+  },
+  {
+   "op": "encode node",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we expose and tackle some of the basic weaknesses of a GCNN model",
+   "grounded": false
+  },
+  {
+   "op": "aggregate neighbors",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we propose our Graph Capsule Network (GCAPS-CNN) model",
+   "grounded": false
+  },
+  {
+   "op": "apply capsule",
+   "canonical": "apply capsule",
+   "object": "latent",
+   "quote": "our GCAPS-CNN model can significantly outperforms both the existing state-of-art deep learning methods",
+   "grounded": false
+  },
+  {
+   "op": "compute capsule",
+   "canonical": "compute capsule",
+   "object": "latent",
+   "quote": "we design our GCAPS-CNN model to solve especially graph classification problem",
+   "grounded": true
+  },
+  {
+   "op": "combine capsules",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we propose our Graph Capsule Network (GCAPS-CNN) model",
+   "grounded": false
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "our GCAPS-CNN model can significantly outperforms both the existing state-of-art deep learning methods",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply capsule@latent",
+  "compute capsule@latent",
+  "construct graph@input",
+  "encode@input",
+  "predict@latent",
+  "process input@input"
+ ]
+}

@@ -1,0 +1,91 @@
+{
+ "arxiv_id": "2211.12860",
+ "source": "abstract",
+ "words": 240,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 3,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "assign labels",
+   "canonical": "assign labels",
+   "object": "INVALID:query",
+   "quote": "one-to-many label assignments such as ATSS and Faster RCNN",
+   "grounded": true
+  },
+  {
+   "op": "extract coordinates",
+   "canonical": "extract coordinates",
+   "object": "INVALID:head",
+   "quote": "extracting the positive coordinates from these auxiliary heads",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "training the multiple parallel auxiliary heads supervised",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "enhance the encoder's learning ability in end-to-end detectors",
+   "grounded": true
+  },
+  {
+   "op": "discard heads",
+   "canonical": "discard heads",
+   "object": "INVALID:head",
+   "quote": "these auxiliary heads are discarded and thus our method",
+   "grounded": true
+  },
+  {
+   "op": "predict bounding boxes",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "our method introduces no additional parameters and computational cost",
+   "grounded": true
+  },
+  {
+   "op": "compute confidence",
+   "canonical": "compute confidence",
+   "object": "distribution",
+   "quote": "no hand-crafted non-maximum suppression (NMS)",
+   "grounded": true
+  },
+  {
+   "op": "sample objects",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "we conduct extensive experiments to evaluate the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "value",
+   "quote": "improve from 58.5% to 59.5% AP on COCO val",
+   "grounded": false
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "value",
+   "quote": "achieve 66.0% AP on COCO test-dev and 67.9% AP on LVIS val",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute accuracy@value",
+  "compute confidence@distribution",
+  "compute precision@value",
+  "correct@parameter",
+  "evaluate@error",
+  "predict@action",
+  "sample@trajectory"
+ ]
+}

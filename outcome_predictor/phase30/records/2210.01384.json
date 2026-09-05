@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2210.01384",
+ "source": "abstract",
+ "words": 196,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "reduces up to 88% of the undesired noise",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "achieving superior performance over both the transfer learning of single-task NAS",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the joint learning of the two paradigms is surprisingly effective",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "our first key insight is that MultiTask Learning (MTL) and hardware-aware Neural Architecture Search (NAS) can work in synergy",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the standard depth training for multi-task DP can cause significant instability and noise to MTL evaluation",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "error",
+   "quote": "JAReD, an improved, easy-to-adopt Joint Absolute-Relative Depth loss",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "our framework, named EDNAS, is the first to successfully leverage the synergistic relationship of NAS and MTL for DP",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we conduct extensive evaluations on standard datasets",
+   "grounded": true
+  },
+  {
+   "op": "compare model",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "benchmark against strong baselines and state-of-the-art approaches",
+   "grounded": true
+  },
+  {
+   "op": "analyze architecture",
+   "canonical": "analyze architecture",
+   "object": "task",
+   "quote": "provide an analysis of the discovered optimal architectures",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "analyze architecture@task",
+  "compare@task",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@value",
+  "reconstruct@error",
+  "sample@action",
+  "train@parameter"
+ ]
+}

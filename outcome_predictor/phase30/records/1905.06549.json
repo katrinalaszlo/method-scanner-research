@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "1905.06549",
+ "source": "abstract",
+ "words": 140,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "project features",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "features in the embedding space are linearly projected",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "error",
+   "quote": "training loss is obtained based on a distance metric",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "a network and a set of per-class reference vectors are learned",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "handling previously unseen tasks after given only a few training examples",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "features in the embedding space are linearly projected",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "training loss is obtained based on a distance metric",
+   "grounded": true
+  },
+  {
+   "op": "compare value",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "training loss is obtained based on a distance metric",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "a network and a set of per-class reference vectors are learned",
+   "grounded": true
+  },
+  {
+   "op": "project task",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "features in the embedding space are linearly projected",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "training loss is obtained based on a distance metric",
+   "grounded": true
+  },
+  {
+   "op": "update gradient",
+   "canonical": "correct",
+   "object": "gradient",
+   "quote": "a network and a set of per, per-class reference vectors are learned",
+   "grounded": false
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "a network and a set of per-class reference vectors are learned",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "training loss is obtained based on a distance metric",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "handling previously unseen tasks after given only a few training examples",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "handling previously unseen tasks after given only a few training examples",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "training loss is obtained based on a distance metric",
+   "grounded": true
+  },
+  {
+   "op": "store parameters",
+   "canonical": "store parameters",
+   "object": "parameter",
+   "quote": "a network and a set of per-class reference vectors are learned",
+   "grounded": true
+  },
+  {
+   "op": "retrieve parameters",
+   "canonical": "retrieve parameters",
+   "object": "parameter",
+   "quote": "a network and a set of per-class reference vectors are learned",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "handling previously unseen tasks after given only a few training examples",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "latent",
+   "quote": "features in the embedding space are linearly projected",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "a network and a set of per-class reference vectors are learned",
+   "grounded": true
+  },
+  {
+   "op": "apply projection",
+   "canonical": "apply projection",
+   "object": "latent",
+   "quote": "features in the embedding space are linearly projected",
+   "grounded": true
+  },
+  {
+   "op": "compute reference",
+   "canonical": "compute reference",
+   "object": "value",
+   "quote": "training loss is obtained based on a distance metric",
+   "grounded": true
+  },
+  {
+   "op": "update reference",
+   "canonical": "correct",
+   "object": "value",
+   "quote": "training loss is obtained based on a distance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute projection",
+   "canonical": "compute projection",
+   "object": "latent",
+   "quote": "features in the embedding space are linearly projected",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "apply projection@latent",
+  "compare@error",
+  "compute distance@error",
+  "compute gradient@gradient",
+  "compute projection@latent",
+  "compute reference@value",
+  "compute reward@value",
+  "compute task@task",
+  "compute value@value",
+  "correct@gradient",
+  "correct@parameter",
+  "correct@value",
+  "encode@latent",
+  "evaluate@error",
+  "evaluate@value",
+  "process input@latent",
+  "project@latent",
+  "reconstruct@action",
+  "reconstruct@input",
+  "retrieve parameters@parameter",
+  "sample@input",
+  "store parameters@parameter",
+  "train@parameter"
+ ]
+}

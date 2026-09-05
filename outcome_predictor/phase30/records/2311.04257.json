@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2311.04257",
+ "source": "abstract",
+ "words": 151,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "multi-modal large language models (mlmms} have demonstrated impressive instruction abilities",
+   "grounded": true
+  },
+  {
+   "op": "encode state",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "mplug-owl2 utilizes a modularized network design",
+   "grounded": true
+  },
+  {
+   "op": "process latent",
+   "canonical": "process latent",
+   "object": "latent",
+   "quote": "incorporates shared functional modules to facilitate modality collaboration",
+   "grounded": true
+  },
+  {
+   "op": "generate action",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "language decoder acting as a universal interface for managing different modalities",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "extensive experiments reveal that mplug-owl2 is capable of generalizing both text tasks and multi-modal tasks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "introduces a modality-adaptive module that preserves modality-specific features",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "mplug-owl2 is the first mllm model that demonstrates the modality collaboration phenomenon",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "achieving state-of-the-art performances with a single generic model",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "encode@state",
+  "predict@reward",
+  "process latent@latent",
+  "reconstruct@action",
+  "sample@action"
+ ]
+}

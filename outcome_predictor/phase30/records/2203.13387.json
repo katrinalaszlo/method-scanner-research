@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2203.13387",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "encoding the geometric dependencies between the body parts",
+   "grounded": true
+  },
+  {
+   "op": "enforce",
+   "canonical": "enforce",
+   "object": "INVALID:constraint",
+   "quote": "enforcing the kinematic constraints",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Transformer has been adopted to encode the long-range dependencies",
+   "grounded": true
+  },
+  {
+   "op": "interact",
+   "canonical": "act",
+   "object": "latent",
+   "quote": "through two novel interaction modules",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "distribution",
+   "quote": "explicitly encodes the local and global dependencies",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "boosts performance by 0.9% and 0.3%",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "capturing subtle changes across frames",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed architecture achieved state-of-the-art performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "act@latent",
+  "correct@parameter",
+  "encode@distribution",
+  "encode@input",
+  "encode@state",
+  "predict@value",
+  "sample@action"
+ ]
+}

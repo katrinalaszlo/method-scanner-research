@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2105.10305",
+ "source": "abstract",
+ "words": 172,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "sample latent",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "We place a multivariate Normal distributed latent variable on the final hidden layer",
+   "grounded": true
+  },
+  {
+   "op": "compute covariance",
+   "canonical": "compute covariance",
+   "object": "latent",
+   "quote": "The covariance matrix of this latent variable, models the aleatoric uncertainty",
+   "grounded": true
+  },
+  {
+   "op": "predict label",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "We place a multivariate Normal distributed latent variable on the final hidden layer",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "We demonstrate that the learned covariance structure captures known sources of label noise",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Compared to standard neural network training and other baselines",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We demonstrate that the learned covariance structure captures known sources of label noise",
+   "grounded": true
+  },
+  {
+   "op": "forward pass",
+   "canonical": "forward pass",
+   "object": "input",
+   "quote": "We place a multivariate Normal distributed latent variable on the final hidden layer",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "Compared to standard neural network training and other baselines",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "We demonstrate that the learned covariance structure captures known sources of label noise",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "We set a new state-of-the-art result on WebVision 1.0 with 76.6% top-1 accuracy",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "compute accuracy@task",
+  "compute covariance@latent",
+  "compute gradient@gradient",
+  "correct@parameter",
+  "evaluate@error",
+  "forward pass@input",
+  "predict@latent",
+  "sample@latent"
+ ]
+}

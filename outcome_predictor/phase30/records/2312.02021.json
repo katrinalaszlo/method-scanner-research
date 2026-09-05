@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2312.02021",
+ "source": "abstract",
+ "words": 224,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we found that simple fine, tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": false
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "vision-language pre-trained models",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "vision-language pre-trained models",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we found that simple fine-tuning of vision-language pre-trained models yields competitive or even stronger generalization results",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@distribution",
+  "reconstruct@noise",
+  "sample@sample"
+ ]
+}

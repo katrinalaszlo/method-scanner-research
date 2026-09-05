@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2110.03396",
+ "source": "abstract",
+ "words": 220,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "generate data",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "to generate synthetic anomaly images and reference masks for normal data",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "state",
+   "quote": "the proposed method uses hard augmentation to change the normal sample distribution",
+   "grounded": true
+  },
+  {
+   "op": "concatenate channel",
+   "canonical": "concatenate channel",
+   "object": "input",
+   "quote": "the coordinate channel, which represents the pixel location information, is concatenated to an input of AnoSeg",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "self-supervised learning with pixel-wise and adversarial losses",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed AnoSseg is trained in a self-supervised learning manner from the synthetic anomaly data and normal data",
+   "grounded": false
+  },
+  {
+   "op": "predict anomaly",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "the estimated anomaly map can also be utilized to improve the performance of anomaly detection",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "task",
+   "quote": "we compared the proposed method with the existing methods through the intersection over union (IoU) metric",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "demonstrated the superiority of our method for anomaly segmentation",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply augmentation@state",
+  "compute metric@task",
+  "concatenate channel@input",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@distribution",
+  "reconstruct@input"
+ ]
+}

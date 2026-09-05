@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "1806.02919",
+ "source": "abstract",
+ "words": 213,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute correlation",
+   "canonical": "compute correlation",
+   "object": "state",
+   "quote": "capture deep feature correlation between each location and its neighborhood",
+   "grounded": true
+  },
+  {
+   "op": "propagate correlation",
+   "canonical": "transmit",
+   "object": "state",
+   "quote": "allow deep feature correlation to be propagated along adjacent recurrent states",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the RNN structure for its parameter efficiency",
+   "grounded": true
+  },
+  {
+   "op": "measure similarity",
+   "canonical": "measure similarity",
+   "object": "state",
+   "quote": "measure self-similarity in an isolated manner",
+   "grounded": true
+  },
+  {
+   "op": "integrate module",
+   "canonical": "integrate module",
+   "object": "parameter",
+   "quote": "flexibly integrated into existing deep networks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "image denoising tasks are conducted",
+   "grounded": false
+  },
+  {
+   "op": "upsample",
+   "canonical": "upsample",
+   "object": "state",
+   "quote": "super-resolution tasks are conducted",
+   "grounded": true
+  },
+  {
+   "op": "maintain neighborhood",
+   "canonical": "maintain neighborhood",
+   "object": "state",
+   "quote": "maintain a confined neighborhood for computing deep feature correlation",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the proposed NLRN achieves superior results",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the proposed NLRN achieves superior results",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "robustness against inaccurate correlation estimation",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "end-to-end training to capture deep feature correlation",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the proposed NLRN achieves superior results",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the proposed NLRN achieves superior results",
+   "grounded": true
+  },
+  {
+   "op": "decode output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "the proposed NLRN achieves superior results",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "robustness against inaccurate correlation estimation",
+   "grounded": false
+  },
+  {
+   "op": "update state",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "propagate along adjacent recurrent states",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the proposed NLRN achieves superior results",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "the proposed NLRN achieves superior results",
+   "grounded": true
+  },
+  {
+   "op": "denoise trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "image denoising tasks are conducted",
+   "grounded": false
+  },
+  {
+   "op": "upsample trajectory",
+   "canonical": "upsample trajectory",
+   "object": "trajectory",
+   "quote": "super-resolution tasks are conducted",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the proposed NLRN achieves superior results",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "the proposed NLRN achieves superior results",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the proposed NLRN achieves superior results",
+   "grounded": true
+  },
+  {
+   "op": "sample task",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "the proposed NLRN achieves superior results",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compare@error",
+  "compute correlation@state",
+  "compute distribution@distribution",
+  "compute reward@reward",
+  "compute task@task",
+  "correct@parameter",
+  "correct@state",
+  "encode@input",
+  "integrate module@parameter",
+  "maintain neighborhood@state",
+  "measure similarity@state",
+  "predict@value",
+  "reconstruct@state",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@distribution",
+  "sample@sample",
+  "sample@task",
+  "sample@trajectory",
+  "transmit@state",
+  "upsample trajectory@trajectory",
+  "upsample@state"
+ ]
+}

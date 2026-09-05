@@ -1,0 +1,205 @@
+{
+ "arxiv_id": "1811.04237",
+ "source": "abstract",
+ "words": 166,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Most existing methods utilize local networks",
+   "grounded": true
+  },
+  {
+   "op": "compute local dependencies",
+   "canonical": "compute local dependencies",
+   "object": "latent",
+   "quote": "Most existing methods utilize local networks",
+   "grounded": true
+  },
+  {
+   "op": "compute non-local dependencies",
+   "canonical": "compute non-local dependencies",
+   "object": "latent",
+   "quote": "Most existing methods utilize local networks",
+   "grounded": true
+  },
+  {
+   "op": "apply frequency transform",
+   "canonical": "apply frequency transform",
+   "object": "latent",
+   "quote": "we propose a residual frequency attention (rFA) block",
+   "grounded": true
+  },
+  {
+   "op": "apply frequency attention",
+   "canonical": "apply frequency attention",
+   "object": "latent",
+   "quote": "we propose a residual frequency attention (rFA) block",
+   "grounded": true
+  },
+  {
+   "op": "combine local and non-local features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we propose a residual frequency attention (rFA) block",
+   "grounded": true
+  },
+  {
+   "op": "apply residual connection",
+   "canonical": "apply residual connection",
+   "object": "latent",
+   "quote": "we propose a residual frequency attention (rFA) block",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "a soft-margin focal loss (SMFL) is proposed",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "a soft-margin focal loss (SMFL) is proposed",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "we propose a residual frequency attention (rFA) block",
+   "grounded": true
+  },
+  {
+   "op": "apply soft-margin focal loss",
+   "canonical": "apply soft-margin focal loss",
+   "object": "error",
+   "quote": "a soft-margin focal, focal loss (SMFL) is proposed",
+   "grounded": false
+  },
+  {
+   "op": "select data samples",
+   "canonical": "select data samples",
+   "object": "sample",
+   "quote": "a soft-margin focal loss (SMFL) is proposed",
+   "grounded": true
+  },
+  {
+   "op": "compute gradients",
+   "canonical": "compute gradients",
+   "object": "gradient",
+   "quote": "a soft-margin focal loss (SMFL) is proposed",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate gradients",
+   "canonical": "backpropagate gradients",
+   "object": "gradient",
+   "quote": "a soft-margin focal loss (SMFL) is proposed",
+   "grounded": true
+  },
+  {
+   "op": "denoise features",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we propose a residual frequency attention (rFA) block",
+   "grounded": true
+  },
+  {
+   "op": "resample features",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "we propose a residual frequency attention (rFA) block",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we propose a residual frequency attention (rFA) block",
+   "grounded": true
+  },
+  {
+   "op": "apply attention weights",
+   "canonical": "apply attention weights",
+   "object": "distribution",
+   "quote": "we propose a residual frequency attention (rFA) block",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we propose a residual frequency attention (rFA) block",
+   "grounded": true
+  },
+  {
+   "op": "normalize features",
+   "canonical": "normalize features",
+   "object": "latent",
+   "quote": "we propose a residual frequency attention (rFA) block",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we propose a residual frequency attention (rFA) block",
+   "grounded": true
+  },
+  {
+   "op": "apply frequency filtering",
+   "canonical": "apply frequency filtering",
+   "object": "latent",
+   "quote": "we propose a residual frequency attention (rFA) block",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we propose a residual frequency attention (rFA) block",
+   "grounded": true
+  },
+  {
+   "op": "apply synchronization",
+   "canonical": "apply synchronization",
+   "object": "latent",
+   "quote": "we propose a synchronous local and non-local (SLnL) block",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention weights@distribution",
+  "apply frequency attention@latent",
+  "apply frequency filtering@latent",
+  "apply frequency transform@latent",
+  "apply residual connection@latent",
+  "apply soft-margin focal loss@error",
+  "apply synchronization@latent",
+  "backpropagate gradients@gradient",
+  "compute distribution@distribution",
+  "compute gradients@gradient",
+  "compute local dependencies@latent",
+  "compute non-local dependencies@latent",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "normalize features@latent",
+  "predict@action",
+  "reconstruct@latent",
+  "sample@latent",
+  "select data samples@sample"
+ ]
+}

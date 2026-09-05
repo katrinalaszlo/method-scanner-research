@@ -1,0 +1,110 @@
+{
+ "arxiv_id": "2311.03149",
+ "source": "abstract",
+ "words": 236,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 12,
+ "n_invalid_object": 0,
+ "n_grounded": 11,
+ "ops": [
+  {
+   "op": "mask input",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "taking inspiration from knowledge distillation in model compression",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose a new asymmetric masked distillation (AMD) framework",
+   "grounded": true
+  },
+  {
+   "op": "compute teacher output",
+   "canonical": "compute teacher output",
+   "object": "latent",
+   "quote": "the teacher model is enabled to see more context information",
+   "grounded": true
+  },
+  {
+   "op": "compute student output",
+   "canonical": "compute student output",
+   "object": "latent",
+   "quote": "the student model is still equipped with a high masking ratio",
+   "grounded": true
+  },
+  {
+   "op": "align features",
+   "canonical": "align features",
+   "object": "latent",
+   "quote": "we design customized multi-layer feature alignment",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "to regularize the pre-training of student MAE",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we propose a new asymmetric masked distillation (AMD) framework",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose a new asymmetric masked distillation (AMD) framework",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "we apply it to both ImageMAE and VideoMAE",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "AMD achieved 84.6% classification accuracy on IN1K",
+   "grounded": true
+  },
+  {
+   "op": "transfer model",
+   "canonical": "transfer model",
+   "object": "parameter",
+   "quote": "we also transfer AMD pre-trained models to downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute performance",
+   "canonical": "compute performance",
+   "object": "task",
+   "quote": "we obtain consistent performance improvement over the original masked autoencoding",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "align features@latent",
+  "backpropagate@gradient",
+  "compute performance@task",
+  "compute student output@latent",
+  "compute teacher output@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "mask@input",
+  "predict@value",
+  "transfer model@parameter"
+ ]
+}

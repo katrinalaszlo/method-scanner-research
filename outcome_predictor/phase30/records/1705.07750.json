@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "1705.07750",
+ "source": "abstract",
+ "words": 193,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 3,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "We provide an analysis on how current architectures fare on the task of action classification",
+   "grounded": false
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "making it possible to learn seamless spatio-temporal feature extractors from video",
+   "grounded": false
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "filters and pooling kernels of very deep image classification ConvNets are expanded into 3D",
+   "grounded": true
+  },
+  {
+   "op": "pool features",
+   "canonical": "pool features",
+   "object": "input",
+   "quote": "filters and pooling kernels of very deep image classification ConvNets are expanded into 3D",
+   "grounded": true
+  },
+  {
+   "op": "combine streams",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "We introduce a new Two-Stream Inflated 3D ConvNet (I3D)",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "We provide an analysis on how current architectures fare on the task of action classification",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We show that, after pre-training on Kinetics, I3D models considerably improve upon the state-of-the-art",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We show that, after pre-training on Kinetics, I3D models considerably improve upon the state-of-the-art",
+   "grounded": false
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "We provide an analysis on how current architectures fare on the task of action classification",
+   "grounded": false
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "We provide an analysis on how current architectures fare on the task of action classification",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "We show that, after pre-training on Kinetics, I3D models considerably improve upon the state-of-the-art",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "We show that, after pre-training on Kinetics, I3D models considerably improve upon the state-of-the-art",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "making it possible to learn seamless spatio-temp, temporal feature extractors from video",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "making it possible to learn seamless spatio-temporal feature extractors from video",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "We show that, after pre-training on Kinetics, I3D models considerably improve upon the state-of-the-art",
+   "grounded": false
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "latent",
+   "quote": "filters and pooling kernels of very deep image classification ConvNets are expanded into 3D",
+   "grounded": true
+  },
+  {
+   "op": "normalize features",
+   "canonical": "normalize features",
+   "object": "latent",
+   "quote": "making it possible to learn seamless spatio-temporal feature extractors from video",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "We provide an analysis on how current architectures fare on the task of action classification",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "We provide an analysis on how current architectures fare on the task of action classification",
+   "grounded": false
+  },
+  {
+   "op": "track trajectory",
+   "canonical": "track trajectory",
+   "object": "trajectory",
+   "quote": "We provide an analysis on how current architectures fare on the task of action classification",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "We provide an analysis on how current architectures fare on the task of action classification",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "We provide an analysis on how current architectures fare on the task of action classification",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "We provide an analysis on how current architectures fare on the task of action classification",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "making it possible to learn seamless spatio-temporal feature extractors from video",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "We show that, after pre-training on Kinetics, I3D models considerably improve upon the state-of-the-art",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply activation@latent",
+  "apply convolution@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute accuracy@task",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "normalize features@latent",
+  "pool features@input",
+  "predict@distribution",
+  "process input@input",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "track trajectory@trajectory"
+ ]
+}

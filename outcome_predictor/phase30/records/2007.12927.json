@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2007.12927",
+ "source": "abstract",
+ "words": 139,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "we show that the solutions found by SGD can be further improved",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we obtain back a single model by taking a spatial average in weight space",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "our results show that augmenting standard models with late-phase weights improves generalization",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "we investigate a family of low-dimensional late-phase weight models",
+   "grounded": true
+  },
+  {
+   "op": "multiply parameters",
+   "canonical": "multiply parameters",
+   "object": "parameter",
+   "quote": "these findings are complemented with a theoretical analysis of a noisy quadratic problem",
+   "grounded": true
+  },
+  {
+   "op": "average parameters",
+   "canonical": "average parameters",
+   "object": "parameter",
+   "quote": "we obtain back a single model by taking a spatial average in weight space",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the largely successful method of training neural networks is to learn their weights using some variant of stochastic gradient descent",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we show that the solutions found by SGD can be further improved",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "average parameters@parameter",
+  "backpropagate@gradient",
+  "compare@value",
+  "compute gradient@error",
+  "correct@parameter",
+  "evaluate@error",
+  "multiply parameters@parameter",
+  "sample@policy"
+ ]
+}

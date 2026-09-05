@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2104.02745",
+ "source": "abstract",
+ "words": 124,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "complements the cross-entropy loss in capturing boundary transformations",
+   "grounded": true
+  },
+  {
+   "op": "estimate boundary",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "efficiently learns the degree of parametric transformations between estimated and target boundaries",
+   "grounded": true
+  },
+  {
+   "op": "transform boundary",
+   "canonical": "transform boundary",
+   "object": "latent",
+   "quote": "efficiently learns the degree of parametric transformations between estimated and target boundaries",
+   "grounded": true
+  },
+  {
+   "op": "compare boundary",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "complements the cross-entropy loss in capturing boundary transformations",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "integrating it into the training phase of several backbone networks",
+   "grounded": true
+  },
+  {
+   "op": "apply loss",
+   "canonical": "apply loss",
+   "object": "error",
+   "quote": "complements the cross-entropy loss in capturing boundary transformations",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "integrating it into the training phase of several backbone networks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our extensive experiments show that the proposed method consistently outperforms baselines",
+   "grounded": true
+  },
+  {
+   "op": "segment image",
+   "canonical": "segment image",
+   "object": "input",
+   "quote": "semantic segmentation using an inverse-transformation network",
+   "grounded": true
+  },
+  {
+   "op": "compute boundary",
+   "canonical": "compute boundary",
+   "object": "latent",
+   "quote": "efficiently learns the degree of parametric transformations between estimated and target boundaries",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "semantic segmentation using an inverse-transformation network",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "integrating it into the training phase of several backbone networks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "integrating it into the training phase of several backbone networks",
+   "grounded": true
+  },
+  {
+   "op": "sample boundary",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "efficiently learns the degree of parametric transformations between estimated and target boundaries",
+   "grounded": true
+  },
+  {
+   "op": "denoise boundary",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "efficiently learns the degree of parametric transformations between estimated and target boundaries",
+   "grounded": true
+  },
+  {
+   "op": "resample boundary",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "efficiently learns the degree of parametric, transformations between estimated and target boundaries",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "integrating it into the training phase of several backbone networks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "complements the cross-entropy loss in capturing boundary transformations",
+   "grounded": true
+  },
+  {
+   "op": "predict boundary",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "semantic segmentation using an inverse-transformation network",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "complements the cross-entropy loss in capturing boundary transformations",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "semantic segmentation using an inverse-transformation network",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "our extensive experiments show that the proposed method consistently outperforms baselines",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "semantic segmentation using an inverse-transformation network",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "semantic segmentation using an inverse-transformation network",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "integrating it into the training phase of several backbone networks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply loss@error",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compare@error",
+  "compute boundary@latent",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@distribution",
+  "predict@latent",
+  "reconstruct@distribution",
+  "reconstruct@noise",
+  "sample@sample",
+  "segment image@input",
+  "train@parameter",
+  "transform boundary@latent"
+ ]
+}

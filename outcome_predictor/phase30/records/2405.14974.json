@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2405.14974",
+ "source": "abstract",
+ "words": 233,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "enhancing these capabilities, humans can more effectively utilize data",
+   "grounded": true
+  },
+  {
+   "op": "generate question",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "fostering the skills of asking and assessing questions",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we compile a comprehensive set of multimodal foundational tasks",
+   "grounded": true
+  },
+  {
+   "op": "predict answer",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "improving overall performance",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "action",
+   "quote": "we introduce a new benchmark called EvalQABench",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we train MLLMs using the LOVA3 framework",
+   "grounded": true
+  },
+  {
+   "op": "evaluate answer",
+   "canonical": "evaluate",
+   "object": "action",
+   "quote": "underscoring the critical role of these additional tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "fostering comprehensive intelligence in MLLMs",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "our results demonstrate consistent performance gains",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we evaluate them on a range of multimodal datasets and benchmarks",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "improving overall performance",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we introduce a new benchmark called EvalQABench",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "enhancing their multimodal comprehension",
+   "grounded": false
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we train MLLMs using the LOVA, framework",
+   "grounded": false
+  },
+  {
+   "op": "store trajectory",
+   "canonical": "store trajectory",
+   "object": "trajectory",
+   "quote": "we evaluate them on a range of multimodal datasets and benchmarks",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we introduce a new benchmark called EvalQABench",
+   "grounded": true
+  },
+  {
+   "op": "generate response",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "improving overall performance",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we introduce a new benchmark called EvalQABench",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "fostering comprehensive intelligence in MLLMs",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "underscoring the critical role of these additional tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute policy@policy",
+  "compute reward@action",
+  "compute reward@reward",
+  "compute task@task",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@action",
+  "predict@state",
+  "process input@input",
+  "reconstruct@noise",
+  "reconstruct@state",
+  "sample@distribution",
+  "sample@sample",
+  "store trajectory@trajectory"
+ ]
+}

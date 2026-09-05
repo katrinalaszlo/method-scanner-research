@@ -1,0 +1,75 @@
+{
+ "arxiv_id": "1911.11907",
+ "source": "abstract",
+ "words": 176,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 3,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute feature map",
+   "canonical": "compute feature map",
+   "object": "input",
+   "quote": "the redundancy in feature maps is an important characteristic",
+   "grounded": true
+  },
+  {
+   "op": "apply linear transformation",
+   "canonical": "apply linear transformation",
+   "object": "INVALID:feature map",
+   "quote": "we apply a series of linear transformations with cheap cost",
+   "grounded": true
+  },
+  {
+   "op": "generate ghost feature map",
+   "canonical": "reconstruct",
+   "object": "INVALID:feature map",
+   "quote": "generate many ghost feature maps that could fully reveal information",
+   "grounded": true
+  },
+  {
+   "op": "combine feature maps",
+   "canonical": "aggregate",
+   "object": "INVALID:feature map",
+   "quote": "based on a set of intrinsic feature maps",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed Ghost module can be taken as a plug-and-play component",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "experiments conducted on benchmarks demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the proposed Ghost module is an impressive alternative of convolution layers",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "our GhostNet can achieve higher recognition performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute feature map@input",
+  "correct@parameter",
+  "evaluate@error",
+  "improve@parameter"
+ ]
+}

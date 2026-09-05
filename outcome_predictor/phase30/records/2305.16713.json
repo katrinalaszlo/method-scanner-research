@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2305.16713",
+ "source": "abstract",
+ "words": 206,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "extract patch",
+   "canonical": "extract patch",
+   "object": "input",
+   "quote": "patch features extracted from the pre-trained model",
+   "grounded": true
+  },
+  {
+   "op": "linear modulate",
+   "canonical": "linear modulate",
+   "object": "latent",
+   "quote": "training a linear modulation of patch features",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "two similarity measures between data representations",
+   "grounded": true
+  },
+  {
+   "op": "generate pseudo-label",
+   "canonical": "reconstruct",
+   "object": "error",
+   "quote": "utilize two similarity measures ... as pseudo-labels",
+   "grounded": true
+  },
+  {
+   "op": "contrastive learn",
+   "canonical": "contrastive learn",
+   "object": "latent",
+   "quote": "contrastive representation learning to collect and distribute features",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "contrastive representation learning to collect and distribute features",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "training a linear modulation of patch features",
+   "grounded": true
+  },
+  {
+   "op": "predict anomaly",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "constructs discriminative features for anomaly detection",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute similarity@latent",
+  "contrastive learn@latent",
+  "correct@parameter",
+  "evaluate@error",
+  "extract patch@input",
+  "linear modulate@latent",
+  "predict@state",
+  "reconstruct@error"
+ ]
+}

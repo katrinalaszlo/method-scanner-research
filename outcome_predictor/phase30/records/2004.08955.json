@@ -1,0 +1,74 @@
+{
+ "arxiv_id": "2004.08955",
+ "source": "abstract",
+ "words": 120,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 4,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "INVALID:featuremap",
+   "quote": "apply the channel-wise attention on different network branches",
+   "grounded": false
+  },
+  {
+   "op": "compute cross feature interactions",
+   "canonical": "compute cross feature interactions",
+   "object": "INVALID:featuremap",
+   "quote": "leverage their success in capturing cross-feature interactions",
+   "grounded": true
+  },
+  {
+   "op": "learn diverse representations",
+   "canonical": "train",
+   "object": "INVALID:featuremap",
+   "quote": "learning diverse representations",
+   "grounded": true
+  },
+  {
+   "op": "construct computation block",
+   "canonical": "construct computation block",
+   "object": "parameter",
+   "quote": "results in a simple and unified computation block",
+   "grounded": true
+  },
+  {
+   "op": "parameterize block",
+   "canonical": "parameterize block",
+   "object": "INVALID:block",
+   "quote": "can be parameterized using only a few variables",
+   "grounded": true
+  },
+  {
+   "op": "compute classification score",
+   "canonical": "compute classification score",
+   "object": "input",
+   "quote": "outperforms EfficientNet in accuracy and latency trade-off on image classification",
+   "grounded": true
+  },
+  {
+   "op": "transfer learn",
+   "canonical": "transfer learn",
+   "object": "parameter",
+   "quote": "has achieved superior transfer learning results on several public benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "adopt model",
+   "canonical": "adopt model",
+   "object": "parameter",
+   "quote": "has been adopted by the winning entries of COCO-LVIS challenge",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "adopt model@parameter",
+  "compute classification score@input",
+  "construct computation block@parameter",
+  "transfer learn@parameter"
+ ]
+}

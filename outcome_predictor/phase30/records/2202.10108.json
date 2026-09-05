@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2202.10108",
+ "source": "abstract",
+ "words": 288,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "embed input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "embed the input image into tokens with rich multi-scale context",
+   "grounded": true
+  },
+  {
+   "op": "downsample",
+   "canonical": "downsample",
+   "object": "input",
+   "quote": "spatial pyramid reduction modules to downsample",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "multiple convolutions with different dilation rates",
+   "grounded": true
+  },
+  {
+   "op": "fuse features",
+   "canonical": "fuse features",
+   "object": "distribution",
+   "quote": "features are fused and fed into the feed-forward network",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "multi-head self-attention module",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "features are fused and fed into the feed-forward network",
+   "grounded": true
+  },
+  {
+   "op": "feed forward",
+   "canonical": "feed forward",
+   "object": "latent",
+   "quote": "fed into the feed-forward network",
+   "grounded": true
+  },
+  {
+   "op": "scale invariant",
+   "canonical": "scale invariant",
+   "object": "latent",
+   "quote": "acquires an intrinsic scale invariance IB",
+   "grounded": true
+  },
+  {
+   "op": "learn features",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "learn robust feature representation for objects at various scales",
+   "grounded": true
+  },
+  {
+   "op": "parallel process",
+   "canonical": "parallel process",
+   "object": "latent",
+   "quote": "convolution block parallel to the multi-head self-attention module",
+   "grounded": true
+  },
+  {
+   "op": "stack layers",
+   "canonical": "stack layers",
+   "object": "latent",
+   "quote": "two kinds of cells are stacked in both isotropic and multi-stage manners",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "validate the superiority of our models over the baseline transformer models",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "experiments on the ImageNet dataset",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "validate the superiority of our models over the baseline transformer models",
+   "grounded": true
+  },
+  {
+   "op": "scale up model",
+   "canonical": "scale up model",
+   "object": "parameter",
+   "quote": "scale up our ViTAE model to 644M parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "value",
+   "quote": "obtain the state-of-the-art classification performance",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "validate the superiority of our models over the baseline transformer models",
+   "grounded": true
+  },
+  {
+   "op": "compute top 1",
+   "canonical": "compute top 1",
+   "object": "value",
+   "quote": "88.5% Top-1 classification accuracy on ImageNet validation set",
+   "grounded": true
+  },
+  {
+   "op": "compute real validation",
+   "canonical": "compute real validation",
+   "object": "value",
+   "quote": "best 91.2% Top-1 accuracy on ImageNet real validation set",
+   "grounded": true
+  },
+  {
+   "op": "compute performance",
+   "canonical": "compute performance",
+   "object": "value",
+   "quote": "validate the superiority of our models over the baseline transformer models",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "compute accuracy@value",
+  "compute attention@latent",
+  "compute performance@value",
+  "compute real validation@value",
+  "compute top 1@value",
+  "correct@parameter",
+  "downsample@input",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@value",
+  "feed forward@latent",
+  "fuse features@distribution",
+  "parallel process@latent",
+  "scale invariant@latent",
+  "scale up model@parameter",
+  "stack layers@latent",
+  "train@latent",
+  "train@parameter"
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "arxiv_id": "1704.03915",
+ "source": "abstract",
+ "words": 146,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 4,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "our model takes coarse-resolution feature maps as input",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:residual",
+   "quote": "predicts the high-frequency residuals",
+   "grounded": false
+  },
+  {
+   "op": "upsample",
+   "canonical": "upsample",
+   "object": "INVALID:feature map",
+   "quote": "uses transposed convolutions for upsampling to the finer level",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "INVALID:feature map",
+   "quote": "progressively reconstruct the sub-band residuals of high-resolution images",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "train the proposed LapSRN with deep supervision using a robust Charbonnier loss function",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "train the proposed LapSRN with deep supervision using a robust Charbonnier loss function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train the proposed LapSR, with deep supervision using a robust Charbonnier loss function",
+   "grounded": false
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:prediction",
+   "quote": "our network generates multi-scale predictions in one feed-forward pass through the progressive reconstruction",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error"
+ ]
+}

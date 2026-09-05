@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "2204.01969",
+ "source": "abstract",
+ "words": 139,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "group features",
+   "canonical": "group features",
+   "object": "state",
+   "quote": "pixel features belonging to the same class are grouped into region features",
+   "grounded": true
+  },
+  {
+   "op": "apply classifier",
+   "canonical": "apply classifier",
+   "object": "INVALID:region",
+   "quote": "a rebalanced region classifier is applied via an auxiliary region rebalance branch during training",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the region rebalance module into various semantic segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our strategy achieves consistent improvement on the challenging ADE20K and COCO-Stuff benchmark",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "pixel features belonging to the same class are grouped into region features",
+   "grounded": true
+  },
+  {
+   "op": "sample region",
+   "canonical": "sample",
+   "object": "INVALID:region",
+   "quote": "a rebalanced region classifier is applied via an auxiliary region rebalance branch during training",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the region rebalance module into various semantic, segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "our strategy achieves consistent improvement on the challenging ADE20K and COCO-Stuff benchmark",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "pixel features belonging to the same class are grouped into region features",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "a rebalanced region classifier is applied via an auxiliary region rebalance branch during training",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the region rebalance module into various semantic segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "our strategy achieves consistent improvement on the challenging ADE20K and COCO-Stuff benchmark",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "the region rebalance module into various semantic segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "a rebalanced region classifier is applied via an auxiliary region rebalance branch during training",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the region rebalance module into various semantic segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "pixel features belonging to the same class are grouped into region features",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "a rebalanced region classifier is applied via an auxiliary region rebalance branch during training",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the region rebalance module into various semantic segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our strategy achieves consistent improvement on the challenging ADE20K and COCO-Stuff benchmark",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "pixel features belonging to the same class are grouped into region features",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "a rebalanced region classifier is applied via an auxiliary region rebalance branch during training",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the region rebalance module into various semantic segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "our strategy achieves consistent improvement on the challenging ADE20K and COCO-Stuff benchmark",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "pixel features belonging to the same class are grouped into region features",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "a rebalanced region classifier is applied via an auxiliary region rebalance branch during training",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute gradient@gradient",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "group features@state",
+  "predict@distribution",
+  "predict@reward",
+  "reconstruct@state",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@distribution",
+  "sample@sample",
+  "sample@trajectory"
+ ]
+}

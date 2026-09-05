@@ -1,0 +1,188 @@
+{
+ "arxiv_id": "2403.18252",
+ "source": "abstract",
+ "words": 189,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 22,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "parse input",
+   "canonical": "parse input",
+   "object": "input",
+   "quote": "visual tables are constructed as hierarchical descriptions of visual scenes",
+   "grounded": true
+  },
+  {
+   "op": "generate description",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "visual tables are constructed as hierarchical descriptions of visual scenes",
+   "grounded": true
+  },
+  {
+   "op": "extract attributes",
+   "canonical": "extract attributes",
+   "object": "state",
+   "quote": "multiple object-centric descriptions covering categories, attributes, and knowledge",
+   "grounded": true
+  },
+  {
+   "op": "construct hierarchy",
+   "canonical": "construct hierarchy",
+   "object": "state",
+   "quote": "visual tables are constructed as hierarchical descriptions of visual scenes",
+   "grounded": true
+  },
+  {
+   "op": "encode description",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "visual tables offer unique advantages over mere visual embeddings",
+   "grounded": true
+  },
+  {
+   "op": "map to knowledge",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "they deliver instance-level world knowledge and detailed attributes",
+   "grounded": true
+  },
+  {
+   "op": "generate table",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "we develop a generator trained on the dataset with collected, small-scale annotations",
+   "grounded": true
+  },
+  {
+   "op": "output table",
+   "canonical": "output table",
+   "object": "distribution",
+   "quote": "visual tables offer unique advantages over mere visual embeddings",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "extensive results on 11 visual reasoning benchmarks demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we develop a generator trained on the dataset with collected, small-scale annotations",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "extensive results on 11 visual reasoning benchmarks demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "the generated visual tables significantly outperform previous structural and text-based representations",
+   "grounded": true
+  },
+  {
+   "op": "enhance model",
+   "canonical": "enhance model",
+   "object": "policy",
+   "quote": "they consistently enhance state-of-the-art multimodal large language models",
+   "grounded": true
+  },
+  {
+   "op": "store knowledge",
+   "canonical": "store knowledge",
+   "object": "latent",
+   "quote": "they deliver instance-level world knowledge and detailed attributes",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "we develop a generator trained on the dataset with collected, small, scale annotations",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we develop a generator trained on the dataset with collected, small-scale annotations",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we develop a generator trained on the dataset with collected, small-scale annotations",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we develop a generator trained on the dataset with collected, small-scale annotations",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we develop a generator trained on the dataset with collected, small-scale annotations",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we develop a generator trained on the dataset with collected, small-scale annotations",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "they consistently enhance state-of-the-art multimodal large language models",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "extensive results on 11 visual reasoning benchmarks demonstrate",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@value",
+  "compute reward@value",
+  "construct hierarchy@state",
+  "correct@parameter",
+  "encode@latent",
+  "enhance model@policy",
+  "evaluate@error",
+  "evaluate@task",
+  "extract attributes@state",
+  "output table@distribution",
+  "parse input@input",
+  "predict@value",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "reconstruct@state",
+  "sample@action",
+  "sample@sample",
+  "store knowledge@latent"
+ ]
+}

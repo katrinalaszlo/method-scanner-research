@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2203.16527",
+ "source": "abstract",
+ "words": 157,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We explore the plain, non-hierarchical Vision Transformer (ViT)",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "state",
+   "quote": "it is sufficient to build a simple feature pyramid from a single-scale feature map",
+   "grounded": true
+  },
+  {
+   "op": "construct pyramid",
+   "canonical": "construct pyramid",
+   "object": "latent",
+   "quote": "it is sufficient to build a simple feature pyramid from a single-scale feature map",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "it is sufficient to use window attention (without shifting)",
+   "grounded": true
+  },
+  {
+   "op": "propagate cross-window",
+   "canonical": "transmit",
+   "object": "latent",
+   "quote": "it is sufficient to use window attention (without shifting) aided with very few cross-window propagation blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "our detector, named ViTDet, can compete with the previous leading methods",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our plain-backbone detector can achieve competitive results",
+   "grounded": true
+  },
+  {
+   "op": "predict bounding box",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "our detector, named ViTDet, can compete with the previous leading methods",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@latent",
+  "construct pyramid@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "extract feature@state",
+  "predict@state",
+  "transmit@latent"
+ ]
+}

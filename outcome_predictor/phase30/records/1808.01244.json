@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1808.01244",
+ "source": "abstract",
+ "words": 102,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 2,
+ "ops": [
+  {
+   "op": "detect keypoint",
+   "canonical": "detect keypoint",
+   "object": "state",
+   "quote": "detect an object bounding box as a pair of keypoints",
+   "grounded": false
+  },
+  {
+   "op": "apply pooling",
+   "canonical": "apply pooling",
+   "object": "latent",
+   "quote": "introduce corner pooling, a new type of pooling layer",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "update parameters using gradient descent",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update parameters using gradient descent",
+   "grounded": false
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "detect objects as paired keypoints using a single convolution neural network",
+   "grounded": false
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "detect an object bounding box as a pair of keypoints",
+   "grounded": false
+  },
+  {
+   "op": "localize corner",
+   "canonical": "localize corner",
+   "object": "state",
+   "quote": "help the network better localize corners",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "experiments show that CornerNet achieves a 42.2% AP on MS COCO",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply pooling@latent",
+  "compare@error",
+  "compute gradient@parameter",
+  "correct@parameter",
+  "detect keypoint@state",
+  "localize corner@state",
+  "process input@input",
+  "reconstruct@sample"
+ ]
+}

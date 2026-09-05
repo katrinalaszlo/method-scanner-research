@@ -1,0 +1,90 @@
+{
+ "arxiv_id": "2204.08721",
+ "source": "abstract",
+ "words": 176,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 4,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "tokenize input",
+   "canonical": "tokenize input",
+   "object": "input",
+   "quote": "feeding multiple modalities of data to vision transformers",
+   "grounded": true
+  },
+  {
+   "op": "project token",
+   "canonical": "project",
+   "object": "INVALID:token",
+   "quote": "substitutes these tokens with projected and aggregated inter-modal features",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "INVALID:token",
+   "quote": "substitutes these tokens with projected and aggregated inter-modal features",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "INVALID:token",
+   "quote": "self-attention modules are stacked to handle input sources like images",
+   "grounded": true
+  },
+  {
+   "op": "apply residual alignment",
+   "canonical": "apply residual alignment",
+   "object": "INVALID:token",
+   "quote": "residual positional alignment is also adopted to enable explicit utilization of the inter-modal alignments after fusion",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the transformer to learn correlations among multimodal features",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "extensive experiments are conducted on a variety of homogeneous and heterogeneous modalities",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the transformer to learn correlations among multimodal features",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "the transformer to learn correlations among multimodal features",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "surpasses state-of-the-art methods in three typical vision tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "correct@parameter",
+  "evaluate@error",
+  "improve@parameter",
+  "predict@distribution",
+  "tokenize input@input"
+ ]
+}

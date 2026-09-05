@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2105.04906",
+ "source": "abstract",
+ "words": 145,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "maximizing the agreement between embedding vectors from different views of the same image",
+   "grounded": true
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "latent",
+   "quote": "a regularization term on the variance of the embeddings along each dimension individually",
+   "grounded": false
+  },
+  {
+   "op": "compute covariance",
+   "canonical": "compute covariance",
+   "object": "latent",
+   "quote": "decorrelation mechanism based on redundancy reduction and covariance regularization",
+   "grounded": true
+  },
+  {
+   "op": "regularize",
+   "canonical": "regularize",
+   "object": "latent",
+   "quote": "a regularization term on the variance of the embeddings along each dimension individually",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "incorporating our new variance term into other methods helps stabilize the training",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "maximizing the agreement between embedding vectors from different views of the same image",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "a trivial solution is obtained when the encoder outputs constant vectors",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "decorrelation mechanism based on redundancy reduction and covariance regularization",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "a regularization term on the variance of the embeddings along each dimension individually",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "incorporating our new variance term into other methods helps stabilize the training",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "a trivial solution is obtained when the encoder outputs constant vectors",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "decorrelation mechanism based on redundancy reduction and covariance regularization",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "incorporating our new variance term into other methods helps stabilize the training",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "achieves results on par with the state of the art on several downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "achieves results on par with the state of the art on several downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "incorporating our new variance, term into other methods helps stabilize the training",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "achieves results on par with the state of the art on several downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "incorporating our new variance term into other methods helps stabilize the training",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "a regularization term on the variance of the embeddings along each dimension individually",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "a trivial solution is obtained when the encoder outputs constant vectors",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute covariance@latent",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "compute variance@latent",
+  "correct@parameter",
+  "encode@input",
+  "predict@latent",
+  "reconstruct@latent",
+  "regularize@latent",
+  "sample@latent",
+  "sample@sample"
+ ]
+}

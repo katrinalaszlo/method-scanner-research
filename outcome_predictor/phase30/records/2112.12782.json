@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2112.12782",
+ "source": "abstract",
+ "words": 197,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Finetuning a pretrained backbone in the encoder part of an image transformer network",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "incorporating semantic information into the encoder with the help of a semantic attention operation",
+   "grounded": true
+  },
+  {
+   "op": "generate distribution",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "provide supervision to the intermediate semantic prior maps at every stage",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "incorporating semantic priors enhances the performance of the established hierarchical encoders",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "use a lightweight semantic decoder during training to provide supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "provide empirical proof by integrating SeMask into Swin Transformer and Mix Transformer backbones",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our framework achieves a new state-of-the-art of 58.23% mIoU on the ADE20K dataset",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "improvements of over 3% in the mIoU metric on the Cityscapes dataset",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@latent",
+  "compare@distribution",
+  "correct@parameter",
+  "encode@input",
+  "predict@latent",
+  "reconstruct@latent",
+  "sample@action"
+ ]
+}

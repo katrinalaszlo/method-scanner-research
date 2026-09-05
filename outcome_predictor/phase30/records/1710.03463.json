@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "1710.03463",
+ "source": "abstract",
+ "words": 165,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 27,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "sample domain",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "synthesizing virtual testing domains within each mini-batch",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "meta-optimization objective requires that steps to improve training domain performance should also improve testing domain performance",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "meta-learning procedure trains models with good generalization ability to novel domains",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "meta-optimization objective requires that steps to improve training domain performance should also improve testing domain performance",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "meta-optimization objective requires that steps to improve training domain performance should also improve testing domain performance",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "meta-learning procedure trains models with good generalization ability to novel domains",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "meta-learning procedure trains models with good generalization ability to novel domains",
+   "grounded": true
+  },
+  {
+   "op": "sample domain",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "synthesizing virtual testing domains within each mini-batch",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "meta-optimization objective requires that steps to improve training domain performance should also improve testing domain performance",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "meta-optimization objective requires that steps to improve training domain performance should also improve testing domain performance",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "meta-learning procedure trains models with good generalization ability to novel domains",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "meta-learning than procedure trains models with good generalization ability to novel domains",
+   "grounded": false
+  },
+  {
+   "op": "sample domain",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "synthesizing virtual testing domains within each mini-batch",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "meta-optimization objective requires that steps to improve training domain performance should also improve testing domain performance",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "meta-optimization objective requires that steps to improve training domain performance should also improve testing domain performance",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "meta-learning procedure trains models with good generalization ability to novel domains",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "meta-learning procedure trains models with good generalization ability to novel domains",
+   "grounded": true
+  },
+  {
+   "op": "sample domain",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "synthesizing virtual testing domains within each mini-batch",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "meta-optimization objective requires that steps to improve training domain performance should also improve testing domain performance",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "meta-optimization objective requires that steps to improve training domain performance should also improve testing domain performance",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "meta-learning procedure trains models with good generalization ability to novel domains",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "meta-learning procedure trains models with good generalization ability to novel domains",
+   "grounded": true
+  },
+  {
+   "op": "sample domain",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "synthesizing virtual testing domains within each mini-batch",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "meta-optimization objective requires that steps to improve training domain performance should also improve testing domain performance",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "meta-optimization objective requires that steps to improve training domain performance should also improve testing domain performance",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "meta-learning procedure trains models with good generalization ability to novel domains",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "meta-learning procedure trains models with good generalization ability to novel domains",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@reward",
+  "compare@value",
+  "correct@parameter",
+  "predict@value",
+  "sample@task"
+ ]
+}

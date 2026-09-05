@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "2101.07422",
+ "source": "abstract",
+ "words": 188,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the state-of-the-art methods employ multi-task learning",
+   "grounded": true
+  },
+  {
+   "op": "share",
+   "canonical": "share",
+   "object": "latent",
+   "quote": "sharing the common features or stitching feature maps",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the mutual implicit relationship between these two tasks",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train the proposed network more effectively",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "simultaneous monocular depth estimation and semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the iterative idea from the expectation-maximization algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "the mutual implicit relationship between these two tasks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the state-of-the-art methods employ multi-task learning",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "sample",
+   "quote": "the iterative idea from the expectation-maximization algorithm",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "train the proposed network more effectively",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "the iterative idea from the expectation-maximization algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "the mutual implicit relationship between these two tasks",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "simultaneous monocular depth estimation and semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "trajectory",
+   "quote": "the iterative idea from the expectation-maximization algorithm",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "train the proposed network more effectively",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the state-of-the-art methods employ multi-task learning",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the iterative idea from the expectation-maximization algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the mutual implicit relationship between these than two tasks",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train the proposed network more effectively",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "simultaneous monocular depth estimation and semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "the mutual implicit relationship between these two tasks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the state-of-the-art methods employ multi-task learning",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "sample",
+   "quote": "the iterative idea from the expectation-maximization algorithm",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "train the proposed network more effectively",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "the iterative idea from the expectation-maximization algorithm",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@sample",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compute@error",
+  "compute@task",
+  "compute@trajectory",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@distribution",
+  "predict@reward",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@distribution",
+  "sample@sample",
+  "share@latent"
+ ]
+}

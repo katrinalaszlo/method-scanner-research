@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2002.03283",
+ "source": "abstract",
+ "words": 186,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "tokenize input",
+   "canonical": "tokenize input",
+   "object": "input",
+   "quote": "we re-design it with a segmented architecture",
+   "grounded": true
+  },
+  {
+   "op": "segment input",
+   "canonical": "segment input",
+   "object": "input",
+   "quote": "introduces three different strategies to unify the graph instance sizes",
+   "grounded": true
+  },
+  {
+   "op": "embed segment",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "SEG-BERT involves no node-order-variant inputs",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "GRAPH-BERT was designed for node representation learning tasks",
+   "grounded": false
+  },
+  {
+   "op": "compute hidden state",
+   "canonical": "compute hidden state",
+   "object": "latent",
+   "quote": "SEG-BERT has a segmented architecture",
+   "grounded": true
+  },
+  {
+   "op": "aggregate segments",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "it can handle the graph node orderless property naturally",
+   "grounded": true
+  },
+  {
+   "op": "generate representation",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "SEG-BERT is pre-trainable in an unsupervised manner",
+   "grounded": true
+  },
+  {
+   "op": "predict next token",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "which was designed for node representation learning tasks originally",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "SEG-BERT can out-perform the comparison methods",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "SEG-BERT is pre-trainable in an unsupervised manner",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "SEG-BERT can be further transferred to new tasks directly",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we have tested the effectiveness of SEG-BERT",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "SEG-BERT can out-perform the comparison methods",
+   "grounded": true
+  },
+  {
+   "op": "store representation",
+   "canonical": "store representation",
+   "object": "latent",
+   "quote": "SEG-BERT involves no node-order-variant inputs",
+   "grounded": true
+  },
+  {
+   "op": "apply masking",
+   "canonical": "apply masking",
+   "object": "input",
+   "quote": "introduces three different strategies to unify the graph instance sizes",
+   "grounded": true
+  },
+  {
+   "op": "compute attention mask",
+   "canonical": "compute attention mask",
+   "object": "distribution",
+   "quote": "SEG-BERT has a segmented architecture",
+   "grounded": true
+  },
+  {
+   "op": "apply positional encoding",
+   "canonical": "apply positional encoding",
+   "object": "latent",
+   "quote": "SEG-BERT can handle the graph node orderless property naturally",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "SEG-BERT is pre-trainable in an unsupervised manner",
+   "grounded": true
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "SEG-BERT can be further transferred to new tasks directly",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "we have tested the effectiveness of SEG-BERT",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention@latent",
+  "apply masking@input",
+  "apply positional encoding@latent",
+  "apply regularization@parameter",
+  "backpropagate@gradient",
+  "compute attention mask@distribution",
+  "compute gradient@gradient",
+  "compute hidden state@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@distribution",
+  "reconstruct@distribution",
+  "reconstruct@latent",
+  "sample@action",
+  "segment input@input",
+  "store representation@latent",
+  "tokenize input@input"
+ ]
+}

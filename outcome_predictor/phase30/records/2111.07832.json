@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2111.07832",
+ "source": "abstract",
+ "words": 183,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "tokenize input",
+   "canonical": "tokenize input",
+   "object": "input",
+   "quote": "texts are first tokenized into semantically meaningful pieces",
+   "grounded": true
+  },
+  {
+   "op": "mask tokens",
+   "canonical": "mask",
+   "object": "latent",
+   "quote": "masked image modeling (MIM) and indicate the advantages",
+   "grounded": true
+  },
+  {
+   "op": "predict masked tokens",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "perform masked prediction with an online tokenizer",
+   "grounded": true
+  },
+  {
+   "op": "compute teacher output",
+   "canonical": "compute teacher output",
+   "object": "parameter",
+   "quote": "take the teacher network as the online tokenizer",
+   "grounded": true
+  },
+  {
+   "op": "compute student output",
+   "canonical": "compute student output",
+   "object": "latent",
+   "quote": "self-distillation on masked patch tokens",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "self-distillation on the class token to acquire visual semantics",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the online tokenizer is jointly learnable with the MIM objective",
+   "grounded": true
+  },
+  {
+   "op": "sample class token",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "self-distillation on the class token to acquire visual semantics",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "achieve an 82.3% linear probing accuracy",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "emerging local semantic patterns",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "strong robustness against common corruptions",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "achieve leading results on dense downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "achieve an 87.8% fine-tuning accuracy",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "dense downstream tasks, eg., object detection",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "emerging local semantic patterns",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the online tokenizer is jointly learnable with the MIM objective",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "the online tokenizer is jointly learnable with the MIM objective",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "strong robustness against common corruptions",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "achieve leading results on dense downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "dense downstream tasks, eg., object detection",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "achieve leading results on dense downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "emerging local semantic patterns",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "self-distillation on the class token to acquire visual semantics",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the online tokenizer is jointly learnable with the MIM objective",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "achieve an 82.3% linear probing accuracy",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute student output@latent",
+  "compute teacher output@parameter",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "mask@latent",
+  "predict@action",
+  "predict@latent",
+  "reconstruct@noise",
+  "sample@sample",
+  "sample@trajectory",
+  "tokenize input@input"
+ ]
+}

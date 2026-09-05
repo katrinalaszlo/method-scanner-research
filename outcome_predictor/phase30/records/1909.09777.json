@@ -1,0 +1,74 @@
+{
+ "arxiv_id": "1909.09777",
+ "source": "abstract",
+ "words": 245,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 4,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "generate bounding box",
+   "canonical": "reconstruct",
+   "object": "INVALID:reference box",
+   "quote": "generate bounding boxes (BB) that overlap with a given reference box more than a given IoU threshold",
+   "grounded": true
+  },
+  {
+   "op": "sample bounding box",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "produce RoIs following any desired spatial or IoU distribution",
+   "grounded": false
+  },
+  {
+   "op": "compute intersection over union",
+   "canonical": "compute intersection over union",
+   "object": "INVALID:bounding box",
+   "quote": "second stage is known to suffer from a bias towards RoIs that have low intersection-over-union (IoU) with the associated GT boxes",
+   "grounded": true
+  },
+  {
+   "op": "compute overlap",
+   "canonical": "compute overlap",
+   "object": "INVALID:bounding box",
+   "quote": "generate bounding boxes (BB) that overlap with a given reference box more than a given IoU threshold",
+   "grounded": true
+  },
+  {
+   "op": "filter bounding box",
+   "canonical": "filter bounding box",
+   "object": "INVALID:bounding box",
+   "quote": "identify objects among the proposed RoIs that sufficiently overlap with a ground truth (GT) box",
+   "grounded": true
+  },
+  {
+   "op": "simulate sampling",
+   "canonical": "simulate sampling",
+   "object": "distribution",
+   "quote": "show that our pRoI generator is able to simulate other sampling methods for positive examples",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we show that (i) IoU imbalance has an adverse effect on performance",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we train Faster R-CNN using our pRoI generator and, compared to conventional training, obtain better or on-par performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "evaluate@error",
+  "sample@distribution",
+  "simulate sampling@distribution"
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1901.00392",
+ "source": "abstract",
+ "words": 175,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute attribute",
+   "canonical": "compute attribute",
+   "object": "input",
+   "quote": "attribute-guided attention module uses attribute information to help select category features",
+   "grounded": true
+  },
+  {
+   "op": "select features",
+   "canonical": "select features",
+   "object": "state",
+   "quote": "attribute-guided attention module uses attribute information to help select category features",
+   "grounded": true
+  },
+  {
+   "op": "compute category",
+   "canonical": "compute category",
+   "object": "state",
+   "quote": "category-guided attention module selects local features of different attributes with the help of category cues",
+   "grounded": true
+  },
+  {
+   "op": "select features",
+   "canonical": "select features",
+   "object": "state",
+   "quote": "category-guided attention module selects local features of different attributes with the help of category cues",
+   "grounded": true
+  },
+  {
+   "op": "compute interaction",
+   "canonical": "compute interaction",
+   "object": "state",
+   "quote": "Through this attribute-category reciprocal process, local and global features benefit from each other",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "Through this attribute-category reciprocal process, local and global features benefit from each other",
+   "grounded": true
+  },
+  {
+   "op": "generate representation",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "the resulting feature contains more intrinsic information for image recognition",
+   "grounded": true
+  },
+  {
+   "op": "output representation",
+   "canonical": "output representation",
+   "object": "state",
+   "quote": "the resulting feature contains more intrinsic information for image recognition",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "compute attribute@input",
+  "compute category@state",
+  "compute interaction@state",
+  "output representation@state",
+  "reconstruct@state",
+  "select features@state"
+ ]
+}

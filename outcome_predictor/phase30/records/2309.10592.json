@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2309.10592",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute normal",
+   "canonical": "compute normal",
+   "object": "state",
+   "quote": "outputs pixel-level surface normal",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "state",
+   "quote": "outputs pixel-level plane-to-origin distance",
+   "grounded": false
+  },
+  {
+   "op": "regularize normal",
+   "canonical": "regularize normal",
+   "object": "latent",
+   "quote": "normal and distance are regularized by a developed plane-aware consistency constraint",
+   "grounded": true
+  },
+  {
+   "op": "regularize distance",
+   "canonical": "regularize distance",
+   "object": "latent",
+   "quote": "normal and distance are regularized by a developed plane-aware consistency constraint",
+   "grounded": true
+  },
+  {
+   "op": "compute depth",
+   "canonical": "compute depth",
+   "object": "state",
+   "quote": "deriving depth at each position",
+   "grounded": true
+  },
+  {
+   "op": "refine depth",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "refines depth in a complementary manner",
+   "grounded": true
+  },
+  {
+   "op": "compute uncertainty",
+   "canonical": "compute uncertainty",
+   "object": "state",
+   "quote": "according to the depth uncertainty",
+   "grounded": true
+  },
+  {
+   "op": "integrate depth head",
+   "canonical": "integrate depth head",
+   "object": "state",
+   "quote": "integrate an additional depth head to improve the robustness",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute depth@state",
+  "compute distance@state",
+  "compute normal@state",
+  "compute uncertainty@state",
+  "correct@state",
+  "integrate depth head@state",
+  "regularize distance@latent",
+  "regularize normal@latent"
+ ]
+}

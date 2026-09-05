@@ -1,0 +1,71 @@
+{
+ "arxiv_id": "2004.06002",
+ "source": "abstract",
+ "words": 165,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 7,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:proposal",
+   "quote": "the fixed label assignment strategy and regression loss function cannot fit the distribution change of proposals",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "INVALID:loss function",
+   "quote": "adjust the label assignment criteria (IoU threshold) and the shape of regression loss function",
+   "grounded": true
+  },
+  {
+   "op": "sample proposal",
+   "canonical": "sample",
+   "object": "INVALID:training data",
+   "quote": "make better use of the training samples",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:proposal",
+   "quote": "based on the statistics of proposals during training",
+   "grounded": true
+  },
+  {
+   "op": "assign label",
+   "canonical": "assign label",
+   "object": "INVALID:proposal",
+   "quote": "the fixed label assignment strategy and regression loss function",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "INVALID:loss function",
+   "quote": "adjust the label assignment criteria (IoU threshold) and the shape of regression loss function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improves upon ResNet-50-FPN baseline",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:proposal",
+   "quote": "pushes the detector to fit more high quality samples",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter"
+ ]
+}

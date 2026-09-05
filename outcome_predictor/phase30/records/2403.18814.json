@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "2403.18814",
+ "source": "abstract",
+ "words": 182,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose to utilize an additional visual encoder for high-resolution refinement",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "supports a series of dense and MoE Large Language Models",
+   "grounded": true
+  },
+  {
+   "op": "reason",
+   "canonical": "reason",
+   "object": "state",
+   "quote": "promotes precise image comprehension and reasoning-based generation",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "achieves leading performance in several zero-shot benchmarks",
+   "grounded": false
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "supports a series of dense and MoE Large Language Models",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose to utilize an additional visual encoder for high-resolution refinement",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "utilize an additional visual encoder for high-resolution refinement",
+   "grounded": true
+  },
+  {
+   "op": "retrieve",
+   "canonical": "retrieve",
+   "object": "INVALID:data",
+   "quote": "construct a high-quality dataset that promotes precise image comprehension",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "input",
+   "quote": "supports a series of dense and MoE Large Language Models",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "promotes precise image comprehension and reasoning-based generation",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "achieves leading performance in several zero-shot benchmarks",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "supports a series of dense and MoE Large Language Models",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "sample",
+   "quote": "supports a series of dense and MoE Large Language Models",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "construct a high-quality dataset that promotes precise image comprehension",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "we propose to utilize an additional visual encoder for high-resolution refinement",
+   "grounded": true
+  },
+  {
+   "op": "filter",
+   "canonical": "filter",
+   "object": "input",
+   "quote": "construct a high-quality dataset that promotes precise image comprehension",
+   "grounded": true
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "action",
+   "quote": "supports a series of dense and than MoE Large Language Models",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "trajectory",
+   "quote": "supports a series of dense and MoE Large Language Models",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose to utilize an additional visual encoder for high-resolution refinement",
+   "grounded": true
+  },
+  {
+   "op": "scale",
+   "canonical": "scale",
+   "object": "parameter",
+   "quote": "supports a series of dense and MoE Large Language Models",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we propose to utilize an additional visual encoder for high-resolution refinement",
+   "grounded": true
+  },
+  {
+   "op": "infer",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "supports a series of dense and MoE Large Language Models",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "achieves leading performance in several zero-shot benchmarks",
+   "grounded": false
+  },
+  {
+   "op": "extend",
+   "canonical": "extend",
+   "object": "task",
+   "quote": "construct a high-quality dataset that promotes precise image comprehension",
+   "grounded": true
+  },
+  {
+   "op": "simulate",
+   "canonical": "simulate",
+   "object": "trajectory",
+   "quote": "supports a series of dense and MoE Large Language Models",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@input",
+  "aggregate@sample",
+  "compare@value",
+  "compute@error",
+  "correct@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "extend@task",
+  "filter@input",
+  "improve@parameter",
+  "predict@action",
+  "predict@value",
+  "process@trajectory",
+  "reason@state",
+  "reconstruct@action",
+  "reconstruct@noise",
+  "sample@distribution",
+  "scale@parameter",
+  "select@action",
+  "simulate@trajectory",
+  "train@parameter",
+  "transform@state"
+ ]
+}

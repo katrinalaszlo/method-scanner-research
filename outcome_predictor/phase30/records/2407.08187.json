@@ -1,0 +1,208 @@
+{
+ "arxiv_id": "2407.08187",
+ "source": "abstract",
+ "words": 206,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "predict scale",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "predict precise scene scales",
+   "grounded": true
+  },
+  {
+   "op": "predict relative depth",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "estimate the relative depth distribution",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "implicitly combine structural and semantic features",
+   "grounded": true
+  },
+  {
+   "op": "normalize depth",
+   "canonical": "normalize depth",
+   "object": "state",
+   "quote": "within a normalized depth space",
+   "grounded": true
+  },
+  {
+   "op": "estimate depth",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "achieves metric depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "process image",
+   "canonical": "process image",
+   "object": "input",
+   "quote": "from a single image",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "structural and semantic features",
+   "grounded": true
+  },
+  {
+   "op": "adaptively estimate",
+   "canonical": "adaptively estimate",
+   "object": "distribution",
+   "quote": "adaptively estimate the relative depth distribution",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "metric depth estimation for both indoor and outdoor scenes",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "state-of-the-art performance across indoor, outdoor, unconstrained, and unseen scenes",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "without the need for setting the depth range or fine-tuning model",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "extensive experiments demonstrate that our method attains state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "state-of-the-art performance across indoor, outdoor, unconstrained, and unseen scenes",
+   "grounded": true
+  },
+  {
+   "op": "apply normalization",
+   "canonical": "apply normalization",
+   "object": "state",
+   "quote": "within a normalized depth space",
+   "grounded": true
+  },
+  {
+   "op": "map features",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "implicitly combine structural and semantic features",
+   "grounded": true
+  },
+  {
+   "op": "output depth",
+   "canonical": "output depth",
+   "object": "state",
+   "quote": "metric depth estimation for both indoor and outdoor scenes",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "from a single image",
+   "grounded": true
+  },
+  {
+   "op": "compute scale",
+   "canonical": "compute scale",
+   "object": "state",
+   "quote": "predict precise scene scales",
+   "grounded": true
+  },
+  {
+   "op": "compute relative depth",
+   "canonical": "compute relative depth",
+   "object": "state",
+   "quote": "estimate the relative depth distribution",
+   "grounded": true
+  },
+  {
+   "op": "generate depth map",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "metric depth estimation for both indoor and outdoor scenes",
+   "grounded": true
+  },
+  {
+   "op": "apply semantic awareness",
+   "canonical": "apply semantic awareness",
+   "object": "latent",
+   "quote": "implicitly combine structural and semantic features",
+   "grounded": true
+  },
+  {
+   "op": "estimate distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "adaptively estimate the relative depth distribution",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "achieves metric depth estimation for both indoor and outdoor scenes",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "state-of-the-art performance across indoor, outdoor, unconstrained, and unseen scenes",
+   "grounded": true
+  },
+  {
+   "op": "train network",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "extensive experiments demonstrate that our method attains state-of-the-art performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "adaptively estimate@distribution",
+  "aggregate@latent",
+  "apply normalization@state",
+  "apply semantic awareness@latent",
+  "compare@error",
+  "compute relative depth@state",
+  "compute scale@state",
+  "compute value@value",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "normalize depth@state",
+  "output depth@state",
+  "predict@distribution",
+  "predict@state",
+  "process image@input",
+  "process input@input",
+  "reconstruct@state",
+  "train@parameter"
+ ]
+}

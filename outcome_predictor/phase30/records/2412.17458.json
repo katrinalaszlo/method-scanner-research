@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "2412.17458",
+ "source": "abstract",
+ "words": 235,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "compute boundary",
+   "canonical": "compute boundary",
+   "object": "state",
+   "quote": "learn an approximate decision boundary by center constraint",
+   "grounded": false
+  },
+  {
+   "op": "align features",
+   "canonical": "align features",
+   "object": "latent",
+   "quote": "improves the center initialization through feature alignment",
+   "grounded": true
+  },
+  {
+   "op": "generate anomaly",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "directionally synthesizes anomalies with more flexible scales",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "guided by the hypersphere distribution of normal features",
+   "grounded": true
+  },
+  {
+   "op": "classify anomaly",
+   "canonical": "classify",
+   "object": "sample",
+   "quote": "refines the decision boundary through the binary classification",
+   "grounded": true
+  },
+  {
+   "op": "optimize boundary",
+   "canonical": "improve",
+   "object": "state",
+   "quote": "refines the decision boundary through the binary classification",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improves the center initialization through feature alignment",
+   "grounded": true
+  },
+  {
+   "op": "learn boundary",
+   "canonical": "train",
+   "object": "state",
+   "quote": "learn an approximate decision boundary by center constraint",
+   "grounded": false
+  },
+  {
+   "op": "refine boundary",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "refines the decision boundary through the binary classification",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "refines the decision boundary through the binary classification",
+   "grounded": true
+  },
+  {
+   "op": "update weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improves the center initialization through feature alignment",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "directionally synthesizes anomalies with more flexible scales",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "guided by the hypersphere distribution of normal features",
+   "grounded": true
+  },
+  {
+   "op": "classify sample",
+   "canonical": "classify",
+   "object": "sample",
+   "quote": "refines the decision boundary through the binary classification",
+   "grounded": true
+  },
+  {
+   "op": "compute feature",
+   "canonical": "compute feature",
+   "object": "latent",
+   "quote": "improves the center initialization through feature alignment",
+   "grounded": true
+  },
+  {
+   "op": "align features",
+   "canonical": "align features",
+   "object": "latent",
+   "quote": "improves the center initialization through feature alignment",
+   "grounded": true
+  },
+  {
+   "op": "compute center",
+   "canonical": "compute center",
+   "object": "state",
+   "quote": "learn an approximate decision boundary by center constraint",
+   "grounded": false
+  },
+  {
+   "op": "update center",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "improves the center initialization through feature alignment",
+   "grounded": true
+  },
+  {
+   "op": "compute scale",
+   "canonical": "compute scale",
+   "object": "state",
+   "quote": "directionally synthesizes anomalies with more flexible scales",
+   "grounded": true
+  },
+  {
+   "op": "sample anomaly",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "directionally synthesizes anomalies with more flexible scales",
+   "grounded": true
+  },
+  {
+   "op": "refine anomaly",
+   "canonical": "correct",
+   "object": "sample",
+   "quote": "refines the decision boundary through the binary classification",
+   "grounded": true
+  },
+  {
+   "op": "compute boundary",
+   "canonical": "compute boundary",
+   "object": "state",
+   "quote": "learn an approximate decision boundary by center constraint",
+   "grounded": false
+  },
+  {
+   "op": "update boundary",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "refines the decision boundary through the binary classification",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "refines the decision boundary through the binary classification",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improves the center initialization through feature alignment",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align features@latent",
+  "classify@sample",
+  "compare@error",
+  "compute boundary@state",
+  "compute center@state",
+  "compute distribution@distribution",
+  "compute feature@latent",
+  "compute scale@state",
+  "correct@parameter",
+  "correct@sample",
+  "correct@state",
+  "improve@state",
+  "reconstruct@latent",
+  "reconstruct@sample",
+  "sample@distribution",
+  "sample@sample",
+  "train@state"
+ ]
+}

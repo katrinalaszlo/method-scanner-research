@@ -1,0 +1,142 @@
+{
+ "arxiv_id": "2205.15733",
+ "source": "abstract",
+ "words": 224,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 0,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "state",
+   "quote": "distance embedding is constructed thanks to an optimal transport distance",
+   "grounded": true
+  },
+  {
+   "op": "solve problem",
+   "canonical": "solve problem",
+   "object": "state",
+   "quote": "solving a soft graph-matching problem",
+   "grounded": true
+  },
+  {
+   "op": "embed features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "node features embedding through message passing",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "aggregation with a specialized form of pooling",
+   "grounded": true
+  },
+  {
+   "op": "learn parameters",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the optimal set of template graphs is also learnt in an end-to-end fashion",
+   "grounded": true
+  },
+  {
+   "op": "differentiate through",
+   "canonical": "differentiate through",
+   "object": "distribution",
+   "quote": "differentiating through this layer",
+   "grounded": true
+  },
+  {
+   "op": "feed forward",
+   "canonical": "feed forward",
+   "object": "distribution",
+   "quote": "the vector of FGW distances ... is then fed to a non-linear classifier",
+   "grounded": false
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "state",
+   "quote": "final predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "empirically validate our claim on several synthetic and real life graph classification datasets",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learning procedure",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "differentiating through this layer",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "learning procedure",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "empirically validate our claim on several synthetic and real life graph classification datasets",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "our method is competitive or surpasses kernel and GNN state-of-the-art approaches",
+   "grounded": true
+  },
+  {
+   "op": "analyze sensitivity",
+   "canonical": "analyze sensitivity",
+   "object": "parameter",
+   "quote": "complete our experiments by an ablation study and a sensitivity analysis to parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "empir,ically validate our claim on several synthetic and real life graph classification datasets",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "analyze sensitivity@parameter",
+  "backpropagate@gradient",
+  "classify@state",
+  "compare@task",
+  "compute accuracy@task",
+  "compute distance@state",
+  "compute gradient@gradient",
+  "correct@parameter",
+  "differentiate through@distribution",
+  "encode@state",
+  "evaluate@error",
+  "evaluate@task",
+  "feed forward@distribution",
+  "solve problem@state",
+  "train@parameter"
+ ]
+}

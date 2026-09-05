@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2404.00658",
+ "source": "abstract",
+ "words": 213,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "compute qkv",
+   "canonical": "compute qkv",
+   "object": "state",
+   "quote": "the derivation of Q, K, V vectors in their self-attention mechanisms",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "state",
+   "quote": "to facilitate effective learning of global dependencies",
+   "grounded": true
+  },
+  {
+   "op": "model kinematic relationships",
+   "canonical": "model kinematic relationships",
+   "object": "state",
+   "quote": "KPA models kinematic relationships in the human body",
+   "grounded": true
+  },
+  {
+   "op": "construct topology",
+   "canonical": "construct topology",
+   "object": "state",
+   "quote": "by constructing a topology of kinematics",
+   "grounded": true
+  },
+  {
+   "op": "build trajectory topology",
+   "canonical": "build trajectory topology",
+   "object": "state",
+   "quote": "TPA builds a trajectory topology to learn the information",
+   "grounded": true
+  },
+  {
+   "op": "learn joint motion trajectory",
+   "canonical": "train",
+   "object": "state",
+   "quote": "across frames",
+   "grounded": true
+  },
+  {
+   "op": "generate qkv vectors",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "Yielding Q, K, V vectors with prior knowledge",
+   "grounded": true
+  },
+  {
+   "op": "model spatial correlations",
+   "canonical": "model spatial correlations",
+   "object": "state",
+   "quote": "the two modules enable KTPFormer to model both spatial",
+   "grounded": true
+  },
+  {
+   "op": "model temporal correlations",
+   "canonical": "model temporal correlations",
+   "object": "state",
+   "quote": "and temporal correlations simultaneously",
+   "grounded": true
+  },
+  {
+   "op": "integrate modules",
+   "canonical": "integrate modules",
+   "object": "state",
+   "quote": "can be integrated into various transformer-based networks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "with only a very small increase in the computational overhead",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Extensive experiments on three benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "to improve the performance",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the code is available at",
+   "grounded": true
+  },
+  {
+   "op": "estimate pose",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "3D human pose estimation",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "the derivation of Q, K, V vectors",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "to facilitate effective learning of global dependencies",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the two modules enable KTPFormer to model both spatial",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "build a trajectory topology to learn the information",
+   "grounded": false
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "to facilitate effective learning of global dependencies",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@state",
+  "backpropagate@gradient",
+  "build trajectory topology@state",
+  "compute distribution@distribution",
+  "compute latent@latent",
+  "compute qkv@state",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "construct topology@state",
+  "correct@parameter",
+  "evaluate@error",
+  "integrate modules@state",
+  "model kinematic relationships@state",
+  "model spatial correlations@state",
+  "model temporal correlations@state",
+  "predict@state",
+  "process input@input",
+  "reconstruct@state",
+  "sample@action",
+  "train@state"
+ ]
+}

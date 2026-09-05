@@ -1,0 +1,72 @@
+{
+ "arxiv_id": "2301.02009",
+ "source": "abstract",
+ "words": 223,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 6,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "INVALID:pair",
+   "quote": "minimizing distance between positive data pairs",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "INVALID:pair",
+   "quote": "maximizing distance between negative data pairs",
+   "grounded": true
+  },
+  {
+   "op": "sort distances",
+   "canonical": "sort distances",
+   "object": "INVALID:pair",
+   "quote": "sorting the distances of positive and negative pairs",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:pair",
+   "quote": "computing the respective loss based on how many positive pairs have a larger distance than the negative pairs",
+   "grounded": true
+  },
+  {
+   "op": "generate permutation",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "producing a differentiable permutation matrix by sorting a given set of scores",
+   "grounded": false
+  },
+  {
+   "op": "match permutation",
+   "canonical": "compare",
+   "object": "INVALID:matrix",
+   "quote": "matching a differentiable permutation matrix to a respective ground truth permutation matrix",
+   "grounded": true
+  },
+  {
+   "op": "apply loss",
+   "canonical": "apply loss",
+   "object": "INVALID:pair",
+   "quote": "introducing the GroCo loss with implicit emphasis on strong positives and negatives",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "leading to better optimization of the local neighborhood",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "improve@parameter",
+  "reconstruct@distribution"
+ ]
+}

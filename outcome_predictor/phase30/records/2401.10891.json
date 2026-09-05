@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2401.10891",
+ "source": "abstract",
+ "words": 191,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "collect data",
+   "canonical": "collect data",
+   "object": "input",
+   "quote": "designing a data engine to collect and automatically annotate large-scale unlabeled data",
+   "grounded": true
+  },
+  {
+   "op": "annotate data",
+   "canonical": "annotate data",
+   "object": "input",
+   "quote": "designing a data engine to collect and automatically annotate large-scale unlabeled data",
+   "grounded": true
+  },
+  {
+   "op": "scale data",
+   "canonical": "scale data",
+   "object": "input",
+   "quote": "scale up the dataset by designing a data engine to collect and automatically annotate large-scale unlabeled data",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "a more challenging optimization target is created by leveraging data augmentation tools",
+   "grounded": true
+  },
+  {
+   "op": "optimize model",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "a more challenging optimization target is created by leveraging data augmentation tools",
+   "grounded": true
+  },
+  {
+   "op": "inherit priors",
+   "canonical": "inherit priors",
+   "object": "latent",
+   "quote": "an auxiliary supervision is developed to enforce the model to inherit rich semantic priors from pre-trained encoders",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we aim to build a simple yet powerful foundation model dealing with any images under any circumstances",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "input",
+   "quote": "we evaluate its zero-shot capabilities extensively, including six public datasets and randomly captured photos",
+   "grounded": true
+  },
+  {
+   "op": "fine-tune model",
+   "canonical": "fine-tune model",
+   "object": "parameter",
+   "quote": "through fine-tuning it with metric depth information from NYUv2 and KITTI, new SOTAs are set",
+   "grounded": true
+  },
+  {
+   "op": "generate depth",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "our better depth model also results in a better depth-conditioned ControlNet",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "annotate data@input",
+  "apply augmentation@input",
+  "collect data@input",
+  "evaluate@input",
+  "fine-tune model@parameter",
+  "improve@parameter",
+  "inherit priors@latent",
+  "reconstruct@input",
+  "scale data@input",
+  "train@parameter"
+ ]
+}

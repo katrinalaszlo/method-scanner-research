@@ -1,0 +1,208 @@
+{
+ "arxiv_id": "2403.18807",
+ "source": "abstract",
+ "words": 251,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 3,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "using embeddings from pre-trained foundational models",
+   "grounded": true
+  },
+  {
+   "op": "condition",
+   "canonical": "intervene",
+   "object": "INVALID:diffusion",
+   "quote": "proposed design establishes a new state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "global image priors generated from a pre-trained ViT model",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "embedding vector from a ViT model",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:depth",
+   "quote": "single image depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "diffuse",
+   "canonical": "diffuse",
+   "object": "latent",
+   "quote": "proposed design establishes a new state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "Abs Rel error of 0.059",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "compared to 0.069 by the current SOTA",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "zero-shot transfer with a model trained on NYUv2",
+   "grounded": true
+  },
+  {
+   "op": "report",
+   "canonical": "report",
+   "object": "error",
+   "quote": "mean relative improvement of (20%, 23%, 81%, 25%)",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "Sq Rel error of 0.139",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "compared to 0.142 by the current SOTA",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "proposed design establishes a new state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "INVALID:depth",
+   "quote": "single image depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "proposed design establishes a new state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "Abs Rel error of 0.059",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "proposed design establishes a new state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "global image priors generated from a pre-trained ViT model",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "embedding vector from a ViT model",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "global image priors generated from a pre-trained ViT model",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "using embeddings from pre-trained foundational models",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "proposed design establishes a new state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "zero-shot transfer with a model trained on NYUv2",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "trajectory",
+   "quote": "single image depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "sample",
+   "quote": "single image depth estimation",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compare@error",
+  "compare@value",
+  "compute@distribution",
+  "compute@error",
+  "compute@reward",
+  "compute@sample",
+  "compute@task",
+  "compute@trajectory",
+  "compute@value",
+  "correct@parameter",
+  "diffuse@latent",
+  "encode@input",
+  "evaluate@task",
+  "extract@latent",
+  "reconstruct@latent",
+  "report@error",
+  "train@parameter",
+  "transform@input"
+ ]
+}

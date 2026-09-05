@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "1707.02921",
+ "source": "abstract",
+ "words": 135,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "In particular, residual learning techniques exhibit improved performance.",
+   "grounded": true
+  },
+  {
+   "op": "add residual",
+   "canonical": "add residual",
+   "object": "latent",
+   "quote": "In particular, residual learning techniques exhibit improved performance.",
+   "grounded": true
+  },
+  {
+   "op": "scale activation",
+   "canonical": "scale activation",
+   "object": "latent",
+   "quote": "The significant performance improvement of our model is due to optimization by removing unnecessary modules in conventional residual networks.",
+   "grounded": true
+  },
+  {
+   "op": "concatenate feature",
+   "canonical": "concatenate feature",
+   "object": "latent",
+   "quote": "The significant performance improvement of our model is due to optimization by removing unnecessary modules in conventional residual networks.",
+   "grounded": true
+  },
+  {
+   "op": "upsample image",
+   "canonical": "upsample image",
+   "object": "latent",
+   "quote": "We also propose a new multi-scale deep super-resolution system (MDSR) and training method, which can reconstruct high-resolution images of different upscaling factors in a single model.",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "The proposed methods show superior performance over the state-of-the-art methods on benchmark datasets and prove its excellence by winning the NTIRE2017 Super-Resolution Challenge.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "The proposed methods show superior performance over the state-of-the-art methods on benchmark datasets and prove its excellence by winning the NTIRE2017 Super-Resolution Challenge.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "The significant performance improvement of our model is due to optimization by removing unnecessary modules in conventional residual networks.",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "We also propose a new multi-scale deep super-resolution system (MDS,",
+   "grounded": false
+  },
+  {
+   "op": "normalize feature",
+   "canonical": "normalize feature",
+   "object": "latent",
+   "quote": "The significant performance improvement of our model is due to optimization by removing unnecessary modules in conventional residual networks.",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "The significant performance improvement of our model is due to optimization by removing unnecessary modules in conventional residual networks.",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "latent",
+   "quote": "In particular, residual learning techniques exhibit improved performance.",
+   "grounded": true
+  },
+  {
+   "op": "resample image",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "We also propose a new multi-scale deep super-resolution system (MDSR) and training method, which can reconstruct high-resolution images of different upscaling factors in a single model.",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "The proposed methods show superior performance over the state-of-the-art methods on benchmark datasets and prove its excellence by winning the NTIRE2017 Super-Resolution Challenge.",
+   "grounded": true
+  },
+  {
+   "op": "denoise image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "We also propose a new multi-scale deep super-resolution system (MDSR) and training method, which can reconstruct high-resolution images of different upscaling factors in a single model.",
+   "grounded": false
+  },
+  {
+   "op": "apply pooling",
+   "canonical": "apply pooling",
+   "object": "latent",
+   "quote": "In particular, residual learning techniques exhibit improved performance.",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "The significant performance improvement of our model is due to optimization by removing unnecessary modules in conventional residual networks.",
+   "grounded": true
+  },
+  {
+   "op": "apply dropout",
+   "canonical": "apply dropout",
+   "object": "latent",
+   "quote": "The significant performance improvement of our model is due to optimization by removing unnecessary modules in conventional residual networks.",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "The proposed methods show superior performance over the state-of-the-art methods on benchmark datasets and prove its excellence by winning the NTIRE2017 Super-Resolution Challenge.",
+   "grounded": true
+  },
+  {
+   "op": "apply batch norm",
+   "canonical": "apply batch norm",
+   "object": "latent",
+   "quote": "In particular, residual learning techniques exhibit improved performance.",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "The proposed methods show superior performance over the state-of-the-art methods on benchmark datasets and prove its excellence by winning the NTIRE2017 Super-Resolution Challenge.",
+   "grounded": true
+  },
+  {
+   "op": "apply softmax",
+   "canonical": "apply softmax",
+   "object": "distribution",
+   "quote": "In particular, residual learning techniques exhibit improved performance.",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "We also propose a new multi-scale deep super-resolution system (MDSR) and training method, which can reconstruct high-resolution images of different upscaling factors in a single model.",
+   "grounded": false
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "In particular, residual learning techniques exhibit improved performance.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "add residual@latent",
+  "apply activation@latent",
+  "apply attention@latent",
+  "apply batch norm@latent",
+  "apply convolution@input",
+  "apply dropout@latent",
+  "apply pooling@latent",
+  "apply softmax@distribution",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "concatenate feature@latent",
+  "correct@parameter",
+  "evaluate@error",
+  "normalize feature@latent",
+  "reconstruct@input",
+  "sample@latent",
+  "scale activation@latent",
+  "upsample image@latent"
+ ]
+}

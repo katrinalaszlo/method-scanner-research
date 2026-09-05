@@ -1,0 +1,194 @@
+{
+ "arxiv_id": "2112.01529",
+ "source": "abstract",
+ "words": 205,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "mask input",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "masked image modeling on image data",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "masked image modeling on image data",
+   "grounded": true
+  },
+  {
+   "op": "predict masked input",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "masked image modeling on image data",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "masked image modeling on image data",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "masked image, modeling on image data",
+   "grounded": false
+  },
+  {
+   "op": "mask input",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "predict masked input",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "mask input",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "predict masked input",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "mask input",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "predict masked input",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "mask input",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "predict masked input",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "masked image modeling jointly with masked video modeling",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "correct@parameter",
+  "encode@input",
+  "mask@input",
+  "predict@input"
+ ]
+}

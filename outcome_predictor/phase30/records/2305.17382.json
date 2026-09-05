@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2305.17382",
+ "source": "abstract",
+ "words": 220,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "map features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "map the image features to the joint embedding space",
+   "grounded": true
+  },
+  {
+   "op": "compare features",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "compare with the text features to generate the anomaly maps",
+   "grounded": true
+  },
+  {
+   "op": "store features",
+   "canonical": "store features",
+   "object": "input",
+   "quote": "utilize multiple memory banks to store their features",
+   "grounded": true
+  },
+  {
+   "op": "retrieve features",
+   "canonical": "retrieve features",
+   "object": "latent",
+   "quote": "compare them with the features of the test images during the testing phase",
+   "grounded": true
+  },
+  {
+   "op": "compute anomaly map",
+   "canonical": "compute anomaly map",
+   "object": "latent",
+   "quote": "generate the anomaly maps",
+   "grounded": true
+  },
+  {
+   "op": "classify anomaly",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "achieved first place in the zero-shot track",
+   "grounded": true
+  },
+  {
+   "op": "compute f1 score",
+   "canonical": "compute f1 score",
+   "object": "task",
+   "quote": "F1 score improvement of 0.0489 over the second-ranked participant",
+   "grounded": true
+  },
+  {
+   "op": "segment anomaly",
+   "canonical": "segment anomaly",
+   "object": "input",
+   "quote": "excelling in segmentation with an impressive F1 score improvement",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "secured the fourth position overall",
+   "grounded": true
+  },
+  {
+   "op": "compute classification score",
+   "canonical": "compute classification score",
+   "object": "task",
+   "quote": "classification F1 score of 0.8687 ranking first among all participating teams",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "classify@input",
+  "compare@latent",
+  "compute anomaly map@latent",
+  "compute classification score@task",
+  "compute f1 score@task",
+  "encode@input",
+  "evaluate@task",
+  "retrieve features@latent",
+  "segment anomaly@input",
+  "store features@input"
+ ]
+}

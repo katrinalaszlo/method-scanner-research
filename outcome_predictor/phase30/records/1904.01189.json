@@ -1,0 +1,171 @@
+{
+ "arxiv_id": "1904.01189",
+ "source": "abstract",
+ "words": 181,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 3,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "latent",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "model",
+   "canonical": "model",
+   "object": "distribution",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "INVALID:joint",
+   "quote": "we exploit the relationship of joints hierarchically",
+   "grounded": true
+  },
+  {
+   "op": "model",
+   "canonical": "model",
+   "object": "INVALID:correlation",
+   "quote": "we exploit the relationship of joints hierarchically",
+   "grounded": true
+  },
+  {
+   "op": "model",
+   "canonical": "model",
+   "object": "INVALID:dependency",
+   "quote": "we exploit the relationship of joints hierarchically",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "input",
+   "quote": "we exploit the relationship of joints hierarchically",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "track",
+   "canonical": "track",
+   "object": "state",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "action",
+   "quote": "we explicitly introduce the high level semantics of joints",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@input",
+  "backpropagate@gradient",
+  "classify@action",
+  "compute@error",
+  "compute@reward",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "improve@parameter",
+  "model@distribution",
+  "predict@value",
+  "process@latent",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@sample",
+  "track@state"
+ ]
+}

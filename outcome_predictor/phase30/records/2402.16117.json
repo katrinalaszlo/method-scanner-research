@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "2402.16117",
+ "source": "abstract",
+ "words": 168,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 13,
+ "ops": [
+  {
+   "op": "parse input",
+   "canonical": "parse input",
+   "object": "input",
+   "quote": "decomposes high-level human instructions into multiple object-centric manipulation units",
+   "grounded": true
+  },
+  {
+   "op": "generate code",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "applies code generation to introduce generalization ability",
+   "grounded": true
+  },
+  {
+   "op": "map concept",
+   "canonical": "encode",
+   "object": "distribution",
+   "quote": "enhance the capability to map conceptual and perceptual understanding into control commands",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "action",
+   "quote": "translate these conceptual understandings into detailed robotic actions",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "introduces an iterative self-updating methodology for supervised fine-tuning",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "generate precise physical control for robots",
+   "grounded": false
+  },
+  {
+   "op": "evaluate error",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "achieves generalization across various scenarios",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "a specialized multimodal reasoning dataset is collected for pre-training",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "achieves state-of-the-art performance in both simulators and real robots",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "introduces an iterative self-updating methodology for supervised fine-tuning",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "introduces an iterative self-updating methodology for supervised fine-tuning",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "generate precise physical control for robots",
+   "grounded": false
+  },
+  {
+   "op": "apply constraint",
+   "canonical": "apply constraint",
+   "object": "state",
+   "quote": "decomposes high-level human instructions into multiple object-centric manipulation units",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "translate these conceptual understandings into detailed robotic actions",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "introduces an iterative self-updating methodology for supervised fine-tuning",
+   "grounded": false
+  },
+  {
+   "op": "generate trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "generate precise physical control for robots",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "generate precise physical control for robots",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "achieves state-of-the-art performance in both simulators and real robots",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "enhance the capability to map conceptual and perceptual understanding into control commands",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "achieves generalization across various scenarios",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "translate these conceptual understandings into detailed robotic actions",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "introduces an iterative self-updating methodology for supervised fine-tuning",
+   "grounded": false
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "applies code generation to introduce generalization ability",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "decomposes high-level human instructions into multiple object-centric manipulation units",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply constraint@state",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@action",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@distribution",
+  "evaluate@error",
+  "parse input@input",
+  "predict@value",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@policy",
+  "sample@sample",
+  "train@parameter"
+ ]
+}

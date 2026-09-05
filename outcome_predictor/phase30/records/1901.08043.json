@@ -1,0 +1,73 @@
+{
+ "arxiv_id": "1901.08043",
+ "source": "abstract",
+ "words": 170,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 5,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "detect keypoint",
+   "canonical": "detect keypoint",
+   "object": "state",
+   "quote": "detect four extreme points and one center point of objects",
+   "grounded": false
+  },
+  {
+   "op": "group keypoint",
+   "canonical": "group keypoint",
+   "object": "latent",
+   "quote": "group the five keypoints into a bounding box if they are geometrically aligned",
+   "grounded": true
+  },
+  {
+   "op": "estimate keypoint",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "detect four extreme points and one center point of objects using a standard keypoint estimation network",
+   "grounded": false
+  },
+  {
+   "op": "compute bounding box",
+   "canonical": "compute bounding box",
+   "object": "INVALID:keypoint",
+   "quote": "group the five keypoints into a bounding box if they are geometrically aligned",
+   "grounded": true
+  },
+  {
+   "op": "compute mask",
+   "canonical": "compute mask",
+   "object": "INVALID:extreme point",
+   "quote": "our estimated extreme points directly span a coarse octagonal mask",
+   "grounded": true
+  },
+  {
+   "op": "segmentation refine",
+   "canonical": "segmentation refine",
+   "object": "INVALID:mask",
+   "quote": "extreme point guided segmentation further improves this to 34.6% Mask AP",
+   "grounded": true
+  },
+  {
+   "op": "compute mask ap",
+   "canonical": "compute mask ap",
+   "object": "INVALID:mask",
+   "quote": "our estimated extreme points directly span a coarse octagonal mask",
+   "grounded": true
+  },
+  {
+   "op": "compute bounding box ap",
+   "canonical": "compute bounding box ap",
+   "object": "INVALID:bounding box",
+   "quote": "the proposed method performs on-par with the state-of-the-art region based detection methods, with a bounding box AP of 43.2% on COCO test-dev",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "detect keypoint@state",
+  "group keypoint@latent",
+  "predict@input"
+ ]
+}

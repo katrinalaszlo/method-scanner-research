@@ -1,0 +1,109 @@
+{
+ "arxiv_id": "1907.04253",
+ "source": "abstract",
+ "words": 178,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 12,
+ "n_invalid_object": 0,
+ "n_grounded": 11,
+ "ops": [
+  {
+   "op": "extract input",
+   "canonical": "extract input",
+   "object": "input",
+   "quote": "the information flows are solely feedforward",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the representation of low-level features are efficiently enriched",
+   "grounded": true
+  },
+  {
+   "op": "reroute",
+   "canonical": "reroute",
+   "object": "latent",
+   "quote": "rerouting multiple high-level features",
+   "grounded": true
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "latent",
+   "quote": "efficiently selects and further enhances useful information",
+   "grounded": true
+  },
+  {
+   "op": "enhance",
+   "canonical": "enhance",
+   "object": "latent",
+   "quote": "efficiently selects and further enhances useful information",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "refine the low-level features with the enhanced high-level information",
+   "grounded": true
+  },
+  {
+   "op": "cascade",
+   "canonical": "cascade",
+   "object": "latent",
+   "quote": "cascade multiple residual dense blocks",
+   "grounded": true
+  },
+  {
+   "op": "unfold",
+   "canonical": "unfold",
+   "object": "latent",
+   "quote": "recurrently unfolds them across time",
+   "grounded": true
+  },
+  {
+   "op": "connect",
+   "canonical": "connect",
+   "object": "latent",
+   "quote": "multiple feedback connections between two adjacent time steps",
+   "grounded": true
+  },
+  {
+   "op": "capture",
+   "canonical": "capture",
+   "object": "latent",
+   "quote": "captured under large receptive fields",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "refine the low,level features lacking enough contextual information",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "accurate image SR",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "capture@latent",
+  "cascade@latent",
+  "connect@latent",
+  "correct@latent",
+  "encode@input",
+  "enhance@latent",
+  "extract input@input",
+  "reconstruct@latent",
+  "reroute@latent",
+  "select@latent",
+  "unfold@latent"
+ ]
+}

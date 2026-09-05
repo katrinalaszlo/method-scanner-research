@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "1903.00834",
+ "source": "abstract",
+ "words": 239,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 13,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Both quantitative and qualitative evaluations demonstrate the superiority of our method over state-of-the-art.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Both quantitative and qualitative evaluations demonstrate the superiority of our method over state-of-the-art.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Both quantitative and qualitative evaluations demonstrate the superiority of our method over state-of-the-art.",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "We design an end-to-end deep model which enriches HR details by adaptively transferring the texture from Ref images according to their textural similarity.",
+   "grounded": false
+  },
+  {
+   "op": "match texture",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "Our key contribution is a multi-level matching conducted in the neural space.",
+   "grounded": true
+  },
+  {
+   "op": "transfer texture",
+   "canonical": "transfer texture",
+   "object": "latent",
+   "quote": "We design an end-to-end deep model which enriches HR details by adaptively transferring the texture from Ref images according to their textural similarity.",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "We design an end-to-end deep model which enriches HR details by adaptively transferring the texture from Ref images according to their textural similarity.",
+   "grounded": false
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "Our key contribution is a multi-level matching conducted in the neural space.",
+   "grounded": true
+  },
+  {
+   "op": "select relevant patches",
+   "canonical": "select relevant patches",
+   "object": "sample",
+   "quote": "Our key contribution is a multi-level matching conducted in the neural space.",
+   "grounded": true
+  },
+  {
+   "op": "resample patches",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "Our key, contribution is a multi-level matching conducted in the neural space.",
+   "grounded": false
+  },
+  {
+   "op": "compute features",
+   "canonical": "compute features",
+   "object": "latent",
+   "quote": "We design an end-to-end deep model which enriches HR details by adaptively transferring the texture from Ref images according to their textural similarity.",
+   "grounded": false
+  },
+  {
+   "op": "compute neural similarity",
+   "canonical": "compute neural similarity",
+   "object": "distribution",
+   "quote": "Our key contribution is a multi-level matching conducted in the neural space.",
+   "grounded": true
+  },
+  {
+   "op": "apply transfer",
+   "canonical": "apply transfer",
+   "object": "latent",
+   "quote": "We design an end-to-end deep model which enriches HR details by adaptively transferring the texture from Ref images according to their textural similarity.",
+   "grounded": false
+  },
+  {
+   "op": "denoise output",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "We design an end-to-end deep model which enriches HR details by adaptively transferring the texture from Ref images according to their textural similarity.",
+   "grounded": false
+  },
+  {
+   "op": "evaluate quality",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "Both quantitative and qualitative evaluations demonstrate the superiority of our method over state-of-the-art.",
+   "grounded": true
+  },
+  {
+   "op": "compute metrics",
+   "canonical": "compute metrics",
+   "object": "value",
+   "quote": "Both quantitative and qualitative evaluations demonstrate the superiority of our method over state-of-the-art.",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "Both quantitative and qualitative evaluations demonstrate the superiority of our method over state-of-the-art.",
+   "grounded": true
+  },
+  {
+   "op": "generate reference",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "We design an end-to-end deep model which enriches HR details by adaptively transferring the texture from Ref images according to their textural similarity.",
+   "grounded": false
+  },
+  {
+   "op": "process reference",
+   "canonical": "process reference",
+   "object": "latent",
+   "quote": "We design an end-to-end deep model which enriches HR details by adaptively transferring the texture from Ref images according to their textural similarity.",
+   "grounded": false
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "We design an end-to-end deep model which enriches HR details by adaptively transferring the texture from Ref images according to their textural similarity.",
+   "grounded": false
+  },
+  {
+   "op": "refine output",
+   "canonical": "correct",
+   "object": "input",
+   "quote": "We design an end-to-end deep model which enriches HR details by adaptively transferring the texture from Ref images according to their textural similarity.",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "Both quantitative and qualitative evaluations demonstrate the superiority of our method over state-of-the-art.",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "Both quantitative and qualitative evaluations demonstrate the superiority of our method over state-of-the-art.",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "Both quantitative and qualitative evaluations demonstrate the superiority of our method over state-of-the-art.",
+   "grounded": true
+  },
+  {
+   "op": "store output",
+   "canonical": "store output",
+   "object": "input",
+   "quote": "We design an end-to-end deep model which enriches HR details by adaptively transferring the texture from Ref images according to their textural similarity.",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply gradient@parameter",
+  "apply transfer@latent",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compare@distribution",
+  "compare@value",
+  "compute features@latent",
+  "compute gradient@gradient",
+  "compute metrics@value",
+  "compute neural similarity@distribution",
+  "compute similarity@distribution",
+  "correct@input",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "evaluate@value",
+  "process reference@latent",
+  "reconstruct@input",
+  "sample@sample",
+  "select relevant patches@sample",
+  "store output@input",
+  "transfer texture@latent"
+ ]
+}

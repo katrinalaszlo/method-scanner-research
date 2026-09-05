@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2103.12731",
+ "source": "abstract",
+ "words": 194,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "input",
+   "quote": "Self-attention has the promise of improving computer vision systems",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "Self-attention models have recently been shown to have encouraging improvements",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "We propose two extensions to self-attention that, in conjunction with a more efficient implementation of self-attention",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We propose two extensions to self-attention that, in conjunction with a more efficient implementation of self-attention",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "In this work, we aim to develop self-attention models that can outperform not just the canonical baseline models",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "state",
+   "quote": "We leverage these improvements to develop a new self-attention model family, HaloNets",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "HaloNets, which reach state-of-the-art accuracies on the parameter-limited setting of the ImageNet classification benchmark",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "In preliminary transfer learning experiments, we find that HaloNet models outperform much larger models",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "task",
+   "quote": "On harder tasks such as object detection and instance segmentation, our simple local self-attention and convolution, hybrids show improvements over very strong baselines",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "On harder tasks such as object detection and instance segmentation, our simple local self-attention and convolutional hybrids show improvements over very strong baselines",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@value",
+  "compute attention@input",
+  "compute attention@latent",
+  "compute distribution@latent",
+  "compute gradient@parameter",
+  "compute reward@task",
+  "compute trajectory@task",
+  "compute value@state",
+  "correct@parameter",
+  "sample@policy"
+ ]
+}

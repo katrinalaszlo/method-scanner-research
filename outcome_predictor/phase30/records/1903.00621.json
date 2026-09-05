@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "1903.00621",
+ "source": "abstract",
+ "words": 216,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 6,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "assign instance",
+   "canonical": "assign instance",
+   "object": "INVALID:instance",
+   "quote": "dynamically assign each instance to the most suitable feature level",
+   "grounded": true
+  },
+  {
+   "op": "encode box",
+   "canonical": "encode",
+   "object": "INVALID:box",
+   "quote": "box encoding and decoding in the anchor-free manner",
+   "grounded": true
+  },
+  {
+   "op": "decode box",
+   "canonical": "reconstruct",
+   "object": "INVALID:box",
+   "quote": "box encoding and decoding in the anchor-free manner",
+   "grounded": true
+  },
+  {
+   "op": "output prediction",
+   "canonical": "output prediction",
+   "object": "INVALID:prediction",
+   "quote": "outputting predictions in parallel",
+   "grounded": true
+  },
+  {
+   "op": "select feature",
+   "canonical": "select feature",
+   "object": "latent",
+   "quote": "online feature selection strategy",
+   "grounded": false
+  },
+  {
+   "op": "predict box",
+   "canonical": "predict",
+   "object": "INVALID:box",
+   "quote": "outputting predictions in parallel",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "dynamically assign each instance to the most suitable feature level",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the FSAF module performs better than anchor-based counterparts while being faster",
+   "grounded": false
+  },
+  {
+   "op": "sample feature",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "online feature selection strategy",
+   "grounded": false
+  },
+  {
+   "op": "combine prediction",
+   "canonical": "aggregate",
+   "object": "INVALID:prediction",
+   "quote": "outputting predictions in parallel",
+   "grounded": true
+  },
+  {
+   "op": "compute map",
+   "canonical": "compute map",
+   "object": "task",
+   "quote": "the resulting best model can achieve a state-of-the-art 44.6% mAP",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the FSA, module robustly improves the baseline RetinaNet by a large margin",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the FSAF module performs better than anchor-based counterparts while being faster",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the FSAF module can work jointly with anchor-based branches by outputting predictions in parallel",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the FSAF module performs better than anchor-based counterparts while being faster",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "the FSAF module performs better than anchor-based counterparts while being faster",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the FSAF module performs better than anchor-based counterparts while being faster",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the resulting best model can achieve a state-of-the-art 44.6% mAP",
+   "grounded": false
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "the FSAF module performs better than anchor-based counterparts while being faster",
+   "grounded": false
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "the FSAF module performs better than anchor-based counterparts while being faster",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the FSAF module performs better than anchor-based counterparts while being faster",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the FSAF module performs better than anchor-based counterparts while being faster",
+   "grounded": false
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "the FSAF module performs better than anchor-based counterparts while being faster",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the FSAF module performs better than anchor-based counterparts while being faster",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the FSAF module performs better than anchor-based counterparts while being faster",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute map@task",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "sample@latent",
+  "select feature@latent"
+ ]
+}

@@ -1,0 +1,161 @@
+{
+ "arxiv_id": "1907.02204",
+ "source": "abstract",
+ "words": 189,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 13,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "INVALID:node",
+   "quote": "assign trainable weights to the nodes in aggregation",
+   "grounded": true
+  },
+  {
+   "op": "aggregate neighbor information",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "embedding of a node is iteratively updated by aggregating the information of its neighbors",
+   "grounded": true
+  },
+  {
+   "op": "update node embedding",
+   "canonical": "correct",
+   "object": "INVALID:node",
+   "quote": "embedding of a node is iteratively updated",
+   "grounded": true
+  },
+  {
+   "op": "compute cardinality",
+   "canonical": "compute cardinality",
+   "object": "INVALID:neighbor",
+   "quote": "ignorance of cardinality information in attention-based aggregation",
+   "grounded": true
+  },
+  {
+   "op": "preserve cardinality information",
+   "canonical": "preserve cardinality information",
+   "object": "INVALID:attention",
+   "quote": "cardinality preserved attention (CPA) models",
+   "grounded": true
+  },
+  {
+   "op": "apply attention weights",
+   "canonical": "apply attention weights",
+   "object": "INVALID:neighbor",
+   "quote": "assign trainable weights to the nodes in aggregation",
+   "grounded": true
+  },
+  {
+   "op": "compute representation",
+   "canonical": "compute representation",
+   "object": "INVALID:node",
+   "quote": "learn the representation of graph-structured data",
+   "grounded": true
+  },
+  {
+   "op": "classify node",
+   "canonical": "classify",
+   "object": "INVALID:node",
+   "quote": "experiments on node and graph classification",
+   "grounded": true
+  },
+  {
+   "op": "classify graph",
+   "canonical": "classify",
+   "object": "INVALID:graph",
+   "quote": "experiments on node and graph classification",
+   "grounded": true
+  },
+  {
+   "op": "compute discriminative capacity",
+   "canonical": "compute discriminative capacity",
+   "object": "INVALID:attention",
+   "quote": "a clear understanding of their discriminative capacities is missing",
+   "grounded": true
+  },
+  {
+   "op": "analyze representational properties",
+   "canonical": "analyze representational properties",
+   "object": "INVALID:gnn",
+   "quote": "present a theoretical analysis of the representational properties",
+   "grounded": true
+  },
+  {
+   "op": "determine failure cases",
+   "canonical": "determine failure cases",
+   "object": "INVALID:attention",
+   "quote": "determine all cases when those attention-based GNNs can always fail",
+   "grounded": false
+  },
+  {
+   "op": "identify structural distinctions",
+   "canonical": "identify structural distinctions",
+   "object": "INVALID:graph",
+   "quote": "fail to distinguish certain distinct structures",
+   "grounded": true
+  },
+  {
+   "op": "train model parameters",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "cardinality preserved attention (CPA) models",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "experiments on node and graph classification confirm our theoretical analysis",
+   "grounded": true
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "show the competitive performance of our CPA models",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "experiments on node and graph classification confirm our theoretical analysis",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate error",
+   "canonical": "backpropagate error",
+   "object": "gradient",
+   "quote": "experiments on node and graph classification confirm our theoretical analysis",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "cardinality preserved attention (CPA) models",
+   "grounded": true
+  },
+  {
+   "op": "compute task objective",
+   "canonical": "compute task objective",
+   "object": "task",
+   "quote": "experiments on node and graph classification confirm our theoretical analysis",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate error@gradient",
+  "compare@parameter",
+  "compute task objective@task",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@parameter",
+  "train@parameter"
+ ]
+}

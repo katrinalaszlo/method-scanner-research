@@ -1,0 +1,134 @@
+{
+ "arxiv_id": "2204.01678",
+ "source": "abstract",
+ "words": 216,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 15,
+ "n_invalid_object": 0,
+ "n_grounded": 15,
+ "ops": [
+  {
+   "op": "mask input",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "we make use of masking (across image patches and input modalities)",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "its training objective accordingly includes predicting multiple outputs",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "training objective accordingly includes predicting multiple outputs",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we make use of masking (across image patches and input modalities)",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we make use of masking (across image patches and input modalities)",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the same exact pre-trained network can be flexibly used",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "we make use of masking (across image patches and input modalities)",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the same exact pre-trained network can be flex,ibly used",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we make use of masking (across image patches and input modalities)",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the same exact pre-trained network can be flexibly used",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "its training objective accordingly includes predicting multiple outputs",
+   "grounded": true
+  },
+  {
+   "op": "apply mask",
+   "canonical": "apply mask",
+   "object": "input",
+   "quote": "we make use of masking (across image patches and input modalities)",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "the same exact pre-trained network can be flexibly used",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we make use of masking (across image patches and input modalities)",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we make use of masking (across image patches and input modalities)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply mask@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute gradient@gradient",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "mask@input",
+  "predict@distribution",
+  "predict@value",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "sample@action",
+  "sample@sample",
+  "train@parameter"
+ ]
+}

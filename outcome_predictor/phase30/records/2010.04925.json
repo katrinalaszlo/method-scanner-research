@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2010.04925",
+ "source": "abstract",
+ "words": 152,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "an alternative \"AMP loss\" is minimized via SGD",
+   "grounded": true
+  },
+  {
+   "op": "apply perturbation",
+   "canonical": "apply perturbation",
+   "object": "parameter",
+   "quote": "applying the \"worst\" norm-bounded perturbation on each point in the parameter space",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "an alternative \"AMP loss\" is minimized via SGD",
+   "grounded": true
+  },
+  {
+   "op": "sample perturbation",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "applying the \"worst\" norm-bounded perturbation on each point in the parameter space",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "an alternative \"AMP loss\" is minimized via SGD",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "an alternative \"AMP, loss\" is minimized via SGD",
+   "grounded": false
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "the \"worst\" norm-bounded perturbation on each point in the parameter space",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "an alternative \"AMP loss\" is minimized via SGD",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply perturbation@parameter",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compute gradient@gradient",
+  "correct@parameter",
+  "evaluate@error",
+  "sample@noise"
+ ]
+}

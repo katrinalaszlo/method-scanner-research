@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "2104.08760",
+ "source": "abstract",
+ "words": 249,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we propose a novel self-supervised learning framework using a truncated triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "select negative sample",
+   "canonical": "select negative sample",
+   "object": "sample",
+   "quote": "we construct the negative pair by selecting a negative sample deputy from all negative samples",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "sample",
+   "quote": "we employ a triplet loss tending to maximize the relative distance between the positive pair and negative pairs",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose a novel self-supervised learning framework using a truncated triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "sample from distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "guaranteed by the Bernoulli Distribution model",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we propose a novel self-supervised learning framework using a truncated triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we propose a novel self-supervised learning framework using a truncated triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "we propose a novel self-supervised learning framework using a truncated triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we propose a novel self-supervised learning framework using a truncated triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we construct the negative pair by selecting a negative sample deputy from all negative samples",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we construct the negative pair by selecting a negative sample deputy from all negative samples",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we propose a novel self-supervised learning framework using a truncated triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we extensively evaluate our framework in several large-scale benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we extensively evaluate our framework in several large-scale benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "track state",
+   "canonical": "track state",
+   "object": "state",
+   "quote": "we propose a novel self-supervised learning framework using a truncated triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "store trajectory",
+   "canonical": "store trajectory",
+   "object": "trajectory",
+   "quote": "we extensively evaluate our framework in several large-scale benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we propose a novel self-supervised, learning framework using a truncated triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "we extensively evaluate our framework in several large-scale benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "guaranteed by the Bernoulli Distribution model",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we construct the negative pair by selecting a negative sample deputy from all negative samples",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "we propose a novel self-supervised learning framework using a truncated triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "we propose a novel self-supervised learning framework using a truncated triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we propose a novel self-supervised learning framework using a truncated triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we extensively evaluate our framework in several large-scale benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we extensively evaluate our framework in several large-scale benchmarks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distance@sample",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@reward",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@distribution",
+  "sample@sample",
+  "select negative sample@sample",
+  "store trajectory@trajectory",
+  "track state@state"
+ ]
+}

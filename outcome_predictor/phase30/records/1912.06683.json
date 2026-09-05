@@ -1,0 +1,216 @@
+{
+ "arxiv_id": "1912.06683",
+ "source": "abstract",
+ "words": 151,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "apply short and long residual connections",
+   "grounded": true
+  },
+  {
+   "op": "apply residual connection",
+   "canonical": "apply residual connection",
+   "object": "latent",
+   "quote": "apply short and long residual connections",
+   "grounded": true
+  },
+  {
+   "op": "apply depthwise separable convolution",
+   "canonical": "apply depthwise separable convolution",
+   "object": "input",
+   "quote": "apply short and long residual connections",
+   "grounded": true
+  },
+  {
+   "op": "compute feature map",
+   "canonical": "compute feature map",
+   "object": "input",
+   "quote": "resulting in a faster and efficient model",
+   "grounded": true
+  },
+  {
+   "op": "compute intersection over union",
+   "canonical": "compute intersection over union",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute mean intersection over union",
+   "canonical": "compute mean intersection over union",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.83% mean intersection over union",
+   "grounded": false
+  },
+  {
+   "op": "compute intersection over union metric",
+   "canonical": "compute intersection over union metric",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute frames per second",
+   "canonical": "compute frames per second",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute resolution",
+   "canonical": "compute resolution",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute intersection over union value",
+   "canonical": "compute intersection over union value",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute mean intersection over union value",
+   "canonical": "compute mean intersection over union value",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute intersection over union metric",
+   "canonical": "compute intersection over union metric",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy metric",
+   "canonical": "compute accuracy metric",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute frames per second metric",
+   "canonical": "compute frames per second metric",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute resolution metric",
+   "canonical": "compute resolution metric",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute intersection over union score",
+   "canonical": "compute intersection over union score",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute mean intersection over union score",
+   "canonical": "compute mean intersection over union score",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute intersection over union value",
+   "canonical": "compute intersection over union value",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy value",
+   "canonical": "compute accuracy value",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute frames per second value",
+   "canonical": "compute frames per second value",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute resolution value",
+   "canonical": "compute resolution value",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute intersection over union metric",
+   "canonical": "compute intersection over union metric",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy metric",
+   "canonical": "compute accuracy metric",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute frames per second metric",
+   "canonical": "compute frames per second metric",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  },
+  {
+   "op": "compute resolution metric",
+   "canonical": "compute resolution metric",
+   "object": "state",
+   "quote": "achieves an accuracy of 67.81% mean intersection over union",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply convolution@input",
+  "apply depthwise separable convolution@input",
+  "apply residual connection@latent",
+  "compute accuracy metric@state",
+  "compute accuracy value@state",
+  "compute accuracy@state",
+  "compute feature map@input",
+  "compute frames per second metric@state",
+  "compute frames per second value@state",
+  "compute frames per second@state",
+  "compute intersection over union metric@state",
+  "compute intersection over union score@state",
+  "compute intersection over union value@state",
+  "compute intersection over union@state",
+  "compute mean intersection over union score@state",
+  "compute mean intersection over union value@state",
+  "compute mean intersection over union@state",
+  "compute resolution metric@state",
+  "compute resolution value@state",
+  "compute resolution@state"
+ ]
+}

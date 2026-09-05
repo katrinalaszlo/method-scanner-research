@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "1908.06295",
+ "source": "abstract",
+ "words": 165,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "compute statistics",
+   "canonical": "compute statistics",
+   "object": "state",
+   "quote": "using statistics from concentric spherical shells",
+   "grounded": false
+  },
+  {
+   "op": "define features",
+   "canonical": "define features",
+   "object": "latent",
+   "quote": "define representative features and resolve the point order ambiguity",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "allowing traditional convolution to perform on such features",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "directly consume the point clouds",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "with larger receptive fields while maintaining less layers",
+   "grounded": true
+  },
+  {
+   "op": "train parameters",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "keeping the network very fast to train",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "keeping the network very fast to train",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "producing state-of-the-art results on object classification",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "keeping the network very fast to train",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "keeping the network very fast to train",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "producing state-of-the-art results on object classification",
+   "grounded": true
+  },
+  {
+   "op": "segment objects",
+   "canonical": "segment objects",
+   "object": "state",
+   "quote": "producing state-of-the-art results on object part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "classify objects",
+   "canonical": "classify",
+   "object": "state",
+   "quote": "producing state-of-the-art results on object classification",
+   "grounded": true
+  },
+  {
+   "op": "segment scenes",
+   "canonical": "segment scenes",
+   "object": "state",
+   "quote": "producing state-of-the-art results on semantic scene segmentation",
+   "grounded": true
+  },
+  {
+   "op": "process trajectory",
+   "canonical": "process trajectory",
+   "object": "trajectory",
+   "quote": "directly consume the point clouds",
+   "grounded": true
+  },
+  {
+   "op": "compute gradients",
+   "canonical": "compute gradients",
+   "object": "gradient",
+   "quote": "keeping the network very fast to train",
+   "grounded": true
+  },
+  {
+   "op": "resample points",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "resolve the point order ambiguity",
+   "grounded": true
+  },
+  {
+   "op": "compute receptive field",
+   "canonical": "compute receptive field",
+   "object": "latent",
+   "quote": "with larger receptive fields while maintaining less layers",
+   "grounded": true
+  },
+  {
+   "op": "apply permutation invariance",
+   "canonical": "apply permutation invariance",
+   "object": "state",
+   "quote": "resolve the point order ambiguity",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "producing state-of-the-art results on object classification",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@latent",
+  "apply permutation invariance@state",
+  "backpropagate@gradient",
+  "classify@state",
+  "compute gradients@gradient",
+  "compute receptive field@latent",
+  "compute statistics@state",
+  "correct@parameter",
+  "define features@latent",
+  "evaluate@error",
+  "evaluate@task",
+  "improve@parameter",
+  "process input@input",
+  "process trajectory@trajectory",
+  "reconstruct@state",
+  "sample@state",
+  "segment objects@state",
+  "segment scenes@state",
+  "train@parameter"
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1808.06281",
+ "source": "abstract",
+ "words": 117,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "we propose a model that can be used for multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "provide state-of-the-art results on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Person Re-Identification is still a challenging task",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "still achieve considerable accuracy subsequently",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "this method can achieve Incremental Learning",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "Extensive experiments show that this method",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "for other tasks in computer vision as well",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we evaluated our model on two datasets",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "correct@parameter",
+  "encode@input",
+  "predict@task",
+  "reconstruct@noise",
+  "sample@policy",
+  "sample@sample"
+ ]
+}

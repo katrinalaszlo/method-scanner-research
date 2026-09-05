@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2212.07101",
+ "source": "abstract",
+ "words": 167,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "we design a classifier to effectively learn the domain-specific features",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we develop an encoder-decoder network to map each input image",
+   "grounded": false
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we develop an encoder-decoder network to map each input image",
+   "grounded": false
+  },
+  {
+   "op": "remove",
+   "canonical": "remove",
+   "object": "latent",
+   "quote": "to tactically remove domain-specific features from the input images",
+   "grounded": false
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "another classifier is designed to learn the domain-invariant features",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "to conduct image classification",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "extensive experiments demonstrate that our framework achieves superior performance",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we develop an encoder-decoder network to map each input image",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "classify@input",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@distribution",
+  "reconstruct@latent",
+  "remove@latent"
+ ]
+}

@@ -1,0 +1,202 @@
+{
+ "arxiv_id": "2309.14137",
+ "source": "abstract",
+ "words": 196,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "a feature extractor and an iterative optimizer",
+   "grounded": true
+  },
+  {
+   "op": "initialize bin",
+   "canonical": "initialize bin",
+   "object": "latent",
+   "quote": "iterative elastic bins (IEBins)",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "predict depth by progressively optimizing the search range",
+   "grounded": false
+  },
+  {
+   "op": "compute uncertainty",
+   "canonical": "compute uncertainty",
+   "object": "latent",
+   "quote": "width of which is adjusted elastically based on the depth uncertainty",
+   "grounded": true
+  },
+  {
+   "op": "adjust bin width",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "width of which is adjusted elastically based on the depth uncertainty",
+   "grounded": true
+  },
+  {
+   "op": "refine depth",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "each stage performs a finer-grained depth search in the target bin",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "a dedicated framework composed of a feature extractor and an iterative optimizer",
+   "grounded": true
+  },
+  {
+   "op": "model context",
+   "canonical": "model context",
+   "object": "latent",
+   "quote": "powerful temporal context modeling capabilities benefiting from the GRU-based architecture",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "alleviate the possible error accumulation during the iterative process",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the iterative optimizer",
+   "grounded": false
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "progressively optimizing the search range",
+   "grounded": true
+  },
+  {
+   "op": "sample depth",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "linear combination of probabilistic distribution and bin centers",
+   "grounded": true
+  },
+  {
+   "op": "compare depth",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "search for high-quality depth",
+   "grounded": true
+  },
+  {
+   "op": "update bin",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "replace the original target bin",
+   "grounded": true
+  },
+  {
+   "op": "track depth",
+   "canonical": "track depth",
+   "object": "latent",
+   "quote": "iterative process",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "surpass prior state-of-the-art competitors",
+   "grounded": false
+  },
+  {
+   "op": "denoise depth",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "iterative optimizer",
+   "grounded": true
+  },
+  {
+   "op": "resample depth",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "linear combination of probabilistic distribution and bin centers",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "search for high-quality depth",
+   "grounded": true
+  },
+  {
+   "op": "update context",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "powerful temporal context modeling capabilities",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "iterative process",
+   "grounded": true
+  },
+  {
+   "op": "refine trajectory",
+   "canonical": "correct",
+   "object": "trajectory",
+   "quote": "each stage performs a finer-grained depth search",
+   "grounded": true
+  },
+  {
+   "op": "evaluate depth",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "surpass prior state-of-the-art competitors",
+   "grounded": false
+  },
+  {
+   "op": "store depth",
+   "canonical": "store depth",
+   "object": "latent",
+   "quote": "iterative optimizer",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute reward@value",
+  "compute trajectory@trajectory",
+  "compute uncertainty@latent",
+  "correct@latent",
+  "correct@parameter",
+  "correct@trajectory",
+  "evaluate@value",
+  "extract feature@input",
+  "improve@parameter",
+  "initialize bin@latent",
+  "model context@latent",
+  "predict@latent",
+  "predict@value",
+  "reconstruct@latent",
+  "sample@distribution",
+  "sample@sample",
+  "store depth@latent",
+  "track depth@latent"
+ ]
+}

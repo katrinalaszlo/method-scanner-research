@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1910.06251",
+ "source": "abstract",
+ "words": 219,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "Due to the better behaved gradient backpropagation",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "IndRNN with regulated recurrent weights effectively addresses the gradient vanishing and exploding problems",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "long-term dependencies can be learned",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "an IndRNN can work with non-saturated activation functions such as ReLU",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the gradient vanishing and exploding problems and thus long-term dependencies can be learned",
+   "grounded": true
+  },
+  {
+   "op": "resample noise",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "IndRNN reduces the computation at each time step",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Due to the better behaved gradient backpropagation",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "IndRNN reduces the computation at each time step and can be over 10 times faster than the commonly used Long short-term memory (LSTM)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute gradient@error",
+  "correct@parameter",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@noise"
+ ]
+}

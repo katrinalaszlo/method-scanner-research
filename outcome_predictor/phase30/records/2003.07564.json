@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "2003.07564",
+ "source": "abstract",
+ "words": 250,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "model spatial-temporal features of skeleton sequences",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "extract spatial-temporal features for action recognition",
+   "grounded": true
+  },
+  {
+   "op": "transmit",
+   "canonical": "transmit",
+   "object": "latent",
+   "quote": "transmits the high-level semantic features to the low-level layers",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "flows temporal information stage by stage",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "provides early predictions",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "guide the feature learning of later stages",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "dense connections based Feedback Graph Convolutional Block",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "end-to-end optimization",
+   "grounded": true
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "gradient",
+   "quote": "feedback connections into the GCNs",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "progressively model global spatial-temporal features",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "sample",
+   "quote": "its predictions are relatively coarse",
+   "grounded": true
+  },
+  {
+   "op": "feedback",
+   "canonical": "feedback",
+   "object": "policy",
+   "quote": "introduce feedback connections into the GCNs",
+   "grounded": true
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the model receives partial information about actions",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "coarse predictions are treated as the prior",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "end-to-end optimization",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "extract spatial-temporal features for action recognition",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "flows temporal information stage by stage",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "provides early predictions",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "dense connections based Feedback Graph Convolutional Block",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "value",
+   "quote": "its predictions are relatively coarse",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "guide the feature learning of later stages",
+   "grounded": true
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "gradient",
+   "quote": "feedback connections into the GCNs",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "progressively model global spatial-temporal features",
+   "grounded": true
+  },
+  {
+   "op": "feedback",
+   "canonical": "feedback",
+   "object": "policy",
+   "quote": "introduce feedback connections into the GCNs",
+   "grounded": true
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the model receives partial information about actions",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@distribution",
+  "aggregate@state",
+  "compute@error",
+  "compute@value",
+  "correct@parameter",
+  "correct@sample",
+  "correct@value",
+  "encode@state",
+  "extract@latent",
+  "feedback@policy",
+  "improve@parameter",
+  "predict@value",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@action",
+  "train@parameter",
+  "transmit@gradient",
+  "transmit@latent"
+ ]
+}

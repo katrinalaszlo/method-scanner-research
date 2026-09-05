@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1804.00216",
+ "source": "abstract",
+ "words": 194,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 3,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "local features from human body parts are extracted.",
+   "grounded": false
+  },
+  {
+   "op": "parse semantic",
+   "canonical": "parse semantic",
+   "object": "input",
+   "quote": "adopt human semantic parsing which, due to its pixel-level accuracy",
+   "grounded": true
+  },
+  {
+   "op": "generate representation",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "integrates human semantic parsing in person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "standard popular deep convolutional architectures ... can dramatically outperform",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "standard popular deep convolutional architectures ... can dramatically outperform",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "standard popular deep convolution, architectures ... can dramatically outperform",
+   "grounded": false
+  },
+  {
+   "op": "predict representation",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "standard popular deep convolutional architectures ... can dramatically outperform",
+   "grounded": false
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "value",
+   "quote": "improve state-of-the-art person re-identification on: Market-1501 by ~17% in mAP",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute metric@value",
+  "correct@parameter",
+  "evaluate@error",
+  "extract feature@input",
+  "parse semantic@input",
+  "predict@distribution",
+  "reconstruct@latent"
+ ]
+}

@@ -1,0 +1,205 @@
+{
+ "arxiv_id": "1906.00562",
+ "source": "abstract",
+ "words": 178,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 1,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "predict label",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "train a few-shot model to predict pseudo labels for unlabeled data",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:label",
+   "quote": "iterate the self-training steps on labeled and pseudo-labeled data",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "error",
+   "quote": "iterate the self-training steps on labeled and pseudo-labeled data",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train the LST model through a large number of semi-supervised few-shot tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "sample",
+   "quote": "learn a soft weighting network (SWN) to optimize the self- training weights of pseudo labels",
+   "grounded": true
+  },
+  {
+   "op": "apply weight",
+   "canonical": "apply weight",
+   "object": "gradient",
+   "quote": "learn a soft weighting network (SWN) to optimize the self- training weights of pseudo labels",
+   "grounded": true
+  },
+  {
+   "op": "fine-tune",
+   "canonical": "fine-tune",
+   "object": "parameter",
+   "quote": "iterate the self-training steps on labeled and pseudo-labeled data with each step followed by fine-tuning",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "train a few-shot model to predict pseudo labels for unlabeled data",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "train the LST model through a large number of semi-supervised few-shot tasks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "learn a soft weighting network (SW. to optimize the self-training weights of pseudo labels",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "train a few-shot model to predict pseudo labels for unlabeled data",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "input",
+   "quote": "train a few-shot model to predict pseudo labels for unlabeled data",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "iterate the self-training steps on labeled and pseudo-labeled data",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "iterate the self-training steps on labeled and pseudo-labeled data with each step followed by fine-tuning",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "trajectory",
+   "quote": "train the LST model through a large number of semi-supervised few-shot tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "train the LST model through a large number of semi-supervised few-shot tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "task",
+   "quote": "train the LST model through a large number of semi-supervised few-shot tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "input",
+   "quote": "train a few-shot model to predict pseudo labels for unlabeled data",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "distribution",
+   "quote": "train a few-shot model to predict pseudo labels for unlabeled data",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "learn a soft weighting network (SWN) to optimize the self-training weights of pseudo labels",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "error",
+   "quote": "learn a soft weighting network (SWN) to optimize the self-training weights of pseudo labels",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "value",
+   "quote": "learn a soft weighting network (SWN) to optimize the self-training weights of pseudo labels",
+   "grounded": true
+  },
+  {
+   "op": "apply weight",
+   "canonical": "apply weight",
+   "object": "error",
+   "quote": "learn a soft weighting network (SWN) to optimize the self-training weights of pseudo labels",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "error",
+   "quote": "learn a soft weighting network (SWN) to optimize the self-training weights of pseudo labels",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "apply weight@error",
+  "apply weight@gradient",
+  "backpropagate@error",
+  "compare@value",
+  "compute distribution@error",
+  "compute distribution@input",
+  "compute gradient@error",
+  "compute gradient@value",
+  "compute latent@input",
+  "compute policy@task",
+  "compute reward@task",
+  "compute sample@distribution",
+  "compute task@trajectory",
+  "compute value@task",
+  "compute weight@error",
+  "compute weight@sample",
+  "correct@parameter",
+  "fine-tune@parameter",
+  "predict@input",
+  "reconstruct@noise",
+  "sample@distribution",
+  "sample@sample"
+ ]
+}

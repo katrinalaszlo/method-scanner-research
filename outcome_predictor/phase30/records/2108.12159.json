@@ -1,0 +1,188 @@
+{
+ "arxiv_id": "2108.12159",
+ "source": "abstract",
+ "words": 210,
+ "model": "qwen3:8b",
+ "salvaged": true,
+ "n_ops": 24,
+ "n_invalid_object": 17,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "compute energy",
+   "canonical": "compute energy",
+   "object": "INVALID:point pattern",
+   "quote": "We propose RFS energy, in contrast to RFS likelihood as anomaly score.",
+   "grounded": true
+  },
+  {
+   "op": "model distribution",
+   "canonical": "model distribution",
+   "object": "INVALID:point pattern",
+   "quote": "The similarity distribution of point pattern features of the normal sample has been modeled as a multivariate Gaussian.",
+   "grounded": true
+  },
+  {
+   "op": "learn parameters",
+   "canonical": "train",
+   "object": "distribution",
+   "quote": "Parameters learning of the proposed RFS energy does not require any heavy computation.",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Most recent works use global features for feature extraction to summarize image content.",
+   "grounded": false
+  },
+  {
+   "op": "compute anomaly score",
+   "canonical": "compute anomaly score",
+   "object": "INVALID:point pattern",
+   "quote": "We propose RFS energy, in contrast to RFS likelihood as anomaly score.",
+   "grounded": true
+  },
+  {
+   "op": "compare distribution",
+   "canonical": "compare",
+   "object": "INVALID:point pattern",
+   "quote": "The similarity distribution of point pattern features of the normal sample has been modeled as a multivariate Gaussian.",
+   "grounded": true
+  },
+  {
+   "op": "compute likelihood",
+   "canonical": "compute likelihood",
+   "object": "INVALID:point pattern",
+   "quote": "We propose RFS energy, in contrast to RFS likelihood as anomaly score.",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "We evaluate the proposed approach on the MVTec AD dataset, a multi-object defect detection dataset.",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "INVALID:point pattern",
+   "quote": "The similarity distribution of point pattern features of the normal sample has been modeled as a multivariate Gaussian.",
+   "grounded": true
+  },
+  {
+   "op": "compute gaussian parameters",
+   "canonical": "compute gaussian parameters",
+   "object": "distribution",
+   "quote": "The similarity distribution of point pattern features of the normal sample has been modeled as a multivariate Gaussian.",
+   "grounded": true
+  },
+  {
+   "op": "compute anomaly",
+   "canonical": "compute anomaly",
+   "object": "INVALID:point pattern",
+   "quote": "We propose RFS energy, in contrast to RFS likelihood as anomaly score.",
+   "grounded": true
+  },
+  {
+   "op": "compute gaussian",
+   "canonical": "compute gaussian",
+   "object": "distribution",
+   "quote": "The similarity distribution of point pattern features of the normal sample has been modeled as a multivariate Gaussian.",
+   "grounded": true
+  },
+  {
+   "op": "compute feature similarity",
+   "canonical": "compute feature similarity",
+   "object": "INVALID:point pattern",
+   "quote": "The similarity distribution of point pattern features of the normal sample has been modeled as a multivariate Gaussian.",
+   "grounded": true
+  },
+  {
+   "op": "compute feature distribution",
+   "canonical": "compute feature distribution",
+   "object": "INVALID:point pattern",
+   "quote": "The similarity distribution of point pattern features of the normal sample has been modeled as a multivariate Gaussian.",
+   "grounded": true
+  },
+  {
+   "op": "compute feature parameters",
+   "canonical": "compute feature parameters",
+   "object": "distribution",
+   "quote": "The similarity distribution of point pattern features of the normal sample has been modeled as a multivariate Gaussian.",
+   "grounded": true
+  },
+  {
+   "op": "compute feature energy",
+   "canonical": "compute feature energy",
+   "object": "INVALID:point pattern",
+   "quote": "We propose RFS energy, in contrast to RFS likelihood as anomaly score.",
+   "grounded": true
+  },
+  {
+   "op": "compute feature likelihood",
+   "canonical": "compute feature likelihood",
+   "object": "INVALID:point pattern",
+   "quote": "We propose RFS energy, in contrast to RFS likelihood as anomaly score.",
+   "grounded": true
+  },
+  {
+   "op": "compute feature score",
+   "canonical": "compute feature score",
+   "object": "INVALID:point pattern",
+   "quote": "We propose RFS energy, in contrast to RFS likelihood as anomaly score.",
+   "grounded": true
+  },
+  {
+   "op": "compute feature anomaly",
+   "canonical": "compute feature anomaly",
+   "object": "INVALID:point pattern",
+   "quote": "We propose RFS energy, in contrast to RFS likelihood as anomaly score.",
+   "grounded": true
+  },
+  {
+   "op": "compute feature distribution",
+   "canonical": "compute feature distribution",
+   "object": "INVALID:point pattern",
+   "quote": "The similarity distribution of point pattern features of the normal sample has been modeled as a multivariate Gaussian.",
+   "grounded": true
+  },
+  {
+   "op": "compute feature similarity",
+   "canonical": "compute feature similarity",
+   "object": "INVALID:point pattern",
+   "quote": "The similarity distribution of point pattern features of the normal sample has been modeled as a multivariate Gaussian.",
+   "grounded": true
+  },
+  {
+   "op": "compute feature parameters",
+   "canonical": "compute feature parameters",
+   "object": "distribution",
+   "quote": "The similarity distribution of point pattern features of the normal sample has been modeled as a multivariate Gaussian.",
+   "grounded": true
+  },
+  {
+   "op": "compute feature energy",
+   "canonical": "compute feature energy",
+   "object": "INVALID:point pattern",
+   "quote": "We propose RFS energy, in contrast to RFS likelihood as anomaly score.",
+   "grounded": true
+  },
+  {
+   "op": "compute feature likelihood",
+   "canonical": "compute feature likelihood",
+   "object": "INVALID:point pattern",
+   "quote": "We propose RFS energy, in contrast to RFS likelihood as anomaly score.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute feature parameters@distribution",
+  "compute gaussian parameters@distribution",
+  "compute gaussian@distribution",
+  "encode@input",
+  "evaluate@task",
+  "train@distribution"
+ ]
+}

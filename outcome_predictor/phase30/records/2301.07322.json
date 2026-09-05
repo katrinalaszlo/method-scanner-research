@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2301.07322",
+ "source": "abstract",
+ "words": 183,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "Transformer-based approaches have been successfully proposed for 3D human pose estimation",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "fuse",
+   "canonical": "fuse",
+   "object": "trajectory",
+   "quote": "HSTFormer consists of four transformer encoders (TEs) and a fusion module",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "HSTFormer achieves competitive and consistent performance on benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "trajectory",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "input",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "policy",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "latent",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "sample",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "gradient",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "parameter",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "noise",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "to capture multi-level joints' spatial-temporal correlations",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@distribution",
+  "backpropagate@gradient",
+  "compute@distribution",
+  "compute@error",
+  "compute@gradient",
+  "compute@input",
+  "compute@latent",
+  "compute@noise",
+  "compute@parameter",
+  "compute@policy",
+  "compute@reward",
+  "compute@sample",
+  "compute@task",
+  "compute@trajectory",
+  "compute@value",
+  "correct@parameter",
+  "encode@state",
+  "fuse@trajectory",
+  "predict@distribution",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "transform@latent"
+ ]
+}

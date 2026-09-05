@@ -1,0 +1,73 @@
+{
+ "arxiv_id": "2012.07176",
+ "source": "abstract",
+ "words": 177,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 5,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "select pseudo shots",
+   "canonical": "select pseudo shots",
+   "object": "task",
+   "quote": "we automatically select pseudo shots, which are labeled examples from other classes related to the target task",
+   "grounded": true
+  },
+  {
+   "op": "compute semantic similarity",
+   "canonical": "compute semantic similarity",
+   "object": "INVALID:class",
+   "quote": "given a large auxiliary dataset and a notion of semantic similarity among classes",
+   "grounded": true
+  },
+  {
+   "op": "adjust features",
+   "canonical": "correct",
+   "object": "INVALID:auxiliary data",
+   "quote": "we propose a masking module that adjusts the features of auxiliary data to be more similar to those of the target classes",
+   "grounded": true
+  },
+  {
+   "op": "mask features",
+   "canonical": "mask",
+   "object": "INVALID:auxiliary data",
+   "quote": "we propose a masking module that adjusts the features of auxiliary data to be more similar to those of the target classes",
+   "grounded": true
+  },
+  {
+   "op": "compare features",
+   "canonical": "compare",
+   "object": "INVALID:target class",
+   "quote": "we propose a masking module that adjusts the features of auxiliary data to be more similar to those of the target classes",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "we show that naive approaches ... only increase accuracy by a modest amount",
+   "grounded": false
+  },
+  {
+   "op": "compute percentage points",
+   "canonical": "compute percentage points",
+   "object": "INVALID:accuracy",
+   "quote": "we show that this masking module performs better ... by 4.68 and 6.03 percentage points, respectively",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we show that this masking module performs better than naively modeling the support examples and transfer learning",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute accuracy@task",
+  "evaluate@task",
+  "select pseudo shots@task"
+ ]
+}

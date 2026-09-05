@@ -1,0 +1,203 @@
+{
+ "arxiv_id": "2310.16288",
+ "source": "abstract",
+ "words": 186,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "Recent transformer-based approaches have demonstrated excellent performance in 3D human pose estimation.",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "Our proposed GCNFormer module exploits the local relationship between adjacent joints.",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "By fusing these two representation in an adaptive way, AGFormer exhibits the ability to better learn the underlying 3D structure.",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "By stacking multiple AGFormer blocks, we propose MotionAGFormer in four different variants.",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "MotionAGFormer-B achieves state-of-the-art results, with P1 errors of 38.4mm and 16.2mm, respectively.",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "MotionAGFormer-B achieves state-of-the-art results, with P1 errors of 38.4mm and 16.2mm, respectively.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Remarkably, it uses a quarter of the parameters and is three times more computationally efficient than the previous leading model on Human3.6M dataset.",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "Our proposed GCNFormer module exploits the local relationship between adjacent joints.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "MotionAGFormer-B achieves state-of-the-art results, with P1 errors of 38.4mm and 16.2mm, respectively.",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "By stacking multiple AGFormer blocks, we propose MotionAGFormer in four different variants.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "MotionAGFormer-B achieves state-of-the-art results, with P1 errors of 38.4mm and 16.2mm, respectively.",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "state",
+   "quote": "MotionAGFormer-B achieves state-of-the-art results, with P1 errors of 38.4mm and 16.2mm, respectively.",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "state",
+   "quote": "Our proposed GCNFormer module exploits the local relationship between adjacent joints.",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "state",
+   "quote": "By stacking multiple AGFormer blocks, we propose MotionAGFormer in four different variants.",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "state",
+   "quote": "MotionAGFormer-B achieves state-of-the-art results, with P1 errors of 38.4mm and 16.2mm, respectively.",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "state",
+   "quote": "Our proposed GCNFormer module exploits the local relationship between adjacent joints.",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "state",
+   "quote": "MotionAGFormer-B achieves state-of-the-art results, with P1 errors of 38.4mm and 16.2mm, respectively.",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "state",
+   "quote": "By stacking multiple AGFormer blocks, we propose MotionAGFormer in four different variants.",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "state",
+   "quote": "Recent transformer-based approaches have demonstrated excellent performance in 3D human pose estimation.",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "state",
+   "quote": "MotionAGFormer-B achieves state-of-the-art results, with P1 errors of 38.4mm and 16.2mm, respectively.",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "state",
+   "quote": "Our proposed GCNFormer module exploits the local relationship between adjacent joints.",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "MotionAGFormer-B achieves state-of-the-art results, with P1 errors of 38.4mm and 16.2mm, respectively.",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "state",
+   "quote": "MotionAGFormer-B achieves state-of-the-art results, with P1 errors of 38.4mm and 16.2mm, respectively.",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "state",
+   "quote": "Remarkably, it uses a quarter of the parameters and is three times more computationally efficient than the previous leading model on Human3.6M dataset.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "backpropagate@gradient",
+  "compare@state",
+  "compute distribution@state",
+  "compute gradient@state",
+  "compute input@state",
+  "compute latent@state",
+  "compute noise@state",
+  "compute parameter@state",
+  "compute policy@state",
+  "compute reward@state",
+  "compute sample@state",
+  "compute task@state",
+  "compute trajectory@state",
+  "compute value@state",
+  "correct@parameter",
+  "encode@state",
+  "predict@state",
+  "reconstruct@state",
+  "sample@state",
+  "transform@state"
+ ]
+}

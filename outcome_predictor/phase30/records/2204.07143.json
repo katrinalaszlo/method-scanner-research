@@ -1,0 +1,110 @@
+{
+ "arxiv_id": "2204.07143",
+ "source": "abstract",
+ "words": 192,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 12,
+ "n_invalid_object": 0,
+ "n_grounded": 11,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "state",
+   "quote": "localizing self attention (SA) to the nearest neighboring pixels",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "sliding-window attention mechanism for vision",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "NATTEN (Neighborhood Attention Extension), a Python package with efficient C++ and CUDA kernels",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "NATTEN allows NA to run up to 40% faster than Swin's WSA",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "using up to 25% less memory",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Neighborhood Attention Transformer (NAT), a new hierarchical transformer design",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "boosts image classification and downstream vision performance",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "Experimental results on NAT are competitive",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "NAT-Tiny reaches 83.2% top-1 accuracy on ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "which is 1.9% ImageNet accuracy, 1.0% COCO mAP, and 2.6% ADE20K mIoU improvement over a Swin model",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "To support more research based on sliding-window attention",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we open source our project and release our checkpoints at: https://github.com/SHI-Labs/Neighborhood-Attention-Transformer",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@latent",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute attention@state",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute value@value",
+  "correct@parameter",
+  "predict@reward",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2501.14593",
+ "source": "abstract",
+ "words": 184,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "aggregate pairwise",
+   "canonical": "aggregate",
+   "object": "sample",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "distribution",
+   "quote": "to embed discriminative metric into deep features",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute feature",
+   "canonical": "compute feature",
+   "object": "latent",
+   "quote": "to embed discrimin,ative metric into deep features",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "noise",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the proposed method leverages geometric mean to aggregate pair-wise relationships among samples",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@sample",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute feature@latent",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute metric@distribution",
+  "compute noise@noise",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "sample@input"
+ ]
+}

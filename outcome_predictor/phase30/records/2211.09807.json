@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2211.09807",
+ "source": "abstract",
+ "words": 190,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 0,
+ "ops": [
+  {
+   "op": "compute mutual information",
+   "canonical": "compute mutual information",
+   "object": "distribution",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "estimate mutual information",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "maximize mutual information",
+   "canonical": "maximize mutual information",
+   "object": "distribution",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate error",
+   "canonical": "backpropagate error",
+   "object": "gradient",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "we propose a general multi-modal mutual information formula",
+   "grounded": false
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we achieve better performance than previous pre-training methods",
+   "grounded": false
+  },
+  {
+   "op": "track progress",
+   "canonical": "track progress",
+   "object": "task",
+   "quote": "we achieve better performance than previous pre-training methods",
+   "grounded": false
+  },
+  {
+   "op": "log results",
+   "canonical": "log results",
+   "object": "task",
+   "quote": "we achieve better performance than previous pre-training methods",
+   "grounded": false
+  },
+  {
+   "op": "save model",
+   "canonical": "save model",
+   "object": "parameter",
+   "quote": "we achieve better performance than previous pre-training methods",
+   "grounded": false
+  },
+  {
+   "op": "load model",
+   "canonical": "load model",
+   "object": "parameter",
+   "quote": "we achieve better performance than previous pre-training methods",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "we achieve better performance than previous pre-training methods",
+   "grounded": false
+  },
+  {
+   "op": "compute metrics",
+   "canonical": "compute metrics",
+   "object": "task",
+   "quote": "we achieve better performance than previous pre-training methods",
+   "grounded": false
+  },
+  {
+   "op": "compute benchmark",
+   "canonical": "compute benchmark",
+   "object": "task",
+   "quote": "we achieve better performance than previous pre-training methods",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate error@gradient",
+  "compare@error",
+  "compute accuracy@task",
+  "compute benchmark@task",
+  "compute gradient@parameter",
+  "compute metrics@task",
+  "compute mutual information@distribution",
+  "compute value@value",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "evaluate@task",
+  "improve@parameter",
+  "load model@parameter",
+  "log results@task",
+  "maximize mutual information@distribution",
+  "predict@distribution",
+  "process input@input",
+  "reconstruct@distribution",
+  "sample@input",
+  "save model@parameter",
+  "track progress@task",
+  "train@parameter"
+ ]
+}

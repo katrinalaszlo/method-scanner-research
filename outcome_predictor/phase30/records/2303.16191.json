@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2303.16191",
+ "source": "abstract",
+ "words": 237,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute prototype",
+   "canonical": "compute prototype",
+   "object": "state",
+   "quote": "mutually matching the pixel-level prototypes within the patch-level search spaces",
+   "grounded": true
+  },
+  {
+   "op": "match prototype",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "mutually matching the pixel-level prototypes within the patch-level search spaces",
+   "grounded": true
+  },
+  {
+   "op": "select cluster centre",
+   "canonical": "select cluster centre",
+   "object": "state",
+   "quote": "PTS selects cluster centres and hard-normal examples",
+   "grounded": true
+  },
+  {
+   "op": "select hard-normal example",
+   "canonical": "select hard-normal example",
+   "object": "state",
+   "quote": "PTS selects cluster centres and hard-normal examples",
+   "grounded": true
+  },
+  {
+   "op": "build decision boundary",
+   "canonical": "build decision boundary",
+   "object": "state",
+   "quote": "build a robust prototype-based decision boundary",
+   "grounded": true
+  },
+  {
+   "op": "insert novel sample",
+   "canonical": "insert novel sample",
+   "object": "state",
+   "quote": "hot-updated by directly inserting novel samples into the template set",
+   "grounded": true
+  },
+  {
+   "op": "compute affine transformation",
+   "canonical": "compute affine transformation",
+   "object": "state",
+   "quote": "mitigate the affection brought by the affine transformations",
+   "grounded": true
+  },
+  {
+   "op": "compare prototype",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "accurately distinguish between hard-normal examples and anomalies",
+   "grounded": true
+  },
+  {
+   "op": "update template set",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "PTS selects cluster centres and hard-normal examples",
+   "grounded": true
+  },
+  {
+   "op": "compress template set",
+   "canonical": "compress template set",
+   "object": "state",
+   "quote": "PTS selects cluster and hard-normal examples to preserve the original decision boundary",
+   "grounded": false
+  },
+  {
+   "op": "compute decision boundary",
+   "canonical": "compute decision boundary",
+   "object": "state",
+   "quote": "build a robust prototype-based decision boundary",
+   "grounded": true
+  },
+  {
+   "op": "detect anomaly",
+   "canonical": "detect anomaly",
+   "object": "state",
+   "quote": "detect and localize unknown defects in query images",
+   "grounded": true
+  },
+  {
+   "op": "compute false-positive rate",
+   "canonical": "compute false-positive rate",
+   "object": "state",
+   "quote": "achieving low false-positive and missed-detection rates",
+   "grounded": true
+  },
+  {
+   "op": "compute missed-detection rate",
+   "canonical": "compute missed-detection rate",
+   "object": "state",
+   "quote": "achieving low false-positive and missed-detection rates",
+   "grounded": true
+  },
+  {
+   "op": "compute inference speed",
+   "canonical": "compute inference speed",
+   "object": "state",
+   "quote": "achieve competitive performance and real-time inference speed",
+   "grounded": true
+  },
+  {
+   "op": "compute fps",
+   "canonical": "compute fps",
+   "object": "state",
+   "quote": "achieve competitive performance and real-time inference speed",
+   "grounded": true
+  },
+  {
+   "op": "compute performance",
+   "canonical": "compute performance",
+   "object": "state",
+   "quote": "achieve competitive performance and real-time inference speed",
+   "grounded": true
+  },
+  {
+   "op": "compute template set",
+   "canonical": "compute template set",
+   "object": "state",
+   "quote": "build a robust prototype-based decision boundary",
+   "grounded": true
+  },
+  {
+   "op": "compute cluster centre",
+   "canonical": "compute cluster centre",
+   "object": "state",
+   "quote": "PTS selects cluster centres and hard-normal examples",
+   "grounded": true
+  },
+  {
+   "op": "compute hard-normal example",
+   "canonical": "compute hard-normal example",
+   "object": "state",
+   "quote": "PTS selects cluster centres and hard-normal examples",
+   "grounded": true
+  },
+  {
+   "op": "compute cluster",
+   "canonical": "compute cluster",
+   "object": "state",
+   "quote": "PTS selects cluster centres and hard-normal examples",
+   "grounded": true
+  },
+  {
+   "op": "compute prototype set",
+   "canonical": "compute prototype set",
+   "object": "state",
+   "quote": "build a robust prototype-based decision boundary",
+   "grounded": true
+  },
+  {
+   "op": "compute patch-level search space",
+   "canonical": "compute patch-level search space",
+   "object": "state",
+   "quote": "mutually matching the pixel-level prototypes within the patch-level search spaces",
+   "grounded": true
+  },
+  {
+   "op": "compute pixel-level prototype",
+   "canonical": "compute pixel-level prototype",
+   "object": "state",
+   "quote": "mutually matching the pixel-level prototypes within the patch-level search spaces",
+   "grounded": true
+  },
+  {
+   "op": "compute patch-level search",
+   "canonical": "compute patch-level search",
+   "object": "state",
+   "quote": "mutually matching the pixel-level prototypes within the patch-level search spaces",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "build decision boundary@state",
+  "compare@state",
+  "compress template set@state",
+  "compute affine transformation@state",
+  "compute cluster centre@state",
+  "compute cluster@state",
+  "compute decision boundary@state",
+  "compute false-positive rate@state",
+  "compute fps@state",
+  "compute hard-normal example@state",
+  "compute inference speed@state",
+  "compute missed-detection rate@state",
+  "compute patch-level search space@state",
+  "compute patch-level search@state",
+  "compute performance@state",
+  "compute pixel-level prototype@state",
+  "compute prototype set@state",
+  "compute prototype@state",
+  "compute template set@state",
+  "correct@state",
+  "detect anomaly@state",
+  "insert novel sample@state",
+  "select cluster centre@state",
+  "select hard-normal example@state"
+ ]
+}

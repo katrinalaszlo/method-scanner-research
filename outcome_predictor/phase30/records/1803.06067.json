@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1803.06067",
+ "source": "abstract",
+ "words": 250,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "construct graph",
+   "canonical": "construct graph",
+   "object": "state",
+   "quote": "builds a semantic neuron graph by explicitly incorporating the semantic concept hierarchy into network construction",
+   "grounded": false
+  },
+  {
+   "op": "activate sub-graph",
+   "canonical": "activate sub-graph",
+   "object": "state",
+   "quote": "only activating a sub-graph of neurons for each image in a principled way",
+   "grounded": true
+  },
+  {
+   "op": "propagate knowledge",
+   "canonical": "transmit",
+   "object": "latent",
+   "quote": "propagate the learned knowledge of all ancestor neurons into each fine-grained child neuron for feature evolving",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learning a unified model concurrently on diverse datasets by selectively activating different neuron sub-graphs for each annotation at each step",
+   "grounded": false
+  },
+  {
+   "op": "compute features",
+   "canonical": "compute features",
+   "object": "latent",
+   "quote": "dense semantic-enhanced neural block is proposed to propagate the learned knowledge of all ancestor neurons into each fine-grained child neuron for feature evolving",
+   "grounded": true
+  },
+  {
+   "op": "select sub-graph",
+   "canonical": "select sub-graph",
+   "object": "task",
+   "quote": "learning a unified model concurrently on diverse datasets by selectively activating different neuron sub-graphs for each annotation at each step",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "Extensive experiments on four public semantic segmentation datasets demonstrate the superiority of our DSSPN over state-of-the-art segmentation models",
+   "grounded": false
+  },
+  {
+   "op": "segment image",
+   "canonical": "segment image",
+   "object": "input",
+   "quote": "we demonstrate a universal segmentation model that is jointly trained on diverse datasets can surpass the performance of the common fine-tuning scheme for exploiting multiple domain knowledge",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "activate sub-graph@state",
+  "compute features@latent",
+  "construct graph@state",
+  "correct@parameter",
+  "segment image@input",
+  "select sub-graph@task",
+  "train@parameter",
+  "transmit@latent"
+ ]
+}

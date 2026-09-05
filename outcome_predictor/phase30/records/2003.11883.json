@@ -1,0 +1,72 @@
+{
+ "arxiv_id": "2003.11883",
+ "source": "abstract",
+ "words": 188,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 6,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "connect cells",
+   "canonical": "connect cells",
+   "object": "INVALID:cell",
+   "quote": "by connecting cells with each other using learnable weights",
+   "grounded": true
+  },
+  {
+   "op": "sample path",
+   "canonical": "sample",
+   "object": "INVALID:path",
+   "quote": "combining both path-level and channel-level sampling strategies",
+   "grounded": true
+  },
+  {
+   "op": "sample channel",
+   "canonical": "sample",
+   "object": "INVALID:channel",
+   "quote": "combining both path-level and channel-level sampling strategies",
+   "grounded": true
+  },
+  {
+   "op": "fusion module",
+   "canonical": "fusion module",
+   "object": "INVALID:module",
+   "quote": "design a fusion module to reduce the memory consumption",
+   "grounded": true
+  },
+  {
+   "op": "search network",
+   "canonical": "search network",
+   "object": "parameter",
+   "quote": "directly searches the optimal network structures",
+   "grounded": true
+  },
+  {
+   "op": "generate architecture",
+   "canonical": "reconstruct",
+   "object": "INVALID:architecture",
+   "quote": "obtains the architecture from our DCNAS algorithm",
+   "grounded": false
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "INVALID:performance",
+   "quote": "demonstrate that the architecture achieves state-of-the-art performances",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "search the optimal network structures for the multi-scale representations",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "evaluate@error",
+  "search network@parameter"
+ ]
+}

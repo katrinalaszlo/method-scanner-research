@@ -1,0 +1,69 @@
+{
+ "arxiv_id": "2008.03791",
+ "source": "abstract",
+ "words": 223,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 8,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute activation",
+   "canonical": "compute activation",
+   "object": "INVALID:joint",
+   "quote": "the activation degrees of skeleton joints of each GCN stream are measured by the class activation maps (CAM)",
+   "grounded": true
+  },
+  {
+   "op": "pass information",
+   "canonical": "transmit",
+   "object": "INVALID:joint",
+   "quote": "only the information from the unactivated joints will be passed to the next stream",
+   "grounded": true
+  },
+  {
+   "op": "learn feature",
+   "canonical": "train",
+   "object": "INVALID:joint",
+   "quote": "learning discriminative features from the joints less activated by preceding streams",
+   "grounded": true
+  },
+  {
+   "op": "aggregate feature",
+   "canonical": "aggregate",
+   "object": "INVALID:joint",
+   "quote": "the backbone GCN is extended by a series of ordered streams",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "INVALID:skeleton",
+   "quote": "explore sufficient discriminative features spreading over all skeleton joints",
+   "grounded": true
+  },
+  {
+   "op": "combine feature",
+   "canonical": "aggregate",
+   "object": "INVALID:joint",
+   "quote": "rich features over all active joints are obtained",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "INVALID:graph",
+   "quote": "multi-stream graph convolutional network (GCN) is proposed",
+   "grounded": true
+  },
+  {
+   "op": "compute class map",
+   "canonical": "compute class map",
+   "object": "INVALID:joint",
+   "quote": "the activation degrees of skeleton joints of each GCN stream are measured by the class activation maps (CAM)",
+   "grounded": true
+  }
+ ],
+ "tuples": []
+}

@@ -1,0 +1,197 @@
+{
+ "arxiv_id": "2005.04966",
+ "source": "abstract",
+ "words": 146,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 23,
+ "n_invalid_object": 0,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we introduce prototypes as latent variables",
+   "grounded": true
+  },
+  {
+   "op": "cluster",
+   "canonical": "cluster",
+   "object": "latent",
+   "quote": "E-step as finding the distribution of prototypes via clustering",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "M-step as optimizing the network via contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we propose ProtoNCE loss, a generalized version of the InfoNCE loss",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "M-step as optimizing the network via contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "assign prototype",
+   "canonical": "assign prototype",
+   "object": "latent",
+   "quote": "encourages representations to be closer to their assigned prototypes",
+   "grounded": true
+  },
+  {
+   "op": "contrast",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "we propose ProtoNCE loss, a generalized version of the Info. InfoNCE loss for contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "E-step as finding the distribution of prototypes via clustering",
+   "grounded": true
+  },
+  {
+   "op": "maximize likelihood",
+   "canonical": "maximize likelihood",
+   "object": "parameter",
+   "quote": "helps find the maximum-likelihood estimation of the network parameters",
+   "grounded": false
+  },
+  {
+   "op": "sample prototype",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "E-step as finding the distribution of prototypes via clustering",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "ProtoNCE loss encourages representations to be closer to their assigned prototypes",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "M-step as optimizing the network via contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "M-step as optimizing the network via contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "update gradient",
+   "canonical": "correct",
+   "object": "gradient",
+   "quote": "M-step as optimizing the network via contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "ProtoNCE loss encourages representations to be closer to their assigned prototypes",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "implicitly encodes semantic structures of the data into the learned embedding space",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "learns low-level features for the task of instance discrimination",
+   "grounded": true
+  },
+  {
+   "op": "learn representation",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "implicitly encodes semantic structures of the data into the learned embedding space",
+   "grounded": true
+  },
+  {
+   "op": "compute prototype",
+   "canonical": "compute prototype",
+   "object": "latent",
+   "quote": "E-step as finding the distribution of prototypes via clustering",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "PCL outperforms state-of-the-art instance-wise contrastive learning methods",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "ProtoNCE loss encourages representations to be closer to their assigned prototypes",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "ProtoNCE loss encourages representations to be closer to their assigned prototypes",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "PCL outperforms state-of-the-art instance-wise contrastive learning methods",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "assign prototype@latent",
+  "backpropagate@gradient",
+  "cluster@latent",
+  "compare@error",
+  "compare@latent",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute prototype@latent",
+  "compute reward@reward",
+  "compute similarity@latent",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@gradient",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "improve@parameter",
+  "maximize likelihood@parameter",
+  "reconstruct@latent",
+  "sample@latent",
+  "train@latent"
+ ]
+}

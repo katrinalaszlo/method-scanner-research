@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2103.11816",
+ "source": "abstract",
+ "words": 242,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "tokenize input",
+   "canonical": "tokenize input",
+   "object": "input",
+   "quote": "instead of the straightforward tokenization from raw input images",
+   "grounded": true
+  },
+  {
+   "op": "extract patches",
+   "canonical": "extract patches",
+   "object": "latent",
+   "quote": "we design an Image-to-Tokens (I2T) module that extracts patches from generated low-level features",
+   "grounded": false
+  },
+  {
+   "op": "generate low-level features",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we design an Image-to-Tokens (I2T) module that extracts patches from generated low-level features",
+   "grounded": false
+  },
+  {
+   "op": "process tokens",
+   "canonical": "process tokens",
+   "object": "latent",
+   "quote": "the feed-froward network in each encoder block is replaced with a Locally-enhanced Feed-Forward (LeFF) layer",
+   "grounded": true
+  },
+  {
+   "op": "enhance spatial correlation",
+   "canonical": "enhance spatial correlation",
+   "object": "latent",
+   "quote": "the feed-froward network in each encoder block is replaced with a Locally-enhanced Feed-Forward (LeFF) layer",
+   "grounded": true
+  },
+  {
+   "op": "apply attention mechanism",
+   "canonical": "apply attention mechanism",
+   "object": "latent",
+   "quote": "a Layer-wise Class token Attention (LCA) is attached at the top of the Transformer",
+   "grounded": false
+  },
+  {
+   "op": "utilize multi-level representations",
+   "canonical": "utilize multi-level representations",
+   "object": "latent",
+   "quote": "a Layer-wise Class token Attention (LCA) is attached at the top of the Transformer",
+   "grounded": false
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "distribution",
+   "quote": "a Layer-wise Class token Attention (LCA) is attached at the top of the Transformer",
+   "grounded": false
+  },
+  {
+   "op": "aggregate attention weights",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "a Layer-wise Class token Attention (LCA) is attached at the top of the Transformer",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the feed-froward network in each encoder block is replaced with a Locally-enhanced Feed-Forward (LeFF) layer",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the feed-froward network in each encoder block is replaced with a Locally-enhanced Feed-Forward (LeFF) layer",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate gradients",
+   "canonical": "backpropagate gradients",
+   "object": "gradient",
+   "quote": "the feed-froward network in each encoder block is replaced with a Locally-enhanced Feed-Forward (LeFF) layer",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "the feed-froward network in each encoder block is replaced with a Locally-enhanced Feed-Forward (LeFF) layer",
+   "grounded": true
+  },
+  {
+   "op": "predict class token",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "a Layer-wise Class token Attention (LCA) is attached at the top of the Transformer",
+   "grounded": false
+  },
+  {
+   "op": "compute class token representation",
+   "canonical": "compute class token representation",
+   "object": "latent",
+   "quote": "a Layer-wise Class token Attention (LCA) is attached at the top of the Transformer",
+   "grounded": false
+  },
+  {
+   "op": "apply class token attention",
+   "canonical": "apply class token attention",
+   "object": "latent",
+   "quote": "a Layer-wise Class token Attention (LCA) is attached at the top of the Transformer",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "a Layer-wise Class token Attention (LCA) is attached at the top of the Transformer",
+   "grounded": false
+  },
+  {
+   "op": "compute final representation",
+   "canonical": "compute final representation",
+   "object": "latent",
+   "quote": "a Layer-wise Class token Attention (LCA) is attached at the top of the Transformer",
+   "grounded": false
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Experimental results on ImageNet and seven downstream tasks show the effectiveness and generalization ability of CeiT",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "Experimental results on ImageNet and seven downstream tasks show the effectiveness and generalization ability of CeiT",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention mechanism@latent",
+  "apply class token attention@latent",
+  "backpropagate gradients@gradient",
+  "compare@task",
+  "compute attention weights@distribution",
+  "compute class token representation@latent",
+  "compute final representation@latent",
+  "correct@parameter",
+  "enhance spatial correlation@latent",
+  "evaluate@error",
+  "evaluate@task",
+  "extract patches@latent",
+  "improve@parameter",
+  "predict@latent",
+  "process tokens@latent",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "tokenize input@input",
+  "utilize multi-level representations@latent"
+ ]
+}

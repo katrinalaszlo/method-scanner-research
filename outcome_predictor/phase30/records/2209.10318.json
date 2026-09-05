@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2209.10318",
+ "source": "abstract",
+ "words": 123,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "embed the features of a point cloud classifier into the hyperbolic space",
+   "grounded": true
+  },
+  {
+   "op": "regularize",
+   "canonical": "regularize",
+   "object": "latent",
+   "quote": "explicitly regularize the space to account for the part-whole hierarchy",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "project",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "embed the features of a point cloud classifier into the hyperblicity space",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "substantial improvements in the performance of state-of-art supervised models",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@value",
+  "project@latent",
+  "reconstruct@noise",
+  "regularize@latent",
+  "sample@sample"
+ ]
+}

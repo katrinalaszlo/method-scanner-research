@@ -1,0 +1,218 @@
+{
+ "arxiv_id": "2308.12966",
+ "source": "abstract",
+ "words": 150,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 1,
+ "n_grounded": 26,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "we endow it with visual capacity by the meticulously designed",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we endow it with visual capacity by the meticulously designed",
+   "grounded": true
+  },
+  {
+   "op": "align input",
+   "canonical": "align input",
+   "object": "input",
+   "quote": "aligning image-caption-box tuples",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "3-stage training pipeline",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "3-stage training pipeline",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "aligning image-caption-box tuples",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we endow it with visual capacity by the meticulously designed",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "we endow it with visual capacity by the meticulously designed",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "3-stage training pipeline",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "aligning image-caption-box tuples",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "we endow it with visual capacity by the meticulously designed",
+   "grounded": true
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "INVALID:output",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we implement the grounding and text-reading ability",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align input@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@value",
+  "process input@input",
+  "reconstruct@distribution",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

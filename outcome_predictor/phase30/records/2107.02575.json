@@ -1,0 +1,169 @@
+{
+ "arxiv_id": "2107.02575",
+ "source": "abstract",
+ "words": 195,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 1,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we propose a novel contrastive learning objective",
+   "grounded": true
+  },
+  {
+   "op": "contrast tuples",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "we propose a novel contrastive learning objective",
+   "grounded": true
+  },
+  {
+   "op": "generate positive samples",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "we propose a sample optimization algorithm to generate positive and negative samples",
+   "grounded": true
+  },
+  {
+   "op": "generate negative samples",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "we propose a sample optimization algorithm to generate positive and negative samples",
+   "grounded": true
+  },
+  {
+   "op": "compute mutual information",
+   "canonical": "compute mutual information",
+   "object": "error",
+   "quote": "we provide a theoretical justification based on mutual information",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "representation learning of multimodal data",
+   "grounded": true
+  },
+  {
+   "op": "contrast positive correspondences",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "contrast positive and negative tuple correspondences",
+   "grounded": true
+  },
+  {
+   "op": "contrast negative correspondences",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "contrast positive and negative tuple correspondences",
+   "grounded": true
+  },
+  {
+   "op": "compose new negative tuples",
+   "canonical": "compose new negative tuples",
+   "object": "INVALID:tuple",
+   "quote": "composing new negative tuples using modalities describing different scenes",
+   "grounded": true
+  },
+  {
+   "op": "examine correspondences",
+   "canonical": "examine correspondences",
+   "object": "distribution",
+   "quote": "ensuring that weak modalities are not ignored",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "training with these additional negatives encourages the learning model",
+   "grounded": true
+  },
+  {
+   "op": "sample modalities",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "composing new negative tuples using modalities describing different scenes",
+   "grounded": true
+  },
+  {
+   "op": "compute tuple correspondences",
+   "canonical": "compute tuple correspondences",
+   "object": "distribution",
+   "quote": "contrast positive and negative tuple correspondences",
+   "grounded": true
+  },
+  {
+   "op": "maximize training efficacy",
+   "canonical": "maximize training efficacy",
+   "object": "error",
+   "quote": "we propose a sample optimization algorithm to generate positive and negative samples",
+   "grounded": true
+  },
+  {
+   "op": "learn representations",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "representation learning of multimodal data",
+   "grounded": true
+  },
+  {
+   "op": "contrast modalities",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "contrast tuples based not only on positive and negative correspondences",
+   "grounded": false
+  },
+  {
+   "op": "ignore weak modalities",
+   "canonical": "ignore weak modalities",
+   "object": "task",
+   "quote": "ensuring that weak modalities are not ignored",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "training with these additional negatives encourages the learning model",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we find that TupleInfoNCE significantly outperforms the previous state of the arts",
+   "grounded": true
+  },
+  {
+   "op": "compare tasks",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "we find that TupleInfo, NCE significantly outperforms the previous state of the arts",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compare@distribution",
+  "compare@task",
+  "compute mutual information@error",
+  "compute tuple correspondences@distribution",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "evaluate@task",
+  "examine correspondences@distribution",
+  "ignore weak modalities@task",
+  "maximize training efficacy@error",
+  "reconstruct@sample",
+  "sample@sample",
+  "train@latent",
+  "train@parameter"
+ ]
+}

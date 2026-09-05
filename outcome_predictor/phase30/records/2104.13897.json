@@ -1,0 +1,133 @@
+{
+ "arxiv_id": "2104.13897",
+ "source": "abstract",
+ "words": 171,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 15,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "train deep convolutional autoencoders to inpaint covered parts of an image",
+   "grounded": true
+  },
+  {
+   "op": "inpaint",
+   "canonical": "inpaint",
+   "object": "latent",
+   "quote": "train to inpaint covered patches in a large sequence of image patches",
+   "grounded": false
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "compare the output with the original image",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "pose anomaly detection as a patch-inpainting problem",
+   "grounded": true
+  },
+  {
+   "op": "attend",
+   "canonical": "attend",
+   "object": "latent",
+   "quote": "solve it with a purely self-attention based approach",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "integrating information across large regions of the input image",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "the model is assumed to not being able to reconstruct anomalous regions properly",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "compare the output with the original image",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train to inpaint covered patches in a large sequence of image patches",
+   "grounded": false
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "pose anomaly detection as a patch-inpainting problem",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "train to inpaint covered patches in a large sequence of image patches",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "input",
+   "quote": "the model is assumed to not being able to reconstruct anomalous regions properly",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "pose anomaly detection as a patch-inpaint, problem",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "input",
+   "quote": "the model is assumed to not being able to reconstruct anomalous regions properly",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "input",
+   "quote": "train deep convolutional autoencoders to inpaint covered parts of an image",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "attend@latent",
+  "compare@input",
+  "compute distribution@latent",
+  "compute reward@input",
+  "compute task@input",
+  "compute value@input",
+  "correct@parameter",
+  "encode@input",
+  "inpaint@latent",
+  "predict@latent",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "sample@latent"
+ ]
+}

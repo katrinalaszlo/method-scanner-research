@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2108.06076",
+ "source": "abstract",
+ "words": 184,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "we present Sparse Window Attention (SWA} module",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "gather coarse-grained local features from non-empty voxels",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "Sparse Window Attention (SWA} module",
+   "grounded": false
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "obtains linear computational complexity with respect to voxel resolution",
+   "grounded": true
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "latent",
+   "quote": "relative attention (RA) module, a more robust self-attention variant for rigid transformations",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "integrate both modules into a joint framework",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "attains top accuracy of 94.0% on classification benchmark",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "extensive experiments also valid the effectiveness of PVT",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply transformation@latent",
+  "compute attention@latent",
+  "encode@input",
+  "evaluate@error",
+  "process input@input",
+  "reconstruct@latent"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1909.11065",
+ "source": "abstract",
+ "words": 210,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we learn object regions under the supervision of ground-truth segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute object region representation",
+   "canonical": "compute object region representation",
+   "object": "latent",
+   "quote": "we compute the object region representation by aggregating the representations of the pixels lying in the object region",
+   "grounded": true
+  },
+  {
+   "op": "compute representation similarity",
+   "canonical": "compute representation similarity",
+   "object": "latent",
+   "quote": "the representation similarity we compute the relation between each pixel and each object region",
+   "grounded": true
+  },
+  {
+   "op": "augment pixel representation",
+   "canonical": "augment",
+   "object": "latent",
+   "quote": "augment the representation of each pixel with the object-contextual representation",
+   "grounded": true
+  },
+  {
+   "op": "weighted aggregation",
+   "canonical": "weighted aggregation",
+   "object": "latent",
+   "quote": "object-contextual representation which is a weighted aggregation of all the object region representations",
+   "grounded": true
+  },
+  {
+   "op": "predict segmentation",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "semantic segmentation problem",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the label of a pixel is the category of the object that the pixel belongs to",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we rephrase the object-contextual representation scheme using the Transformer encoder-decoder framework",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "augment@latent",
+  "compute object region representation@latent",
+  "compute representation similarity@latent",
+  "correct@parameter",
+  "encode@input",
+  "predict@distribution",
+  "sample@action",
+  "weighted aggregation@latent"
+ ]
+}

@@ -1,0 +1,171 @@
+{
+ "arxiv_id": "2207.13259",
+ "source": "abstract",
+ "words": 204,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "shift patches",
+   "canonical": "shift patches",
+   "object": "state",
+   "quote": "shifts part of patches with a specific mosaic pattern in the temporal dimension",
+   "grounded": true
+  },
+  {
+   "op": "compute self-attention",
+   "canonical": "compute self-attention",
+   "object": "latent",
+   "quote": "compute 3D self-attention using nearly the same computation and memory cost as 2D self-attention",
+   "grounded": true
+  },
+  {
+   "op": "apply self-attention",
+   "canonical": "apply self-attention",
+   "object": "state",
+   "quote": "directly applying spatiotemp, self-attention on video data will bring heavy computation and memory burdens",
+   "grounded": false
+  },
+  {
+   "op": "model spatiotemporal features",
+   "canonical": "model spatiotemporal features",
+   "object": "latent",
+   "quote": "enhance spatiotemporal feature learning",
+   "grounded": true
+  },
+  {
+   "op": "process video data",
+   "canonical": "process video data",
+   "object": "input",
+   "quote": "directly applying spatiotemporal transformers on video data will bring heavy computation and memory burdens",
+   "grounded": true
+  },
+  {
+   "op": "transform input",
+   "canonical": "transform input",
+   "object": "input",
+   "quote": "convert a vanilla spatial self-attention operation to a spatiotemporal one",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "TPS is a plug-and-play module and can be inserted into existing 2D transformer models",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "achieves competitive performance with state-of-the-arts on Something-something V1 & V2",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the proposed method achieves competitive performance with state-of-the-arts on Something-something V1 & V2",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the proposed method achieves competitive performance with state-of-the-arts on Something-something V1 & V2",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "achieves competitive performance with state-of-the-arts on Something-something V1 & V2",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "achieves competitive performance with state-of-the-arts on Something-something V1 & V2",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the proposed method achieves competitive performance with state-of-the-arts on Something-something V1 & V2",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "achieves competitive performance with state-of-the-arts on Something-something V1 & V2",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "compute 3D self-attention using nearly the same computation and memory cost as 2D self-attention",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "compute 3D self-attention using nearly the same computation and memory cost as 2D self-attention",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "compute 3D self-attention using nearly the same computation and memory cost as 2D self-attention",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "compute 3D self-attention using nearly the same computation and memory cost as 2D self-attention",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "compute 3D self-attention using nearly the same computation and memory cost as 2D self-attention",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "compute 3D self-attention using nearly the same computation and memory cost as 2D self-attention",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply self-attention@state",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compute reward@reward",
+  "compute self-attention@latent",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "model spatiotemporal features@latent",
+  "process video data@input",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "shift patches@state",
+  "train@parameter",
+  "transform input@input"
+ ]
+}

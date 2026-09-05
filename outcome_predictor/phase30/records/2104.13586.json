@@ -1,0 +1,75 @@
+{
+ "arxiv_id": "2104.13586",
+ "source": "abstract",
+ "words": 169,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 3,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "convert input",
+   "canonical": "convert input",
+   "object": "state",
+   "quote": "human skeleton, as a compact representation of human action",
+   "grounded": true
+  },
+  {
+   "op": "generate heatmap",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "rely on a 3D heatmap stack instead of a graph sequence",
+   "grounded": false
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "INVALID:heatmap",
+   "quote": "extract features on top of human skeletons",
+   "grounded": true
+  },
+  {
+   "op": "compute temporal features",
+   "canonical": "compute temporal features",
+   "object": "INVALID:heatmap",
+   "quote": "learn spatiotemporal features",
+   "grounded": false
+  },
+  {
+   "op": "compute spatial features",
+   "canonical": "compute spatial features",
+   "object": "INVALID:heatmap",
+   "quote": "learn spatiotemporal features",
+   "grounded": false
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "features can be easily integrated with other modalities",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "handle multiple-person scenarios without additional computation cost",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "action recognition methods",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "convert input@state",
+  "predict@state",
+  "process input@input",
+  "reconstruct@state"
+ ]
+}

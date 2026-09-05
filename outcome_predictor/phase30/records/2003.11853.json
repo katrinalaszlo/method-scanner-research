@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2003.11853",
+ "source": "abstract",
+ "words": 201,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "train classifier",
+   "canonical": "train",
+   "object": "state",
+   "quote": "we first train a linear classifier with the labeled few-shot examples",
+   "grounded": true
+  },
+  {
+   "op": "infer pseudo-labels",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "use it to infer the pseudo-labels for the unlabeled data",
+   "grounded": true
+  },
+  {
+   "op": "solve regression hypothesis",
+   "canonical": "solve regression hypothesis",
+   "object": "state",
+   "quote": "propose to solve another linear regression hypothesis",
+   "grounded": true
+  },
+  {
+   "op": "increase sparsity",
+   "canonical": "increase sparsity",
+   "object": "parameter",
+   "quote": "increasing the sparsity of the incidental parameters",
+   "grounded": true
+  },
+  {
+   "op": "rank instances",
+   "canonical": "rank instances",
+   "object": "state",
+   "quote": "rank the pseudo-labeled instances with their sparsity degree",
+   "grounded": true
+  },
+  {
+   "op": "select instances",
+   "canonical": "select instances",
+   "object": "state",
+   "quote": "select the most trustworthy pseudo-labeled instances",
+   "grounded": true
+  },
+  {
+   "op": "re-train classifier",
+   "canonical": "re-train classifier",
+   "object": "parameter",
+   "quote": "to re-train the linear classifier",
+   "grounded": true
+  },
+  {
+   "op": "iterate process",
+   "canonical": "iterate process",
+   "object": "task",
+   "quote": "This process is iterated until all the unlabeled samples are included",
+   "grounded": true
+  },
+  {
+   "op": "include samples",
+   "canonical": "include samples",
+   "object": "state",
+   "quote": "the pseudo-label is converged for unlabeled data pool",
+   "grounded": true
+  },
+  {
+   "op": "update classifier",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "to re-train the linear classifier",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "include samples@state",
+  "increase sparsity@parameter",
+  "iterate process@task",
+  "predict@state",
+  "rank instances@state",
+  "re-train classifier@parameter",
+  "select instances@state",
+  "solve regression hypothesis@state",
+  "train@state"
+ ]
+}

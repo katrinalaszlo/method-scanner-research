@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1806.04734",
+ "source": "abstract",
+ "words": 153,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Our approach is based on a modified auto-encoder",
+   "grounded": false
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "Our approach is based on a modified auto-encoder",
+   "grounded": false
+  },
+  {
+   "op": "compute delta",
+   "canonical": "compute delta",
+   "object": "state",
+   "quote": "learn to extract transferable intra-class deformations",
+   "grounded": false
+  },
+  {
+   "op": "apply delta",
+   "canonical": "apply delta",
+   "object": "sample",
+   "quote": "apply those deltas to the few provided examples",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "synthesize new samples for an unseen category",
+   "grounded": true
+  },
+  {
+   "op": "train classifier",
+   "canonical": "train",
+   "object": "sample",
+   "quote": "The synthesized samples are then used to train a classifier",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "latent",
+   "quote": "learn to extract transferable intra-class deformations",
+   "grounded": false
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "sample",
+   "quote": "synthesize samples from that new class",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply delta@sample",
+  "compute delta@state",
+  "encode@input",
+  "extract feature@latent",
+  "predict@sample",
+  "reconstruct@latent",
+  "reconstruct@state",
+  "train@sample"
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "2202.03026",
+ "source": "abstract",
+ "words": 190,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the encoder takes the visible patches as input",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "the regressor predicts the representations of the masked patches",
+   "grounded": true
+  },
+  {
+   "op": "align",
+   "canonical": "align",
+   "object": "latent",
+   "quote": "the representations are expected to be aligned with the representations computed from the encoder",
+   "grounded": false
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "the decoder reconstructs the masked patches from the predicted encoded representations",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "predict the representations for the masked patches",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "reconstruct the masked patches",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "latent",
+   "quote": "using the representations of visible patches and the positions of visible and masked patches",
+   "grounded": true
+  },
+  {
+   "op": "separate",
+   "canonical": "separate",
+   "object": "latent",
+   "quote": "encourages the separation of learning the encoder (representation) from completing the pertaining tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align@latent",
+  "compute@latent",
+  "encode@input",
+  "predict@latent",
+  "reconstruct@input",
+  "separate@latent"
+ ]
+}

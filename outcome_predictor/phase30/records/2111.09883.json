@@ -1,0 +1,133 @@
+{
+ "arxiv_id": "2111.09883",
+ "source": "abstract",
+ "words": 221,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 15,
+ "n_invalid_object": 0,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Through these techniques, this paper successfully trained",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Through these techniques, this paper successfully trained",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "input",
+   "quote": "a residual-post-norm method combined with cosine attention",
+   "grounded": true
+  },
+  {
+   "op": "generate position bias",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "A log-spaced continuous position bias method",
+   "grounded": true
+  },
+  {
+   "op": "scale input",
+   "canonical": "scale input",
+   "object": "input",
+   "quote": "to effectively transfer models pre-trained using low-resolution images",
+   "grounded": true
+  },
+  {
+   "op": "pretrain model",
+   "canonical": "pretrain model",
+   "object": "parameter",
+   "quote": "A self-supervised pre-training method, SimMIM",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "to reduce the needs of vast labeled images",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "Through these techniques, this paper successfully trained",
+   "grounded": true
+  },
+  {
+   "op": "process image",
+   "canonical": "process image",
+   "object": "input",
+   "quote": "which is the largest dense vision model to date",
+   "grounded": true
+  },
+  {
+   "op": "classify image",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "It set new performance records on 4 representative vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "detect object",
+   "canonical": "detect object",
+   "object": "input",
+   "quote": "It set new performance records on 4 representative vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "segment image",
+   "canonical": "segment image",
+   "object": "input",
+   "quote": "It set new performance records on 4 representative vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "classify action",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "It set new performance records on 4 representative vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "reduce data",
+   "canonical": "reduce data",
+   "object": "input",
+   "quote": "which consumes 40 times less labelled data",
+   "grounded": true
+  },
+  {
+   "op": "reduce time",
+   "canonical": "reduce time",
+   "object": "parameter",
+   "quote": "which consumes 40 times less training time",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply attention@input",
+  "classify@input",
+  "correct@parameter",
+  "detect object@input",
+  "evaluate@error",
+  "pretrain model@parameter",
+  "process image@input",
+  "reconstruct@input",
+  "reduce data@input",
+  "reduce time@parameter",
+  "sample@input",
+  "scale input@input",
+  "segment image@input",
+  "train@parameter"
+ ]
+}

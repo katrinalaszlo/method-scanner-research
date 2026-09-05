@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "2503.00938",
+ "source": "abstract",
+ "words": 200,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "generate image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we obtain high-quality images with diverse poses",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "aggregating the same identity features to reduce individual noise",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "features from the same identity follow a normal distribution",
+   "grounded": true
+  },
+  {
+   "op": "centralize features",
+   "canonical": "centralize features",
+   "object": "latent",
+   "quote": "enhance the stability of identity representation",
+   "grounded": true
+  },
+  {
+   "op": "sample neighbor",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "explores each sample's potential positive samples from its neighborhood",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "distribution",
+   "quote": "features from the same identity follow a normal distribution",
+   "grounded": true
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "distribution",
+   "quote": "features from the same identity follow a normal distribution",
+   "grounded": true
+  },
+  {
+   "op": "preserve distribution",
+   "canonical": "preserve distribution",
+   "object": "latent",
+   "quote": "preserves the feature's original distribution for following strategies",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "obtain samples of the same identity",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "extract accurate identity representation features",
+   "grounded": true
+  },
+  {
+   "op": "denoise feature",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "reduce individual noise and enhance the stability",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "latent",
+   "quote": "maintains high identity consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "latent",
+   "quote": "maintains high identity consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "latent",
+   "quote": "maintains high identity consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "latent",
+   "quote": "maintains high identity consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "latent",
+   "quote": "maintains high identity consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "reduce individual noise and enhance the stability",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "achieve impressive performance even with an ImageNet pre-trained model",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "latent",
+   "quote": "obtain samples of the same identity",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "features from the same identity follow a normal distribution",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "latent",
+   "quote": "maintains high identity consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "latent",
+   "quote": "maintains high identity consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "latent",
+   "quote": "maintains high identity consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "latent",
+   "quote": "maintains high identity consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "latent",
+   "quote": "maintains high identity consistency",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "centralize features@latent",
+  "compare@latent",
+  "compute distribution@latent",
+  "compute mean@distribution",
+  "compute policy@latent",
+  "compute reward@latent",
+  "compute sample@latent",
+  "compute task@latent",
+  "compute trajectory@latent",
+  "compute value@latent",
+  "compute variance@distribution",
+  "correct@parameter",
+  "extract feature@input",
+  "preserve distribution@latent",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "sample@latent"
+ ]
+}

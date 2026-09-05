@@ -1,0 +1,72 @@
+{
+ "arxiv_id": "1909.02651",
+ "source": "abstract",
+ "words": 198,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 6,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "generate mask",
+   "canonical": "reconstruct",
+   "object": "INVALID:pixel",
+   "quote": "generate a scale- and shape-variant semantic mask for each pixel",
+   "grounded": true
+  },
+  {
+   "op": "infer correlation",
+   "canonical": "predict",
+   "object": "INVALID:pair",
+   "quote": "infer the semantic correlation of the pair",
+   "grounded": true
+  },
+  {
+   "op": "create shape mask",
+   "canonical": "create shape mask",
+   "object": "INVALID:shape",
+   "quote": "based on that to generate a shape mask",
+   "grounded": true
+  },
+  {
+   "op": "control receptive field",
+   "canonical": "act",
+   "object": "INVALID:convolution",
+   "quote": "the receptive field is controlled by the shape mask",
+   "grounded": true
+  },
+  {
+   "op": "aggregate context",
+   "canonical": "aggregate",
+   "object": "INVALID:pixel",
+   "quote": "aggregates the context information of a pixel",
+   "grounded": true
+  },
+  {
+   "op": "denoise labeling",
+   "canonical": "reconstruct",
+   "object": "INVALID:label",
+   "quote": "proposes a labeling denoising model to reduce wrong predictions",
+   "grounded": true
+  },
+  {
+   "op": "process features",
+   "canonical": "process features",
+   "object": "latent",
+   "quote": "reduce wrong predictions caused by the noisy low-level features",
+   "grounded": true
+  },
+  {
+   "op": "segment image",
+   "canonical": "segment image",
+   "object": "input",
+   "quote": "the proposed segmentation network achieves new state-of-the-arts",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "process features@latent",
+  "segment image@input"
+ ]
+}

@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2108.08728",
+ "source": "abstract",
+ "words": 157,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute counterfactual intervention",
+   "canonical": "compute counterfactual intervention",
+   "object": "state",
+   "quote": "we analyze the effect of the learned visual attention on network prediction through counterfactual intervention",
+   "grounded": true
+  },
+  {
+   "op": "maximize effect",
+   "canonical": "maximize effect",
+   "object": "value",
+   "quote": "maximize the effect to encourage the network to learn more useful attention",
+   "grounded": true
+  },
+  {
+   "op": "learn attention",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "we propose to learn the attention with counterfactual causality",
+   "grounded": true
+  },
+  {
+   "op": "measure attention quality",
+   "canonical": "measure attention quality",
+   "object": "distribution",
+   "quote": "provides a tool to measure the attention quality",
+   "grounded": true
+  },
+  {
+   "op": "generate counterfactual sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "learn the attention with counterfactual causality",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "guide the learning process",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "a powerful supervisory signal to guide the learning process",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "a powerful supervisory signal to guide the learning process",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "guide the learning process",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "learn more useful attention for fine-grained image recognition",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "attention plays a crucial role",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "learn more useful attention for fine-grained image recognition",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "learn more useful attention for fine-grained image recognition",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "learn more useful attention for fine-grained image recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "learn more useful attention for fine-grained image recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "learn more useful attention for fine-grained image recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "learn more useful attention for fine-grained image recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "learn more useful attention for fine-grained image recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "learn more useful attention for fine-grained image recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "learn more useful attention for fine-grained image recognition",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute counterfactual intervention@state",
+  "compute distribution@distribution",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "maximize effect@value",
+  "measure attention quality@distribution",
+  "predict@reward",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "sample@action",
+  "sample@sample",
+  "train@latent"
+ ]
+}

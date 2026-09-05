@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1911.12885",
+ "source": "abstract",
+ "words": 148,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we enrich the geometric information of points in low-level 3D space explicitly",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "state",
+   "quote": "we leverage an idea of error-correcting feedback structure to capture the local features",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "we apply CNN-based structures in high-level feature spaces to learn local geometric context implicitly",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "we leverage an idea of error-correcting feedback structure to capture the local features",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the performance on both synthetic and real-world point clouds datasets demonstrate the superiority",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "distribution",
+   "quote": "an attention module based on channel affinity assists the feature map to avoid possible redundancy",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "an attention module based on channel affinity assists the feature map to avoid possible redundancy",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "the performance on both synthetic and real-world point clouds datasets demonstrate the superiority",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@latent",
+  "compare@distribution",
+  "compute attention@distribution",
+  "correct@parameter",
+  "encode@input",
+  "extract feature@state",
+  "predict@state"
+ ]
+}

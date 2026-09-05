@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2003.13328",
+ "source": "abstract",
+ "words": 170,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "apply pooling",
+   "canonical": "apply pooling",
+   "object": "input",
+   "quote": "spatial pooling has been proven highly effective",
+   "grounded": true
+  },
+  {
+   "op": "compute feature map",
+   "canonical": "compute feature map",
+   "object": "latent",
+   "quote": "we rethink the formulation of spatial pooling",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "introducing a new strip pooling module",
+   "grounded": true
+  },
+  {
+   "op": "extract context",
+   "canonical": "extract context",
+   "object": "latent",
+   "quote": "efficiently model long-range dependencies",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "presenting a novel building block",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "systematically comparing the performance",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "both novel pooling-based designs are lightweight",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "extensive experiments on popular benchmarks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply pooling@input",
+  "compute feature map@latent",
+  "correct@parameter",
+  "evaluate@error",
+  "extract context@latent",
+  "reconstruct@distribution"
+ ]
+}

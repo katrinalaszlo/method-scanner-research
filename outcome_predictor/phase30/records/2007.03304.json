@@ -1,0 +1,161 @@
+{
+ "arxiv_id": "2007.03304",
+ "source": "abstract",
+ "words": 147,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 13,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "generate data",
+   "canonical": "reconstruct",
+   "object": "INVALID:domain",
+   "quote": "we employ a data generator to synthesize data from pseudo-novel domains",
+   "grounded": false
+  },
+  {
+   "op": "compute divergence",
+   "canonical": "compute divergence",
+   "object": "distribution",
+   "quote": "model the distribution divergence between source and synthesized pseudo-novel domains using optimal transport",
+   "grounded": true
+  },
+  {
+   "op": "maximize divergence",
+   "canonical": "maximize divergence",
+   "object": "error",
+   "quote": "maximize the divergence",
+   "grounded": true
+  },
+  {
+   "op": "impose loss",
+   "canonical": "impose loss",
+   "object": "INVALID:generator",
+   "quote": "impose cycle-consistency and classification losses on the generator",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "INVALID:generator",
+   "quote": "train the generator",
+   "grounded": true
+  },
+  {
+   "op": "preserve semantics",
+   "canonical": "preserve semantics",
+   "object": "INVALID:data",
+   "quote": "ensure that semantics are preserved in the synthesized data",
+   "grounded": true
+  },
+  {
+   "op": "augment domains",
+   "canonical": "augment",
+   "object": "INVALID:source",
+   "quote": "explicitly increases the diversity of available training domains",
+   "grounded": true
+  },
+  {
+   "op": "generalize model",
+   "canonical": "generalize model",
+   "object": "parameter",
+   "quote": "leads to a more generalizable model",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "INVALID:generator",
+   "quote": "train the generator",
+   "grounded": true
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "outperforms current state-of-the-art DG methods on four benchmark datasets",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "outperforms current state-of-the-art DG methods on four benchmark datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:generator",
+   "quote": "impose cycle-consistency and classification losses on the generator",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "INVALID:generator",
+   "quote": "train the generator",
+   "grounded": true
+  },
+  {
+   "op": "compute cycle-consistency",
+   "canonical": "compute cycle-consistency",
+   "object": "INVALID:data",
+   "quote": "impose cycle-consistency and classification losses on the generator",
+   "grounded": true
+  },
+  {
+   "op": "compute classification loss",
+   "canonical": "compute classification loss",
+   "object": "INVALID:generator",
+   "quote": "impose cycle-consistency and classification losses on the generator",
+   "grounded": true
+  },
+  {
+   "op": "preserve data",
+   "canonical": "preserve data",
+   "object": "INVALID:data",
+   "quote": "ensure that semantics are preserved in the synthesized data",
+   "grounded": true
+  },
+  {
+   "op": "generate domain",
+   "canonical": "reconstruct",
+   "object": "INVALID:domain",
+   "quote": "we employ a data generator to synthesize data from pseudo-novel domains",
+   "grounded": false
+  },
+  {
+   "op": "compute optimal transport",
+   "canonical": "compute optimal transport",
+   "object": "distribution",
+   "quote": "model the distribution divergence between source and synthesized pseudo-novel domains using optimal transport",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "model the distribution divergence between source and synthesized pseudo-novel domains using optimal transport",
+   "grounded": true
+  },
+  {
+   "op": "update generator",
+   "canonical": "correct",
+   "object": "INVALID:generator",
+   "quote": "train the generator",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@distribution",
+  "compare@parameter",
+  "compute divergence@distribution",
+  "compute optimal transport@distribution",
+  "evaluate@task",
+  "generalize model@parameter",
+  "maximize divergence@error"
+ ]
+}

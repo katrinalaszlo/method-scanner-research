@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "1903.00112",
+ "source": "abstract",
+ "words": 130,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "a simple depth-normal consistency as a soft-constraint on the predictions",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "a simple depth-normal consistency as a soft-constraint on the predictions",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "a simple depth-normal consistency as a soft-constraint on the predictions",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "to predict depth and surface normals from a single image",
+   "grounded": false
+  },
+  {
+   "op": "predict surface normal",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "to predict depth and surface normals from a single image",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "relying on much realistic smooth normal assumption",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "to predict depth and surface normals from a single image",
+   "grounded": false
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "to predict depth and surface normals from a single image",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "a simple depth-normal consistency as a soft-constraint on the predictions",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "relying on much realistic smooth normal assumption",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "relying on much realistic smooth normal assumption",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "a simple depth-normal consistency as a soft-constraint on the predictions",
+   "grounded": true
+  },
+  {
+   "op": "normalize input",
+   "canonical": "normalize input",
+   "object": "input",
+   "quote": "to predict depth and surface normals from a single image",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "relying on much realistic smooth normal assumption",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "latent",
+   "quote": "to predict depth and surface normals from a single image",
+   "grounded": false
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "to predict depth and surface normals from a single image",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "relying on much realistic smooth normal assumption",
+   "grounded": true
+  },
+  {
+   "op": "apply softmax",
+   "canonical": "apply softmax",
+   "object": "distribution",
+   "quote": "to predict depth and surface normals from a single image",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "relying on much realistic smooth normal assumption",
+   "grounded": true
+  },
+  {
+   "op": "apply pooling",
+   "canonical": "apply pooling",
+   "object": "latent",
+   "quote": "to predict depth and surface normals from a single image",
+   "grounded": false
+  },
+  {
+   "op": "apply dropout",
+   "canonical": "apply dropout",
+   "object": "latent",
+   "quote": "to predict depth and surface normals from a single image",
+   "grounded": false
+  },
+  {
+   "op": "apply batch norm",
+   "canonical": "apply batch norm",
+   "object": "latent",
+   "quote": "to predict depth and surface norms from a single image",
+   "grounded": false
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "to predict depth and surface normals from a single image",
+   "grounded": false
+  },
+  {
+   "op": "apply non-linearity",
+   "canonical": "apply non-linearity",
+   "object": "latent",
+   "quote": "to predict depth and surface normals from a single image",
+   "grounded": false
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "relying on much realistic smooth normal assumption",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply activation@latent",
+  "apply attention@latent",
+  "apply batch norm@latent",
+  "apply convolution@input",
+  "apply dropout@latent",
+  "apply non-linearity@latent",
+  "apply pooling@latent",
+  "apply regularization@parameter",
+  "apply softmax@distribution",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "normalize input@input",
+  "predict@distribution",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

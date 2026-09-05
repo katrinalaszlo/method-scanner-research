@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "1511.06422",
+ "source": "abstract",
+ "words": 157,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "initialize weights",
+   "canonical": "initialize weights",
+   "object": "parameter",
+   "quote": "pre-initialize weights of each convolution or inner-product layer with orthonormal matrices",
+   "grounded": true
+  },
+  {
+   "op": "normalize variance",
+   "canonical": "normalize variance",
+   "object": "INVALID:output",
+   "quote": "normalizing the variance of the output of each layer to be equal to one",
+   "grounded": true
+  },
+  {
+   "op": "compute activation",
+   "canonical": "compute activation",
+   "object": "input",
+   "quote": "Experiment with different activation functions (maxout, ReLU-family, tanh)",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "is at least as fast as the complex schemes proposed specifically for very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "state",
+   "quote": "produces networks with test accuracy better or equal to standard methods",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "compare accuracy",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "produces networks with test accuracy better or equal to standard methods",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "is at least as fast as the complex schemes proposed specifically for very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "noise",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "the proposed initialization leads to learning of very, deep nets",
+   "grounded": true
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "INVALID:output",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the proposed initialization leads to learning of very deep nets",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compare@state",
+  "compute activation@input",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute noise@noise",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@state",
+  "initialize weights@parameter",
+  "sample@action",
+  "train@parameter"
+ ]
+}

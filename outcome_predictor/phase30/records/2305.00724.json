@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "2305.00724",
+ "source": "abstract",
+ "words": 204,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute degree",
+   "canonical": "compute degree",
+   "object": "state",
+   "quote": "Local Degree Profile (LDP), which forms a widely used structural baseline",
+   "grounded": true
+  },
+  {
+   "op": "compute centrality",
+   "canonical": "compute centrality",
+   "object": "state",
+   "quote": "extends LDP by using additional centrality measures",
+   "grounded": true
+  },
+  {
+   "op": "compute vertex descriptor",
+   "canonical": "compute vertex descriptor",
+   "object": "state",
+   "quote": "extends LDP by using additional centrality measures",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "state",
+   "quote": "computational aspects of LDP-based feature extraction",
+   "grounded": true
+  },
+  {
+   "op": "construct model",
+   "canonical": "construct model",
+   "object": "state",
+   "quote": "computational aspects of LDP-based feature extraction",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "practical improvements affecting execution speed and scalability",
+   "grounded": true
+  },
+  {
+   "op": "scale model",
+   "canonical": "scale model",
+   "object": "parameter",
+   "quote": "practical improvements affecting execution speed and scalability",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "model evaluation in the context of the recently developed fair evaluation framework",
+   "grounded": true
+  },
+  {
+   "op": "compare model",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "model evaluation in the context of the recently developed fair evaluation framework",
+   "grounded": true
+  },
+  {
+   "op": "select model",
+   "canonical": "select model",
+   "object": "parameter",
+   "quote": "model evaluation in the context of the recently developed fair evaluation framework",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "outperforming or very close to the latest GNNs for all datasets used",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "handling modern, large datasets and extends the portfolio of benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "obtained LTP as a simple to understand, fast and scalable, still robust baseline",
+   "grounded": true
+  },
+  {
+   "op": "denoise data",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "handling modern, large datasets and extends the portfolio of benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "computational aspects of LDP-based feature extraction",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "outperforming or very than the latest GNNs for all datasets used",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "model evaluation in the context of the recently developed fair evaluation framework",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "practical improvements affecting execution speed and scalability",
+   "grounded": true
+  },
+  {
+   "op": "resample data",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "handling modern, large datasets and extends the portfolio of benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "practical improvements affecting execution speed and scalability",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "obtained LTP as a simple to understand, fast and scalable, still robust baseline",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "outperforming or very close to the latest GNNs for all datasets used",
+   "grounded": true
+  },
+  {
+   "op": "denoise trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "handling modern, large datasets and extends the portfolio of benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "obtained LTP as a simple to understand, fast and scalable, still robust baseline",
+   "grounded": true
+  },
+  {
+   "op": "update distribution",
+   "canonical": "correct",
+   "object": "distribution",
+   "quote": "obtained LTP as a simple to understand, fast and scalable, still robust baseline",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compare@error",
+  "compare@parameter",
+  "compute centrality@state",
+  "compute degree@state",
+  "compute distribution@distribution",
+  "compute reward@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "compute vertex descriptor@state",
+  "construct model@state",
+  "correct@distribution",
+  "correct@parameter",
+  "evaluate@parameter",
+  "extract feature@state",
+  "predict@reward",
+  "process input@input",
+  "reconstruct@input",
+  "reconstruct@sample",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@sample",
+  "scale model@parameter",
+  "select model@parameter"
+ ]
+}

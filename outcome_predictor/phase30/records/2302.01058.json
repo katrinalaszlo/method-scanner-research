@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2302.01058",
+ "source": "abstract",
+ "words": 241,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "GN-Diff iteratively linearizes the nonconvex objective function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the twist rotation and shape parameters are learned from the neural networks",
+   "grounded": true
+  },
+  {
+   "op": "linearize function",
+   "canonical": "linearize function",
+   "object": "error",
+   "quote": "GN-Diff iteratively linearizes the nonconvex objective function",
+   "grounded": true
+  },
+  {
+   "op": "compute jacobian",
+   "canonical": "compute jacobian",
+   "object": "gradient",
+   "quote": "an automatic differentiation procedure is directly applied to generate a Jacobian matrix",
+   "grounded": true
+  },
+  {
+   "op": "differentiate function",
+   "canonical": "differentiate function",
+   "object": "error",
+   "quote": "GN-Diff iteratively linearizes the nonconvex objective function",
+   "grounded": true
+  },
+  {
+   "op": "predict rotation",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "the relative body-part rotations are the solutions",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "GN-Diff iteratively linearizes the nonconvex objective function",
+   "grounded": true
+  },
+  {
+   "op": "sample rotation",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "the twist rotation and shape parameters are learned from the neural networks",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "the twist rotation and shape parameters are learned from the neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "state",
+   "quote": "it iteratively reduces the distance between the keypoints",
+   "grounded": true
+  },
+  {
+   "op": "enhance structure",
+   "canonical": "enhance structure",
+   "object": "state",
+   "quote": "it enhances the reliability of the pose structures",
+   "grounded": false
+  },
+  {
+   "op": "map input to output",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the 3D keypoints and the body shapes are the inputs and the relative body-part rotations are the solutions",
+   "grounded": true
+  },
+  {
+   "op": "generate solution",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "the relative body-part rotations are the solutions",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "GN-Diff iteratively linearizes the nonconvex objective function",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the twist rotation and shape parameters are learned from the neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute rotation",
+   "canonical": "compute rotation",
+   "object": "state",
+   "quote": "the relative body-part rotations are the solutions",
+   "grounded": true
+  },
+  {
+   "op": "update gradient",
+   "canonical": "correct",
+   "object": "gradient",
+   "quote": "GN-Diff iteratively linear, linearizes the nonconvex objective function",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "it iteratively reduces the distance between the keypoints",
+   "grounded": true
+  },
+  {
+   "op": "denoise signal",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "it enhances the reliability of the pose structures",
+   "grounded": false
+  },
+  {
+   "op": "refine solution",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "it iteratively reduces the distance between the keypoints",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "compare@error",
+  "compute distance@state",
+  "compute gradient@error",
+  "compute jacobian@gradient",
+  "compute rotation@state",
+  "compute value@value",
+  "correct@gradient",
+  "correct@parameter",
+  "correct@state",
+  "differentiate function@error",
+  "encode@input",
+  "enhance structure@state",
+  "evaluate@error",
+  "improve@parameter",
+  "linearize function@error",
+  "predict@state",
+  "reconstruct@state",
+  "sample@distribution"
+ ]
+}

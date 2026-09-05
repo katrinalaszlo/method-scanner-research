@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2304.07193",
+ "source": "abstract",
+ "words": 193,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "produce all-purpose visual features",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "existing pretraining methods",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "if trained on enough curated data",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "accelerating and stabilizing the training",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train a ViT model",
+   "grounded": true
+  },
+  {
+   "op": "distill",
+   "canonical": "distill",
+   "object": "parameter",
+   "quote": "distill it into a series of smaller models",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "build a dedicated, diverse, and curated image dataset",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "trajectory",
+   "quote": "scale our pretraining in terms of data and model size",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "surpass the best available all-purpose features",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "on most of the benchmarks at image and pixel levels",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@trajectory",
+  "backpropagate@gradient",
+  "compare@error",
+  "compare@value",
+  "correct@parameter",
+  "distill@parameter",
+  "encode@input",
+  "evaluate@task",
+  "predict@latent",
+  "sample@sample"
+ ]
+}

@@ -1,0 +1,208 @@
+{
+ "arxiv_id": "2502.20110",
+ "source": "abstract",
+ "words": 225,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 6,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "directly predicts metric 3D points from the input image",
+   "grounded": true
+  },
+  {
+   "op": "condition features",
+   "canonical": "intervene",
+   "object": "latent",
+   "quote": "self-promptable camera module predicting a dense camera representation",
+   "grounded": true
+  },
+  {
+   "op": "disentangle representations",
+   "canonical": "disentangle representations",
+   "object": "latent",
+   "quote": "pseudo-spherical output representation, which disentangles the camera and depth representations",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "geometric invariance loss that promotes the invariance of camera-prompted depth features",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improves its predecessor UniDepth model via a new edge-guided loss",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "additional uncertainty-level output which enables downstream tasks requiring confidence",
+   "grounded": true
+  },
+  {
+   "op": "refine edges",
+   "canonical": "correct",
+   "object": "INVALID:depth",
+   "quote": "edge-guided loss which enhances the localization and sharpness of edges",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "self-promptable camera module predicting a dense camera representation",
+   "grounded": true
+  },
+  {
+   "op": "compute features",
+   "canonical": "compute features",
+   "object": "latent",
+   "quote": "self-promptable camera module predicting a dense camera representation",
+   "grounded": true
+  },
+  {
+   "op": "apply loss",
+   "canonical": "apply loss",
+   "object": "error",
+   "quote": "geometric invariance loss that promotes the invar, camera-prompted depth features",
+   "grounded": true
+  },
+  {
+   "op": "output depth",
+   "canonical": "output depth",
+   "object": "INVALID:depth",
+   "quote": "directly predicts metric 3D points from the input image",
+   "grounded": true
+  },
+  {
+   "op": "output uncertainty",
+   "canonical": "output uncertainty",
+   "object": "distribution",
+   "quote": "additional uncertainty-level output which enables downstream tasks requiring confidence",
+   "grounded": true
+  },
+  {
+   "op": "compute camera representation",
+   "canonical": "compute camera representation",
+   "object": "latent",
+   "quote": "self-promptable camera module predicting a dense camera representation",
+   "grounded": true
+  },
+  {
+   "op": "generate depth map",
+   "canonical": "reconstruct",
+   "object": "INVALID:depth",
+   "quote": "directly predicts metric 3D points from the input image",
+   "grounded": true
+  },
+  {
+   "op": "apply geometric loss",
+   "canonical": "apply geometric loss",
+   "object": "error",
+   "quote": "geometric invariance loss that promotes the invariance of camera-prompted depth features",
+   "grounded": true
+  },
+  {
+   "op": "refine depth",
+   "canonical": "correct",
+   "object": "INVALID:depth",
+   "quote": "edge-guided loss which enhances the localization and sharpness of edges",
+   "grounded": true
+  },
+  {
+   "op": "output camera features",
+   "canonical": "output camera features",
+   "object": "latent",
+   "quote": "self-promptable camera module predicting a dense camera representation",
+   "grounded": true
+  },
+  {
+   "op": "compute depth features",
+   "canonical": "compute depth features",
+   "object": "latent",
+   "quote": "self-promptable camera module predicting a dense camera representation",
+   "grounded": true
+  },
+  {
+   "op": "output depth distribution",
+   "canonical": "output depth distribution",
+   "object": "distribution",
+   "quote": "additional uncertainty-level output which enables downstream tasks requiring confidence",
+   "grounded": true
+  },
+  {
+   "op": "apply edge loss",
+   "canonical": "apply edge loss",
+   "object": "error",
+   "quote": "edge-guided loss which enhances the localization and sharpness of edges",
+   "grounded": true
+  },
+  {
+   "op": "output depth map",
+   "canonical": "output depth map",
+   "object": "INVALID:depth",
+   "quote": "directly predicts metric 3D points from the input image",
+   "grounded": true
+  },
+  {
+   "op": "compute uncertainty",
+   "canonical": "compute uncertainty",
+   "object": "distribution",
+   "quote": "additional uncertainty-level output which enables downstream tasks requiring confidence",
+   "grounded": true
+  },
+  {
+   "op": "refine depth output",
+   "canonical": "correct",
+   "object": "INVALID:depth",
+   "quote": "edge-guided loss which enhances the localization and sharpness of edges",
+   "grounded": true
+  },
+  {
+   "op": "output depth features",
+   "canonical": "output depth features",
+   "object": "latent",
+   "quote": "self-promptable camera module predicting a dense camera representation",
+   "grounded": true
+  },
+  {
+   "op": "compute depth distribution",
+   "canonical": "compute depth distribution",
+   "object": "distribution",
+   "quote": "additional uncertainty-level output which enables downstream tasks requiring confidence",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply edge loss@error",
+  "apply geometric loss@error",
+  "apply loss@error",
+  "compute camera representation@latent",
+  "compute depth distribution@distribution",
+  "compute depth features@latent",
+  "compute features@latent",
+  "compute uncertainty@distribution",
+  "correct@parameter",
+  "disentangle representations@latent",
+  "encode@input",
+  "evaluate@error",
+  "intervene@latent",
+  "output camera features@latent",
+  "output depth distribution@distribution",
+  "output depth features@latent",
+  "output uncertainty@distribution",
+  "predict@input",
+  "reconstruct@distribution"
+ ]
+}

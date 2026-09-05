@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "2109.02303",
+ "source": "abstract",
+ "words": 185,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 2,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "STE consists of a series of cascaded blocks based on Multi-Head Self-Attention",
+   "grounded": true
+  },
+  {
+   "op": "attend",
+   "canonical": "attend",
+   "object": "latent",
+   "quote": "each block uses two parallel branches to learn spatial and temporal attention respectively",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "KTD aims at modeling the joint level attention",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:pose",
+   "quote": "pose estimation as a top-down hierarchical process",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "to make accurate predictions in some hard scenarios",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "with the training set of 3DPW",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "MAED outperforms previous state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "it regards pose estimation as a top-down hierarchical process",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "attend@latent",
+  "backpropagate@gradient",
+  "correct@parameter",
+  "encode@input",
+  "reconstruct@latent",
+  "sample@distribution"
+ ]
+}

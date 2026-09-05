@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2202.03555",
+ "source": "abstract",
+ "words": 155,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "mask input",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "predict latent",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "sample latent",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "denoise latent",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "predict latent representations of the full input data based on a masked, view of the input",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "store latent",
+   "canonical": "store latent",
+   "object": "latent",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "transform input",
+   "canonical": "transform input",
+   "object": "input",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "apply mask",
+   "canonical": "apply mask",
+   "object": "input",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "resample latent",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "store trajectory",
+   "canonical": "store trajectory",
+   "object": "trajectory",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  },
+  {
+   "op": "apply policy",
+   "canonical": "apply policy",
+   "object": "policy",
+   "quote": "predict latent representations of the full input data based on a masked view of the input",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "apply mask@input",
+  "apply policy@policy",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "mask@input",
+  "predict@distribution",
+  "predict@latent",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reconstruct@sample",
+  "sample@distribution",
+  "sample@latent",
+  "store latent@latent",
+  "store trajectory@trajectory",
+  "transform input@input"
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2105.02723",
+ "source": "abstract",
+ "words": 182,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "apply feed-forward",
+   "canonical": "apply feed-forward",
+   "object": "INVALID:patch",
+   "quote": "replace the attention layer in a vision transformer with a feed-forward layer applied over the patch dimension.",
+   "grounded": true
+  },
+  {
+   "op": "apply feed-forward",
+   "canonical": "apply feed-forward",
+   "object": "latent",
+   "quote": "a series of feed-forward layers applied over the patch and feature dimensions in an alternating fashion.",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the resulting architecture is simply a series of feed-forward layers applied over the patch and feature dimensions in an alternating fashion.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the resulting architecture is simply a series of feed-forward layers applied over the patch and feature dimensions in an alternating fashion.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the resulting architecture is simply a series of feed-forward layers applied over the patch and feature dimensions in an alternating fashion.",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "a ViT/DeiT-base-sized model obtains 74.9\\% top-1 accuracy, compared to 77.9\\% and 79.9\\% for ViT and DeiT respectively.",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a ViT/DeiT-base-sized model obtains 74.9\\% top-1 accuracy, compared to 77.9\\% and 79.9\\% for ViT and DeiT respectively.",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "a ViT/DeiT-base-sized model obtains 74.9\\% top-1 accuracy, compared to 77.9\\% and 79.9\\% for ViT and DeiT respectively.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply feed-forward@latent",
+  "backpropagate@gradient",
+  "compute accuracy@task",
+  "compute reward@reward",
+  "correct@parameter",
+  "evaluate@error",
+  "sample@input"
+ ]
+}

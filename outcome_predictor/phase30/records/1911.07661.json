@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "1911.07661",
+ "source": "abstract",
+ "words": 224,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "cluster samples",
+   "canonical": "cluster samples",
+   "object": "state",
+   "quote": "iteratively divides samples into latent domains via clustering",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "utilize style features for clustering",
+   "grounded": true
+  },
+  {
+   "op": "compute style features",
+   "canonical": "compute style features",
+   "object": "state",
+   "quote": "the latent domain of images is reflected in their style",
+   "grounded": true
+  },
+  {
+   "op": "train feature extractor",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "trains the domain-invariant feature extractor shared among the divided latent domains",
+   "grounded": true
+  },
+  {
+   "op": "perform adversarial learning",
+   "canonical": "perform adversarial learning",
+   "object": "parameter",
+   "quote": "trains the domain-invariant feature extractor shared among the divided latent domains",
+   "grounded": true
+  },
+  {
+   "op": "assign latent domain",
+   "canonical": "assign latent domain",
+   "object": "state",
+   "quote": "iteratively divides samples into latent domains via clustering",
+   "grounded": true
+  },
+  {
+   "op": "compute domain invariant representation",
+   "canonical": "compute domain invariant representation",
+   "object": "latent",
+   "quote": "domain-invariant feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "generate domain invariant features",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "domain-invariant feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "experiments show that our proposed method can train a domain-generalized model",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "experiments show that our proposed method can train a domain-generalized model",
+   "grounded": true
+  },
+  {
+   "op": "evaluate generalization",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "experiments show that our proposed method can train a domain-generalized model",
+   "grounded": true
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "it outperforms conventional domain generalization methods",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "experiments show that our proposed method can train a domain-generalized model",
+   "grounded": true
+  },
+  {
+   "op": "denoise representation",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "domain-invariant feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "sample latent domain",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "iteratively divides samples into latent domains via clustering",
+   "grounded": true
+  },
+  {
+   "op": "compute domain generalization",
+   "canonical": "compute domain generalization",
+   "object": "value",
+   "quote": "experiments show that our proposed method can train a domain-generalized model",
+   "grounded": true
+  },
+  {
+   "op": "compute clustering assignment",
+   "canonical": "compute clustering assignment",
+   "object": "state",
+   "quote": "iteratively divides samples into latent domains via clustering",
+   "grounded": true
+  },
+  {
+   "op": "compute domain invariant loss",
+   "canonical": "compute domain invariant loss",
+   "object": "error",
+   "quote": "experiments show that our proposed, method can train a domain-generalized model",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "experiments show that our proposed method can train a domain-generalized model",
+   "grounded": true
+  },
+  {
+   "op": "compute domain generalization metric",
+   "canonical": "compute domain generalization metric",
+   "object": "value",
+   "quote": "it outperforms conventional domain generalization methods",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "assign latent domain@state",
+  "cluster samples@state",
+  "compare@value",
+  "compute clustering assignment@state",
+  "compute domain generalization metric@value",
+  "compute domain generalization@value",
+  "compute domain invariant loss@error",
+  "compute domain invariant representation@latent",
+  "compute reward@reward",
+  "compute style features@state",
+  "correct@parameter",
+  "encode@state",
+  "evaluate@error",
+  "evaluate@task",
+  "improve@parameter",
+  "perform adversarial learning@parameter",
+  "reconstruct@latent",
+  "sample@sample",
+  "train@parameter"
+ ]
+}

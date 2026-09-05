@@ -1,0 +1,218 @@
+{
+ "arxiv_id": "2008.12577",
+ "source": "abstract",
+ "words": 196,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 0,
+ "n_grounded": 26,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "leverages the descriptiveness of features extracted by convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "estimate density",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "estimate their density using normalizing flows",
+   "grounded": true
+  },
+  {
+   "op": "compute likelihood",
+   "canonical": "compute likelihood",
+   "object": "input",
+   "quote": "assign meaningful likelihoods to the images",
+   "grounded": true
+  },
+  {
+   "op": "score image",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "develop a scoring function that indicates defects",
+   "grounded": true
+  },
+  {
+   "op": "propagate score",
+   "canonical": "transmit",
+   "object": "input",
+   "quote": "propagating the score back to the image enables pixel-wise localization",
+   "grounded": true
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "input",
+   "quote": "exploit multiple transformations in training and evaluation",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "develop a scoring function that indicates defects",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "exploit multiple transformations in training and evaluation",
+   "grounded": true
+  },
+  {
+   "op": "localize defect",
+   "canonical": "localize defect",
+   "object": "input",
+   "quote": "propagating the score back to the image enables pixel-wise localization",
+   "grounded": true
+  },
+  {
+   "op": "assign likelihood",
+   "canonical": "assign likelihood",
+   "object": "input",
+   "quote": "assign meaningful likelihoods to the images",
+   "grounded": true
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "distribution",
+   "quote": "develop a scoring function that indicates defects",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate error",
+   "canonical": "backpropagate error",
+   "object": "gradient",
+   "quote": "propagating the score back to the image enables pixel-wise localization",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "assign meaningful likelihoods to the images",
+   "grounded": true
+  },
+  {
+   "op": "evaluate likelihood",
+   "canonical": "evaluate",
+   "object": "input",
+   "quote": "assign meaningful likelihoods to the images",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "develop a scoring function that indicates defects",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "estimate their density using normalizing flows",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "develop a scoring function that indicates defects",
+   "grounded": true
+  },
+  {
+   "op": "denoise image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "assign meaningful likelihoods to the images",
+   "grounded": true
+  },
+  {
+   "op": "transform input",
+   "canonical": "transform input",
+   "object": "input",
+   "quote": "exploit multiple transformations in training and evaluation",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "propagating the score back to the image enables pixel-wise localization",
+   "grounded": true
+  },
+  {
+   "op": "update model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "exploit multiple transformations in training and evaluation",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "develop a scoring function that indicates defects",
+   "grounded": true
+  },
+  {
+   "op": "localize defect",
+   "canonical": "localize defect",
+   "object": "input",
+   "quote": "propagating the score back to the image enables pixel-wise localization",
+   "grounded": true
+  },
+  {
+   "op": "compute probability",
+   "canonical": "compute probability",
+   "object": "distribution",
+   "quote": "estimate their density using normalizing flows",
+   "grounded": true
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "value",
+   "quote": "develop a scoring function that indicates defects",
+   "grounded": true
+  },
+  {
+   "op": "propagate score",
+   "canonical": "transmit",
+   "object": "input",
+   "quote": "propagating the score back to the image enables pixel-wise localization",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply transformation@input",
+  "assign likelihood@input",
+  "backpropagate error@gradient",
+  "compare@error",
+  "compare@input",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute likelihood@input",
+  "compute probability@distribution",
+  "compute reward@reward",
+  "compute score@distribution",
+  "compute score@value",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@input",
+  "extract feature@input",
+  "localize defect@input",
+  "predict@latent",
+  "reconstruct@input",
+  "transform input@input",
+  "transmit@input"
+ ]
+}

@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "1810.02244",
+ "source": "abstract",
+ "words": 160,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute node representation",
+   "canonical": "compute node representation",
+   "object": "state",
+   "quote": "learn vector representations of nodes and graphs",
+   "grounded": true
+  },
+  {
+   "op": "aggregate neighbor information",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "learn vector representations of nodes and graphs",
+   "grounded": true
+  },
+  {
+   "op": "update node representation",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "learn vector representations of nodes and graphs",
+   "grounded": true
+  },
+  {
+   "op": "compute graph representation",
+   "canonical": "compute graph representation",
+   "object": "state",
+   "quote": "learn vector representations of nodes and graphs",
+   "grounded": true
+  },
+  {
+   "op": "compare graph representations",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "distinguishing non-isomorphic (sub-)graphs",
+   "grounded": true
+  },
+  {
+   "op": "compute higher-order node representation",
+   "canonical": "compute higher-order node representation",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "aggregate higher-order neighbor information",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "update higher-order node representation",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "compute higher-order graph representation",
+   "canonical": "compute higher-order graph representation",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "evaluate graph classification",
+   "canonical": "evaluate",
+   "object": "state",
+   "quote": "higher-order information is useful in the task of graph classification",
+   "grounded": true
+  },
+  {
+   "op": "evaluate graph regression",
+   "canonical": "evaluate",
+   "object": "state",
+   "quote": "higher-order information is useful in the task of graph classification",
+   "grounded": true
+  },
+  {
+   "op": "compute graph features",
+   "canonical": "compute graph features",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "denoise graph representation",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "sample graph structure",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "compute graph similarity",
+   "canonical": "compute graph similarity",
+   "object": "state",
+   "quote": "distinguishing non-isomorphic (sub-)graphs",
+   "grounded": true
+  },
+  {
+   "op": "compute graph embedding",
+   "canonical": "compute graph embedding",
+   "object": "state",
+   "quote": "learn vector representations of nodes and graphs",
+   "grounded": true
+  },
+  {
+   "op": "compute graph score",
+   "canonical": "compute graph score",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "compute graph distribution",
+   "canonical": "compute graph distribution",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "compute graph probability",
+   "canonical": "compute graph probability",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "compute graph likelihood",
+   "canonical": "compute graph likelihood",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "compute graph score function",
+   "canonical": "compute graph score function",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "compute graph posterior",
+   "canonical": "compute graph posterior",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "compute graph prior",
+   "canonical": "compute graph prior",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "compute graph density",
+   "canonical": "compute graph density",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  },
+  {
+   "op": "compute graph entropy",
+   "canonical": "compute graph entropy",
+   "object": "state",
+   "quote": "take higher-order graph structures at multiple scales into account",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "compare@state",
+  "compute graph density@state",
+  "compute graph distribution@state",
+  "compute graph embedding@state",
+  "compute graph entropy@state",
+  "compute graph features@state",
+  "compute graph likelihood@state",
+  "compute graph posterior@state",
+  "compute graph prior@state",
+  "compute graph probability@state",
+  "compute graph representation@state",
+  "compute graph score function@state",
+  "compute graph score@state",
+  "compute graph similarity@state",
+  "compute higher-order graph representation@state",
+  "compute higher-order node representation@state",
+  "compute node representation@state",
+  "correct@state",
+  "evaluate@state",
+  "reconstruct@state",
+  "sample@state"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1604.04112",
+ "source": "abstract",
+ "words": 135,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "input",
+   "quote": "we propose the use of exponential linear unit",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "speeds up learning in Residual Networks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improves the accuracy as the depth increases",
+   "grounded": true
+  },
+  {
+   "op": "forward pass",
+   "canonical": "forward pass",
+   "object": "input",
+   "quote": "very deep convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "lead to a considerable decrease in test errors",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "these networks introduce skip connections",
+   "grounded": false
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "on benchmarks like ImageNet and COCO",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "improves the test error on almost all data sets",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply activation@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute gradient@parameter",
+  "compute value@value",
+  "correct@parameter",
+  "forward pass@input",
+  "sample@input"
+ ]
+}

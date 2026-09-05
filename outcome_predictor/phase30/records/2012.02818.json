@@ -1,0 +1,208 @@
+{
+ "arxiv_id": "2012.02818",
+ "source": "abstract",
+ "words": 194,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "Encoding the latent posterior of Bayesian Neural Networks",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "learn the interaction and the latent distribution",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "capture more accurately the posterior distribution",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learn the interaction and the latent distribution",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "improving the robustness and the predictive uncertainty",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "efficient deep BNNs amenable to complex computer vision architectures",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "trajectory",
+   "quote": "compatible with the recent BatchEnsemble method",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "leading to highly efficient ensembles",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "competitive results across multiple metrics",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "tasks, e.g. semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "efficient deep BNNs amenable to complex computer vision architectures",
+   "grounded": true
+  },
+  {
+   "op": "estimate",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "learn the interaction and the latent distribution",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "efficient deep BNNs amenable to complex computer vision architectures",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "gradient",
+   "quote": "improving the robustness and the predictive uncertainty",
+   "grounded": true
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "gradient",
+   "quote": "efficient deep BNNs amenable to complex computer vision architectures",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "policy",
+   "quote": "competitive results across multiple metrics",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "leading to highly efficient ensembles",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "learn the interaction and the latent distribution",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "efficient deep BNNs amenable to complex computer vision architectures",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "trajectory",
+   "quote": "compatible with the recent BatchEnsemble method",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "leading to highly efficient ensembles",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "improving the robustness and the predictive uncertainty",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "efficient deep BNNs amenable to complex computer vision architectures",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "capture more accurately the posterior distribution",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "efficient deep BNNs amenable to complex computer vision architectures",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@trajectory",
+  "compare@task",
+  "compute@distribution",
+  "compute@error",
+  "compute@gradient",
+  "compute@reward",
+  "compute@value",
+  "correct@parameter",
+  "encode@state",
+  "evaluate@policy",
+  "improve@parameter",
+  "predict@latent",
+  "predict@value",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "sample@distribution",
+  "sample@sample",
+  "transform@input",
+  "transmit@gradient"
+ ]
+}

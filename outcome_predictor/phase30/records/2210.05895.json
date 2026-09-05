@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2210.05895",
+ "source": "abstract",
+ "words": 148,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute affinity",
+   "canonical": "compute affinity",
+   "object": "latent",
+   "quote": "uses learned affinity matrices to capture dynamic graphical structures",
+   "grounded": true
+  },
+  {
+   "op": "construct graph",
+   "canonical": "construct graph",
+   "object": "state",
+   "quote": "capture dynamic graphical structures instead of relying on a prescribed one",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "performs group-wise temporal convolutions with varying receptive fields",
+   "grounded": true
+  },
+  {
+   "op": "fusion joint",
+   "canonical": "fusion joint",
+   "object": "state",
+   "quote": "incorporates a dynamic joint-skeleton fusion module for adaptive multi-level temporal modeling",
+   "grounded": true
+  },
+  {
+   "op": "model temporal",
+   "canonical": "model temporal",
+   "object": "trajectory",
+   "quote": "performs group-wise temporal convolutions with varying receptive fields",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "capture dynamic graphical structures instead of relying on a prescribed one",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "skeleton-based action recognition",
+   "grounded": true
+  },
+  {
+   "op": "encode skeleton",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "skeleton-based action recognition",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "capture dynamic graphical structures instead of relying on a prescribed one",
+   "grounded": true
+  },
+  {
+   "op": "model spatial",
+   "canonical": "model spatial",
+   "object": "state",
+   "quote": "spatial and temporal modeling",
+   "grounded": true
+  },
+  {
+   "op": "model temporal",
+   "canonical": "model temporal",
+   "object": "trajectory",
+   "quote": "adaptive multi-level temporal modeling",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "incorporates a dynamic joint-skeleton fusion module for adaptive multi-level temporal modeling",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "skeleton-based action recognition",
+   "grounded": true
+  },
+  {
+   "op": "process sequence",
+   "canonical": "process sequence",
+   "object": "trajectory",
+   "quote": "adaptive multi-level temporal modeling",
+   "grounded": true
+  },
+  {
+   "op": "update weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "dynamic graphical structures",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "outperforms state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "outperforms state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "outperforms state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "outperforms state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "outperforms state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "skeleton-based action recognition",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "skeleton-based action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute features",
+   "canonical": "compute features",
+   "object": "latent",
+   "quote": "capture dynamic graphical structures instead of relying on a prescribed one",
+   "grounded": true
+  },
+  {
+   "op": "apply fusion",
+   "canonical": "apply fusion",
+   "object": "distribution",
+   "quote": "incorporates a dynamic joint-skeleton fusion module for adaptive multi-level temporal modeling",
+   "grounded": true
+  },
+  {
+   "op": "generate prediction",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "skeleton-based action recognition",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@latent",
+  "apply fusion@distribution",
+  "backpropagate@gradient",
+  "compute affinity@latent",
+  "compute features@latent",
+  "construct graph@state",
+  "correct@parameter",
+  "encode@input",
+  "encode@state",
+  "evaluate@error",
+  "evaluate@task",
+  "fusion joint@state",
+  "improve@parameter",
+  "model spatial@state",
+  "model temporal@trajectory",
+  "predict@state",
+  "process input@input",
+  "process sequence@trajectory",
+  "reconstruct@action",
+  "train@parameter"
+ ]
+}

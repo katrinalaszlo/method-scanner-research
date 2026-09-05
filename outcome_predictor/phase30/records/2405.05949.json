@@ -1,0 +1,170 @@
+{
+ "arxiv_id": "2405.05949",
+ "source": "abstract",
+ "words": 183,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 4,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "initialize parameter",
+   "canonical": "initialize parameter",
+   "object": "INVALID:expert",
+   "quote": "initializes each expert in the MoE block from the pre-trained MLP block",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "auxiliary losses are used to ensure a balanced loading of experts",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "CuMo outperforms state-of-the-art multimodal LLMs",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "CuMo incorporates Co-upcycled Top-K sparsely-gated Mixture-of-experts blocks",
+   "grounded": true
+  },
+  {
+   "op": "gate",
+   "canonical": "gate",
+   "object": "INVALID:expert",
+   "quote": "CuMo incorporates Co-upcycled Top-K sparsely-gated Mixture-of-experts blocks",
+   "grounded": true
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "INVALID:expert",
+   "quote": "CuMo incorporates Co-upcycled Top-K sparsy-gated Mixture-of-experts blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "CuMo outperforms state-of-the-art multimodal LLMs",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "CuMo outperforms state-of-the-art multimodal LLMs",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "INVALID:expert",
+   "quote": "CuMo incorporates Co-upcycled Top-K sparsely-gated Mixture-of-experts blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "CuMo incorporates Co-upcycled Top-K sparsely-gated Mixture-of-experts blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "auxiliary losses are used to ensure a balanced loading of experts",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "auxiliary losses are used to ensure a balanced loading of experts",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "CuMo outperforms state-of-the-art multimodal LLMs",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "CuMo incorporates Co-upcycled Top-K sparsely-gated Mixture-of-experts blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "CuMo outperforms state-of-the-art multimodal LLMs",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "CuMo outperforms state-of-the-art multimodal LLMs",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "CuMo incorporates Co-upcycled Top-K sparsely-gated Mixture-of-experts blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "auxiliary losses are used to ensure a balanced loading of experts",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "CuMo incorporates Co-upcycled Top-K sparsely-gated Mixture-of-experts blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "CuMo incorporates Co-upcycled Top-K sparsely-gated Mixture-of-experts blocks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute parameter@parameter",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@action",
+  "reconstruct@noise",
+  "sample@sample"
+ ]
+}

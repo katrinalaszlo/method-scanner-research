@@ -1,0 +1,217 @@
+{
+ "arxiv_id": "1810.00826",
+ "source": "abstract",
+ "words": 175,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "aggregate neighbors",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "transform representation",
+   "canonical": "transform representation",
+   "object": "latent",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "compute representation",
+   "canonical": "compute representation",
+   "object": "state",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "latent",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "propagate information",
+   "canonical": "transmit",
+   "object": "state",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "update node state",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "compute node features",
+   "canonical": "compute node features",
+   "object": "latent",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "combine node features",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "generate graph representation",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "learn graph structure",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "evaluate discriminative power",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "our results characterize the discriminative power of popular GNN variants",
+   "grounded": true
+  },
+  {
+   "op": "compare models",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "our results characterize the discriminative power of popular GNN variants",
+   "grounded": true
+  },
+  {
+   "op": "analyze expressive power",
+   "canonical": "analyze expressive power",
+   "object": "distribution",
+   "quote": "we present a theoretical framework for analyzing the expressive power of GNNs",
+   "grounded": false
+  },
+  {
+   "op": "characterize models",
+   "canonical": "characterize models",
+   "object": "task",
+   "quote": "our results characterize the discriminative power of popular GNN variants",
+   "grounded": true
+  },
+  {
+   "op": "test graph isomorphism",
+   "canonical": "test graph isomorphism",
+   "object": "trajectory",
+   "quote": "we develop a simple architecture that is provably the most expressive among the class of GNNs and is as powerful as the Weisfeiler-Lehman graph isomorphism test",
+   "grounded": false
+  },
+  {
+   "op": "validate findings",
+   "canonical": "validate findings",
+   "object": "task",
+   "quote": "we empirically validate our theoretical findings on a number of graph classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "achieve performance",
+   "canonical": "achieve performance",
+   "object": "value",
+   "quote": "we demonstrate that our model achieves state-of-the-art performance",
+   "grounded": false
+  },
+  {
+   "op": "compute graph features",
+   "canonical": "compute graph features",
+   "object": "state",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "propagate through graph",
+   "canonical": "transmit",
+   "object": "trajectory",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "learn node representations",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "compute graph embeddings",
+   "canonical": "compute graph embeddings",
+   "object": "state",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "evaluate graph structure",
+   "canonical": "evaluate",
+   "object": "distribution",
+   "quote": "our results characterize the discriminative power of popular GNN variants",
+   "grounded": true
+  },
+  {
+   "op": "generate graph embeddings",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "compute graph features",
+   "canonical": "compute graph features",
+   "object": "state",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "learn graph representations",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes",
+   "grounded": false
+  },
+  {
+   "op": "analyze graph structure",
+   "canonical": "analyze graph structure",
+   "object": "distribution",
+   "quote": "our results characterize the discriminative power of popular GNN variants",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "achieve performance@value",
+  "aggregate@state",
+  "analyze expressive power@distribution",
+  "analyze graph structure@distribution",
+  "apply transformation@latent",
+  "characterize models@task",
+  "compare@task",
+  "compute graph embeddings@state",
+  "compute graph features@state",
+  "compute node features@latent",
+  "compute representation@state",
+  "correct@state",
+  "evaluate@distribution",
+  "evaluate@value",
+  "reconstruct@state",
+  "test graph isomorphism@trajectory",
+  "train@latent",
+  "transform representation@latent",
+  "transmit@state",
+  "transmit@trajectory",
+  "validate findings@task"
+ ]
+}

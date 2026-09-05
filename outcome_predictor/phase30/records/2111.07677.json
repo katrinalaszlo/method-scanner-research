@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2111.07677",
+ "source": "abstract",
+ "words": 211,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "extract normal image features with a deep convolutional neural network",
+   "grounded": true
+  },
+  {
+   "op": "estimate distribution",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "characterize the corresponding distribution through non-parametric distribution estimation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "latent",
+   "quote": "the anomaly score is calculated by measuring the distance between the feature of the test image and the estimated distribution",
+   "grounded": true
+  },
+  {
+   "op": "transform input",
+   "canonical": "transform input",
+   "object": "input",
+   "quote": "FastFlow learns to transform the input visual feature into a tractable distribution",
+   "grounded": true
+  },
+  {
+   "op": "compute likelihood",
+   "canonical": "compute likelihood",
+   "object": "latent",
+   "quote": "obtains the likelihood to recognize anomalies in inference phase",
+   "grounded": true
+  },
+  {
+   "op": "detect anomaly",
+   "canonical": "detect anomaly",
+   "object": "latent",
+   "quote": "the anomaly score is calculated by measuring the distance between the feature of the test image and the estimated distribution",
+   "grounded": true
+  },
+  {
+   "op": "localize anomaly",
+   "canonical": "localize anomaly",
+   "object": "latent",
+   "quote": "used for unsupervised anomaly detection and localization",
+   "grounded": false
+  },
+  {
+   "op": "apply flow",
+   "canonical": "apply flow",
+   "object": "latent",
+   "quote": "implemented with 2D normalizing flows and use it as the probability distribution estimator",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply flow@latent",
+  "compute distance@latent",
+  "compute likelihood@latent",
+  "detect anomaly@latent",
+  "extract feature@input",
+  "localize anomaly@latent",
+  "predict@latent",
+  "transform input@input"
+ ]
+}

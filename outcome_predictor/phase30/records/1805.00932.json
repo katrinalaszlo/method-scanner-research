@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "1805.00932",
+ "source": "abstract",
+ "words": 160,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "training for large-scale hashtag prediction leads to excellent results",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "training for large-scale hashtag prediction leads to excellent results",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "training for large-scale hashtag prediction leads to excellent results",
+   "grounded": true
+  },
+  {
+   "op": "predict hashtags",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "trained to predict hashtags on billions of social media images",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "value",
+   "quote": "report the highest ImageNet-1k single-crop, top-1 accuracy to date",
+   "grounded": true
+  },
+  {
+   "op": "compute top-5 accuracy",
+   "canonical": "compute top-5 accuracy",
+   "object": "value",
+   "quote": "report the highest ImageNet-1k single-crop, top-1 accuracy to date",
+   "grounded": true
+  },
+  {
+   "op": "evaluate task",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "show improvements on several image classification and object detection tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "perform extensive experiments that provide novel empirical data on the relationship between large-scale pretraining and transfer learning performance",
+   "grounded": false
+  },
+  {
+   "op": "analyze performance",
+   "canonical": "analyze performance",
+   "object": "value",
+   "quote": "perform extensive experiments that provide novel empirical data on the relationship between large-scale pretraining and transfer learning performance",
+   "grounded": false
+  },
+  {
+   "op": "collect data",
+   "canonical": "collect data",
+   "object": "input",
+   "quote": "trained to predict hashtags on billions of social media images",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "trained to predict hashtags on billions of social media images",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "trained to predict hashtags on billions of social media images",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "show improvements on several image classification and object detection tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "perform extensive experiments that provide novel empirical data on the relationship between large-scale pretraining and transfer learning performance",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "trained to predict hashtags on billions of social media images",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "perform extensive experiments that provide novel empirical data on the relationship between large-scale pretraining and transfer learning performance",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "report the highest ImageNet-1k single-crop, top-1 accuracy to date",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "show improvements on several image classification and object detection tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "trained to predict hashtags on billions of social media images",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "trained to predict hashtags on billions of social media images",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "perform extensive experiments that provide novel empirical data on the relationship between large-scale pretraining and transfer learning performance",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "perform extensive experiments that provide novel empirical data on the relationship between large-scale pretraining and transfer learning performance",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "training for large-scale hashtag prediction leads to excellent results",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "training for large-scale hashtag prediction leads to excellent results",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "show improvements on several image classification and object detection tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "analyze performance@value",
+  "backpropagate@gradient",
+  "collect data@input",
+  "compare@error",
+  "compute accuracy@value",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute top-5 accuracy@value",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@input",
+  "process input@input",
+  "reconstruct@action",
+  "sample@action"
+ ]
+}

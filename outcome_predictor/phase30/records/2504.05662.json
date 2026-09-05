@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "2504.05662",
+ "source": "abstract",
+ "words": 147,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "sample latent",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "we directly infer its corresponding latent variables",
+   "grounded": true
+  },
+  {
+   "op": "compute density",
+   "canonical": "compute density",
+   "object": "distribution",
+   "quote": "measure their density under the Gaussian prior distribution",
+   "grounded": true
+  },
+  {
+   "op": "evaluate likelihood",
+   "canonical": "evaluate",
+   "object": "latent",
+   "quote": "directly infer its corresponding latent variables and measure their density",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we directly infer its corresponding latent variables",
+   "grounded": true
+  },
+  {
+   "op": "apply noise",
+   "canonical": "apply noise",
+   "object": "noise",
+   "quote": "diffusion models, with their robust distribution approximation capabilities",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "diffusion models, with their robust distribution approximation capabilities",
+   "grounded": true
+  },
+  {
+   "op": "predict latent",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "we directly infer its corresponding latent variables",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the prior density proves effective as an anomaly score",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "we directly infer its corresponding latent variables",
+   "grounded": true
+  },
+  {
+   "op": "compare density",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "the prior density proves effective as an anomaly score",
+   "grounded": true
+  },
+  {
+   "op": "output score",
+   "canonical": "output score",
+   "object": "value",
+   "quote": "the prior density proves effective as an anomaly score",
+   "grounded": true
+  },
+  {
+   "op": "store latent",
+   "canonical": "store latent",
+   "object": "latent",
+   "quote": "we directly infer its corresponding latent variables",
+   "grounded": true
+  },
+  {
+   "op": "compute anomaly",
+   "canonical": "compute anomaly",
+   "object": "value",
+   "quote": "the prior density proves effective as an anomaly score",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "diffusion models, with their robust distribution approximation capabilities",
+   "grounded": true
+  },
+  {
+   "op": "apply diffusion",
+   "canonical": "apply diffusion",
+   "object": "noise",
+   "quote": "diffusion models, with their robust distribution approximation capabilities",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "diffusion models, with their robust distribution approximation capabilities",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "diffusion models, with their robust distribution approximation capabilities",
+   "grounded": true
+  },
+  {
+   "op": "update network",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "diffusion models, with their robust distribution approximation capabilities",
+   "grounded": true
+  },
+  {
+   "op": "sample noise",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "diffusion models, with their robust distribution approximation capabilities",
+   "grounded": true
+  },
+  {
+   "op": "denoise latent",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we directly infer its corresponding latent variables",
+   "grounded": true
+  },
+  {
+   "op": "compute prior",
+   "canonical": "compute prior",
+   "object": "distribution",
+   "quote": "measure their density under the Gaussian prior distribution",
+   "grounded": true
+  },
+  {
+   "op": "evaluate score",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "the prior density proves effective as an anomaly score",
+   "grounded": true
+  },
+  {
+   "op": "store score",
+   "canonical": "store score",
+   "object": "value",
+   "quote": "the prior density proves effective as an anomaly score",
+   "grounded": true
+  },
+  {
+   "op": "output result",
+   "canonical": "output result",
+   "object": "value",
+   "quote": "the prior density proves effective as an anomaly score",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply diffusion@noise",
+  "apply noise@noise",
+  "backpropagate@gradient",
+  "compare@distribution",
+  "compare@error",
+  "compute anomaly@value",
+  "compute density@distribution",
+  "compute gradient@gradient",
+  "compute prior@distribution",
+  "correct@parameter",
+  "evaluate@latent",
+  "evaluate@value",
+  "output result@value",
+  "output score@value",
+  "predict@latent",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reconstruct@sample",
+  "sample@latent",
+  "sample@noise",
+  "store latent@latent",
+  "store score@value"
+ ]
+}

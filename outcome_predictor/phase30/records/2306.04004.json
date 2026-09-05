@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2306.04004",
+ "source": "abstract",
+ "words": 113,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 3,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute laplacian",
+   "canonical": "compute laplacian",
+   "object": "INVALID:graph",
+   "quote": "Given a graph laplacian matrix",
+   "grounded": true
+  },
+  {
+   "op": "generate approximation",
+   "canonical": "reconstruct",
+   "object": "INVALID:schur complement",
+   "quote": "generates unbiased approximations of its Schur complements",
+   "grounded": true
+  },
+  {
+   "op": "construct graph",
+   "canonical": "construct graph",
+   "object": "INVALID:augmented view",
+   "quote": "treats the corresponding graphs as augmented views",
+   "grounded": true
+  },
+  {
+   "op": "encode view",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "varying the design choices for subsequent GCL phases, such as encoding",
+   "grounded": true
+  },
+  {
+   "op": "contrast views",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "varying the design choices for subsequent GCL phases, such as contrasting",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Extensive experiments on node and graph classification benchmarks demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Extensive experiments on node and graph classification benchmarks demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "sample graph",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "study the empirical effectiveness of the augmentor in a controlled fashion",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate gradient",
+   "canonical": "backpropagate gradient",
+   "object": "parameter",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "achieve state, of-the-art results",
+   "grounded": false
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "noise",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "achieve state-of-the-art results",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate gradient@parameter",
+  "compare@error",
+  "compare@latent",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute noise@noise",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@state",
+  "evaluate@error",
+  "improve@parameter",
+  "predict@value",
+  "sample@sample",
+  "sample@trajectory"
+ ]
+}

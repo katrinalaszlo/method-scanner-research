@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2104.02008",
+ "source": "abstract",
+ "words": 170,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute statistics",
+   "canonical": "compute statistics",
+   "object": "input",
+   "quote": "probabilistically mixing instance-level feature statistics",
+   "grounded": true
+  },
+  {
+   "op": "mix statistics",
+   "canonical": "mix statistics",
+   "object": "input",
+   "quote": "mixing styles of training instances",
+   "grounded": true
+  },
+  {
+   "op": "apply statistics",
+   "canonical": "apply statistics",
+   "object": "input",
+   "quote": "style information is captured by the bottom layers",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "fits into mini-batch training perfectly",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "effectiveness of MixStyle is demonstrated on a wide range of tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "reinforcement learning",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "domain generalization aims to address this problem",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "is extremely easy to implement",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply statistics@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute statistics@input",
+  "correct@parameter",
+  "mix statistics@input",
+  "predict@action",
+  "sample@action"
+ ]
+}

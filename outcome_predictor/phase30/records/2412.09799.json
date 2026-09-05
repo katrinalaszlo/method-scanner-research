@@ -1,0 +1,120 @@
+{
+ "arxiv_id": "2412.09799",
+ "source": "abstract",
+ "words": 249,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 14,
+ "n_invalid_object": 3,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we design an efficient prompt visual hybrid encoder",
+   "grounded": true
+  },
+  {
+   "op": "fuse",
+   "canonical": "fuse",
+   "object": "latent",
+   "quote": "through scale-by-scale and multi-scale fusion modules",
+   "grounded": true
+  },
+  {
+   "op": "interact",
+   "canonical": "act",
+   "object": "latent",
+   "quote": "enhances the information interaction between prompt and visual",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "prompt multi-label loss and auxiliary detection head",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "fully utilize the prompted information",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:prompt",
+   "quote": "we have designed two practical concept prompt generation methods",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "INVALID:concept",
+   "quote": "extract abstract concepts through concrete visual examples",
+   "grounded": true
+  },
+  {
+   "op": "reduce",
+   "canonical": "reduce",
+   "object": "INVALID:bias",
+   "quote": "stably reduce alignment bias in downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "value",
+   "quote": "demonstrates superior universal detection performance",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "in a broad spectrum of scenarios",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "value",
+   "quote": "achieves 47.6 zero-shot AP on LVIS",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "value",
+   "quote": "achieves 32.2 zero-shot AP on ODinW35",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "value",
+   "quote": "achieves 68.4 AP on COCO val by interactive detection",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "value",
+   "quote": "achieves 73.1 fully-shot AP on ODinW13",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "act@latent",
+  "compute accuracy@value",
+  "compute metric@value",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "fuse@latent",
+  "predict@distribution"
+ ]
+}

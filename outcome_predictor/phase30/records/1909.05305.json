@@ -1,0 +1,479 @@
+{
+ "arxiv_id": "1909.05305",
+ "source": "abstract",
+ "words": 132,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 65,
+ "n_invalid_object": 0,
+ "n_grounded": 61,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "We train using a joint optimization of image contents",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We train using a joint optimization of image contents",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We train using a joint optimization of image contents",
+   "grounded": false
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We use a two-stage inpainting model as a baseline",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "We use a two-stage inpainting model as a baseline",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We use a two-stage inpainting model as a baseline",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "We use a two-stage inpainting, model as a baseline",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We use a two-stage inpainting model as a baseline",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "We use a two-stage inpainting model as a baseline",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We use a two-stage inpainting model as a baseline",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "We use a two-stage inpainting model as a baseline",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We use a two-stage inpainting model as a baseline",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "We use a two-stage inpainting model as a baseline",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We use a two-stage inpainting model as a baseline",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "We use a two-stage inpainting model as a baseline",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "input",
+   "quote": "We show that our method of decoupling structure and texture reconstruction",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@input",
+  "compute value@input",
+  "correct@parameter",
+  "encode@input",
+  "predict@input",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "sample@distribution",
+  "sample@sample"
+ ]
+}

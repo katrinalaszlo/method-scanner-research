@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2201.07436",
+ "source": "abstract",
+ "words": 203,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 4,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we deploy a hierarchical transformer encoder to capture and convey the global context",
+   "grounded": true
+  },
+  {
+   "op": "fuse",
+   "canonical": "fuse",
+   "object": "latent",
+   "quote": "constructing connected paths between multi-scale local features and the global decoding stream",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "design a lightweight yet powerful decoder to generate an estimated depth map",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:depth",
+   "quote": "generate an estimated depth map while considering local connectivity",
+   "grounded": true
+  },
+  {
+   "op": "augment",
+   "canonical": "augment",
+   "object": "input",
+   "quote": "improve the depth-specific augmentation method by utilizing an important observation",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "extensive experiments have been conducted to validate and show the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the proposed decoder shows better performance than the previously proposed decoders",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed decoder shows better performance than the previously proposed decoders",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "the network can integrate both representations and recover fine details",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "INVALID:depth",
+   "quote": "generate an estimated depth map while considering local connectivity",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "our model shows better generalisation ability and robustness than other comparative models",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "constructing connected paths between multi-scale local features and the global decoding stream",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "we deploy a hierarchical transformer encoder to capture and convey the global context",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "constructing connected paths between multi-scale local features and the global decoding stream",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "INVALID:depth",
+   "quote": "the network can integrate both representations and recover fine details",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "our network achieves state-of-the-art performance over the challenging depth dataset",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:depth",
+   "quote": "design a lightweight yet powerful decoder to generate an estimated depth map",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "input",
+   "quote": "we deploy a hierarchical transformer encoder to capture and convey the global context",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "constructing connected paths between multi-scale local features and the global decoding stream",
+   "grounded": true
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "error",
+   "quote": "the proposed decoder shows better performance than the previously proposed decoders",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "the proposed decoder shows better performance than the previously proposed decoders",
+   "grounded": true
+  },
+  {
+   "op": "analyze",
+   "canonical": "analyze",
+   "object": "error",
+   "quote": "extensive experiments have been conducted to validate and show the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the proposed decoder shows better performance than the previously proposed decoders",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "our network achieves state-of-the-art performance over the challenging depth dataset",
+   "grounded": true
+  },
+  {
+   "op": "validate",
+   "canonical": "validate",
+   "object": "error",
+   "quote": "extensive experiments have been conducted to validate and show the effectiveness",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "analyze@error",
+  "augment@input",
+  "backpropagate@gradient",
+  "compare@value",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@value",
+  "extract@latent",
+  "fuse@latent",
+  "improve@parameter",
+  "process@input",
+  "reconstruct@latent",
+  "sample@distribution",
+  "train@parameter",
+  "transform@latent",
+  "transmit@error",
+  "validate@error"
+ ]
+}

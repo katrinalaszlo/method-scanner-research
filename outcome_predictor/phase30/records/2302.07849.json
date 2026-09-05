@@ -1,0 +1,180 @@
+{
+ "arxiv_id": "2302.07849",
+ "source": "abstract",
+ "words": 162,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 21,
+ "n_invalid_object": 2,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "normalize batch",
+   "canonical": "normalize batch",
+   "object": "input",
+   "quote": "enabling automatic zero-shot generalization for unseen AD tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "INVALID:batch",
+   "quote": "batch normalization plus meta-training",
+   "grounded": true
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "INVALID:batch",
+   "quote": "batch normalization plus meta-training",
+   "grounded": true
+  },
+  {
+   "op": "scale input",
+   "canonical": "scale input",
+   "object": "input",
+   "quote": "enabling automatic zero-shot generalization for unseen AD tasks",
+   "grounded": true
+  },
+  {
+   "op": "shift input",
+   "canonical": "shift input",
+   "object": "input",
+   "quote": "enabling automatic zero-shot generalization for unseen AD tasks",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "train off-the-shelf deep anomaly detectors",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train off-the-shelf deep anomaly detectors",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "our theoretical results guarantee the zero-shot generalization",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "our empirical results demonstrate the first zero-shot AD results",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "our empirical results demonstrate the first zero-shot AD results",
+   "grounded": true
+  },
+  {
+   "op": "predict anomaly",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "zero-shot anomaly detection and segmentation on image data",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "input",
+   "quote": "zero-shot anomaly detection and segmentation on image data",
+   "grounded": true
+  },
+  {
+   "op": "compare input",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "zero-shot anomaly detection and segmentation on image data",
+   "grounded": true
+  },
+  {
+   "op": "detect anomaly",
+   "canonical": "detect anomaly",
+   "object": "input",
+   "quote": "zero-shot anomaly detection and segmentation on image data",
+   "grounded": true
+  },
+  {
+   "op": "output anomaly",
+   "canonical": "output anomaly",
+   "object": "input",
+   "quote": "zero-shot anomaly detection and segmentation on image data",
+   "grounded": true
+  },
+  {
+   "op": "log anomaly",
+   "canonical": "log anomaly",
+   "object": "input",
+   "quote": "zero-shot anomaly detection and segmentation on image data",
+   "grounded": true
+  },
+  {
+   "op": "evaluate anomaly",
+   "canonical": "evaluate",
+   "object": "input",
+   "quote": "zero-shot anomaly detection and segmentation on image data",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "input",
+   "quote": "zero-shot anomaly detection and segmentation on image data",
+   "grounded": true
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "input",
+   "quote": "zero-shot anomaly detection and segmentation on image data",
+   "grounded": true
+  },
+  {
+   "op": "compute recall",
+   "canonical": "compute recall",
+   "object": "input",
+   "quote": "zero-shot anomaly detection and segmentation on image data",
+   "grounded": true
+  },
+  {
+   "op": "compute f1 score",
+   "canonical": "compute f1 score",
+   "object": "input",
+   "quote": "zero-shot anomaly detection and segmentation on image data",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "compare@distribution",
+  "compare@input",
+  "compute accuracy@input",
+  "compute distribution@input",
+  "compute f1 score@input",
+  "compute precision@input",
+  "compute recall@input",
+  "correct@parameter",
+  "detect anomaly@input",
+  "evaluate@input",
+  "log anomaly@input",
+  "normalize batch@input",
+  "output anomaly@input",
+  "predict@input",
+  "scale input@input",
+  "shift input@input",
+  "train@parameter"
+ ]
+}

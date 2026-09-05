@@ -1,0 +1,205 @@
+{
+ "arxiv_id": "2403.15377",
+ "source": "abstract",
+ "words": 134,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 3,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we prioritize spatiotemporal consistency by semantically segmenting videos",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:next token",
+   "quote": "unifies the masked video modeling, crossmodal contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "through extensive experiments, we validate our designs",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "scaling up the video encoder size to 6B parameters",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:caption",
+   "quote": "generating video-audio-speech captions",
+   "grounded": true
+  },
+  {
+   "op": "align",
+   "canonical": "align",
+   "object": "distribution",
+   "quote": "improves the alignment between video and text",
+   "grounded": true
+  },
+  {
+   "op": "reason",
+   "canonical": "reason",
+   "object": "INVALID:context",
+   "quote": "highlighting its ability to reason and comprehend longer contexts",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "demonstrate superior performance on over 60 video and audio tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "our model outperforms others on various video-related dialogue",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "scaling foundation models for multimodal video understanding",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "video-centric dialogue and long video understanding benchmarks",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "through extensive experiments, we validate our designs",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "improves the alignment between video and text",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "input",
+   "quote": "we prioritize spatiotemporal consistency by semantically segmenting videos",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "scaling foundation models for multimodal video understanding",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "improves the alignment between video and text",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "video-centric dialogue and long video understanding benchmarks",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "demonstrate superior performance on over 60 video and audio tasks",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "scaling up the video encoder size to 6B parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "through extensive experiments, we validate our designs",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "scaling foundation models for multimodal video understanding",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "video-centric dialogue and long video understanding benchmarks",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "demonstrate superior performance on over 60 video and audio tasks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "through extensive experiments, we validate our designs",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "improves the alignment between video and text",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align@distribution",
+  "backpropagate@gradient",
+  "clip@input",
+  "compute@distribution",
+  "compute@error",
+  "compute@value",
+  "correct@parameter",
+  "correct@policy",
+  "encode@input",
+  "predict@reward",
+  "predict@task",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@sample",
+  "sample@trajectory"
+ ]
+}

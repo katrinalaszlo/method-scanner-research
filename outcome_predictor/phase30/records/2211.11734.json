@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2211.11734",
+ "source": "abstract",
+ "words": 171,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "current techniques directly regress the shape, pose, and translation",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we approach the task as a model-in-the-loop optimization problem",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we present quantitative evaluations which confirm that PLIKS achieves more accurate reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "we approach the task as a model-in-the-loop optimization problem",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we introduce PLIKS (Pseudo-Linear Inverse Kinematic Solver) for reconstruction of a 3D mesh",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "PLIKS is built on a linearized formulation of the parametric SMPL model",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we can analytically reconstruct the human model via 2D pixel-aligned vertices",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we present quantitative evaluations which confirm that PLIKS achieves more accurate reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we approach the task as a model-in-the-loop optimization problem",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "we approach the task as a model-in-the-loop optimization problem",
+   "grounded": true
+  },
+  {
+   "op": "update policy",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "we present quantitative evaluations which confirm that PLIKS achieves more accurate reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we can analytically reconstruct the human model via 2D pixel-aligned vertices",
+   "grounded": true
+  },
+  {
+   "op": "apply constraint",
+   "canonical": "apply constraint",
+   "object": "task",
+   "quote": "we offer an easy way to introduce additional constraints such as shape and translation",
+   "grounded": false
+  },
+  {
+   "op": "reconstruct trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we can analytically reconstruct the human model via 2D pixel-aligned vertices",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "PLIKS is built on a linearized formulation of the parametric SMPL model",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we approach the task as a model-in-the-loop optimization problem",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we approach the task as a model-in-the-loop optimization problem",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we approach the task as a model-in-the-loop optimization problem",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we approach the task as a model-in-the-loop optimization problem",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we approach the task as a model-in-the-loop optimization problem",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we can analytically reconstruct the human model via 2D pixel-aligned vertices",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we can analytically reconstruct the human model via 2D pixel-aligned vertices",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we can analytically reconstruct the human model via 2D pixel-aligned vertices",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "PLIKS is built on a linearized formulation of the parametric SMPL model",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we approach the task as a model-in-the-loop optimization problem",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply constraint@task",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compare@state",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute latent@latent",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "correct@policy",
+  "encode@input",
+  "predict@reward",
+  "predict@value",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@sample"
+ ]
+}

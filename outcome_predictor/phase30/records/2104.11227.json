@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2104.11227",
+ "source": "abstract",
+ "words": 155,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "starting from the input resolution",
+   "grounded": true
+  },
+  {
+   "op": "reduce resolution",
+   "canonical": "reduce resolution",
+   "object": "state",
+   "quote": "reducing the spatial resolution",
+   "grounded": true
+  },
+  {
+   "op": "expand channels",
+   "canonical": "expand channels",
+   "object": "latent",
+   "quote": "hierarchically expand the channel capacity",
+   "grounded": true
+  },
+  {
+   "op": "model features",
+   "canonical": "model features",
+   "object": "latent",
+   "quote": "model simple low-level visual information",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "create a multiscale pyramid of features",
+   "grounded": false
+  },
+  {
+   "op": "process features",
+   "canonical": "process features",
+   "object": "latent",
+   "quote": "deeper layers at spatially coarse, but complex, high-dimensional features",
+   "grounded": true
+  },
+  {
+   "op": "apply transformer",
+   "canonical": "apply transformer",
+   "object": "latent",
+   "quote": "connecting the seminal idea of multiscale feature hierarchies with transformer models",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "evaluate this fundamental architectural prior for modeling the dense nature of visual signals",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply transformer@latent",
+  "encode@input",
+  "encode@state",
+  "evaluate@error",
+  "expand channels@latent",
+  "model features@latent",
+  "process features@latent",
+  "reduce resolution@state"
+ ]
+}

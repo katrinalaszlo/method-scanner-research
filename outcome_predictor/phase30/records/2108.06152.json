@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2108.06152",
+ "source": "abstract",
+ "words": 193,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "The recently-developed DETR approach applies the transformer encoder and decoder architecture",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "applies the transformer encoder and decoder architecture to object detection",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "cross-attention in DETR relies highly on the content embeddings for localizing the four extremities",
+   "grounded": true
+  },
+  {
+   "op": "predict box",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "predicting the box, which increases the need for high-quality content embeddings",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "Our approach, named conditional DETR, learns a conditional spatial query from the decoder embedding",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Empirical results show that conditional DETR converges 6.7x faster for the backbones R50 and R101",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "Our approach is motivated by that the cross-attention in DETR relies highly on the content embeddings",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "increases the need for high-quality content embeddings and thus the training difficulty",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Our approach, named conditional DETR, learns a conditional spatial query from the decoder embedding",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "This narrows down the spatial range for localizing the distinct regions for object classification and box regression",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "through the conditional spatial query, each cross-attention head is able to attend to a band containing a distinct region",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "easing the training. Empirical results show that conditional DETR converges 6.7x faster for the backbones R50 and R101",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "Our approach is motivated by that the cross-attention in DETR relies highly on the content embeddings",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "This narrows down the spatial range for localizing the distinct regions for object classification and box regression",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "Empirical results show that conditional DETR converges 6.7x faster for the backbones R50 and R101",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "Our approach, named conditional DETR, learns a conditional spatial query from the decoder embedding",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "Our approach is motivated by that the cross-attention in DETR relies highly on the content embeddings",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "Empirical results show that conditional DETR converges 6.7x faster for the backbones R50 and R101",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "through the conditional spatial query, each cross-attention head is able to attend to a band containing a distinct region",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "Our approach, named conditional DETR, learns a conditional spatial query from the decoder embedding",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute attention@latent",
+  "compute distribution@distribution",
+  "compute gradient@parameter",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@latent",
+  "predict@reward",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

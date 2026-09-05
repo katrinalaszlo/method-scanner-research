@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1803.02612",
+ "source": "abstract",
+ "words": 221,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "compute depth",
+   "canonical": "compute depth",
+   "object": "state",
+   "quote": "regress the expected results",
+   "grounded": true
+  },
+  {
+   "op": "synthesize view",
+   "canonical": "synthesize view",
+   "object": "state",
+   "quote": "view synthesis procedure",
+   "grounded": true
+  },
+  {
+   "op": "match stereo",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "stereo matching",
+   "grounded": true
+  },
+  {
+   "op": "apply loss",
+   "canonical": "apply loss",
+   "object": "error",
+   "quote": "geometrically inspired loss functions",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "trained in an end-to-end fashion",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the whole pipeline can still be trained",
+   "grounded": false
+  },
+  {
+   "op": "sample depth",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "small number of real training data",
+   "grounded": true
+  },
+  {
+   "op": "generalize task",
+   "canonical": "generalize task",
+   "object": "task",
+   "quote": "generalizes well to other benchmarks",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply loss@error",
+  "backpropagate@gradient",
+  "compare@state",
+  "compute depth@state",
+  "correct@parameter",
+  "generalize task@task",
+  "sample@distribution",
+  "synthesize view@state"
+ ]
+}

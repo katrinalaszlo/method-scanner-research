@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "1807.04445",
+ "source": "abstract",
+ "words": 225,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "input",
+   "quote": "assign different levels of importance, i.e., attention, to each element/dimension of the input",
+   "grounded": false
+  },
+  {
+   "op": "modulate input",
+   "canonical": "modulate input",
+   "object": "input",
+   "quote": "adaptively modulate the input by assigning different levels of importance",
+   "grounded": true
+  },
+  {
+   "op": "element-wise multiply",
+   "canonical": "element-wise multiply",
+   "object": "input",
+   "quote": "modulation of the input is content adaptive and is performed at fine granularity, being element-wise rather than input-wise",
+   "grounded": true
+  },
+  {
+   "op": "apply gate",
+   "canonical": "apply gate",
+   "object": "input",
+   "quote": "an EleAttG is added to adaptively modulate the input",
+   "grounded": false
+  },
+  {
+   "op": "update hidden state",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "RNNs are capable of modeling the temporal dynamics of complex sequential information",
+   "grounded": false
+  },
+  {
+   "op": "compute gate parameters",
+   "canonical": "compute gate parameters",
+   "object": "parameter",
+   "quote": "the proposed EleAttG, as an additional fundamental unit, is general and can be applied to any RNN structures",
+   "grounded": false
+  },
+  {
+   "op": "compute activation",
+   "canonical": "compute activation",
+   "object": "distribution",
+   "quote": "the modulation of the input is content adaptive and is performed at fine granularity",
+   "grounded": false
+  },
+  {
+   "op": "feed forward through network",
+   "canonical": "feed forward through network",
+   "object": "state",
+   "quote": "RNNs are capable of modeling the temporal dynamics of complex sequential information",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "experiments show that adding attentiveness through EleAttGs to RNN blocks significantly boosts the power of RNNs",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate error",
+   "canonical": "backpropagate error",
+   "object": "gradient",
+   "quote": "experiments show that adding attentiveness through EleAttGs to RNN blocks significantly boosts the power of RNNs",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed EleAttG, as an additional fundamental unit, is general and can be applied to any RNN structures",
+   "grounded": false
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "we demonstrate the effectiveness of the proposed EleAtt-RNN by applying it to the action recognition tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we demonstrate the effectiveness of the proposed EleAtt-RNN by applying it to the action recognition tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we demonstrate the effectiveness of the proposed EleAtt-R-N by applying it to the action recognition tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we demonstrate the effectiveness of the proposed EleAtt-RNN by applying it to the action recognition tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we demonstrate the effectiveness of the proposed EleAtt-RNN by applying it to the action recognition tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "experiments show that adding attentiveness through EleAttGs to RNN blocks significantly boosts the power of RNNs",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "the modulation of the input is content adaptive and is performed at fine granularity",
+   "grounded": false
+  },
+  {
+   "op": "compute attention map",
+   "canonical": "compute attention map",
+   "object": "distribution",
+   "quote": "assign different levels of importance, i.e., attention, to each element/dimension of the input",
+   "grounded": false
+  },
+  {
+   "op": "apply attention map",
+   "canonical": "apply attention map",
+   "object": "input",
+   "quote": "assign different levels of importance, i.e., attention, to each element/dimension of the input",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply attention map@input",
+  "apply gate@input",
+  "backpropagate error@gradient",
+  "compare@error",
+  "compute activation@distribution",
+  "compute attention map@distribution",
+  "compute attention weights@input",
+  "compute gate parameters@parameter",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "correct@state",
+  "element-wise multiply@input",
+  "evaluate@error",
+  "feed forward through network@state",
+  "modulate input@input",
+  "predict@action",
+  "sample@action",
+  "sample@input"
+ ]
+}

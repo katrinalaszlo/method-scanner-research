@@ -1,0 +1,72 @@
+{
+ "arxiv_id": "2311.07362",
+ "source": "abstract",
+ "words": 177,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 6,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "generate feedback",
+   "canonical": "reconstruct",
+   "object": "INVALID:response",
+   "quote": "Volcano generates natural language feedback to its initial response",
+   "grounded": true
+  },
+  {
+   "op": "revise response",
+   "canonical": "revise response",
+   "object": "INVALID:response",
+   "quote": "Volcano utilizes this feedback to self-revise its initial response",
+   "grounded": false
+  },
+  {
+   "op": "encode image",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "vision encoder failing to ground on the image properly",
+   "grounded": true
+  },
+  {
+   "op": "extract visual cues",
+   "canonical": "extract visual cues",
+   "object": "input",
+   "quote": "leverages self-feedback as visual cues",
+   "grounded": true
+  },
+  {
+   "op": "compare response",
+   "canonical": "compare",
+   "object": "INVALID:response",
+   "quote": "feedback is properly grounded on the image than the initial response",
+   "grounded": true
+  },
+  {
+   "op": "update response",
+   "canonical": "correct",
+   "object": "INVALID:response",
+   "quote": "self-correct hallucinations",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:response",
+   "quote": "multimodal hallucination, where they provide incorrect responses",
+   "grounded": true
+  },
+  {
+   "op": "reduce hallucination",
+   "canonical": "reduce hallucination",
+   "object": "INVALID:response",
+   "quote": "effectively reduces multimodal hallucination",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "encode@input",
+  "extract visual cues@input"
+ ]
+}

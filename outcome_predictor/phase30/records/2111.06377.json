@@ -1,0 +1,132 @@
+{
+ "arxiv_id": "2111.06377",
+ "source": "abstract",
+ "words": 169,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 15,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "mask input",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "we mask random patches of the input image",
+   "grounded": true
+  },
+  {
+   "op": "encode visible",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "an encoder that operates only on the visible subset of patches",
+   "grounded": true
+  },
+  {
+   "op": "predict missing",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "reconstruct the missing pixels",
+   "grounded": true
+  },
+  {
+   "op": "decode latent",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "reconstructs the original image from the latent representation",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "nontrivial and meaningful self-supervisory task",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "train large models efficiently and effectively",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "accelerate training (by 3x or more)",
+   "grounded": true
+  },
+  {
+   "op": "sample patch",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "mask random patches of the input image",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "reconstruct the original image from the latent representation",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "nontrivial and meaningful self-supervisory task",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "train large models efficiently and effectively",
+   "grounded": true
+  },
+  {
+   "op": "generate latent",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "reconstruct the original image from the latent representation",
+   "grounded": false
+  },
+  {
+   "op": "denoise image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "reconstruct the original image from the latent representation",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "value",
+   "quote": "achieves the best accuracy (87.8%)",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "transfer performance in downstream tasks outperforms supervised pre-training",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute accuracy@value",
+  "correct@parameter",
+  "encode@state",
+  "evaluate@error",
+  "evaluate@task",
+  "mask@input",
+  "predict@latent",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "sample@input"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2204.01186",
+ "source": "abstract",
+ "words": 196,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "store input",
+   "canonical": "store input",
+   "object": "input",
+   "quote": "stores knowledge for image classification, such as image feature maps, labels, and original images",
+   "grounded": true
+  },
+  {
+   "op": "retrieve input",
+   "canonical": "retrieve input",
+   "object": "input",
+   "quote": "refers to the storage like a database when classifying input images",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "input",
+   "quote": "by analyzing the neighborhood samples referred by the kNN algorithm",
+   "grounded": true
+  },
+  {
+   "op": "find nearest neighbor",
+   "canonical": "find nearest neighbor",
+   "object": "input",
+   "quote": "by analyzing the neighborhood samples referred by the kNN algorithm",
+   "grounded": true
+  },
+  {
+   "op": "vote for class",
+   "canonical": "vote for class",
+   "object": "input",
+   "quote": "we can interpret how knowledge learned in the past is used for inference results",
+   "grounded": true
+  },
+  {
+   "op": "output class",
+   "canonical": "output class",
+   "object": "input",
+   "quote": "our system achieves 79.8% top-1 accuracy on the ImageNet dataset",
+   "grounded": true
+  },
+  {
+   "op": "update database",
+   "canonical": "correct",
+   "object": "input",
+   "quote": "our system updates the database instead of fine-tuning model parameters",
+   "grounded": true
+  },
+  {
+   "op": "increase knowledge",
+   "canonical": "increase knowledge",
+   "object": "input",
+   "quote": "to increase knowledge, our system updates the database",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute distance@input",
+  "correct@input",
+  "find nearest neighbor@input",
+  "increase knowledge@input",
+  "output class@input",
+  "retrieve input@input",
+  "store input@input",
+  "vote for class@input"
+ ]
+}

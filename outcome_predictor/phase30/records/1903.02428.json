@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "1903.02428",
+ "source": "abstract",
+ "words": 110,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 13,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "input examples of different size",
+   "grounded": false
+  },
+  {
+   "op": "create graph",
+   "canonical": "create graph",
+   "object": "state",
+   "quote": "irregularly structured input data such as graphs",
+   "grounded": false
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "latent",
+   "quote": "deep learning on irregularly structured input data",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "comprehensive comparative study of the implemented methods",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "high data throughput by leveraging sparse GPU acceleration",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "efficient mini-batch handling for input examples of different size",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "a variety of recently published methods from the domains",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "homogeneous evaluation scenarios",
+   "grounded": true
+  },
+  {
+   "op": "store result",
+   "canonical": "store result",
+   "object": "trajectory",
+   "quote": "built upon PyTorch",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "dedicated CUDA kernels",
+   "grounded": false
+  },
+  {
+   "op": "apply optimization",
+   "canonical": "apply optimization",
+   "object": "parameter",
+   "quote": "mini-batch handling for input examples of different size",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "comprehensive comparative study of the implemented methods",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "sparse GPU acceleration",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "efficient mini-batch handling for input examples of different size",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "deep learning on irregularly structured input data",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "comprehensive comparative study of the implemented methods",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "a variety of recently published methods from the domains",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "high data throughput by leveraging sparse GPU acceleration",
+   "grounded": false
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "dedicated CUDA kernels",
+   "grounded": false
+  },
+  {
+   "op": "apply kernel",
+   "canonical": "apply kernel",
+   "object": "parameter",
+   "quote": "efficient mini-batch handling for input examples of different size",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "built upon PyTorch",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "comprehensive comparative study of the implemented methods",
+   "grounded": true
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "distribution",
+   "quote": "deep learning on irregularly structured input data",
+   "grounded": false
+  },
+  {
+   "op": "compute likelihood",
+   "canonical": "compute likelihood",
+   "object": "distribution",
+   "quote": "a variety of recently published methods from the domains",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "distribution",
+   "quote": "comprehensive comparative study of the implemented methods",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply kernel@parameter",
+  "apply optimization@parameter",
+  "apply transformation@latent",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute likelihood@distribution",
+  "compute mean@distribution",
+  "compute policy@policy",
+  "compute score@distribution",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "create graph@state",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@reward",
+  "process input@input",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "sample@action",
+  "sample@sample",
+  "store result@trajectory"
+ ]
+}

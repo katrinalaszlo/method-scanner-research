@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2308.05787",
+ "source": "abstract",
+ "words": 185,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "calibrate weights",
+   "canonical": "calibrate weights",
+   "object": "parameter",
+   "quote": "calibrating the convolution weights for each frame according to its local and global temporal context",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "spatial convolutions are extensively used in numerous deep video models",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "spatial convolutions are extensively used in numerous deep video models",
+   "grounded": true
+  },
+  {
+   "op": "model temporal dynamics",
+   "canonical": "model temporal dynamics",
+   "object": "trajectory",
+   "quote": "adaptive weight calibration along the temporal dimension is an efficient way to facilitate modeling complex temporal dynamics in videos",
+   "grounded": true
+  },
+  {
+   "op": "operate over kernels",
+   "canonical": "operate over kernels",
+   "object": "parameter",
+   "quote": "TAdaConv is more efficient as it operates over the convolution kernels instead of the features",
+   "grounded": true
+  },
+  {
+   "op": "increase model capacity",
+   "canonical": "increase model capacity",
+   "object": "parameter",
+   "quote": "kernel calibration brings an increased model capacity",
+   "grounded": true
+  },
+  {
+   "op": "construct block",
+   "canonical": "construct block",
+   "object": "parameter",
+   "quote": "we construct TAdaBlocks to empower ConvNeXt and Vision Transformer to have strong temporal modeling capabilities",
+   "grounded": true
+  },
+  {
+   "op": "perform inference",
+   "canonical": "perform inference",
+   "object": "input",
+   "quote": "Empirical results show TAdaConvNeXtV2 and TAdaFormer perform competitively against state-of-the-art convolutional and Transformer-based models",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply convolution@input",
+  "calibrate weights@parameter",
+  "construct block@parameter",
+  "encode@input",
+  "increase model capacity@parameter",
+  "model temporal dynamics@trajectory",
+  "operate over kernels@parameter",
+  "perform inference@input"
+ ]
+}

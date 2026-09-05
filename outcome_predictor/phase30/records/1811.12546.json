@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "1811.12546",
+ "source": "abstract",
+ "words": 137,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose a novel, lightweight, and efficient super-resolution method",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "the recursive part of our model can easily track the status of the current image features",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "the recursive part of our model can easily track the status of the current image features",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:output",
+   "quote": "we show the benefits of the proposed method in terms of model size, speed, and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "we show the benefits of the proposed method in terms of model size, speed, and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "we show the benefits of the proposed method in terms of model size, speed, and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we show the benefits of the proposed method in terms of model size, speed, and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "we show the benefits of the proposed method in terms of model size, speed, and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we show the benefits of the proposed method in terms of model size, speed, and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we show the benefits of the proposed method in terms of model size, speed, and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "we show the benefits of the proposed, lightweight, and efficient super-resolution method",
+   "grounded": true
+  },
+  {
+   "op": "track",
+   "canonical": "track",
+   "object": "state",
+   "quote": "the recursive part of our model can easily track the status of the current image features",
+   "grounded": true
+  },
+  {
+   "op": "share",
+   "canonical": "share",
+   "object": "parameter",
+   "quote": "some recursive parameter-sharing methods have been also proposed",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we show the benefits of the proposed method in terms of model size, speed, and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "apply",
+   "canonical": "apply",
+   "object": "gradient",
+   "quote": "we show the benefits of the proposed method in terms of model size, speed, and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "error",
+   "quote": "we show the benefits of the proposed method in terms of model, speed, and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "we propose a novel, lightweight, and efficient super-resolution method",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "we show the benefits of the proposed method in terms of model size, speed, and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "INVALID:output",
+   "quote": "we show the benefits of the proposed method in terms of model size, speed, and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "we show the benefits of the proposed method in terms of model size, speed, and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "we show that our method outperforms the other state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "action",
+   "quote": "we show that our method outperforms the other state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we show that our method outperforms the other state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "we show that our method outperforms the other state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we show that our method outperforms the other state-of-the-art methods",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "apply@gradient",
+  "backpropagate@gradient",
+  "compare@task",
+  "compute@error",
+  "compute@reward",
+  "compute@value",
+  "correct@parameter",
+  "correct@state",
+  "encode@input",
+  "evaluate@value",
+  "improve@parameter",
+  "predict@latent",
+  "reconstruct@input",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@latent",
+  "select@action",
+  "share@parameter",
+  "track@state",
+  "transform@input",
+  "transmit@error"
+ ]
+}

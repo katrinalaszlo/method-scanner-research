@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "1511.04491",
+ "source": "abstract",
+ "words": 84,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "our network has a very deep recursive layer",
+   "grounded": true
+  },
+  {
+   "op": "compute residual",
+   "canonical": "compute residual",
+   "object": "latent",
+   "quote": "increasing recursion depth can improve performance",
+   "grounded": true
+  },
+  {
+   "op": "add skip connection",
+   "canonical": "add skip connection",
+   "object": "latent",
+   "quote": "we propose two extensions: recursive-supervision and skip-connection",
+   "grounded": false
+  },
+  {
+   "op": "propagate error",
+   "canonical": "transmit",
+   "object": "gradient",
+   "quote": "learning a DRCN is very hard with a standard gradient descent method",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose two extensions: recursive-supervision and skip-connection",
+   "grounded": false
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "our network has a very deep recursive layer",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "learning a DRCN is very hard with a standard gradient descent method",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "learning a DRCN is very hard with a standard gradient than",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "our network has a very deep recursive layer",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "our network has a very deep recursive layer",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "learning a DRCN is very hard with a standard gradient descent method",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "learning a DRCN is very hard with a standard gradient descent method",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "latent",
+   "quote": "our network has a very deep recursive layer",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "our network has a very deep recursive layer",
+   "grounded": true
+  },
+  {
+   "op": "compute supervision",
+   "canonical": "compute supervision",
+   "object": "error",
+   "quote": "we propose two extensions: recursive-supervision and skip-connection",
+   "grounded": false
+  },
+  {
+   "op": "update weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose two extensions: recursive-supervision and skip-connection",
+   "grounded": false
+  },
+  {
+   "op": "normalize input",
+   "canonical": "normalize input",
+   "object": "input",
+   "quote": "our network has a very deep recursive layer",
+   "grounded": true
+  },
+  {
+   "op": "compute residual error",
+   "canonical": "compute residual error",
+   "object": "error",
+   "quote": "increasing recursion depth can improve performance",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "our network has a very deep recursive layer",
+   "grounded": true
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "input",
+   "quote": "our network has a very deep recursive layer",
+   "grounded": true
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "learning a DRCN is very hard with a standard gradient descent method",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient norm",
+   "canonical": "compute gradient norm",
+   "object": "gradient",
+   "quote": "learning a DRCN is very hard with a standard gradient descent method",
+   "grounded": true
+  },
+  {
+   "op": "apply dropout",
+   "canonical": "apply dropout",
+   "object": "latent",
+   "quote": "our network has a very deep recursive layer",
+   "grounded": true
+  },
+  {
+   "op": "compute prediction",
+   "canonical": "compute prediction",
+   "object": "input",
+   "quote": "our network has a very deep recursive layer",
+   "grounded": true
+  },
+  {
+   "op": "compute loss gradient",
+   "canonical": "compute loss gradient",
+   "object": "gradient",
+   "quote": "learning a DRCN is very hard with a standard gradient descent method",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "add skip connection@latent",
+  "aggregate@latent",
+  "apply activation@latent",
+  "apply convolution@input",
+  "apply dropout@latent",
+  "apply regularization@parameter",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compute gradient norm@gradient",
+  "compute gradient@gradient",
+  "compute loss gradient@gradient",
+  "compute output@input",
+  "compute prediction@input",
+  "compute residual error@error",
+  "compute residual@latent",
+  "compute supervision@error",
+  "correct@parameter",
+  "evaluate@error",
+  "normalize input@input",
+  "predict@input",
+  "reconstruct@input",
+  "sample@input",
+  "transmit@gradient"
+ ]
+}

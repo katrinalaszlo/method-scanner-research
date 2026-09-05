@@ -1,0 +1,110 @@
+{
+ "arxiv_id": "2412.20066",
+ "source": "abstract",
+ "words": 215,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 13,
+ "n_invalid_object": 8,
+ "n_grounded": 13,
+ "ops": [
+  {
+   "op": "flatten",
+   "canonical": "flatten",
+   "object": "input",
+   "quote": "flatten 2D images into multiple distinct 1D sequences",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "INVALID:sequence",
+   "quote": "process each sequence independently using selective scan operation",
+   "grounded": true
+  },
+  {
+   "op": "recombine",
+   "canonical": "recombine",
+   "object": "INVALID:sequence",
+   "quote": "recombine them to form the outputs",
+   "grounded": true
+  },
+  {
+   "op": "preserve",
+   "canonical": "preserve",
+   "object": "INVALID:locality",
+   "quote": "preserves locality and continuity of the input images",
+   "grounded": true
+  },
+  {
+   "op": "scan",
+   "canonical": "scan",
+   "object": "INVALID:region",
+   "quote": "stripe-based scanning region and the S-shaped scanning path",
+   "grounded": true
+  },
+  {
+   "op": "calculate",
+   "canonical": "calculate",
+   "object": "INVALID:attention",
+   "quote": "calculating attention weights within the corresponding channels",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "INVALID:sequence",
+   "quote": "aggregates sequences through calculating attention weights",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "achieving state-of-the-art performance on the tasks of image super-resolution, denoising, deblurring and dehazing",
+   "grounded": true
+  },
+  {
+   "op": "superresolve",
+   "canonical": "superresolve",
+   "object": "input",
+   "quote": "achieving state-of-the-art performance on the tasks of image super-resolution, denoising, deblurring and dehazing",
+   "grounded": true
+  },
+  {
+   "op": "deblur",
+   "canonical": "deblur",
+   "object": "input",
+   "quote": "achieving state-of-the-art performance on the tasks of image super-resolution, denoising, deblurring and dehazing",
+   "grounded": true
+  },
+  {
+   "op": "dehaze",
+   "canonical": "dehaze",
+   "object": "input",
+   "quote": "achieving state-of-the-art performance on the tasks of image super-resolution, denoising, deblurring and dehazing",
+   "grounded": true
+  },
+  {
+   "op": "scan",
+   "canonical": "scan",
+   "object": "INVALID:path",
+   "quote": "stripe-based scanning region and the S-shaped scanning path",
+   "grounded": true
+  },
+  {
+   "op": "shuffle",
+   "canonical": "shuffle",
+   "object": "INVALID:sequence",
+   "quote": "Sequence Shuffle Attention block (SSA)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "deblur@input",
+  "dehaze@input",
+  "flatten@input",
+  "reconstruct@input",
+  "superresolve@input"
+ ]
+}

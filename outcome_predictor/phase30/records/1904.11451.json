@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "1904.11451",
+ "source": "abstract",
+ "words": 239,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "collect input",
+   "canonical": "collect input",
+   "object": "input",
+   "quote": "video recognition has been advanced in recent years by benchmarks with rich annotations",
+   "grounded": true
+  },
+  {
+   "op": "annotate input",
+   "canonical": "annotate input",
+   "object": "input",
+   "quote": "HVU contains approx. 572k videos in total with 9 million annotations for training, validation, and test set",
+   "grounded": false
+  },
+  {
+   "op": "organize input",
+   "canonical": "organize input",
+   "object": "input",
+   "quote": "HVU is organized hierarchically in a semantic taxonomy",
+   "grounded": true
+  },
+  {
+   "op": "label input",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "spanning over 3142 labels",
+   "grounded": true
+  },
+  {
+   "op": "classify input",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "we demonstrate the generalization capability of HVU on three challenging tasks",
+   "grounded": true
+  },
+  {
+   "op": "generate caption",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "video captioning and 3.) video clustering tasks",
+   "grounded": true
+  },
+  {
+   "op": "cluster input",
+   "canonical": "cluster input",
+   "object": "input",
+   "quote": "video clustering tasks",
+   "grounded": true
+  },
+  {
+   "op": "fuse representation",
+   "canonical": "fuse representation",
+   "object": "latent",
+   "quote": "HATNet builds on fusing 2D and 3D architectures into one by combining intermediate representations",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "HATNet is trained in an end-to-end manner",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we validate the idea that holistic representation learning is complementary",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "HATNet is trained in an end-to-end manner",
+   "grounded": false
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "we validate the idea that holistic representation learning is complementary",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we validate the idea that holistic representation learning is complementary",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we validate the idea that holistic representation learning is complementary",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we validate the idea that holistic representation, learning is complementary",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "we validate the idea that holistic representation learning is complementary",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "HATNet is trained in an end-to-end manner",
+   "grounded": false
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "HATNet is trained in an end-to-end manner",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we validate the idea that holistic representation learning is complementary",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we validate the idea that holistic representation learning is complementary",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we validate the idea that holistic representation learning is complementary",
+   "grounded": true
+  },
+  {
+   "op": "predict trajectory",
+   "canonical": "predict",
+   "object": "trajectory",
+   "quote": "we validate the idea that holistic representation learning is complementary",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we validate the idea that holistic representation learning is complementary",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we validate the idea that holistic representation learning is complementary",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we validate the idea that holistic representation learning is complementary",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "annotate input@input",
+  "backpropagate@gradient",
+  "classify@input",
+  "clip gradient@gradient",
+  "cluster input@input",
+  "collect input@input",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "correct@parameter",
+  "fuse representation@latent",
+  "organize input@input",
+  "predict@trajectory",
+  "predict@value",
+  "reconstruct@input",
+  "sample@action",
+  "sample@input",
+  "sample@sample",
+  "train@parameter"
+ ]
+}

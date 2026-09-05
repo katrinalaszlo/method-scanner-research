@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "1905.11641",
+ "source": "abstract",
+ "words": 164,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "deform image",
+   "canonical": "deform image",
+   "object": "input",
+   "quote": "the deformation sub-network learns to deform images by fusing a pair of images",
+   "grounded": true
+  },
+  {
+   "op": "fuse images",
+   "canonical": "fuse images",
+   "object": "input",
+   "quote": "the deformation sub-network learns to deform images by fusing a pair of images",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "produces additional training examples",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "optimize both models in an end-to-end manner",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "optimize both models in an end-to-end manner",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "formulating classifier decision boundaries",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "optimize both models in an end-to-end manner",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "optimize both models in an end-to-end manner",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "produces additional training examples",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the deformation sub-network learns to deform images by fusing a pair of images",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the deformation sub-network learns to deform images by fusing a pair of images",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "produces additional training examples",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "optimize both models in an end-to-end manner",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "optimize both models in an end-to-end manner",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "formulating classifier decision boundaries",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "optimize both models in an end-to-end manner",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "formulating classifier decision boundaries",
+   "grounded": true
+  },
+  {
+   "op": "generate trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "produces additional training examples",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "formulating classifier decision boundaries",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "formulating classifier decision boundaries",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "correct@parameter",
+  "deform image@input",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@value",
+  "fuse images@input",
+  "predict@reward",
+  "predict@value",
+  "reconstruct@input",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@distribution",
+  "sample@sample",
+  "train@parameter"
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2103.13413",
+ "source": "abstract",
+ "words": 196,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "assemble tokens",
+   "canonical": "assemble tokens",
+   "object": "input",
+   "quote": "assemble tokens from various stages of the vision transformer",
+   "grounded": true
+  },
+  {
+   "op": "create representation",
+   "canonical": "create representation",
+   "object": "latent",
+   "quote": "assemble tokens into image-like representations at various resolutions",
+   "grounded": false
+  },
+  {
+   "op": "combine representations",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "progressively combine them into full-resolution predictions",
+   "grounded": true
+  },
+  {
+   "op": "process representations",
+   "canonical": "process representations",
+   "object": "latent",
+   "quote": "the transformer backbone processes representations at a constant and relatively high resolution",
+   "grounded": true
+  },
+  {
+   "op": "generate predictions",
+   "canonical": "reconstruct",
+   "object": "INVALID:output",
+   "quote": "using a convolutional decoder",
+   "grounded": true
+  },
+  {
+   "op": "produce output",
+   "canonical": "produce output",
+   "object": "state",
+   "quote": "full-resolution predictions using a convolutional decoder",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "Our experiments show that this architecture yields substantial improvements",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the transformer backbone processes representations at a constant and relatively high resolution",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "assemble tokens@input",
+  "compare@error",
+  "correct@parameter",
+  "create representation@latent",
+  "process representations@latent",
+  "produce output@state"
+ ]
+}

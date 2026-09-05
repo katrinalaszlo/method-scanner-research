@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2503.20337",
+ "source": "abstract",
+ "words": 180,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "calculates the similarities between numerous features",
+   "grounded": true
+  },
+  {
+   "op": "filter features",
+   "canonical": "filter features",
+   "object": "latent",
+   "quote": "filtering out irrelevant features",
+   "grounded": true
+  },
+  {
+   "op": "generate attention map",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "links all isolated attention maps",
+   "grounded": true
+  },
+  {
+   "op": "select important tokens",
+   "canonical": "select important tokens",
+   "object": "INVALID:token",
+   "quote": "focus attention on the most important tokens",
+   "grounded": true
+  },
+  {
+   "op": "capture similar features",
+   "canonical": "capture similar features",
+   "object": "latent",
+   "quote": "capture more critical similar features",
+   "grounded": true
+  },
+  {
+   "op": "reduce computational cost",
+   "canonical": "reduce computational cost",
+   "object": "parameter",
+   "quote": "significantly reduces the computational cost",
+   "grounded": true
+  },
+  {
+   "op": "apply attention weights",
+   "canonical": "apply attention weights",
+   "object": "latent",
+   "quote": "obtaining attention weights",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "reconstruction performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention weights@latent",
+  "capture similar features@latent",
+  "compute similarity@latent",
+  "filter features@latent",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reduce computational cost@parameter"
+ ]
+}

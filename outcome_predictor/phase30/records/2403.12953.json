@@ -1,0 +1,140 @@
+{
+ "arxiv_id": "2403.12953",
+ "source": "abstract",
+ "words": 210,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "takes the features of multiple consecutive frames",
+   "grounded": true
+  },
+  {
+   "op": "predict features",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "is trained to predict multi-frame features one time step ahead iteratively",
+   "grounded": true
+  },
+  {
+   "op": "learn motion",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "F-Net learns the underlying motion and correspondence information",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we incorporate its features into the depth decoding process",
+   "grounded": true
+  },
+  {
+   "op": "mask features",
+   "canonical": "mask",
+   "object": "latent",
+   "quote": "is trained via adaptively masked auto-encoding of multiframe feature volumes",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct features",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "is trained via adaptively masked auto-encoding of multiframe feature volumes",
+   "grounded": true
+  },
+  {
+   "op": "generate queries",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "both F-Net and R-Net are used to produce queries to work with the depth decoder",
+   "grounded": true
+  },
+  {
+   "op": "refine output",
+   "canonical": "correct",
+   "object": "distribution",
+   "quote": "as well as a final refinement network",
+   "grounded": true
+  },
+  {
+   "op": "decode depth",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we incorporate its features into the depth decoding process",
+   "grounded": true
+  },
+  {
+   "op": "output depth",
+   "canonical": "output depth",
+   "object": "distribution",
+   "quote": "as well as a final refinement network",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "through extensive experiments on several benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "we show that FutureDepth significantly improves upon baseline models",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "outperforms existing video depth estimation methods",
+   "grounded": true
+  },
+  {
+   "op": "track progress",
+   "canonical": "track progress",
+   "object": "task",
+   "quote": "sets new state-of-the-art (SOTA) accuracy",
+   "grounded": true
+  },
+  {
+   "op": "measure latency",
+   "canonical": "measure latency",
+   "object": "task",
+   "quote": "has similar latencies when comparing to monocular models",
+   "grounded": true
+  },
+  {
+   "op": "compute efficiency",
+   "canonical": "compute efficiency",
+   "object": "task",
+   "quote": "is more efficient than existing SOTA video depth estimation models",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compare@task",
+  "compute accuracy@task",
+  "compute efficiency@task",
+  "correct@distribution",
+  "encode@input",
+  "evaluate@task",
+  "mask@latent",
+  "measure latency@task",
+  "output depth@distribution",
+  "predict@latent",
+  "reconstruct@latent",
+  "track progress@task",
+  "train@latent"
+ ]
+}

@@ -1,0 +1,71 @@
+{
+ "arxiv_id": "1805.07071",
+ "source": "abstract",
+ "words": 184,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 7,
+ "n_grounded": 2,
+ "ops": [
+  {
+   "op": "apply wavelet transform",
+   "canonical": "apply wavelet transform",
+   "object": "INVALID:feature map",
+   "quote": "wavelet transform is introduced to reduce the size of feature maps",
+   "grounded": false
+  },
+  {
+   "op": "apply inverse wavelet transform",
+   "canonical": "apply inverse wavelet transform",
+   "object": "INVALID:feature map",
+   "quote": "inverse wavelet transform is then deployed to reconstruct the high resolution feature maps",
+   "grounded": false
+  },
+  {
+   "op": "reduce feature map size",
+   "canonical": "reduce feature map size",
+   "object": "INVALID:feature map",
+   "quote": "wavelet transform is introduced to reduce the size of feature maps",
+   "grounded": false
+  },
+  {
+   "op": "decrease feature map channels",
+   "canonical": "decrease feature map channels",
+   "object": "INVALID:feature map",
+   "quote": "another convolutional layer is further used to decrease the channels of feature maps",
+   "grounded": true
+  },
+  {
+   "op": "convolve feature map",
+   "canonical": "convolve feature map",
+   "object": "INVALID:feature map",
+   "quote": "another convolutional layer is further used to decrease the channels of feature maps",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct high resolution feature map",
+   "canonical": "reconstruct",
+   "object": "INVALID:feature map",
+   "quote": "inverse wavelet transform is then deployed to reconstruct the high resolution feature maps",
+   "grounded": false
+  },
+  {
+   "op": "process input image",
+   "canonical": "process input image",
+   "object": "input",
+   "quote": "wavelet transform is introduced to reduce the size of feature maps",
+   "grounded": false
+  },
+  {
+   "op": "generate output image",
+   "canonical": "reconstruct",
+   "object": "INVALID:feature map",
+   "quote": "inverse wavelet transform is then deployed to reconstruct the high resolution feature maps",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "process input image@input"
+ ]
+}

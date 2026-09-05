@@ -1,0 +1,170 @@
+{
+ "arxiv_id": "2302.02318",
+ "source": "abstract",
+ "words": 183,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose Contrast with Reconstruct (ReCon}",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "An encoder-decoder style ReCon-block is proposed",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "ReCon is trained to learn from both generative modeling teachers",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "ReCon is trained to learn from both generative modeling teachers",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "An encoder-decoder style ReCon-block is proposed",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "An encoder-decoder style ReCon-block is proposed",
+   "grounded": true
+  },
+  {
+   "op": "cross attention",
+   "canonical": "cross attention",
+   "object": "latent",
+   "quote": "transfers knowledge through cross attention with stop-gradient",
+   "grounded": true
+  },
+  {
+   "op": "stop gradient",
+   "canonical": "stop gradient",
+   "object": "gradient",
+   "quote": "transfers knowledge through cross attention with stop-gradient",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "ReCon is trained to learn from both generative modeling teachers",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "ReCon is trained to learn from both generative modeling teachers",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "ReCon is trained to learn from both generative modeling teachers",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "ReCon is trained to learn from both generative modeling teachers",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "ReCon is trained to learn from both generative modeling teachers",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "Re. Con achieves a new state-of-the-art in 3D representation learning",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "ReCon achieves a new state-of-the-art in 3D representation learning",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "ReCon achieves a new state-of-the-art in 3D representation learning",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "ReCon achieves a new state-of-the-art in 3D representation learning",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "ReCon achieves a new state-of-the-art in 3D representation learning",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "ReCon achieves a new state-of-the-art in 3D representation learning",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "ReCon achieves a new state-of-the-art in 3D representation learning",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "cross attention@latent",
+  "encode@input",
+  "evaluate@error",
+  "reconstruct@latent",
+  "sample@latent",
+  "stop gradient@gradient"
+ ]
+}

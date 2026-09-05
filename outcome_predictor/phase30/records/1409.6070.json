@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1409.6070",
+ "source": "abstract",
+ "words": 149,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "a character drawn with a one-pixel wide pen on a high resolution grid",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "Convolutional neural networks (CNNs) perform well on problems such as handwriting recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we get a test error of 3.82%",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Taking advantage of the sparsity allowed us more efficiently to train and test large, deep CNNs",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "On the CASIA-OLHWDB1.1 dataset containing 3755 character classes",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "Applying a deep convolutional network using sparsity has resulted in a substantial reduction in test error",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the performance of the networks is often limited by budget and time constraints",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we developed a CNN for processing spatially-sparse inputs",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply convolution@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute gradient@gradient",
+  "correct@parameter",
+  "predict@value",
+  "process input@input",
+  "sample@action"
+ ]
+}

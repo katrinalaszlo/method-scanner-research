@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "2206.09379",
+ "source": "abstract",
+ "words": 218,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 2,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "it is still in the possession of some advantageous properties",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we aim to train DNNs with the step function used as an activation function",
+   "grounded": true
+  },
+  {
+   "op": "reformulate problem",
+   "canonical": "reformulate problem",
+   "object": "task",
+   "quote": "we first reformulate 0/1 DNNs as an unconstrained optimization problem",
+   "grounded": true
+  },
+  {
+   "op": "solve optimization",
+   "canonical": "solve optimization",
+   "object": "task",
+   "quote": "we solve it by a block coordinate descend (BCD) method",
+   "grounded": false
+  },
+  {
+   "op": "compute closed-form solution",
+   "canonical": "compute closed-form solution",
+   "object": "INVALID:sub-problem",
+   "quote": "we acquire closed-form solutions for sub-problems of BCD",
+   "grounded": true
+  },
+  {
+   "op": "integrate regularization",
+   "canonical": "integrate regularization",
+   "object": "parameter",
+   "quote": "we also integrate \u2113_{2,0}-regularization into 0/1 DNN",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we aim to train DNNs with the step function used as an activation function",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "the proposed algorithm has a high performance on classifying MNIST and Fashion-MNIST datasets",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "evaluate@task",
+  "integrate regularization@parameter",
+  "reformulate problem@task",
+  "solve optimization@task",
+  "train@parameter"
+ ]
+}

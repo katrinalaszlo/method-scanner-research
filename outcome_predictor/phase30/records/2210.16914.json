@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "2210.16914",
+ "source": "abstract",
+ "words": 216,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "higher resolutions of feature maps and kernels can be used",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "the results show 8.2 times fewer convolution operations",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "it trained with the CIFAR100 dataset on GPU",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the approach takes full advantage of the parallelism",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the 4f free-space system accelerates the inference speed",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "the results show 8.2 times fewer convolution operations",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the network performs fewer conversions between electronics and optics",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the approach takes full advantage of the parallelism",
+   "grounded": false
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the 4f free-space system accelerates the inference speed",
+   "grounded": false
+  },
+  {
+   "op": "transform state",
+   "canonical": "transform state",
+   "object": "state",
+   "quote": "higher resolutions of feature maps and kernels can be used",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the results show 8.2 times fewer convolution operations",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "the approach takes full advantage of the parallelism",
+   "grounded": false
+  },
+  {
+   "op": "generate distribution",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "the 4f free-space system accelerates the inference speed",
+   "grounded": false
+  },
+  {
+   "op": "evaluate policy",
+   "canonical": "evaluate",
+   "object": "policy",
+   "quote": "the network performs fewer conversions between electronics and optics",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the 4f free-space system accelerates the inference speed",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the approach takes full advantage of the parallelism",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the network performs fewer conversions between electronics and optics",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "it trained with the CIFAR100 dataset on GPU",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "the results show 8.2 times fewer convolution operations",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the approach takes full advantage of the parallelism",
+   "grounded": false
+  },
+  {
+   "op": "generate distribution",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "the 4f free-space system accelerates the inference speed",
+   "grounded": false
+  },
+  {
+   "op": "evaluate policy",
+   "canonical": "evaluate",
+   "object": "policy",
+   "quote": "the network performs fewer conversions between electronics and optics",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the results show 8.2 times fewer convolution operations",
+   "grounded": true
+  },
+  {
+   "op": "transform state",
+   "canonical": "transform state",
+   "object": "state",
+   "quote": "higher resolutions of feature maps and kernels can be used",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the 4f free-space system accelerates the inference speed",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply convolution@input",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@state",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@policy",
+  "predict@reward",
+  "reconstruct@distribution",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "transform state@state"
+ ]
+}

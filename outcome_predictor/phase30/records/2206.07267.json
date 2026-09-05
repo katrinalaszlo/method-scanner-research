@@ -1,0 +1,83 @@
+{
+ "arxiv_id": "2206.07267",
+ "source": "abstract",
+ "words": 203,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 9,
+ "n_invalid_object": 3,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "split input",
+   "canonical": "split input",
+   "object": "input",
+   "quote": "Splitting the input samples into patches",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "INVALID:patch",
+   "quote": "encoding these via the help of Vision Transformers",
+   "grounded": true
+  },
+  {
+   "op": "establish correspondence",
+   "canonical": "establish correspondence",
+   "object": "latent",
+   "quote": "establish semantic correspondences between local regions across images",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "latent",
+   "quote": "the most informative patch embeddings for the task at hand are then determined as a function of the support set via online optimization",
+   "grounded": true
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "latent",
+   "quote": "the most informative patch embeddings for the task at hand",
+   "grounded": true
+  },
+  {
+   "op": "generate interpretation",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "providing visual interpretability of what matters most in the image",
+   "grounded": true
+  },
+  {
+   "op": "mask image",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "build on recent advances in unsupervised training of networks via masked image modelling",
+   "grounded": true
+  },
+  {
+   "op": "learn structure",
+   "canonical": "train",
+   "object": "INVALID:data",
+   "quote": "learn the more general statistical structure of the data",
+   "grounded": true
+  },
+  {
+   "op": "avoid collapse",
+   "canonical": "avoid collapse",
+   "object": "INVALID:label",
+   "quote": "avoiding negative image-level annotation influence, aka supervision collapse",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "establish correspondence@latent",
+  "improve@latent",
+  "mask@input",
+  "reconstruct@input",
+  "select@latent",
+  "split input@input"
+ ]
+}

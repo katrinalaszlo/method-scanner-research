@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "1905.09272",
+ "source": "abstract",
+ "words": 129,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 0,
+ "n_grounded": 0,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "predict latent",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We revisit and improve Contrast, Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "sample noise",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "denoise latent",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "encode state",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "predict state",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "sample noise",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "denoise latent",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "encode state",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "predict state",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We revisit and improve Contrastive Predictive Coding",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compute distribution@distribution",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "encode@state",
+  "predict@latent",
+  "predict@reward",
+  "predict@state",
+  "reconstruct@latent",
+  "sample@noise",
+  "sample@sample"
+ ]
+}

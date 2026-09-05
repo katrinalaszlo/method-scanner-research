@@ -1,0 +1,199 @@
+{
+ "arxiv_id": "2101.10043",
+ "source": "abstract",
+ "words": 226,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 14,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "sample",
+   "quote": "differentiates the training samples based on their distance to the Gaussian centre",
+   "grounded": true
+  },
+  {
+   "op": "compute standard deviation",
+   "canonical": "compute standard deviation",
+   "object": "INVALID:distance",
+   "quote": "differentiates the training samples based on their distance to the Gaussian centre",
+   "grounded": true
+  },
+  {
+   "op": "learn parameters",
+   "canonical": "train",
+   "object": "INVALID:gaussian",
+   "quote": "learn a one-class Gaussian anomaly classifier",
+   "grounded": false
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "INVALID:interpolated",
+   "quote": "trained with adversarially interpolated training samples",
+   "grounded": true
+  },
+  {
+   "op": "compute deviation",
+   "canonical": "compute deviation",
+   "object": "sample",
+   "quote": "detect anomalies based on the deviation from the data description",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learn a one-class Gaussian anomaly classifier",
+   "grounded": false
+  },
+  {
+   "op": "enforce constraint",
+   "canonical": "enforce constraint",
+   "object": "INVALID:gaussian",
+   "quote": "adversarial interpolation is enforced to consistently learn a smooth Gaussian descriptor",
+   "grounded": true
+  },
+  {
+   "op": "classify sample",
+   "canonical": "classify",
+   "object": "INVALID:anomaly",
+   "quote": "learn a one, class Gaussian anomaly classifier",
+   "grounded": false
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "INVALID:detection",
+   "quote": "IGD achieves better detection accuracy than current state-of-the-art models",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "learn a one-class Gaussian anomaly classifier",
+   "grounded": false
+  },
+  {
+   "op": "sample from distribution",
+   "canonical": "sample",
+   "object": "INVALID:gaussian",
+   "quote": "learn a one-class Gaussian anomaly classifier",
+   "grounded": false
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "INVALID:gaussian",
+   "quote": "learn a one-class Gaussian anomaly classifier",
+   "grounded": false
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "INVALID:gaussian",
+   "quote": "learn a one-class Gaussian anomaly classifier",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "INVALID:gaussian",
+   "quote": "learn a one-class Gaussian anomaly classifier",
+   "grounded": false
+  },
+  {
+   "op": "detect anomaly",
+   "canonical": "detect anomaly",
+   "object": "sample",
+   "quote": "detect anomalies based on the deviation from the data description",
+   "grounded": true
+  },
+  {
+   "op": "compute anomaly score",
+   "canonical": "compute anomaly score",
+   "object": "sample",
+   "quote": "detect anomalies based on the deviation from the data description",
+   "grounded": true
+  },
+  {
+   "op": "compare distance",
+   "canonical": "compare",
+   "object": "sample",
+   "quote": "differentiates the training samples based on their distance to the Gaussian centre",
+   "grounded": true
+  },
+  {
+   "op": "compute representation",
+   "canonical": "compute representation",
+   "object": "sample",
+   "quote": "learn a one-class Gaussian anomaly classifier",
+   "grounded": false
+  },
+  {
+   "op": "generate noise",
+   "canonical": "reconstruct",
+   "object": "INVALID:interpolated",
+   "quote": "trained with adversarially interpolated training samples",
+   "grounded": true
+  },
+  {
+   "op": "interpolate sample",
+   "canonical": "interpolate sample",
+   "object": "INVALID:training",
+   "quote": "trained with adversarially interpolated training samples",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "learn a one-class Gaussian anomaly classifier",
+   "grounded": false
+  },
+  {
+   "op": "update gradient",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learn a one-class Gaussian anomaly classifier",
+   "grounded": false
+  },
+  {
+   "op": "denoise sample",
+   "canonical": "reconstruct",
+   "object": "INVALID:interpolated",
+   "quote": "trained with adversarially interpolated training samples",
+   "grounded": true
+  },
+  {
+   "op": "resample data",
+   "canonical": "sample",
+   "object": "INVALID:training",
+   "quote": "trained with adversarially interpolated training samples",
+   "grounded": true
+  },
+  {
+   "op": "compute probability",
+   "canonical": "compute probability",
+   "object": "sample",
+   "quote": "detect anomalies based on the deviation from the data description",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@sample",
+  "compute anomaly score@sample",
+  "compute deviation@sample",
+  "compute distance@sample",
+  "compute gradient@error",
+  "compute probability@sample",
+  "compute representation@sample",
+  "correct@parameter",
+  "detect anomaly@sample",
+  "evaluate@error"
+ ]
+}

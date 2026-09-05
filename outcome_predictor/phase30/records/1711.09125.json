@@ -1,0 +1,194 @@
+{
+ "arxiv_id": "1711.09125",
+ "source": "abstract",
+ "words": 170,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 23,
+ "n_invalid_object": 4,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "extract input",
+   "canonical": "extract input",
+   "object": "input",
+   "quote": "RGB input",
+   "grounded": true
+  },
+  {
+   "op": "split input",
+   "canonical": "split input",
+   "object": "input",
+   "quote": "appearance branch is implemented based on the linear combination of pixels or filter responses",
+   "grounded": true
+  },
+  {
+   "op": "compute appearance",
+   "canonical": "compute appearance",
+   "object": "input",
+   "quote": "appearance branch is implemented based on the linear combination of pixels or filter responses",
+   "grounded": true
+  },
+  {
+   "op": "compute relation",
+   "canonical": "compute relation",
+   "object": "input",
+   "quote": "relation branch is designed based on the multiplicative interactions between pixels or filter responses",
+   "grounded": false
+  },
+  {
+   "op": "combine appearance",
+   "canonical": "aggregate",
+   "object": "INVALID:appearance",
+   "quote": "SMART blocks decouple the spatiotemporal learning module into an appearance branch for spatial modeling and a relation branch for temporal modeling",
+   "grounded": true
+  },
+  {
+   "op": "combine relation",
+   "canonical": "aggregate",
+   "object": "INVALID:relation",
+   "quote": "SMART blocks decouple the spatiotemporal learning module into an appearance branch for spatial modeling and a relation branch for temporal modeling",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "INVALID:appearance",
+   "quote": "appearance branch is implemented based on the linear combination of pixels or filter responses",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "INVALID:relation",
+   "quote": "relation branch is designed based on the multiplicative interactions between pixels or filter responses",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "perform experiments on three action recognition benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "perform experiments on three action recognition benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "perform experiments on three action recognition benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "ARTNets achieve superior performance on these three datasets to the existing state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "ARTNets achieve superior performance on these three datasets to the existing state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "ARTNs achieve superior performance on these three datasets to the existing state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "ARTNets achieve superior performance on these three datasets to the existing state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "ARTNets achieve superior performance on these three datasets to the existing state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "ARTNets achieve superior performance on these three datasets to the existing state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "distribution",
+   "quote": "ARTNets achieve superior performance on these three datasets to the existing state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "denormalize",
+   "canonical": "denormalize",
+   "object": "distribution",
+   "quote": "ARTNets achieve superior performance on these three datasets to the existing state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "ARTNets achieve superior performance on these three datasets to the existing state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "evaluate task",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "ARTNets achieve superior performance on these three datasets to the existing state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "store trajectory",
+   "canonical": "store trajectory",
+   "object": "trajectory",
+   "quote": "ARTNets achieve superior performance on these three datasets to the existing state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "log results",
+   "canonical": "log results",
+   "object": "task",
+   "quote": "ARTNets achieve superior performance on these three datasets to the existing state-of-the-art methods",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compute appearance@input",
+  "compute relation@input",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "correct@parameter",
+  "denormalize@distribution",
+  "evaluate@error",
+  "evaluate@task",
+  "extract input@input",
+  "log results@task",
+  "normalize@distribution",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "split input@input",
+  "store trajectory@trajectory"
+ ]
+}

@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "2312.12913",
+ "source": "abstract",
+ "words": 240,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the encoder and decoder representations of the reconstructive network",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the encoder and decoder representations of the reconstructive network",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "the encoder and decoder representations of the reconstructive network",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:reconstruction",
+   "quote": "the discrepancies between the symmetric reconstructive representations provides roughly accurate anomaly information",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "calibrates the semantics of each discriminative layer by the high-level representations and supervision loss",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "calibrates the semantics of each discriminative layer by the high-level representations and supervision loss",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the representation reusage also enables to exclude the feature extraction process in the discriminative network",
+   "grounded": true
+  },
+  {
+   "op": "sample anomaly",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "the discrepancies between the symmetric reconstructive representations provides roughly accurate anomaly information",
+   "grounded": true
+  },
+  {
+   "op": "refine anomaly",
+   "canonical": "correct",
+   "object": "error",
+   "quote": "a coarse-to-fine process is proposed in POUTA, which calibrates the semantics of each discriminative layer by the high-level representations and supervision loss",
+   "grounded": true
+  },
+  {
+   "op": "locate anomaly",
+   "canonical": "locate anomaly",
+   "object": "state",
+   "quote": "POUTA is endowed with the ability to provide a more precise anomaly location than the prior arts",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "error",
+   "quote": "the discrepancies between the symmetric reconstructive representations provides roughly accurate anomaly information",
+   "grounded": true
+  },
+  {
+   "op": "exclude feature",
+   "canonical": "exclude feature",
+   "object": "latent",
+   "quote": "the representation reusage also enables to exclude the feature extraction process in the discriminative network",
+   "grounded": true
+  },
+  {
+   "op": "reduce parameters",
+   "canonical": "reduce parameters",
+   "object": "parameter",
+   "quote": "the representation reusage also enables to exclude the feature extraction process in the discriminative network",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "state",
+   "quote": "the discrepancies between the symmetric reconstructive representations provides roughly accurate anomaly information",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "input",
+   "quote": "the representation reusage also enables to exclude the feature extraction process in the discriminative network",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "error",
+   "quote": "the discrepancies between the symmetric reconstructive representations provides roughly accurate anomaly information",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "error",
+   "quote": "the discrepancies between the symmetric reconstructive representations provides roughly accurate anomaly information",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "distribution",
+   "quote": "the discrepancies between the symmetric reconstructive representations provides roughly accurate anomaly information",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "action",
+   "quote": "the representation reusage also enables to exclude the feature extraction process in the discriminative network",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "error",
+   "quote": "the discrepancies between the symmetric reconstructive representations provides roughly accurate anomaly information",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "state",
+   "quote": "the discrepancies between the symmetric reconstructive representations provides roughly accurate anomaly information",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "input",
+   "quote": "the representation reusage also enables to exclude the feature extraction process in the discriminative network",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "error",
+   "quote": "the discrepancies between the symmetric reconstructive representations provides roughly accurate anomaly information",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "error",
+   "quote": "the discrepancies between the symmetric reconstructive representations provides roughly accurate anomaly information",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "distribution",
+   "quote": "the discrepancies between the symmetric reconstructive representations provides roughly accurate anomaly information",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute distribution@error",
+  "compute policy@action",
+  "compute reward@error",
+  "compute sample@distribution",
+  "compute task@input",
+  "compute trajectory@state",
+  "compute value@error",
+  "correct@error",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "exclude feature@latent",
+  "locate anomaly@state",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reduce parameters@parameter",
+  "sample@distribution"
+ ]
+}

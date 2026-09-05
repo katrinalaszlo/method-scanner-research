@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "1907.12087",
+ "source": "abstract",
+ "words": 184,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "we observe that regularizing the feature manifold",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we show that our proposed method S2M2 beats",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "few-shot learning algorithms aim to learn model parameters",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "few-shot learning algorithms aim to learn model parameters",
+   "grounded": true
+  },
+  {
+   "op": "learn representation",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "manifold mixup focuses on learning a general-purpose representation",
+   "grounded": true
+  },
+  {
+   "op": "mix features",
+   "canonical": "mix features",
+   "object": "latent",
+   "quote": "manifold mixup focuses on learning a general-purpose representation",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the goal of few-shot learning is closely linked to robust representation learning",
+   "grounded": true
+  },
+  {
+   "op": "regularize manifold",
+   "canonical": "regularize manifold",
+   "object": "latent",
+   "quote": "we observe that regularizing the feature manifold",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we observe that regularizing the feature manifold",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we show that our proposed method S2.2 beats",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we show that our proposed method S2M2 beats",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we show that our proposed method S2M2 beats",
+   "grounded": true
+  },
+  {
+   "op": "generalize features",
+   "canonical": "generalize features",
+   "object": "latent",
+   "quote": "we show that the features learned using our approach generalize",
+   "grounded": true
+  },
+  {
+   "op": "adapt to data",
+   "canonical": "adapt to data",
+   "object": "distribution",
+   "quote": "we observe that regularizing the feature manifold",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "few-shot learning algorithms aim to learn model parameters",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "we show that the features learned using our approach generalize",
+   "grounded": true
+  },
+  {
+   "op": "compare accuracy",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "we show that our proposed method S2M2 beats",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "few-shot learning algorithms aim to learn model parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "we observe that regularizing the feature manifold",
+   "grounded": true
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "latent",
+   "quote": "we observe that regularizing the feature manifold",
+   "grounded": true
+  },
+  {
+   "op": "compute prediction",
+   "canonical": "compute prediction",
+   "object": "distribution",
+   "quote": "manifold mixup focuses on learning a general-purpose representation",
+   "grounded": true
+  },
+  {
+   "op": "denoise features",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we observe that regularizing the feature manifold",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "few-shot learning algorithms aim to learn model parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we show that the features learned using our approach generalize",
+   "grounded": true
+  },
+  {
+   "op": "compute reward signal",
+   "canonical": "compute reward signal",
+   "object": "reward",
+   "quote": "few-shot learning algorithms aim to learn model parameters",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "adapt to data@distribution",
+  "apply regularization@latent",
+  "backpropagate@gradient",
+  "compare@task",
+  "compute gradient@error",
+  "compute policy@policy",
+  "compute prediction@distribution",
+  "compute reward signal@reward",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "generalize features@latent",
+  "mix features@latent",
+  "process input@input",
+  "reconstruct@latent",
+  "regularize manifold@latent",
+  "sample@action",
+  "sample@trajectory",
+  "train@latent",
+  "train@parameter"
+ ]
+}

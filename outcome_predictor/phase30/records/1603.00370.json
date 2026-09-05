@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1603.00370",
+ "source": "abstract",
+ "words": 160,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "We propose a metric learning formulation called Weighted Approximate Rank Component Analysis (WARCA).",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Using this new regularizer allows us to adapt the large-scale WSABIE procedure",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "and to leverage the Adam stochastic optimization algorithm",
+   "grounded": false
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "which results in an algorithm that scales gracefully to very large data-sets",
+   "grounded": true
+  },
+  {
+   "op": "compute regularizer",
+   "canonical": "compute regularizer",
+   "object": "error",
+   "quote": "WARCA optimizes the precision at top ranks by combining the WARP loss with a regularizer",
+   "grounded": true
+  },
+  {
+   "op": "compute kernel",
+   "canonical": "compute kernel",
+   "object": "distribution",
+   "quote": "we derive a kernelized version which allows to take advantage of state-of-the-art features",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "when data-set size permits kernel computation",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Benchmarks on recent and standard re-identification data-sets show that our method beats existing state-of-the-art techniques",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "compute gradient@gradient",
+  "compute kernel@distribution",
+  "compute regularizer@error",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "sample@action"
+ ]
+}

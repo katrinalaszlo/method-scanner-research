@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2011.02572",
+ "source": "abstract",
+ "words": 170,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "extract input",
+   "canonical": "extract input",
+   "object": "input",
+   "quote": "scene parsing from images is a fundamental yet challenging problem",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "the parsing model assigns every pixel to a categorical label",
+   "grounded": true
+  },
+  {
+   "op": "generate feature",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "multi-layer feature outputs of the deep parsing networks",
+   "grounded": true
+  },
+  {
+   "op": "aggregate feature",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "designing a novel feature aggregation module to generate the appropriate global representation prior",
+   "grounded": true
+  },
+  {
+   "op": "select feature",
+   "canonical": "select feature",
+   "object": "latent",
+   "quote": "the proposed module can auto-select the intermediate visual features",
+   "grounded": true
+  },
+  {
+   "op": "combine feature",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "multiple skip connections form a strong supervision",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the deep parsing network equipped with the proposed feature aggregation module",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "extensive experiments on four public scene parsing datasets prove",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "correct@parameter",
+  "evaluate@error",
+  "extract input@input",
+  "reconstruct@input",
+  "select feature@latent"
+ ]
+}

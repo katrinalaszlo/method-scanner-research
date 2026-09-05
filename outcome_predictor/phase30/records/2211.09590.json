@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2211.09590",
+ "source": "abstract",
+ "words": 229,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "given human joint coordinates with skeletal interconnections",
+   "grounded": true
+  },
+  {
+   "op": "compute graph distance",
+   "canonical": "compute graph distance",
+   "object": "state",
+   "quote": "retain the information of skeletal structure during training",
+   "grounded": false
+  },
+  {
+   "op": "embed graph distance",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "retain the information of skeletal structure during training",
+   "grounded": false
+  },
+  {
+   "op": "apply self-attention",
+   "canonical": "apply self-attention",
+   "object": "latent",
+   "quote": "Self-Attention (SA) mechanism has been adopted",
+   "grounded": true
+  },
+  {
+   "op": "aggregate high-order relations",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "incorporate intrinsic higher-order relations into the model",
+   "grounded": true
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "distribution",
+   "quote": "Hypergraph Self-Attention (HyperSA), to incorporate intrinsic higher-order relations",
+   "grounded": true
+  },
+  {
+   "op": "combine attention weights",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "to incorporate intrinsic higher-order relations into the model",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "skeleton-based action recognition aims to recognize human actions",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply self-attention@latent",
+  "compute attention weights@distribution",
+  "compute graph distance@state",
+  "encode@input",
+  "encode@latent",
+  "predict@action"
+ ]
+}

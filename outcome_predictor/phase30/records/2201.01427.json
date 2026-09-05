@@ -1,0 +1,172 @@
+{
+ "arxiv_id": "2201.01427",
+ "source": "abstract",
+ "words": 141,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Encoder-decoder models have been widely used in RGBD semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "fuse",
+   "canonical": "fuse",
+   "object": "latent",
+   "quote": "extract and fuse deeply multi-level paired complementary information",
+   "grounded": true
+  },
+  {
+   "op": "attend",
+   "canonical": "attend",
+   "object": "latent",
+   "quote": "attention-based multimodal fusion module",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "introduce a dual-branch decoder",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "learn more robust deep representations and rich multi-modal information",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "leverage the correlations and complementary cues of different tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "learn more robust deep representations and rich multi-modal information",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "distribution",
+   "quote": "Encoder-decoder models have been widely used in RGBD semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "learn more robust deep representations and rich multi-modal information",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "leverage the correlations and complementary cues of different tasks",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "distribution",
+   "quote": "learn more robust deep representations and rich multi-modal information",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "learn more robust deep representations and rich multi-modal information",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "attention-based multimodal fusion module",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "extract and fuse deeply multi-level paired complementary information",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "latent",
+   "quote": "attention-based multimodal fusion module",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "leverage the correlations and complementary cues of different tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "learn more robust deep representations and rich multi-modal information",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learn more robust deep representations and rich multi-modal information",
+   "grounded": true
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "error",
+   "quote": "learn more robust deep representations and rich multi-modal information",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "learn more robust deep and rich multi-modal information",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@distribution",
+  "attend@latent",
+  "compute@error",
+  "compute@value",
+  "correct@distribution",
+  "correct@parameter",
+  "encode@input",
+  "extract@latent",
+  "fuse@latent",
+  "improve@parameter",
+  "output@distribution",
+  "predict@distribution",
+  "process@latent",
+  "reconstruct@distribution",
+  "reconstruct@latent",
+  "sample@distribution",
+  "transform@latent",
+  "transmit@error"
+ ]
+}

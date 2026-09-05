@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2012.06977",
+ "source": "abstract",
+ "words": 222,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "treat H x W x T video frames as space-time signal",
+   "grounded": false
+  },
+  {
+   "op": "model",
+   "canonical": "model",
+   "object": "state",
+   "quote": "model video from the other two Height-Time and Width-Time planes",
+   "grounded": true
+  },
+  {
+   "op": "fuse",
+   "canonical": "fuse",
+   "object": "latent",
+   "quote": "introduce a novel multi-view fusion (MVF) module",
+   "grounded": true
+  },
+  {
+   "op": "convolve",
+   "canonical": "convolve",
+   "object": "latent",
+   "quote": "exploit video dynamics using separable convolution for efficiency",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "plug-and-play module and can be inserted into off-the-shelf 2D CNNs",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "achieve state-of-the-art performance with 2D CNN's complexity",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "extensive experiments are conducted on popular benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "model complexity is well kept in mind by design",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "capture the dynamics of video thoroughly",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "form a simple yet effective model called MVFNet",
+   "grounded": true
+  },
+  {
+   "op": "generalize",
+   "canonical": "generalize",
+   "object": "task",
+   "quote": "can be thought of as a generalized video modeling framework",
+   "grounded": true
+  },
+  {
+   "op": "specialize",
+   "canonical": "specialize",
+   "object": "task",
+   "quote": "can specialize to be existing methods such as C2D, SlowOnly, and TSM",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "show its superiority",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "achieve state-of-the-art performance with 2D CNN's complexity",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "input",
+   "quote": "treat H x W x T video frames as space-time signal",
+   "grounded": false
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "model video from the other two Height-Time and Width-Time planes",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "value",
+   "quote": "achieve state-of-the-art performance with 2D CNN's complexity",
+   "grounded": true
+  },
+  {
+   "op": "analyze",
+   "canonical": "analyze",
+   "object": "error",
+   "quote": "extensive experiments are conducted on popular benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "model complexity is well kept in mind by design",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "achieve state-of-the-art performance with 2D CNN's complexity",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "model complexity is well kept in mind by design",
+   "grounded": true
+  },
+  {
+   "op": "infer",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "achieve state-of-the-art performance with 2D CNN's complexity",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "achieve state-of-the-art performance with 2D CNN's complexity",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "extensive experiments are conducted on popular benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "show its superiority",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "analyze@error",
+  "compare@value",
+  "compute@error",
+  "compute@value",
+  "convolve@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@value",
+  "extract@latent",
+  "fuse@latent",
+  "generalize@task",
+  "improve@parameter",
+  "model@state",
+  "predict@value",
+  "process@input",
+  "reconstruct@value",
+  "specialize@task",
+  "train@parameter",
+  "transform@input"
+ ]
+}

@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "2110.09243",
+ "source": "abstract",
+ "words": 194,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "render",
+   "canonical": "render",
+   "object": "input",
+   "quote": "synthetic renderings from MoCap data",
+   "grounded": true
+  },
+  {
+   "op": "fine tune",
+   "canonical": "fine tune",
+   "object": "parameter",
+   "quote": "fine-tune the batch normalization layers",
+   "grounded": false
+  },
+  {
+   "op": "regress",
+   "canonical": "regress",
+   "object": "INVALID:pose",
+   "quote": "directly regresses the pose parameters",
+   "grounded": true
+  },
+  {
+   "op": "mask",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "trained via masked modeling",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "parameter",
+   "quote": "transform it in a video-based model",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:pose",
+   "quote": "regresses the pose parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "trained via masked modeling",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "fine-tune the batch normalization layers",
+   "grounded": false
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "leveraging temporal information",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "transform it in a video-based model",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "improve image-based and video-based human mesh recovery",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "trained via masked modeling",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "improve image-based and video, human mesh recovery",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "leveraging temporal information",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "fine-tune the batch normalization layers",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "transform it in a video-based model",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "leveraging temporal information",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "synthetic renderings from MoCap data",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "transform it in a video-based model",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "transform it in a video-based model",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "improve image-based and video-based human mesh recovery",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "transform it in a video-based model",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "trained via masked modeling",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "improve image-based and video-based human mesh recovery",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "leveraging temporal information",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute input@input",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "fine tune@parameter",
+  "mask@input",
+  "render@input",
+  "sample@trajectory",
+  "transform@parameter"
+ ]
+}

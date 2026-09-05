@@ -1,0 +1,75 @@
+{
+ "arxiv_id": "1801.05558",
+ "source": "abstract",
+ "words": 148,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 3,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "gradient-based meta-learning methods leverage gradient descent",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learn the commonalities among various tasks",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "task-specific learner performs gradient descent with respect to a meta-learned distance metric",
+   "grounded": true
+  },
+  {
+   "op": "apply metric",
+   "canonical": "apply metric",
+   "object": "INVALID:activation",
+   "quote": "warps the activation space to be more sensitive to task identity",
+   "grounded": true
+  },
+  {
+   "op": "project vector",
+   "canonical": "project",
+   "object": "INVALID:activation",
+   "quote": "enables the meta-learner to learn on each layer's activation space a subspace",
+   "grounded": true
+  },
+  {
+   "op": "compute subspace",
+   "canonical": "compute subspace",
+   "object": "INVALID:activation",
+   "quote": "the dimension of this learned subspace reflects the complexity",
+   "grounded": false
+  },
+  {
+   "op": "adapt parameters",
+   "canonical": "adapt parameters",
+   "object": "parameter",
+   "quote": "task-specific learner performs gradient descent",
+   "grounded": true
+  },
+  {
+   "op": "scale learning rate",
+   "canonical": "scale learning rate",
+   "object": "parameter",
+   "quote": "our model is less sensitive to the choice of initial learning rates",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "adapt parameters@parameter",
+  "compare@value",
+  "compute gradient@error",
+  "correct@parameter",
+  "scale learning rate@parameter"
+ ]
+}

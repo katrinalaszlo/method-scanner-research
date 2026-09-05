@@ -1,0 +1,72 @@
+{
+ "arxiv_id": "2303.08810",
+ "source": "abstract",
+ "words": 252,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 6,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "filter keys",
+   "canonical": "filter keys",
+   "object": "INVALID:key",
+   "quote": "irrelevant key-value pairs are first filtered out",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "INVALID:token",
+   "quote": "fine-grained token-to-token attention is applied",
+   "grounded": true
+  },
+  {
+   "op": "select candidates",
+   "canonical": "select candidates",
+   "object": "INVALID:region",
+   "quote": "remaining candidate regions (routed regions)",
+   "grounded": false
+  },
+  {
+   "op": "aggregate values",
+   "canonical": "aggregate",
+   "object": "value",
+   "quote": "query adaptive manner without distraction",
+   "grounded": false
+  },
+  {
+   "op": "compute matrix multiplication",
+   "canonical": "compute matrix multiplication",
+   "object": "INVALID:matrix",
+   "quote": "involving only GPU-friendly dense matrix multiplications",
+   "grounded": true
+  },
+  {
+   "op": "apply attention weights",
+   "canonical": "apply attention weights",
+   "object": "INVALID:token",
+   "quote": "attend to a small subset of relevant tokens",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "INVALID:token",
+   "quote": "enables a more flexible allocation of computations",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "utilizes the sparsity to save both computation and memory",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@value",
+  "correct@parameter"
+ ]
+}

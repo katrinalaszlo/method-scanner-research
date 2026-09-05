@@ -1,0 +1,199 @@
+{
+ "arxiv_id": "1812.05642",
+ "source": "abstract",
+ "words": 150,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 6,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "SIGNet integrates semantic information to make depth and flow predictions consistent with objects",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:depth",
+   "quote": "SIGNet improves the dynamic object class performance by 39% in depth prediction",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:flow",
+   "quote": "SIGNet improves the dynamic object class performance by 29% in flow prediction",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:depth",
+   "quote": "SIGNet is shown to improve upon the state-of-the-art unsupervised learning for depth prediction",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:flow",
+   "quote": "SIGNet is shown to improve upon the state-of-the-art unsupervised learning for depth prediction",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "SIGNet provides robust geometry perception without requiring geometrically informative labels",
+   "grounded": false
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "SIGN,et integrates semantic information to make depth and flow predictions consistent with objects",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "SIGNet is robust to low lighting conditions",
+   "grounded": false
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "SIGNet provides robust geometry perception without requiring geometrically informative labels",
+   "grounded": false
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "SIGNet is shown to improve upon the state-of-the-art unsupervised learning for depth prediction",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "SIGNet integrates semantic information to make depth and flow predictions consistent with objects",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:depth",
+   "quote": "SIGNet improves the dynamic object class performance by 39% in depth prediction",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:flow",
+   "quote": "SIGNet improves the dynamic object class performance by 29% in flow prediction",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "SIGNet provides robust geometry perception without requiring geometrically informative labels",
+   "grounded": false
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "SIGNet provides robust geometry perception without requiring geometrically informative labels",
+   "grounded": false
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "error",
+   "quote": "SIGNet is shown to improve upon the state-of-the-art unsupervised learning for depth prediction",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "SIGNet is robust to low lighting conditions",
+   "grounded": false
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "trajectory",
+   "quote": "SIGNet provides robust geometry perception without requiring geometrically informative labels",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "SIGNet is robust to low lighting conditions",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "SIGNet is robust to low lighting conditions",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "SIGNet is robust to low lighting conditions",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "SIGNet is robust to low lighting conditions",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "SIGNet is robust to low lighting conditions",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "error",
+   "quote": "SIGNet is robust to low lighting conditions",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "aggregate@trajectory",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "correct@parameter",
+  "encode@input",
+  "normalize@error",
+  "reconstruct@distribution",
+  "reconstruct@error",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "reconstruct@state",
+  "sample@latent",
+  "sample@sample"
+ ]
+}

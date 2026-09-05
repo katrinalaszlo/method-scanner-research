@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "1603.05027",
+ "source": "abstract",
+ "words": 121,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "add",
+   "canonical": "add",
+   "object": "state",
+   "quote": "forward and backward signals can be directly propagated",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "state",
+   "quote": "after-addition activation",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "a series of ablation experiments support the importance",
+   "grounded": false
+  },
+  {
+   "op": "propagate error",
+   "canonical": "transmit",
+   "object": "state",
+   "quote": "forward and backward signals can be directly propagated",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "this motivates us to propose a new residual unit",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "a series of ablation experiments support the importance",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate gradient",
+   "canonical": "backpropagate gradient",
+   "object": "parameter",
+   "quote": "forward and backward signals can be directly propagated",
+   "grounded": true
+  },
+  {
+   "op": "apply identity mapping",
+   "canonical": "apply identity mapping",
+   "object": "state",
+   "quote": "using identity mappings as the skip connections",
+   "grounded": false
+  },
+  {
+   "op": "residual connection",
+   "canonical": "residual connection",
+   "object": "state",
+   "quote": "using identity mappings as the skip connections",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "this motivates us to propose a new residual unit",
+   "grounded": false
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "state",
+   "quote": "we report improved results using a 1001-layer ResNet",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "a series of ablation experiments support the importance",
+   "grounded": false
+  },
+  {
+   "op": "optimize parameter",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "this motivates us to propose a new residual unit",
+   "grounded": false
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "we report improved results using a 1001-layer ResNet",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "using identity mappings as the skip connections",
+   "grounded": false
+  },
+  {
+   "op": "feed forward",
+   "canonical": "feed forward",
+   "object": "state",
+   "quote": "forward and backward signals can be directly propagated",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "state",
+   "quote": "we report improved results using a 1001-layer ResNet",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "forward and backward signals can be directly propagated",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "a series of ablation experiments support the importance",
+   "grounded": false
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "this motivates us to propose a new residual unit",
+   "grounded": false
+  },
+  {
+   "op": "normalize gradient",
+   "canonical": "normalize gradient",
+   "object": "gradient",
+   "quote": "a series of ablation experiments support the importance",
+   "grounded": false
+  },
+  {
+   "op": "scale gradient",
+   "canonical": "scale gradient",
+   "object": "gradient",
+   "quote": "forward and backward signals can be directly propagated",
+   "grounded": true
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "this motivates us to propose a new residual unit",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "state",
+   "quote": "we report improved results using a 1001-layer ResNet",
+   "grounded": true
+  },
+  {
+   "op": "log result",
+   "canonical": "log result",
+   "object": "state",
+   "quote": "we report improved results using a 1001-layer ResNet",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "add@state",
+  "apply activation@state",
+  "apply identity mapping@state",
+  "apply regularization@parameter",
+  "backpropagate gradient@parameter",
+  "clip gradient@gradient",
+  "compare@state",
+  "compute accuracy@state",
+  "compute gradient@parameter",
+  "compute value@state",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@state",
+  "feed forward@state",
+  "improve@parameter",
+  "log result@state",
+  "normalize gradient@gradient",
+  "process input@input",
+  "reconstruct@state",
+  "residual connection@state",
+  "sample@input",
+  "sample@state",
+  "scale gradient@gradient",
+  "train@parameter",
+  "transmit@state"
+ ]
+}

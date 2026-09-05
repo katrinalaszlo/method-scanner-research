@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2105.12723",
+ "source": "abstract",
+ "words": 179,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we explore the idea of nesting basic local transformers on non-overlapping image blocks",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "aggregating them in a hierarchical way",
+   "grounded": true
+  },
+  {
+   "op": "communicate",
+   "canonical": "communicate",
+   "object": "latent",
+   "quote": "enabling cross-block non-local information communication",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "the block aggregation function plays a critical role",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "requires minor code changes upon the original vision transformer",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "NesT converges faster and requires much less training data",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "when extending our key ideas to image generation",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "leads to a strong decoder that is 8\\times faster than previous transformer-based generators",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we show that decoupling the feature learning and abstraction processes",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "enables constructing a novel method (named GradCAT) for visually interpreting the learned model",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "backpropagate@gradient",
+  "communicate@latent",
+  "compare@latent",
+  "compute gradient@gradient",
+  "correct@parameter",
+  "encode@input",
+  "predict@state",
+  "reconstruct@distribution",
+  "reconstruct@noise"
+ ]
+}

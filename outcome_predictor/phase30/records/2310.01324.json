@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2310.01324",
+ "source": "abstract",
+ "words": 253,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "state",
+   "quote": "exploit the flexibility of self-attention",
+   "grounded": true
+  },
+  {
+   "op": "compute temporal attention",
+   "canonical": "compute temporal attention",
+   "object": "state",
+   "quote": "introduce spatial-temporal dual-headed attention",
+   "grounded": true
+  },
+  {
+   "op": "compute spatial attention",
+   "canonical": "compute spatial attention",
+   "object": "state",
+   "quote": "introduce spatial-temporal dual-headed attention",
+   "grounded": true
+  },
+  {
+   "op": "merge parameters",
+   "canonical": "merge parameters",
+   "object": "parameter",
+   "quote": "all newly added adapters could be easily merged with the original modules",
+   "grounded": true
+  },
+  {
+   "op": "apply linear transformation",
+   "canonical": "apply linear transformation",
+   "object": "state",
+   "quote": "utilizes lightweight densely placed linear adapters",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "enabling zero extra cost during inference",
+   "grounded": true
+  },
+  {
+   "op": "reparameterize module",
+   "canonical": "reparameterize module",
+   "object": "parameter",
+   "quote": "through structural reparameterization after training",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "Thanks to the customized linear design",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "enabling zero extra cost during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Thanks to the customized linear design",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Thanks to the customized linear design",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "introduce zero extra cost to the original models during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "introduce zero extra cost to the original models during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "introduce zero extra than the original models during inference",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "introduce zero extra cost to the original models during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "introduce zero extra cost to the original models during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "introduce zero extra cost to the original models during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "introduce zero extra cost to the original models during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "introduce zero extra cost to the original models during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "introduce zero extra cost to the original models during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "noise",
+   "quote": "introduce zero extra cost to the original models during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "introduce zero extra cost to the original models during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "introduce zero extra cost to the original models during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "introduce zero extra cost to the original models during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "introduce zero extra cost to the original models during inference",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "apply linear transformation@state",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute attention@state",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute noise@noise",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute spatial attention@state",
+  "compute task@task",
+  "compute temporal attention@state",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "merge parameters@parameter",
+  "reparameterize module@parameter",
+  "sample@action"
+ ]
+}

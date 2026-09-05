@@ -1,0 +1,178 @@
+{
+ "arxiv_id": "2210.12755",
+ "source": "abstract",
+ "words": 210,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 21,
+ "n_invalid_object": 0,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Transformer with its underlying attention mechanism",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "state",
+   "quote": "Transformer with its underlying attention mechanism",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "use the overlap points of adjacent local regions",
+   "grounded": true
+  },
+  {
+   "op": "reweight features",
+   "canonical": "reweight features",
+   "object": "latent",
+   "quote": "re-weight the features of these shared points",
+   "grounded": true
+  },
+  {
+   "op": "pass features",
+   "canonical": "transmit",
+   "object": "latent",
+   "quote": "before passing them to the next layers",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Inserting the LCP module between two transformer layers",
+   "grounded": true
+  },
+  {
+   "op": "propagate context",
+   "canonical": "transmit",
+   "object": "latent",
+   "quote": "exploit the message passing between neighboring local regions",
+   "grounded": true
+  },
+  {
+   "op": "generate representation",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "make their representations more informative and discriminative",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "use the overlap points of adjacent local regions",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "state",
+   "quote": "Transformer with its underlying attention mechanism",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the inherent relationships between adjacent local regions",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the structural information of the instances",
+   "grounded": true
+  },
+  {
+   "op": "sample points",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "separated local regions from the general sampling architecture",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "use the overlap points of adjacent local regions",
+   "grounded": true
+  },
+  {
+   "op": "refine features",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "re-weight the features of these shared points",
+   "grounded": true
+  },
+  {
+   "op": "aggregate context",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "exploit the message passing between neighboring local regions",
+   "grounded": true
+  },
+  {
+   "op": "update latent",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "before passing them to the next layers",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "Inserting the LCP module between two transformer layers",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Inserting the LCP module between two transformer layers",
+   "grounded": true
+  },
+  {
+   "op": "apply module",
+   "canonical": "apply module",
+   "object": "latent",
+   "quote": "Inserting the LCP module between two transformer layers",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "the proposed method is applicable to different tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention@state",
+  "apply module@latent",
+  "backpropagate@gradient",
+  "compute attention@state",
+  "compute gradient@gradient",
+  "compute value@value",
+  "correct@latent",
+  "correct@parameter",
+  "encode@input",
+  "encode@latent",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "reconstruct@state",
+  "reweight features@latent",
+  "sample@input",
+  "transmit@latent"
+ ]
+}

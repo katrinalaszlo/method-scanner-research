@@ -1,0 +1,179 @@
+{
+ "arxiv_id": "2304.05690",
+ "source": "abstract",
+ "words": 218,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 21,
+ "n_invalid_object": 0,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "compute joint positions",
+   "canonical": "compute joint positions",
+   "object": "state",
+   "quote": "Recovering whole-body mesh by inferring the abstract pose and shape parameters from visual content",
+   "grounded": true
+  },
+  {
+   "op": "estimate 3d joints",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "Recovering whole-body mesh by inferring the abstract pose and shape parameters from visual content",
+   "grounded": true
+  },
+  {
+   "op": "decompose rotation",
+   "canonical": "decompose rotation",
+   "object": "state",
+   "quote": "HybrIK directly transforms accurate 3d joints to body-part rotations via twist-and-swing decomposition",
+   "grounded": true
+  },
+  {
+   "op": "solve swing rotation",
+   "canonical": "solve swing rotation",
+   "object": "state",
+   "quote": "The swing rotations are analytically solved with 3d joints",
+   "grounded": true
+  },
+  {
+   "op": "predict twist rotation",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "The twist rotations are derived from visual cues through neural networks",
+   "grounded": true
+  },
+  {
+   "op": "combine rotations",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "HybrIK directly transforms accurate 3d joints to body-part rotations via twist-and-swing decomposition",
+   "grounded": true
+  },
+  {
+   "op": "generate body mesh",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "Experiments demonstrate that HybrIK and HybrIK-X preserve both the accuracy of 3d joints and the realistic structure of the parametric human model",
+   "grounded": true
+  },
+  {
+   "op": "refine mesh details",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "HybrIK-X is fast and accurate by solving the whole-body pose with a one-stage model",
+   "grounded": true
+  },
+  {
+   "op": "integrate hand model",
+   "canonical": "integrate hand model",
+   "object": "state",
+   "quote": "we further develop a holistic framework, HybrIK-X, which enhances HybrIK with articulated hands and an expressive face",
+   "grounded": true
+  },
+  {
+   "op": "integrate face model",
+   "canonical": "integrate face model",
+   "object": "state",
+   "quote": "we further develop a holistic framework, HybrIK-X, which enhances HybrIK with articulated hands and an expressive face",
+   "grounded": true
+  },
+  {
+   "op": "compute body pose",
+   "canonical": "compute body pose",
+   "object": "state",
+   "quote": "HybrIK-X is fast and accurate by solving the whole-body pose with a one-stage model",
+   "grounded": true
+  },
+  {
+   "op": "output mesh vertices",
+   "canonical": "output mesh vertices",
+   "object": "state",
+   "quote": "Experiments demonstrate that HybrIK and HybrIK-X preserve both the accuracy of 3d joints and the realistic structure of the parametric human model",
+   "grounded": true
+  },
+  {
+   "op": "align mesh pixels",
+   "canonical": "align mesh pixels",
+   "object": "state",
+   "quote": "Experiments demonstrate that HybrIK and HybrIK-X preserve both the accuracy of 3d joints and the realistic structure of the parametric human model",
+   "grounded": true
+  },
+  {
+   "op": "predict body shape",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "Recovering whole-body mesh by inferring the abstract pose and shape parameters from visual content",
+   "grounded": true
+  },
+  {
+   "op": "compute joint rotations",
+   "canonical": "compute joint rotations",
+   "object": "state",
+   "quote": "HybrIK directly transforms accurate 3d joints to body-part rotations via twist-and-swing decomposition",
+   "grounded": true
+  },
+  {
+   "op": "apply neural network",
+   "canonical": "apply neural network",
+   "object": "state",
+   "quote": "The twist rotations are derived from visual cues through neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute joint angles",
+   "canonical": "compute joint angles",
+   "object": "state",
+   "quote": "HybrIK directly transforms accurate 3d joints to body-part rotations via twist-and-swing decomposition",
+   "grounded": true
+  },
+  {
+   "op": "generate mesh topology",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "Experiments demonstrate that HybrIK and HybrIK-X preserve both the accuracy of 3d joints and the realistic structure of the parametric human model",
+   "grounded": true
+  },
+  {
+   "op": "compute mesh vertices",
+   "canonical": "compute mesh vertices",
+   "object": "state",
+   "quote": "Experiments demonstrate that HybrIK and HybrIK-X preserve both the accuracy of 3d joints and the realistic structure of the parametric human model",
+   "grounded": true
+  },
+  {
+   "op": "refine mesh structure",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "Experiments demonstrate that HybrIK and HybrIK-X preserve both the accuracy of 3d joints and the realistic structure of the parametric human model",
+   "grounded": true
+  },
+  {
+   "op": "output final mesh",
+   "canonical": "output final mesh",
+   "object": "state",
+   "quote": "Experiments demonstrate that HybrIK and HybrIK-X preserve both the accuracy of 3d joints and the realistic structure of the parametric human model",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "align mesh pixels@state",
+  "apply neural network@state",
+  "compute body pose@state",
+  "compute joint angles@state",
+  "compute joint positions@state",
+  "compute joint rotations@state",
+  "compute mesh vertices@state",
+  "correct@state",
+  "decompose rotation@state",
+  "integrate face model@state",
+  "integrate hand model@state",
+  "output final mesh@state",
+  "output mesh vertices@state",
+  "predict@input",
+  "predict@state",
+  "reconstruct@state",
+  "solve swing rotation@state"
+ ]
+}

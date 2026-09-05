@@ -1,0 +1,155 @@
+{
+ "arxiv_id": "1811.07246",
+ "source": "abstract",
+ "words": 234,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 19,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "INVALID:point",
+   "quote": "weight functions are learned with multi-layer perceptron networks",
+   "grounded": true
+  },
+  {
+   "op": "compute density",
+   "canonical": "compute density",
+   "object": "INVALID:point",
+   "quote": "density functions through kernel density estimation",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "INVALID:point cloud",
+   "quote": "PointConv can be applied on point clouds to build deep convolutional networks",
+   "grounded": true
+  },
+  {
+   "op": "learn kernel",
+   "canonical": "train",
+   "object": "INVALID:point",
+   "quote": "weight functions are learned with multi-layer perceptron networks",
+   "grounded": true
+  },
+  {
+   "op": "compute translation",
+   "canonical": "compute translation",
+   "object": "INVALID:point cloud",
+   "quote": "learned convolution kernel can be used to compute translation-invariant and permutation-invariant convolution",
+   "grounded": true
+  },
+  {
+   "op": "compute permutation",
+   "canonical": "compute permutation",
+   "object": "INVALID:point cloud",
+   "quote": "learned convolution kernel can be used to compute translation-invariant and permutation-invariant convolution",
+   "grounded": true
+  },
+  {
+   "op": "propagate features",
+   "canonical": "transmit",
+   "object": "INVALID:point cloud",
+   "quote": "PointConv can also be used as deconvolution operators to propagate features from a subsampled point cloud back to its original resolution",
+   "grounded": true
+  },
+  {
+   "op": "segment points",
+   "canonical": "segment points",
+   "object": "INVALID:point cloud",
+   "quote": "deep convolutional neural networks built on PointConv are able to achieve state-of-the-art on challenging semantic segmentation benchmarks on 3D point clouds",
+   "grounded": true
+  },
+  {
+   "op": "convert image",
+   "canonical": "convert image",
+   "object": "input",
+   "quote": "experiments converting CIFAR-10 into a point cloud showed that networks built on PointConv can match the performance of convolutional networks in 2D images of a similar structure",
+   "grounded": true
+  },
+  {
+   "op": "build network",
+   "canonical": "build network",
+   "object": "INVALID:point cloud",
+   "quote": "PointConv can be applied on point clouds to build deep convolutional networks",
+   "grounded": true
+  },
+  {
+   "op": "compute kernel",
+   "canonical": "compute kernel",
+   "object": "INVALID:point",
+   "quote": "weight functions are learned with multi-layer perceptron networks",
+   "grounded": true
+  },
+  {
+   "op": "compute invariant",
+   "canonical": "compute invariant",
+   "object": "INVALID:point cloud",
+   "quote": "learned convolution kernel can be used to compute translation-invariant and permutation-invariant convolution",
+   "grounded": true
+  },
+  {
+   "op": "compute feature",
+   "canonical": "compute feature",
+   "object": "INVALID:point cloud",
+   "quote": "PointConv can also be used as deconvolution operators to propagate features from a subsampled point cloud back to its original resolution",
+   "grounded": true
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "INVALID:point cloud",
+   "quote": "deep convolutional neural networks built on PointConv are able to achieve state-of-the-art on challenging semantic segmentation benchmarks on 3D point clouds",
+   "grounded": true
+  },
+  {
+   "op": "compute resolution",
+   "canonical": "compute resolution",
+   "object": "INVALID:point cloud",
+   "quote": "PointConv can also be used as deconvolution operators to propagate features from a subsampled point cloud back to its original resolution",
+   "grounded": true
+  },
+  {
+   "op": "compute structure",
+   "canonical": "compute structure",
+   "object": "INVALID:point cloud",
+   "quote": "experiments converting CIFAR-10 into a point cloud showed that networks built on PointConv can match the performance of convolutional networks in 2D images of a similar structure",
+   "grounded": true
+  },
+  {
+   "op": "compute performance",
+   "canonical": "compute performance",
+   "object": "INVALID:point cloud",
+   "quote": "deep convolutional neural networks built on PointConv are able to achieve state-of-the-art on challenging semantic segmentation benchmarks on 3D point clouds",
+   "grounded": true
+  },
+  {
+   "op": "compute benchmark",
+   "canonical": "compute benchmark",
+   "object": "INVALID:point cloud",
+   "quote": "deep convolutional neural networks built on PointConv are able to achieve state-of-the-art on challenging semantic segmentation benchmarks on 3D point clouds",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "INVALID:point cloud",
+   "quote": "experiments converting CIFAR-10 into a point cloud showed that networks built on PointConv can match the performance of convolutional networks in 2D images of a similar structure",
+   "grounded": true
+  },
+  {
+   "op": "compute mapping",
+   "canonical": "compute mapping",
+   "object": "INVALID:point cloud",
+   "quote": "experiments converting CIFAR-10 into a point cloud showed that networks built on PointConv can match the performance of convolutional networks in 2D images of a similar structure",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "convert image@input"
+ ]
+}

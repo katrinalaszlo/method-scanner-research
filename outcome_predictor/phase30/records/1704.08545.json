@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1704.08545",
+ "source": "abstract",
+ "words": 104,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We propose an image cascade network (ICNet)",
+   "grounded": true
+  },
+  {
+   "op": "upsample",
+   "canonical": "upsample",
+   "object": "latent",
+   "quote": "multi-resolution branches under proper label guidance",
+   "grounded": true
+  },
+  {
+   "op": "fuse",
+   "canonical": "fuse",
+   "object": "latent",
+   "quote": "cascade feature fusion unit to quickly achieve high-quality segmentation",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:label",
+   "quote": "real-time semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "reducing a large portion of computation for pixel-wise label inference",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Our system yields real-time inference on a single GPU card",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "real-time semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "apply parameters",
+   "canonical": "apply parameters",
+   "object": "input",
+   "quote": "real-time semantic segmentation",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply parameters@input",
+  "backpropagate@gradient",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "fuse@latent",
+  "upsample@latent"
+ ]
+}

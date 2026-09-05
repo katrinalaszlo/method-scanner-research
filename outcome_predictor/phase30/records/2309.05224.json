@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2309.05224",
+ "source": "abstract",
+ "words": 187,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "convert token",
+   "canonical": "convert token",
+   "object": "input",
+   "quote": "addition of a sparse token converter that reduces the number of tokens used",
+   "grounded": true
+  },
+  {
+   "op": "downsample",
+   "canonical": "downsample",
+   "object": "input",
+   "quote": "leverage Swin capability to downsample its input",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "transformer architecture",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "state",
+   "quote": "transformer architecture",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "reduce the number of parameters",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "made the transformer more efficient",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "reduce the number of parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "transformer architecture",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "reduce the number of parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "transformer architecture",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "transformer architecture",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "transformer architecture",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "action",
+   "quote": "transformer architecture",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "trajectory",
+   "quote": "transformer architecture",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "policy",
+   "quote": "transformer architecture",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "state",
+   "quote": "transformer architecture",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "input",
+   "quote": "transformer architecture",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "transformer architecture",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "transformer architecture",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "gradient",
+   "quote": "transform, reduce the number of parameters",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "compare@input",
+  "compare@value",
+  "compute attention@latent",
+  "compute distribution@latent",
+  "compute gradient@error",
+  "compute gradient@parameter",
+  "compute input@state",
+  "compute latent@input",
+  "compute policy@trajectory",
+  "compute reward@task",
+  "compute sample@policy",
+  "compute trajectory@action",
+  "compute value@state",
+  "convert token@input",
+  "correct@gradient",
+  "correct@parameter",
+  "downsample@input",
+  "sample@distribution"
+ ]
+}

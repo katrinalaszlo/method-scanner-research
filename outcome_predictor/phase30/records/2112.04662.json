@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "2112.04662",
+ "source": "abstract",
+ "words": 234,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the contrastive loss between the individual features and the cluster memory",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the individual-based updating mechanism",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the centroid-based updating mechanism",
+   "grounded": true
+  },
+  {
+   "op": "maintain memory",
+   "canonical": "maintain memory",
+   "object": "latent",
+   "quote": "maintains two types of memory banks: individual and centroid cluster memory banks",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "latent",
+   "quote": "the centroid cluster memory applies the mean feature of each cluster",
+   "grounded": true
+  },
+  {
+   "op": "apply constraint",
+   "canonical": "apply constraint",
+   "object": "error",
+   "quote": "a cross-view consistency constraint is applied to exchange the benefits of two memories",
+   "grounded": true
+  },
+  {
+   "op": "generate pseudo-labels",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "can be easily applied for unsupervised or supervised object ReID by using ground-truth labels or the generated pseudo-labels",
+   "grounded": true
+  },
+  {
+   "op": "compute contrastive loss",
+   "canonical": "compute contrastive loss",
+   "object": "error",
+   "quote": "the vallina contrastive loss of each memory",
+   "grounded": true
+  },
+  {
+   "op": "compare features",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "the individual cluster memory considers just one individual at a time to take a single step for updating",
+   "grounded": true
+  },
+  {
+   "op": "store features",
+   "canonical": "store features",
+   "object": "latent",
+   "quote": "the individual cluster memory considers just one individual at a time to take a single step for updating",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the centroid cluster memory applies the mean feature of each cluster",
+   "grounded": true
+  },
+  {
+   "op": "update memory",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "the individual-based updating mechanism",
+   "grounded": true
+  },
+  {
+   "op": "update memory",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "the centroid-based updating, updating mechanism",
+   "grounded": false
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "the contrastive loss between the individual features and the cluster memory",
+   "grounded": true
+  },
+  {
+   "op": "apply consistency",
+   "canonical": "apply consistency",
+   "object": "error",
+   "quote": "a cross-view consistency constraint is applied to exchange the benefits of two memories for generating a discriminative description for the object ReID",
+   "grounded": true
+  },
+  {
+   "op": "generate labels",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "can be easily applied for unsupervised or supervised object ReID by using ground-truth labels or the generated pseudo-labels",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "the contrastive loss between the individual features and the cluster memory",
+   "grounded": true
+  },
+  {
+   "op": "store cluster",
+   "canonical": "store cluster",
+   "object": "latent",
+   "quote": "maintains two types of memory banks: individual and centroid cluster memory banks",
+   "grounded": true
+  },
+  {
+   "op": "compute cluster mean",
+   "canonical": "compute cluster mean",
+   "object": "latent",
+   "quote": "the centroid cluster memory applies the mean feature of each cluster",
+   "grounded": true
+  },
+  {
+   "op": "update cluster",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "the centroid-based updating mechanism",
+   "grounded": true
+  },
+  {
+   "op": "compute cluster similarity",
+   "canonical": "compute cluster similarity",
+   "object": "distribution",
+   "quote": "the contrastive loss between the individual features and the cluster memory",
+   "grounded": true
+  },
+  {
+   "op": "apply cross-view constraint",
+   "canonical": "apply cross-view constraint",
+   "object": "error",
+   "quote": "a cross-view consistency constraint is applied to exchange the benefits of two memories for generating a discriminative description for the object ReID",
+   "grounded": true
+  },
+  {
+   "op": "generate pseudo-labels",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "can be easily applied for unsupervised or supervised object ReID by using ground-truth labels or the generated pseudo-labels",
+   "grounded": true
+  },
+  {
+   "op": "compute cluster similarity",
+   "canonical": "compute cluster similarity",
+   "object": "distribution",
+   "quote": "the contrastive loss between the individual features and the cluster memory",
+   "grounded": true
+  },
+  {
+   "op": "store cluster features",
+   "canonical": "store cluster features",
+   "object": "latent",
+   "quote": "maintains two types of memory banks: individual and centroid cluster memory banks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply consistency@error",
+  "apply constraint@error",
+  "apply cross-view constraint@error",
+  "compare@latent",
+  "compute cluster mean@latent",
+  "compute cluster similarity@distribution",
+  "compute contrastive loss@error",
+  "compute mean@latent",
+  "compute similarity@distribution",
+  "correct@latent",
+  "correct@parameter",
+  "evaluate@error",
+  "maintain memory@latent",
+  "reconstruct@sample",
+  "store cluster features@latent",
+  "store cluster@latent",
+  "store features@latent"
+ ]
+}

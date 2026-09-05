@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2007.14690",
+ "source": "abstract",
+ "words": 204,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "encodes skeleton topology information",
+   "grounded": true
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "learn skeleton topology automatically",
+   "grounded": true
+  },
+  {
+   "op": "incorporate",
+   "canonical": "incorporate",
+   "object": "input",
+   "quote": "contextual features from the rest joints are incorporated",
+   "grounded": true
+  },
+  {
+   "op": "construct",
+   "canonical": "construct",
+   "object": "INVALID:graph",
+   "quote": "dynamic graph topologies are constructed",
+   "grounded": true
+  },
+  {
+   "op": "convolve",
+   "canonical": "convolve",
+   "object": "state",
+   "quote": "graph convolutional layers",
+   "grounded": true
+  },
+  {
+   "op": "stack",
+   "canonical": "stack",
+   "object": "INVALID:layer",
+   "quote": "stacking multiple CeN-enabled graph convolutional layers",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "input",
+   "quote": "combining static physical body connections and motion modalities",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "achieves state-of-the-art performance",
+   "grounded": false
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "CeN brings only ~7% extra FLOPs",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "Dynamic GCN achieves better performance",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "different input samples as well as graph convolutional layers",
+   "grounded": true
+  },
+  {
+   "op": "model",
+   "canonical": "model",
+   "object": "distribution",
+   "quote": "three alternative context modeling architectures",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "input",
+   "quote": "contextual features from the rest joints",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "dynamic graph topologies are constructed",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "three large-scale benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "dynamic graph topologies are constructed",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "graph convolutional layers",
+   "grounded": true
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "error",
+   "quote": "Dynamic GCN achieves better performance",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "state-of-the-art performance on three large-scale benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "CeN is extremely lightweight yet effective",
+   "grounded": true
+  },
+  {
+   "op": "filter",
+   "canonical": "filter",
+   "object": "input",
+   "quote": "contextual features from the rest joints",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "parameter",
+   "quote": "CeN brings only ~7% extra FLOPs",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "three alternative context modeling architectures",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "state-of-the-art performance on three large-scale benchmarks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@input",
+  "compute@distribution",
+  "compute@error",
+  "compute@parameter",
+  "compute@reward",
+  "compute@task",
+  "compute@value",
+  "convolve@state",
+  "correct@parameter",
+  "encode@latent",
+  "encode@state",
+  "evaluate@value",
+  "filter@input",
+  "incorporate@input",
+  "model@distribution",
+  "predict@action",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@trajectory",
+  "train@latent",
+  "transform@state",
+  "transmit@error"
+ ]
+}

@@ -1,0 +1,203 @@
+{
+ "arxiv_id": "1908.02486",
+ "source": "abstract",
+ "words": 159,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 1,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "encode state",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "encode motion",
+   "canonical": "encode",
+   "object": "INVALID:motion",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "we aim to efficiently encode these two features in a unified 2, 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "compute residual",
+   "canonical": "compute residual",
+   "object": "state",
+   "quote": "we replace original residual blocks in the ResNet architecture with STM blocks",
+   "grounded": false
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we replace original residual blocks in the ResNet architecture with STM blocks",
+   "grounded": false
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "state",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "apply pooling",
+   "canonical": "apply pooling",
+   "object": "state",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "we replace original residual blocks in the ResNet architecture with STM blocks",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we replace original residual blocks in the ResNet architecture with STM blocks",
+   "grounded": false
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "state",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "normalize features",
+   "canonical": "normalize features",
+   "object": "state",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "update weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we replace original residual blocks in the ResNet architecture with STM blocks",
+   "grounded": false
+  },
+  {
+   "op": "apply dropout",
+   "canonical": "apply dropout",
+   "object": "state",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "sample batch",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "we replace original residual blocks in the ResNet architecture with STM blocks",
+   "grounded": false
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "we replace original residual blocks in the ResNet architecture with STM blocks",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "state",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "compute metrics",
+   "canonical": "compute metrics",
+   "object": "state",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "log results",
+   "canonical": "log results",
+   "object": "state",
+   "quote": "we aim to efficiently encode these two features in a unified 2D framework",
+   "grounded": true
+  },
+  {
+   "op": "save model",
+   "canonical": "save model",
+   "object": "parameter",
+   "quote": "we replace original residual blocks in the ResNet architecture with STM blocks",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "apply activation@state",
+  "apply convolution@state",
+  "apply dropout@state",
+  "apply pooling@state",
+  "apply regularization@parameter",
+  "backpropagate@gradient",
+  "compare@state",
+  "compute accuracy@state",
+  "compute gradient@parameter",
+  "compute metrics@state",
+  "compute residual@state",
+  "correct@parameter",
+  "encode@state",
+  "evaluate@error",
+  "improve@parameter",
+  "log results@state",
+  "normalize features@state",
+  "predict@state",
+  "sample@input",
+  "save model@parameter"
+ ]
+}

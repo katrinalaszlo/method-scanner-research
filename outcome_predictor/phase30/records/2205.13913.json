@@ -1,0 +1,171 @@
+{
+ "arxiv_id": "2205.13913",
+ "source": "abstract",
+ "words": 187,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "the static model is optimized to learn domain-shared features",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the static model is optimized to learn domain-shared features",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the meta-adjuster is designed to learn domain-specific features",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "DomainMix is exploited to simulate data from diverse domains",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "the learning mechanism urges the model to generalize to different agnostic target domains",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "DomainMix is exploited to simulate data from diverse domains",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the meta-adjuster is designed to learn domain-specific features",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the static model is optimized to learn domain-shared features",
+   "grounded": true
+  },
+  {
+   "op": "adjust parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the model learns to twist the network parameters to adapt the data",
+   "grounded": true
+  },
+  {
+   "op": "simulate data",
+   "canonical": "simulate data",
+   "object": "trajectory",
+   "quote": "DomainMix is exploited to simulate data from diverse domains",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the learning mechanism urges the model to generalize to different agnostic target domains",
+   "grounded": false
+  },
+  {
+   "op": "learn distribution",
+   "canonical": "train",
+   "object": "distribution",
+   "quote": "the meta-adjuster is designed to learn domain-specific features",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the static model is optimized to learn domain-shared features",
+   "grounded": true
+  },
+  {
+   "op": "update meta-parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the meta-adjuster is designed to learn domain-specific features",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "DomainMix is exploited to simulate data from diverse domains",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the static model is optimized to learn domain-shared features",
+   "grounded": true
+  },
+  {
+   "op": "adjust model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the learning mechanism urges the model to generalize to different agnostic target domains",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the static model is optimized to learn domain-shared features",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Extensive experiments demonstrate the effectiveness of our proposed method",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "the meta-adjuster is designed to learn domain-specific features",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@value",
+  "compute gradient@gradient",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@action",
+  "predict@reward",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "sample@action",
+  "sample@sample",
+  "simulate data@trajectory",
+  "train@distribution",
+  "train@parameter"
+ ]
+}

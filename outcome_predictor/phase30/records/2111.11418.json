@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2111.11418",
+ "source": "abstract",
+ "words": 241,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "initialize parameters",
+   "canonical": "initialize parameters",
+   "object": "parameter",
+   "quote": "we deliberately replace the attention module",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "we hypothesize that the general architecture",
+   "grounded": true
+  },
+  {
+   "op": "apply spatial pooling",
+   "canonical": "apply spatial pooling",
+   "object": "input",
+   "quote": "we replace the attention module in Transformers",
+   "grounded": false
+  },
+  {
+   "op": "generate latent",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the resulted models still perform quite well",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the derived model, termed as PoolFormer",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we argue that MetaFormer is the key player",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "surprisingly, we observe that the derived model",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the effectiveness of PoolFormer verifies our hypothesis",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "our proposed PoolFormer could serve as a starting baseline",
+   "grounded": true
+  },
+  {
+   "op": "track state",
+   "canonical": "track state",
+   "object": "state",
+   "quote": "the attention-based module in Transformers can be replaced",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply spatial pooling@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute value@value",
+  "correct@parameter",
+  "initialize parameters@parameter",
+  "process input@input",
+  "reconstruct@latent",
+  "sample@action",
+  "track state@state"
+ ]
+}

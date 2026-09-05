@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2206.02425",
+ "source": "abstract",
+ "words": 245,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "hybrid modality-specific encoders that bridge a convolutional encoder",
+   "grounded": true
+  },
+  {
+   "op": "model",
+   "canonical": "model",
+   "object": "state",
+   "quote": "local and global context modeling within each modality",
+   "grounded": true
+  },
+  {
+   "op": "align",
+   "canonical": "align",
+   "object": "distribution",
+   "quote": "build and align the long-range correlations across modalities",
+   "grounded": true
+  },
+  {
+   "op": "fuse",
+   "canonical": "fuse",
+   "object": "latent",
+   "quote": "progressive up-sampling and fusion with the modality-invariant features",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:segmentation",
+   "quote": "generate robust segmentation",
+   "grounded": true
+  },
+  {
+   "op": "regularize",
+   "canonical": "regularize",
+   "object": "parameter",
+   "quote": "auxiliary regularizers are introduced in both encoder and decoder",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "outperforms the state-of-the-art methods for incomplete multimodal brain tumor segmentation",
+   "grounded": true
+  },
+  {
+   "op": "segment",
+   "canonical": "segment",
+   "object": "task",
+   "quote": "brain tumor segmentation from Magnetic Resonance Imaging (MRI)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align@distribution",
+  "encode@input",
+  "fuse@latent",
+  "model@state",
+  "predict@value",
+  "regularize@parameter",
+  "segment@task"
+ ]
+}

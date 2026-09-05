@@ -1,0 +1,189 @@
+{
+ "arxiv_id": "1811.12043",
+ "source": "abstract",
+ "words": 177,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 22,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "state",
+   "quote": "using global variance pooling",
+   "grounded": true
+  },
+  {
+   "op": "model dependency",
+   "canonical": "model dependency",
+   "object": "latent",
+   "quote": "inter-channel dependencies (ICD) based on the CSI",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "state",
+   "quote": "channel-specific spatial dependencies (CSD) via depth-wise convolution",
+   "grounded": true
+  },
+  {
+   "op": "modulate feature",
+   "canonical": "modulate feature",
+   "object": "latent",
+   "quote": "adaptively modulates residual feature responses",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "fully exploiting their information via three paths",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "parameter-efficient for image SR",
+   "grounded": true
+  },
+  {
+   "op": "compute residual",
+   "canonical": "compute residual",
+   "object": "state",
+   "quote": "residual block",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "latent",
+   "quote": "residual block",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "global variance pooling",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "single image super-resolution (SR) methods",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "image SR",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "experimental results show",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "parameter-efficient for image SR",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "outperforms most of the state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "single image super-resolution (SR) methods",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "single image super-resolution (SR) methods",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "parameter-efficient for image SR",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "parameter-efficient for image SR",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "experimental results show",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "outperforms most of the state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "store parameters",
+   "canonical": "store parameters",
+   "object": "parameter",
+   "quote": "parameter-efficient for image SR",
+   "grounded": true
+  },
+  {
+   "op": "retrieve parameters",
+   "canonical": "retrieve parameters",
+   "object": "parameter",
+   "quote": "parameter-efficient for image than other feature modulation methods",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply activation@latent",
+  "apply convolution@state",
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute gradient@gradient",
+  "compute residual@state",
+  "compute variance@state",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "improve@parameter",
+  "model dependency@latent",
+  "modulate feature@latent",
+  "process input@input",
+  "reconstruct@state",
+  "retrieve parameters@parameter",
+  "sample@input",
+  "store parameters@parameter"
+ ]
+}

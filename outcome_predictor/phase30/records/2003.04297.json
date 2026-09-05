@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "2003.04297",
+ "source": "abstract",
+ "words": 84,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "apply data augmentation",
+   "canonical": "apply data augmentation",
+   "object": "input",
+   "quote": "using an MLP projection head and more data augmentation",
+   "grounded": true
+  },
+  {
+   "op": "project input",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "using an MLP projection head and more data augmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute contrastive loss",
+   "canonical": "compute contrastive loss",
+   "object": "error",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "sample batch",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "using an MLP projection head and more data augmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "apply momentum",
+   "canonical": "apply momentum",
+   "object": "parameter",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "compute projection",
+   "canonical": "compute projection",
+   "object": "latent",
+   "quote": "using an MLP projection head and more data augmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "normalize similarity",
+   "canonical": "normalize similarity",
+   "object": "distribution",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "compute log probability",
+   "canonical": "compute log probability",
+   "object": "distribution",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "apply temperature scaling",
+   "canonical": "apply temperature scaling",
+   "object": "distribution",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "compute cross entropy",
+   "canonical": "compute cross entropy",
+   "object": "error",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "accumulate gradient",
+   "canonical": "accumulate gradient",
+   "object": "gradient",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "we establish stronger bas,lines that outperform SimCLR",
+   "grounded": false
+  },
+  {
+   "op": "apply optimizer",
+   "canonical": "apply optimizer",
+   "object": "parameter",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "store parameters",
+   "canonical": "store parameters",
+   "object": "parameter",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "error",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "log metrics",
+   "canonical": "log metrics",
+   "object": "error",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "save model",
+   "canonical": "save model",
+   "object": "parameter",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "load model",
+   "canonical": "load model",
+   "object": "parameter",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  },
+  {
+   "op": "initialize parameters",
+   "canonical": "initialize parameters",
+   "object": "parameter",
+   "quote": "we establish stronger baselines that outperform SimCLR",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "accumulate gradient@gradient",
+  "apply data augmentation@input",
+  "apply momentum@parameter",
+  "apply optimizer@parameter",
+  "apply temperature scaling@distribution",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compute accuracy@error",
+  "compute contrastive loss@error",
+  "compute cross entropy@error",
+  "compute gradient@gradient",
+  "compute log probability@distribution",
+  "compute projection@latent",
+  "compute similarity@distribution",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "initialize parameters@parameter",
+  "load model@parameter",
+  "log metrics@error",
+  "normalize similarity@distribution",
+  "project@latent",
+  "sample@input",
+  "save model@parameter",
+  "store parameters@parameter"
+ ]
+}

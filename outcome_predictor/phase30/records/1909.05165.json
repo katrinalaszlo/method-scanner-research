@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "1909.05165",
+ "source": "abstract",
+ "words": 196,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "we apply ST modeling techniques on the features of static images",
+   "grounded": true
+  },
+  {
+   "op": "model temporal",
+   "canonical": "model temporal",
+   "object": "latent",
+   "quote": "we apply ST modeling techniques on the features of static images",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "All techniques are trained end-to-end together with a CNN feature extraction part",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "All techniques are trained end-to-end together with a CNN feature extraction part",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "All techniques are trained end-to-end together with a CNN feature extraction part",
+   "grounded": true
+  },
+  {
+   "op": "classify action",
+   "canonical": "classify",
+   "object": "state",
+   "quote": "the designed architectures need to capture the full temporal content of videos in order to correctly classify actions/gestures",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "All techniques are trained end-to-end together with a CNN feature extraction part and evaluated on two publicly available benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "load dataset",
+   "canonical": "load dataset",
+   "object": "input",
+   "quote": "All techniques are trained end-to-end together with a CNN feature extraction part and evaluated on two publicly available benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "we apply ST modeling techniques on the features of static images from different time instants extracted by CNNs",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the designed architectures need to capture the full temporal content of videos in order to correctly classify actions/gestures",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the designed architectures need to capture the full temporal content of videos in order to correctly classify actions/gestures",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the designed architectures need to capture the full temporal content of videos in order to correctly classify actions/gestures",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we apply ST modeling techniques on the features of static images from different time instants extracted by CNNs",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we apply ST modeling techniques on the features of static images from different time instants extracted by CNNs",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "the designed architectures need to capture the full temporal content of videos in order to correctly classify actions/gestures",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "All techniques are trained end-to-end together with a CNN feature extraction part",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "All techniques are trained end-to-end together with a CNN feature extraction part",
+   "grounded": true
+  },
+  {
+   "op": "store trajectory",
+   "canonical": "store trajectory",
+   "object": "trajectory",
+   "quote": "the designed architectures need to capture the full temporal content of videos in order to correctly classify actions/gestures",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we apply ST modeling techniques on the features of static images from different time instants extracted by CNNs",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "we apply ST and modeling techniques on the features of static images from different time instants extracted by CNNs",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "classify@state",
+  "clip gradient@gradient",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "extract feature@input",
+  "load dataset@input",
+  "model temporal@latent",
+  "predict@reward",
+  "process input@input",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@distribution",
+  "sample@sample",
+  "store trajectory@trajectory"
+ ]
+}

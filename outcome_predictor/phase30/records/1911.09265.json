@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "1911.09265",
+ "source": "abstract",
+ "words": 222,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 2,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we use MixMatch, which is the current state-of-the-art method on semi-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "input",
+   "quote": "we are the first to explore the role of self-supervised representations in semi-supervised learning under a rich family of transformations",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "we use MixMatch, which is the current state-of-the-art method on semi-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "compute prediction",
+   "canonical": "compute prediction",
+   "object": "input",
+   "quote": "we use MixMatch, which is the current state-of-the-art method on semi-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "compute confidence",
+   "canonical": "compute confidence",
+   "object": "INVALID:prediction",
+   "quote": "all current semi-supervised methods improve performance with prediction consistency and confidence ideas",
+   "grounded": true
+  },
+  {
+   "op": "compute consistency",
+   "canonical": "compute consistency",
+   "object": "INVALID:prediction",
+   "quote": "all current semi-supervised methods improve performance with prediction consistency and confidence ideas",
+   "grounded": true
+  },
+  {
+   "op": "add regularization",
+   "canonical": "add regularization",
+   "object": "error",
+   "quote": "our framework can integrate the self-supervised information as a regularization term to further improve all current semi-supervised methods",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we adopt the same hyper-parameters, which greatly improves the generalization ability of the EnAET framework",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we use MixMatch, which is the current state-of-the-art method on semi-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "reward",
+   "quote": "this framework can also improve supervised learning by a large margin",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we use MixMatch, which is the current state-of-the-art method on semi- supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "this framework can also improve supervised learning by a large margin",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we use MixMatch, which is the current state-of-the-art method on semi-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "input",
+   "quote": "we are the first to explore the role of self-supervised representations in semi-supervised learning under a rich family of transformations",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we are the first to explore the role of self-supervised representations in semi-supervised learning under a rich family of transformations",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we are the first to explore the role of self-supervised representations in semi-supervised learning under a rich family of transformations",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we use MixMatch, which is the current state-of-the-art method on semi-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we use MixMatch, which is the current state-of-the-art method on semi-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "this framework can also improve supervised learning by a large margin",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "this framework can also improve supervised learning by a large margin",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "this framework can also improve supervised learning by a large margin",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "we are the first to explore the role of self-supervised representations in semi-supervised learning under a rich family of transformations",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we are the first to explore the role of self-supervised representations in semi-supervised learning under a rich family of transformations",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we use MixMatch, which is the current state-of-the-art method on semi-supervised learning",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "add regularization@error",
+  "apply transformation@input",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@input",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute prediction@input",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@reward",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "predict@input",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "train@parameter"
+ ]
+}

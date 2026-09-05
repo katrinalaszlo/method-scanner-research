@@ -1,0 +1,170 @@
+{
+ "arxiv_id": "2404.12501",
+ "source": "abstract",
+ "words": 252,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Experimental results on benchmark datasets such as KITTI, Cityscapes, and Make3D showcase SPIdepth's state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "SPIdepth achieves remarkable advancements in scene understanding and depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "SPIdepth achieves these results using only a single image for inference",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "SPIdepth tops the self-supervised KIT, KITTI benchmark",
+   "grounded": true
+  },
+  {
+   "op": "sample depth",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "SPIdepth achieves the lowest AbsRel (0.029), SqRel (0.069), and RMSE (1.394) on KITTI",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "SPIdepth shows improvements over SQLdepth of 21.7% in AbsRel, 36.8% in SqRel, and 16.5% in RMSE",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "SPIdepth in zero-shot outperforms all other models",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "SPIdepth demonstrates its efficacy and efficiency in real-world applications",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "SPIdepth surpasses even methods that utilize video sequences for inference",
+   "grounded": false
+  },
+  {
+   "op": "predict pose",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "SPIdepth emphasizes the importance of pose information in capturing fine-grained scene structures",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "SPIdepth achieves these results using only a single image for inference",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "SPIdepth achieves the lowest AbsRel (0.029), SqRel (0.069), and RMSE (1.394) on KITTI",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "SPIdepth shows improvements over SQLdepth of 21.7% in AbsRel, 36.8% in SqRel, and 16.5% in RMSE",
+   "grounded": true
+  },
+  {
+   "op": "predict trajectory",
+   "canonical": "predict",
+   "object": "trajectory",
+   "quote": "SPIdepth achieves these results using only a single image for inference",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "SPIdepth in zero-shot outperforms all other models",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "SPIdepth demonstrates its efficacy and efficiency in real-world applications",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "SPIdepth surpasses even methods that utilize video sequences for inference",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "SPIdepth emphasizes the importance of pose information in capturing fine-grained scene structures",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "SPIdepth shows improvements over SQLdepth of 21.7% in AbsRel, 36.8% in SqRel, and 16.5% in RMSE",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "SPIdepth achieves the lowest AbsRel (0.029), SqRel (0.069), and RMSE (1.394) on KITTI",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@distribution",
+  "predict@trajectory",
+  "reconstruct@noise",
+  "sample@sample"
+ ]
+}

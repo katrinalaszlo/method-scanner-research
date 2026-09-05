@@ -1,0 +1,90 @@
+{
+ "arxiv_id": "2401.08913",
+ "source": "abstract",
+ "words": 203,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 4,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "improving the efficiency of the algorithms",
+   "grounded": false
+  },
+  {
+   "op": "decompose operation",
+   "canonical": "decompose operation",
+   "object": "INVALID:convolution",
+   "quote": "decomposes a large kernel convolution into three different combinations",
+   "grounded": true
+  },
+  {
+   "op": "combine operations",
+   "canonical": "aggregate",
+   "object": "INVALID:convolution",
+   "quote": "combines them with an attention mechanism",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "INVALID:convolution",
+   "quote": "combines them with an attention mechanism",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "extract depth features effectively",
+   "grounded": true
+  },
+  {
+   "op": "form block",
+   "canonical": "form block",
+   "object": "INVALID:convolution",
+   "quote": "forms a symmetric attention block",
+   "grounded": true
+  },
+  {
+   "op": "minimize parameters",
+   "canonical": "minimize parameters",
+   "object": "parameter",
+   "quote": "minimizing the number of parameters",
+   "grounded": true
+  },
+  {
+   "op": "improve perceptual",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "improving the perceptual ability of the model",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "obtain high-quality super-resolution reconstruction results",
+   "grounded": true
+  },
+  {
+   "op": "use parameters",
+   "canonical": "use parameters",
+   "object": "parameter",
+   "quote": "using only about 30% of the parameters",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply convolution@input",
+  "encode@latent",
+  "improve@parameter",
+  "minimize parameters@parameter",
+  "reconstruct@input",
+  "use parameters@parameter"
+ ]
+}

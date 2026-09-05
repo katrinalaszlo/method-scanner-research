@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2409.18869",
+ "source": "abstract",
+ "words": 185,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 3,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "tokenize input",
+   "canonical": "tokenize input",
+   "object": "input",
+   "quote": "tokenizing images, text, and videos into a discrete space",
+   "grounded": true
+  },
+  {
+   "op": "embed token",
+   "canonical": "encode",
+   "object": "INVALID:token",
+   "quote": "train a single transformer from scratch on a mixture of multimodal sequences",
+   "grounded": true
+  },
+  {
+   "op": "predict next token",
+   "canonical": "predict",
+   "object": "INVALID:token",
+   "quote": "next-token prediction is all you need",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "train a single transformer from scratch on a mixture of multimodal sequences",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "train a single transformer from scratch on a mixture of multimodal sequences",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train a single transformer from scratch on a mixture of multimodal sequences",
+   "grounded": true
+  },
+  {
+   "op": "generate token",
+   "canonical": "reconstruct",
+   "object": "INVALID:token",
+   "quote": "generating high-fidelity video via predicting the next token in a video sequence",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "generating high-fidelity video via predicting the next token in a video sequence",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "eliminating the need for diffusion or compositional architectures",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "next-token prediction is a promising path towards building general multimodal intelligence",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "next-token prediction is a promising path towards building general multimodal intelligence",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "generating high-fidelity video via predicting the next token in a video sequence",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "generating high-fidelity video via predicting the next token in a video sequence",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "next-token prediction is all you need",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "next-token and prediction is all you need",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "next-token prediction is all you need",
+   "grounded": true
+  },
+  {
+   "op": "sample policy",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "next-token prediction is all you need",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "next-token prediction is all you need",
+   "grounded": true
+  },
+  {
+   "op": "sample task",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "next-token prediction is all you need",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "generating high-fidelity video via predicting the next token in a video sequence",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "generating high-fidelity video via predicting the next token in a video sequence",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "generating high-fidelity video via predicting the next token in a video sequence",
+   "grounded": true
+  },
+  {
+   "op": "resample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "generating high-fidelity video via predicting the next token in a video sequence",
+   "grounded": true
+  },
+  {
+   "op": "denoise trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "eliminating the need for diffusion or compositional architectures",
+   "grounded": true
+  },
+  {
+   "op": "predict trajectory",
+   "canonical": "predict",
+   "object": "trajectory",
+   "quote": "generating high-fidelity video via predicting the next token in a video sequence",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute distribution@distribution",
+  "compute policy@policy",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "predict@distribution",
+  "predict@reward",
+  "predict@trajectory",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@policy",
+  "sample@sample",
+  "sample@task",
+  "sample@trajectory",
+  "tokenize input@input"
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "1810.02936",
+ "source": "abstract",
+ "words": 183,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "For learning robust person features",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "a Feature Distilling Generative Adversarial Network",
+   "grounded": true
+  },
+  {
+   "op": "discriminate",
+   "canonical": "discriminate",
+   "object": "latent",
+   "quote": "multiple novel discriminators on human poses and identities",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "a novel same-pose loss is also integrated",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "After learning pose-unrelated person features",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "no auxiliary pose information and additional computational cost is required",
+   "grounded": false
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "sample",
+   "quote": "appearance of a same person's generated images to be similar",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "no auxiliary pose information and additional computational cost is required",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "no auxiliary pose information and additional computational cost is required",
+   "grounded": false
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Our proposed FD-GAN achieves state-of-the-art performance",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compare@sample",
+  "compare@value",
+  "correct@parameter",
+  "discriminate@latent",
+  "encode@input",
+  "evaluate@task",
+  "predict@distribution",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "sample@action"
+ ]
+}

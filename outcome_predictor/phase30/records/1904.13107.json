@@ -1,0 +1,97 @@
+{
+ "arxiv_id": "1904.13107",
+ "source": "abstract",
+ "words": 234,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 12,
+ "n_invalid_object": 12,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute graph representation",
+   "canonical": "compute graph representation",
+   "object": "INVALID:node",
+   "quote": "approaches to generate the graph representation from node representations are demanded",
+   "grounded": false
+  },
+  {
+   "op": "aggregate node features",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "learn node representations by transforming, propagating and aggregating node features",
+   "grounded": true
+  },
+  {
+   "op": "combine node representations",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "globally combine the node representations",
+   "grounded": true
+  },
+  {
+   "op": "preserve graph structure",
+   "canonical": "preserve graph structure",
+   "object": "INVALID:graph",
+   "quote": "hierarchical pooling procedure is desired to preserve the graph structure during the graph representation learning",
+   "grounded": true
+  },
+  {
+   "op": "learn graph representation",
+   "canonical": "train",
+   "object": "INVALID:graph",
+   "quote": "hierarchical pooling procedure is desired to preserve the graph structure during the graph representation learning",
+   "grounded": true
+  },
+  {
+   "op": "apply graph fourier transform",
+   "canonical": "apply graph fourier transform",
+   "object": "INVALID:node",
+   "quote": "pooling operator based on graph Fourier transform, which can utilize the node features and local structures during the pooling process",
+   "grounded": false
+  },
+  {
+   "op": "utilize local structures",
+   "canonical": "utilize local structures",
+   "object": "INVALID:node",
+   "quote": "pooling operator based on graph Fourier transform, which can utilize the node features and local structures during the pooling process",
+   "grounded": false
+  },
+  {
+   "op": "design pooling layers",
+   "canonical": "design pooling layers",
+   "object": "INVALID:node",
+   "quote": "design pooling layers based on the pooling operator",
+   "grounded": true
+  },
+  {
+   "op": "combine pooling layers",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "pooling layers are further combined with traditional GCN convolutional layers to form a graph neural network framework",
+   "grounded": false
+  },
+  {
+   "op": "form graph neural network",
+   "canonical": "form graph neural network",
+   "object": "INVALID:graph",
+   "quote": "pooling layers are further combined with traditional GCN convolutional layers to form a graph neural, network framework",
+   "grounded": false
+  },
+  {
+   "op": "analyze pooling operator",
+   "canonical": "analyze pooling operator",
+   "object": "INVALID:graph",
+   "quote": "theoretical analysis is provided to understand pooling from both local and global perspectives",
+   "grounded": true
+  },
+  {
+   "op": "evaluate graph classification",
+   "canonical": "evaluate",
+   "object": "INVALID:graph",
+   "quote": "experimental results of the graph classification task on 6 commonly used benchmarks demonstrate the effectiveness of the proposed framework",
+   "grounded": true
+  }
+ ],
+ "tuples": []
+}

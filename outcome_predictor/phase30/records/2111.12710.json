@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2111.12710",
+ "source": "abstract",
+ "words": 178,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We adopt a self-supervised transformer model for deep feature extraction",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "We observe that current prediction targets disagree with human perception judgment",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "We argue that perceptually similar images should stay close to each other in the prediction target space",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We surprisingly find one simple yet effective idea: enforcing perceptual similarity during the dVAE training",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "We demonstrate that such learned visual tokens indeed exhibit better semantic meanings",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "We show that it works well for calculating perceptual similarity",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "latent",
+   "quote": "We demonstrate that such learned visual tokens indeed exhibit better semantic meanings",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "We argue that perceptually similar images should stay close to each other in the prediction target space",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "We surprisingly find one simple yet effective idea: enforcing perceptual similarity during the dVAE training",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "We demonstrate that such learned visual tokens indeed exhibit better semantic meanings",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We surprisingly find one simple yet effective idea: enforcing perceptual similarity during the dVAE training",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "We show that it works well for calculating perceptual similarity",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "We demonstrate that such learned visual tokens indeed exhibit better semantic meanings",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "We demonstrate that such learned visual tokens indeed exhibit better semantic meanings",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "We demonstrate that such learned visual tokens indeed exhibit better semantic meanings",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "We demonstrate that such learned visual tokens indeed exhibit better semantic meanings",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "We demonstrate that such learned visual tokens indeed exhibit better semantic meanings",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "We argue that perceptually similar images should stay close to each other in the prediction target space",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "We surprisingly find one simple yet effective idea: enforcing perceptual similarity during the dVAE training",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "We surprisingly find one simple yet effective idea: enforcing perceptual similarity during the d. VAe training",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compare@latent",
+  "compute distribution@latent",
+  "compute gradient@gradient",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute similarity@latent",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@latent",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@latent",
+  "reconstruct@noise",
+  "sample@latent",
+  "sample@sample"
+ ]
+}

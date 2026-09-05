@@ -1,0 +1,93 @@
+{
+ "arxiv_id": "2303.16203",
+ "source": "abstract",
+ "words": 208,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute density",
+   "canonical": "compute density",
+   "object": "input",
+   "quote": "diffusion models can provide conditional density estimates",
+   "grounded": false
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "generate realistic images for a staggering variety of prompts",
+   "grounded": true
+  },
+  {
+   "op": "compute log likelihood",
+   "canonical": "compute log likelihood",
+   "object": "input",
+   "quote": "density estimates from large-scale text-to-image diffusion models",
+   "grounded": true
+  },
+  {
+   "op": "compare likelihoods",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "zero-shot classification without any additional training",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "our generative approach to classification",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "outperforms alternative methods of extracting knowledge",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "extract standard classifiers from class-conditional diffusion models",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "using only weak augmentations",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "input",
+   "quote": "exhibit qualitatively better 'effective robustness'",
+   "grounded": false
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "input",
+   "quote": "achieve strong classification performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply augmentation@input",
+  "compare@input",
+  "compute accuracy@input",
+  "compute density@input",
+  "compute log likelihood@input",
+  "correct@parameter",
+  "evaluate@input",
+  "predict@input",
+  "sample@input"
+ ]
+}

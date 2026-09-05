@@ -1,0 +1,194 @@
+{
+ "arxiv_id": "1905.07542",
+ "source": "abstract",
+ "words": 214,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 20,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:depth",
+   "quote": "explicitly exploits left-right consistency in a stereo reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "semi-supervised training that outperforms the state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "single image depth prediction",
+   "grounded": true
+  },
+  {
+   "op": "apply loss",
+   "canonical": "apply loss",
+   "object": "error",
+   "quote": "loss function that explicitly exploits left-right consistency",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "semi-supervised using both stereo and LiDAR",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "INVALID:depth",
+   "quote": "ground truth depth derived from LiDAR",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "INVALID:depth",
+   "quote": "reduce prediction error",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "semi-supervised training that outperforms the state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "INVALID:depth",
+   "quote": "performance of our depth prediction model is evaluated",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:depth",
+   "quote": "ground truth depth derived from LiDAR",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:depth",
+   "quote": "explicitly exploits left-right consistency in a stereo reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "INVALID:depth",
+   "quote": "semi-supervised training that outperforms the state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "INVALID:depth",
+   "quote": "ground truth depth derived from LiDAR",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:depth",
+   "quote": "reduce prediction error",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "INVALID:depth",
+   "quote": "ground truth depth derived from LiDAR",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:depth",
+   "quote": "ground truth depth derived from LiDAR",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:depth",
+   "quote": "explicitly exploits left-right consistency in a stereo reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "INVALID:depth",
+   "quote": "semi-supervised training that outperforms the state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "INVALID:depth",
+   "quote": "ground truth depth derived from LiDAR",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:depth",
+   "quote": "reduce prediction error",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "INVALID:depth",
+   "quote": "ground truth depth derived from LiDAR",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:depth",
+   "quote": "ground truth depth derived from LiDAR",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:depth",
+   "quote": "explicitly exploits left-right consistency in a stereo reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "INVALID:depth",
+   "quote": "semi-supervised training that outperforms the state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "INVALID:depth",
+   "quote": "ground truth depth derived from LiDAR",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply loss@error",
+  "correct@parameter",
+  "predict@input",
+  "sample@input",
+  "train@parameter"
+ ]
+}

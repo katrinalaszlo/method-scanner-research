@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2012.07177",
+ "source": "abstract",
+ "words": 180,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 22,
+ "n_invalid_object": 12,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "copy",
+   "canonical": "copy",
+   "object": "INVALID:object",
+   "quote": "we randomly paste objects onto an image",
+   "grounded": true
+  },
+  {
+   "op": "paste",
+   "canonical": "paste",
+   "object": "INVALID:object",
+   "quote": "we randomly paste objects onto an image",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we randomly paste objects onto an image",
+   "grounded": true
+  },
+  {
+   "op": "apply",
+   "canonical": "apply",
+   "object": "INVALID:augmentation",
+   "quote": "we randomly paste objects onto an image",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we perform a systematic study of the Copy-Paste augmentation",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "we achieve 49.1 mask AP and 57.3 box AP",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:metric",
+   "quote": "we achieve 49.1 mask AP and 57.3 box AP",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "we achieve 49.1 mask AP and 57.3 box AP",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we perform a systematic study of the Copy-Paste augmentation",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:segmentation",
+   "quote": "instance segmentation models that are data-efficient",
+   "grounded": true
+  },
+  {
+   "op": "label",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "we show Copy-Paste is additive with semi-supervised methods",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:pseudo label",
+   "quote": "we show Copy-Paste is additive with semi-supervised methods",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "INVALID:data",
+   "quote": "we show Copy-Paste is additive with semi-supervised methods",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we show Copy-Paste is additive with semi-supervised methods",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:performance",
+   "quote": "we achieve 49.1 mask AP and 57.3 box AP",
+   "grounded": true
+  },
+  {
+   "op": "analyze",
+   "canonical": "analyze",
+   "object": "INVALID:results",
+   "quote": "we further demonstrate that Copy-Paste can lead to significant improvements",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:metric",
+   "quote": "we further demonstrate that Copy-Paste can lead to significant improvements",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "we further demonstrate that Copy-Paste can lead to significant improvements",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "we further demonstrate that Copy-Paste can lead to significant improvements",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:metric",
+   "quote": "our baseline model outperforms the LVIS 2020 Challenge winning entry",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "our baseline model outperforms the LVIS 2020 Challenge winning entry",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:metric",
+   "quote": "our baseline model outperforms the LVIS 2020 Challenge winning entry by +3.6 mask AP",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "classify@input",
+  "compare@parameter",
+  "correct@parameter",
+  "evaluate@parameter",
+  "reconstruct@input",
+  "train@parameter"
+ ]
+}

@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2310.01379",
+ "source": "abstract",
+ "words": 160,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 15,
+ "ops": [
+  {
+   "op": "extract texture",
+   "canonical": "extract texture",
+   "object": "input",
+   "quote": "search for matches between patches using LR and Reference image pair in a feature space",
+   "grounded": true
+  },
+  {
+   "op": "match texture",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "find the k most relevant texture match for each low-resolution patch over the high-resolution reference patches",
+   "grounded": false
+  },
+  {
+   "op": "merge patches",
+   "canonical": "merge patches",
+   "object": "latent",
+   "quote": "merge them using deep architectures",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "enhance the Super Resolution result adding gradient density information",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "using a simple residual architecture showing competitive metrics results",
+   "grounded": true
+  },
+  {
+   "op": "predict texture",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "transfer high-resolution textures from a reference high-resolution image",
+   "grounded": false
+  },
+  {
+   "op": "resample patches",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "divide images into as many patches as possible",
+   "grounded": true
+  },
+  {
+   "op": "reduce patches",
+   "canonical": "reduce patches",
+   "object": "input",
+   "quote": "reduces significantly the number of image patches",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "existing methods lack the accurate search of textures",
+   "grounded": true
+  },
+  {
+   "op": "denoise texture",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "enhance the Super Resolution result adding gradient density information",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "showing competitive metrics results: PSNR and SSMI",
+   "grounded": true
+  },
+  {
+   "op": "sample patch",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "search for matches between patches using LR and Reference image pair in a feature space",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "search for matches between patches using LR and Reference image pair in a feature space",
+   "grounded": true
+  },
+  {
+   "op": "decode texture",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "transfer high-resolution textures from a reference high-resolution image",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "enhance the Super, Resolution result adding gradient density information",
+   "grounded": false
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "introducing attention mechanisms to enhance low-resolution images",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "showing competitive metrics results: PSNR and SSMI",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "search for matches between patches using LR and Reference image pair in a feature space",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "find the k most relevant texture match for each low-resolution patch over the high-resolution reference patches",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "using a simple residual architecture showing competitive metrics results",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@latent",
+  "compare@error",
+  "compare@latent",
+  "compute distribution@distribution",
+  "compute gradient@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@latent",
+  "extract texture@input",
+  "merge patches@latent",
+  "predict@latent",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reduce patches@input",
+  "sample@input"
+ ]
+}

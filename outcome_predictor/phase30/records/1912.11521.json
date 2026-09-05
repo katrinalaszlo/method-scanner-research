@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1912.11521",
+ "source": "abstract",
+ "words": 196,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "we introduce an attention module to learn a latent node",
+   "grounded": true
+  },
+  {
+   "op": "encode spatial context",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "convey spatial contextual information",
+   "grounded": true
+  },
+  {
+   "op": "capture intra-frame connections",
+   "canonical": "capture intra-frame connections",
+   "object": "INVALID:joint",
+   "quote": "the sparse connections between joints in a frame can be well captured",
+   "grounded": true
+  },
+  {
+   "op": "pass information through lstm",
+   "canonical": "transmit",
+   "object": "trajectory",
+   "quote": "these hidden nodes with a bidirectional LSTM",
+   "grounded": true
+  },
+  {
+   "op": "aggregate global context",
+   "canonical": "aggregate",
+   "object": "trajectory",
+   "quote": "the global context over the entire sequence is further captured",
+   "grounded": true
+  },
+  {
+   "op": "diffuse temporal context",
+   "canonical": "diffuse",
+   "object": "latent",
+   "quote": "the learned spatial-temporal contextual information is passed back",
+   "grounded": true
+  },
+  {
+   "op": "update graph convolutional weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "bidirectional attentive graph convolutional network",
+   "grounded": true
+  },
+  {
+   "op": "predict action class",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "facilitate skeleton-based action recognition",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@trajectory",
+  "compute attention@latent",
+  "correct@parameter",
+  "diffuse@latent",
+  "encode@state",
+  "predict@distribution",
+  "transmit@trajectory"
+ ]
+}

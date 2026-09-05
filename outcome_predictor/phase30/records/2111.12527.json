@@ -1,0 +1,133 @@
+{
+ "arxiv_id": "2111.12527",
+ "source": "abstract",
+ "words": 231,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 15,
+ "n_invalid_object": 0,
+ "n_grounded": 15,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "we present an efficient self-attention free backbone",
+   "grounded": true
+  },
+  {
+   "op": "apply morphfc_s",
+   "canonical": "apply morphfc_s",
+   "object": "input",
+   "quote": "morphfc_s can effectively capture core semantics",
+   "grounded": true
+  },
+  {
+   "op": "interact tokens",
+   "canonical": "act",
+   "object": "input",
+   "quote": "progressive token interaction along both height and width dimensions",
+   "grounded": true
+  },
+  {
+   "op": "apply morphfc_t",
+   "canonical": "apply morphfc_t",
+   "object": "input",
+   "quote": "morphfc_t can adaptively learn long-term dependency",
+   "grounded": true
+  },
+  {
+   "op": "aggregate tokens",
+   "canonical": "aggregate",
+   "object": "input",
+   "quote": "temporal token aggregation on each spatial location",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "input",
+   "quote": "with such multi-dimension and multi-scale factorization",
+   "grounded": true
+  },
+  {
+   "op": "output representation",
+   "canonical": "output representation",
+   "object": "input",
+   "quote": "our morphmlp block can achieve a great accuracy-computation balance",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we evaluate our morphmlp on a number of popular video benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "compared with the recent state-of-the-art models",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "morphmlp significantly reduces computation but with better accuracy",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "morphmlp-s only uses 50% gflops of videoswin-t",
+   "grounded": true
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "achieves 0.9% top-1 improvement on kinetics400",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "morphmlp-b only uses 43% gflops of mvit-b",
+   "grounded": true
+  },
+  {
+   "op": "compute metrics",
+   "canonical": "compute metrics",
+   "object": "value",
+   "quote": "achieves 2.4% top-1 improvement on ssv2",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "our method adapted to the image domain outperforms previous sota mlp-like architectures",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "act@input",
+  "aggregate@input",
+  "apply morphfc_s@input",
+  "apply morphfc_t@input",
+  "backpropagate@gradient",
+  "compare@value",
+  "compute metrics@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@value",
+  "output representation@input",
+  "process input@input",
+  "reconstruct@input",
+  "train@parameter"
+ ]
+}

@@ -1,0 +1,184 @@
+{
+ "arxiv_id": "2110.07933",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": true,
+ "n_ops": 24,
+ "n_invalid_object": 18,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:triplet",
+   "quote": "This leads us to introduce Relation Preserving Triplet Mining",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "INVALID:triplet",
+   "quote": "triplets will respect the natural subgroupings within an object ID",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "a single network to be trained with fixed parameters across datasets",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "embedding schemes that seek to map instances with the same object ID",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "INVALID:triplet",
+   "quote": "implicitly enforcing view consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:triplet",
+   "quote": "pose-aware, well-conditioned triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "INVALID:triplet",
+   "quote": "implicitly enforcing view consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:triplet",
+   "quote": "pose-aware, well-conditioned triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "INVALID:triplet",
+   "quote": "triplets will respect the natural subgroupings within an object ID",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:triplet",
+   "quote": "This leads us to introduce Relation Preserving Triplet Mining",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "a single network to be trained with fixed parameters across datasets",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "embedding schemes that seek to map instances with the same object ID",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "INVALID:triplet",
+   "quote": "implicitly enforcing view consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:triplet",
+   "quote": "pose-aware, well-conditioned triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "INVALID:triplet",
+   "quote": "implicitly enforcing view consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:triplet",
+   "quote": "pose-aware, well-conditioned triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "INVALID:triplet",
+   "quote": "triplets will respect the natural subgroupings within an object ID",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:triplet",
+   "quote": "This leads us to introduce Relation Preserving Triplet Mining",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "a single network to be trained with fixed parameters across datasets",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "embedding schemes that seek to map instances with the same object ID",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "INVALID:triplet",
+   "quote": "implicitly enforcing view consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:triplet",
+   "quote": "pose-aware, well-conditioned triplet loss",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "INVALID:triplet",
+   "quote": "implicitly enforcing view consistency",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:triplet",
+   "quote": "pose-aware, well-conditioned triplet loss",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "encode@input"
+ ]
+}

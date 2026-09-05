@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2001.05036",
+ "source": "abstract",
+ "words": 214,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "apply kernel",
+   "canonical": "apply kernel",
+   "object": "input",
+   "quote": "a novel Point Spread Function convolutional layer",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "using losses that are based on structure-from-motion",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "trains a depth estimation network",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "trains a depth estimation network",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "data derived from five common datasets",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "depth estimation network",
+   "grounded": true
+  },
+  {
+   "op": "compute defocus cues",
+   "canonical": "compute defocus cues",
+   "object": "input",
+   "quote": "depth from focus cues",
+   "grounded": true
+  },
+  {
+   "op": "compute kernel",
+   "canonical": "compute kernel",
+   "object": "input",
+   "quote": "location specific kernels that arise from the Circle-Of-Confusion",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply kernel@input",
+  "backpropagate@gradient",
+  "compute defocus cues@input",
+  "compute kernel@input",
+  "correct@parameter",
+  "evaluate@error",
+  "predict@value",
+  "sample@input"
+ ]
+}

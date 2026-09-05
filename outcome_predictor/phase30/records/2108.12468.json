@@ -1,0 +1,168 @@
+{
+ "arxiv_id": "2108.12468",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 6,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "compute feature",
+   "canonical": "compute feature",
+   "object": "INVALID:group",
+   "quote": "the module computes a feature of a group based on the aggregation of the features of the inner-group points",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "INVALID:point",
+   "quote": "the module computes a feature of a group based on the aggregation of the features of the inner-group points",
+   "grounded": true
+  },
+  {
+   "op": "weight features",
+   "canonical": "weight features",
+   "object": "INVALID:point",
+   "quote": "weighted by geometric relations and semantic relations",
+   "grounded": true
+  },
+  {
+   "op": "apply geometric relations",
+   "canonical": "apply geometric relations",
+   "object": "INVALID:point",
+   "quote": "weighted by geometric relations and semantic relations",
+   "grounded": true
+  },
+  {
+   "op": "apply semantic relations",
+   "canonical": "apply semantic relations",
+   "object": "INVALID:point",
+   "quote": "weighted by geometric relations and semantic relations",
+   "grounded": true
+  },
+  {
+   "op": "design network",
+   "canonical": "design network",
+   "object": "parameter",
+   "quote": "we adopt this module to design our RPNet",
+   "grounded": true
+  },
+  {
+   "op": "train network",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we further verify the expandability of RPNet, in terms of both depth and width, on the tasks of classification and segmentation",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we further verify the expand,ability of RPNet, in terms of both depth and width, on the tasks of classification and segmentation",
+   "grounded": false
+  },
+  {
+   "op": "compare networks",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "we also compare our local aggregator with PointNet++",
+   "grounded": true
+  },
+  {
+   "op": "reduce parameters",
+   "canonical": "reduce parameters",
+   "object": "parameter",
+   "quote": "with around 30% parameters and 50% computation saving",
+   "grounded": true
+  },
+  {
+   "op": "reduce computation",
+   "canonical": "reduce computation",
+   "object": "parameter",
+   "quote": "with around 30% parameters and 50% computation saving",
+   "grounded": true
+  },
+  {
+   "op": "conduct experiments",
+   "canonical": "conduct experiments",
+   "object": "task",
+   "quote": "we conduct experiments to reveal the robustness of RPNet with regard to rigid transformation and noises",
+   "grounded": true
+  },
+  {
+   "op": "reveal robustness",
+   "canonical": "reveal robustness",
+   "object": "parameter",
+   "quote": "we conduct experiments to reveal the robustness of RPNet with regard to rigid transformation and noises",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "the module computes a feature of a group based on the aggregation of the features of the inner-group points",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "INVALID:point",
+   "quote": "the module computes a feature of a group based on the aggregation of the features of the inner-group points",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "we further verify the expandability of RPNet, in terms of both depth and width, on the tasks of classification and segmentation",
+   "grounded": true
+  },
+  {
+   "op": "expand network",
+   "canonical": "expand network",
+   "object": "parameter",
+   "quote": "we further verify the expandability of RPNet, in terms of both depth and width, on the tasks of classification and segmentation",
+   "grounded": true
+  },
+  {
+   "op": "fit network",
+   "canonical": "fit network",
+   "object": "parameter",
+   "quote": "wider RPNet fits for classification, while deeper RPNet works better on segmentation",
+   "grounded": true
+  },
+  {
+   "op": "process noise",
+   "canonical": "process noise",
+   "object": "noise",
+   "quote": "we conduct experiments to reveal the robustness of RPNet with regard to rigid transformation and noises",
+   "grounded": true
+  },
+  {
+   "op": "process transformation",
+   "canonical": "process transformation",
+   "object": "input",
+   "quote": "we conduct experiments to reveal the robustness of RPNet with regard to rigid transformation and noises",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@parameter",
+  "compute value@task",
+  "conduct experiments@task",
+  "design network@parameter",
+  "evaluate@task",
+  "expand network@parameter",
+  "fit network@parameter",
+  "process input@input",
+  "process noise@noise",
+  "process transformation@input",
+  "reduce computation@parameter",
+  "reduce parameters@parameter",
+  "reveal robustness@parameter",
+  "train@parameter"
+ ]
+}

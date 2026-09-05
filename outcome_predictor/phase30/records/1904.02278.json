@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1904.02278",
+ "source": "abstract",
+ "words": 246,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 2,
+ "ops": [
+  {
+   "op": "aggregate neighbors",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "using a neighborhood aggregation framework to learn a continuous and compact vector",
+   "grounded": false
+  },
+  {
+   "op": "pool",
+   "canonical": "pool",
+   "object": "latent",
+   "quote": "performing a pooling operation to generalize graph embedding for the classification task",
+   "grounded": false
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "latent",
+   "quote": "automatically learns the importance of neighbors at different hops using a novel attention graph convolution layer",
+   "grounded": true
+  },
+  {
+   "op": "weight neighbors",
+   "canonical": "weight neighbors",
+   "object": "state",
+   "quote": "automatically learns the importance of neighbors at different hops using a novel attention graph convolution layer",
+   "grounded": true
+  },
+  {
+   "op": "pool graph",
+   "canonical": "pool graph",
+   "object": "latent",
+   "quote": "employs a second attention component, a self-attention pooling layer, to generalize the graph representation from the various aspects of a matrix graph embedding",
+   "grounded": false
+  },
+  {
+   "op": "compute self-attention",
+   "canonical": "compute self-attention",
+   "object": "latent",
+   "quote": "employs a second attention component, a self-attention pooling layer, to generalize the graph representation from the various aspects of a matrix graph embedding",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "The dual attention network is trained in an end-to-end manner for the graph classification task",
+   "grounded": false
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "state",
+   "quote": "performing a pooling operation to generalize graph embedding for the classification task",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "classify@state",
+  "compute attention weights@latent",
+  "compute self-attention@latent",
+  "correct@parameter",
+  "pool graph@latent",
+  "pool@latent",
+  "weight neighbors@state"
+ ]
+}

@@ -1,0 +1,208 @@
+{
+ "arxiv_id": "2406.09412",
+ "source": "abstract",
+ "words": 130,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose to build omni-modal intelligence",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "which is capable of understanding any modality",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "and learning universal representations",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the pretrained models show significant emergent abilities",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "in multimodal learning",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "which are evaluated on the following tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "i) single-modality perception benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "ii) 25 cross-modality understanding tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "iii) 18 multimodal large language model benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "store",
+   "canonical": "store",
+   "object": "parameter",
+   "quote": "our models establish 37 new records",
+   "grounded": true
+  },
+  {
+   "op": "retrieve",
+   "canonical": "retrieve",
+   "object": "sample",
+   "quote": "for state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we hope that our research could contribute",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "to the development of omni-modal intelligence",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "code and models are at https://github.com/invictus717/MiCo",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the pretrained models show significant emergent abilities",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "in multimodal learning",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "i) single-modality perception benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "which are evaluated on the following tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "iii) 18 multimodal large language model benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "our models establish 37 new records",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "for state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we hope that our research could contribute",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "to the development of omni-modal intelligence",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "code and models are at https://github.com/invictus717/MiCo",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "the pretrained models show significant emergent abilities",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@distribution",
+  "aggregate@latent",
+  "backpropagate@gradient",
+  "compare@value",
+  "compute@distribution",
+  "compute@error",
+  "compute@reward",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "predict@value",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "retrieve@sample",
+  "sample@distribution",
+  "sample@sample",
+  "sample@trajectory",
+  "store@parameter",
+  "transform@input"
+ ]
+}

@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2109.07107",
+ "source": "abstract",
+ "words": 237,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "initialize parameters",
+   "canonical": "initialize parameters",
+   "object": "parameter",
+   "quote": "we propose a novel query design for the transformer-based object detection",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "object queries are based on anchor points, which are widely used in CNN-based detectors",
+   "grounded": true
+  },
+  {
+   "op": "generate anchor points",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "object queries are based on anchor points, which are widely used in CNN-based detectors",
+   "grounded": true
+  },
+  {
+   "op": "create object queries",
+   "canonical": "create object queries",
+   "object": "latent",
+   "quote": "object queries are based on anchor points, which are widely used in CNN-based detectors",
+   "grounded": true
+  },
+  {
+   "op": "predict object positions",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "each object query focuses on the objects near the anchor point",
+   "grounded": true
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "distribution",
+   "quote": "we design an attention variant, which can reduce the memory cost",
+   "grounded": true
+  },
+  {
+   "op": "apply attention variant",
+   "canonical": "apply attention variant",
+   "object": "distribution",
+   "quote": "we design an attention variant, which can reduce the memory cost",
+   "grounded": true
+  },
+  {
+   "op": "compute prediction loss",
+   "canonical": "compute prediction loss",
+   "object": "error",
+   "quote": "the proposed detector that we called Anchor DETR, can achieve better performance",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate loss",
+   "canonical": "backpropagate loss",
+   "object": "gradient",
+   "quote": "the proposed detector that we called Anchor DETR, can achieve better performance",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed detector that we called Anchor DETR, can achieve better performance",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "each object query focuses on the objects near the anchor point",
+   "grounded": true
+  },
+  {
+   "op": "predict multiple objects",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "our query design can predict multiple objects at one position",
+   "grounded": true
+  },
+  {
+   "op": "compute object features",
+   "canonical": "compute object features",
+   "object": "latent",
+   "quote": "object queries are based on anchor points, which are widely used in CNN-based detectors",
+   "grounded": true
+  },
+  {
+   "op": "compute object positions",
+   "canonical": "compute object positions",
+   "object": "state",
+   "quote": "each object query focuses on the objects near the anchor point",
+   "grounded": true
+  },
+  {
+   "op": "compute object confidence",
+   "canonical": "compute object confidence",
+   "object": "distribution",
+   "quote": "each object query focuses on the objects near the anchor point",
+   "grounded": true
+  },
+  {
+   "op": "compute object class",
+   "canonical": "compute object class",
+   "object": "distribution",
+   "quote": "each object query focuses on the objects near the anchor, point",
+   "grounded": true
+  },
+  {
+   "op": "compute object bounding box",
+   "canonical": "compute object bounding box",
+   "object": "state",
+   "quote": "each object query focuses on the objects near the anchor point",
+   "grounded": true
+  },
+  {
+   "op": "compute object mask",
+   "canonical": "compute object mask",
+   "object": "distribution",
+   "quote": "each object query focuses on the objects near the anchor point",
+   "grounded": true
+  },
+  {
+   "op": "compute object score",
+   "canonical": "compute object score",
+   "object": "distribution",
+   "quote": "each object query focuses on the objects near the anchor point",
+   "grounded": true
+  },
+  {
+   "op": "compute object localization",
+   "canonical": "compute object localization",
+   "object": "state",
+   "quote": "each object query focuses on the objects near the anchor point",
+   "grounded": true
+  },
+  {
+   "op": "compute object detection",
+   "canonical": "compute object detection",
+   "object": "distribution",
+   "quote": "each object query focuses on the objects near the anchor point",
+   "grounded": true
+  },
+  {
+   "op": "compute object tracking",
+   "canonical": "compute object tracking",
+   "object": "trajectory",
+   "quote": "each object query focuses on the objects near the anchor point",
+   "grounded": true
+  },
+  {
+   "op": "compute object prediction",
+   "canonical": "compute object prediction",
+   "object": "distribution",
+   "quote": "each object query focuses on the objects near the anchor point",
+   "grounded": true
+  },
+  {
+   "op": "compute object confidence score",
+   "canonical": "compute object confidence score",
+   "object": "distribution",
+   "quote": "each object query focuses on the objects near the anchor point",
+   "grounded": true
+  },
+  {
+   "op": "compute object localization score",
+   "canonical": "compute object localization score",
+   "object": "distribution",
+   "quote": "each object query focuses on the objects near the anchor point",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention variant@distribution",
+  "backpropagate loss@gradient",
+  "compute attention weights@distribution",
+  "compute object bounding box@state",
+  "compute object class@distribution",
+  "compute object confidence score@distribution",
+  "compute object confidence@distribution",
+  "compute object detection@distribution",
+  "compute object features@latent",
+  "compute object localization score@distribution",
+  "compute object localization@state",
+  "compute object mask@distribution",
+  "compute object positions@state",
+  "compute object prediction@distribution",
+  "compute object score@distribution",
+  "compute object tracking@trajectory",
+  "compute prediction loss@error",
+  "correct@parameter",
+  "create object queries@latent",
+  "encode@input",
+  "initialize parameters@parameter",
+  "predict@distribution",
+  "reconstruct@state",
+  "sample@action"
+ ]
+}

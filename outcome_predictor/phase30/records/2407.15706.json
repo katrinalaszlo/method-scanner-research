@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2407.15706",
+ "source": "abstract",
+ "words": 247,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "extracts rich RGB features from video frames",
+   "grounded": true
+  },
+  {
+   "op": "align features",
+   "canonical": "align features",
+   "object": "latent",
+   "quote": "aligns them with global skeleton features via contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "generate features",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "uses RGB images with temporal information and text instruction to generate instructive features",
+   "grounded": true
+  },
+  {
+   "op": "refine scores",
+   "canonical": "correct",
+   "object": "value",
+   "quote": "further refine the classification scores",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the refined scores will enhance the model's robust, generalization",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "extracts rich RGB features from video frames",
+   "grounded": true
+  },
+  {
+   "op": "process text",
+   "canonical": "process text",
+   "object": "input",
+   "quote": "uses RGB images with temporal information and text instruction to generate instructive features",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "uses RGB images with temporal information and text instruction to generate instructive features",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "update policy",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the refined scores will enhance the model's robustness and generalization",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "align features@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "correct@policy",
+  "correct@value",
+  "encode@input",
+  "evaluate@error",
+  "predict@reward",
+  "process text@input",
+  "reconstruct@distribution",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "sample@trajectory"
+ ]
+}

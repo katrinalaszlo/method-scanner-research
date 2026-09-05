@@ -1,0 +1,198 @@
+{
+ "arxiv_id": "2209.08179",
+ "source": "abstract",
+ "words": 194,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 16,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "INVALID:node",
+   "quote": "representing the graph as the 1-skeleton of a cell complex",
+   "grounded": true
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "INVALID:edge",
+   "quote": "a lifting algorithm that learns edge features from node features",
+   "grounded": true
+  },
+  {
+   "op": "mask",
+   "canonical": "mask",
+   "object": "INVALID:attention",
+   "quote": "two independent masked self-attention mechanisms",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "INVALID:edge",
+   "quote": "find the optimal combination of edge features over both lower and upper neighbors",
+   "grounded": true
+  },
+  {
+   "op": "pool",
+   "canonical": "pool",
+   "object": "INVALID:edge",
+   "quote": "a hierarchical edge pooling mechanism to extract a compact meaningful set of features",
+   "grounded": false
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "a hierarchical edge pooling mechanism to extract a compact meaningful set of features",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:attention",
+   "quote": "two independent masked self-attention mechanisms",
+   "grounded": true
+  },
+  {
+   "op": "represent",
+   "canonical": "encode",
+   "object": "INVALID:graph",
+   "quote": "representing the graph as the 1-skeleton of a cell complex",
+   "grounded": true
+  },
+  {
+   "op": "generalize",
+   "canonical": "generalize",
+   "object": "INVALID:attention",
+   "quote": "generalizing the conventional graph attention strategy",
+   "grounded": true
+  },
+  {
+   "op": "design",
+   "canonical": "design",
+   "object": "INVALID:mechanism",
+   "quote": "design two independent masked self-attention mechanisms",
+   "grounded": true
+  },
+  {
+   "op": "operate",
+   "canonical": "operate",
+   "object": "INVALID:data",
+   "quote": "neural architecture operating on data defined over the vertices of a graph",
+   "grounded": true
+  },
+  {
+   "op": "capture",
+   "canonical": "capture",
+   "object": "INVALID:interaction",
+   "quote": "introduced to capture higher order interactions",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "INVALID:neighborhood",
+   "quote": "exploit the lower and upper neighborhoods, as encoded in the cell complex",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:combination",
+   "quote": "find the optimal combination of edge features over both lower and upper neighbors",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "extract a compact meaningful set of features",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "learn edge features from node features",
+   "grounded": false
+  },
+  {
+   "op": "construct",
+   "canonical": "construct",
+   "object": "latent",
+   "quote": "representing the graph as the 1-skeleton of a cell complex",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "INVALID:graph",
+   "quote": "neural architecture operating on data defined over the vertices of a graph",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "extract a compact meaningful set of features",
+   "grounded": true
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "latent",
+   "quote": "find the optimal combination of edge features over both lower and upper neighbors",
+   "grounded": true
+  },
+  {
+   "op": "form",
+   "canonical": "form",
+   "object": "latent",
+   "quote": "representing the graph as the 1-skeleton of a cell complex",
+   "grounded": true
+  },
+  {
+   "op": "build",
+   "canonical": "build",
+   "object": "latent",
+   "quote": "representing the graph as the 1-skeleton of a cell complex",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "two independent masked self-attention mechanisms",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:weight",
+   "quote": "two independent masked self-attention mechanisms",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:attention",
+   "quote": "two independent masked self-attention mechanisms",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "build@latent",
+  "compute@distribution",
+  "construct@latent",
+  "extract@latent",
+  "form@latent",
+  "reconstruct@latent",
+  "select@latent",
+  "transform@latent"
+ ]
+}

@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "1903.09776",
+ "source": "abstract",
+ "words": 183,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Prevailing deep convolutional neural networks (CNNs) for person re-IDentification (reID) are usually built upon ResNet or VGG backbones",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "body structural information plays an important role in reID but it is not encoded in backbones",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "reID is essentially a retrieval task but current NAS algorithms are merely designed for classification",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we propose to automatically search for a CNN architecture that is specifically suitable for the reID task",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our Auto-ReID enables the automated approach to find an efficient and effective CNN architecture for reID",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "reID is different from classification, the architecture should be modified accordingly",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "extensive experiments demonstrate that the searched architecture achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we propose a retrieval-based search algorithm over a specifically designed reID search space",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "no existing NAS methods incorporate the structure information of input images",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "our Auto-ReID enables the automated approach to find an efficient and effective CNN architecture for reID",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "reID is essentially a retrieval task but current NAS algorithms are merely designed for classification",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "extensive experiments demonstrate that the searched architecture achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we propose a retrieval-based search algorithm over a specifically designed reID search space",
+   "grounded": true
+  },
+  {
+   "op": "filter",
+   "canonical": "filter",
+   "object": "sample",
+   "quote": "no existing NAS methods incorporate the structure information of input images",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "extensive experiments demonstrate that the searched architecture achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "our Auto-ReID enables the automated approach to find an efficient and effective CNN architecture for reID",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "body structural information plays an important role in reID but it is not encoded in backbones",
+   "grounded": true
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "action",
+   "quote": "we propose to automatically search for a CNN architecture that is specifically suitable for the reID task",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "reID is different from classification, the architecture should be modified accordingly",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "reID is essentially a retrieval task but current NAS algorithms are merely designed for classification",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "we propose a retrieval-based search algorithm over a specifically designed reID search space",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "error",
+   "quote": "our Auto-ReID enables the automated approach to find an efficient and effective CNN architecture for reID",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "reID is different from classification, the architecture should be modified accordingly",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "error",
+   "quote": "reID is essentially a retrieval task but current NAS algorithms are merely designed for classification",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "no existing NAS methods incorporate the structure information of input images",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "backpropagate@error",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute@distribution",
+  "compute@error",
+  "compute@reward",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "extract@latent",
+  "filter@sample",
+  "improve@parameter",
+  "predict@value",
+  "reconstruct@distribution",
+  "reconstruct@error",
+  "reconstruct@latent",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@distribution",
+  "sample@sample",
+  "sample@trajectory",
+  "select@action",
+  "transform@input"
+ ]
+}

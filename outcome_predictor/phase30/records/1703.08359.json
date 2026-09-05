@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1703.08359",
+ "source": "abstract",
+ "words": 178,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "compute affinity",
+   "canonical": "compute affinity",
+   "object": "state",
+   "quote": "manifold-based affinity learning",
+   "grounded": false
+  },
+  {
+   "op": "apply constraints",
+   "canonical": "apply constraints",
+   "object": "state",
+   "quote": "label information is given as pairwise constraints",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "make the best use of supervision from training data",
+   "grounded": false
+  },
+  {
+   "op": "scale data",
+   "canonical": "scale data",
+   "object": "input",
+   "quote": "scale up to large repositories with low on-line time complexity",
+   "grounded": true
+  },
+  {
+   "op": "embed input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "learn discriminative metrics for person images",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the learned metric is not smooth with respect to the local geometry structure of the data manifold",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "most existing algorithms",
+   "grounded": true
+  },
+  {
+   "op": "apply postprocessing",
+   "canonical": "apply postprocessing",
+   "object": "state",
+   "quote": "serving as a generic postprocessing procedure",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply constraints@state",
+  "apply postprocessing@state",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute affinity@state",
+  "correct@parameter",
+  "encode@input",
+  "scale data@input"
+ ]
+}

@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "1904.08082",
+ "source": "abstract",
+ "words": 155,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 6,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "INVALID:node",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "apply pooling",
+   "canonical": "apply pooling",
+   "object": "INVALID:graph",
+   "quote": "the method of applying downsampling to graphs is still difficult to perform and has room for improvement.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the same training procedures and model architectures were used for the existing pooling methods and our method.",
+   "grounded": true
+  },
+  {
+   "op": "forward pass",
+   "canonical": "forward pass",
+   "object": "INVALID:graph",
+   "quote": "the same training procedures and model architectures were used for the existing pooling methods and our method.",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the experimental results demonstrate that our method achieves superior graph classification performance on the benchmark datasets using a reasonable number of parameters.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the same training procedures and model architectures were used for the existing pooling methods and our method.",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "the experimental results demonstrate that our method achieves superior graph classification performance on the benchmark datasets using a reasonable number of parameters.",
+   "grounded": true
+  },
+  {
+   "op": "sample attention",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "compute node representation",
+   "canonical": "compute node representation",
+   "object": "latent",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "compute graph representation",
+   "canonical": "compute graph representation",
+   "object": "latent",
+   "quote": "self-attention using graph, convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": false
+  },
+  {
+   "op": "apply non-linearity",
+   "canonical": "apply non-linearity",
+   "object": "latent",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "normalize features",
+   "canonical": "normalize features",
+   "object": "latent",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "compute graph summary",
+   "canonical": "compute graph summary",
+   "object": "latent",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "latent",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "distribution",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "compute graph embedding",
+   "canonical": "compute graph embedding",
+   "object": "latent",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "apply pooling function",
+   "canonical": "apply pooling function",
+   "object": "INVALID:graph",
+   "quote": "the method of applying downsampling to graphs is still difficult to perform and has room for improvement.",
+   "grounded": true
+  },
+  {
+   "op": "compute node importance",
+   "canonical": "compute node importance",
+   "object": "distribution",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "aggregate node features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "compute attention map",
+   "canonical": "compute attention map",
+   "object": "distribution",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "apply graph pooling",
+   "canonical": "apply graph pooling",
+   "object": "INVALID:graph",
+   "quote": "the method of applying downsampling to graphs is still difficult to perform and has room for improvement.",
+   "grounded": true
+  },
+  {
+   "op": "compute graph summary",
+   "canonical": "compute graph summary",
+   "object": "latent",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "apply graph transformation",
+   "canonical": "apply graph transformation",
+   "object": "latent",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  },
+  {
+   "op": "compute graph representation",
+   "canonical": "compute graph representation",
+   "object": "latent",
+   "quote": "self-attention using graph convolution allows our pooling method to consider both node features and graph topology.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply activation@latent",
+  "apply graph transformation@latent",
+  "apply non-linearity@latent",
+  "backpropagate@gradient",
+  "compute attention map@distribution",
+  "compute attention weights@distribution",
+  "compute graph embedding@latent",
+  "compute graph representation@latent",
+  "compute graph summary@latent",
+  "compute node importance@distribution",
+  "compute node representation@latent",
+  "correct@parameter",
+  "evaluate@error",
+  "improve@parameter",
+  "normalize features@latent",
+  "sample@distribution"
+ ]
+}

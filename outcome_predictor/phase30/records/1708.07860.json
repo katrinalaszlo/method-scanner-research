@@ -1,0 +1,190 @@
+{
+ "arxiv_id": "1708.07860",
+ "source": "abstract",
+ "words": 143,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 22,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we provide an apples-to-apples comparison",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we provide an apples-to-apples comparison",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we provide an apples-to-apples comparison",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we investigate methods for combining",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "we investigate methods for combining",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we explore lasso regularization",
+   "grounded": false
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "we explore lasso regularization",
+   "grounded": false
+  },
+  {
+   "op": "normalize input",
+   "canonical": "normalize input",
+   "object": "input",
+   "quote": "we explore methods for harmonizing",
+   "grounded": false
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we explore methods for harmonizing",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "error",
+   "quote": "we evaluate all methods on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "error",
+   "quote": "we evaluate all methods on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "compute recall",
+   "canonical": "compute recall",
+   "object": "error",
+   "quote": "we evaluate all methods on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "compute f1 score",
+   "canonical": "compute f1 score",
+   "object": "error",
+   "quote": "we evaluate all methods on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "compute mean absolute error",
+   "canonical": "compute mean absolute error",
+   "object": "error",
+   "quote": "we evaluate all methods on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "compute mean squared error",
+   "canonical": "compute mean squared error",
+   "object": "error",
+   "quote": "we evaluate all methods on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "compute classification error",
+   "canonical": "compute classification error",
+   "object": "error",
+   "quote": "we evaluate all methods on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "compute detection error",
+   "canonical": "compute detection error",
+   "object": "error",
+   "quote": "we evaluate all methods on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "compute depth error",
+   "canonical": "compute depth error",
+   "object": "error",
+   "quote": "we evaluate all methods on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our results show that deeper networks work better",
+   "grounded": false
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "our results show that deeper networks work better",
+   "grounded": false
+  },
+  {
+   "op": "log metrics",
+   "canonical": "log metrics",
+   "object": "error",
+   "quote": "our results show that deeper networks work better",
+   "grounded": false
+  },
+  {
+   "op": "save model",
+   "canonical": "save model",
+   "object": "parameter",
+   "quote": "our best joint network nearly matches",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply regularization@parameter",
+  "backpropagate@gradient",
+  "compare@task",
+  "compute accuracy@error",
+  "compute classification error@error",
+  "compute depth error@error",
+  "compute detection error@error",
+  "compute f1 score@error",
+  "compute gradient@gradient",
+  "compute mean absolute error@error",
+  "compute mean squared error@error",
+  "compute precision@error",
+  "compute recall@error",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "log metrics@error",
+  "normalize input@input",
+  "predict@value",
+  "save model@parameter"
+ ]
+}

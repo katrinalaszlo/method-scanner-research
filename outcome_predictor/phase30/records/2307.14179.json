@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2307.14179",
+ "source": "abstract",
+ "words": 208,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute receptive field",
+   "canonical": "compute receptive field",
+   "object": "input",
+   "quote": "an effective receptive field for semantic segmentation is introduced",
+   "grounded": true
+  },
+  {
+   "op": "analyze receptive field",
+   "canonical": "analyze receptive field",
+   "object": "input",
+   "quote": "the use of ASPP module yielded a specific pattern in the effective receptive field",
+   "grounded": true
+  },
+  {
+   "op": "extract local information",
+   "canonical": "extract local information",
+   "object": "input",
+   "quote": "ASPP uses multiple atrous convolutions with different atrous rates to extract both local and global information",
+   "grounded": true
+  },
+  {
+   "op": "extract global information",
+   "canonical": "extract global information",
+   "object": "input",
+   "quote": "ASPP uses multiple atrous convolutions with different atrous rates to extract both local and global information",
+   "grounded": true
+  },
+  {
+   "op": "apply atrous convolution",
+   "canonical": "apply atrous convolution",
+   "object": "input",
+   "quote": "ASPP uses multiple atrous convolutions with different atrous rates to extract both local and global information",
+   "grounded": true
+  },
+  {
+   "op": "adjust atrous rate",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "atrous rate should be a hyperparameter to change the field of view size according to the target task or dataset",
+   "grounded": true
+  },
+  {
+   "op": "determine optimal atrous rate",
+   "canonical": "determine optimal atrous rate",
+   "object": "input",
+   "quote": "we derive practical guidelines for obtaining the optimal atrous rate, which should be controlled based on the size of input image",
+   "grounded": true
+  },
+  {
+   "op": "improve segmentation results",
+   "canonical": "improve",
+   "object": "input",
+   "quote": "using the optimal atrous rate consistently improved the segmentation results across multiple datasets",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "analyze receptive field@input",
+  "apply atrous convolution@input",
+  "compute receptive field@input",
+  "correct@parameter",
+  "determine optimal atrous rate@input",
+  "extract global information@input",
+  "extract local information@input",
+  "improve@input"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1608.00859",
+ "source": "abstract",
+ "words": 176,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "extract input",
+   "canonical": "extract input",
+   "object": "input",
+   "quote": "video-based action recognition",
+   "grounded": true
+  },
+  {
+   "op": "sample frames",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "sparse temporal sampling strategy",
+   "grounded": true
+  },
+  {
+   "op": "encode frames",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "deep convolutional networks",
+   "grounded": true
+  },
+  {
+   "op": "pool features",
+   "canonical": "pool features",
+   "object": "latent",
+   "quote": "video-level supervision",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "efficient and effective learning",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "state-of-the-art performance",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learn these models given limited training samples",
+   "grounded": true
+  },
+  {
+   "op": "visualize model",
+   "canonical": "visualize model",
+   "object": "parameter",
+   "quote": "qualitatively demonstrates the effectiveness",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compare@error",
+  "correct@parameter",
+  "encode@input",
+  "extract input@input",
+  "pool features@latent",
+  "sample@input",
+  "visualize model@parameter"
+ ]
+}

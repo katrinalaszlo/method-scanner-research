@@ -1,0 +1,72 @@
+{
+ "arxiv_id": "2003.00688",
+ "source": "abstract",
+ "words": 195,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 6,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute risk",
+   "canonical": "compute risk",
+   "object": "INVALID:domain",
+   "quote": "reducing differences in risk across training domains",
+   "grounded": true
+  },
+  {
+   "op": "extrapolate domain",
+   "canonical": "extrapolate domain",
+   "object": "INVALID:domain",
+   "quote": "perturbation set of extrapolated domains",
+   "grounded": true
+  },
+  {
+   "op": "penalize variance",
+   "canonical": "penalize variance",
+   "object": "INVALID:risk",
+   "quote": "penalty on the variance of training risks",
+   "grounded": true
+  },
+  {
+   "op": "recover causal mechanism",
+   "canonical": "recover causal mechanism",
+   "object": "value",
+   "quote": "recover the causal mechanisms of the targets",
+   "grounded": true
+  },
+  {
+   "op": "estimate distribution shift",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "changes in the input distribution",
+   "grounded": true
+  },
+  {
+   "op": "trade-off robustness",
+   "canonical": "trade-off robustness",
+   "object": "INVALID:shift",
+   "quote": "trading-off robustness to causally induced distributional shifts",
+   "grounded": true
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "INVALID:method",
+   "quote": "outperform alternative methods",
+   "grounded": true
+  },
+  {
+   "op": "minimize risk",
+   "canonical": "minimize risk",
+   "object": "INVALID:domain",
+   "quote": "robust optimization over a perturbation set",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "predict@input",
+  "recover causal mechanism@value"
+ ]
+}

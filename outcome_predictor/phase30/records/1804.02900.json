@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "1804.02900",
+ "source": "abstract",
+ "words": 171,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 2,
+ "ops": [
+  {
+   "op": "upsample",
+   "canonical": "upsample",
+   "object": "input",
+   "quote": "the network upsamples an image in intermediate steps",
+   "grounded": false
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the learning process is organized from easy to hard",
+   "grounded": false
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we design a generative adversarial network",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "our model is marginally lower",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the learning process is organized from easy to hard",
+   "grounded": false
+  },
+  {
+   "op": "scale",
+   "canonical": "scale",
+   "object": "parameter",
+   "quote": "this not only allows to scale well to high upsampling factors",
+   "grounded": false
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "increases the reconstruction quality for all upsampling factors",
+   "grounded": false
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "ranks 2nd in terms of SSIM and 4th in terms of PSNR",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "evaluate@error",
+  "reconstruct@input",
+  "scale@parameter",
+  "train@parameter",
+  "upsample@input"
+ ]
+}

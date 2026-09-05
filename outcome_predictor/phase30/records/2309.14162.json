@@ -1,0 +1,201 @@
+{
+ "arxiv_id": "2309.14162",
+ "source": "abstract",
+ "words": 145,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 12,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "the outputs of the teacher model are noisy approximations to the ground-truth distribution",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "derive from training data",
+   "grounded": false
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "paired invertible augmentations",
+   "grounded": true
+  },
+  {
+   "op": "enforce consistency",
+   "canonical": "enforce consistency",
+   "object": "INVALID:label",
+   "quote": "label consistency regularization to KD for SR",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "INVALID:student",
+   "quote": "transfer the teacher model's knowledge to the student model",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "INVALID:high-quality image",
+   "quote": "noisy approximations to the ground-truth distribution of high-quality images",
+   "grounded": true
+  },
+  {
+   "op": "distill knowledge",
+   "canonical": "distill knowledge",
+   "object": "INVALID:student",
+   "quote": "transfer the teacher model's knowledge to the student model",
+   "grounded": true
+  },
+  {
+   "op": "regularize loss",
+   "canonical": "regularize loss",
+   "object": "INVALID:student",
+   "quote": "label consistency regularization to KD for SR",
+   "grounded": true
+  },
+  {
+   "op": "sample data",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "derive from training data",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "improve the student model's performance and robustness",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "INVALID:student",
+   "quote": "transfer the teacher model's knowledge to the student model",
+   "grounded": true
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "input",
+   "quote": "paired invertible augmentations",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "label consistency regularization to KD for SR",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "INVALID:student",
+   "quote": "transfer the teacher model's knowledge to the student model",
+   "grounded": true
+  },
+  {
+   "op": "generate augmented input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "paired invertible augmentations",
+   "grounded": true
+  },
+  {
+   "op": "enforce label consistency",
+   "canonical": "enforce label consistency",
+   "object": "input",
+   "quote": "label consistency regularization to KD for SR",
+   "grounded": true
+  },
+  {
+   "op": "compute prediction",
+   "canonical": "compute prediction",
+   "object": "distribution",
+   "quote": "noisy approximations to the ground-truth distribution of high-quality images",
+   "grounded": true
+  },
+  {
+   "op": "update student parameters",
+   "canonical": "correct",
+   "object": "INVALID:student",
+   "quote": "transfer the teacher model's knowledge to the student model",
+   "grounded": true
+  },
+  {
+   "op": "apply knowledge transfer",
+   "canonical": "apply knowledge transfer",
+   "object": "INVALID:student",
+   "quote": "transfer the teacher model's knowledge to the student model",
+   "grounded": true
+  },
+  {
+   "op": "compute task reward",
+   "canonical": "compute task reward",
+   "object": "task",
+   "quote": "improve the student model's performance and robustness",
+   "grounded": true
+  },
+  {
+   "op": "train student model",
+   "canonical": "train",
+   "object": "INVALID:student",
+   "quote": "transfer the teacher model's knowledge to the student model",
+   "grounded": true
+  },
+  {
+   "op": "generate upcycled data",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "derive from training data",
+   "grounded": false
+  },
+  {
+   "op": "compute consistency error",
+   "canonical": "compute consistency error",
+   "object": "INVALID:label",
+   "quote": "label consistency regularization to KD for SR",
+   "grounded": true
+  },
+  {
+   "op": "apply data augmentation",
+   "canonical": "apply data augmentation",
+   "object": "input",
+   "quote": "paired invertible augmentations",
+   "grounded": true
+  },
+  {
+   "op": "compute model loss",
+   "canonical": "compute model loss",
+   "object": "error",
+   "quote": "label consistency regularization to KD for SR",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply augmentation@input",
+  "apply data augmentation@input",
+  "apply transformation@input",
+  "compute model loss@error",
+  "compute prediction@distribution",
+  "compute reward@task",
+  "compute task reward@task",
+  "enforce label consistency@input",
+  "evaluate@error",
+  "reconstruct@distribution",
+  "reconstruct@input",
+  "sample@input"
+ ]
+}

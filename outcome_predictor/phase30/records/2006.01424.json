@@ -1,0 +1,70 @@
+{
+ "arxiv_id": "2006.01424",
+ "source": "abstract",
+ "words": 156,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 7,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Deep convolution-based single image super-resolution (SISR) networks embrace the benefits of learning from large-scale external image resources for local recovery",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "latent",
+   "quote": "By combining the new CS-NL prior with local and in-scale non-local priors in a powerful recurrent fusion cell",
+   "grounded": true
+  },
+  {
+   "op": "compute correlation",
+   "canonical": "compute correlation",
+   "object": "latent",
+   "quote": "we can find more cross-scale feature correlations within a single low-resolution (LR) image",
+   "grounded": true
+  },
+  {
+   "op": "aggregate correlation",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we can find more cross-scale feature correlations within a single low-resolution (LR) image",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "By combining the new CS-NL prior with local and in-scale non-local priors in a powerful recurrent fusion cell",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we can find more cross-scale feature correlations within a single low-resolution (LR) image",
+   "grounded": true
+  },
+  {
+   "op": "upsample",
+   "canonical": "upsample",
+   "object": "latent",
+   "quote": "we can find more cross-scale feature correlations within a single low-resolution (L",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute correlation@latent",
+  "encode@input",
+  "extract feature@latent",
+  "predict@latent",
+  "reconstruct@latent",
+  "upsample@latent"
+ ]
+}

@@ -1,0 +1,195 @@
+{
+ "arxiv_id": "2203.09694",
+ "source": "abstract",
+ "words": 254,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 19,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute context",
+   "canonical": "compute context",
+   "object": "latent",
+   "quote": "further refining the learnt feature with axial contexts",
+   "grounded": true
+  },
+  {
+   "op": "aggregate information",
+   "canonical": "aggregate",
+   "object": "INVALID:axis",
+   "quote": "axial contexts are information dynamics aggregated from other axes",
+   "grounded": true
+  },
+  {
+   "op": "apply calibration",
+   "canonical": "apply calibration",
+   "object": "INVALID:feature channel",
+   "quote": "separately refines them with different axial contexts",
+   "grounded": true
+  },
+  {
+   "op": "split feature",
+   "canonical": "split feature",
+   "object": "INVALID:channel",
+   "quote": "decomposes the feature channels into several groups",
+   "grounded": true
+  },
+  {
+   "op": "embed context",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "utilizing calibrators to embed feature with four different kinds of contexts",
+   "grounded": true
+  },
+  {
+   "op": "recompute response",
+   "canonical": "recompute response",
+   "object": "latent",
+   "quote": "recompute feature response with cross-axis contexts",
+   "grounded": true
+  },
+  {
+   "op": "contextualize group",
+   "canonical": "contextualize group",
+   "object": "INVALID:feature channel",
+   "quote": "contextualize feature channel groups",
+   "grounded": true
+  },
+  {
+   "op": "plug into layer",
+   "canonical": "plug into layer",
+   "object": "INVALID:residual",
+   "quote": "densely plugged into each residual layer of the off-the-shelf video networks",
+   "grounded": true
+  },
+  {
+   "op": "refine feature",
+   "canonical": "correct",
+   "object": "INVALID:channel",
+   "quote": "separately refines them with different axial contexts",
+   "grounded": true
+  },
+  {
+   "op": "calibrate feature",
+   "canonical": "calibrate feature",
+   "object": "INVALID:channel",
+   "quote": "lightweight feature calibration as group contextualization",
+   "grounded": true
+  },
+  {
+   "op": "extract context",
+   "canonical": "extract context",
+   "object": "INVALID:axis",
+   "quote": "axial contexts are information dynamics aggregated from other axes",
+   "grounded": true
+  },
+  {
+   "op": "combine contexts",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "embed feature with four different kinds of contexts in parallel",
+   "grounded": true
+  },
+  {
+   "op": "generate context",
+   "canonical": "reconstruct",
+   "object": "INVALID:axis",
+   "quote": "information dynamics aggregated from other axes either globally or locally",
+   "grounded": true
+  },
+  {
+   "op": "parallel process",
+   "canonical": "parallel process",
+   "object": "INVALID:context",
+   "quote": "utilizing calibrators to embed feature with four different kinds of contexts in parallel",
+   "grounded": true
+  },
+  {
+   "op": "update feature",
+   "canonical": "correct",
+   "object": "INVALID:channel",
+   "quote": "separately refines them with different axial contexts",
+   "grounded": true
+  },
+  {
+   "op": "compute dynamics",
+   "canonical": "compute dynamics",
+   "object": "INVALID:axis",
+   "quote": "information dynamics aggregated from other axes either globally or locally",
+   "grounded": true
+  },
+  {
+   "op": "apply element-wise",
+   "canonical": "apply element-wise",
+   "object": "INVALID:calibrator",
+   "quote": "design a family of efficient element-wise calibrators",
+   "grounded": true
+  },
+  {
+   "op": "process feature",
+   "canonical": "process feature",
+   "object": "INVALID:group",
+   "quote": "separately refines them with different axial contexts",
+   "grounded": true
+  },
+  {
+   "op": "refine group",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "contextualize feature channel groups",
+   "grounded": true
+  },
+  {
+   "op": "embed dynamics",
+   "canonical": "encode",
+   "object": "INVALID:axis",
+   "quote": "information dynamics aggregated from other axes either globally or locally",
+   "grounded": true
+  },
+  {
+   "op": "compute group",
+   "canonical": "compute group",
+   "object": "INVALID:context",
+   "quote": "contextualize feature channel groups",
+   "grounded": true
+  },
+  {
+   "op": "apply context",
+   "canonical": "apply context",
+   "object": "latent",
+   "quote": "embed feature with four different kinds of contexts in parallel",
+   "grounded": true
+  },
+  {
+   "op": "combine feature",
+   "canonical": "aggregate",
+   "object": "INVALID:group",
+   "quote": "separately refines them with different axial contexts",
+   "grounded": true
+  },
+  {
+   "op": "process context",
+   "canonical": "process context",
+   "object": "INVALID:axis",
+   "quote": "information dynamics aggregated from other axes either globally or locally",
+   "grounded": true
+  },
+  {
+   "op": "update context",
+   "canonical": "correct",
+   "object": "INVALID:axis",
+   "quote": "information dynamics aggregated from other axes either globally or locally",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply context@latent",
+  "compute context@latent",
+  "correct@latent",
+  "encode@latent",
+  "recompute response@latent"
+ ]
+}

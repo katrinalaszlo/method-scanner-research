@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "2112.12577",
+ "source": "abstract",
+ "words": 152,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "the prediction results of a monocular depth network",
+   "grounded": true
+  },
+  {
+   "op": "warp image",
+   "canonical": "warp image",
+   "object": "input",
+   "quote": "the prediction results of a monocular depth network are warped",
+   "grounded": true
+  },
+  {
+   "op": "synthesize image",
+   "canonical": "synthesize image",
+   "object": "input",
+   "quote": "we apply an additional image synthesis network",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "the output of this network is required to look as similar as possible",
+   "grounded": true
+  },
+  {
+   "op": "minimize error",
+   "canonical": "minimize error",
+   "object": "error",
+   "quote": "minimizing the pixel-wise RGB reconstruction error",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "we reapply the same monocular depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "compare depth",
+   "canonical": "compare",
+   "object": "INVALID:depth",
+   "quote": "ensure that the depth predictions are consistent with the associated ground truth depth",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "minimizing the pixel-wise RGB reconstruction error",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "minimize error@error",
+  "predict@state",
+  "reconstruct@input",
+  "synthesize image@input",
+  "warp image@input"
+ ]
+}

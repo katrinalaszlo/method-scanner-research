@@ -1,0 +1,197 @@
+{
+ "arxiv_id": "2407.12312",
+ "source": "abstract",
+ "words": 212,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 13,
+ "n_grounded": 13,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "It makes the existing skeleton-based action recognition works, which are mostly designed based on balanced datasets, suffer from a sharp performance degradation.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose a novel method, Shap-Mix, which improves long-tailed learning by mining representative motion patterns for tail categories.",
+   "grounded": false
+  },
+  {
+   "op": "estimate distribution",
+   "canonical": "predict",
+   "object": "INVALID:motion pattern",
+   "quote": "we develop an effective spatial-temporal mixing strategy for the skeleton to boost representation quality.",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "INVALID:augmentation",
+   "quote": "we attend to the mixing augmentations and propose a novel method, Shap, which improves long-tailed learning by mining representative motion patterns for tail categories.",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "action",
+   "quote": "the employed saliency guidance method is presented, consisting of the saliency estimation based on Shapley value and a tail-aware mixing policy.",
+   "grounded": true
+  },
+  {
+   "op": "compute saliency",
+   "canonical": "compute saliency",
+   "object": "INVALID:motion part",
+   "quote": "the employed saliency guidance method is presented, consisting of the saliency estimation based on Shapley value and a tail-aware mixing policy.",
+   "grounded": true
+  },
+  {
+   "op": "mix data",
+   "canonical": "mix data",
+   "object": "trajectory",
+   "quote": "we develop an effective spatial-temporal mixing strategy for the skeleton to boost representation quality.",
+   "grounded": false
+  },
+  {
+   "op": "preserve feature",
+   "canonical": "preserve feature",
+   "object": "INVALID:motion part",
+   "quote": "It preserves the salient motion parts of minority classes in mixed data, explicitly establishing the relationships between crucial body structure cues and high-level semantics.",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "we propose a novel method, Shap-Mix, which improves long-tailed learning by mining representative motion patterns for tail categories.",
+   "grounded": false
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "we propose a novel method, Shap-Mix, which improves long-tailed learning by mining representative motion patterns for tail categories.",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "action",
+   "quote": "we attend to the mixing augmentations and propose a novel method, Shap-Mix, which improves long-tailed learning by mining representative motion patterns for tail categories.",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "INVALID:motion pattern",
+   "quote": "we develop an effective spatial-temporal mixing strategy for the skeleton to boost representation quality.",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "INVALID:mixing",
+   "quote": "the employed saliency guidance method is presented, consisting of the saliency estimation based on Shapley value and a tail-aware mixing policy.",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "INVALID:augmentation",
+   "quote": "we attend to the mixing augmentations and propose a novel method, Shap-Mix, which improves long-tailed learning by mining representative motion patterns for tail categories.",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:motion pattern",
+   "quote": "we develop an effective spatial-temporal mixing strategy for the skeleton to boost representation quality.",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "action",
+   "quote": "we attend to the mixing augmentations and propose a novel method, Shap-Mix, which improves long-tailed learning by mining representative motion patterns for tail categories.",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "trajectory",
+   "quote": "we develop an effective spatial-temporal mixing strategy for the skeleton to boost representation quality.",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "we propose a novel method, Shap-Mix, which improves long-tailed learning by mining representative motion patterns for tail categories.",
+   "grounded": false
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "we propose a novel method, Shap-Mix, which improves long-tailed learning by mining representative motion patterns for tail categories.",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "action",
+   "quote": "we attend to the mixing augmentations and propose a novel method, Shap-Mix, which improves long-tailed learning by mining representative motion patterns for tail categories.",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "INVALID:motion pattern",
+   "quote": "we develop an effective spatial-temporal mixing strategy for the skeleton to boost representation quality.",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "INVALID:mixing",
+   "quote": "the employed saliency guidance method is presented, consisting of the saliency estimation based on Shapley value and a tail-aware mixing policy.",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "INVALID:augmentation",
+   "quote": "we attend to the mixing augmentations and propose a novel method, Shap-Mix, which improves long-tailed learning by mining representative motion patterns for tail categories.",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:motion pattern",
+   "quote": "we develop an effective spatial-temporal mixing strategy for the skeleton to boost representation quality.",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "action",
+   "quote": "we attend to the mixing augmentations and propose a novel method, Shap-Mix, which improves long-tailed learning by mining representative motion patterns for tail categories.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "compare@action",
+  "compute gradient@error",
+  "compute reward@action",
+  "compute value@action",
+  "compute value@trajectory",
+  "correct@parameter",
+  "mix data@trajectory"
+ ]
+}

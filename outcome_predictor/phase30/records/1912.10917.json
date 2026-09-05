@@ -1,0 +1,205 @@
+{
+ "arxiv_id": "1912.10917",
+ "source": "abstract",
+ "words": 165,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "experiments on popular segmentation benchmarks demonstrate the competency of fasterseg",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "experiments on popular segmentation benchmarks demonstrate the competency of fasterseg",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "experiments on popular segmentation benchmarks demonstrate the competency of fasterseg",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "fasterseg can run over 30% faster than the closest manually designed competitor on cityscapes",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "fasterseg can run over 30% faster than the closest manually designed competitor on cityscapes",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "utilizing neural architecture search (nas), fasterseg is discovered from a novel and broader search space integrating multi-resolution branches",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "utilizing neural architecture search (nas), fasterseg is discovered from a novel and broader search space integrating multi-resolution branches",
+   "grounded": true
+  },
+  {
+   "op": "calibrate",
+   "canonical": "calibrate",
+   "object": "error",
+   "quote": "to better calibrate the balance between the goals of high accuracy and low latency, we propose a decoupled and fine-grained latency regularization",
+   "grounded": true
+  },
+  {
+   "op": "regularize",
+   "canonical": "regularize",
+   "object": "error",
+   "quote": "to better calibrate the balance between the goals of high accuracy and low latency, we propose a decoupled and fine-grained latency regularization",
+   "grounded": true
+  },
+  {
+   "op": "distill",
+   "canonical": "distill",
+   "object": "policy",
+   "quote": "the teacher-student distillation further boosts the student model's accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the teacher-student distillation further boosts the student model's accuracy",
+   "grounded": true
+  },
+  {
+   "op": "search architecture",
+   "canonical": "search architecture",
+   "object": "parameter",
+   "quote": "utilizing neural architecture search (nas), fasterseg is discovered from a novel and broader search space integrating multi-resolution branches",
+   "grounded": true
+  },
+  {
+   "op": "search teacher",
+   "canonical": "search teacher",
+   "object": "parameter",
+   "quote": "we seamlessly extend fasterseg to a new collaborative search (co-searching) framework, simultaneously searching for a teacher and a student network in the same single run",
+   "grounded": true
+  },
+  {
+   "op": "search student",
+   "canonical": "search student",
+   "object": "parameter",
+   "quote": "we seamlessly extend fasterseg to a new collaborative search (co-searching) framework, simultaneously searching for a teacher and a student network in the same single run",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we seamlessly extend fasterseg to a new collaborative search (co-searching) framework, simultaneously searching for a teacher and a student network in the same single run",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "experiments on popular segmentation benchmarks demonstrate the competency of fasterseg",
+   "grounded": true
+  },
+  {
+   "op": "evaluate latency",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "to better calibrate the balance between the goals of high accuracy and low latency, we propose a decoupled and fine-grained latency regularization",
+   "grounded": true
+  },
+  {
+   "op": "compare accuracy",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "experiments on popular segmentation benchmarks demonstrate the competency of fasterseg",
+   "grounded": true
+  },
+  {
+   "op": "compare latency",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "to better calibrate the balance between the goals of high accuracy and low latency, we propose a decoupled and fine-grained latency regularization",
+   "grounded": true
+  },
+  {
+   "op": "compute speed",
+   "canonical": "compute speed",
+   "object": "value",
+   "quote": "fasterseg can run over 30% faster than the closest manually designed competitor on cityscapes",
+   "grounded": true
+  },
+  {
+   "op": "maintain accuracy",
+   "canonical": "maintain accuracy",
+   "object": "value",
+   "quote": "fasterseg can run over 30% faster than the closest manually designed competitor on cityscapes",
+   "grounded": true
+  },
+  {
+   "op": "maintain latency",
+   "canonical": "maintain latency",
+   "object": "error",
+   "quote": "to better calibrate the balance between the goals of high accuracy and low latency, we propose a decoupled and fine-grained latency regularization",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "utilizing neural architecture search (nas), fasterseg is discovered from a novel and broader search space integrating multi-resolution branches",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "utilizing neural architecture search (nas), fasterseg is discovered from a novel and broader search space integrating multi-resolution branches",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "calibrate@error",
+  "compare@error",
+  "compare@value",
+  "compute distribution@distribution",
+  "compute speed@value",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "distill@policy",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@value",
+  "maintain accuracy@value",
+  "maintain latency@error",
+  "predict@reward",
+  "reconstruct@latent",
+  "regularize@error",
+  "sample@action",
+  "sample@sample",
+  "search architecture@parameter",
+  "search student@parameter",
+  "search teacher@parameter"
+ ]
+}

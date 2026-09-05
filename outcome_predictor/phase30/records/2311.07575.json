@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2311.07575",
+ "source": "abstract",
+ "words": 247,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "mix weights",
+   "canonical": "mix weights",
+   "object": "parameter",
+   "quote": "introduce a weight mix strategy between LLMs trained by real-world and synthetic data",
+   "grounded": true
+  },
+  {
+   "op": "unfreeze parameters",
+   "canonical": "unfreeze parameters",
+   "object": "parameter",
+   "quote": "unfreeze the large language model (LLM) during pre-training",
+   "grounded": true
+  },
+  {
+   "op": "integrate weights",
+   "canonical": "integrate weights",
+   "object": "parameter",
+   "quote": "directly integrating the weights from two domains",
+   "grounded": true
+  },
+  {
+   "op": "mix tasks",
+   "canonical": "mix tasks",
+   "object": "task",
+   "quote": "mix a variety of tasks for joint visual instruction tuning",
+   "grounded": true
+  },
+  {
+   "op": "design instructions",
+   "canonical": "design instructions",
+   "object": "task",
+   "quote": "design task-specific instructions to avoid inter-task conflict",
+   "grounded": true
+  },
+  {
+   "op": "extract embeddings",
+   "canonical": "extract embeddings",
+   "object": "latent",
+   "quote": "extract comprehensive visual embeddings from various network architectures",
+   "grounded": true
+  },
+  {
+   "op": "combine embeddings",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "extract comprehensive visual embeddings from various network architectures, pre-training paradigms, and information granularity",
+   "grounded": true
+  },
+  {
+   "op": "mix scales",
+   "canonical": "mix scales",
+   "object": "input",
+   "quote": "mixing of different scales and high-resolution sub-images",
+   "grounded": true
+  },
+  {
+   "op": "parse images",
+   "canonical": "parse images",
+   "object": "input",
+   "quote": "attains exceptional visual parsing and reasoning performance",
+   "grounded": true
+  },
+  {
+   "op": "reason visually",
+   "canonical": "reason visually",
+   "object": "input",
+   "quote": "attains exceptional visual parsing and reasoning performance",
+   "grounded": true
+  },
+  {
+   "op": "tune model",
+   "canonical": "tune model",
+   "object": "parameter",
+   "quote": "enable multi-purpose capabilities",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "unfreeze the large language model (LLM) during pre-training",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "introduce a weight mix strategy between LLMs trained by real-world and synthetic data",
+   "grounded": true
+  },
+  {
+   "op": "combine tasks",
+   "canonical": "aggregate",
+   "object": "task",
+   "quote": "mix a variety of tasks for joint visual instruction tuning",
+   "grounded": true
+  },
+  {
+   "op": "enhance tasks",
+   "canonical": "enhance tasks",
+   "object": "task",
+   "quote": "contributing to mutual enhancement over different scenarios",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "extract comprehensive visual embeddings from various network architectures",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "enable multi-purpose capabilities",
+   "grounded": true
+  },
+  {
+   "op": "apply instructions",
+   "canonical": "apply instructions",
+   "object": "task",
+   "quote": "design task-specific instructions to avoid inter-taak conflict",
+   "grounded": true
+  },
+  {
+   "op": "capture details",
+   "canonical": "capture details",
+   "object": "input",
+   "quote": "aiming to better capture fine-grained appearances of high-resolution images",
+   "grounded": true
+  },
+  {
+   "op": "combine sub-images",
+   "canonical": "aggregate",
+   "object": "input",
+   "quote": "mixing of different scales and high-resolution sub-images",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "unfreeze the large language model (LLM) during pre-training",
+   "grounded": true
+  },
+  {
+   "op": "mix embeddings",
+   "canonical": "mix embeddings",
+   "object": "latent",
+   "quote": "extract comprehensive visual embeddings from various network architectures, pre-training paradigms, and information granularity",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "introduce a weight mix strategy between LLMs trained by real-world and synthetic data",
+   "grounded": true
+  },
+  {
+   "op": "combine embeddings",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "extract comprehensive visual embeddings from various network architectures, pre-training paradigms, and information granularity",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "mix a variety of tasks for joint visual instruction tuning",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@input",
+  "aggregate@latent",
+  "aggregate@task",
+  "apply instructions@task",
+  "capture details@input",
+  "correct@parameter",
+  "design instructions@task",
+  "enhance tasks@task",
+  "extract embeddings@latent",
+  "integrate weights@parameter",
+  "mix embeddings@latent",
+  "mix scales@input",
+  "mix tasks@task",
+  "mix weights@parameter",
+  "parse images@input",
+  "process input@input",
+  "reason visually@input",
+  "reconstruct@action",
+  "train@parameter",
+  "tune model@parameter",
+  "unfreeze parameters@parameter"
+ ]
+}

@@ -1,0 +1,205 @@
+{
+ "arxiv_id": "2309.07068",
+ "source": "abstract",
+ "words": 121,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 9,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:reconstruction",
+   "quote": "existing models usually suffer from the trade-off between normal reconstruction fidelity and abnormal reconstruction distinguishability",
+   "grounded": true
+  },
+  {
+   "op": "extract frequency",
+   "canonical": "extract frequency",
+   "object": "error",
+   "quote": "leveraging the distinct frequency biases between normal and abnormal reconstruction errors",
+   "grounded": true
+  },
+  {
+   "op": "split frequency",
+   "canonical": "split frequency",
+   "object": "error",
+   "quote": "leveraging the distinct frequency biases between normal and abnormal reconstruction errors",
+   "grounded": true
+  },
+  {
+   "op": "apply filter",
+   "canonical": "apply filter",
+   "object": "input",
+   "quote": "restores images from their high-frequency components",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct image",
+   "canonical": "reconstruct",
+   "object": "INVALID:low-frequency",
+   "quote": "restores images from their high-frequency components",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "using only a simple vanilla UNet, FAIR achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "using only a simple vanilla UNet, FAIR achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "using only a simple vanilla UNet, FAIR achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "generate image",
+   "canonical": "reconstruct",
+   "object": "INVALID:reconstruction",
+   "quote": "restores images from their high-frequency components",
+   "grounded": true
+  },
+  {
+   "op": "compare image",
+   "canonical": "compare",
+   "object": "INVALID:reconstruction",
+   "quote": "existing models usually suffer from the trade-off between normal reconstruction fidelity and abnormal reconstruction distinguishability",
+   "grounded": true
+  },
+  {
+   "op": "compute fidelity",
+   "canonical": "compute fidelity",
+   "object": "INVALID:reconstruction",
+   "quote": "existing models usually suffer from the trade-off between normal reconstruction fidelity and abnormal reconstruction distinguishability",
+   "grounded": true
+  },
+  {
+   "op": "compute distinguishability",
+   "canonical": "compute distinguishability",
+   "object": "INVALID:reconstruction",
+   "quote": "existing models usually suffer from the trade-off between normal reconstruction fidelity and abnormal reconstruction distinguishability",
+   "grounded": true
+  },
+  {
+   "op": "denoise image",
+   "canonical": "reconstruct",
+   "object": "INVALID:reconstruction",
+   "quote": "restores images from their high-frequency components",
+   "grounded": true
+  },
+  {
+   "op": "sample noise",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "restores images from their high-frequency components",
+   "grounded": true
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "input",
+   "quote": "restores images from their high-frequency components",
+   "grounded": true
+  },
+  {
+   "op": "compute frequency bias",
+   "canonical": "compute frequency bias",
+   "object": "error",
+   "quote": "leveraging the distinct frequency biases between normal and abnormal reconstruction errors",
+   "grounded": true
+  },
+  {
+   "op": "aggregate error",
+   "canonical": "aggregate",
+   "object": "INVALID:frequency",
+   "quote": "leveraging the distinct frequency biases between normal and abnormal reconstruction errors",
+   "grounded": true
+  },
+  {
+   "op": "normalize error",
+   "canonical": "normalize error",
+   "object": "INVALID:frequency",
+   "quote": "leveraging the distinct frequency biases between normal and abnormal reconstruction errors",
+   "grounded": true
+  },
+  {
+   "op": "compute frequency ratio",
+   "canonical": "compute frequency ratio",
+   "object": "error",
+   "quote": "leveraging the distinct frequency biases between normal and abnormal reconstruction errors",
+   "grounded": true
+  },
+  {
+   "op": "apply frequency weighting",
+   "canonical": "apply frequency weighting",
+   "object": "error",
+   "quote": "leveraging the distinct frequency biases between normal and abnormal reconstruction errors",
+   "grounded": true
+  },
+  {
+   "op": "compute frequency distribution",
+   "canonical": "compute frequency distribution",
+   "object": "error",
+   "quote": "leveraging the distinct frequency biases between normal and abnormal reconstruction errors",
+   "grounded": true
+  },
+  {
+   "op": "apply frequency mask",
+   "canonical": "apply frequency mask",
+   "object": "input",
+   "quote": "restores images from their high-frequency components",
+   "grounded": true
+  },
+  {
+   "op": "compute frequency magnitude",
+   "canonical": "compute frequency magnitude",
+   "object": "error",
+   "quote": "leveraging the distinct frequency biases between normal and abnormal reconstruction errors",
+   "grounded": true
+  },
+  {
+   "op": "apply frequency threshold",
+   "canonical": "apply frequency threshold",
+   "object": "error",
+   "quote": "leveraging the distinct frequency biases between normal and abnormal reconstruction errors",
+   "grounded": true
+  },
+  {
+   "op": "compute frequency correlation",
+   "canonical": "compute frequency correlation",
+   "object": "error",
+   "quote": "leveraging the distinct frequency biases between normal and abnormal reconstruction errors",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply filter@input",
+  "apply frequency mask@input",
+  "apply frequency threshold@error",
+  "apply frequency weighting@error",
+  "apply transformation@input",
+  "backpropagate@gradient",
+  "compute frequency bias@error",
+  "compute frequency correlation@error",
+  "compute frequency distribution@error",
+  "compute frequency magnitude@error",
+  "compute frequency ratio@error",
+  "correct@parameter",
+  "evaluate@error",
+  "extract frequency@error",
+  "sample@noise",
+  "split frequency@error"
+ ]
+}

@@ -1,0 +1,181 @@
+{
+ "arxiv_id": "2212.11696",
+ "source": "abstract",
+ "words": 204,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 21,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute features",
+   "canonical": "compute features",
+   "object": "input",
+   "quote": "features in RevCol are learned to be gradually disentangled",
+   "grounded": true
+  },
+  {
+   "op": "maintain information",
+   "canonical": "maintain information",
+   "object": "latent",
+   "quote": "total information is maintained rather than compressed or discarded",
+   "grounded": true
+  },
+  {
+   "op": "pass through column",
+   "canonical": "transmit",
+   "object": "latent",
+   "quote": "features in RevCol are learned to be gradually disentangled when passing through each column",
+   "grounded": true
+  },
+  {
+   "op": "apply subnetwork",
+   "canonical": "apply subnetwork",
+   "object": "latent",
+   "quote": "the main body of RevCol is composed of multiple copies of subnetworks",
+   "grounded": true
+  },
+  {
+   "op": "connect columns",
+   "canonical": "connect columns",
+   "object": "latent",
+   "quote": "multi-level reversible connections are employed",
+   "grounded": true
+  },
+  {
+   "op": "disentangle features",
+   "canonical": "disentangle features",
+   "object": "latent",
+   "quote": "features in RevCol are learned to be gradually disentangled",
+   "grounded": true
+  },
+  {
+   "op": "propagate forward",
+   "canonical": "transmit",
+   "object": "latent",
+   "quote": "during forward propagation, features in RevCol are learned to be gradually disentangled",
+   "grounded": true
+  },
+  {
+   "op": "learn representation",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "features in Rev,Col are learned to be gradually disentangled",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our experiments suggest that CNN-style RevCol models can achieve very competitive performances",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "our experiments suggest that CNN-style RevCol models can achieve very competitive performances",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "RevCol-XL obtains 88.2% ImageNet-1K accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute apbox",
+   "canonical": "compute apbox",
+   "object": "task",
+   "quote": "RevCol-XL obtains 88.2% ImageNet-1K accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute miou",
+   "canonical": "compute miou",
+   "object": "task",
+   "quote": "RevCol-XL obtains 88.2% ImageNet-1K accuracy",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our experiments suggest that CNN-style RevCol models can achieve very competitive performances",
+   "grounded": true
+  },
+  {
+   "op": "apply pre-training",
+   "canonical": "apply pre-training",
+   "object": "parameter",
+   "quote": "after ImageNet-22K pre-training, RevCol-XL obtains 88.2% ImageNet-1K accuracy",
+   "grounded": true
+  },
+  {
+   "op": "apply model",
+   "canonical": "apply model",
+   "object": "task",
+   "quote": "our largest model RevCol-H reaches 90.0% on ImageNet-1K",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "our largest model RevCol-H reaches 90.0% on ImageNet-1K",
+   "grounded": true
+  },
+  {
+   "op": "apply architecture",
+   "canonical": "apply architecture",
+   "object": "parameter",
+   "quote": "RevCol can also be introduced into transformers or other neural networks",
+   "grounded": true
+  },
+  {
+   "op": "improve performance",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "RevCol can also be introduced into transformers or other neural networks",
+   "grounded": true
+  },
+  {
+   "op": "release code",
+   "canonical": "release code",
+   "object": "task",
+   "quote": "We release code and models at https://github.com/megvii-research/RevCol",
+   "grounded": true
+  },
+  {
+   "op": "release models",
+   "canonical": "release models",
+   "object": "task",
+   "quote": "We release code and models at https://github.com/megvii-research/RevCol",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply architecture@parameter",
+  "apply model@task",
+  "apply pre-training@parameter",
+  "apply subnetwork@latent",
+  "compute accuracy@task",
+  "compute apbox@task",
+  "compute features@input",
+  "compute miou@task",
+  "compute reward@task",
+  "connect columns@latent",
+  "correct@parameter",
+  "disentangle features@latent",
+  "evaluate@task",
+  "improve@parameter",
+  "maintain information@latent",
+  "release code@task",
+  "release models@task",
+  "train@latent",
+  "train@parameter",
+  "transmit@latent"
+ ]
+}

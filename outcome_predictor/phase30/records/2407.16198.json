@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2407.16198",
+ "source": "abstract",
+ "words": 196,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "crop image",
+   "canonical": "crop image",
+   "object": "input",
+   "quote": "cropping high-resolution images into smaller sub-images",
+   "grounded": true
+  },
+  {
+   "op": "process sub-image",
+   "canonical": "process sub-image",
+   "object": "input",
+   "quote": "processed independently by the vision encoder",
+   "grounded": true
+  },
+  {
+   "op": "extract local details",
+   "canonical": "extract local details",
+   "object": "input",
+   "quote": "each sub-image contains continuous details from a local perspective",
+   "grounded": true
+  },
+  {
+   "op": "extract global context",
+   "canonical": "extract global context",
+   "object": "input",
+   "quote": "comprehensive information from a global perspective",
+   "grounded": true
+  },
+  {
+   "op": "enhance local features",
+   "canonical": "enhance local features",
+   "object": "latent",
+   "quote": "mutual enhancement of global and local features",
+   "grounded": true
+  },
+  {
+   "op": "enhance global features",
+   "canonical": "enhance global features",
+   "object": "latent",
+   "quote": "mutual enhancement of global and local features",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "effectively process high-resolution images",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "outperforms existing MLLMs",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "crop image@input",
+  "enhance global features@latent",
+  "enhance local features@latent",
+  "extract global context@input",
+  "extract local details@input",
+  "process sub-image@input",
+  "reconstruct@distribution"
+ ]
+}

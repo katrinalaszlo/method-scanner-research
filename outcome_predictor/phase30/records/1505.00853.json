@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1505.00853",
+ "source": "abstract",
+ "words": 143,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "compute activation",
+   "canonical": "compute activation",
+   "object": "input",
+   "quote": "we investigate the performance of different types of rectified activation functions",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "input",
+   "quote": "standard rectified linear unit (ReLU), leaky rectified linear unit (Leaky ReLU)",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "our experiments suggest that incorporating a non-zero slope for negative part",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "using RReLU, we achieved 75.68% accuracy on CIFAR-100 test set",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "incorporating a non-zero slope for negative part could consistently improve the results",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "our experiments suggest that incorporating a non-zero slope for negative part",
+   "grounded": true
+  },
+  {
+   "op": "sample slope",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "using their randomized counterpart",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "on small scale dataset, using deterministic negative slope or learning it are both prone to overfitting",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply activation@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute activation@input",
+  "compute gradient@parameter",
+  "compute value@value",
+  "correct@parameter",
+  "sample@noise"
+ ]
+}

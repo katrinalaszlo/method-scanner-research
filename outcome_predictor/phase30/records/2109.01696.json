@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2109.01696",
+ "source": "abstract",
+ "words": 120,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the resulting models, termed 3D ResNet-Rs, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose a simple scaling strategy for 3D ResNets",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "we propose a simple scaling strategy for 3D ResNets",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we propose a simple scaling strategy for 3D ResNets",
+   "grounded": true
+  },
+  {
+   "op": "scale input",
+   "canonical": "scale input",
+   "object": "input",
+   "quote": "we propose a simple scaling strategy for 3D ResNets",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "we propose a simple scaling strategy for 3D ResNets",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the resulting models, termed 3D ResNet-RS, attain competitive performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@value",
+  "reconstruct@input",
+  "sample@action",
+  "sample@distribution",
+  "sample@input",
+  "sample@trajectory",
+  "scale input@input"
+ ]
+}

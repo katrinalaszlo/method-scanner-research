@@ -1,0 +1,205 @@
+{
+ "arxiv_id": "2106.13061",
+ "source": "abstract",
+ "words": 150,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we introduce graph feature to feature (Fea2Fea) prediction pipelines",
+   "grounded": false
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "based on graph neural network",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "the results show that there exists high correlation between some of the structural features",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "an irredundant feature combination with initial node features, which is filtered by graph neural network has improved its classification accuracy",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "we compare differences between concatenation methods on connecting embeddings between features",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the simplest is the best",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we generalize on the synthetic geometric graphs and certify the results on prediction difficulty between structural features",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we introduce graph feature to feature (Fea2Fea) prediction pipelines",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we generalize on the synthetic geometric graphs and certify the results on prediction difficulty between structural features",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "an irredundant feature combination with initial node features, which is filtered by graph neural network has improved its classification accuracy",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we compare differences between concatenation methods on connecting embeddings between features",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we generalize on the synthetic geometric graphs and certify the results on prediction difficulty between structural features",
+   "grounded": true
+  },
+  {
+   "op": "filter",
+   "canonical": "filter",
+   "object": "latent",
+   "quote": "an irredundant feature combination with initial node features, which is filtered by graph neural network has improved its classification accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we generalize on the synthetic geometric graphs and certify the results on prediction difficulty between structural features",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we compare differences between concatenation methods on connecting embeddings between features",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the results show that there exists high correlation between some of the structural features",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we compare differences between concatenation methods on connecting embeddings between features",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the results show that there exists high correlation between some of the structural features",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we generalize on the synthetic geometric graphs and certify the results on prediction difficulty between structural features",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we generalize on the synthetic geometric graphs and certify the results on prediction difficulty between structural features",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we compare differences between concatenation methods on connecting embeddings between features",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "an irredundant feature combination with initial node features, which is filtered by graph neural network has improved its classification accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "we introduce graph feature to feature (Fea2Fea) prediction pipelines",
+   "grounded": false
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "noise",
+   "quote": "we introduce graph feature to feature (Fea2Fea) prediction pipelines",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compare@value",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute noise@noise",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "filter@latent",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

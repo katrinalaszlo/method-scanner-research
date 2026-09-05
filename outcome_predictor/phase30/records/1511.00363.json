@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1511.00363",
+ "source": "abstract",
+ "words": 199,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "apply binary weights",
+   "canonical": "apply binary weights",
+   "object": "parameter",
+   "quote": "binary weights, i.e., weights which are constrained to only two possible values",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "retaining precision of the stored weights in which gradients are accumulated",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate gradient",
+   "canonical": "backpropagate gradient",
+   "object": "gradient",
+   "quote": "training a DNN with binary weights during the forward and backward propagations",
+   "grounded": true
+  },
+  {
+   "op": "accumulate gradient",
+   "canonical": "accumulate gradient",
+   "object": "gradient",
+   "quote": "retaining precision of the stored weights in which gradients are accumulated",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "training a DNN with binary weights during the forward and backward propagations",
+   "grounded": true
+  },
+  {
+   "op": "forward propagate",
+   "canonical": "forward propagate",
+   "object": "input",
+   "quote": "training a DNN with binary weights during the forward and backward propagations",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we show that BinaryConnect acts as regularizer",
+   "grounded": false
+  },
+  {
+   "op": "regularize parameters",
+   "canonical": "regularize parameters",
+   "object": "parameter",
+   "quote": "we show that BinaryConnect acts as regularizer",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "accumulate gradient@gradient",
+  "apply binary weights@parameter",
+  "backpropagate gradient@gradient",
+  "compute gradient@parameter",
+  "correct@parameter",
+  "evaluate@error",
+  "forward propagate@input",
+  "regularize parameters@parameter"
+ ]
+}

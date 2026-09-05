@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2201.00520",
+ "source": "abstract",
+ "words": 187,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "select positions",
+   "canonical": "select positions",
+   "object": "latent",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "generate attention map",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "the positions of key and value pairs in self,attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose a novel deformable self-attention module",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "Transformers have recently shown superior performances on various vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Transformers have recently shown superior performances on various vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we propose a novel deformable self-attention module",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we propose a novel deformable self-attention module",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose a novel deformable self-attention module",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we propose a novel deformable self-attention module",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we propose a novel deformable self-attention module",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "the positions of key and value pairs in self-attention are selected in a data-dependent way",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we propose a novel deformable self-attention module",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute attention@latent",
+  "compute distribution@distribution",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@reward",
+  "process input@input",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "select positions@latent"
+ ]
+}

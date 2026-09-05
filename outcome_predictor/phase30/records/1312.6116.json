@@ -1,0 +1,166 @@
+{
+ "arxiv_id": "1312.6116",
+ "source": "abstract",
+ "words": 136,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 1,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "compute activation",
+   "canonical": "compute activation",
+   "object": "input",
+   "quote": "each maxout unit performs a pooling operation over a group of linear transformations",
+   "grounded": false
+  },
+  {
+   "op": "apply nonlinearity",
+   "canonical": "apply nonlinearity",
+   "object": "INVALID:activation",
+   "quote": "we present a probabilistic variant of the recently introduced maxout unit",
+   "grounded": true
+  },
+  {
+   "op": "sample noise",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "our probabilistic maxout (probus) units successfully achieve this balance",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we argue that our probabilistic maxout (probus) units successfully achieve this balance",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "distribution",
+   "quote": "we present a probabilistic variant of the recently introduced maxout unit",
+   "grounded": true
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "distribution",
+   "quote": "we argue that our probabilistic maxout (probus) units successfully achieve this balance",
+   "grounded": true
+  },
+  {
+   "op": "compute log probability",
+   "canonical": "compute log probability",
+   "object": "distribution",
+   "quote": "we quantitatively verify this claim and report classification performance",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "we present a probabilistic variant of the recently introduced maxout unit",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we quantitatively verify this claim and report classification performance",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we quantitatively verify this claim and report classification performance",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we present a probabil, variant of the recently introduced maxout unit",
+   "grounded": false
+  },
+  {
+   "op": "apply dropout",
+   "canonical": "apply dropout",
+   "object": "input",
+   "quote": "the success of deep neural networks utilizing maxout can partly be attributed to favorable performance under dropout",
+   "grounded": true
+  },
+  {
+   "op": "pool input",
+   "canonical": "pool input",
+   "object": "input",
+   "quote": "each maxout unit performs a pooling operation over a group of linear transformations",
+   "grounded": false
+  },
+  {
+   "op": "compute activation",
+   "canonical": "compute activation",
+   "object": "input",
+   "quote": "each maxout unit performs a pooling operation over a group of linear transformations",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "we present a probabilistic variant of the recently introduced maxout unit",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we quantitatively verify this claim and report classification performance",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we quantitatively verify this claim and report classification performance",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we present a probabilistic variant of the recently introduced maxout unit",
+   "grounded": true
+  },
+  {
+   "op": "apply dropout",
+   "canonical": "apply dropout",
+   "object": "input",
+   "quote": "the success of deep neural networks utilizing maxout can partly be attributed to favorable performance under dropout",
+   "grounded": true
+  },
+  {
+   "op": "pool input",
+   "canonical": "pool input",
+   "object": "input",
+   "quote": "each maxout unit performs a pooling operation over a group of linear transformations",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply dropout@input",
+  "backpropagate@gradient",
+  "compute activation@input",
+  "compute distribution@distribution",
+  "compute gradient@parameter",
+  "compute log probability@distribution",
+  "compute mean@distribution",
+  "compute variance@distribution",
+  "correct@parameter",
+  "evaluate@error",
+  "pool input@input",
+  "sample@noise"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2109.04454",
+ "source": "abstract",
+ "words": 158,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "MLP-based architectures, which consist of a sequence of consecutive multi-layer perceptron blocks",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "state",
+   "quote": "we propose ConvMLP: a hierarchical Convolutional MLP for visual recognition",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "visual representation learned by ConvMLP can be seamlessly transferred",
+   "grounded": true
+  },
+  {
+   "op": "feed forward",
+   "canonical": "feed forward",
+   "object": "latent",
+   "quote": "MLP-based architectures, which consist of a sequence of consecutive multi-layer perceptron blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "experiments on object detection and semantic segmentation further show",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we propose ConvMLP: a hierarchical Convolutional MLP for visual recognition",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "ConvMLP-S achieves 76.8% top-1 accuracy on ImageNet-1k with 9M parameters",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "visual representation learned by ConvMLP can be seamlessly transferred",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply convolution@state",
+  "backpropagate@gradient",
+  "compare@error",
+  "correct@parameter",
+  "encode@latent",
+  "feed forward@latent",
+  "process input@input",
+  "reconstruct@state"
+ ]
+}

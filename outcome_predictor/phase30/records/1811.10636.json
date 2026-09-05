@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "1811.10636",
+ "source": "abstract",
+ "words": 186,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 13,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We present a new method for finding video CNN architectures",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "state",
+   "quote": "to capture rich spatio-temporal information in videos",
+   "grounded": false
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "to jointly learn interactions between spatial and temporal aspects",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "to capture rich spatio-temporal information in videos",
+   "grounded": false
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the evolutionary algorithm and allows building cost-efficient networks",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "to capture rich spatio-temporal information in videos",
+   "grounded": false
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we demonstrate the generality of this algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "obtaining new architectures superior to manually designed architectures",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "the evolutionary algorithm and allows building cost-efficient networks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the iTGM layer more efficiently utilizes its parameters",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the iTGM layer more efficiently utilizes its parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "to capture rich spatio-temporal information in videos",
+   "grounded": false
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "to capture rich spatio-temporal information in videos",
+   "grounded": false
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "parameter",
+   "quote": "the evolutionary algorithm and allows building cost-efficient networks",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "to capture rich spatio-temporal information in videos",
+   "grounded": false
+  },
+  {
+   "op": "infer",
+   "canonical": "predict",
+   "object": "policy",
+   "quote": "the evolutionary algorithm and allows building cost-efficient networks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "the iTGM layer more efficiently utilizes its parameters",
+   "grounded": false
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "trajectory",
+   "quote": "the evolutionary algorithm and allows building cost-efficient networks",
+   "grounded": true
+  },
+  {
+   "op": "filter",
+   "canonical": "filter",
+   "object": "state",
+   "quote": "to capture rich spatio-temporal information in videos",
+   "grounded": false
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "to capture rich spatio-temporal information in videos",
+   "grounded": false
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "gradient",
+   "quote": "to capture rich spatio-temporal information in videos",
+   "grounded": false
+  },
+  {
+   "op": "store",
+   "canonical": "store",
+   "object": "parameter",
+   "quote": "we will open source the code and models",
+   "grounded": true
+  },
+  {
+   "op": "retrieve",
+   "canonical": "retrieve",
+   "object": "parameter",
+   "quote": "we will open source the code and models",
+   "grounded": true
+  },
+  {
+   "op": "validate",
+   "canonical": "validate",
+   "object": "task",
+   "quote": "we demonstrate the generality of this algorithm",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "action",
+   "quote": "the evolutionary algorithm and allows building cost-efficient networks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "aggregate@trajectory",
+  "compare@parameter",
+  "compute@distribution",
+  "compute@error",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "filter@state",
+  "improve@parameter",
+  "output@action",
+  "predict@policy",
+  "predict@value",
+  "process@state",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "retrieve@parameter",
+  "sample@action",
+  "sample@sample",
+  "select@parameter",
+  "store@parameter",
+  "train@parameter",
+  "transform@latent",
+  "transmit@gradient",
+  "validate@task"
+ ]
+}

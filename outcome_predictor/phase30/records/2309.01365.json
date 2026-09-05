@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2309.01365",
+ "source": "abstract",
+ "words": 158,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "exploiting the temporal dimension",
+   "grounded": true
+  },
+  {
+   "op": "compress",
+   "canonical": "compress",
+   "object": "latent",
+   "quote": "reinforcing key and value representation capabilities",
+   "grounded": true
+  },
+  {
+   "op": "amplify",
+   "canonical": "amplify",
+   "object": "latent",
+   "quote": "seamlessly extracting spatial semantics from motion sequences",
+   "grounded": true
+  },
+  {
+   "op": "interact",
+   "canonical": "act",
+   "object": "distribution",
+   "quote": "continuous interaction of queries, keys, and values",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "refines inter-block feature interaction",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "stitch these TPCA blocks with XLR",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "addressing typical deficits in detail and stability",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "latent",
+   "quote": "achieving state-of-the-art results on Human3.6M",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "act@distribution",
+  "aggregate@latent",
+  "amplify@latent",
+  "compress@latent",
+  "correct@latent",
+  "encode@input",
+  "output@latent",
+  "predict@value"
+ ]
+}

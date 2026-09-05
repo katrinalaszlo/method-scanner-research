@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2504.04701",
+ "source": "abstract",
+ "words": 182,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Existing approaches encode depth maps along with RGB images",
+   "grounded": true
+  },
+  {
+   "op": "compute spatial distance",
+   "canonical": "compute spatial distance",
+   "object": "state",
+   "quote": "extract the geometry clues from the depth and spatial distances",
+   "grounded": true
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "distribution",
+   "quote": "allocate attention weights in self-attention",
+   "grounded": true
+  },
+  {
+   "op": "apply self-attention",
+   "canonical": "apply self-attention",
+   "object": "latent",
+   "quote": "use depth maps as geometry priors",
+   "grounded": false
+  },
+  {
+   "op": "fuse features",
+   "canonical": "fuse features",
+   "object": "latent",
+   "quote": "perform feature fusion between them to enable more robust predictions",
+   "grounded": true
+  },
+  {
+   "op": "predict segmentation",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "RGBD semantic segmentation benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "sample output",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "extract the geometry clues from the depth",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "present DFormerv2, a strong RGBD encoder",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply self-attention@latent",
+  "compute attention weights@distribution",
+  "compute spatial distance@state",
+  "correct@parameter",
+  "encode@input",
+  "fuse features@latent",
+  "predict@distribution",
+  "sample@distribution"
+ ]
+}

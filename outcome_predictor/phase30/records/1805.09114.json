@@ -1,0 +1,199 @@
+{
+ "arxiv_id": "1805.09114",
+ "source": "abstract",
+ "words": 156,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 15,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "INVALID:graph",
+   "quote": "computing distances between structured objects such as undirected graphs",
+   "grounded": true
+  },
+  {
+   "op": "define metric space",
+   "canonical": "define metric space",
+   "object": "INVALID:graph",
+   "quote": "seen as probability distributions in a specific metric space",
+   "grounded": true
+  },
+  {
+   "op": "minimize cost",
+   "canonical": "minimize cost",
+   "object": "INVALID:transport",
+   "quote": "that minimizes a total cost of transporting probability masses",
+   "grounded": true
+  },
+  {
+   "op": "compare features",
+   "canonical": "compare",
+   "object": "INVALID:graph",
+   "quote": "focuses solely and respectively on features",
+   "grounded": false
+  },
+  {
+   "op": "compare structure",
+   "canonical": "compare",
+   "object": "INVALID:graph",
+   "quote": "seeing structure as a metric space",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "INVALID:graph",
+   "quote": "our new distance exploits jointly both information",
+   "grounded": true
+  },
+  {
+   "op": "compute barycenter",
+   "canonical": "compute barycenter",
+   "object": "INVALID:graph",
+   "quote": "Fr\\'echet means or barycenters of graphs are illustrated",
+   "grounded": true
+  },
+  {
+   "op": "cluster objects",
+   "canonical": "cluster objects",
+   "object": "INVALID:graph",
+   "quote": "discussed in a clustering context",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "computational aspects",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "computational aspects",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "computational aspects",
+   "grounded": true
+  },
+  {
+   "op": "optimize objective",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "computational aspects",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:graph",
+   "quote": "graph classification task",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our method outperforms both graph kernels",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:graph",
+   "quote": "probability distributions in a specific metric space",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "INVALID:graph",
+   "quote": "new transportation distance",
+   "grounded": true
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "distribution",
+   "quote": "probability distributions in a specific metric space",
+   "grounded": true
+  },
+  {
+   "op": "compute embedding",
+   "canonical": "compute embedding",
+   "object": "INVALID:graph",
+   "quote": "probability distributions in a specific metric space",
+   "grounded": true
+  },
+  {
+   "op": "compute representation",
+   "canonical": "compute representation",
+   "object": "INVALID:graph",
+   "quote": "probability distributions in a specific metric space",
+   "grounded": true
+  },
+  {
+   "op": "compute probability",
+   "canonical": "compute probability",
+   "object": "INVALID:graph",
+   "quote": "probability distributions in a specific metric space",
+   "grounded": true
+  },
+  {
+   "op": "compute likelihood",
+   "canonical": "compute likelihood",
+   "object": "INVALID:graph",
+   "quote": "probability distributions in a specific metric space",
+   "grounded": true
+  },
+  {
+   "op": "compute score function",
+   "canonical": "compute score function",
+   "object": "distribution",
+   "quote": "probability distributions in a specific metric, space",
+   "grounded": true
+  },
+  {
+   "op": "compute posterior",
+   "canonical": "compute posterior",
+   "object": "distribution",
+   "quote": "probability distributions in a specific metric space",
+   "grounded": true
+  },
+  {
+   "op": "compute prior",
+   "canonical": "compute prior",
+   "object": "distribution",
+   "quote": "probability distributions in a specific metric space",
+   "grounded": true
+  },
+  {
+   "op": "compute density",
+   "canonical": "compute density",
+   "object": "distribution",
+   "quote": "probability distributions in a specific metric space",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute density@distribution",
+  "compute gradient@parameter",
+  "compute posterior@distribution",
+  "compute prior@distribution",
+  "compute score function@distribution",
+  "compute score@distribution",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "improve@parameter"
+ ]
+}

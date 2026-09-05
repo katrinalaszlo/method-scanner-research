@@ -1,0 +1,103 @@
+{
+ "arxiv_id": "1904.02811",
+ "source": "abstract",
+ "words": 203,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 12,
+ "n_invalid_object": 7,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "Group convolution has been shown to offer great computational savings",
+   "grounded": true
+  },
+  {
+   "op": "compute interaction",
+   "canonical": "compute interaction",
+   "object": "INVALID:channel",
+   "quote": "the amount of channel interactions plays an important role",
+   "grounded": true
+  },
+  {
+   "op": "separate interaction",
+   "canonical": "separate interaction",
+   "object": "INVALID:channel",
+   "quote": "factorize 3D convolutions by separating channel interactions",
+   "grounded": true
+  },
+  {
+   "op": "compute spatial",
+   "canonical": "compute spatial",
+   "object": "INVALID:spatiotemporal",
+   "quote": "separating channel interactions and spatiotemporal interactions",
+   "grounded": true
+  },
+  {
+   "op": "combine feature",
+   "canonical": "aggregate",
+   "object": "INVALID:spatiotemporal",
+   "quote": "factorize 3D convolutions by separating channel interactions",
+   "grounded": true
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "3D channel-separated convolutions provide a form of regularization",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "INVALID:test",
+   "quote": "lower training accuracy but higher test accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "INVALID:training",
+   "quote": "lower training accuracy but higher test accuracy",
+   "grounded": true
+  },
+  {
+   "op": "construct network",
+   "canonical": "construct network",
+   "object": "INVALID:architecture",
+   "quote": "design an architecture -- Channel-Separated Convolutional Network (CSN)",
+   "grounded": true
+  },
+  {
+   "op": "train network",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "Our experiments suggest two main findings",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "On Sports1M, Kinetics, and Something-Something",
+   "grounded": true
+  },
+  {
+   "op": "compare model",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "our CSNs are comparable with or better than the state-of-the-art",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply convolution@input",
+  "apply regularization@parameter",
+  "compare@task",
+  "evaluate@task",
+  "train@parameter"
+ ]
+}

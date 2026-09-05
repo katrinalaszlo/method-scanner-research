@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2311.15769",
+ "source": "abstract",
+ "words": 200,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "freeze parameters",
+   "canonical": "freeze parameters",
+   "object": "parameter",
+   "quote": "we introduce a lightweight spatial-temporal side network attached to the frozen vision model",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "utilizes multi-level spatial features from the original image model",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "avoids the backpropagation through the heavy pre-trained model",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "extremely memory-efficient architecture enables our method to reduce 75% memory usage",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "transfer a huge ViT-E (4.4B) for video understanding tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "achieves remarkable performance on various video datasets",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "especially in Something-Something V1&V2 (67.3% & 74.6%)",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "across unimodal and cross-modal tasks (i.e., action recognition and text-video retrieval)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "correct@parameter",
+  "encode@state",
+  "freeze parameters@parameter",
+  "predict@value",
+  "sample@action"
+ ]
+}

@@ -1,0 +1,93 @@
+{
+ "arxiv_id": "2108.09666",
+ "source": "abstract",
+ "words": 128,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "compute correlation",
+   "canonical": "compute correlation",
+   "object": "state",
+   "quote": "the SCR module transforms a base feature map into a self-correlation tensor",
+   "grounded": true
+  },
+  {
+   "op": "extract pattern",
+   "canonical": "extract pattern",
+   "object": "latent",
+   "quote": "learns to extract structural patterns from the tensor",
+   "grounded": true
+  },
+  {
+   "op": "compute cross correlation",
+   "canonical": "compute cross correlation",
+   "object": "state",
+   "quote": "the CCA module computes cross-correlation between two image representations",
+   "grounded": true
+  },
+  {
+   "op": "produce attention",
+   "canonical": "produce attention",
+   "object": "distribution",
+   "quote": "learns to produce co-attention between them",
+   "grounded": true
+  },
+  {
+   "op": "combine representation",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "combines the two relational modules to learn relational embedding",
+   "grounded": true
+  },
+  {
+   "op": "learn embedding",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "learn relational embedding in an end-to-end manner",
+   "grounded": true
+  },
+  {
+   "op": "transform feature map",
+   "canonical": "transform feature map",
+   "object": "state",
+   "quote": "transforms a base feature map into a self-correlation tensor",
+   "grounded": true
+  },
+  {
+   "op": "learn structural pattern",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "learns to extract structural patterns from the tensor",
+   "grounded": true
+  },
+  {
+   "op": "compute relational attention",
+   "canonical": "compute relational attention",
+   "object": "distribution",
+   "quote": "learns to produce co-attention between them",
+   "grounded": true
+  },
+  {
+   "op": "generate embedding",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "learn relational embedding in an end, to-end manner",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute correlation@state",
+  "compute cross correlation@state",
+  "compute relational attention@distribution",
+  "extract pattern@latent",
+  "produce attention@distribution",
+  "reconstruct@latent",
+  "train@latent",
+  "transform feature map@state"
+ ]
+}

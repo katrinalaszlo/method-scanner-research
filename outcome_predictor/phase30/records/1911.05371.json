@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "1911.05371",
+ "source": "abstract",
+ "words": 162,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "maximizing the information between labels and input data indices",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we solve efficiently for millions of input images and thousands of labels",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "we show that this criterion extends standard crossentropy minimization",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "the resulting method is able to self-label visual data",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "our method achieves state of the art representation learning performance",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the method is obtained by maximizing the information between labels",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we solve efficiently for millions of input images and thousands of labels",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the resulting method is able to self-label visual data",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "input",
+   "quote": "we show that this criterion extends standard crossentropy minimization",
+   "grounded": true
+  },
+  {
+   "op": "cluster",
+   "canonical": "cluster",
+   "object": "input",
+   "quote": "combining clustering and representation learning is one of the most promising approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "input",
+   "quote": "we show that this criterion extends standard crossentropy minimization",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "input",
+   "quote": "our method achieves state of the art representation learning performance",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "input",
+   "quote": "the resulting method is able to self-label visual data",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "input",
+   "quote": "combining clustering and representation learning is one of the most promising approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "input",
+   "quote": "our method achieves state of the art representation learning performance",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "input",
+   "quote": "the resulting method is able to self-label visual data",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "input",
+   "quote": "the resulting method is able to self-label visual data",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "we solve efficiently for millions of input images and thousands of labels",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "we show that this criterion extends standard crossentropy minimization",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "distribution",
+   "quote": "we show that this criterion extends standard crossentropy minimization",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "parameter",
+   "quote": "we solve efficiently for millions of input images and thousands of labels",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "task",
+   "quote": "our method achieves state of the art representation learning performance",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "task",
+   "quote": "combining clustering and representation learning is one of the most promising approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "task",
+   "quote": "our method achieves state of the art representation, learning performance",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "the resulting method is able to self-label visual data",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "cluster@input",
+  "compare@distribution",
+  "compare@input",
+  "compute distribution@input",
+  "compute distribution@parameter",
+  "compute gradient@parameter",
+  "compute latent@input",
+  "compute latent@task",
+  "compute policy@input",
+  "compute policy@task",
+  "compute reward@input",
+  "compute reward@task",
+  "compute sample@input",
+  "compute task@input",
+  "compute trajectory@input",
+  "compute trajectory@task",
+  "compute value@distribution",
+  "compute value@input",
+  "correct@parameter",
+  "encode@input",
+  "predict@input",
+  "reconstruct@noise",
+  "sample@distribution",
+  "sample@sample"
+ ]
+}

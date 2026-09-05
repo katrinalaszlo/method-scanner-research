@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2401.17221",
+ "source": "abstract",
+ "words": 220,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "current large vision-language models (VLMs) often encounter challenges",
+   "grounded": true
+  },
+  {
+   "op": "process latent",
+   "canonical": "process latent",
+   "object": "latent",
+   "quote": "synergizes the capabilities of individual visual encoders",
+   "grounded": true
+  },
+  {
+   "op": "fuse outputs",
+   "canonical": "fuse outputs",
+   "object": "distribution",
+   "quote": "introduces a fusion network to unify the processing of outputs",
+   "grounded": true
+  },
+  {
+   "op": "bridge encoder",
+   "canonical": "bridge encoder",
+   "object": "parameter",
+   "quote": "bridging the gap between image encoders and pre-trained LLMs",
+   "grounded": true
+  },
+  {
+   "op": "apply positional encoding",
+   "canonical": "apply positional encoding",
+   "object": "trajectory",
+   "quote": "explore different positional encoding schemes to alleviate the waste",
+   "grounded": true
+  },
+  {
+   "op": "reduce positional occupancy",
+   "canonical": "reduce positional occupancy",
+   "object": "noise",
+   "quote": "significantly reduces the positional occupancy in models like SAM",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "experimental results demonstrate that VLMs with multiple experts",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we have open-sourced the training code used in this report",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply positional encoding@trajectory",
+  "bridge encoder@parameter",
+  "compare@error",
+  "correct@parameter",
+  "encode@input",
+  "fuse outputs@distribution",
+  "process latent@latent",
+  "reduce positional occupancy@noise"
+ ]
+}

@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2011.08627",
+ "source": "abstract",
+ "words": 138,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "recovering temporally consistent and smooth 3D human motion from a video is still challenging",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "we present a temporally consistent mesh recovery system (TCMR)",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "effectively focuses on the past and future frames' temporal information",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our TCMR significantly outperforms previous video-based methods",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "better per-frame 3D pose and shape accuracy",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "recovering temporally consistent and smooth 3D human motion from a video is still challenging",
+   "grounded": true
+  },
+  {
+   "op": "track",
+   "canonical": "track",
+   "object": "state",
+   "quote": "effectively focuses on the past and future frames' temporal information",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "trajectory",
+   "quote": "we present a temporally consistent mesh recovery system (TCMR)",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "effectively focuses on the past and future frames' temporal information",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "our TCMR significantly outperforms previous video-based methods",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "better per-frame 3D pose and shape accuracy",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "recovering temporally consistent and smooth 3D human motion from a video is still challenging",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "effectively focuses on the past and future frames' temporal information",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "we present a temporally consistent mesh recovery system (TCMR)",
+   "grounded": true
+  },
+  {
+   "op": "track",
+   "canonical": "track",
+   "object": "trajectory",
+   "quote": "better per-frame 3D pose and shape accuracy",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "effectively focuses on the past and future frames' temporal information",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "our TCMR significantly outperforms previous video-based methods",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "better per-frame 3D pose and shape accuracy",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "recovering temporally consistent and smooth 3D human motion from a video is still challenging",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "effectively focuses on the past and future frames' temporal information",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "aggregate@trajectory",
+  "backpropagate@gradient",
+  "compute@distribution",
+  "compute@error",
+  "compute@reward",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@action",
+  "predict@latent",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "reconstruct@state",
+  "sample@distribution",
+  "sample@policy",
+  "sample@sample",
+  "sample@trajectory",
+  "track@state",
+  "track@trajectory"
+ ]
+}

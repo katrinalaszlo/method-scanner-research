@@ -1,0 +1,93 @@
+{
+ "arxiv_id": "2203.07628",
+ "source": "abstract",
+ "words": 225,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 1,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "mask input",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "human joints in the input sequence are randomly masked",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the encoder is capable of capturing spatial and temporal dependencies",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "a general form of denoising auto-encoder is exploited to recover the original 2D poses",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:pose",
+   "quote": "the encoder is followed by a many-to-one frame aggregator to predict the 3D pose",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "an MLP block is utilized as the spatial feature extractor in STMO",
+   "grounded": true
+  },
+  {
+   "op": "downsample",
+   "canonical": "downsample",
+   "object": "input",
+   "quote": "a temporal downsampling strategy is proposed to diminish data redundancy",
+   "grounded": true
+  },
+  {
+   "op": "load model",
+   "canonical": "load model",
+   "object": "parameter",
+   "quote": "the pre-trained encoder is loaded to STMO model",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "input",
+   "quote": "the encoder is followed by a many-to-one frame aggregator to predict the 3D pose",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "a general form of denoising auto-encoder is exploited to recover the original 2D poses",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the pre-trained encoder is loaded to ST,MO model and fine-tuned",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@input",
+  "correct@parameter",
+  "downsample@input",
+  "encode@input",
+  "evaluate@error",
+  "extract feature@input",
+  "load model@parameter",
+  "mask@input",
+  "reconstruct@latent"
+ ]
+}

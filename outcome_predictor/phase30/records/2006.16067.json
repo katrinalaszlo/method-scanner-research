@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2006.16067",
+ "source": "abstract",
+ "words": 146,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we extend its deep learning variant to the patch-based method using self-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "extract patch",
+   "canonical": "extract patch",
+   "object": "input",
+   "quote": "we extend its deep learning variant to the patch-based method using self-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "INVALID:patch",
+   "quote": "we extend its deep learning variant to the patch-based method using self-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "predict anomaly",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "anomaly detection involves making a binary decision as to whether an input image contains an anomaly",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "anomaly detection involves making a binary decision as to whether an input image contains an anomaly",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we extend its deep learning variant to the patch-based method using self-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "denoise latent",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we extend its deep learning variant to the patch-based method using self-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "segment anomaly",
+   "canonical": "segment anomaly",
+   "object": "latent",
+   "quote": "anomaly segmentation aims to locate the anomaly on the pixel level",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "we extend its deep learning variant to the patch-based method using self-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "sample anomaly",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "anomaly segmentation aims to locate the anomaly on the pixel level",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "sample",
+   "quote": "anomaly detection involves making a binary decision as to whether an input image contains an anomaly",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we extend its deep, learning variant to the patch-based method using self-supervised learning",
+   "grounded": false
+  },
+  {
+   "op": "resample action",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "anomaly segmentation aims to locate the anomaly on the pixel level",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "we extend its deep learning variant to the patch-based method using self-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "anomaly detection involves making a binary decision as to whether an input image contains an anomaly",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "state",
+   "quote": "anomaly segmentation aims to locate the anomaly on the pixel level",
+   "grounded": true
+  },
+  {
+   "op": "denoise trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we extend its deep learning variant to the patch-based method using self-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "trajectory",
+   "quote": "anomaly detection involves making a binary decision as to whether an input image contains an anomaly",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we extend its deep learning variant to the patch-based method using self-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "segment anomaly",
+   "canonical": "segment anomaly",
+   "object": "trajectory",
+   "quote": "anomaly segmentation aims to locate the anomaly on the pixel level",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "trajectory",
+   "quote": "anomaly detection involves making a binary decision as to whether an input image contains an anomaly",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we extend its deep learning variant to the patch-based method using self-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "resample action",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "anomaly segmentation aims to locate the anomaly on the pixel level",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "we extend its deep learning variant to the patch-based method using self-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "trajectory",
+   "quote": "anomaly detection involves making a binary decision as to whether an input image contains an anomaly",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compare@latent",
+  "compare@trajectory",
+  "compute distribution@latent",
+  "compute reward@sample",
+  "compute reward@trajectory",
+  "compute trajectory@state",
+  "correct@parameter",
+  "encode@input",
+  "extract patch@input",
+  "predict@latent",
+  "predict@trajectory",
+  "reconstruct@latent",
+  "reconstruct@trajectory",
+  "sample@distribution",
+  "sample@sample",
+  "sample@trajectory",
+  "segment anomaly@latent",
+  "segment anomaly@trajectory"
+ ]
+}

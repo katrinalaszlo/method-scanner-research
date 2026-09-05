@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2012.09164",
+ "source": "abstract",
+ "words": 123,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "state",
+   "quote": "Self-attention networks have revolutionized natural language processing",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "We design self-attention layers for point clouds",
+   "grounded": true
+  },
+  {
+   "op": "transform features",
+   "canonical": "transform features",
+   "object": "latent",
+   "quote": "We use these to construct self-attention networks",
+   "grounded": false
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "Our Point Transformer design improves upon prior work",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the Point Transformer attains an mIoU of 70.4%",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "outperforming the strongest prior model by 3.3 absolute percentage points",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "for tasks such as semantic scene segmentation",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Inspired by this success, we investigate the application",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute attention@state",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@value",
+  "sample@action",
+  "transform features@latent"
+ ]
+}

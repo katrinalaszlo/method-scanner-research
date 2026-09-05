@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2303.17602",
+ "source": "abstract",
+ "words": 207,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "learn a general human representation from massive unlabeled human images",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "build pseudo semantic labels and import more semantic information",
+   "grounded": true
+  },
+  {
+   "op": "condition",
+   "canonical": "intervene",
+   "object": "latent",
+   "quote": "introduces a conditional network with a semantic controller",
+   "grounded": true
+  },
+  {
+   "op": "scale",
+   "canonical": "scale",
+   "object": "latent",
+   "quote": "produce representations with different ratios of semantic information",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "different downstream tasks always require different ratios of semantic information",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "prior knowledge from human images is utilized in SOLIDER to build pseudo semantic labels",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the model is trained",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "users can send values to the controller to produce representations",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute@error",
+  "correct@parameter",
+  "encode@input",
+  "intervene@latent",
+  "predict@value",
+  "reconstruct@latent",
+  "sample@distribution",
+  "scale@latent"
+ ]
+}

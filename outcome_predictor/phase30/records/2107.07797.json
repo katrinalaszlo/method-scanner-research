@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "2107.07797",
+ "source": "abstract",
+ "words": 211,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "construct graph",
+   "canonical": "construct graph",
+   "object": "state",
+   "quote": "we propose to represent the human skeleton as a directed graph",
+   "grounded": true
+  },
+  {
+   "op": "assign edges",
+   "canonical": "assign edges",
+   "object": "state",
+   "quote": "bones as edges that are directed from parent joints to child joints",
+   "grounded": true
+  },
+  {
+   "op": "condition graph",
+   "canonical": "intervene",
+   "object": "input",
+   "quote": "conditioning the graph topology on input poses",
+   "grounded": true
+  },
+  {
+   "op": "compute convolution",
+   "canonical": "compute convolution",
+   "object": "INVALID:graph",
+   "quote": "spatial-temporal conditional directed graph convolution",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "graph convolutional networks have significantly improved 3D human pose estimation",
+   "grounded": true
+  },
+  {
+   "op": "propagate features",
+   "canonical": "transmit",
+   "object": "latent",
+   "quote": "graph convolutional networks have significantly improved 3D human pose estimation",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "spatial-temporal conditional directed graph convolution",
+   "grounded": true
+  },
+  {
+   "op": "form output",
+   "canonical": "form output",
+   "object": "state",
+   "quote": "form a U-shaped network, named U-shaped Conditional Directed Graph Convolutional Network",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "assign edges@state",
+  "construct graph@state",
+  "form output@state",
+  "intervene@input",
+  "transmit@latent"
+ ]
+}

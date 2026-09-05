@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2205.10456",
+ "source": "abstract",
+ "words": 251,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "gradient estimates of the Loss function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "each ConvNet is trained independently via SGD",
+   "grounded": true
+  },
+  {
+   "op": "share parameters",
+   "canonical": "share parameters",
+   "object": "parameter",
+   "quote": "ConvNets share among themselves their current vector of weights",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "PSO collaborative dynamics intertwines with Stochastic Gradient Descent",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "gradient estimates of the Loss function",
+   "grounded": true
+  },
+  {
+   "op": "blend parameters",
+   "canonical": "blend parameters",
+   "object": "parameter",
+   "quote": "properly blending ConvNets with large (possibly random) step-sizes",
+   "grounded": true
+  },
+  {
+   "op": "resample parameters",
+   "canonical": "sample",
+   "object": "parameter",
+   "quote": "distinct step sizes are coined by distinct ConvNets",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "PSO collaborative dynamics intertwines with Stochastic Gradient Descent",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "blend parameters@parameter",
+  "compare@error",
+  "compute gradient@error",
+  "correct@parameter",
+  "sample@action",
+  "sample@parameter",
+  "share parameters@parameter"
+ ]
+}

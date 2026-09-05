@@ -1,0 +1,85 @@
+{
+ "arxiv_id": "2204.12196",
+ "source": "abstract",
+ "words": 199,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 9,
+ "n_invalid_object": 1,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "split channels",
+   "canonical": "split channels",
+   "object": "latent",
+   "quote": "an ASF-former encoder equally splits feature channels into half",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "to fit dual-path inputs",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "transformer establishes long-range global connections",
+   "grounded": false
+  },
+  {
+   "op": "compute convolution",
+   "canonical": "compute convolution",
+   "object": "latent",
+   "quote": "CNN relies on small-windowed kernels",
+   "grounded": false
+  },
+  {
+   "op": "fuse outputs",
+   "canonical": "fuse outputs",
+   "object": "latent",
+   "quote": "the outputs of dual-path are fused with weighting scalars",
+   "grounded": true
+  },
+  {
+   "op": "calculate weights",
+   "canonical": "calculate weights",
+   "object": "INVALID:visual cue",
+   "quote": "weighting scalars calculated from visual cues",
+   "grounded": true
+  },
+  {
+   "op": "apply weights",
+   "canonical": "apply weights",
+   "object": "latent",
+   "quote": "the outputs of dual-path are fused with weighting scalars",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "to treat convolutional and attention branches differently",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "under similar conditions (12.9G MACs/56.7M Params",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply weights@latent",
+  "compute attention@latent",
+  "compute convolution@latent",
+  "correct@parameter",
+  "fuse outputs@latent",
+  "process input@input",
+  "split channels@latent"
+ ]
+}

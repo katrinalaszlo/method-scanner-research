@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1411.4038",
+ "source": "abstract",
+ "words": 171,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "Convolutional networks are powerful visual models",
+   "grounded": true
+  },
+  {
+   "op": "pool features",
+   "canonical": "pool features",
+   "object": "latent",
+   "quote": "We show that convolutional networks by themselves",
+   "grounded": true
+  },
+  {
+   "op": "upsample output",
+   "canonical": "upsample output",
+   "object": "latent",
+   "quote": "produce correspondingly-sized output with efficient inference",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "combine semantic information from a deep, coarse layer",
+   "grounded": false
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "produce accurate and detailed segmentations",
+   "grounded": false
+  },
+  {
+   "op": "fine-tune parameters",
+   "canonical": "fine-tune parameters",
+   "object": "parameter",
+   "quote": "transfer their learned representations by fine-tuning",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Our fully convolutional network achieves state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Our fully convolution, network achieves state-of-the-art",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "correct@parameter",
+  "evaluate@error",
+  "fine-tune parameters@parameter",
+  "pool features@latent",
+  "predict@latent",
+  "upsample output@latent"
+ ]
+}

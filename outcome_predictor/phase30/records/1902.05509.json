@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "1902.05509",
+ "source": "abstract",
+ "words": 181,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 15,
+ "ops": [
+  {
+   "op": "compute embedding",
+   "canonical": "compute embedding",
+   "object": "input",
+   "quote": "producing compact vector representations",
+   "grounded": true
+  },
+  {
+   "op": "pool",
+   "canonical": "pool",
+   "object": "latent",
+   "quote": "a pooling layer that takes advantage",
+   "grounded": true
+  },
+  {
+   "op": "minimize loss",
+   "canonical": "minimize loss",
+   "object": "error",
+   "quote": "we minimize a cross-entropy loss",
+   "grounded": false
+  },
+  {
+   "op": "compute ranking loss",
+   "canonical": "compute ranking loss",
+   "object": "error",
+   "quote": "a ranking loss that determines",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "when fed to a linear classifier",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "the same embeddings perform on par",
+   "grounded": true
+  },
+  {
+   "op": "retrieve",
+   "canonical": "retrieve",
+   "object": "input",
+   "quote": "for image retrieval at moderate resolutions",
+   "grounded": false
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "producing compact vector representations",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we minimize a cross-entropy loss",
+   "grounded": false
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "the same embeddings perform on par",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "we obtain 79.4% top-1 accuracy",
+   "grounded": false
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "determine if two images are identical up to data augmentation",
+   "grounded": false
+  },
+  {
+   "op": "compute cosine similarity",
+   "canonical": "compute cosine similarity",
+   "object": "distribution",
+   "quote": "the same embeddings perform on par",
+   "grounded": true
+  },
+  {
+   "op": "output embedding",
+   "canonical": "output embedding",
+   "object": "latent",
+   "quote": "when fed to a linear classifier",
+   "grounded": true
+  },
+  {
+   "op": "compute top-1 accuracy",
+   "canonical": "compute top-1 accuracy",
+   "object": "task",
+   "quote": "we obtain 79.4% top-1 accuracy",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we minimize a cross-entropy loss",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we minimize a cross-entropy loss",
+   "grounded": false
+  },
+  {
+   "op": "compute ranking",
+   "canonical": "compute ranking",
+   "object": "error",
+   "quote": "a ranking loss that determines",
+   "grounded": true
+  },
+  {
+   "op": "compute classification",
+   "canonical": "compute classification",
+   "object": "input",
+   "quote": "when fed to a linear classifier",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity score",
+   "canonical": "compute similarity score",
+   "object": "distribution",
+   "quote": "the same embeddings perform on par",
+   "grounded": true
+  },
+  {
+   "op": "compute task accuracy",
+   "canonical": "compute task accuracy",
+   "object": "task",
+   "quote": "we obtain 79.4% top-1 accuracy",
+   "grounded": false
+  },
+  {
+   "op": "compute embedding similarity",
+   "canonical": "compute embedding similarity",
+   "object": "distribution",
+   "quote": "the same embeddings perform on par",
+   "grounded": true
+  },
+  {
+   "op": "compute embedding accuracy",
+   "canonical": "compute embedding accuracy",
+   "object": "task",
+   "quote": "we obtain 79.4% top-1 accuracy",
+   "grounded": false
+  },
+  {
+   "op": "compute embedding ranking",
+   "canonical": "compute embedding ranking",
+   "object": "error",
+   "quote": "a ranking loss that determines",
+   "grounded": true
+  },
+  {
+   "op": "compute embedding classification",
+   "canonical": "compute embedding classification",
+   "object": "input",
+   "quote": "when fed to a linear classifier",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply augmentation@input",
+  "classify@input",
+  "compare@distribution",
+  "compute accuracy@task",
+  "compute classification@input",
+  "compute cosine similarity@distribution",
+  "compute embedding accuracy@task",
+  "compute embedding classification@input",
+  "compute embedding ranking@error",
+  "compute embedding similarity@distribution",
+  "compute embedding@input",
+  "compute ranking loss@error",
+  "compute ranking@error",
+  "compute similarity score@distribution",
+  "compute similarity@distribution",
+  "compute task accuracy@task",
+  "compute top-1 accuracy@task",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "minimize loss@error",
+  "output embedding@latent",
+  "pool@latent",
+  "retrieve@input",
+  "train@parameter"
+ ]
+}

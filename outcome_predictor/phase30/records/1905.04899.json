@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "1905.04899",
+ "source": "abstract",
+ "words": 226,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "patches are cut and pasted among training images where the ground truth labels are also mixed proportionally to the area of the patches.",
+   "grounded": true
+  },
+  {
+   "op": "mix labels",
+   "canonical": "mix labels",
+   "object": "distribution",
+   "quote": "the ground truth labels are also mixed proportionally to the area of the patches.",
+   "grounded": true
+  },
+  {
+   "op": "cut patch",
+   "canonical": "cut patch",
+   "object": "input",
+   "quote": "patches are cut and pasted among training images where the ground truth labels are also mixed proportionally to the area of the patches.",
+   "grounded": true
+  },
+  {
+   "op": "paste patch",
+   "canonical": "paste patch",
+   "object": "input",
+   "quote": "patches are cut and pasted among training images where the ground truth labels are also mixed proportionally to the area of the patches.",
+   "grounded": true
+  },
+  {
+   "op": "sample patch",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "patches are cut and pasted among training images where the ground truth labels are also mixed proportionally to the area of the patches.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "CutMix consistently outperforms the state-of-the-art augmentation strategies on CIFAR and ImageNet classification tasks.",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "patches are cut and pasted among training images where the ground truth labels are also mixed proportionally to the area of the patches.",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "CutMix consistently outperforms the state-of-the-art augmentation strategies on CIFAR and ImageNet classification tasks.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "CutMix consistently outper. the state-of-the-art augmentation strategies on CIFAR and ImageNet classification tasks.",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "CutMix consistently outperforms the state-of-the-art augmentation strategies on CIFAR and ImageNet classification tasks.",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "error",
+   "quote": "CutMix consistently outperforms the state-of-the-art augmentation strategies on CIFAR and ImageNet classification tasks.",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "CutMix consistently outperforms the state-of-the-art augmentation strategies on CIFAR and ImageNet classification tasks.",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "CutMix consistently outperforms the state-of-the-art augmentation strategies on CIFAR and ImageNet classification tasks.",
+   "grounded": true
+  },
+  {
+   "op": "compute metrics",
+   "canonical": "compute metrics",
+   "object": "error",
+   "quote": "CutMix consistently outperforms the state-of-the-art augmentation strategies on CIFAR and ImageNet classification tasks.",
+   "grounded": true
+  },
+  {
+   "op": "store model",
+   "canonical": "store model",
+   "object": "parameter",
+   "quote": "CutMix consistently outperforms the state-of-the-art augmentation strategies on CIFAR and ImageNet classification tasks.",
+   "grounded": true
+  },
+  {
+   "op": "load model",
+   "canonical": "load model",
+   "object": "parameter",
+   "quote": "CutMix consistently outperforms the state-of-the-art augmentation strategies on CIFAR and ImageNet classification tasks.",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "CutMix consistently outperforms the state-of-the-art augmentation strategies on CIFAR and ImageNet classification tasks.",
+   "grounded": true
+  },
+  {
+   "op": "compute confidence",
+   "canonical": "compute confidence",
+   "object": "distribution",
+   "quote": "CutMix consistently outperforms the state-of-the-art augmentation strategies on CIFAR and ImageNet classification tasks.",
+   "grounded": true
+  },
+  {
+   "op": "compute robustness",
+   "canonical": "compute robustness",
+   "object": "error",
+   "quote": "CutMix improves the model robustness against input corruptions and its out-of-distribution detection performances.",
+   "grounded": true
+  },
+  {
+   "op": "compute detection",
+   "canonical": "compute detection",
+   "object": "error",
+   "quote": "CutMix improves the model robustness against input corruptions and its out-of-distribution detection performances.",
+   "grounded": true
+  },
+  {
+   "op": "compute localization",
+   "canonical": "compute localization",
+   "object": "task",
+   "quote": "CutMix improves the model robustness against input corruptions and its out-of-distribution detection performances.",
+   "grounded": true
+  },
+  {
+   "op": "compute performance",
+   "canonical": "compute performance",
+   "object": "error",
+   "quote": "CutMix improves the model robustness against input corruptions and its out-of-distribution detection performances.",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "error",
+   "quote": "CutMix improves the model robustness against input corruptions and its out-of-distribution detection performances.",
+   "grounded": true
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "error",
+   "quote": "CutMix improves the model robustness against input corruptions and its out-of-distribution detection performances.",
+   "grounded": true
+  },
+  {
+   "op": "compute recall",
+   "canonical": "compute recall",
+   "object": "error",
+   "quote": "CutMix improves the model robustness against input corruptions and its out-of-distribution detection performances.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply augmentation@input",
+  "backpropagate@gradient",
+  "compute accuracy@error",
+  "compute confidence@distribution",
+  "compute detection@error",
+  "compute gradient@gradient",
+  "compute localization@task",
+  "compute metrics@error",
+  "compute performance@error",
+  "compute precision@error",
+  "compute recall@error",
+  "compute robustness@error",
+  "correct@parameter",
+  "cut patch@input",
+  "evaluate@error",
+  "evaluate@task",
+  "load model@parameter",
+  "mix labels@distribution",
+  "paste patch@input",
+  "predict@distribution",
+  "reconstruct@distribution",
+  "sample@input",
+  "store model@parameter",
+  "train@parameter"
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "arxiv_id": "1312.4400",
+ "source": "abstract",
+ "words": 175,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 4,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "apply filter",
+   "canonical": "apply filter",
+   "object": "input",
+   "quote": "conventional convolutional layer uses linear filters followed by a nonlinear activation function",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "input",
+   "quote": "conventional convolutional layer uses linear filters followed by a nonlinear activation function",
+   "grounded": true
+  },
+  {
+   "op": "slide micro network",
+   "canonical": "slide micro network",
+   "object": "input",
+   "quote": "feature maps are obtained by sliding the micro networks over the input",
+   "grounded": false
+  },
+  {
+   "op": "compute feature map",
+   "canonical": "compute feature map",
+   "object": "input",
+   "quote": "feature maps are obtained by sliding the micro networks over the input",
+   "grounded": false
+  },
+  {
+   "op": "feed feature map",
+   "canonical": "feed feature map",
+   "object": "INVALID:feature map",
+   "quote": "they are then fed into the next layer",
+   "grounded": false
+  },
+  {
+   "op": "stack layers",
+   "canonical": "stack layers",
+   "object": "INVALID:feature map",
+   "quote": "Deep NIN can be implemented by stacking multiple of the above described structure",
+   "grounded": true
+  },
+  {
+   "op": "apply global average pooling",
+   "canonical": "apply global average pooling",
+   "object": "INVALID:feature map",
+   "quote": "we are able to utilize global average pooling over feature maps in the classification layer",
+   "grounded": true
+  },
+  {
+   "op": "compute classification",
+   "canonical": "compute classification",
+   "object": "INVALID:feature map",
+   "quote": "we demonstrated the state-of-the-art classification performances with NIN on CIFAR-10 and CIFAR-100",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply activation@input",
+  "apply filter@input",
+  "compute feature map@input",
+  "slide micro network@input"
+ ]
+}

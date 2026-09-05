@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2402.10793",
+ "source": "abstract",
+ "words": 203,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "learn an effective representations of edges",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "state",
+   "quote": "vertically interleaves masked and vanilla self-attention modules",
+   "grounded": true
+  },
+  {
+   "op": "pool",
+   "canonical": "pool",
+   "object": "latent",
+   "quote": "attention pooling mechanism",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "outperforms fine-tuned message passing baselines",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "outperforms graph neural networks and transformers",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "demonstrate state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "scales much better than alternatives",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "including challenging long-range benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "despite its simplicity",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "transfer learning settings",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "outperforms recently proposed transformer-based methods",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "state",
+   "quote": "learn an effective representations of edges",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "task",
+   "quote": "ranging from molecular to vision graphs",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "input",
+   "quote": "learn an effective representations of edges",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "state",
+   "quote": "scales much better than alternatives",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "trajectory",
+   "quote": "transfer learning settings",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "outperforms fine-tuned message passing baselines",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "state",
+   "quote": "demonstrate state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "outperforms graph neural networks and transformers",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "distribution",
+   "quote": "transfer learning settings",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "state",
+   "quote": "learn an effective representations of edges",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "task",
+   "quote": "ranging from molecular to vision graphs",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "input",
+   "quote": "learn an effective representations of edges",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "state",
+   "quote": "scales much better than alternatives",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "trajectory",
+   "quote": "transfer learning settings",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@state",
+  "backpropagate@gradient",
+  "compare@reward",
+  "compare@value",
+  "compute distribution@state",
+  "compute gradient@parameter",
+  "compute latent@input",
+  "compute policy@state",
+  "compute reward@task",
+  "compute sample@distribution",
+  "compute task@trajectory",
+  "compute trajectory@task",
+  "compute value@state",
+  "correct@parameter",
+  "encode@input",
+  "pool@latent",
+  "predict@state",
+  "reconstruct@noise",
+  "sample@policy",
+  "sample@sample"
+ ]
+}

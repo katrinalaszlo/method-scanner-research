@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1901.03278",
+ "source": "abstract",
+ "words": 196,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "predict location",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "predict the locations where the center of objects of interest are likely to exist",
+   "grounded": false
+  },
+  {
+   "op": "predict scale",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "predict the scales and aspect ratios at different locations",
+   "grounded": false
+  },
+  {
+   "op": "generate anchor",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "On top of predicted anchor shapes",
+   "grounded": false
+  },
+  {
+   "op": "adapt feature",
+   "canonical": "adapt feature",
+   "object": "latent",
+   "quote": "mitigate the feature inconsistency with a feature adaption module",
+   "grounded": true
+  },
+  {
+   "op": "sample proposal",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "study the use of high-quality proposals to improve detection performance",
+   "grounded": true
+  },
+  {
+   "op": "integrate anchor",
+   "canonical": "integrate anchor",
+   "object": "trajectory",
+   "quote": "can be seamlessly integrated into proposal methods and detectors",
+   "grounded": true
+  },
+  {
+   "op": "compute recall",
+   "canonical": "compute recall",
+   "object": "task",
+   "quote": "achieve 9.1% higher recall on MS COCO",
+   "grounded": false
+  },
+  {
+   "op": "compute map",
+   "canonical": "compute map",
+   "object": "task",
+   "quote": "improving the detection mAP by 2.2%, 2.7% and 1.2%",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "adapt feature@latent",
+  "compute map@task",
+  "compute recall@task",
+  "integrate anchor@trajectory",
+  "predict@state",
+  "reconstruct@state",
+  "sample@distribution"
+ ]
+}

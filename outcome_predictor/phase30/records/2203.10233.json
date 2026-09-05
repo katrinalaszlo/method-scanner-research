@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2203.10233",
+ "source": "abstract",
+ "words": 199,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "a new Directed Attention mechanism is introduced to understand and provide attentions to human actions",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "compute dependency",
+   "canonical": "compute dependency",
+   "object": "trajectory",
+   "quote": "we introduce the conditional dependency in action sequence modeling that includes orders and classes",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed approach consistently achieves the state-of-the-art (SOTA) results compared with the recent action recognition methods",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the proposed approach consistently achieves the state-of-the-art (SOTA) results compared with the recent action recognition methods",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the method takes a simple but novel perspective of Transformer, based approach",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we introduce the conditional dependency in action sequence modeling that includes orders and classes",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "a new Directed Attention mechanism is introduced to understand and provide attentions to human actions",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we introduce the conditional dependency in action sequence modeling that includes orders and classes",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the proposed approach consistently achieves the state-of-the-art (SOTA) results compared with the recent action recognition methods",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "compute state",
+   "canonical": "compute state",
+   "object": "state",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "the method takes a simple but novel perspective of Transformer-based approach",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we introduce the conditional dependency in action sequence modeling that includes orders and classes",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute action@action",
+  "compute attention@latent",
+  "compute dependency@trajectory",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute state@state",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@state",
+  "reconstruct@noise",
+  "sample@distribution",
+  "sample@sample"
+ ]
+}

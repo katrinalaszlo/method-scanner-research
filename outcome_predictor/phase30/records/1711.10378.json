@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "1711.10378",
+ "source": "abstract",
+ "words": 216,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 15,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "incorporates both the fine and coarse pose information",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "state",
+   "quote": "re-ranking techniques based on computed distances",
+   "grounded": false
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "using simple direct rank list based comparison",
+   "grounded": true
+  },
+  {
+   "op": "re-rank",
+   "canonical": "re-rank",
+   "object": "trajectory",
+   "quote": "proposes a new unsupervised and automatic re-ranking framework",
+   "grounded": false
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "learn a discriminative embedding",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "learn a discriminative embedding",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "INVALID:joint location",
+   "quote": "detected joint locations into a convolutional neural network",
+   "grounded": false
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "sample",
+   "quote": "using the already computed euclidean distances between the images",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "re-ranking techniques based on computed distances",
+   "grounded": false
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learn a discriminative embedding",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "achieves state-of-the-art re-ranking performance",
+   "grounded": false
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "using simple direct rank list based comparison",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "INVALID:distance",
+   "quote": "using the already computed euclidean distances between the images",
+   "grounded": true
+  },
+  {
+   "op": "sort",
+   "canonical": "sort",
+   "object": "trajectory",
+   "quote": "using simple direct rank list based comparison",
+   "grounded": true
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "sample",
+   "quote": "using simple direct rank list based comparison",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "re-ranking techniques based on computed distances",
+   "grounded": false
+  },
+  {
+   "op": "denote",
+   "canonical": "denote",
+   "object": "task",
+   "quote": "achieves state-of-the-art re-ranking performance",
+   "grounded": false
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "trajectory",
+   "quote": "achieves state-of-the-art re-identification performance",
+   "grounded": false
+  },
+  {
+   "op": "retrieve",
+   "canonical": "retrieve",
+   "object": "state",
+   "quote": "matching a person's acquired image across non overlapping camera views",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "using simple direct rank list based comparison",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "using simple direct rank list based comparison",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "achieves state-of-the-art re-ranking performance",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "using simple direct rank list based comparison",
+   "grounded": true
+  },
+  {
+   "op": "filter",
+   "canonical": "filter",
+   "object": "trajectory",
+   "quote": "achieves state-of-the-art re-ranking performance",
+   "grounded": false
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "incorporates both the fine and coarse pose information",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "aggregate@sample",
+  "compare@distribution",
+  "compute distance@state",
+  "compute@distribution",
+  "compute@error",
+  "compute@reward",
+  "correct@parameter",
+  "denote@task",
+  "encode@input",
+  "encode@state",
+  "evaluate@trajectory",
+  "filter@trajectory",
+  "predict@value",
+  "re-rank@trajectory",
+  "reconstruct@trajectory",
+  "retrieve@state",
+  "sample@distribution",
+  "sample@sample",
+  "select@sample",
+  "sort@trajectory",
+  "train@parameter",
+  "transform@input"
+ ]
+}

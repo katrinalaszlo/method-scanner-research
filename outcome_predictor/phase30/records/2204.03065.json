@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2204.03065",
+ "source": "abstract",
+ "words": 150,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "state",
+   "quote": "Distances between transformed features capture their direct original similarity",
+   "grounded": true
+  },
+  {
+   "op": "solve optimization",
+   "canonical": "solve optimization",
+   "object": "latent",
+   "quote": "A particular min-cost-max-flow fractional matching problem",
+   "grounded": true
+  },
+  {
+   "op": "approximate solution",
+   "canonical": "approximate solution",
+   "object": "distribution",
+   "quote": "entropy regularized version can be approximated by an optimal transport (OT) optimization",
+   "grounded": true
+  },
+  {
+   "op": "transform features",
+   "canonical": "transform features",
+   "object": "input",
+   "quote": "The transformed set encodes a rich representation of high order relations",
+   "grounded": true
+  },
+  {
+   "op": "encode relations",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "high order relations between the instance features",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "state",
+   "quote": "their direct original similarity and their third party agreement",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "efficient, differentiable, equivariant, parameterless and probabilistically interpretable",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "results in our transductive transform which is efficient, differentiable",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "approximate solution@distribution",
+  "compute distance@state",
+  "compute similarity@state",
+  "correct@parameter",
+  "encode@latent",
+  "reconstruct@sample",
+  "solve optimization@latent",
+  "transform features@input"
+ ]
+}

@@ -1,0 +1,187 @@
+{
+ "arxiv_id": "2311.03035",
+ "source": "abstract",
+ "words": 232,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 19,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "propagate information",
+   "canonical": "transmit",
+   "object": "INVALID:token",
+   "quote": "propagates less significant tokens' information to spatially and semantically connected tokens",
+   "grounded": true
+  },
+  {
+   "op": "select token",
+   "canonical": "select token",
+   "object": "INVALID:token",
+   "quote": "efficiently identify image tokens to be propagated",
+   "grounded": true
+  },
+  {
+   "op": "reduce computational complexity",
+   "canonical": "reduce computational complexity",
+   "object": "INVALID:token",
+   "quote": "reduces computational complexity while preserving essential information",
+   "grounded": false
+  },
+  {
+   "op": "preserve information",
+   "canonical": "preserve information",
+   "object": "INVALID:token",
+   "quote": "preserving essential information of eliminated tokens",
+   "grounded": true
+  },
+  {
+   "op": "summarize token graph",
+   "canonical": "summarize token graph",
+   "object": "INVALID:token",
+   "quote": "remaining few tokens serve as a summarization of the entire token graph",
+   "grounded": true
+  },
+  {
+   "op": "merge token",
+   "canonical": "merge token",
+   "object": "INVALID:token",
+   "quote": "token merging approaches have been developed",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "extensive experiments have validated GTP's effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "GTP decreases the computational complexity of both DeiT-S and DeiT-B",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "error",
+   "quote": "only a minimal 0.3% accuracy drop on ImageNet-1K",
+   "grounded": true
+  },
+  {
+   "op": "compute speed",
+   "canonical": "compute speed",
+   "object": "INVALID:inference",
+   "quote": "remarkably surpasses the state-of-the-art token merging method on various backbones at an even faster inference speed",
+   "grounded": true
+  },
+  {
+   "op": "compute performance",
+   "canonical": "compute performance",
+   "object": "value",
+   "quote": "demonstrating both efficiency and performance improvements",
+   "grounded": true
+  },
+  {
+   "op": "compute complexity",
+   "canonical": "compute complexity",
+   "object": "INVALID:token",
+   "quote": "GTP decreases the computational complexity of both DeiT-S and DeiT-B",
+   "grounded": true
+  },
+  {
+   "op": "compute token",
+   "canonical": "compute token",
+   "object": "input",
+   "quote": "token pruning and token merging approaches have been developed",
+   "grounded": true
+  },
+  {
+   "op": "compute token graph",
+   "canonical": "compute token graph",
+   "object": "INVALID:token",
+   "quote": "remaining few tokens serve as a summarization of the entire token graph",
+   "grounded": true
+  },
+  {
+   "op": "compute token selection",
+   "canonical": "compute token selection",
+   "object": "INVALID:token",
+   "quote": "efficiently identify image tokens to be propagated",
+   "grounded": true
+  },
+  {
+   "op": "compute token propagation",
+   "canonical": "compute token propagation",
+   "object": "INVALID:token",
+   "quote": "propagates less significant tokens' information to spatially and semantically connected tokens",
+   "grounded": true
+  },
+  {
+   "op": "compute token summary",
+   "canonical": "compute token summary",
+   "object": "INVALID:token",
+   "quote": "remaining few tokens serve as a summarization of the entire token graph",
+   "grounded": true
+  },
+  {
+   "op": "compute token efficiency",
+   "canonical": "compute token efficiency",
+   "object": "INVALID:token",
+   "quote": "demonstrating both efficiency and performance improvements",
+   "grounded": true
+  },
+  {
+   "op": "compute token information",
+   "canonical": "compute token information",
+   "object": "INVALID:token",
+   "quote": "preserving essential information of eliminated tokens",
+   "grounded": true
+  },
+  {
+   "op": "compute token reduction",
+   "canonical": "compute token reduction",
+   "object": "INVALID:token",
+   "quote": "reduces computational complexity while preserving essential information",
+   "grounded": false
+  },
+  {
+   "op": "compute token merging",
+   "canonical": "compute token merging",
+   "object": "INVALID:token",
+   "quote": "token merging approaches have been developed",
+   "grounded": true
+  },
+  {
+   "op": "compute token pruning",
+   "canonical": "compute token pruning",
+   "object": "INVALID:token",
+   "quote": "token pruning and token merging approaches have been developed",
+   "grounded": true
+  },
+  {
+   "op": "compute token matching",
+   "canonical": "compute token matching",
+   "object": "INVALID:token",
+   "quote": "inefficiency in the token-matching process",
+   "grounded": true
+  },
+  {
+   "op": "compute token elimination",
+   "canonical": "compute token elimination",
+   "object": "INVALID:token",
+   "quote": "preserving essential information of eliminated tokens",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute accuracy@error",
+  "compute performance@value",
+  "compute token@input",
+  "correct@parameter",
+  "evaluate@error"
+ ]
+}

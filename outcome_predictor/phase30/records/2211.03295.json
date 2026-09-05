@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2211.03295",
+ "source": "abstract",
+ "words": 177,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "Modern ConvNets have shown great potential in computer vision tasks.",
+   "grounded": true
+  },
+  {
+   "op": "gated aggregation",
+   "canonical": "gated aggregation",
+   "object": "latent",
+   "quote": "MogaNet encapsulates conceptually simple yet effective convolutions and gated aggregation into a compact module.",
+   "grounded": true
+  },
+  {
+   "op": "contextualize",
+   "canonical": "contextualize",
+   "object": "latent",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "gather features",
+   "canonical": "gather features",
+   "object": "latent",
+   "quote": "discriminative features are efficiently gathered and contextualized adaptively.",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the representation bottleneck of modern ConvNets, where the expressive interactions have not been effectively encoded with the increased kernel size.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "MogaNet exhibits great scalability, impressive efficiency of parameters, and competitive performance compared to state-of-the-art ViTs and ConvNets on ImageNet and various downstream vision benchmarks.",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "MogaNet hits 80.0\\% and 87.8\\% accuracy with 5.2M and 181M parameters on ImageNet-1K.",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "Notably, MogaNet hits 80.0\\% and 87.8\\% accuracy with 5.2M and 181M parameters on ImageNet-1K.",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the expressive interactions have not been effectively encoded with the increased kernel size.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the expressive interactions have not been effectively encoded with the increased kernel size.",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "MogaNet ... contextualized adaptively.",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply convolution@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "contextualize@latent",
+  "correct@parameter",
+  "gated aggregation@latent",
+  "gather features@latent",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

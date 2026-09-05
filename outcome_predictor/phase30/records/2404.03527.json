@@ -1,0 +1,133 @@
+{
+ "arxiv_id": "2404.03527",
+ "source": "abstract",
+ "words": 241,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 15,
+ "n_invalid_object": 0,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we delve deeper into the unique characteristics of RGB and thermal modalities",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "more effective extraction of complementary heterogeneous features",
+   "grounded": true
+  },
+  {
+   "op": "fuse",
+   "canonical": "fuse",
+   "object": "latent",
+   "quote": "subsequently fused in a dual-path, progressive manner",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "latent",
+   "quote": "designing a hybrid, asymmetric encoder",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "incorporates both a VFM and a convolutional neural network",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "introduce an auxiliary task to further enrich the local semantics",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "equipped with all these components",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "exploit VFM features for RGB-thermal scene parsing",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "designing a hybrid, asymmetric encoder",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "incorporates both a VFM and a convolutional neural network",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "exploit VFM features for RGB-thermal scene parsing",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "subsequently fused in a dual-path, progressive manner",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "introduce an auxiliary task to further enrich the local semantics",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "equipped with all these components",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "demonstrating superior performance compared to all other state-of-the-art",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute@error",
+  "compute@value",
+  "correct@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "extract@latent",
+  "fuse@latent",
+  "improve@parameter",
+  "predict@distribution",
+  "process@latent",
+  "reconstruct@distribution",
+  "transform@latent"
+ ]
+}

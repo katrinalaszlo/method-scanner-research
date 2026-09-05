@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1603.09382",
+ "source": "abstract",
+ "words": 176,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "drop layers",
+   "canonical": "mask",
+   "object": "parameter",
+   "quote": "randomly drop a subset of layers",
+   "grounded": false
+  },
+  {
+   "op": "apply identity",
+   "canonical": "apply identity",
+   "object": "INVALID:layer",
+   "quote": "bypass them with the identity function",
+   "grounded": true
+  },
+  {
+   "op": "forward pass",
+   "canonical": "forward pass",
+   "object": "parameter",
+   "quote": "forward flow often diminishes",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "gradients can vanish",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "training very deep networks comes with its own set of challenges",
+   "grounded": true
+  },
+  {
+   "op": "train network",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "enable the seemingly contradictory setup to train short networks",
+   "grounded": false
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "improves the test error significantly",
+   "grounded": true
+  },
+  {
+   "op": "increase depth",
+   "canonical": "increase depth",
+   "object": "parameter",
+   "quote": "increase the depth of residual networks even beyond 1200 layers",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compute gradient@parameter",
+  "correct@parameter",
+  "evaluate@parameter",
+  "forward pass@parameter",
+  "increase depth@parameter",
+  "mask@parameter",
+  "train@parameter"
+ ]
+}

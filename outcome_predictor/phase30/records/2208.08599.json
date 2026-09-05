@@ -1,0 +1,95 @@
+{
+ "arxiv_id": "2208.08599",
+ "source": "abstract",
+ "words": 212,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 11,
+ "n_invalid_object": 7,
+ "n_grounded": 11,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "skeleton sequences are typically long (>128 frames)",
+   "grounded": true
+  },
+  {
+   "op": "model",
+   "canonical": "model",
+   "object": "INVALID:spatial",
+   "quote": "spatial-only modules and temporal-only modules",
+   "grounded": true
+  },
+  {
+   "op": "model",
+   "canonical": "model",
+   "object": "INVALID:temporal",
+   "quote": "spatial-only modules and temporal-only modules",
+   "grounded": true
+  },
+  {
+   "op": "flow",
+   "canonical": "flow",
+   "object": "INVALID:information",
+   "quote": "direct information flow among joints in adjacent frames are hindered",
+   "grounded": true
+  },
+  {
+   "op": "attend",
+   "canonical": "attend",
+   "object": "INVALID:spatial",
+   "quote": "spatial-temporal modeling for regional perception",
+   "grounded": true
+  },
+  {
+   "op": "attend",
+   "canonical": "attend",
+   "object": "INVALID:temporal",
+   "quote": "spatial-temporal modeling for regional perception",
+   "grounded": true
+  },
+  {
+   "op": "weight",
+   "canonical": "weight",
+   "object": "INVALID:joint",
+   "quote": "dynamically weight joints along temporal dimension",
+   "grounded": true
+  },
+  {
+   "op": "separate",
+   "canonical": "separate",
+   "object": "INVALID:motion",
+   "quote": "separate subtle motion from static features",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "robust feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "action",
+   "quote": "generalizes better upon classifying similar actions",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "state-of-the-art performance on three large-scale datasets",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "classify@action",
+  "compute@value",
+  "encode@input",
+  "extract@latent"
+ ]
+}

@@ -1,0 +1,239 @@
+{
+ "arxiv_id": "2311.05709",
+ "source": "abstract",
+ "words": 172,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 31,
+ "n_invalid_object": 0,
+ "n_grounded": 31,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "followed by sequential training for the different tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "We train the network on all major modalities",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We demonstrate empirically that, using a joint network",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We train the network on all major modalities",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "We train the network on all major modalities",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We demonstrate empirically that, using a joint network",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We train the network on all major modalities",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "We train the network on all major modalities",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We demonstrate empirically that, using a joint network",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We train the network on all major modalities",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "We train the network on all major modalities",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We demonstrate empirically that, using a joint network",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We train the network on all major modalities",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "We present an approach in such direction, to learn multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "We train the network on all major modalities",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We demonstrate empirically that, using a joint network",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We train the network on all major modalities",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "backpropagate@gradient",
+  "compare@task",
+  "correct@parameter",
+  "encode@input",
+  "encode@latent",
+  "predict@task",
+  "sample@input"
+ ]
+}

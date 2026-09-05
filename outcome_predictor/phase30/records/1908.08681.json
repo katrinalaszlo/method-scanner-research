@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "1908.08681",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute activation",
+   "canonical": "compute activation",
+   "object": "input",
+   "quote": "We propose Mish, a novel self-regularized non-monotonic activation function",
+   "grounded": false
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "input",
+   "quote": "Mish can be mathematically defined as: f(x)=x\tanh(softplus(x))",
+   "grounded": false
+  },
+  {
+   "op": "compute softplus",
+   "canonical": "compute softplus",
+   "object": "input",
+   "quote": "Mish can be mathematically defined as: f(x)=x\tanh(soft,plus(x))",
+   "grounded": false
+  },
+  {
+   "op": "compute tanh",
+   "canonical": "compute tanh",
+   "object": "input",
+   "quote": "Mish can be mathematically defined as: f(x)=x\tanh(softplus(x))",
+   "grounded": false
+  },
+  {
+   "op": "compute product",
+   "canonical": "compute product",
+   "object": "input",
+   "quote": "Mish can be mathematically defined as: f(x)=x\tanh(softplus(x))",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute recall",
+   "canonical": "compute recall",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute standard deviation",
+   "canonical": "compute standard deviation",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute correlation",
+   "canonical": "compute correlation",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute covariance",
+   "canonical": "compute covariance",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute entropy",
+   "canonical": "compute entropy",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute mutual information",
+   "canonical": "compute mutual information",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute probability",
+   "canonical": "compute probability",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute likelihood",
+   "canonical": "compute likelihood",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "input",
+   "quote": "we validated experimentally on several well-known benchmarks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply activation@input",
+  "compute accuracy@input",
+  "compute activation@input",
+  "compute correlation@input",
+  "compute covariance@input",
+  "compute distribution@input",
+  "compute entropy@input",
+  "compute gradient@parameter",
+  "compute likelihood@input",
+  "compute mean@input",
+  "compute mutual information@input",
+  "compute precision@input",
+  "compute probability@input",
+  "compute product@input",
+  "compute recall@input",
+  "compute reward@input",
+  "compute sample@input",
+  "compute score@input",
+  "compute softplus@input",
+  "compute standard deviation@input",
+  "compute tanh@input",
+  "compute value@input",
+  "compute variance@input",
+  "correct@parameter",
+  "evaluate@error"
+ ]
+}

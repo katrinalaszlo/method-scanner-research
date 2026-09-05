@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "2411.18588",
+ "source": "abstract",
+ "words": 171,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "construct tree",
+   "canonical": "construct tree",
+   "object": "state",
+   "quote": "Hi-IR constructs a hierarchical information tree representing the degraded image across three levels.",
+   "grounded": true
+  },
+  {
+   "op": "propagate information",
+   "canonical": "transmit",
+   "object": "latent",
+   "quote": "progressively propagates information among pixels in a bottom-up manner.",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "vision transformers show promise in numerous image restoration tasks.",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "each level encapsulates different types of information.",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the challenge remains in efficiently generalizing and scaling up a model.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improves the computational efficiency and memory utilization.",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the hierarchical tree architecture removes long-range self-attention.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "Hi-IR achieves state-of-the-art performance in seven common image restoration tasks.",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "which is expected to positively impact IR in large-scale training settings.",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we explore model scaling to improve our method's capabilities.",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the hierarchical information flow mechanism for image restoration.",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we propose a hierarchical information flow mechanism for image restoration.",
+   "grounded": true
+  },
+  {
+   "op": "apply noise",
+   "canonical": "apply noise",
+   "object": "noise",
+   "quote": "the hierarchical tree architecture removes long-range self-attention.",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "improves the computational efficiency and memory utilization.",
+   "grounded": true
+  },
+  {
+   "op": "evaluate error",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the challenge remains in efficiently generalizing and scaling up a model.",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "Hi-IR constructs a hierarchical information tree representing the degraded image across three levels.",
+   "grounded": true
+  },
+  {
+   "op": "store parameters",
+   "canonical": "store parameters",
+   "object": "parameter",
+   "quote": "we explore model scaling to improve our method's capabilities.",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "which is expected to positively impact IR in large-scale training settings.",
+   "grounded": true
+  },
+  {
+   "op": "denoise state",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "Hi-IR achieves state-of-the-art performance in seven common image restoration tasks.",
+   "grounded": true
+  },
+  {
+   "op": "update distribution",
+   "canonical": "correct",
+   "object": "distribution",
+   "quote": "the hierarchical information flow mechanism for image, restoration.",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the hierarchical tree architecture removes long-range self-attention.",
+   "grounded": true
+  },
+  {
+   "op": "denoise trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "Hi-IR achieves state-of-the-art performance in seven common image restoration tasks.",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we explore model scaling to improve our method's capabilities.",
+   "grounded": true
+  },
+  {
+   "op": "denoise task",
+   "canonical": "reconstruct",
+   "object": "task",
+   "quote": "which is expected to positively impact IR in large-scale training settings.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply noise@noise",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compare@error",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "construct tree@state",
+  "correct@distribution",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@value",
+  "reconstruct@state",
+  "reconstruct@task",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@sample",
+  "store parameters@parameter",
+  "transmit@latent"
+ ]
+}

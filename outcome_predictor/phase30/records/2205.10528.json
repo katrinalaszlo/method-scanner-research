@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2205.10528",
+ "source": "abstract",
+ "words": 156,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "convert scalar to vector",
+   "canonical": "convert scalar to vector",
+   "object": "input",
+   "quote": "we construct a transformation from scalar to vector using independent angles",
+   "grounded": true
+  },
+  {
+   "op": "rotate vector",
+   "canonical": "rotate vector",
+   "object": "latent",
+   "quote": "using independent angles based on 3D vector rotations",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "can aggregate neighboring features through higher-dimensional vectors",
+   "grounded": true
+  },
+  {
+   "op": "apply mlp",
+   "canonical": "apply mlp",
+   "object": "latent",
+   "quote": "follows the structure of PointNeXt",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "our experimental results demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we construct a transformation from scalar to vector",
+   "grounded": true
+  },
+  {
+   "op": "sample vector",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "can aggregate neighboring features through higher-dimensional vectors",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "achieves state-of-the-art performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply mlp@latent",
+  "convert scalar to vector@input",
+  "correct@parameter",
+  "evaluate@error",
+  "predict@distribution",
+  "rotate vector@latent",
+  "sample@latent"
+ ]
+}

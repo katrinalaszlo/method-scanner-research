@@ -1,0 +1,172 @@
+{
+ "arxiv_id": "2307.14336",
+ "source": "abstract",
+ "words": 236,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "store memory",
+   "canonical": "store memory",
+   "object": "latent",
+   "quote": "the memory stores learned visual and displacement tokens",
+   "grounded": true
+  },
+  {
+   "op": "update memory",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "we introduce a novel scheme to continuously update the memory",
+   "grounded": true
+  },
+  {
+   "op": "compute self-attention",
+   "canonical": "compute self-attention",
+   "object": "latent",
+   "quote": "we first learn the spatio-temporal relation among the resultant visual and displacement memory tokens using self-attention module",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the output features of self-attention are aggregated with the current visual features through cross-attention",
+   "grounded": true
+  },
+  {
+   "op": "compute cross-attention",
+   "canonical": "compute cross-attention",
+   "object": "latent",
+   "quote": "the output features of self-attention are aggregated with the current visual features through cross-attention",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "the cross-attended features are finally given to a decoder to predict depth on the current frame",
+   "grounded": true
+  },
+  {
+   "op": "cross-reference features",
+   "canonical": "cross-reference features",
+   "object": "latent",
+   "quote": "the depth network to cross-reference relevant features from the past when predicting depth on the current frame",
+   "grounded": true
+  },
+  {
+   "op": "learn spatio-temporal relations",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "we first learn the spatio-temporal relation among the resultant visual and displacement memory tokens using self-attention module",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the output features of self-attention are aggregated with the current visual features through cross-attention",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "the cross-attended features are finally given to a decoder to predict depth on the current frame",
+   "grounded": true
+  },
+  {
+   "op": "maintain memory tokens",
+   "canonical": "maintain memory tokens",
+   "object": "latent",
+   "quote": "optimizing it to keep tokens that correspond with both the past and the present visual information",
+   "grounded": true
+  },
+  {
+   "op": "process memory features",
+   "canonical": "process memory features",
+   "object": "latent",
+   "quote": "we adopt attention-based approach to process memory features",
+   "grounded": true
+  },
+  {
+   "op": "extract visual features",
+   "canonical": "extract visual features",
+   "object": "input",
+   "quote": "the output features of self-attention are aggregated with the current visual features through cross-attention",
+   "grounded": true
+  },
+  {
+   "op": "encode visual features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the output features of self-attention are aggregated with the current visual features through cross-attention",
+   "grounded": true
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "latent",
+   "quote": "we first learn the spatio-temporal relation among the resultant visual and displacement memory tokens using self-attention module",
+   "grounded": true
+  },
+  {
+   "op": "apply attention weights",
+   "canonical": "apply attention weights",
+   "object": "latent",
+   "quote": "the output features of self-attention are aggregated with the current visual features through cross-attention",
+   "grounded": true
+  },
+  {
+   "op": "transform features",
+   "canonical": "transform features",
+   "object": "latent",
+   "quote": "the output features of self-attention are aggregated with the current visual features through cross-attention",
+   "grounded": true
+  },
+  {
+   "op": "combine memory and current features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the output features of self-attention are aggregated with the current visual features through cross-attention",
+   "grounded": true
+  },
+  {
+   "op": "feed to decoder",
+   "canonical": "feed to decoder",
+   "object": "latent",
+   "quote": "the cross-attended features are finally given to a decoder to predict depth on the current frame",
+   "grounded": true
+  },
+  {
+   "op": "output depth map",
+   "canonical": "output depth map",
+   "object": "state",
+   "quote": "the cross-attended features are finally given to a decoder to predict depth on the current frame",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention weights@latent",
+  "compute attention weights@latent",
+  "compute cross-attention@latent",
+  "compute self-attention@latent",
+  "correct@latent",
+  "cross-reference features@latent",
+  "encode@input",
+  "extract visual features@input",
+  "feed to decoder@latent",
+  "maintain memory tokens@latent",
+  "output depth map@state",
+  "predict@state",
+  "process memory features@latent",
+  "reconstruct@state",
+  "store memory@latent",
+  "train@latent",
+  "transform features@latent"
+ ]
+}

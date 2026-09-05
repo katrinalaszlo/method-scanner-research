@@ -1,0 +1,131 @@
+{
+ "arxiv_id": "2008.01167",
+ "source": "abstract",
+ "words": 166,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 9,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "sum pool",
+   "canonical": "sum pool",
+   "object": "INVALID:prediction",
+   "quote": "We sum-pool predictions stemming from individual features into a single prediction.",
+   "grounded": true
+  },
+  {
+   "op": "label",
+   "canonical": "classify",
+   "object": "latent",
+   "quote": "Current anchor-free object detectors label all the features that spatially fall inside a predefined central region of a ground-truth box as positive.",
+   "grounded": true
+  },
+  {
+   "op": "assign",
+   "canonical": "assign",
+   "object": "INVALID:label",
+   "quote": "Current anchor-free object detectors label all the features that spatially fall inside a predefined central region of a ground-truth box as positive.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "This allows the model to reduce the contributions of non-discriminatory features during training.",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "This allows the model to reduce the contributions of non-discriminatory features during training.",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:object",
+   "quote": "We develop a new one-stage, anchor-free object detector, PPDet, to employ this labeling strategy during training and a similar prediction pooling method during inference.",
+   "grounded": true
+  },
+  {
+   "op": "pool",
+   "canonical": "pool",
+   "object": "INVALID:prediction",
+   "quote": "We develop a new one-stage, anchor, free object detector, PPDet, to employ this labeling strategy during training and a similar prediction pooling method during inference.",
+   "grounded": true
+  },
+  {
+   "op": "detect",
+   "canonical": "detect",
+   "object": "INVALID:object",
+   "quote": "We develop a new one-stage, anchor-free object detector, PPDet, to employ this labeling strategy during training and a similar prediction pooling method during inference.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "On the COCO dataset, PPDet achieves the best performance among anchor-free top-down detectors and performs on-par with the other state-of-the-art methods.",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "INVALID:performance",
+   "quote": "On the COCO dataset, PPDet achieves the best performance among anchor-free top-down detectors and performs on-par with the other state-of-the-art methods.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:metric",
+   "quote": "On the COCO dataset, PPDet achieves the best performance among anchor-free top-down detectors and performs on-par with the other state-of-the-art methods.",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "INVALID:method",
+   "quote": "On the COCO dataset, PPDet achieves the best performance among anchor-free top-down detectors and performs on-par with the other state-of-the-art methods.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "It also outperforms all major one-stage and two-stage methods in small object detection (${AP}_{S}$ $31.4$).",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:metric",
+   "quote": "It also outperforms all major one-stage and two-stage methods in small object detection (${AP}_{S}$ $31.4$).",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "It also outperforms all major one-stage and two-stage methods in small object detection (${AP}_{S}$ $31.4$).",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "It also outperforms all major one-stage and two-stage methods in small object detection (${AP}_{S}$ $31.4$).",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "classify@latent",
+  "compute@error",
+  "compute@reward",
+  "compute@value",
+  "correct@parameter"
+ ]
+}

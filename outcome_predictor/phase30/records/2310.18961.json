@@ -1,0 +1,93 @@
+{
+ "arxiv_id": "2310.18961",
+ "source": "abstract",
+ "words": 245,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "large pre-trained vision-language models (VLMs), such as CLIP",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "CLIP, have demonstrated strong zero-shot recognition ability",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "the VLMs focus more on modeling the class semantics",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "their ZSAD performance is weak since the VLMs",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we introduce a novel approach, namely AnomalyCLIP",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "learn object-agnostic text prompts that capture",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "enabling generalized normality and abnormality recognition",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "Large-scale experiments on 17 real-world anomaly detection datasets",
+   "grounded": true
+  },
+  {
+   "op": "segment",
+   "canonical": "segment",
+   "object": "action",
+   "quote": "AnomalyCLIP achieves superior zero-shot performance",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "detecting and segmenting anomalies in datasets",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@distribution",
+  "predict@reward",
+  "reconstruct@noise",
+  "sample@sample",
+  "segment@action"
+ ]
+}

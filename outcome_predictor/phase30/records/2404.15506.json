@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2404.15506",
+ "source": "abstract",
+ "words": 247,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "from a single image",
+   "grounded": true
+  },
+  {
+   "op": "transform camera space",
+   "canonical": "transform camera space",
+   "object": "state",
+   "quote": "explicitly addresses the ambiguity problem",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "metric depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "predict normal",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "surface normal estimation",
+   "grounded": true
+  },
+  {
+   "op": "optimize depth normal",
+   "canonical": "improve",
+   "object": "distribution",
+   "quote": "joint depth-normal optimization module",
+   "grounded": true
+  },
+  {
+   "op": "distill knowledge",
+   "canonical": "distill knowledge",
+   "object": "distribution",
+   "quote": "distill diverse data knowledge from metric depth",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "can be stably trained with over 16 million of images",
+   "grounded": true
+  },
+  {
+   "op": "generalize zero shot",
+   "canonical": "generalize zero shot",
+   "object": "task",
+   "quote": "zero-shot generalization to in-the-wild images",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "distill knowledge@distribution",
+  "encode@input",
+  "generalize zero shot@task",
+  "improve@distribution",
+  "predict@state",
+  "transform camera space@state"
+ ]
+}

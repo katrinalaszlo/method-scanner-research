@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2003.13880",
+ "source": "abstract",
+ "words": 225,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "to search for the optimal model hyper-parameters",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "to search for the optimal model hyper-parameters",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "a standard convolutional layer",
+   "grounded": true
+  },
+  {
+   "op": "apply depth-wise convolution",
+   "canonical": "apply depth-wise convolution",
+   "object": "input",
+   "quote": "a combination of 1\u00d71 and depth-wise separable convolutions",
+   "grounded": false
+  },
+  {
+   "op": "apply 1\u00d71 convolution",
+   "canonical": "apply 1\u00d71 convolution",
+   "object": "input",
+   "quote": "a combination of 1\u00d71 and depth-wise separable convolutions",
+   "grounded": false
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "progressively multiplexing channel and spatial information",
+   "grounded": true
+  },
+  {
+   "op": "aggregate information",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "progressively multiplexing channel and spatial information",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "to search for the optimal model hyper-parameters",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "to search for the optimal model hyper-parameters",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "raw observation: pixels, tokens, audio, measurement",
+   "grounded": false
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "raw observation: pixels, tokens, audio, measurement",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "a Q-function, critic, target, return or advantage",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "On ImageNet, the resulting models, dubbed MUXNets",
+   "grounded": true
+  },
+  {
+   "op": "compute efficiency",
+   "canonical": "compute efficiency",
+   "object": "parameter",
+   "quote": "On ImageNet, the resulting models, dubbed MUXNets",
+   "grounded": true
+  },
+  {
+   "op": "compute compactness",
+   "canonical": "compute compactness",
+   "object": "parameter",
+   "quote": "On ImageNet, the resulting models, dubbed MUXNets",
+   "grounded": true
+  },
+  {
+   "op": "compute transfer accuracy",
+   "canonical": "compute transfer accuracy",
+   "object": "task",
+   "quote": "MUXNet also performs well under transfer learning",
+   "grounded": true
+  },
+  {
+   "op": "compute detection accuracy",
+   "canonical": "compute detection accuracy",
+   "object": "task",
+   "quote": "detection on PASC, VOC 2007 is 1.2% more accurate",
+   "grounded": false
+  },
+  {
+   "op": "compute speed",
+   "canonical": "compute speed",
+   "object": "task",
+   "quote": "detection on PASCAL VOC 2007 is 1.2% more accurate",
+   "grounded": true
+  },
+  {
+   "op": "compute compactness",
+   "canonical": "compute compactness",
+   "object": "task",
+   "quote": "detection on PASCAL VOC 2007 is 1.2% more accurate",
+   "grounded": true
+  },
+  {
+   "op": "compute model size",
+   "canonical": "compute model size",
+   "object": "parameter",
+   "quote": "On ImageNet, the resulting models, dubbed MUXNets",
+   "grounded": true
+  },
+  {
+   "op": "compute operations",
+   "canonical": "compute operations",
+   "object": "parameter",
+   "quote": "On ImageNet, the resulting models, dubbed MUXNets",
+   "grounded": true
+  },
+  {
+   "op": "compute performance",
+   "canonical": "compute performance",
+   "object": "task",
+   "quote": "On ImageNet, the resulting models, dubbed MUXNets",
+   "grounded": true
+  },
+  {
+   "op": "compute compactness",
+   "canonical": "compute compactness",
+   "object": "task",
+   "quote": "On ImageNet, the resulting models, dubbed MUXNets",
+   "grounded": true
+  },
+  {
+   "op": "compute efficiency",
+   "canonical": "compute efficiency",
+   "object": "task",
+   "quote": "On ImageNet, the resulting models, dubbed MUXNets",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "On ImageNet, the resulting models, dubbed MUXNets",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply 1\u00d71 convolution@input",
+  "apply convolution@input",
+  "apply depth-wise convolution@input",
+  "backpropagate@gradient",
+  "compute accuracy@task",
+  "compute compactness@parameter",
+  "compute compactness@task",
+  "compute detection accuracy@task",
+  "compute efficiency@parameter",
+  "compute efficiency@task",
+  "compute gradient@error",
+  "compute model size@parameter",
+  "compute operations@parameter",
+  "compute performance@task",
+  "compute speed@task",
+  "compute transfer accuracy@task",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "process input@input",
+  "sample@input"
+ ]
+}

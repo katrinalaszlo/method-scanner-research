@@ -1,0 +1,166 @@
+{
+ "arxiv_id": "1810.11579",
+ "source": "abstract",
+ "words": 209,
+ "model": "qwen3:8b",
+ "salvaged": true,
+ "n_ops": 19,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "state",
+   "quote": "aggregates and propagates informative global features",
+   "grounded": false
+  },
+  {
+   "op": "gather features",
+   "canonical": "gather features",
+   "object": "latent",
+   "quote": "gathers features from the entire space into a compact set",
+   "grounded": true
+  },
+  {
+   "op": "apply attention pooling",
+   "canonical": "apply attention pooling",
+   "object": "state",
+   "quote": "second-order attention pooling",
+   "grounded": true
+  },
+  {
+   "op": "select features",
+   "canonical": "select features",
+   "object": "distribution",
+   "quote": "adaptively selects and distributes features",
+   "grounded": true
+  },
+  {
+   "op": "propagate features",
+   "canonical": "transmit",
+   "object": "state",
+   "quote": "enabling subsequent convolution layers to access features",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "aggregates and propagates informative global features",
+   "grounded": false
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "state",
+   "quote": "adaptively selects and distributes features to each location",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "plugged into existing deep neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "conduct extensive ablation studies",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "conduct extensive ablation studies",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "plugged into existing deep neural networks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "conduct extensive ablation studies",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "outperforms a much larger ResNet-152",
+   "grounded": true
+  },
+  {
+   "op": "compute metrics",
+   "canonical": "compute metrics",
+   "object": "task",
+   "quote": "achieves the state-of-the-art results",
+   "grounded": false
+  },
+  {
+   "op": "compute efficiency",
+   "canonical": "compute efficiency",
+   "object": "task",
+   "quote": "significantly higher efficiency than recent works",
+   "grounded": true
+  },
+  {
+   "op": "compute parameters",
+   "canonical": "compute parameters",
+   "object": "parameter",
+   "quote": "over 40% less the number of parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute flops",
+   "canonical": "compute flops",
+   "object": "parameter",
+   "quote": "less FLOPs",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "input images/videos",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "enabling subsequent convolution layers to access features",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention pooling@state",
+  "apply attention@state",
+  "backpropagate@gradient",
+  "compute accuracy@task",
+  "compute attention@state",
+  "compute efficiency@task",
+  "compute flops@parameter",
+  "compute metrics@task",
+  "compute parameters@parameter",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "gather features@latent",
+  "process input@input",
+  "reconstruct@state",
+  "select features@distribution",
+  "train@parameter",
+  "transmit@state"
+ ]
+}

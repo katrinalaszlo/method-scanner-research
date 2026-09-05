@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1511.02228",
+ "source": "abstract",
+ "words": 126,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "augment input",
+   "canonical": "augment",
+   "object": "input",
+   "quote": "augmentation of data",
+   "grounded": false
+  },
+  {
+   "op": "search dictionary",
+   "canonical": "search dictionary",
+   "object": "input",
+   "quote": "use of large dictionaries with efficient search structures",
+   "grounded": true
+  },
+  {
+   "op": "cascading",
+   "canonical": "cascading",
+   "object": "input",
+   "quote": "cascading",
+   "grounded": true
+  },
+  {
+   "op": "extract self-similarities",
+   "canonical": "extract self-similarities",
+   "object": "input",
+   "quote": "image self-similarities",
+   "grounded": true
+  },
+  {
+   "op": "back project",
+   "canonical": "back project",
+   "object": "input",
+   "quote": "back projection refinement",
+   "grounded": true
+  },
+  {
+   "op": "check consistency",
+   "canonical": "check consistency",
+   "object": "input",
+   "quote": "enhanced prediction by consistency check",
+   "grounded": true
+  },
+  {
+   "op": "reason context",
+   "canonical": "reason context",
+   "object": "input",
+   "quote": "context reasoning",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "improve example-based single image super resolution",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "augment@input",
+  "back project@input",
+  "cascading@input",
+  "check consistency@input",
+  "extract self-similarities@input",
+  "predict@input",
+  "reason context@input",
+  "search dictionary@input"
+ ]
+}

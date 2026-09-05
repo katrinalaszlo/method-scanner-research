@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2205.09612",
+ "source": "abstract",
+ "words": 177,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute confidence",
+   "canonical": "compute confidence",
+   "object": "input",
+   "quote": "return a confidence score as output",
+   "grounded": true
+  },
+  {
+   "op": "compute average",
+   "canonical": "compute average",
+   "object": "state",
+   "quote": "customize the average computation requirement",
+   "grounded": true
+  },
+  {
+   "op": "aggregate output",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "system can achieve the following advantages",
+   "grounded": true
+  },
+  {
+   "op": "compare model",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "performance of the system can exceed any model",
+   "grounded": true
+  },
+  {
+   "op": "evaluate confidence",
+   "canonical": "evaluate",
+   "object": "state",
+   "quote": "determine whether the classification model classifies input samples correctly",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "take a classification result in the form of vector",
+   "grounded": true
+  },
+  {
+   "op": "output result",
+   "canonical": "output result",
+   "object": "state",
+   "quote": "return a confidence score as output",
+   "grounded": true
+  },
+  {
+   "op": "compute flops",
+   "canonical": "compute flops",
+   "object": "state",
+   "quote": "customize the average computation requirement",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "compare@state",
+  "compute average@state",
+  "compute confidence@input",
+  "compute flops@state",
+  "evaluate@state",
+  "output result@state",
+  "process input@input"
+ ]
+}

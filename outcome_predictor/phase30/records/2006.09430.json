@@ -1,0 +1,72 @@
+{
+ "arxiv_id": "2006.09430",
+ "source": "abstract",
+ "words": 152,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 6,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "INVALID:node embedding",
+   "quote": "we use the Wasserstein distance to measure the dissimilarity between node embeddings of different graphs",
+   "grounded": true
+  },
+  {
+   "op": "create map",
+   "canonical": "create map",
+   "object": "distribution",
+   "quote": "WEGL calculates Monge maps from a reference distribution to each node embedding",
+   "grounded": true
+  },
+  {
+   "op": "generate vector",
+   "canonical": "reconstruct",
+   "object": "INVALID:graph",
+   "quote": "creates a fixed-sized vector representation of the graph",
+   "grounded": true
+  },
+  {
+   "op": "embed graph",
+   "canonical": "encode",
+   "object": "INVALID:graph",
+   "quote": "embedding entire graphs in a vector space",
+   "grounded": true
+  },
+  {
+   "op": "predict property",
+   "canonical": "predict",
+   "object": "INVALID:graph",
+   "quote": "graph-level prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "similarity between graphs as a function of the similarity between their node embedding distributions",
+   "grounded": true
+  },
+  {
+   "op": "reduce complexity",
+   "canonical": "reduce complexity",
+   "object": "INVALID:computation",
+   "quote": "reduce the computational complexity from quadratic to linear in the number of graphs",
+   "grounded": true
+  },
+  {
+   "op": "embed node",
+   "canonical": "encode",
+   "object": "INVALID:node",
+   "quote": "embedding entire graphs in a vector space",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute similarity@distribution",
+  "create map@distribution"
+ ]
+}

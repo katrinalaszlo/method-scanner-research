@@ -1,0 +1,92 @@
+{
+ "arxiv_id": "1705.08790",
+ "source": "abstract",
+ "words": 167,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "We present a method for direct optimization of the mean intersection-over-union loss in neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "The loss is shown to perform better with respect to the Jaccard index measure than the traditionally used cross-entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "compute jaccard",
+   "canonical": "compute jaccard",
+   "object": "error",
+   "quote": "The Jaccard index, also referred to as the intersection-over-union score, is commonly employed in the evaluation of image segmentation results",
+   "grounded": true
+  },
+  {
+   "op": "compute intersection",
+   "canonical": "compute intersection",
+   "object": "error",
+   "quote": "The Jaccard index, also referred to as the intersection-over-union score, is commonly employed in the evaluation of image segmentation results",
+   "grounded": true
+  },
+  {
+   "op": "compute union",
+   "canonical": "compute union",
+   "object": "error",
+   "quote": "The Jaccard index, also referred to as the intersection-over,union score, is commonly employed in the evaluation of image segmentation results",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "error",
+   "quote": "We present a method for direct optimization of the mean intersection-over-union loss in neural networks",
+   "grounded": true
+  },
+  {
+   "op": "optimize loss",
+   "canonical": "improve",
+   "object": "error",
+   "quote": "We present a method for direct optimization of the mean intersection-over-union loss in neural networks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "We show quantitative and qualitative differences between optimizing the Jaccard index per image versus optimizing the Jaccard index taken over an entire dataset",
+   "grounded": false
+  },
+  {
+   "op": "compare loss",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "We show quantitative and qualitative differences between optimizing the Jaccard index per image versus optimizing the Jaccard index taken over an entire dataset",
+   "grounded": false
+  },
+  {
+   "op": "compute segmentation",
+   "canonical": "compute segmentation",
+   "object": "distribution",
+   "quote": "We evaluate the impact of our method in a semantic segmentation pipeline and show substantially improved intersection-over-union segmentation scores on the Pascal VOC and Cityscapes datasets",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compute intersection@error",
+  "compute jaccard@error",
+  "compute mean@error",
+  "compute segmentation@distribution",
+  "compute union@error",
+  "evaluate@error",
+  "improve@error"
+ ]
+}

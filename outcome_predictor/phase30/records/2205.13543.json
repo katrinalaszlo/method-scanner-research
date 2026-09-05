@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2205.13543",
+ "source": "abstract",
+ "words": 266,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Masked image modeling (MIM) as pre-training is shown to be effective",
+   "grounded": true
+  },
+  {
+   "op": "mask",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "how and where MIM works remain unclear",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "we compare MIM with the long-dominant supervised pre-trained models",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "we find that MIM brings locality inductive bias",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "MIM models can perform significantly better on geometric",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "the model can maintain a large diversity on attention heads",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "without bells and whistles, a standard MIM pre-trained SwinV2-L",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "for the semantic understanding datasets where the categories",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "can still achieve highly competitive transfer performance",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we hope that our work can inspire new and solid research",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@latent",
+  "compute reward@reward",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "mask@input",
+  "predict@latent",
+  "reconstruct@noise",
+  "sample@distribution"
+ ]
+}

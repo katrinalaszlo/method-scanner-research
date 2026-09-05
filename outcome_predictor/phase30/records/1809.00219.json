@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "1809.00219",
+ "source": "abstract",
+ "words": 167,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 3,
+ "ops": [
+  {
+   "op": "generate image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "generating realistic textures during single image super-resolution",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "improve the perceptual loss by using the features before activation",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "derive an Enhanced SRGAN (ESRGAN)",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "borrow the idea from relativistic GAN to let the discriminator predict relative realness",
+   "grounded": true
+  },
+  {
+   "op": "predict realness",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "borrow the idea from relativistic GAN to let the discriminator predict relative realness",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "improve the perceptual loss by using the features before activation",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "improve the perceptual loss by using the features before activation",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "generate realistic textures during single image super-resolution",
+   "grounded": false
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "improve the perceptual loss by using the features before activation",
+   "grounded": false
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "distribution",
+   "quote": "improve the perceptual loss by using the features before activation",
+   "grounded": false
+  },
+  {
+   "op": "compare features",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "improve the perceptual loss by using the features before activation",
+   "grounded": false
+  },
+  {
+   "op": "compute brightness",
+   "canonical": "compute brightness",
+   "object": "value",
+   "quote": "improve the perceptual loss by using the features before activation",
+   "grounded": false
+  },
+  {
+   "op": "compute texture",
+   "canonical": "compute texture",
+   "object": "value",
+   "quote": "improve the percept,ual loss by using the features before activation",
+   "grounded": false
+  },
+  {
+   "op": "evaluate quality",
+   "canonical": "evaluate",
+   "object": "input",
+   "quote": "achieves consistently better visual quality with more realistic and natural textures",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "derive an Enhanced SRGAN (ESRGAN)",
+   "grounded": false
+  },
+  {
+   "op": "validate model",
+   "canonical": "validate model",
+   "object": "input",
+   "quote": "achieves consistently better visual quality with more realistic and natural textures",
+   "grounded": false
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "generate realistic textures during single image super-resolution",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "generate realistic textures during single image super-resolution",
+   "grounded": false
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "derive an Enhanced SRGAN (ESRGAN)",
+   "grounded": false
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "derive an Enhanced SRGAN (ESRGAN)",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "derive an Enhanced SRGAN (ESRGAN)",
+   "grounded": false
+  },
+  {
+   "op": "update weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "derive an Enhanced SRGAN (ESRGAN)",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "improve the perceptual loss by using the features before activation",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "generate realistic textures during single image super-resolution",
+   "grounded": false
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "improve the perceptual loss by using the features before activation",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply activation@distribution",
+  "apply regularization@parameter",
+  "backpropagate@gradient",
+  "compare@distribution",
+  "compare@error",
+  "compute brightness@value",
+  "compute gradient@gradient",
+  "compute reward@value",
+  "compute similarity@distribution",
+  "compute texture@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@input",
+  "improve@parameter",
+  "predict@distribution",
+  "reconstruct@input",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "sample@sample",
+  "train@parameter",
+  "validate model@input"
+ ]
+}

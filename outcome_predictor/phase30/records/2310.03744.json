@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "2310.03744",
+ "source": "abstract",
+ "words": 108,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "using CLIP-ViT-L-336px with an MLP projection",
+   "grounded": true
+  },
+  {
+   "op": "project",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "using CLIP-ViT-L-336px with an MLP projection",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "adding academic-task-oriented VQA data with simple response formatting prompts",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "adding academic-task-oriented VQA data with simple response formatting prompts",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "adding academic-task-oriented VQA data with simple response formatting prompts",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our final 13B checkpoint uses merely 1.2M publicly available data",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "our final 13B checkpoint uses merely 1.2M publicly available data",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "adding academic-task-oriented VQA data with simple response formatting prompts",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:response",
+   "quote": "adding academic-task-oriented VQA data with simple response formatting prompts",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "achieve state-of-the-art across 11 benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "achieve state-of-the-art across 11 benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "store",
+   "canonical": "store",
+   "object": "trajectory",
+   "quote": "achieve state-of-the-art across 11 benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "retrieve",
+   "canonical": "retrieve",
+   "object": "trajectory",
+   "quote": "achieve state-of-the-art across 11 benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "our final 13B checkpoint uses merely 1.2M publicly available data",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "our final 13B checkpoint uses merely 1.2M publicly available data",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "our final 13B checkpoint uses merely 1.2M publicly available data",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "our final 13B checkpoint uses merely 1.2M publicly available data",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "error",
+   "quote": "our final 13B checkpoint uses merely 1.2M publicly available data",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "our final 13B checkpoint uses merely 1.2M publicly available data",
+   "grounded": true
+  },
+  {
+   "op": "accumulate",
+   "canonical": "accumulate",
+   "object": "gradient",
+   "quote": "our final 13B checkpoint uses merely 1.2M publicly available data",
+   "grounded": true
+  },
+  {
+   "op": "apply",
+   "canonical": "apply",
+   "object": "parameter",
+   "quote": "our final 13B checkpoint uses merely 1.2M publicly available data",
+   "grounded": true
+  },
+  {
+   "op": "forward",
+   "canonical": "forward",
+   "object": "input",
+   "quote": "using CLIP-ViT-L-336px with an MLP projection",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "adding academic-task-oriented VQA data with simple response formatting prompts",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "our final 13B checkpoint uses merely 1.2M publicly available data",
+   "grounded": true
+  },
+  {
+   "op": "save",
+   "canonical": "save",
+   "object": "parameter",
+   "quote": "our final 13B checkpoint uses merely 1.2M publicly available data",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "accumulate@gradient",
+  "aggregate@error",
+  "aggregate@latent",
+  "apply@parameter",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compute@error",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "forward@input",
+  "improve@parameter",
+  "normalize@error",
+  "predict@distribution",
+  "project@latent",
+  "reconstruct@noise",
+  "retrieve@trajectory",
+  "sample@action",
+  "sample@sample",
+  "save@parameter",
+  "store@trajectory",
+  "train@parameter"
+ ]
+}

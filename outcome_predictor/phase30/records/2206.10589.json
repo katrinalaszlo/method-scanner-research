@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2206.10589",
+ "source": "abstract",
+ "words": 190,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "In the pursuit of achieving ever-increasing accuracy",
+   "grounded": true
+  },
+  {
+   "op": "split input",
+   "canonical": "split input",
+   "object": "input",
+   "quote": "splits input tensors into multiple channel groups",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "utilizes depth-wise convolution along with self-attention",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "utilizes depth-wise convolution along with self-attention",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "implicitly increase the receptive field and encode multi-scale features",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "encode multi-scale features",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Our extensive experiments on classification, detection and segmentation tasks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "outperforming state-of-the-art methods with comparatively lower compute requirements",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "Our EdgeNeXt model with 1.3M parameters achieves 71.2% top-1 accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "outperforming MobileViT with an absolute gain of 2.2% with 28% reduction in FLOPs",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "compute accuracy@task",
+  "compute attention@latent",
+  "correct@parameter",
+  "evaluate@error",
+  "predict@distribution",
+  "process input@input",
+  "reconstruct@latent",
+  "split input@input"
+ ]
+}

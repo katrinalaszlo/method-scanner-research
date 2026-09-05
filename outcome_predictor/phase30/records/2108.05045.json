@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2108.05045",
+ "source": "abstract",
+ "words": 261,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "collect data",
+   "canonical": "collect data",
+   "object": "task",
+   "quote": "we collect all the person re-identification datasets",
+   "grounded": true
+  },
+  {
+   "op": "select dataset",
+   "canonical": "select dataset",
+   "object": "task",
+   "quote": "we select the three most frequently used datasets",
+   "grounded": false
+  },
+  {
+   "op": "collect images",
+   "canonical": "collect images",
+   "object": "input",
+   "quote": "we develop DataHunter that collects over 300K+ weak annotated images",
+   "grounded": true
+  },
+  {
+   "op": "form dataset",
+   "canonical": "form dataset",
+   "object": "task",
+   "quote": "joins 17 remaining full labeled datasets to form multiple source domains",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we further propose a simple yet effective Semi-Supervised Knowledge Distillation",
+   "grounded": true
+  },
+  {
+   "op": "assign label",
+   "canonical": "assign label",
+   "object": "sample",
+   "quote": "assigning soft pseudo labels to YouTube-Human",
+   "grounded": true
+  },
+  {
+   "op": "improve generalization",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "improve models' generalization ability",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Experiments on several protocols verify the effectiveness",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "assign label@sample",
+  "collect data@task",
+  "collect images@input",
+  "evaluate@task",
+  "form dataset@task",
+  "improve@parameter",
+  "select dataset@task",
+  "train@parameter"
+ ]
+}

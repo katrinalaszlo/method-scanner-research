@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2112.01527",
+ "source": "abstract",
+ "words": 137,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "image segmentation is about grouping pixels with different semantics",
+   "grounded": true
+  },
+  {
+   "op": "predict mask",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "masked attention extracts localized features by constraining cross-attention within predicted mask regions",
+   "grounded": false
+  },
+  {
+   "op": "apply cross attention",
+   "canonical": "apply cross attention",
+   "object": "latent",
+   "quote": "masked attention extracts localized features by constraining cross-attention within predicted mask regions",
+   "grounded": false
+  },
+  {
+   "op": "generate distribution",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "masked attention extracts localized features by constraining cross-attention within predicted mask regions",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "masked attention extracts localized features by constraining cross-attention within predicted mask regions",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "it outperforms the best specialized architectures by a significant margin on four popular datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "it outperforms the best specialized architectures by a significant margin on four popular datasets",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "it outperforms the best specialized architectures by a significant margin on four popular datasets",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "masked attention extracts localized features by constraining cross-attention within predicted mask regions",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "masked attention extracts localized features by constraining cross-attention within predicted mask regions",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "masked attention extracts localized, features by constraining cross-attention within predicted mask regions",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "masked attention extracts localized features by constraining cross-attention within predicted mask regions",
+   "grounded": false
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "masked attention extracts localized features by constraining cross-attention within predicted mask regions",
+   "grounded": false
+  },
+  {
+   "op": "predict trajectory",
+   "canonical": "predict",
+   "object": "trajectory",
+   "quote": "masked attention extracts localized features by constraining cross-attention within predicted mask regions",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "image segmentation is about grouping pixels with different semantics",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "masked attention extracts localized features by constraining cross-attention within predicted mask regions",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "masked attention extracts localized features by constraining cross-attention within predicted mask regions",
+   "grounded": false
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "masked attention extracts localized features by constraining cross-attention within predicted mask regions",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "masked attention extracts localized features by constraining cross-attention within predicted mask regions",
+   "grounded": false
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "it outperforms the best specialized architectures by a significant margin on four popular datasets",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply cross attention@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute latent@latent",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute task@task",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@reward",
+  "predict@state",
+  "predict@trajectory",
+  "reconstruct@distribution",
+  "reconstruct@noise",
+  "sample@sample"
+ ]
+}

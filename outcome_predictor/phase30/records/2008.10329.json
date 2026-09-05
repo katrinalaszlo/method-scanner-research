@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2008.10329",
+ "source": "abstract",
+ "words": 150,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "images of different scales can be trained simultaneously",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "each Fast SRCNN can process a specific scale image",
+   "grounded": true
+  },
+  {
+   "op": "generate latent",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "the learned network can make full use of the information resided in different scales of images",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "images of different scales can be trained simultaneously",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "each Fast SRCNN can process a specific scale image",
+   "grounded": true
+  },
+  {
+   "op": "output result",
+   "canonical": "output result",
+   "object": "INVALID:output",
+   "quote": "the learned network can make full use of the information resided in different scales of images",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "extensive experiments show that our network can achieve well performance for image SR",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "images of different scales can be trained simultaneously",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "correct@parameter",
+  "predict@latent",
+  "process input@input",
+  "reconstruct@input",
+  "sample@input"
+ ]
+}

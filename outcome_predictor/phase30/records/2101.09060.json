@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2101.09060",
+ "source": "abstract",
+ "words": 146,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "augment input",
+   "canonical": "augment",
+   "object": "input",
+   "quote": "data augmentation strategies have shown to be helpful tools",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "deep learning models can be extremely brittle when deployed",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "their original effect almost always disappears with respect",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "data augmentation strategies have shown to be helpful tools",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our thorough experimental evaluation shows",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "style transfer data augmentation and we present how it can be implemented",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "our thorough experimental evaluation shows",
+   "grounded": true
+  },
+  {
+   "op": "analyze behavior",
+   "canonical": "analyze behavior",
+   "object": "policy",
+   "quote": "we analyze the behavior of current state of the art domain generalization methods",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "analyze behavior@policy",
+  "augment@input",
+  "compare@error",
+  "compare@task",
+  "correct@parameter",
+  "evaluate@task",
+  "reconstruct@sample",
+  "train@parameter"
+ ]
+}

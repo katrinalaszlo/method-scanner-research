@@ -1,0 +1,192 @@
+{
+ "arxiv_id": "2006.09785",
+ "source": "abstract",
+ "words": 177,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 10,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute entropy",
+   "canonical": "compute entropy",
+   "object": "INVALID:feature embedding",
+   "quote": "train a neural network to maximize the entropy of the feature embedding",
+   "grounded": true
+  },
+  {
+   "op": "create output manifold",
+   "canonical": "create output manifold",
+   "object": "INVALID:feature embedding",
+   "quote": "creating an optimal output manifold using a self-supervised auxiliary loss",
+   "grounded": true
+  },
+  {
+   "op": "minimize entropy",
+   "canonical": "minimize entropy",
+   "object": "INVALID:feature embedding",
+   "quote": "minimize the entropy on feature embedding by bringing self-supervised twins together",
+   "grounded": true
+  },
+  {
+   "op": "constrain manifold",
+   "canonical": "constrain manifold",
+   "object": "INVALID:manifold",
+   "quote": "constraining the manifold with student-teacher distillation",
+   "grounded": true
+  },
+  {
+   "op": "distill knowledge",
+   "canonical": "distill knowledge",
+   "object": "INVALID:student-teacher",
+   "quote": "constraining the manifold with student-teacher distillation",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train a neural network to maximize the entropy of the feature embedding",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "train a neural network to maximize the entropy of the feature embedding",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "train a neural network to maximize the entropy of the feature embedding",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "minimize the entropy on feature embedding by bringing self-supervised twins together",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "minimize the entropy on feature embedding by bringing self-supervised twins together",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "minimize the than entropy on feature embedding by bringing self-supervised twins together",
+   "grounded": false
+  },
+  {
+   "op": "distill knowledge",
+   "canonical": "distill knowledge",
+   "object": "INVALID:student-teacher",
+   "quote": "constraining the manifold with student-teacher distillation",
+   "grounded": true
+  },
+  {
+   "op": "compute entropy",
+   "canonical": "compute entropy",
+   "object": "INVALID:feature embedding",
+   "quote": "train a neural network to maximize the entropy of the feature embedding",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "train a neural network to maximize the entropy of the feature embedding",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "train a neural network to maximize the entropy of the feature embedding",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train a neural network to maximize the entropy of the feature embedding",
+   "grounded": true
+  },
+  {
+   "op": "compute entropy",
+   "canonical": "compute entropy",
+   "object": "INVALID:feature embedding",
+   "quote": "minimize the entropy on feature embedding by bringing self-supervised twins together",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "minimize the entropy on feature embedding by bringing self-supervised twins together",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "minimize the entropy on feature embedding by bringing self-supervised twins together",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "minimize the entropy on feature embedding by bringing self-supervised twins together",
+   "grounded": true
+  },
+  {
+   "op": "distill knowledge",
+   "canonical": "distill knowledge",
+   "object": "INVALID:student-teacher",
+   "quote": "constraining the manifold with student-teacher distillation",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "constraining the manifold with student-teacher distillation",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "constraining the manifold with student-teacher distillation",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "constraining the manifold with student-teacher distillation",
+   "grounded": true
+  },
+  {
+   "op": "compute entropy",
+   "canonical": "compute entropy",
+   "object": "INVALID:feature embedding",
+   "quote": "train a neural network to maximize the entropy of the feature embedding",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "correct@parameter",
+  "evaluate@error"
+ ]
+}

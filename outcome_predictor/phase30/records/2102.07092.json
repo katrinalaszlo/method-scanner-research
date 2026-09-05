@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2102.07092",
+ "source": "abstract",
+ "words": 200,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "state",
+   "quote": "each local region as similarities to its neighbors in space and time",
+   "grounded": true
+  },
+  {
+   "op": "convert features",
+   "canonical": "convert features",
+   "object": "latent",
+   "quote": "converting appearance features into relational values",
+   "grounded": true
+  },
+  {
+   "op": "extract representation",
+   "canonical": "extract representation",
+   "object": "latent",
+   "quote": "learn to extract an effective motion representation",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "inserted into neural architectures",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "recognize structural patterns in space and time",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "whole volume of STSS",
+   "grounded": true
+  },
+  {
+   "op": "sample region",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "sufficient volume of the neighborhood",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "trained end-to-end without additional supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "robust action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compare value",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "complementarity to spatio-temporal features",
+   "grounded": true
+  },
+  {
+   "op": "denoise signal",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "long-term interaction and fast motion",
+   "grounded": true
+  },
+  {
+   "op": "track trajectory",
+   "canonical": "track trajectory",
+   "object": "trajectory",
+   "quote": "sequence of frames",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "effective motion representation",
+   "grounded": true
+  },
+  {
+   "op": "resample region",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "sufficient volume of the neighborhood",
+   "grounded": true
+  },
+  {
+   "op": "propagate gradient",
+   "canonical": "transmit",
+   "object": "gradient",
+   "quote": "trained end-to-end without additional supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "recognize structural patterns in space and time",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "robust action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "standard action recognition benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "store trajectory",
+   "canonical": "store trajectory",
+   "object": "trajectory",
+   "quote": "sequence of frames",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "apply convolution@latent",
+  "compare@error",
+  "compare@value",
+  "compute distribution@distribution",
+  "compute reward@reward",
+  "compute similarity@state",
+  "compute task@task",
+  "convert features@latent",
+  "correct@parameter",
+  "evaluate@value",
+  "extract representation@latent",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@state",
+  "store trajectory@trajectory",
+  "track trajectory@trajectory",
+  "transmit@gradient"
+ ]
+}

@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "2203.16533",
+ "source": "abstract",
+ "words": 220,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "track objects",
+   "canonical": "track objects",
+   "object": "input",
+   "quote": "apply a simple online multi-object tracking system on raw videos",
+   "grounded": true
+  },
+  {
+   "op": "assign labels",
+   "canonical": "assign labels",
+   "object": "latent",
+   "quote": "ID labels automatically derived from tracklets",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "rectifies noisy labels based on the prototype assignment",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "develop a large-scale Pre-training framework utilizing Noisy Labels",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "utilizes spatial and temporal correlations as weak supervision",
+   "grounded": true
+  },
+  {
+   "op": "cluster examples",
+   "canonical": "cluster examples",
+   "object": "latent",
+   "quote": "clusters similar examples to one prototype",
+   "grounded": true
+  },
+  {
+   "op": "contrast examples",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "prototype-based contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "contrast examples",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "label-guided contrast, learning",
+   "grounded": false
+  },
+  {
+   "op": "predict label",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "learning directly from raw videos",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "utilizes spatial and temporal correlations as weak supervision",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "simple pre-training task provides a scalable way",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "joint learning of these three modules",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "joint learning of these three modules",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "rectifies noisy labels based on the prototype assignment",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "simple pre-training task provides a scalable way",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "utilizes spatial and temporal correlations as weak supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "simple pre-training task provides a scalable way",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "develop a large-scale Pre-training framework utilizing Noisy Labels",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "rectifies noisy labels based on the prototype assignment",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "prototype-based contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "label-guided contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "utilizes spatial and temporal correlations as weak supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "joint learning of these three modules",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "joint learning of these three modules",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "rectifies noisy labels based on the prototype assignment",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "assign labels@latent",
+  "backpropagate@gradient",
+  "cluster examples@latent",
+  "compare@error",
+  "compare@latent",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute reward@value",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "predict@distribution",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "track objects@input"
+ ]
+}

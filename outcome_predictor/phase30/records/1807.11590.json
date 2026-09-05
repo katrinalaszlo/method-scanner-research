@@ -1,0 +1,193 @@
+{
+ "arxiv_id": "1807.11590",
+ "source": "abstract",
+ "words": 132,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 21,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute iou",
+   "canonical": "compute iou",
+   "object": "INVALID:bounding box",
+   "quote": "predict the iou between each detected bounding box and the matched ground-truth",
+   "grounded": true
+  },
+  {
+   "op": "refine bounding box",
+   "canonical": "correct",
+   "object": "INVALID:bounding box",
+   "quote": "an optimization-based bounding box refinement method is proposed",
+   "grounded": true
+  },
+  {
+   "op": "predict iou",
+   "canonical": "predict",
+   "object": "INVALID:bounding box",
+   "quote": "the network acquires this confidence of localization",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the network acquires this confidence of localization",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the predicted iou is formulated as the objective",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the predicted iou is formulated as the objective",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the predicted iou is formulated as the objective",
+   "grounded": true
+  },
+  {
+   "op": "apply refinement",
+   "canonical": "apply refinement",
+   "object": "INVALID:bounding box",
+   "quote": "an optimization-based bounding box refinement method is proposed",
+   "grounded": true
+  },
+  {
+   "op": "preserve bounding box",
+   "canonical": "preserve bounding box",
+   "object": "INVALID:bounding box",
+   "quote": "improves the nms procedure by preserving accurately localized bounding boxes",
+   "grounded": true
+  },
+  {
+   "op": "compute confidence",
+   "canonical": "compute confidence",
+   "object": "INVALID:bounding box",
+   "quote": "the network acquires this confidence of localization",
+   "grounded": true
+  },
+  {
+   "op": "apply nms",
+   "canonical": "apply nms",
+   "object": "INVALID:bounding box",
+   "quote": "improves the nms procedure by preserving accurately localized bounding boxes",
+   "grounded": true
+  },
+  {
+   "op": "compute localization",
+   "canonical": "compute localization",
+   "object": "INVALID:bounding box",
+   "quote": "the network acquires this confidence of localization",
+   "grounded": true
+  },
+  {
+   "op": "compute regression",
+   "canonical": "compute regression",
+   "object": "INVALID:bounding box",
+   "quote": "properly localized bounding boxes degenerate during iterative regression",
+   "grounded": true
+  },
+  {
+   "op": "compute suppression",
+   "canonical": "compute suppression",
+   "object": "INVALID:bounding box",
+   "quote": "properly localized bounding boxes degenerate during iterative regression",
+   "grounded": true
+  },
+  {
+   "op": "compute confidence score",
+   "canonical": "compute confidence score",
+   "object": "INVALID:bounding box",
+   "quote": "the network acquires this confidence of localization",
+   "grounded": true
+  },
+  {
+   "op": "compute localization error",
+   "canonical": "compute localization error",
+   "object": "INVALID:bounding box",
+   "quote": "properly localized bounding boxes degenerate during iterative regression",
+   "grounded": true
+  },
+  {
+   "op": "compute localization quality",
+   "canonical": "compute localization quality",
+   "object": "INVALID:bounding box",
+   "quote": "the network acquires this confidence of localization",
+   "grounded": true
+  },
+  {
+   "op": "compute localization accuracy",
+   "canonical": "compute localization accuracy",
+   "object": "INVALID:bounding box",
+   "quote": "the network acquires this confidence of localization",
+   "grounded": true
+  },
+  {
+   "op": "compute localization confidence",
+   "canonical": "compute localization confidence",
+   "object": "INVALID:bounding box",
+   "quote": "the network acquires this confidence of localization",
+   "grounded": true
+  },
+  {
+   "op": "compute localization reliability",
+   "canonical": "compute localization reliability",
+   "object": "INVALID:bounding box",
+   "quote": "the network acquires this confidence of localization",
+   "grounded": true
+  },
+  {
+   "op": "compute localization precision",
+   "canonical": "compute localization precision",
+   "object": "INVALID:bounding box",
+   "quote": "the network acquires this confidence of localization",
+   "grounded": true
+  },
+  {
+   "op": "compute localization recall",
+   "canonical": "compute localization recall",
+   "object": "INVALID:bounding box",
+   "quote": "the network acquires this confidence of localization",
+   "grounded": true
+  },
+  {
+   "op": "compute localization f1",
+   "canonical": "compute localization f1",
+   "object": "INVALID:bounding box",
+   "quote": "the network acquires this confidence of localization",
+   "grounded": true
+  },
+  {
+   "op": "compute localization metrics",
+   "canonical": "compute localization metrics",
+   "object": "INVALID:bounding box",
+   "quote": "the network acquires this confidence of localization",
+   "grounded": true
+  },
+  {
+   "op": "compute localization performance",
+   "canonical": "compute localization performance",
+   "object": "INVALID:bounding box",
+   "quote": "the network acquires this confidence of localization",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "correct@parameter",
+  "evaluate@error"
+ ]
+}

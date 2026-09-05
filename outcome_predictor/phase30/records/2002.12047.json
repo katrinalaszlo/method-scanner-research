@@ -1,0 +1,201 @@
+{
+ "arxiv_id": "2002.12047",
+ "source": "abstract",
+ "words": 302,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "apply mask",
+   "canonical": "apply mask",
+   "object": "input",
+   "quote": "random binary masks obtained by applying a threshold to low frequency images",
+   "grounded": true
+  },
+  {
+   "op": "sample from distribution",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "low frequency images sampled from Fourier space",
+   "grounded": true
+  },
+  {
+   "op": "threshold",
+   "canonical": "threshold",
+   "object": "noise",
+   "quote": "random binary masks obtained by applying a threshold to low frequency images",
+   "grounded": true
+  },
+  {
+   "op": "generate mask",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "random binary masks obtained by applying a threshold to low frequency images",
+   "grounded": true
+  },
+  {
+   "op": "apply mask",
+   "canonical": "apply mask",
+   "object": "input",
+   "quote": "random binary masks obtained by applying a threshold to low frequency images",
+   "grounded": true
+  },
+  {
+   "op": "mix inputs",
+   "canonical": "mix inputs",
+   "object": "input",
+   "quote": "FMix improves performance over MixUp and CutMix",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we show that MixUp acts as a form of adversarial training",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "FMix improves performance over MixUp and CutMix",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "FMix improves performance over MixUp and CutMix",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "input",
+   "quote": "FMix improves performance over MixUp and CutMix",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "input",
+   "quote": "FMix improves performance over MixUp and CutMix",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we show that MixUp acts as a form of advers, training",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "FMix improves performance over MixUp and CutMix",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "FMix improves performance over MixUp and CutMix",
+   "grounded": true
+  },
+  {
+   "op": "generate mask",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "random binary masks obtained by applying a threshold to low frequency images",
+   "grounded": true
+  },
+  {
+   "op": "apply mask",
+   "canonical": "apply mask",
+   "object": "input",
+   "quote": "random binary masks obtained by applying a threshold to low frequency images",
+   "grounded": true
+  },
+  {
+   "op": "mix inputs",
+   "canonical": "mix inputs",
+   "object": "input",
+   "quote": "FMix improves performance over MixUp and CutMix",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we show that MixUp acts as a form of adversarial training",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "FMix improves performance over MixUp and CutMix",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "FMix improves performance over MixUp and CutMix",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "input",
+   "quote": "FMix improves performance over MixUp and CutMix",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "input",
+   "quote": "FMix improves performance over MixUp and CutMix",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we show that MixUp acts as a form of adversarial training",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "FMix improves performance over MixUp and CutMix",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "FMix improves performance over MixUp and CutMix",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply mask@input",
+  "backpropagate@gradient",
+  "compute accuracy@input",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@input",
+  "improve@parameter",
+  "mix inputs@input",
+  "reconstruct@input",
+  "sample@noise",
+  "threshold@noise",
+  "train@parameter"
+ ]
+}

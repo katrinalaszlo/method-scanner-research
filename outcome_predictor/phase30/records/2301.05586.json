@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "2301.05586",
+ "source": "abstract",
+ "words": 155,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "detect objects",
+   "canonical": "detect objects",
+   "object": "input",
+   "quote": "our YOLOv6-N hits 37.5% AP on the COCO dataset",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "extensive experiments are carefully conducted to validate the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "extensive experiments are carefully conducted to validate the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "extensive experiments are carefully conducted to validate the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "our YOLOv6-S strikes 45.0% AP at 484 FPS",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "our YOLOv6-S strikes 45.0% AP at 484 FPS",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "our YOLOv6-L6 achieves the state-of-the-art accuracy in real-time",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "our YOLFv6-L6 achieves the state-of-the-art accuracy in real-time",
+   "grounded": false
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "extensive experiments are carefully conducted to validate the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "our YOLOv6-S strikes 45.0% AP at 484 FPS",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "our YOLOv6-L6 achieves the state-of-the-art accuracy in real-time",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "our YOLOv6-L6 achieves the state-of-the-art accuracy in real-time",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "our YOLOv6-L6 achieves the state-of-the-art accuracy in real-time",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "our YOLOv6-L6 achieves the state-of-the-art accuracy in real-time",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "our YOLOv6-L6 achieves the state-of-the-art accuracy in real-time",
+   "grounded": true
+  },
+  {
+   "op": "compute state",
+   "canonical": "compute state",
+   "object": "state",
+   "quote": "our YOLOv6-L6 achieves the state-of-the-art accuracy in real-time",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "our YOLOv6-N hits 37.5% AP on the COCO dataset",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "extensive experiments are carefully conducted to validate the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "extensive experiments are carefully conducted to validate the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "extensive experiments are carefully conducted to validate the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "our YOLOv6-L6 achieves the state-of-the-art accuracy in real-time",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "our YOLOv6-S strikes 45.0% AP at 484 FPS",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "our YOLOv6-L6 achieves the state-of-the-art accuracy in real-time",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "our YOLOv6-L6 achieves the state-of-the-art accuracy in real-time",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute state@state",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "detect objects@input",
+  "evaluate@error",
+  "predict@reward",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

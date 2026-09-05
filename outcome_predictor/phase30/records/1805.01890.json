@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "1805.01890",
+ "source": "abstract",
+ "words": 140,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "accept input",
+   "canonical": "accept input",
+   "object": "input",
+   "quote": "RDML can accept as input a variety data to include text, video, images, and symbolic.",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "This paper describes RMDL and shows test results for image and text data including MNIST, CIFAR-10, WOS, Reuters, IMDB, and 20newsgroup.",
+   "grounded": true
+  },
+  {
+   "op": "split input",
+   "canonical": "split input",
+   "object": "input",
+   "quote": "This paper describes RMDL and shows test results for image and text data including MNIST, CIFAR-10, WOS, Reuters, IMDB, and 20newsgroup.",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "This paper describes RMDL and shows test results for image and text data including MNIST, CIFAR-10, WOS, Reuters, IMDB, and 20newsgroup.",
+   "grounded": true
+  },
+  {
+   "op": "generate features",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "This paper describes RMDL and shows test results for image and text data including MNIST, CIFAR-10, WOS, Reuters, IMDB, and 20newsgroup.",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "This paper describes RMDL and shows test results for image and text data including MNIST, CIFAR-10, WOS, Reuters, IMDB, and 20newsgroup.",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "output class",
+   "canonical": "output class",
+   "object": "action",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "aggregate results",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "resample features",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "This paper describes RMDL and shows test results for image and text data including MNIST, CIFAR-10, WOS, Reuters, IMDB, and 20newsgroup.",
+   "grounded": true
+  },
+  {
+   "op": "denoise features",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "This paper describes RMDL and shows test results for image and text data including MNIST, CIFAR-10, WOS, Reuters, IMDB, and 20newsgroup.",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate gradient",
+   "canonical": "backpropagate gradient",
+   "object": "gradient",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "store parameters",
+   "canonical": "store parameters",
+   "object": "parameter",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "output distribution",
+   "canonical": "output distribution",
+   "object": "distribution",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "evaluate trajectory",
+   "canonical": "evaluate",
+   "object": "trajectory",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  },
+  {
+   "op": "log results",
+   "canonical": "log results",
+   "object": "task",
+   "quote": "These test results show that RDML produces consistently better performance than standard methods over a broad range of data types and classification problems.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "accept input@input",
+  "aggregate@distribution",
+  "aggregate@latent",
+  "apply gradient@parameter",
+  "backpropagate gradient@gradient",
+  "compare@error",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@trajectory",
+  "log results@task",
+  "output class@action",
+  "output distribution@distribution",
+  "predict@value",
+  "process input@input",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "sample@action",
+  "sample@latent",
+  "split input@input",
+  "store parameters@parameter"
+ ]
+}

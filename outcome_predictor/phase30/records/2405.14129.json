@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2405.14129",
+ "source": "abstract",
+ "words": 217,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 4,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "group pairs",
+   "canonical": "group pairs",
+   "object": "INVALID:image-text",
+   "quote": "we divide them into different groups according to the degrees of alignment of them",
+   "grounded": true
+  },
+  {
+   "op": "learn representations",
+   "canonical": "train",
+   "object": "INVALID:alignment",
+   "quote": "the model is trained to learn the representations of different alignment levels",
+   "grounded": true
+  },
+  {
+   "op": "combine representations",
+   "canonical": "aggregate",
+   "object": "INVALID:alignment",
+   "quote": "we adaptively combine these representations of alignment levels to meet the dynamic alignment needs of different tasks",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the model is trained to learn the representations of different alignment levels",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "the model usually assumes that all image-text pairs are uniformly aligned",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the model is trained to learn the representations of different alignment levels",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the model is trained to learn the representations of different alignment levels",
+   "grounded": true
+  },
+  {
+   "op": "adapt to task",
+   "canonical": "adapt to task",
+   "object": "task",
+   "quote": "we adaptively combine these representations of alignment levels to meet the dynamic alignment needs of different tasks",
+   "grounded": true
+  },
+  {
+   "op": "predict alignment",
+   "canonical": "predict",
+   "object": "INVALID:alignment",
+   "quote": "we divide them into different groups according to the degrees of alignment of them",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the model usually assumes that all image-text pairs are uniformly aligned",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "we adaptively combine these representations of alignment levels to meet the dynamic alignment needs of different tasks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "extensive experimental results show that our model achieves competitive performance on 12 benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the model usually assumes that all image-text pairs are uniformly aligned",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we adaptively combine these representations of alignment levels to meet the dynamic alignment needs of different tasks",
+   "grounded": true
+  },
+  {
+   "op": "process trajectory",
+   "canonical": "process trajectory",
+   "object": "trajectory",
+   "quote": "the model usually assumes that all image-text pairs are uniformly aligned",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the model usually assumes that all image-text pairs are uniformly aligned",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we adaptively combine these representations of alignment levels to meet the dynamic alignment needs of different tasks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the model is trained to learn the representations of different alignment levels",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we adaptively combine these representations of alignment levels to meet the dynamic alignment needs of different tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the model is trained to learn the representations of different alignment levels",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we adaptively combine these representations of alignment levels to meet the dynamic alignment needs of different tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we adaptively combine these representations of alignment levels to meet the dynamic alignment needs of different tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the model usually assumes that all image-text pairs are uniformly aligned",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the model is trained to learn the representations of different alignment levels",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the model is trained to learn the representations of different alignment levels",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "adapt to task@task",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "process input@input",
+  "process trajectory@trajectory",
+  "reconstruct@action",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "train@parameter"
+ ]
+}

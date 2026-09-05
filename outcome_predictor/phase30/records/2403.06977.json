@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2403.06977",
+ "source": "abstract",
+ "words": 150,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Addressing the dual challenges of local redundancy and global dependencies in video understanding",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "state",
+   "quote": "The proposed VideoMamba overcomes the limitations of existing 3D convolution neural networks and video transformers",
+   "grounded": true
+  },
+  {
+   "op": "model",
+   "canonical": "model",
+   "object": "trajectory",
+   "quote": "Its linear-complexity operator enables efficient long-term modeling",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "Extensive evaluations reveal VideoMamba's four core abilities",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "thanks to a novel self-distillation technique",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "Sensitivity for recognizing short-term actions even with fine-grained motion differences",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Superiority in long-term video understanding, showcasing significant advancements over traditional feature-based models",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "task",
+   "quote": "Compatibility with other modalities, demonstrating robustness in multi-modal contexts",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "Through these distinct advantages, VideoMamba sets a new benchmark for video understanding",
+   "grounded": true
+  },
+  {
+   "op": "track",
+   "canonical": "track",
+   "object": "state",
+   "quote": "offering a scalable and efficient solution for comprehensive video understanding",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@task",
+  "compare@error",
+  "compute@distribution",
+  "correct@parameter",
+  "encode@input",
+  "model@trajectory",
+  "predict@value",
+  "process@state",
+  "reconstruct@sample",
+  "track@state"
+ ]
+}

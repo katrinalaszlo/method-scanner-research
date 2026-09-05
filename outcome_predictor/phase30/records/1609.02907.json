@@ -1,0 +1,95 @@
+{
+ "arxiv_id": "1609.02907",
+ "source": "abstract",
+ "words": 101,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 11,
+ "n_invalid_object": 7,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "compute graph laplacian",
+   "canonical": "compute graph laplacian",
+   "object": "INVALID:graph",
+   "quote": "we motivate the choice of our convolutional architecture via a localized first-order approximation of spectral graph convolutions.",
+   "grounded": false
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "INVALID:graph",
+   "quote": "we present a scalable approach for semi-supervised learning on graph-structured data that is based on an efficient variant of convolutional neural networks which operate directly on graphs.",
+   "grounded": true
+  },
+  {
+   "op": "aggregate node features",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "our model scales linearly in the number of graph edges and learns hidden layer representations that encode both local graph structure and features of nodes.",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "our model scales linearly in the number of graph edges and learns hidden layer representations that encode both local graph structure and features of nodes.",
+   "grounded": true
+  },
+  {
+   "op": "apply activation function",
+   "canonical": "apply activation function",
+   "object": "INVALID:node",
+   "quote": "our model scales linearly in the number of graph edges and learns hidden layer representations that encode both local graph structure and features of nodes.",
+   "grounded": true
+  },
+  {
+   "op": "propagate hidden states",
+   "canonical": "transmit",
+   "object": "INVALID:graph",
+   "quote": "our model scales linearly in the number of graph edges and learns hidden layer representations that encode both local graph structure and features of nodes.",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "in a number of experiments on citation networks and on a knowledge graph dataset we demonstrate that our approach outperforms related methods by a significant margin.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate error",
+   "canonical": "backpropagate error",
+   "object": "gradient",
+   "quote": "in a number of experiments on citation networks and on a knowledge graph dataset we demonstrate that our approach outperforms related methods by a significant margin.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "in a number of experiments on citation networks and on a knowledge graph dataset we demonstrate that our approach outperforms related methods by a significant margin.",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "INVALID:node",
+   "quote": "in a number of experiments on citation networks and on a knowledge graph dataset we demonstrate that our approach outperforms related methods by a significant margin.",
+   "grounded": true
+  },
+  {
+   "op": "apply softmax",
+   "canonical": "apply softmax",
+   "object": "distribution",
+   "quote": "in a number of experiments on citation networks and on a knowledge graph dataset we demonstrate that our approach outperforms related methods by a significant margin.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply softmax@distribution",
+  "backpropagate error@gradient",
+  "correct@parameter",
+  "evaluate@error"
+ ]
+}

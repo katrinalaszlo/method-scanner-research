@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "2201.09792",
+ "source": "abstract",
+ "words": 221,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "embed input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "group together small regions of the image into single input features",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "uses only standard convolutions to achieve the mixing steps",
+   "grounded": true
+  },
+  {
+   "op": "mix spatial features",
+   "canonical": "mix spatial features",
+   "object": "latent",
+   "quote": "separates the mixing of spatial and channel dimensions",
+   "grounded": true
+  },
+  {
+   "op": "mix channel features",
+   "canonical": "mix channel features",
+   "object": "latent",
+   "quote": "separates the mixing of spatial and channel dimensions",
+   "grounded": true
+  },
+  {
+   "op": "maintain resolution",
+   "canonical": "maintain resolution",
+   "object": "latent",
+   "quote": "maintains equal size and resolution throughout the network",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "outperforms the ViT, MLP-Mixer, and some of their variants",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "outperforms classical vision models such as the ResNet",
+   "grounded": false
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "operates directly on patches as input",
+   "grounded": true
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "outperforms the ViT, MLP-Mixer, and some of their variants",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "outperforms classical vision models such as the ResNet",
+   "grounded": false
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "outperforms the ViT, MLP-Mixer, and some of their variants",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "group together small regions of the image into single input features",
+   "grounded": true
+  },
+  {
+   "op": "generate features",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "separates the mixing of spatial and channel dimensions",
+   "grounded": true
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "latent",
+   "quote": "uses only standard convolutions to achieve the mixing steps",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "outperforms classical vision models such as the ResNet",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate gradient",
+   "canonical": "backpropagate gradient",
+   "object": "gradient",
+   "quote": "outper, performs classical vision models such as the ResNet",
+   "grounded": false
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "outperforms classical vision models such as the ResNet",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "outperforms the ViT, MLP-Mixer, and some of their variants",
+   "grounded": true
+  },
+  {
+   "op": "adjust weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "outperforms classical vision models such as the ResNet",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "outperforms the ViT, MLP-Mixer, and some of their variants",
+   "grounded": true
+  },
+  {
+   "op": "track progress",
+   "canonical": "track progress",
+   "object": "value",
+   "quote": "outperforms the ViT, MLP-Mixer, and some of their variants",
+   "grounded": true
+  },
+  {
+   "op": "store parameters",
+   "canonical": "store parameters",
+   "object": "parameter",
+   "quote": "outperforms classical vision models such as the ResNet",
+   "grounded": false
+  },
+  {
+   "op": "retrieve parameters",
+   "canonical": "retrieve parameters",
+   "object": "parameter",
+   "quote": "outperforms classical vision models such as the ResNet",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "outperforms the ViT, MLP-Mixer, and some of their variants",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply convolution@latent",
+  "apply transformation@latent",
+  "backpropagate gradient@gradient",
+  "compare@error",
+  "compare@value",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@value",
+  "improve@parameter",
+  "maintain resolution@latent",
+  "mix channel features@latent",
+  "mix spatial features@latent",
+  "predict@latent",
+  "process input@input",
+  "reconstruct@latent",
+  "retrieve parameters@parameter",
+  "store parameters@parameter",
+  "track progress@value",
+  "train@parameter"
+ ]
+}

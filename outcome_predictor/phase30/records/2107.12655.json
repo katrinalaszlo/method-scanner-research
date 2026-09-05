@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2107.12655",
+ "source": "abstract",
+ "words": 253,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "we present Multidimensional Kernel Convolution (MKConv",
+   "grounded": true
+  },
+  {
+   "op": "expand spatial dimensions",
+   "canonical": "expand spatial dimensions",
+   "object": "latent",
+   "quote": "it first activates the spatial dimensions of local feature representation",
+   "grounded": true
+  },
+  {
+   "op": "apply kernel weights",
+   "canonical": "apply kernel weights",
+   "object": "latent",
+   "quote": "exploiting multidimensional kernel weights",
+   "grounded": true
+  },
+  {
+   "op": "compute spatial correlation",
+   "canonical": "compute spatial correlation",
+   "object": "latent",
+   "quote": "spatially expanded features can represent their embedded information through spatial correlation",
+   "grounded": true
+  },
+  {
+   "op": "compute channel correlation",
+   "canonical": "compute channel correlation",
+   "object": "latent",
+   "quote": "as well as channel correlation in feature space",
+   "grounded": true
+  },
+  {
+   "op": "apply discrete convolution",
+   "canonical": "apply discrete convolution",
+   "object": "latent",
+   "quote": "discrete convolutions are applied to the multidimensional features",
+   "grounded": true
+  },
+  {
+   "op": "transform to matrix",
+   "canonical": "transform to matrix",
+   "object": "latent",
+   "quote": "regarded as a grid-structured matrix",
+   "grounded": true
+  },
+  {
+   "op": "apply attention weights",
+   "canonical": "apply attention weights",
+   "object": "latent",
+   "quote": "reweighting the spatial feature dimensions",
+   "grounded": true
+  },
+  {
+   "op": "generate attention map",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "provide comprehensive structure awareness within the local point set",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "carry more detailed local structure information",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention weights@latent",
+  "apply discrete convolution@latent",
+  "apply kernel weights@latent",
+  "compute channel correlation@latent",
+  "compute spatial correlation@latent",
+  "expand spatial dimensions@latent",
+  "extract feature@input",
+  "reconstruct@latent",
+  "transform to matrix@latent"
+ ]
+}

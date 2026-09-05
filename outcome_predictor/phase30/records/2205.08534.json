@@ -1,0 +1,171 @@
+{
+ "arxiv_id": "2205.08534",
+ "source": "abstract",
+ "words": 172,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 2,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the backbone in our framework is a plain ViT that can learn powerful representations",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "latent",
+   "quote": "the backbone in our framework is a plain ViT that can learn powerful representations",
+   "grounded": true
+  },
+  {
+   "op": "introduce",
+   "canonical": "introduce",
+   "object": "INVALID:inductive bias",
+   "quote": "a pre-training-free adapter is used to introduce the image-related inductive biases",
+   "grounded": true
+  },
+  {
+   "op": "apply",
+   "canonical": "apply",
+   "object": "INVALID:adapter",
+   "quote": "a pre-training-free adapter is used to introduce the image-related inductive biases",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "we verify ViT-Adapter on multiple dense prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "we verify ViT-Adapter on multiple dense prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "we verify ViT-Adapter on multiple dense prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we verify ViT-Adapter on multiple dense prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "action",
+   "quote": "we verify ViT-Adapter on multiple dense prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "a pre-training-free adapter is used to introduce the image-related inductive biases",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "the backbone in our framework is a plain ViT that can learn powerful representations",
+   "grounded": true
+  },
+  {
+   "op": "map",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the backbone in our framework is a plain ViT that can learn powerful representations",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "we verify ViT-Adapter on multiple dense prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we verify ViT,Adapter on multiple dense prediction tasks",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we verify ViT-Adapter on multiple dense prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we verify ViT-Adapter on multiple dense prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we verify ViT-Adapter on multiple dense prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "a pre-training-free adapter is used to introduce the image-related inductive biases",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "we verify ViT-Adapter on multiple dense prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "track",
+   "canonical": "track",
+   "object": "state",
+   "quote": "the backbone in our framework is a plain ViT that can learn powerful representations",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@distribution",
+  "backpropagate@gradient",
+  "compute@error",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "improve@parameter",
+  "output@action",
+  "predict@distribution",
+  "process@latent",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "sample@sample",
+  "sample@trajectory",
+  "track@state",
+  "transform@state"
+ ]
+}

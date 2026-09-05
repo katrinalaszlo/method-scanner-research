@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2102.07870",
+ "source": "abstract",
+ "words": 200,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "training of deep residual neural networks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "training of deep residual neural networks",
+   "grounded": true
+  },
+  {
+   "op": "apply momentum",
+   "canonical": "apply momentum",
+   "object": "gradient",
+   "quote": "adding a momentum term",
+   "grounded": true
+  },
+  {
+   "op": "compute residual",
+   "canonical": "compute residual",
+   "object": "state",
+   "quote": "change the forward rule of a ResNet",
+   "grounded": true
+  },
+  {
+   "op": "predict state",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "invertible",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "exactly characterize how adding momentum",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "error",
+   "quote": "training of deep residual neural networks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "interpreted in the infinitesimal step size regime",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "learning to optimize setting",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "convergence to a fixed point is required",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "have the same accuracy as ResNets",
+   "grounded": true
+  },
+  {
+   "op": "compute memory",
+   "canonical": "compute memory",
+   "object": "parameter",
+   "quote": "much smaller memory footprint",
+   "grounded": true
+  },
+  {
+   "op": "fine-tune model",
+   "canonical": "fine-tune model",
+   "object": "parameter",
+   "quote": "pre-trained Momentum ResNets are promising for fine-tuning models",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "learning to optimize setting",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "training of deep residual neural networks",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "learning to optimize setting",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "interpreted in the infinitesimal step size regime",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "learning to optimize setting",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "learning to optimize setting",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "training of deep residual neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "exactly characterize how adding momentum",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "noise",
+   "quote": "interpreted in the infinitesimal step size regime",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "show on CIFAR and ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "learning to optimize setting",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "learning to optimize setting",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply momentum@gradient",
+  "backpropagate@error",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@error",
+  "compute input@input",
+  "compute latent@latent",
+  "compute memory@parameter",
+  "compute noise@noise",
+  "compute policy@policy",
+  "compute residual@state",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "fine-tune model@parameter",
+  "predict@state",
+  "reconstruct@state",
+  "sample@action",
+  "sample@sample"
+ ]
+}

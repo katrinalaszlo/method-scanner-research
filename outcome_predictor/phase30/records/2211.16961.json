@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2211.16961",
+ "source": "abstract",
+ "words": 200,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 15,
+ "ops": [
+  {
+   "op": "split input",
+   "canonical": "split input",
+   "object": "input",
+   "quote": "an image is cut into square-shaped patches",
+   "grounded": true
+  },
+  {
+   "op": "shift window",
+   "canonical": "shift window",
+   "object": "state",
+   "quote": "an additional step of shifting to decrease the existence of fixed boundaries",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "based on the comprehension of self-attention",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "its performances on ImageNet 1K reach higher throughput",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the minimum pattern attention layer is only one for each stage",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the doughnut kernel replaces the line-cut boundaries with two types of areas",
+   "grounded": false
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the doughnut kernel enhances the design of patches further",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "its performances on ImageNet 1K reach higher throughput",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the doughnut kernel brings a new topic about the shape of kernels",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the doughnut kernel replaces the line-cut boundaries with two types of areas",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the minimum pattern attention layer is only one for each stage",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "its performances on ImageNet 1K reach higher throughput",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "the minimum pattern attention layer is only one for each stage",
+   "grounded": true
+  },
+  {
+   "op": "generate trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "the doughnut kernel enhances the design of patches further",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the doughnut kernel brings a new topic about the shape of kernels",
+   "grounded": false
+  },
+  {
+   "op": "update policy",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "the minimum pattern attention layer is only one for each stage",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "its performances on ImageNet 1K reach higher throughput",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "the doughnut kernel replaces the line-cut boundaries with two types of areas",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "its performances on ImageNet 1K reach higher throughput",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "the doughnut kernel replaces the line-cut boundaries with two types of areas",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the minimum pattern attention layer is only one for each stage",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "its performances on ImageNet 1K reach higher throughput",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "its performances on ImageNet 1K reach higher throughput",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the doughnut kernel brings a new topic about the shape of kernels",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the doughnut kernel enhances the design of patches further",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply attention@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute latent@latent",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "correct@policy",
+  "encode@input",
+  "predict@reward",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@sample",
+  "shift window@state",
+  "split input@input"
+ ]
+}

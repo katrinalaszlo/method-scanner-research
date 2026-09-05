@@ -1,0 +1,202 @@
+{
+ "arxiv_id": "2103.01451",
+ "source": "abstract",
+ "words": 249,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 12,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "state",
+   "quote": "outputs a scalar distance between two persons",
+   "grounded": true
+  },
+  {
+   "op": "generate contribution",
+   "canonical": "reconstruct",
+   "object": "INVALID:attribute",
+   "quote": "generate quantitative contributions of attributes",
+   "grounded": true
+  },
+  {
+   "op": "visualize attention",
+   "canonical": "visualize attention",
+   "object": "sample",
+   "quote": "visualize accurate attention maps of the most discriminative attributes",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "propose a metric distillation loss",
+   "grounded": true
+  },
+  {
+   "op": "distill knowledge",
+   "canonical": "distill knowledge",
+   "object": "parameter",
+   "quote": "knowledge distilled from the target model",
+   "grounded": true
+  },
+  {
+   "op": "compute prior loss",
+   "canonical": "compute prior loss",
+   "object": "error",
+   "quote": "propose an attribute prior loss",
+   "grounded": true
+  },
+  {
+   "op": "focus on attribute",
+   "canonical": "focus on attribute",
+   "object": "latent",
+   "quote": "guide the interpreter to focus on the exclusive and discriminative attributes",
+   "grounded": true
+  },
+  {
+   "op": "eliminate bias",
+   "canonical": "eliminate bias",
+   "object": "distribution",
+   "quote": "eliminate biases caused by the imbalanced distribution of attributes",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the interpreter learns to decompose the distance",
+   "grounded": true
+  },
+  {
+   "op": "generate attention map",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "generate attribute-guided attention maps",
+   "grounded": true
+  },
+  {
+   "op": "compute attribute difference",
+   "canonical": "compute attribute difference",
+   "object": "state",
+   "quote": "what and where the attributes make two persons different",
+   "grounded": true
+  },
+  {
+   "op": "compute contribution weight",
+   "canonical": "compute contribution weight",
+   "object": "INVALID:attribute",
+   "quote": "how much each attribute contributes to the difference",
+   "grounded": true
+  },
+  {
+   "op": "apply loss",
+   "canonical": "apply loss",
+   "object": "error",
+   "quote": "the interpreter learns to decompose the distance",
+   "grounded": true
+  },
+  {
+   "op": "sample attribute",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "generate attribute-guided attention maps",
+   "grounded": true
+  },
+  {
+   "op": "compute attribute score",
+   "canonical": "compute attribute score",
+   "object": "distribution",
+   "quote": "generate attribute-guided attention maps",
+   "grounded": true
+  },
+  {
+   "op": "compute attribute relevance",
+   "canonical": "compute attribute relevance",
+   "object": "INVALID:attribute",
+   "quote": "how much each attribute contributes to the difference",
+   "grounded": true
+  },
+  {
+   "op": "compute attribute importance",
+   "canonical": "compute attribute importance",
+   "object": "INVALID:attribute",
+   "quote": "how much each attribute contributes to the difference",
+   "grounded": true
+  },
+  {
+   "op": "compute attribute contribution",
+   "canonical": "compute attribute contribution",
+   "object": "INVALID:attribute",
+   "quote": "how much each attribute contributes to the difference",
+   "grounded": true
+  },
+  {
+   "op": "compute attribute weight",
+   "canonical": "compute attribute weight",
+   "object": "INVALID:attribute",
+   "quote": "how much each attribute contributes to the difference",
+   "grounded": true
+  },
+  {
+   "op": "compute attribute value",
+   "canonical": "compute attribute value",
+   "object": "INVALID:attribute",
+   "quote": "how much each attribute contributes to the difference",
+   "grounded": true
+  },
+  {
+   "op": "compute attribute impact",
+   "canonical": "compute attribute impact",
+   "object": "INVALID:attribute",
+   "quote": "how much each attribute contributes to the difference",
+   "grounded": true
+  },
+  {
+   "op": "compute attribute effect",
+   "canonical": "compute attribute effect",
+   "object": "INVALID:attribute",
+   "quote": "how much each attribute contributes to the difference",
+   "grounded": true
+  },
+  {
+   "op": "compute attribute influence",
+   "canonical": "compute attribute influence",
+   "object": "INVALID:attribute",
+   "quote": "how much each attribute contributes to the difference",
+   "grounded": true
+  },
+  {
+   "op": "compute attribute significance",
+   "canonical": "compute attribute significance",
+   "object": "INVALID:attribute",
+   "quote": "how much each attribute contributes to the difference",
+   "grounded": true
+  },
+  {
+   "op": "compute attribute relevance",
+   "canonical": "compute attribute relevance",
+   "object": "INVALID:attribute",
+   "quote": "how much each attribute contributes to the difference",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply loss@error",
+  "compute attribute difference@state",
+  "compute attribute score@distribution",
+  "compute distance@state",
+  "compute prior loss@error",
+  "correct@parameter",
+  "distill knowledge@parameter",
+  "eliminate bias@distribution",
+  "evaluate@error",
+  "focus on attribute@latent",
+  "reconstruct@distribution",
+  "sample@distribution",
+  "visualize attention@sample"
+ ]
+}

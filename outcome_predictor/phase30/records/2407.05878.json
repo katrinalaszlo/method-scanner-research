@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2407.05878",
+ "source": "abstract",
+ "words": 158,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Transformers have exhibited promising performance in computer vision tasks including image super-resolution (SR).",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "replace the commonly used fixed small windows with expanding hierarchical windows to aggregate features at different scales",
+   "grounded": true
+  },
+  {
+   "op": "establish",
+   "canonical": "establish",
+   "object": "latent",
+   "quote": "to establish long-range dependencies",
+   "grounded": false
+  },
+  {
+   "op": "gather",
+   "canonical": "gather",
+   "object": "latent",
+   "quote": "efficiently gathering spatial and channel information from hierarchical windows",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "Extensive experiments verify the effectiveness and efficiency of our HiT-SR",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our improved versions of SwinIR-Light, Sw, and SRFormer-Light yield state-of-the-art SR results with fewer parameters",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "Transformers have exhibited promising performance in computer vision tasks including image super-resolution (SR).",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "our improved versions of SwinIR-Light, SwinIR-NG, and SRFormer-Light yield state-of-the-art SR results with fewer parameters, FLOPs, and faster speeds",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "Transformers have exhibited promising performance in computer vision tasks including image super-resolution (SR).",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "replace the commonly used fixed small windows with expanding hierarchical windows to aggregate features at different scales",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "Transformers have exhibited promising performance in computer vision tasks including image super-resolution (SR).",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "Extensive experiments verify the effectiveness and efficiency of our HiT-SR",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "our improved versions of SwinIR-Light, SwinIR-NG, and SRFormer-Light yield state-of-the-art SR results with fewer parameters",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "input",
+   "quote": "Extensive experiments verify the effectiveness and efficiency of our HiT-SR",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "our improved versions of SwinIR-Light, SwinIR-NG, and SRFormer-Light yield state-of-the-art SR results with fewer parameters, FLOPs, and faster speeds",
+   "grounded": true
+  },
+  {
+   "op": "filter",
+   "canonical": "filter",
+   "object": "latent",
+   "quote": "replace the commonly used fixed small windows with expanding hierarchical windows to aggregate features at different scales",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "replace the commonly used fixed small windows with expanding hierarchical windows to aggregate features at different scales",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "input",
+   "quote": "Transformers have exhibited promising performance in computer vision tasks including image super-resolution (SR).",
+   "grounded": true
+  },
+  {
+   "op": "analyze",
+   "canonical": "analyze",
+   "object": "input",
+   "quote": "Extensive experiments verify the effectiveness and efficiency of our HiT-SR",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "our improved versions of SwinIR-Light, SwinIR-NG, and SRFormer-Light yield state-of-the-art SR results with fewer parameters, FLOPs, and faster speeds",
+   "grounded": true
+  },
+  {
+   "op": "scale",
+   "canonical": "scale",
+   "object": "latent",
+   "quote": "replace the commonly used fixed small windows with expanding hierarchical windows to aggregate features at different scales",
+   "grounded": true
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "error",
+   "quote": "Extensive experiments verify the effectiveness and efficiency of our HiT-SR",
+   "grounded": true
+  },
+  {
+   "op": "collect",
+   "canonical": "collect",
+   "object": "latent",
+   "quote": "efficiently gathering spatial and channel information from hierarchical windows",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "gradient",
+   "quote": "Extensive experiments verify the effectiveness and efficiency of our HiT-SR",
+   "grounded": true
+  },
+  {
+   "op": "adjust",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our improved versions of SwinIR-Light, SwinIR-NG, and SRFormer-Light yield state-of-the-art SR results with fewer parameters",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "analyze@input",
+  "collect@latent",
+  "compare@value",
+  "compute@error",
+  "compute@gradient",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "establish@latent",
+  "evaluate@input",
+  "filter@latent",
+  "gather@latent",
+  "improve@parameter",
+  "predict@input",
+  "process@input",
+  "reconstruct@input",
+  "sample@distribution",
+  "sample@latent",
+  "scale@latent",
+  "transform@input",
+  "transmit@error"
+ ]
+}

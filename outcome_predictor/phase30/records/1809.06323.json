@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1809.06323",
+ "source": "abstract",
+ "words": 157,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "we propose a novel convolutional network named Efficient Dense modules with Asymmetric convolution (EDANet",
+   "grounded": true
+  },
+  {
+   "op": "apply dilation",
+   "canonical": "apply dilation",
+   "object": "input",
+   "quote": "incorporates dilated convolution and dense connectivity",
+   "grounded": true
+  },
+  {
+   "op": "connect densely",
+   "canonical": "connect densely",
+   "object": "latent",
+   "quote": "incorporates dilated convolution and dense connectivity",
+   "grounded": true
+  },
+  {
+   "op": "compute feature map",
+   "canonical": "compute feature map",
+   "object": "input",
+   "quote": "we propose a novel convolutional network named Efficient Dense modules with Asymmetric convolution (EDANet",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "incorporates dilated convolution and dense connectivity",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "we propose a novel convolutional network named Efficient Dense modules with Asymmetric convolution (EDANet",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we propose a novel convolutional network named Efficient Dense modules with Asymmetric convolution (EDANet",
+   "grounded": true
+  },
+  {
+   "op": "perform inference",
+   "canonical": "perform inference",
+   "object": "input",
+   "quote": "our network can run with the high-resolution inputs at the speed of 108 FPS on one GTX 1080Ti",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "apply dilation@input",
+  "compute feature map@input",
+  "connect densely@latent",
+  "perform inference@input",
+  "process input@input",
+  "reconstruct@latent"
+ ]
+}

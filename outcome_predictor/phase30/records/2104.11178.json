@@ -1,0 +1,165 @@
+{
+ "arxiv_id": "2104.11178",
+ "source": "abstract",
+ "words": 206,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "our Video-Audio-Text Transformer (VATT) takes raw signals as inputs",
+   "grounded": true
+  },
+  {
+   "op": "extract representation",
+   "canonical": "extract representation",
+   "object": "latent",
+   "quote": "extracts multimodal representations that are rich enough",
+   "grounded": true
+  },
+  {
+   "op": "compute contrastive loss",
+   "canonical": "compute contrastive loss",
+   "object": "error",
+   "quote": "train VATT end-to-end from scratch using multimodal contrastive losses",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "train VATT end-to-end from scratch using multimodal contrastive losses",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train VATT end-to-end from scratch using multimodal contrastive losses",
+   "grounded": true
+  },
+  {
+   "op": "share weights",
+   "canonical": "share weights",
+   "object": "parameter",
+   "quote": "study a modality-agnostic, single-backbone Transformer by sharing weights among the three modalities",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "evaluate its performance by the downstream tasks of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "evaluate its performance by the downstream tasks of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute map",
+   "canonical": "compute map",
+   "object": "value",
+   "quote": "VATT's audio Transformer also sets a new record on waveform-based audio event recognition",
+   "grounded": true
+  },
+  {
+   "op": "retrieve video",
+   "canonical": "retrieve video",
+   "object": "trajectory",
+   "quote": "evaluate its performance by the downstream tasks of text-to-video retrieval",
+   "grounded": true
+  },
+  {
+   "op": "compute top-1 accuracy",
+   "canonical": "compute top-1 accuracy",
+   "object": "task",
+   "quote": "Transferring to image classification leads to 78.7% top-1 accuracy on ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "compute map",
+   "canonical": "compute map",
+   "object": "value",
+   "quote": "VATT's audio Transformer also sets a new record on waveform-based audio event recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "Transferring to image classification leads to 78.7% top-1 accuracy on ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "compute top-1 accuracy",
+   "canonical": "compute top-1 accuracy",
+   "object": "task",
+   "quote": "Transferring to image classification leads to 78.7% top-1 accuracy on ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "VATT's vision Transformer achieves the top-1 accuracy of 82.1% on Kinetics-400",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "VATT's vision Transformer achieves the top-1 accuracy of 83.6% on Kinetics-600",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "VATT's vision Transformer achieves the top-1 accuracy of 72.7% on Kinetics-700",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "VATT's vision Transformer achieves the top-1 accuracy of 41.1% on Moments in Time",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "Transferring to image classification leads to 78.7% top-1 accuracy on ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "VATT's audio Transformer achieves the mAP of 39.4% on AudioSet",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute accuracy@task",
+  "compute contrastive loss@error",
+  "compute map@value",
+  "compute top-1 accuracy@task",
+  "correct@parameter",
+  "encode@input",
+  "extract representation@latent",
+  "predict@value",
+  "retrieve video@trajectory",
+  "share weights@parameter"
+ ]
+}

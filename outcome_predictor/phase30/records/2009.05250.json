@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "2009.05250",
+ "source": "abstract",
+ "words": 188,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "align regions",
+   "canonical": "align regions",
+   "object": "state",
+   "quote": "select and align decisive regions pairs from two images for pair-wise comparison",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "existing methods only align regions with predefined rules like high feature similarity",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "matching and comparing detailed information is also essential",
+   "grounded": true
+  },
+  {
+   "op": "generate embedding",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the overall feature of a query image to be dynamically adjusted based on the gallery image",
+   "grounded": true
+  },
+  {
+   "op": "adjust embedding",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "the overall feature of a query image to be dynamically adjusted based on the gallery image",
+   "grounded": true
+  },
+  {
+   "op": "compute discrepancy",
+   "canonical": "compute discrepancy",
+   "object": "distribution",
+   "quote": "introducing novel techniques including correspondence attention module and discrepancy-based GCN",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "distribution",
+   "quote": "introducing novel techniques including correspondence attention module and discrepancy-based GCN",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose an end-to-end ReID method that integrates both patterns into a unified framework",
+   "grounded": true
+  },
+  {
+   "op": "predict embedding",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "the overall feature of a query image to be dynamically adjusted based on the gallery image",
+   "grounded": true
+  },
+  {
+   "op": "compare embeddings",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "matching and comparing detailed information is also essential",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the experiments show that CACE-Net achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we propose an end-to-end ReID method that integrates both patterns into a unified framework",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "we propose an end-to-end ReID method that integrates both patterns into a unified framework",
+   "grounded": true
+  },
+  {
+   "op": "sample attention",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "introducing novel techniques including correspondence attention module and discrepancy-based GCN",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "introducing novel techniques including correspondence attention module and discrepancy-based GCN",
+   "grounded": true
+  },
+  {
+   "op": "generate attention map",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "introducing novel techniques including correspondence attention module and discrepancy-based GCN",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we propose an end-to-end ReID method that integrates both patterns into a unified framework",
+   "grounded": true
+  },
+  {
+   "op": "update model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose an end-to-end ReID method that integrates both patterns into a unified framework",
+   "grounded": true
+  },
+  {
+   "op": "predict similarity",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "matching and comparing detailed information is also essential",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the experiments show that CACE-Net achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "the experiments show that CACE-Net achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "store embedding",
+   "canonical": "store embedding",
+   "object": "latent",
+   "quote": "the overall feature of a query image to be dynamically adjusted based on the gallery image",
+   "grounded": true
+  },
+  {
+   "op": "retrieve embedding",
+   "canonical": "retrieve embedding",
+   "object": "latent",
+   "quote": "the overall feature of a query image to be dynamically, dynamically adjusted based on the gallery image",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the experiments show that CACE-Net achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "denoise embedding",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the overall feature of a query image to be dynamically adjusted based on the gallery image",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align regions@state",
+  "apply attention@distribution",
+  "backpropagate@gradient",
+  "compare@latent",
+  "compute discrepancy@distribution",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute similarity@distribution",
+  "compute similarity@latent",
+  "compute task@task",
+  "correct@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "improve@parameter",
+  "predict@latent",
+  "predict@value",
+  "reconstruct@distribution",
+  "reconstruct@latent",
+  "retrieve embedding@latent",
+  "sample@distribution",
+  "store embedding@latent"
+ ]
+}

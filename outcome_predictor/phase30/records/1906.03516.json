@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1906.03516",
+ "source": "abstract",
+ "words": 189,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "dimension-wise convolutions apply light-weight convolutional filtering",
+   "grounded": true
+  },
+  {
+   "op": "combine representations",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "dimension-wise fusion efficiently combines these dimension-wise representations",
+   "grounded": true
+  },
+  {
+   "op": "encode information",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "DiCE unit efficiently encode spatial and channel-wise information",
+   "grounded": false
+  },
+  {
+   "op": "integrate architecture",
+   "canonical": "integrate architecture",
+   "object": "parameter",
+   "quote": "DiCE unit can be seamlessly integrated with any architecture",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "DiCENet delivers 2-4% higher accuracy than state-of-the-art manually designed models",
+   "grounded": true
+  },
+  {
+   "op": "generalize task",
+   "canonical": "generalize task",
+   "object": "task",
+   "quote": "DiCEN,et generalizes better to tasks that are often used in resource-constrained devices",
+   "grounded": false
+  },
+  {
+   "op": "build model",
+   "canonical": "build model",
+   "object": "parameter",
+   "quote": "DiCE units are stacked to build the DiCENet model",
+   "grounded": true
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "DiCENet shows significant improvements across different architectures",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "build model@parameter",
+  "compare@task",
+  "compute accuracy@task",
+  "encode@input",
+  "generalize task@task",
+  "integrate architecture@parameter"
+ ]
+}

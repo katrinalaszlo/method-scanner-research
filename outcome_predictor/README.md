@@ -42,3 +42,4 @@ Structure extraction needs `app.py` on :8000 and ollama `qwen3:8b` (see `run_sca
 | `phase26/` | pre-registered second benchmark Atari 100k (`atari100k_dataset.csv`, `results26.md`) + long-section vocabulary test (`vocab_results.json`) |
 | `phase27/` | pre-registered full-operation extraction (closed ontology, ~15 tuples/method) re-evaluated on both benchmarks (`results27.md`) |
 | `phase28/` | pre-registered paired within-method design: does the structure of a change predict the score delta? (`results28.md`) |
+| `phase30/` | pre-registered pairwise outcome prediction on 25 Papers-with-Code leaderboards (900 papers, 5000 pairs): year + lineage + abstract embedding vs. scanner structure from abstracts (`results30.md`) |

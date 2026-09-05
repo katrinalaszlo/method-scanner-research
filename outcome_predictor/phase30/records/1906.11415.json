@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1906.11415",
+ "source": "abstract",
+ "words": 161,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "state",
+   "quote": "TAM calculates the distance value of query video with respect to novel class proxies",
+   "grounded": true
+  },
+  {
+   "op": "average distance",
+   "canonical": "average distance",
+   "object": "state",
+   "quote": "by averaging the per frame distances along its alignment path",
+   "grounded": true
+  },
+  {
+   "op": "align temporal",
+   "canonical": "align temporal",
+   "object": "trajectory",
+   "quote": "our proposed model explicitly leverages the temporal ordering information in video data",
+   "grounded": true
+  },
+  {
+   "op": "extract frame",
+   "canonical": "extract frame",
+   "object": "input",
+   "quote": "TAM calculates the distance value of query video with respect to novel class proxies",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we introduce continuous relaxation to TAM so the model can be learned in an end-to-end fashion",
+   "grounded": true
+  },
+  {
+   "op": "relax continuous",
+   "canonical": "relax continuous",
+   "object": "parameter",
+   "quote": "we introduce continuous relaxation to TAM so the model can be learned in an end-to-end fashion",
+   "grounded": true
+  },
+  {
+   "op": "optimize objective",
+   "canonical": "improve",
+   "object": "error",
+   "quote": "to directly optimize the few-shot learning objective",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we introduce continuous relaxation to TAM so the model can be learned in an end-to-end fashion",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align temporal@trajectory",
+  "average distance@state",
+  "compute distance@state",
+  "compute value@value",
+  "correct@parameter",
+  "extract frame@input",
+  "improve@error",
+  "relax continuous@parameter"
+ ]
+}

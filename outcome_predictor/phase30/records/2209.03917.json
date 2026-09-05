@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2209.03917",
+ "source": "abstract",
+ "words": 181,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "mask input",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "randomly mask a portion of the input",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "reconstruct the masked portion according to the target representations",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "different targets tend to derive similarly behaved models",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "enabling us to effectively train high-capacity models",
+   "grounded": true
+  },
+  {
+   "op": "initialize parameters",
+   "canonical": "initialize parameters",
+   "object": "parameter",
+   "quote": "use a randomly initialized model as the teacher",
+   "grounded": true
+  },
+  {
+   "op": "distill knowledge",
+   "canonical": "distill knowledge",
+   "object": "parameter",
+   "quote": "proposed method to perform masked knowledge distillation",
+   "grounded": true
+  },
+  {
+   "op": "bootstrap teacher",
+   "canonical": "bootstrap teacher",
+   "object": "INVALID:teacher",
+   "quote": "using teachers of larger capacity",
+   "grounded": true
+  },
+  {
+   "op": "transfer knowledge",
+   "canonical": "transfer knowledge",
+   "object": "task",
+   "quote": "obtaining distilled students with remarkable transferring ability",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "correct@parameter",
+  "distill knowledge@parameter",
+  "initialize parameters@parameter",
+  "mask@input",
+  "reconstruct@input",
+  "transfer knowledge@task"
+ ]
+}

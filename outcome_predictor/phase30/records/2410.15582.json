@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "2410.15582",
+ "source": "abstract",
+ "words": 245,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "estimate skeleton",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "estimate the 3D skeletons from a video",
+   "grounded": true
+  },
+  {
+   "op": "disentangle representation",
+   "canonical": "disentangle representation",
+   "object": "latent",
+   "quote": "decouple them into disentangled skeletal representations",
+   "grounded": true
+  },
+  {
+   "op": "regress parameters",
+   "canonical": "regress parameters",
+   "object": "parameter",
+   "quote": "estimate the parameters of the human mesh model",
+   "grounded": true
+  },
+  {
+   "op": "compute initial pose",
+   "canonical": "compute initial pose",
+   "object": "state",
+   "quote": "utilizes joint position to estimate initial pose parameters",
+   "grounded": true
+  },
+  {
+   "op": "regress shape parameters",
+   "canonical": "regress shape parameters",
+   "object": "parameter",
+   "quote": "leverages bone length to regress bone-aligned shape parameters",
+   "grounded": true
+  },
+  {
+   "op": "refine parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "combines human motion representation with image features to refine the initial human model parameters",
+   "grounded": true
+  },
+  {
+   "op": "predict joint position",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "estimate the 3D skeletons from a video",
+   "grounded": true
+  },
+  {
+   "op": "predict bone length",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "leverages bone length to regress bone-aligned shape parameters",
+   "grounded": true
+  },
+  {
+   "op": "combine motion and image",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "combines human motion representation with image features to refine the initial human model parameters",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "estimate the parameters of the human mesh model",
+   "grounded": true
+  },
+  {
+   "op": "compute temporal consistency",
+   "canonical": "compute temporal consistency",
+   "object": "trajectory",
+   "quote": "surpasses existing state-of-the-art video-based methods in both per-frame accuracy and temporal consistency",
+   "grounded": true
+  },
+  {
+   "op": "extract image features",
+   "canonical": "extract image features",
+   "object": "input",
+   "quote": "combine human motion representation with image features",
+   "grounded": false
+  },
+  {
+   "op": "estimate motion representation",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "decouple them into disentangled skeletal representations",
+   "grounded": true
+  },
+  {
+   "op": "refine initial parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "combines human motion representation with image features to refine the initial human model parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute shape parameters",
+   "canonical": "compute shape parameters",
+   "object": "parameter",
+   "quote": "leverages bone length to regress bone,aligned shape parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute pose parameters",
+   "canonical": "compute pose parameters",
+   "object": "parameter",
+   "quote": "utilizes joint position to estimate initial pose parameters",
+   "grounded": true
+  },
+  {
+   "op": "predict human mesh",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "estimate the parameters of the human mesh model",
+   "grounded": true
+  },
+  {
+   "op": "combine motion and pose",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "combines human motion representation with image features to refine the initial human model parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute initial model",
+   "canonical": "compute initial model",
+   "object": "state",
+   "quote": "estimate the parameters of the human mesh model",
+   "grounded": true
+  },
+  {
+   "op": "refine model parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "combines human motion representation with image features to refine the initial human model parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute temporal accuracy",
+   "canonical": "compute temporal accuracy",
+   "object": "trajectory",
+   "quote": "surpasses existing state-of-the-art video-based methods in both per-frame accuracy and temporal consistency",
+   "grounded": true
+  },
+  {
+   "op": "extract motion features",
+   "canonical": "extract motion features",
+   "object": "latent",
+   "quote": "decouple them into disentangled skeletal representations",
+   "grounded": true
+  },
+  {
+   "op": "compute joint positions",
+   "canonical": "compute joint positions",
+   "object": "state",
+   "quote": "estimate the 3D skeletons from a video",
+   "grounded": true
+  },
+  {
+   "op": "compute bone lengths",
+   "canonical": "compute bone lengths",
+   "object": "latent",
+   "quote": "leverages bone length to regress bone-aligned shape parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute motion parameters",
+   "canonical": "compute motion parameters",
+   "object": "latent",
+   "quote": "decouple them into disentangled skeletal representations",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "compute bone lengths@latent",
+  "compute initial model@state",
+  "compute initial pose@state",
+  "compute joint positions@state",
+  "compute motion parameters@latent",
+  "compute pose parameters@parameter",
+  "compute shape parameters@parameter",
+  "compute temporal accuracy@trajectory",
+  "compute temporal consistency@trajectory",
+  "correct@parameter",
+  "disentangle representation@latent",
+  "extract image features@input",
+  "extract motion features@latent",
+  "predict@latent",
+  "predict@state",
+  "regress parameters@parameter",
+  "regress shape parameters@parameter"
+ ]
+}

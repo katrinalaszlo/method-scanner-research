@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "1904.02877",
+ "source": "abstract",
+ "words": 214,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "Single-Path NAS achieves 74.96% top-1 accuracy on ImageNet with 79ms latency on a Pixel 1 phone",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we propose Single-Path NAS, a novel differentiable NAS method for designing hardware-efficient ConvNets",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Single-Path NAS achieves 74.93% top-1 accuracy on ImageNet with 79ms latency on a Pixel 1 phone",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "Single-Path NAS achieves 74.96% top-1 accuracy on ImageNet with 79ms latency on a Pixel 1 phone",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "Single-Path NAS achieves 74.96% top-1 accuracy on ImageNet with 79ms latency on a Pixel 1 phone",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "Single-Path NAS achieves 74.96% top-1 accuracy on ImageNet with 79ms latency on a Pixel 1 phone",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "resample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "denoise trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "evaluate trajectory",
+   "canonical": "evaluate",
+   "object": "trajectory",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "update distribution",
+   "canonical": "correct",
+   "object": "distribution",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  },
+  {
+   "op": "resample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "Single-Path NAS uses one single-path over-parameterized ConvNet to encode all architectural decisions",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@error",
+  "compute parameter@parameter",
+  "compute sample@sample",
+  "compute trajectory@trajectory",
+  "correct@distribution",
+  "correct@parameter",
+  "encode@state",
+  "evaluate@error",
+  "evaluate@trajectory",
+  "evaluate@value",
+  "predict@value",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@distribution",
+  "sample@sample",
+  "sample@trajectory"
+ ]
+}

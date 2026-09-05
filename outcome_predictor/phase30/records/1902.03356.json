@@ -1,0 +1,172 @@
+{
+ "arxiv_id": "1902.03356",
+ "source": "abstract",
+ "words": 143,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "we decompose the curvature matrix into smaller matrices",
+   "grounded": true
+  },
+  {
+   "op": "transform gradient",
+   "canonical": "transform gradient",
+   "object": "gradient",
+   "quote": "learn to transform the gradients in the inner optimization",
+   "grounded": false
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the transformed gradients achieve better generalization performance",
+   "grounded": true
+  },
+  {
+   "op": "compute curvature",
+   "canonical": "compute curvature",
+   "object": "parameter",
+   "quote": "we decompose the curvature matrix into smaller matrices",
+   "grounded": true
+  },
+  {
+   "op": "compute tensor product",
+   "canonical": "compute tensor product",
+   "object": "parameter",
+   "quote": "we capture the dependencies of the model's parameters with a series of tensor products",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "the transformed gradients achieve better generalization performance",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "error",
+   "quote": "we demonstrate the effects of our proposed method on several few-shot learning tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample task",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "we demonstrate the effects of our proposed method on several few-shot learning tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "the proposed method achieves substantial improvement upon previous MAML variants",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "the proposed method outperforms the recent state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "task",
+   "quote": "we observe faster convergence rates of the meta-training process",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "parameter",
+   "quote": "we present an analysis that explains better generalization performance with the meta-trained curvature",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "task",
+   "quote": "we present an analysis that explains better generalization performance with the meta-trained curvature",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "parameter",
+   "quote": "we decompose the curvature matrix into smaller matrices",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "task",
+   "quote": "we demonstrate the effects of our proposed method on several few-shot learning tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "we observe faster convergence rates of the meta-training process",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "task",
+   "quote": "we present an analysis that explains better generalization performance with the meta-trained curvature",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "task",
+   "quote": "we present an analysis that explains better generalization performance with the meta-trained curvature",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "we present an analysis that explains better generalization performance with the meta-trained curvature",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "we present an analysis that explains better generalization performance with the meta-trained curvature",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@error",
+  "compare@parameter",
+  "compare@task",
+  "compute curvature@parameter",
+  "compute distribution@parameter",
+  "compute gradient@parameter",
+  "compute gradient@task",
+  "compute latent@parameter",
+  "compute policy@task",
+  "compute reward@task",
+  "compute sample@task",
+  "compute tensor product@parameter",
+  "compute trajectory@task",
+  "compute value@task",
+  "correct@parameter",
+  "correct@task",
+  "sample@task",
+  "transform gradient@gradient"
+ ]
+}

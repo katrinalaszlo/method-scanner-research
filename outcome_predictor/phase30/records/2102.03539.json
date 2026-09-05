@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2102.03539",
+ "source": "abstract",
+ "words": 105,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "extract image",
+   "canonical": "extract image",
+   "object": "input",
+   "quote": "the illumination variations can cause distinct changes in object appearance",
+   "grounded": true
+  },
+  {
+   "op": "separate illumination",
+   "canonical": "separate illumination",
+   "object": "input",
+   "quote": "Sill-Net learns to separate illumination features from images",
+   "grounded": true
+  },
+  {
+   "op": "generate feature",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "Sill-Net learns to separate illumination features from images",
+   "grounded": true
+  },
+  {
+   "op": "augment feature",
+   "canonical": "augment",
+   "object": "latent",
+   "quote": "during training we augment training samples with these separated illumination features",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "experimental results demonstrate that our approach outperforms current state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "during training we augment training samples with these separated illumination features",
+   "grounded": true
+  },
+  {
+   "op": "predict illumination",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "Sill-Net learns to separate illumination features from images",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "latent",
+   "quote": "during training we augment training samples with these separated illumination features",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "experimental results demonstrate that our approach outperforms current state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "experimental results demonstrate that our approach outperpects current state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "denoise image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "the illumination variations can cause distinct changes in object appearance",
+   "grounded": true
+  },
+  {
+   "op": "sample feature",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "during training we augment training samples with these separated illumination features",
+   "grounded": true
+  },
+  {
+   "op": "encode image",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "Sill-Net learns to separate illumination features from images",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "experimental results demonstrate that our approach outperforms current state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "during training we augment training samples with these separated illumination features",
+   "grounded": true
+  },
+  {
+   "op": "predict feature",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "Sill-Net learns to separate illumination features from images",
+   "grounded": true
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "latent",
+   "quote": "during training we augment training samples with these separated illumination features",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "experimental results demonstrate that our approach outperforms current state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "during training we augment training samples with these separated illumination features",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "during training we augment training samples with these separated illumination features",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply augmentation@latent",
+  "apply transformation@latent",
+  "augment@latent",
+  "backpropagate@gradient",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute value@value",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "extract image@input",
+  "improve@parameter",
+  "predict@distribution",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reconstruct@sample",
+  "sample@sample",
+  "separate illumination@input",
+  "train@parameter"
+ ]
+}

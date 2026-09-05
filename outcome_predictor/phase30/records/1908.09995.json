@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1908.09995",
+ "source": "abstract",
+ "words": 185,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "construct graph",
+   "canonical": "construct graph",
+   "object": "state",
+   "quote": "we construct learnable temporal relation graphs",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "to simultaneously capture the appearance features",
+   "grounded": true
+  },
+  {
+   "op": "compute relations",
+   "canonical": "compute relations",
+   "object": "state",
+   "quote": "to explore temporal relation on the multi-scale range",
+   "grounded": true
+  },
+  {
+   "op": "create matrix",
+   "canonical": "create matrix",
+   "object": "state",
+   "quote": "we design a multi-head temporal adjacent matrix",
+   "grounded": true
+  },
+  {
+   "op": "aggregate relations",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "a multi-head temporal relation aggregator is proposed",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "extract the semantic meaning of those features",
+   "grounded": true
+  },
+  {
+   "op": "reason temporal",
+   "canonical": "reason temporal",
+   "object": "state",
+   "quote": "temporal relation reasoning with our TRG",
+   "grounded": true
+  },
+  {
+   "op": "recognize activity",
+   "canonical": "classify",
+   "object": "state",
+   "quote": "extract discriminative features for activity recognition",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "classify@state",
+  "compute relations@state",
+  "construct graph@state",
+  "create matrix@state",
+  "encode@state",
+  "reason temporal@state"
+ ]
+}

@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "1804.05275",
+ "source": "abstract",
+ "words": 177,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 11,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "we learn to classify using partial feature representations",
+   "grounded": true
+  },
+  {
+   "op": "pool feature",
+   "canonical": "pool feature",
+   "object": "latent",
+   "quote": "we exploit average and max pooling strategies",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "to validate the effectiveness of the proposed HPM",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we learn to classify using partial feature representations",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "we achieve mAP scores of 83.1%, 74.5% and 59.7%",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we achieve mAP scores of 83.1%, 74.5% and 59.7%",
+   "grounded": false
+  },
+  {
+   "op": "match feature",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "we learn to classify using partial feature representations",
+   "grounded": true
+  },
+  {
+   "op": "aggregate feature",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we exploit average and max pooling strategies",
+   "grounded": false
+  },
+  {
+   "op": "compare feature",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "we learn to classify using partial feature representations",
+   "grounded": true
+  },
+  {
+   "op": "select feature",
+   "canonical": "select feature",
+   "object": "latent",
+   "quote": "we learn to classify using partial feature representations",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "to validate the effectiveness of the proposed HPM",
+   "grounded": true
+  },
+  {
+   "op": "apply pooling",
+   "canonical": "apply pooling",
+   "object": "latent",
+   "quote": "we exploit average and max pooling strategies",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "to validate the effectiveness of the proposed HPM",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "to validate the effectiveness of the proposed HPM",
+   "grounded": true
+  },
+  {
+   "op": "denoise feature",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we learn to classify using partial feature representations",
+   "grounded": true
+  },
+  {
+   "op": "resample feature",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we achieve mAP scores of 83.1%, 74.5% and 59.7%",
+   "grounded": false
+  },
+  {
+   "op": "normalize feature",
+   "canonical": "normalize feature",
+   "object": "latent",
+   "quote": "we exploit average and max pooling strategies",
+   "grounded": false
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "we learn to classify using partial feature representations",
+   "grounded": true
+  },
+  {
+   "op": "select candidate",
+   "canonical": "select candidate",
+   "object": "sample",
+   "quote": "we achieve mAP scores of 83.1%, 74.5% and 59.7%",
+   "grounded": false
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "we achieve mAP scores of 83.1%, 74.5% and 59.7%",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply pooling@latent",
+  "backpropagate@gradient",
+  "compare@error",
+  "compare@latent",
+  "compute gradient@gradient",
+  "compute similarity@latent",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@value",
+  "extract feature@input",
+  "normalize feature@latent",
+  "pool feature@latent",
+  "reconstruct@latent",
+  "reconstruct@sample",
+  "sample@sample",
+  "select candidate@sample",
+  "select feature@latent"
+ ]
+}

@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2304.01434",
+ "source": "abstract",
+ "words": 152,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "compute eigenvalue",
+   "canonical": "compute eigenvalue",
+   "object": "latent",
+   "quote": "the mathematical formulation of VNE is superior in effectively manipulating the eigenvalues",
+   "grounded": true
+  },
+  {
+   "op": "compute entropy",
+   "canonical": "compute entropy",
+   "object": "latent",
+   "quote": "we propose to regularize von Neumann entropy of representation",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose to regularize von Neumann entropy of representation",
+   "grounded": true
+  },
+  {
+   "op": "compute autocorrelation",
+   "canonical": "compute autocorrelation",
+   "object": "latent",
+   "quote": "the mathematical formulation of VNE is superior in effectively manipulating the eigenvalues",
+   "grounded": true
+  },
+  {
+   "op": "compare eigenvalue",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "the mathematical formulation of VNE is superior in effectively manipulating the eigenvalues",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "we propose to regularize von Neumann entropy of representation",
+   "grounded": true
+  },
+  {
+   "op": "compute mutual information",
+   "canonical": "compute mutual information",
+   "object": "latent",
+   "quote": "a wide scope of representation properties, such as decorrelation, whitening, disentanglement, rank, isotropy, and mutual information",
+   "grounded": true
+  },
+  {
+   "op": "compute rank",
+   "canonical": "compute rank",
+   "object": "latent",
+   "quote": "we formally establish theoretical connections with rank, disentanglet, and isotropy of representation",
+   "grounded": true
+  },
+  {
+   "op": "compute isotropy",
+   "canonical": "compute isotropy",
+   "object": "latent",
+   "quote": "we formally establish theoretical connections with rank, disentanglet, and isotropy of representation",
+   "grounded": true
+  },
+  {
+   "op": "compute disentanglement",
+   "canonical": "compute disentanglement",
+   "object": "latent",
+   "quote": "we formally establish theoretical connections with rank, disentanglet, and isotropy of representation",
+   "grounded": true
+  },
+  {
+   "op": "compute dimension",
+   "canonical": "compute dimension",
+   "object": "latent",
+   "quote": "discussions on the dimension control of VNE",
+   "grounded": true
+  },
+  {
+   "op": "compute entropy",
+   "canonical": "compute entropy",
+   "object": "state",
+   "quote": "discussions on the relationship with Shannon entropy",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we formally establish theoretical connections with rank, disentanglet, and isotropy of representation",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "investigating domain-generalization, meta-learning, self-supervised learning, and generative models",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "investigating domain-generalization, meta-learning, self-supervised learning, and generative models",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "investigating domain-generalization, meta-learning, self-supervised learning, and generative models",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "a wide scope of representation properties, such as decorrelation, whitening, disentanglement, rank, isotropy, and mutual information",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we formally establish theoretical connections with rank, disentanglet, and isotropy of representation",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we formally establish theoretical connections with rank, disentanglet, and isotropy of representation",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we propose to regularize von Neumann entropy of representation",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compare@latent",
+  "compute autocorrelation@latent",
+  "compute dimension@latent",
+  "compute disentanglement@latent",
+  "compute distribution@latent",
+  "compute eigenvalue@latent",
+  "compute entropy@latent",
+  "compute entropy@state",
+  "compute input@input",
+  "compute isotropy@latent",
+  "compute mutual information@latent",
+  "compute policy@policy",
+  "compute rank@latent",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter"
+ ]
+}

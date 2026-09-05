@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "2211.10684",
+ "source": "abstract",
+ "words": 223,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "compute prior",
+   "canonical": "compute prior",
+   "object": "parameter",
+   "quote": "the global model provides global knowledge as a prior to the local training process",
+   "grounded": true
+  },
+  {
+   "op": "sample parameter",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "Bayesian learning, where the parameters of the model are seen as random variables with a prior assumption",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the global model provides global knowledge as a prior to the local training process",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Bayesian learning, where the parameters of the model are seen as random, with a prior assumption",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "Bayesian learning, where the parameters of the model are seen as random variables with a prior assumption",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the global model provides global knowledge as a prior to the local training process",
+   "grounded": true
+  },
+  {
+   "op": "compute divergence",
+   "canonical": "compute divergence",
+   "object": "error",
+   "quote": "we employ Bayesian learning to model PFL by assuming a prior in the scaled exponential family",
+   "grounded": true
+  },
+  {
+   "op": "regularize parameter",
+   "canonical": "regularize parameter",
+   "object": "parameter",
+   "quote": "we propose pFedBreD, a framework to solve the problem we model using Bregman divergence regularization",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the more local data the model use, the more it focuses on the local data, otherwise focuses on the prior",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "the more local data the model use, the more it focuses on the local data, otherwise focuses on the prior",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we propose pFedBreD, a framework to solve the problem we model using Bregman divergence regularization",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the more local data the model use, the more it focuses on the local data, otherwise focuses on the prior",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "Bayesian learning, where the parameters of the model are seen as random variables with a prior assumption",
+   "grounded": true
+  },
+  {
+   "op": "denoise parameter",
+   "canonical": "reconstruct",
+   "object": "parameter",
+   "quote": "we propose pFedBreD, a framework to solve the problem we model using Bregman divergence regularization",
+   "grounded": false
+  },
+  {
+   "op": "resample parameter",
+   "canonical": "sample",
+   "object": "parameter",
+   "quote": "Bayesian learning, where the parameters of the model are seen as random variables with a prior assumption",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "the more local data the model use, the more it focuses on the local data, otherwise focuses on the prior",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate gradient",
+   "canonical": "backpropagate gradient",
+   "object": "gradient",
+   "quote": "the more local data the model use, the more it focuses on the local data, otherwise focuses on the prior",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we propose pFedBreD, a framework to solve the problem we model using Bregman divergence regularization",
+   "grounded": false
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "Bayesian learning, where the parameters of the model are seen as random variables with a prior assumption",
+   "grounded": true
+  },
+  {
+   "op": "compute state",
+   "canonical": "compute state",
+   "object": "state",
+   "quote": "the more local data the model use, the more it focuses on the local data, otherwise focuses on the prior",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the more local data the model use, the more it focuses on the local data, otherwise focuses on the prior",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "Bayesian learning, where the parameters of the model are seen as random variables with a prior assumption",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "noise",
+   "quote": "Bayesian learning, where the parameters of the model are seen as random variables with a prior assumption",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "Bayesian learning, where the parameters of the model are seen as random variables with a prior assumption",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "Bayesian learning, where the parameters of the model are seen as random variables with a prior assumption",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate gradient@gradient",
+  "clip gradient@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute divergence@error",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute noise@noise",
+  "compute policy@policy",
+  "compute prior@parameter",
+  "compute sample@sample",
+  "compute state@state",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "predict@reward",
+  "reconstruct@parameter",
+  "regularize parameter@parameter",
+  "sample@action",
+  "sample@distribution",
+  "sample@parameter"
+ ]
+}

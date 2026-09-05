@@ -1,0 +1,162 @@
+{
+ "arxiv_id": "1901.09005",
+ "source": "abstract",
+ "words": 149,
+ "model": "qwen3:8b",
+ "salvaged": true,
+ "n_ops": 19,
+ "n_invalid_object": 1,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we revisit numerous previously proposed self-supervised models",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "we challenge a number of common practices in selfsupervised visual",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "standard recipes for CNN design do not always translate to self-supervised",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we drastically boost the performance of previously proposed techniques",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we outperform previously published state-of-the-art results by a large margin",
+   "grounded": false
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we conduct a thorough large scale study",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "reward",
+   "quote": "we uncover multiple crucial insights",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "a class of self-supervised techniques achieves superior performance",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "a large number of the pretext tasks for self-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "task",
+   "quote": "we challenge a number of common practices in selfsupervised visual",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "action",
+   "quote": "we conduct a thorough large scale study",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "we uncover multiple crucial insights",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "we drastically boost the performance of previously proposed techniques",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "standard recipes for CNN design do not always translate to self-supervised",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "a class of self-supervised techniques achieves superior performance",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "input",
+   "quote": "we challenge a number of common practices in selfsupervised visual",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "task",
+   "quote": "we conduct a thorough large scale study",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "reward",
+   "quote": "we uncover multiple crucial insights",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we outperform previously published state-of-the-art results by a large margin",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@value",
+  "compute distribution@input",
+  "compute gradient@parameter",
+  "compute policy@action",
+  "compute reward@task",
+  "compute trajectory@task",
+  "compute value@reward",
+  "correct@parameter",
+  "encode@input",
+  "predict@latent",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@noise",
+  "sample@sample"
+ ]
+}

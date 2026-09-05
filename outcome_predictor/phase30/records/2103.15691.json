@@ -1,0 +1,496 @@
+{
+ "arxiv_id": "2103.15691",
+ "source": "abstract",
+ "words": 157,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 66,
+ "n_invalid_object": 2,
+ "n_grounded": 65,
+ "ops": [
+  {
+   "op": "extract token",
+   "canonical": "extract token",
+   "object": "input",
+   "quote": "extracts spatio-temporal tokens from the input video",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "INVALID:token",
+   "quote": "are then encoded by a series of transformer layers",
+   "grounded": true
+  },
+  {
+   "op": "factorise dimension",
+   "canonical": "factorise dimension",
+   "object": "INVALID:token",
+   "quote": "factorise the spatial- and temporal-dimensions of the input",
+   "grounded": true
+  },
+  {
+   "op": "regularise",
+   "canonical": "regularise",
+   "object": "parameter",
+   "quote": "we show how we can effectively regularise the model during training",
+   "grounded": true
+  },
+  {
+   "op": "leverage pretrain",
+   "canonical": "leverage pretrain",
+   "object": "parameter",
+   "quote": "leverage pretrained image models to be able to train on comparatively small datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we show how we can effectively regularise the model during training",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we show how we can effectively regularise the model during training",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we show how we can effectively regularise the model during training",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "state",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "ach,ieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": false
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute state",
+   "canonical": "compute state",
+   "object": "state",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute state",
+   "canonical": "compute state",
+   "object": "state",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute state",
+   "canonical": "compute state",
+   "object": "state",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute state",
+   "canonical": "compute state",
+   "object": "state",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute state",
+   "canonical": "compute state",
+   "object": "state",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "achieve state-of-the-art results on multiple video classification benchmarks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "classify@state",
+  "compare@error",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute state@state",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "extract token@input",
+  "leverage pretrain@parameter",
+  "regularise@parameter",
+  "sample@action"
+ ]
+}

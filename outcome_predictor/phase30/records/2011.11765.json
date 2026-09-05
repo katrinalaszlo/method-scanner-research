@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "2011.11765",
+ "source": "abstract",
+ "words": 189,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we identify false negatives with 40% accuracy",
+   "grounded": true
+  },
+  {
+   "op": "generate positive pair",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "positive pairs can be generated reliably",
+   "grounded": true
+  },
+  {
+   "op": "generate negative pair",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "negative pairs are defined as samples from different images",
+   "grounded": false
+  },
+  {
+   "op": "embed input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "contrastive learning seeks to learn transformations that embed positive input pairs nearby",
+   "grounded": false
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "embed positive input pairs nearby, while pushing negative pairs far apart",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our method exhibits consistent improvements over existing contrastive learning-based methods",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we propose novel approaches to identify false negatives",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we identify false negatives with 40% accuracy among 1000 semantic classes",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute similarity@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "reconstruct@input",
+  "sample@action"
+ ]
+}

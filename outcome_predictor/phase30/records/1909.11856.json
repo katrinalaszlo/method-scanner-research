@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "1909.11856",
+ "source": "abstract",
+ "words": 203,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "the distillation module extracts hierarchical features step-by-step",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "fusion module aggregates them according to the importance of candidate features",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "distribution",
+   "quote": "evaluated by the proposed contrast-aware channel attention mechanism",
+   "grounded": true
+  },
+  {
+   "op": "select features",
+   "canonical": "select features",
+   "object": "latent",
+   "quote": "fusion module aggregates them according to the importance of candidate features",
+   "grounded": true
+  },
+  {
+   "op": "crop image",
+   "canonical": "crop image",
+   "object": "input",
+   "quote": "we develop an adaptive cropping strategy (ACS) to super-resolve block-wise image patches",
+   "grounded": true
+  },
+  {
+   "op": "upsample image",
+   "canonical": "upsample image",
+   "object": "input",
+   "quote": "process real images with any sizes",
+   "grounded": true
+  },
+  {
+   "op": "apply model",
+   "canonical": "apply model",
+   "object": "input",
+   "quote": "using the same well-trained model",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "super-resolve block-wise image patches",
+   "grounded": true
+  },
+  {
+   "op": "combine outputs",
+   "canonical": "aggregate",
+   "object": "input",
+   "quote": "super-resolve block-wise image patches",
+   "grounded": true
+  },
+  {
+   "op": "output result",
+   "canonical": "output result",
+   "object": "input",
+   "quote": "super-resolve block-wise image patches",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@input",
+  "aggregate@latent",
+  "apply model@input",
+  "compute attention@distribution",
+  "crop image@input",
+  "encode@state",
+  "output result@input",
+  "reconstruct@input",
+  "select features@latent",
+  "upsample image@input"
+ ]
+}

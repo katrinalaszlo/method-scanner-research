@@ -1,0 +1,202 @@
+{
+ "arxiv_id": "2505.17551",
+ "source": "abstract",
+ "words": 173,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 20,
+ "n_grounded": 26,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "the significant increase in inter-class interference leads to severe missed detections",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "CRAS leverages center-aware residual learning to couple samples from different categories into a unified center",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "distance-guided anomaly synthesis that adaptively adjusts noise variance based on normal data distribution",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "distance-guided anomaly synthesis that adaptively adjusts noise variance based on normal data distribution",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:normal data",
+   "quote": "distance-guided anomaly synthesis that adaptively adjusts noise variance based on normal data distribution",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:anomaly",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:normal",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:anomaly",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:normal",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:anomaly",
+   "quote": "distance-guided anomaly synthesis that adaptively adjusts noise variance based on normal data distribution",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:normal",
+   "quote": "distance-guided anomaly synthesis that adaptively adjusts noise variance based on normal data distribution",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "noise",
+   "quote": "distance-guided anomaly synthesis that adaptively adjusts noise variance based on normal data distribution",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "noise",
+   "quote": "distance-guided anomaly synthesis that adaptively adjusts noise variance based on normal data distribution",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:synthesis",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:synthesis",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:synthesis",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:synthesis",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:synthesis",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:synthesis",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:synthesis",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:synthesis",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:synthesis",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:synthesis",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:synthesis",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:synthesis",
+   "quote": "the intra-class overlap between normal and abnormal samples, particularly in synthesis-based methods, cannot be ignored",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@value",
+  "compute gradient@noise",
+  "compute gradient@parameter",
+  "correct@noise",
+  "correct@parameter",
+  "sample@noise"
+ ]
+}

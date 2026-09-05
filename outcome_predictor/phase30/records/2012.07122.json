@@ -1,0 +1,168 @@
+{
+ "arxiv_id": "2012.07122",
+ "source": "abstract",
+ "words": 174,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 5,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "extract input",
+   "canonical": "extract input",
+   "object": "input",
+   "quote": "images of objects or textures",
+   "grounded": true
+  },
+  {
+   "op": "split input",
+   "canonical": "split input",
+   "object": "input",
+   "quote": "every subregion of an image",
+   "grounded": true
+  },
+  {
+   "op": "generate feature",
+   "canonical": "reconstruct",
+   "object": "INVALID:subregion",
+   "quote": "generate multiple spatial context-aware representations",
+   "grounded": true
+  },
+  {
+   "op": "encode feature",
+   "canonical": "encode",
+   "object": "INVALID:subregion",
+   "quote": "from pre-trained deep convolutional networks",
+   "grounded": true
+  },
+  {
+   "op": "aggregate feature",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "regional representations describe local characteristics",
+   "grounded": false
+  },
+  {
+   "op": "encode latent",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "encode their multiple spatial context information",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct feature",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "detect anomalous regions via fast feature reconstruction",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:reconstructed",
+   "quote": "detect anomalous regions within images",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "design a deep yet efficient convolutional autoencoder",
+   "grounded": true
+  },
+  {
+   "op": "predict latent",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "generate multiple spatial context-aware representations",
+   "grounded": true
+  },
+  {
+   "op": "denoise feature",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "fast feature reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "segment anomaly",
+   "canonical": "segment anomaly",
+   "object": "input",
+   "quote": "detect and segment out the anomalies",
+   "grounded": true
+  },
+  {
+   "op": "output segmentation",
+   "canonical": "output segmentation",
+   "object": "INVALID:segmentation",
+   "quote": "detect and segment out the anomalies",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "simple yet effective and efficient",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:segmentation",
+   "quote": "advances the state-of-the-art performances",
+   "grounded": true
+  },
+  {
+   "op": "compare error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "detect anomalous regions within images",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "every subregion of an image",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "regional representations encode multiple spatial context information",
+   "grounded": false
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "design a deep yet efficient convolution, autoencoder",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "design a deep yet efficient convolutional autoencoder",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@latent",
+  "correct@parameter",
+  "encode@latent",
+  "extract input@input",
+  "predict@input",
+  "reconstruct@latent",
+  "sample@action",
+  "sample@input",
+  "segment anomaly@input",
+  "split input@input"
+ ]
+}

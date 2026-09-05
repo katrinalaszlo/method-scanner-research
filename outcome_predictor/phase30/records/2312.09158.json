@@ -1,0 +1,138 @@
+{
+ "arxiv_id": "2312.09158",
+ "source": "abstract",
+ "words": 216,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 2,
+ "n_grounded": 11,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we employ an image encoder, text encoder, and visual prompter",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "to handle multi-modal inputs",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "formulate general object representations",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "acquiring knowledge from diverse data sources",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "adopting a cohesive learning strategy",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "efficiently tackling downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "integrating large volumes of automatically labeled data",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "excelling in zero-shot transfer to new data",
+   "grounded": true
+  },
+  {
+   "op": "track",
+   "canonical": "track",
+   "object": "trajectory",
+   "quote": "tracking and grounding of objects",
+   "grounded": false
+  },
+  {
+   "op": "segment",
+   "canonical": "segment",
+   "object": "state",
+   "quote": "segmentation of objects in images",
+   "grounded": false
+  },
+  {
+   "op": "identify",
+   "canonical": "identify",
+   "object": "INVALID:object",
+   "quote": "identifying objects in images and videos",
+   "grounded": true
+  },
+  {
+   "op": "ground",
+   "canonical": "ground",
+   "object": "state",
+   "quote": "grounding of objects in images",
+   "grounded": false
+  },
+  {
+   "op": "detect",
+   "canonical": "detect",
+   "object": "INVALID:object",
+   "quote": "detection of objects in images",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "improved generalization performance",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "without the need for task-specific adaptation",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "adopting a cohesive learning strategy",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "ground@state",
+  "predict@latent",
+  "predict@reward",
+  "reconstruct@noise",
+  "sample@sample",
+  "segment@state",
+  "track@trajectory"
+ ]
+}

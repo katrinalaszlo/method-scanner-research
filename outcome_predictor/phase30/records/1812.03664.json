@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1812.03664",
+ "source": "abstract",
+ "words": 195,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "learning an instance embedding function from seen classes",
+   "grounded": true
+  },
+  {
+   "op": "compute embedding",
+   "canonical": "compute embedding",
+   "object": "latent",
+   "quote": "apply the function to instances from unseen classes",
+   "grounded": true
+  },
+  {
+   "op": "adapt embedding",
+   "canonical": "adapt embedding",
+   "object": "latent",
+   "quote": "adapt the instance embeddings to the target classification task",
+   "grounded": true
+  },
+  {
+   "op": "transform embedding",
+   "canonical": "transform embedding",
+   "object": "latent",
+   "quote": "the Transformer is most effective",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the Transformer naturally satisfies key properties",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "empirically investigated various instantiations",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "validate it on both the standard few-shot classification benchmark",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "established the new state-of-the-art results",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "adapt embedding@latent",
+  "compare@error",
+  "compute embedding@latent",
+  "correct@parameter",
+  "encode@input",
+  "predict@value",
+  "reconstruct@sample",
+  "transform embedding@latent"
+ ]
+}

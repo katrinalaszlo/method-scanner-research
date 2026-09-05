@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "1708.02209",
+ "source": "abstract",
+ "words": 192,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the recursive unit learns multi-level representations of the current state",
+   "grounded": false
+  },
+  {
+   "op": "concatenate",
+   "canonical": "concatenate",
+   "object": "latent",
+   "quote": "the representations and the outputs from the previous memory blocks are concatenated",
+   "grounded": true
+  },
+  {
+   "op": "gate",
+   "canonical": "gate",
+   "object": "state",
+   "quote": "the gate unit adaptively controls how much of the previous states should be reserved",
+   "grounded": false
+  },
+  {
+   "op": "store",
+   "canonical": "store",
+   "object": "state",
+   "quote": "the gate unit ... decides how much of the current state should be stored",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "the recursive unit learns multi-level representations of the current state",
+   "grounded": false
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "introduces a memory block, consisting of a recursive unit and a gate unit",
+   "grounded": false
+  },
+  {
+   "op": "apply",
+   "canonical": "apply",
+   "object": "policy",
+   "quote": "we apply MemNet to three image restoration tasks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we apply MemNet to three image restoration tasks",
+   "grounded": true
+  },
+  {
+   "op": "upsample",
+   "canonical": "upsample",
+   "object": "input",
+   "quote": "we apply MemNet to three image restoration tasks",
+   "grounded": true
+  },
+  {
+   "op": "deblock",
+   "canonical": "deblock",
+   "object": "input",
+   "quote": "we apply MemNet to three image restoration tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "Comprehensive experiments demonstrate the necessity of the MemNet",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "Comprehensive experiments demonstrate the necessity of the MemNet",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "Comprehensive experiments demonstrate the necessity of the MemNet",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Comprehensive experiments demonstrate the necessity of the MemNet",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "Comprehensive experiments demonstrate the necessity of the MemNet",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "we apply MemNet to three image restoration tasks",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "input",
+   "quote": "the recursive unit learns multi-level representations of the current state",
+   "grounded": false
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "the recursive unit learns multi-level representations of the current state",
+   "grounded": false
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the representations and the outputs from the previous memory blocks are concatenated",
+   "grounded": true
+  },
+  {
+   "op": "filter",
+   "canonical": "filter",
+   "object": "state",
+   "quote": "the gate unit adaptively controls how much of the previous states should be reserved",
+   "grounded": false
+  },
+  {
+   "op": "retain",
+   "canonical": "retain",
+   "object": "state",
+   "quote": "the gate unit ... decides how much of the current state should be stored",
+   "grounded": false
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:output",
+   "quote": "we apply MemNet to three image restoration tasks",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "input",
+   "quote": "we apply MemNet to three image restoration tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "Comprehensive experiments demonstrate the necessity of the MemNet",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "Comprehensive experiments demonstrate the necessity of the MemNet",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply@policy",
+  "compare@parameter",
+  "compute@error",
+  "compute@reward",
+  "compute@value",
+  "concatenate@latent",
+  "correct@parameter",
+  "deblock@input",
+  "encode@input",
+  "evaluate@task",
+  "filter@state",
+  "gate@state",
+  "improve@parameter",
+  "output@input",
+  "predict@state",
+  "process@input",
+  "reconstruct@input",
+  "retain@state",
+  "sample@input",
+  "store@state",
+  "train@parameter",
+  "transform@state",
+  "upsample@input"
+ ]
+}

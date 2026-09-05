@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "2205.14401",
+ "source": "abstract",
+ "words": 229,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "mask tokens",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "we design a multi-scale masking strategy to generate consistent visible regions across scales",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we modify the encoder and decoder into pyramid architectures",
+   "grounded": true
+  },
+  {
+   "op": "self-attend",
+   "canonical": "self-attend",
+   "object": "latent",
+   "quote": "adopt a local spatial self-attention mechanism during fine-tuning",
+   "grounded": true
+  },
+  {
+   "op": "propagate tokens",
+   "canonical": "transmit",
+   "object": "latent",
+   "quote": "multi-scale token propagation, the lightweight decoder gradually upsamples point tokens",
+   "grounded": true
+  },
+  {
+   "op": "upsample",
+   "canonical": "upsample",
+   "object": "latent",
+   "quote": "the lightweight decoder gradually upsamples point tokens",
+   "grounded": true
+  },
+  {
+   "op": "skip connect",
+   "canonical": "skip connect",
+   "object": "latent",
+   "quote": "complementary skip connections from the encoder",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "promotes the reconstruction from a global-to-local perspective",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "we propose Point-M2AE, a strong Multi-scale MAE pre-training framework",
+   "grounded": true
+  },
+  {
+   "op": "freeze parameters",
+   "canonical": "freeze parameters",
+   "object": "parameter",
+   "quote": "With a frozen encoder after pre-training",
+   "grounded": true
+  },
+  {
+   "op": "fine-tune",
+   "canonical": "fine-tune",
+   "object": "parameter",
+   "quote": "By fine-tuning on downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "task",
+   "quote": "largely benefits the few-shot classification",
+   "grounded": true
+  },
+  {
+   "op": "segment",
+   "canonical": "segment",
+   "object": "task",
+   "quote": "largely benefits the few-shot classification",
+   "grounded": true
+  },
+  {
+   "op": "detect",
+   "canonical": "detect",
+   "object": "task",
+   "quote": "largely benefits the few-shot classification",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "multi-scale token propagation, the lightweight decoder gradually upsamples point tokens",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "By fine-tuning on downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "we design a multi-scale masking strategy to generate consistent visible regions across scales",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we modify the encoder and decoder into pyramid architectures",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the lightweight decoder gradually upsamples point tokens",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "achieves 92.9% accuracy for linear SVM on ModelNet40",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "achieves 86.43% accuracy on ScanObjectNN",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "largely benefits the few-shot classification",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "largely benefits the few-shot classification",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "largely benefits the few-shot classification",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "largely benefits the few-shot classification",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "largely benefits the few-shot classification",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "classify@task",
+  "compute accuracy@task",
+  "correct@parameter",
+  "detect@task",
+  "encode@input",
+  "evaluate@error",
+  "fine-tune@parameter",
+  "freeze parameters@parameter",
+  "mask@input",
+  "predict@input",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "sample@distribution",
+  "segment@task",
+  "self-attend@latent",
+  "skip connect@latent",
+  "transmit@latent",
+  "upsample@latent"
+ ]
+}

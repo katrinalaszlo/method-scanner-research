@@ -1,0 +1,142 @@
+{
+ "arxiv_id": "1811.07100",
+ "source": "abstract",
+ "words": 129,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 0,
+ "n_grounded": 11,
+ "ops": [
+  {
+   "op": "embed input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "train a deep embedding to support image similarity matching",
+   "grounded": false
+  },
+  {
+   "op": "sample noise",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "represent images as distributions rather than vectors",
+   "grounded": true
+  },
+  {
+   "op": "add noise",
+   "canonical": "diffuse",
+   "object": "latent",
+   "quote": "learning parameterized Gaussian noise regularization",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "latent",
+   "quote": "learn multiple non-linear distance metrics",
+   "grounded": true
+  },
+  {
+   "op": "compare features",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "non-linear comparison of features at multiple abstraction levels",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "different levels of features simultaneously",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train a deep embedding to support image similarity matching",
+   "grounded": false
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "represent images as distributions rather than vectors",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "train a deep embedding to support image similarity matching",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "train a deep embedding to support image similarity matching",
+   "grounded": false
+  },
+  {
+   "op": "regularize parameters",
+   "canonical": "regularize parameters",
+   "object": "parameter",
+   "quote": "learning parameterized Gaussian noise regularization",
+   "grounded": true
+  },
+  {
+   "op": "denoise latent",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "learning parameterized Gaussian noise regularization",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "non-linear comparison of features at multiple abstraction levels",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "represent images as distributions rather than vectors",
+   "grounded": true
+  },
+  {
+   "op": "evaluate task",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "achieves excellent performance on both miniImageNet and tieredImageNet",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "train a deep embedding to support image similarity matching",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "backpropagate@gradient",
+  "compare@latent",
+  "compute distance@latent",
+  "compute similarity@latent",
+  "compute value@value",
+  "correct@parameter",
+  "diffuse@latent",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@distribution",
+  "reconstruct@latent",
+  "reconstruct@sample",
+  "regularize parameters@parameter",
+  "sample@noise"
+ ]
+}

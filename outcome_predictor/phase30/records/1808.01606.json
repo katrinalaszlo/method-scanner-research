@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "1808.01606",
+ "source": "abstract",
+ "words": 206,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "compute disparity",
+   "canonical": "compute disparity",
+   "object": "input",
+   "quote": "predict inverse depth (i.e., disparity)",
+   "grounded": true
+  },
+  {
+   "op": "infer representation",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "train a CNN to infer disparity representations",
+   "grounded": true
+  },
+  {
+   "op": "pair images",
+   "canonical": "pair images",
+   "object": "input",
+   "quote": "pairing such image with frames on its left and right side",
+   "grounded": true
+  },
+  {
+   "op": "generate depth map",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "obtaining depth maps not affected by typical stereo artifacts",
+   "grounded": true
+  },
+  {
+   "op": "enforce assumption",
+   "canonical": "enforce assumption",
+   "object": "INVALID:dataset",
+   "quote": "enforce the trinocular assumption outlined from current binocular datasets",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "train a CNN to infer disparity representations",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "geometry-guided image reconstruction signals",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "enabling unsupared training",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train a CNN to infer disparity representations",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "images acquired with a binocular stereo rig",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "unsupervised training",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "Exhaustive experimental results on the KITTI dataset",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our proposal outperforms state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "CNNs led to considerable improvements in this field",
+   "grounded": true
+  },
+  {
+   "op": "apply model",
+   "canonical": "apply model",
+   "object": "input",
+   "quote": "predict inverse depth (i.e., disparity)",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "unsupervised monocular depth estimation",
+   "grounded": false
+  },
+  {
+   "op": "process trajectory",
+   "canonical": "process trajectory",
+   "object": "trajectory",
+   "quote": "trajectory of images and depth maps",
+   "grounded": false
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "trinocular datasets seldom available",
+   "grounded": true
+  },
+  {
+   "op": "interleave data",
+   "canonical": "interleave data",
+   "object": "INVALID:dataset",
+   "quote": "introduce a novel interleaved training procedure",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "enabling unsupervised training",
+   "grounded": true
+  },
+  {
+   "op": "denoise image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "geometry-guided image reconstruction signals",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "obtaining depth maps not affected by typical stereo artifacts",
+   "grounded": true
+  },
+  {
+   "op": "process frame",
+   "canonical": "process frame",
+   "object": "input",
+   "quote": "pairing such image with frames on its left and right side",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "train a CNN to infer disparity representations",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "train a CNN to infer disparity representations",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply model@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compare@task",
+  "compute disparity@input",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "pair images@input",
+  "predict@input",
+  "process frame@input",
+  "process input@input",
+  "process trajectory@trajectory",
+  "reconstruct@input",
+  "sample@input",
+  "train@parameter"
+ ]
+}

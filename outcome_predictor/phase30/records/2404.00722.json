@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2404.00722",
+ "source": "abstract",
+ "words": 202,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Experiment results indicate that our approach surpasses state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Experiment results indicate that our approach surpasses state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Experiment results indicate that our approach surpasses state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "input",
+   "quote": "Transformers are more adept at capturing long-range dependencies",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Transformers are more adept at capturing long-range dependencies",
+   "grounded": true
+  },
+  {
+   "op": "apply residual connection",
+   "canonical": "apply residual connection",
+   "object": "latent",
+   "quote": "Dense-residual connections between layers",
+   "grounded": true
+  },
+  {
+   "op": "apply dense connection",
+   "canonical": "apply dense connection",
+   "object": "latent",
+   "quote": "Dense-residual connections between layers",
+   "grounded": true
+  },
+  {
+   "op": "normalize features",
+   "canonical": "normalize features",
+   "object": "latent",
+   "quote": "Dense-residual connections between layers",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "Transformers are more adept at capturing long-range dependencies",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Saving Image Super-resolution away from Information Bottleneck",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@input",
+  "apply dense connection@latent",
+  "apply residual connection@latent",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "normalize features@latent",
+  "predict@reward",
+  "reconstruct@input",
+  "reconstruct@noise",
+  "sample@action"
+ ]
+}

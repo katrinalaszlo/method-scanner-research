@@ -1,0 +1,199 @@
+{
+ "arxiv_id": "2302.06112",
+ "source": "abstract",
+ "words": 197,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 7,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "apply dropout",
+   "canonical": "apply dropout",
+   "object": "input",
+   "quote": "apply one dropout after the last batch normalization",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "state",
+   "quote": "regularization methods such as dropout and batch normalization",
+   "grounded": true
+  },
+  {
+   "op": "compute residual",
+   "canonical": "compute residual",
+   "object": "state",
+   "quote": "residual network with batch normalization",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "stable optimization of deep neural networks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "regularization methods such as dropout and batch normalization",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:output",
+   "quote": "increases the performance",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "error",
+   "quote": "stable optimization of deep neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:output",
+   "quote": "applying dropout after global average pooling",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:output",
+   "quote": "more stable output",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "final prediction",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "state",
+   "quote": "residual branch",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "more stable output",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "correct position to apply dropout",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "stable optimization of deep neural networks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "increases the performance",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "action",
+   "quote": "final prediction",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "INVALID:output",
+   "quote": "more stable output",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "trajectory",
+   "quote": "different datasets and models",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "state",
+   "quote": "residual network with batch normalization",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "distribution",
+   "quote": "more stable output",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "action",
+   "quote": "residual branch",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:output",
+   "quote": "decreases the performance",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:output",
+   "quote": "more stable output",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:output",
+   "quote": "applying dropout after global average pooling",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply dropout@input",
+  "backpropagate@error",
+  "clip@gradient",
+  "compute gradient@parameter",
+  "compute latent@state",
+  "compute policy@action",
+  "compute residual@state",
+  "compute sample@distribution",
+  "compute task@trajectory",
+  "compute trajectory@action",
+  "compute trajectory@state",
+  "correct@parameter",
+  "evaluate@error",
+  "normalize@state",
+  "reconstruct@noise",
+  "sample@distribution",
+  "sample@sample"
+ ]
+}

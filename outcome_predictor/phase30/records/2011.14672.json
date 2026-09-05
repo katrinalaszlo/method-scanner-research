@@ -1,0 +1,188 @@
+{
+ "arxiv_id": "2011.14672",
+ "source": "abstract",
+ "words": 241,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 25,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute rotation",
+   "canonical": "compute rotation",
+   "object": "INVALID:joint",
+   "quote": "directly transforms accurate 3D joints to relative body-part rotations",
+   "grounded": true
+  },
+  {
+   "op": "decompose rotation",
+   "canonical": "decompose rotation",
+   "object": "INVALID:rotation",
+   "quote": "via the twist-and-swing decomposition",
+   "grounded": true
+  },
+  {
+   "op": "solve rotation",
+   "canonical": "solve rotation",
+   "object": "INVALID:swing",
+   "quote": "the swing rotation is analytically solved with 3D joints",
+   "grounded": true
+  },
+  {
+   "op": "derive rotation",
+   "canonical": "derive rotation",
+   "object": "INVALID:twist",
+   "quote": "the twist rotation is derived from the visual cues through the neural network",
+   "grounded": true
+  },
+  {
+   "op": "estimate parameter",
+   "canonical": "predict",
+   "object": "INVALID:joint",
+   "quote": "reconstruct a full 3D mesh for the human body by estimating several parameters",
+   "grounded": true
+  },
+  {
+   "op": "predict rotation",
+   "canonical": "predict",
+   "object": "INVALID:twist",
+   "quote": "the twist rotation is derived from the visual cues through the neural network",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct mesh",
+   "canonical": "reconstruct",
+   "object": "INVALID:body",
+   "quote": "directly transforms accurate 3D joints to relative body-part rotations for 3D body mesh reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "align position",
+   "canonical": "align position",
+   "object": "INVALID:joint",
+   "quote": "leading to a pixel-aligned 3D body mesh",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:pose",
+   "quote": "preserves both the accuracy of 3D pose and the realistic body structure",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:shape",
+   "quote": "preserves both the accuracy of 3D pose and the realistic body structure",
+   "grounded": true
+  },
+  {
+   "op": "estimate parameter",
+   "canonical": "predict",
+   "object": "INVALID:shape",
+   "quote": "reconstruct a full 3D mesh for the human body by estimating several parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "INVALID:pose",
+   "quote": "outperforms all the previous methods by 13.2 mm MPJPE and 21.9 mm PVE on 3DPW dataset",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "INVALID:shape",
+   "quote": "outperforms all the previous methods by 13.2 mm MPJPE and 21.9 mm PVE on 3DPW dataset",
+   "grounded": true
+  },
+  {
+   "op": "estimate parameter",
+   "canonical": "predict",
+   "object": "INVALID:mesh",
+   "quote": "reconstruct a full 3D mesh for the human body by estimating several parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "INVALID:mesh",
+   "quote": "leading to a pixel-aligned 3D body mesh",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "INVALID:pose",
+   "quote": "more accurate 3D pose than the pure 3D keypoint estimation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "INVALID:shape",
+   "quote": "more accurate 3D pose than the pure 3D keypoint estimation methods",
+   "grounded": true
+  },
+  {
+   "op": "estimate parameter",
+   "canonical": "predict",
+   "object": "INVALID:body",
+   "quote": "reconstruct a full 3D mesh for the human body by estimating several parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:mesh",
+   "quote": "leading to a pixel-aligned 3D body mesh",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:shape",
+   "quote": "leading to a pixel-aligned 3D body mesh",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:pose",
+   "quote": "more accurate 3D pose than the pure 3D keypoint estimation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:shape",
+   "quote": "more accurate 3D pose than the pure 3D keypoint estimation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "INVALID:mesh",
+   "quote": "leading to a pixel-aligned 3D body mesh",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "INVALID:shape",
+   "quote": "leading to a pixel-aligned 3D body mesh",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "INVALID:pose",
+   "quote": "more accurate 3D pose than the pure 3D keypoint estimation methods",
+   "grounded": true
+  }
+ ],
+ "tuples": []
+}

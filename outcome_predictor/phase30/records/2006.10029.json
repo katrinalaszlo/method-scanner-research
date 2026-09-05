@@ -1,0 +1,193 @@
+{
+ "arxiv_id": "2006.10029",
+ "source": "abstract",
+ "words": 233,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "unsupervised pretraining of a big ResNet model using SimCLRv2",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "unsupervised pretraining of a big ResNet model using SimCLRv2",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "unsupervised pretraining of a big ResNet model using SimCLRv2",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "unsupervised pretraining of a big ResNet model using SimCLRv2",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "supervised fine-tuning on a few labeled examples",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "supervised fine-tuning on a few labeled examples",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "supervised fine, tuning on a few labeled examples",
+   "grounded": false
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "distillation with unlabeled examples for refining and transferring the task-specific knowledge",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@latent"
+ ]
+}

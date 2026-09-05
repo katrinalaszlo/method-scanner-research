@@ -1,0 +1,216 @@
+{
+ "arxiv_id": "1904.03579",
+ "source": "abstract",
+ "words": 174,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "connect nodes",
+   "canonical": "connect nodes",
+   "object": "latent",
+   "quote": "adaptively determining the connection status among the feature nodes",
+   "grounded": false
+  },
+  {
+   "op": "switch connection",
+   "canonical": "switch connection",
+   "object": "latent",
+   "quote": "flexible way to switch global and local inference",
+   "grounded": true
+  },
+  {
+   "op": "compute feature",
+   "canonical": "compute feature",
+   "object": "latent",
+   "quote": "processing the internal feature representations",
+   "grounded": true
+  },
+  {
+   "op": "update weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "latent",
+   "quote": "flexible way to switch global and local inference",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "processing the internal feature representations",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "sample node",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "adaptively determining the connection status among the feature nodes",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "improve the traditional convolution, neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "improve the traditional convolutional neural networks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply activation@latent",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute feature@latent",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "connect nodes@latent",
+  "correct@parameter",
+  "evaluate@error",
+  "sample@latent",
+  "switch connection@latent"
+ ]
+}

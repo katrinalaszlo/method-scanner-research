@@ -1,0 +1,75 @@
+{
+ "arxiv_id": "2002.10322",
+ "source": "abstract",
+ "words": 209,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 3,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "predict bone direction",
+   "canonical": "predict",
+   "object": "INVALID:bone",
+   "quote": "we propose a fully-convolutional propagating architecture with long skip connections",
+   "grounded": true
+  },
+  {
+   "op": "predict bone length",
+   "canonical": "predict",
+   "object": "INVALID:bone",
+   "quote": "we develop effective techniques to utilize global information across all the frames in a video for high-accuracy bone length prediction",
+   "grounded": false
+  },
+  {
+   "op": "compute joint shift loss",
+   "canonical": "compute joint shift loss",
+   "object": "error",
+   "quote": "a novel joint shift loss is further introduced to bridge the training of the bone length and bone direction prediction networks",
+   "grounded": true
+  },
+  {
+   "op": "feed visibility scores",
+   "canonical": "feed visibility scores",
+   "object": "input",
+   "quote": "we employ an implicit attention mechanism to feed the 2d keypoint visibility scores into the model as extra guidance",
+   "grounded": true
+  },
+  {
+   "op": "compute 3d joint locations",
+   "canonical": "compute 3d joint locations",
+   "object": "state",
+   "quote": "the 3d joint locations can be completely derived",
+   "grounded": true
+  },
+  {
+   "op": "apply attention mechanism",
+   "canonical": "apply attention mechanism",
+   "object": "distribution",
+   "quote": "we employ an implicit attention mechanism to feed the 2d keypoint visibility scores into the model as extra guidance",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the 3d joint locations can be completely derived",
+   "grounded": true
+  },
+  {
+   "op": "propagate bone directions",
+   "canonical": "transmit",
+   "object": "INVALID:bone",
+   "quote": "it predicts the directions of different bones hierarchically without using any time-consuming memory units e.g. lstm",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention mechanism@distribution",
+  "compute 3d joint locations@state",
+  "compute joint shift loss@error",
+  "correct@parameter",
+  "feed visibility scores@input"
+ ]
+}

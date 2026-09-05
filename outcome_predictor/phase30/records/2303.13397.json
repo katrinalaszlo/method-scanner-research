@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "2303.13397",
+ "source": "abstract",
+ "words": 150,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we present DiffMesh, an innovative motion-aware Diffusion-like framework",
+   "grounded": true
+  },
+  {
+   "op": "predict latent",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "efficiently generating accurate and smooth output mesh sequences",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "incorporating human motion within the forward process",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "diffusion models and human motion",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "incorporating human motion within the forward process",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "diffusion models and human motion",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "diffusion models and human motion",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "efficiently generating accurate and smooth output mesh sequences",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "incorporating human motion within the forward process",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "diffusion models and human motion",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "diff, incorporating human motion within the forward process",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "incorporating human motion within the forward process",
+   "grounded": true
+  },
+  {
+   "op": "predict policy",
+   "canonical": "predict",
+   "object": "policy",
+   "quote": "diffusion models and human motion",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "diffusion models and human motion",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "diffusion models and human motion",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "diffusion models and human motion",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "diffusion models and human motion",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "incorporating human motion within the forward process",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "incorporating human motion within the forward process",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "diffusion models and human motion",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "diff, incorporating human motion within the forward process",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "incorporating human motion within the forward process",
+   "grounded": true
+  },
+  {
+   "op": "predict policy",
+   "canonical": "predict",
+   "object": "policy",
+   "quote": "diffusion models and human motion",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "diffusion models and human motion",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "diffusion models and human motion",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute latent@latent",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "correct@parameter",
+  "encode@input",
+  "predict@latent",
+  "predict@policy",
+  "predict@reward",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

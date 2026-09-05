@@ -1,0 +1,74 @@
+{
+ "arxiv_id": "1809.02983",
+ "source": "abstract",
+ "words": 197,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 4,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "we append two types of attention modules on top of traditional dilated FCN",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "INVALID:position",
+   "quote": "the position attention module selectively aggregates the features at each position",
+   "grounded": false
+  },
+  {
+   "op": "compute weighted sum",
+   "canonical": "compute weighted sum",
+   "object": "latent",
+   "quote": "selectively aggregates the features at each position by a weighted sum of the features at all positions",
+   "grounded": true
+  },
+  {
+   "op": "emphasize channels",
+   "canonical": "emphasize channels",
+   "object": "INVALID:channel",
+   "quote": "the channel attention module selectively emphasizes interdependent channel maps",
+   "grounded": false
+  },
+  {
+   "op": "integrate features",
+   "canonical": "integrate features",
+   "object": "INVALID:channel",
+   "quote": "integrating associated features among all channel maps",
+   "grounded": false
+  },
+  {
+   "op": "sum outputs",
+   "canonical": "sum outputs",
+   "object": "INVALID:attention",
+   "quote": "we sum the outputs of the two attention modules",
+   "grounded": true
+  },
+  {
+   "op": "refine features",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "which contributes to more precise segmentation results",
+   "grounded": false
+  },
+  {
+   "op": "segment image",
+   "canonical": "segment image",
+   "object": "input",
+   "quote": "address the scene segmentation task by capturing rich contextual dependencies",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@latent",
+  "compute weighted sum@latent",
+  "correct@latent",
+  "segment image@input"
+ ]
+}

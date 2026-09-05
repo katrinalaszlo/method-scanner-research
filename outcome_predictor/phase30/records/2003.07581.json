@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "2003.07581",
+ "source": "abstract",
+ "words": 147,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "we propose a novel objective function that can only be minimized when the predictions of the trained model are consistent and plausible across all camera views.",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose a novel end-to-end learning framework that enables weakly-supervised training using multi-view consistency.",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we learn to estimate 3D poses from unlabeled multi-view data.",
+   "grounded": false
+  },
+  {
+   "op": "predict pose",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "we propose a 2.5D pose representation and a novel objective function.",
+   "grounded": false
+  },
+  {
+   "op": "project",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "we learn to estimate 3D poses from unlabeled multi-view data.",
+   "grounded": false
+  },
+  {
+   "op": "compute consistency",
+   "canonical": "compute consistency",
+   "object": "INVALID:prediction",
+   "quote": "we propose a novel objective function that can only be minimized when the predictions of the trained model are consistent and plausible across all camera views.",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "we learn to estimate 3D poses from unlabeled multi-view data.",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we propose a novel end-to-end learning framework that enables weakly-supervised training using multi-view consistency.",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "we evaluate our proposed approach on two large scale datasets (Human3.6M and MPII-INF-3DHP) where it achieves state-of-the-art performance among semi-/weakly-supervised methods.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we propose a novel end-to-end learning framework that enables weakly-supervised training using multi-view consistency.",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "trajectory",
+   "quote": "we propose a novel end-to-end learning framework that enables weakly-supervised training using multi-view consistency.",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we learn to estimate 3D poses from unlabeled multi-view data.",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "we propose a 2.5D pose representation and a novel objective function.",
+   "grounded": false
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we propose a novel end-to-end learning framework that enables weakly-supervised training using multi-view consistency.",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "we propose a novel objective function that can only be minimized when the predictions of the trained model are consistent and plausible across all camera views.",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose a novel end-to-end learning framework that enables weakly-supervised training using multi-view consistency.",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "task",
+   "quote": "we evaluate our proposed approach on two large scale datasets (Human3.6M and MPII-INF-3DHP) where it achieves state-of-the-art performance among semi-/weakly-supervised methods.",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "we learn to estimate 3D poses from unlabeled multi-view data.",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we propose a novel objective function that can only be minimized when the predictions of the trained model are consistent and plausible across all camera views.",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we propose a novel end-to-end learning framework that enables weakly-supervised training using multi-view consistency.",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "we evaluate our proposed approach on two large scale datasets (Human3.6M and MPII-INF-3DHP) where it achieves state-of-the-art performance among semi-/weakly-supervised methods.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we propose a novel end-to-end learning framework that enables weakly-supervised training using multi-view consistency.",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "trajectory",
+   "quote": "we propose a novel end-to-end learning framework that enables weakly-supervised training using multi-view consistency.",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we learn to estimate 3D poses from unlabeled multi-view data.",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "we propose a 2.5D pose representation and a novel objective function.",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@value",
+  "compute distribution@latent",
+  "compute reward@task",
+  "compute trajectory@task",
+  "compute value@trajectory",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@latent",
+  "project@latent",
+  "reconstruct@noise",
+  "sample@distribution",
+  "sample@sample"
+ ]
+}

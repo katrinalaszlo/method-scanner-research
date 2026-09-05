@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2202.10251",
+ "source": "abstract",
+ "words": 174,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "sample points",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "the space-filling curve-guided sampling module uses Z-order curve coding to sample points that contain geometrical correlation",
+   "grounded": true
+  },
+  {
+   "op": "fuse information",
+   "canonical": "fuse information",
+   "object": "latent",
+   "quote": "the information fusion module uses a correlation tensor and a set of skip connections to fuse the structure and correlation information",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "the channel-spatial attention module enhances the representation of key points and crucial feature channels to refine the network",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the PointSCNet consists of three main modules: the space-filling curve-guided sampling module, the information fusion module, and the channel-spatial attention module",
+   "grounded": true
+  },
+  {
+   "op": "compute correlation",
+   "canonical": "compute correlation",
+   "object": "state",
+   "quote": "the information fusion module uses a correlation tensor and a set of skip connections to fuse the structure and correlation information",
+   "grounded": true
+  },
+  {
+   "op": "refine representation",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "the channel-spatial attention module enhances the representation of key points and crucial feature channels to refine the network",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the information fusion module uses a correlation tensor and a set of skip, connections to fuse the structure and correlation information",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the PointSCNet is evaluated on shape classification and part segmentation tasks",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention@latent",
+  "compute correlation@state",
+  "correct@latent",
+  "encode@input",
+  "fuse information@latent",
+  "reconstruct@latent",
+  "sample@state"
+ ]
+}

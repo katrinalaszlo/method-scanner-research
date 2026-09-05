@@ -1,0 +1,72 @@
+{
+ "arxiv_id": "1907.12209",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 6,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:depth",
+   "quote": "pixel-wise relative error",
+   "grounded": true
+  },
+  {
+   "op": "sample points",
+   "canonical": "sample",
+   "object": "INVALID:space",
+   "quote": "randomly sampled three points",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "depth prediction",
+   "grounded": true
+  },
+  {
+   "op": "enforce constraint",
+   "canonical": "enforce constraint",
+   "object": "INVALID:normal",
+   "quote": "geometric constraints",
+   "grounded": true
+  },
+  {
+   "op": "compute normal",
+   "canonical": "compute normal",
+   "object": "INVALID:point cloud",
+   "quote": "recover good 3D structures",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct 3d",
+   "canonical": "reconstruct",
+   "object": "INVALID:space",
+   "quote": "reconstructed 3D space",
+   "grounded": true
+  },
+  {
+   "op": "generate surface",
+   "canonical": "reconstruct",
+   "object": "INVALID:normal",
+   "quote": "surface normal directly",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "state-of-the-art performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "predict@input"
+ ]
+}

@@ -1,0 +1,172 @@
+{
+ "arxiv_id": "1908.00497",
+ "source": "abstract",
+ "words": 183,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute attention map",
+   "canonical": "compute attention map",
+   "object": "distribution",
+   "quote": "which intuitively shows how the block helps the final prediction",
+   "grounded": true
+  },
+  {
+   "op": "fuse modality information",
+   "canonical": "fuse modality information",
+   "object": "input",
+   "quote": "fusing multi-modality information is known to be able to effectively bring significant improvement in video classification",
+   "grounded": true
+  },
+  {
+   "op": "apply attention mechanism",
+   "canonical": "apply attention mechanism",
+   "object": "distribution",
+   "quote": "there emerge many successful applications of attention in the field of computer vision",
+   "grounded": true
+  },
+  {
+   "op": "extract feature representation",
+   "canonical": "extract feature representation",
+   "object": "input",
+   "quote": "we propose a cross-modality attention operation, which can obtain information from other modality in a more effective way than two-stream",
+   "grounded": true
+  },
+  {
+   "op": "combine feature representations",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we implement a compatible block named CMA block, which is a wrapper of our proposed attention operation",
+   "grounded": true
+  },
+  {
+   "op": "generate attention weights",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "we propose a cross-modality attention operation, which can obtain information from other modality in a more effective way than two-stream",
+   "grounded": true
+  },
+  {
+   "op": "aggregate attention weights",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "we propose a cross-modality attention operation, which can obtain information from other modality in a more effective way than two, two-stream",
+   "grounded": true
+  },
+  {
+   "op": "compute cross-modality interaction",
+   "canonical": "compute cross-modality interaction",
+   "object": "distribution",
+   "quote": "we propose a cross-modality attention operation, which can obtain information from other modality in a more effective way than two-stream",
+   "grounded": true
+  },
+  {
+   "op": "update model parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we implement a compatible block named CMA block, which is a wrapper of our proposed attention operation",
+   "grounded": true
+  },
+  {
+   "op": "compute loss function",
+   "canonical": "compute loss function",
+   "object": "error",
+   "quote": "we comprehensively compare our method with two-stream and non-local models widely used in video classification",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate gradients",
+   "canonical": "backpropagate gradients",
+   "object": "gradient",
+   "quote": "we comprehensively compare our method with two-stream and non-local models widely used in video classification",
+   "grounded": true
+  },
+  {
+   "op": "optimize model parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "we comprehensively compare our method with two-stream and non-local models widely used in video classification",
+   "grounded": true
+  },
+  {
+   "op": "visualize attention map",
+   "canonical": "visualize attention map",
+   "object": "distribution",
+   "quote": "we also analyze the advantages of the CMA block by visualizing the attention map",
+   "grounded": true
+  },
+  {
+   "op": "compute final prediction",
+   "canonical": "compute final prediction",
+   "object": "value",
+   "quote": "which intuitively shows how the block helps the final prediction",
+   "grounded": true
+  },
+  {
+   "op": "apply attention weights",
+   "canonical": "apply attention weights",
+   "object": "distribution",
+   "quote": "we propose a cross-modality attention operation, which can obtain information from other modality in a more effective way than two-stream",
+   "grounded": true
+  },
+  {
+   "op": "compute feature interactions",
+   "canonical": "compute feature interactions",
+   "object": "latent",
+   "quote": "we propose a cross-modality attention operation, which can obtain information from other modality in a more effective way than two-stream",
+   "grounded": true
+  },
+  {
+   "op": "generate attention scores",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "we propose a cross-modality attention operation, which can obtain information from other modality in a more effective way than two-stream",
+   "grounded": true
+  },
+  {
+   "op": "compute attention scores",
+   "canonical": "compute attention scores",
+   "object": "distribution",
+   "quote": "we propose a cross-modality attention operation, which can obtain information from other modality in a more effective way than two-stream",
+   "grounded": true
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "distribution",
+   "quote": "we propose a cross-modality attention operation, which can obtain information from other modality in a more effective way than two-stream",
+   "grounded": true
+  },
+  {
+   "op": "compute attention map",
+   "canonical": "compute attention map",
+   "object": "distribution",
+   "quote": "which intuitively shows how the block helps the final prediction",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@distribution",
+  "aggregate@latent",
+  "apply attention mechanism@distribution",
+  "apply attention weights@distribution",
+  "backpropagate gradients@gradient",
+  "compute attention map@distribution",
+  "compute attention scores@distribution",
+  "compute attention weights@distribution",
+  "compute cross-modality interaction@distribution",
+  "compute feature interactions@latent",
+  "compute final prediction@value",
+  "compute loss function@error",
+  "correct@parameter",
+  "extract feature representation@input",
+  "fuse modality information@input",
+  "improve@parameter",
+  "reconstruct@distribution",
+  "visualize attention map@distribution"
+ ]
+}

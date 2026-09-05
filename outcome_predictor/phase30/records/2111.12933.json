@@ -1,0 +1,109 @@
+{
+ "arxiv_id": "2111.12933",
+ "source": "abstract",
+ "words": 161,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 12,
+ "n_invalid_object": 1,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "compute query",
+   "canonical": "compute query",
+   "object": "input",
+   "quote": "ML-Decoder predicts the existence of class labels via queries",
+   "grounded": true
+  },
+  {
+   "op": "generate attention",
+   "canonical": "reconstruct",
+   "object": "INVALID:query",
+   "quote": "ML-Decoder predicts the existence of class labels via queries",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "ML-Decoder enables better utilization of spatial data",
+   "grounded": false
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "ML-Decoder predicts the existence of class labels via queries",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "ML-Decoder is highly efficient, and can scale well to thousands of classes",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "Novel query augmentations further improve its generalization ability",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "ML-Decoder consistently provides a better speed-accuracy trade-off",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "ML-Decoder is highly efficient, and can scale well to thousands of classes",
+   "grounded": true
+  },
+  {
+   "op": "sample class",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "ML-Decoder can generalize to unseen classes when operated with word queries",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "ML-Decoder is also versatile - it can be used as a drop-in replacement for various classification heads",
+   "grounded": true
+  },
+  {
+   "op": "compute map",
+   "canonical": "compute map",
+   "object": "task",
+   "quote": "we reach 91.4% mAP; on NUS-WIDE zero-shot, we reach 31.1% ZSL mAP",
+   "grounded": true
+  },
+  {
+   "op": "compute top score",
+   "canonical": "compute top score",
+   "object": "task",
+   "quote": "we reach with vanilla ResNet50 backbone a new top score of 80.7%",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply augmentation@input",
+  "backpropagate@gradient",
+  "compute accuracy@task",
+  "compute map@task",
+  "compute query@input",
+  "compute top score@task",
+  "correct@parameter",
+  "evaluate@error",
+  "predict@distribution",
+  "sample@distribution"
+ ]
+}

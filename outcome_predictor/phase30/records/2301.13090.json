@@ -1,0 +1,216 @@
+{
+ "arxiv_id": "2301.13090",
+ "source": "abstract",
+ "words": 165,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 28,
+ "n_invalid_object": 12,
+ "n_grounded": 28,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "our end-to-end network pays attention to a set of joints specific to each action",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "encoded spatio-temporal features are aggregated to recognize the action",
+   "grounded": true
+  },
+  {
+   "op": "recognize",
+   "canonical": "classify",
+   "object": "action",
+   "quote": "encoded spatio-temporal features are aggregated to recognize the action",
+   "grounded": true
+  },
+  {
+   "op": "identify",
+   "canonical": "identify",
+   "object": "INVALID:joint",
+   "quote": "identifies action-related key joints by considering the latent correlation of joints",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "spatio-temporal feature extraction is still challenging",
+   "grounded": true
+  },
+  {
+   "op": "consider",
+   "canonical": "consider",
+   "object": "INVALID:correlation",
+   "quote": "identifies action-related key joints by considering the latent correlation of joints",
+   "grounded": true
+  },
+  {
+   "op": "enhance",
+   "canonical": "enhance",
+   "object": "INVALID:classification",
+   "quote": "the use of multiple stages of action capsules enhances the ability of the network to classify similar actions",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "action",
+   "quote": "enhances the ability of the network to classify similar actions",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "our network outperforms the state-of-the-art approaches on the N-UCLA dataset",
+   "grounded": true
+  },
+  {
+   "op": "measure",
+   "canonical": "measure",
+   "object": "INVALID:computation",
+   "quote": "our approach has significantly lower computational requirements based on GFLOPs measurements",
+   "grounded": true
+  },
+  {
+   "op": "pay attention",
+   "canonical": "pay attention",
+   "object": "INVALID:joint",
+   "quote": "our end-to-end network pays attention to a set of joints specific to each action",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "encoded spatio-temporal features are aggregated to recognize the action",
+   "grounded": true
+  },
+  {
+   "op": "recognize",
+   "canonical": "classify",
+   "object": "action",
+   "quote": "encoded spatio-temporal features are aggregated to recognize the action",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "INVALID:spatio-temporal",
+   "quote": "spatio-temporal feature extraction is still challenging",
+   "grounded": true
+  },
+  {
+   "op": "consider",
+   "canonical": "consider",
+   "object": "latent",
+   "quote": "identifies action-related key joints by considering the latent correlation of joints",
+   "grounded": true
+  },
+  {
+   "op": "enhance",
+   "canonical": "enhance",
+   "object": "INVALID:classification",
+   "quote": "the use of multiple stages of action capsules enhances the ability of the network to classify similar actions",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "action",
+   "quote": "enhances the ability of the network to classify similar actions",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "our network outperforms the state-of-the-art approaches on the N-UCLA dataset",
+   "grounded": true
+  },
+  {
+   "op": "measure",
+   "canonical": "measure",
+   "object": "INVALID:computation",
+   "quote": "our approach has significantly lower computational requirements based on GFLOPs measurements",
+   "grounded": true
+  },
+  {
+   "op": "pay attention",
+   "canonical": "pay attention",
+   "object": "INVALID:joint",
+   "quote": "our end-to-end network pays attention to a set of joints specific to each action",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "encoded spatio-temporal features are aggregated to recognize the action",
+   "grounded": true
+  },
+  {
+   "op": "recognize",
+   "canonical": "classify",
+   "object": "action",
+   "quote": "encoded spatio-temporal features are aggregated to recognize the action",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "INVALID:spatio-temporal",
+   "quote": "spatio-temporal feature extraction is still challenging",
+   "grounded": true
+  },
+  {
+   "op": "consider",
+   "canonical": "consider",
+   "object": "latent",
+   "quote": "identifies action-related key joints by considering the latent correlation of joints",
+   "grounded": true
+  },
+  {
+   "op": "enhance",
+   "canonical": "enhance",
+   "object": "INVALID:classification",
+   "quote": "the use of multiple stages of action capsules enhances the ability of the network to classify similar actions",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "action",
+   "quote": "enhances the ability of the network to classify similar actions",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "our network outperforms the state-of-the-art approaches on the N-UCLA dataset",
+   "grounded": true
+  },
+  {
+   "op": "measure",
+   "canonical": "measure",
+   "object": "INVALID:computation",
+   "quote": "our approach has significantly lower computational requirements based on GFLOPs measurements",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "classify@action",
+  "compute@value",
+  "consider@latent",
+  "encode@state",
+  "extract@latent"
+ ]
+}

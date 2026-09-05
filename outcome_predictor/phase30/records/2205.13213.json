@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2205.13213",
+ "source": "abstract",
+ "words": 279,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose to use the direct speed evaluation on the target platform as the design principle",
+   "grounded": true
+  },
+  {
+   "op": "split heads",
+   "canonical": "split heads",
+   "object": "parameter",
+   "quote": "we introduce LITv2, a simple and effective ViT",
+   "grounded": true
+  },
+  {
+   "op": "process high frequency",
+   "canonical": "process high frequency",
+   "object": "latent",
+   "quote": "one group encodes high frequencies via self-attention within each local window",
+   "grounded": true
+  },
+  {
+   "op": "process low frequency",
+   "canonical": "process low frequency",
+   "object": "latent",
+   "quote": "another group encodes low frequencies by performing global attention between the average-pooled low-frequency keys and values",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "a multi-head self-attention layer neglects the characteristic of different frequencies",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we show that HiLo is superior to the existing attention mechanisms",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose to use the direct speed evaluation on the target platform as the design principle",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "LITv2 serves as a strong backbone for mainstream vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "LITv2 serves as a strong backbone for mainstream vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we show that HiLo is superior to the existing attention mechanisms",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we propose to use the direct speed evaluation on the target platform as the design principle",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we propose to use the direct speed and memory consumption on GPUs and CPUs",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we propose to use the direct speed and memory consumption on GPUs and CPUs",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "LITv2 serves as a strong backbone for mainstream vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "LIT3 serves as a strong backbone for mainstream vision tasks",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "LITv2 serves as a strong backbone for mainstream vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we propose to use the direct speed and memory consumption on GPUs and CPUs",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "LITv2 serves as a strong backbone for mainstream vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we propose to use the direct speed and memory consumption on GPUs and CPUs",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "LITv2 serves as a strong backbone for mainstream vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "LITv2 serves as a strong backbone for mainstream vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we propose to use the direct speed and memory consumption on GPUs and CPUs",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we propose to use the direct speed and memory consumption on GPUs and CPUs",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "LITv2 serves as a strong backbone for mainstream vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we show that HiLo is superior to the existing attention mechanisms",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute attention@latent",
+  "compute distribution@distribution",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@action",
+  "predict@reward",
+  "process high frequency@latent",
+  "process low frequency@latent",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "split heads@parameter"
+ ]
+}

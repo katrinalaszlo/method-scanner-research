@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1803.09454",
+ "source": "abstract",
+ "words": 195,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "the proposed model consists of three parts, which are feature extraction block",
+   "grounded": true
+  },
+  {
+   "op": "distill information",
+   "canonical": "distill information",
+   "object": "latent",
+   "quote": "the compression unit distills more useful information for the sequential blocks",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the enhancement unit mixes together two different types of features",
+   "grounded": false
+  },
+  {
+   "op": "reconstruct image",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "directly reconstruct the high resolution image from the original low resolution image",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "the proposed network has the advantage of fast execution due to the comparatively few numbers of filters per layer",
+   "grounded": true
+  },
+  {
+   "op": "group convolve",
+   "canonical": "group convolve",
+   "object": "input",
+   "quote": "the proposed network has the advantage of fast execution due to the comparatively few numbers of filters per layer",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the proposed method is superior to the state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed method is superior to the state-of-the-art methods",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "correct@parameter",
+  "distill information@latent",
+  "evaluate@error",
+  "extract feature@input",
+  "group convolve@input",
+  "reconstruct@latent"
+ ]
+}

@@ -1,0 +1,208 @@
+{
+ "arxiv_id": "2205.04095",
+ "source": "abstract",
+ "words": 136,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "requires clipping and noising of per-sample gradients",
+   "grounded": true
+  },
+  {
+   "op": "add noise",
+   "canonical": "diffuse",
+   "object": "gradient",
+   "quote": "requires clipping and noising of per-sample gradients",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "accuracy degradation is strongly dependent on the model architecture",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "error",
+   "quote": "requires clipping and noising of per-sample gradients",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "requires clipping and noising of per-sample gradients",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "requires clipping and noising of per-sample gradients",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "accuracy degradation is strongly dependent on the model architecture",
+   "grounded": true
+  },
+  {
+   "op": "compare accuracy",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "our architecture outperforms others",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "error",
+   "quote": "our architecture outperforms others",
+   "grounded": true
+  },
+  {
+   "op": "benchmark model",
+   "canonical": "benchmark model",
+   "object": "parameter",
+   "quote": "benchmark SmoothNet against standard architectures",
+   "grounded": true
+  },
+  {
+   "op": "record result",
+   "canonical": "record result",
+   "object": "error",
+   "quote": "reaching an accuracy of 73.5\\% on CIFAR-10",
+   "grounded": true
+  },
+  {
+   "op": "store result",
+   "canonical": "store result",
+   "object": "error",
+   "quote": "reaching an accuracy of 73.5\\% on CIFAR-10",
+   "grounded": true
+  },
+  {
+   "op": "log result",
+   "canonical": "log result",
+   "object": "error",
+   "quote": "reaching an accuracy of 73.5\\% on CIFAR-10",
+   "grounded": true
+  },
+  {
+   "op": "compute epsilon",
+   "canonical": "compute epsilon",
+   "object": "parameter",
+   "quote": "at $\\varepsilon=7.0$ on CIFAR-10",
+   "grounded": false
+  },
+  {
+   "op": "compute epsilon",
+   "canonical": "compute epsilon",
+   "object": "parameter",
+   "quote": "at $\\varepsilon=7.0$ on ImageNette",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "error",
+   "quote": "at $\\varepsilon=7.0$ on ImageNette",
+   "grounded": true
+  },
+  {
+   "op": "store accuracy",
+   "canonical": "store accuracy",
+   "object": "error",
+   "quote": "at $\\varepsilon=7.0$ on ImageNette",
+   "grounded": true
+  },
+  {
+   "op": "log accuracy",
+   "canonical": "log accuracy",
+   "object": "error",
+   "quote": "at $\\varepsilon=7.0$ on ImageNette",
+   "grounded": true
+  },
+  {
+   "op": "compute result",
+   "canonical": "compute result",
+   "object": "error",
+   "quote": "a state-of-the-art result compared to prior architectural modifications for DP",
+   "grounded": true
+  },
+  {
+   "op": "record result",
+   "canonical": "record result",
+   "object": "error",
+   "quote": "a state-of-the-art result compared to prior architectural modifications for DP",
+   "grounded": true
+  },
+  {
+   "op": "store result",
+   "canonical": "store result",
+   "object": "error",
+   "quote": "a state-of-the-art result compared to prior architectural modifications for DP",
+   "grounded": true
+  },
+  {
+   "op": "log result",
+   "canonical": "log result",
+   "object": "error",
+   "quote": "a state-of-the-art result compared to prior architectural modifications for DP",
+   "grounded": true
+  },
+  {
+   "op": "compute performance",
+   "canonical": "compute performance",
+   "object": "error",
+   "quote": "a state-of-the-art result compared to prior architectural modifications for DP",
+   "grounded": true
+  },
+  {
+   "op": "store performance",
+   "canonical": "store performance",
+   "object": "error",
+   "quote": "a state-of-the-art result compared to prior architectural modifications for DP",
+   "grounded": true
+  },
+  {
+   "op": "log performance",
+   "canonical": "log performance",
+   "object": "error",
+   "quote": "a state-of-the-art result compared to prior architectural modifications for DP",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@error",
+  "benchmark model@parameter",
+  "clip gradient@gradient",
+  "compare@error",
+  "compute accuracy@error",
+  "compute epsilon@parameter",
+  "compute performance@error",
+  "compute result@error",
+  "correct@parameter",
+  "diffuse@gradient",
+  "evaluate@error",
+  "log accuracy@error",
+  "log performance@error",
+  "log result@error",
+  "record result@error",
+  "store accuracy@error",
+  "store performance@error",
+  "store result@error",
+  "train@parameter"
+ ]
+}

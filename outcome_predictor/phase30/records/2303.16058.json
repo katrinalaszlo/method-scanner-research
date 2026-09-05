@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "2303.16058",
+ "source": "abstract",
+ "words": 168,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "mask tokens",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "mask out most of the low-semantics video tokens",
+   "grounded": true
+  },
+  {
+   "op": "align tokens",
+   "canonical": "align tokens",
+   "object": "latent",
+   "quote": "selectively align the unmasked tokens with IFM",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "provides semantic guidance",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our method enables faster convergence",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "multimodal friendliness",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "handle various tasks including scene-related",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "low-level reconstruction poses convergence difficulties",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "training-efficient method for temporal-sensitive VFMs",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "progressive pre-training framework",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "complex video-language understanding",
+   "grounded": true
+  },
+  {
+   "op": "track state",
+   "canonical": "track state",
+   "object": "state",
+   "quote": "scratch-built ViT-L/16 achieves state-of-the-art performances",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "high-level cross-modal alignment",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "handle various tasks including temporal-related",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "training-efficient method for temporal-sensitive VFMs",
+   "grounded": true
+  },
+  {
+   "op": "predict policy",
+   "canonical": "predict",
+   "object": "policy",
+   "quote": "multimodal friendliness",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "handle various tasks including complex video-language understanding",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "low-level reconstruction poses convergence difficulties",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "progressive pre-training framework",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "provides semantic guidance",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our method enables faster convergence",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "complex video-language understanding",
+   "grounded": true
+  },
+  {
+   "op": "track state",
+   "canonical": "track state",
+   "object": "state",
+   "quote": "scratch-built ViT-L/16 achieves state-of-the-art performances",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "high-level cross-modal alignment",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "handle various tasks including temporal-related",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "training-efficient method for temporal-sensitive VFMs",
+   "grounded": true
+  },
+  {
+   "op": "predict policy",
+   "canonical": "predict",
+   "object": "policy",
+   "quote": "multimodal friendliness",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align tokens@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "correct@parameter",
+  "mask@input",
+  "predict@distribution",
+  "predict@policy",
+  "predict@reward",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "sample@trajectory",
+  "track state@state"
+ ]
+}

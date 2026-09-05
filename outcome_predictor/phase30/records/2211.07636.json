@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2211.07636",
+ "source": "abstract",
+ "words": 237,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "EVA is a vanilla ViT pre-trained to reconstruct the masked out image-text aligned vision features",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "reconstruct the masked out image-text aligned vision features",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "reconstruct the masked out image-text aligned vision features",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "EVA is a vanilla ViT pre-trained to reconstruct the masked out image-text aligned vision features",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "EVA takes a great leap in the challenging large vocabulary instance segmentation task",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "sets new records on a broad range of representative vision downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "connect",
+   "canonical": "connect",
+   "object": "distribution",
+   "quote": "EVA can also serve as a vision-centric, multi-modal pivot to connect images and text",
+   "grounded": true
+  },
+  {
+   "op": "initialize",
+   "canonical": "initialize",
+   "object": "parameter",
+   "quote": "initializing the vision tower of a giant CLIP from EVA can greatly stabilize the training",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "initializing the vision tower of a giant CLIP from EVA can greatly stabilize the training",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "sets new records on a broad range of representative vision downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "EVA is a vanilla ViT pre-trained to reconstruct the masked out image-text aligned vision features",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "EVA takes a great leap in the challenging large vocabulary instance segmentation task",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "EVA can also serve as a vision-centric, multi,modal pivot to connect images and text",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "EVA can also serve as a vision-centric, multi-modal pivot to connect images and text",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "EVA can also serve as a vision-centric, multi-modal pivot to connect images and text",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "EVA can also serve as a vision-centric, multi-modal pivot to connect images and text",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "EVA is a vanilla ViT pre-trained to reconstruct the masked out image-text aligned vision features",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "EVA is a vanilla ViT pre-trained to reconstruct the masked out image-text aligned vision features",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "EVA is a vanilla ViT pre-trained to reconstruct the masked out image-text aligned vision features",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "EVA is a vanilla ViT pre-trained to reconstruct the masked out image-text aligned vision features",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "EVA is a vanilla ViT pre-trained to reconstruct the masked out image-text aligned vision features",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "EVA is a vanilla ViT pre-trained to reconstruct the masked out image-text aligned vision features",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "EVA takes a great leap in the challenging large vocabulary instance segmentation task",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "sets new records on a broad range of representative vision downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "sets new records on a broad range of representative vision downstream tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "connect@distribution",
+  "correct@parameter",
+  "encode@input",
+  "initialize@parameter",
+  "predict@latent",
+  "reconstruct@noise",
+  "sample@sample",
+  "train@parameter"
+ ]
+}

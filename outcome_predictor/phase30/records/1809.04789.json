@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "1809.04789",
+ "source": "abstract",
+ "words": 115,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "the proposed method employs a deep network for multi-pass upscaling",
+   "grounded": false
+  },
+  {
+   "op": "upscale",
+   "canonical": "upscale",
+   "object": "state",
+   "quote": "the proposed method employs a deep network for multi-pass upscaling",
+   "grounded": false
+  },
+  {
+   "op": "predict score",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "two quantitative score predictor networks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the tradeoff relationship between the quantitative and perceptual quality",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the proposed method achieves a good balance of the quantitative and perceptual quality",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed method achieves a good balance of the quantitative and perceptual quality",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the proposed method employs a deep network for multi-pass upscaling",
+   "grounded": false
+  },
+  {
+   "op": "evaluate reward",
+   "canonical": "evaluate",
+   "object": "reward",
+   "quote": "the tradeoff relationship between the quantitative and perceptual quality",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the proposed method employs a deep network for multi-pass upscaling",
+   "grounded": false
+  },
+  {
+   "op": "compare error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the tradeoff relationship between the quantitative and perceptual quality",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the trade, quantitative and perceptual quality",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "the proposed method employs a deep network for multi-pass upscaling",
+   "grounded": false
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "two quantitative score predictor networks",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "state",
+   "quote": "the tradeoff relationship between the quantitative and perceptual quality",
+   "grounded": false
+  },
+  {
+   "op": "compute naturalness",
+   "canonical": "compute naturalness",
+   "object": "state",
+   "quote": "the tradeoff relationship between the quantitative and perceptual quality",
+   "grounded": false
+  },
+  {
+   "op": "aggregate results",
+   "canonical": "aggregate",
+   "object": "trajectory",
+   "quote": "the proposed method achieves a good balance of the quantitative and perceptual quality",
+   "grounded": true
+  },
+  {
+   "op": "output image",
+   "canonical": "output image",
+   "object": "state",
+   "quote": "the proposed method employs a deep network for multi-pass upscaling",
+   "grounded": false
+  },
+  {
+   "op": "evaluate quality",
+   "canonical": "evaluate",
+   "object": "state",
+   "quote": "the tradeoff relationship between the quantitative and perceptual quality",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the proposed method employs a deep network for multi-pass upscaling",
+   "grounded": false
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "the proposed method achieves a good balance of the quantitative and perceptual quality",
+   "grounded": true
+  },
+  {
+   "op": "denoise image",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "the proposed method employs a deep network for multi-pass upscaling",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the tradeoff relationship between the quantitative and perceptual quality",
+   "grounded": false
+  },
+  {
+   "op": "update network",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed method achieves a good than existing methods",
+   "grounded": true
+  },
+  {
+   "op": "generate trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "the proposed method employs a deep network for multi-pass upscaling",
+   "grounded": false
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "the proposed method achieves a good balance of the quantitative and perceptual quality",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@trajectory",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compare@error",
+  "compute naturalness@state",
+  "compute similarity@state",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@reward",
+  "evaluate@state",
+  "evaluate@task",
+  "output image@state",
+  "predict@distribution",
+  "process input@input",
+  "reconstruct@noise",
+  "reconstruct@state",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@sample",
+  "upscale@state"
+ ]
+}

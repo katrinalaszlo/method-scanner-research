@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "2101.06085",
+ "source": "abstract",
+ "words": 234,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we proposed a family of efficient backbones specially designed for real-time semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "fuse",
+   "canonical": "fuse",
+   "object": "latent",
+   "quote": "multiple bilateral fusions are performed",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "design a new contextual information extractor named Deep Aggregation Pyramid Pooling Module",
+   "grounded": true
+  },
+  {
+   "op": "pool",
+   "canonical": "pool",
+   "object": "latent",
+   "quote": "fuse multi-scale context based on low-resolution feature maps",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "multiple bilateral fusions are performed",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "semantic segmentation is a key technology for autonomous vehicles to understand the surrounding scenes",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "our method achieves a new state-of-the-art trade-off between accuracy and speed",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "our method is superior to most state-of-the-art models",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "fuse multi-scale context based on low-resolution feature maps",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "our method achieves a new state-of-the-art trade-off between accuracy and speed",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we proposed a family of efficient backbones specially designed for real-time semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "latent",
+   "quote": "design a new contextual information extractor named Deep Aggregation Pyramid Pooling Module",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "design a new contextual information extractor named Deep Aggregation Pyramid Pooling Module",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "fuse multi-scale context based on low-resolution feature maps",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "our method is superior to most state-of-the-art models",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "we proposed a family of efficient backbones specially designed for real-time semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "our method achieves a new state-of-the-art trade-off between accuracy and speed",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "semantic segmentation is a key technology for autonomous vehicles to understand the surrounding scenes",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "distribution",
+   "quote": "our method is superior to most state-of-the-art models",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "our method achieves a new state-of-the-art trade-off between accuracy and speed",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "trajectory",
+   "quote": "our method is superior to most state-of-the-art models",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "our method is superior to most state-of-the-art models",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "policy",
+   "quote": "our method is superior to most state-of-the-art models",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "sample",
+   "quote": "our method is superior to most state-of-the-art models",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "noise",
+   "quote": "our method is superior to most state-of-the-art models",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "classify@distribution",
+  "compute@error",
+  "compute@noise",
+  "compute@policy",
+  "compute@reward",
+  "compute@sample",
+  "compute@task",
+  "compute@trajectory",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@value",
+  "extract@latent",
+  "fuse@latent",
+  "improve@parameter",
+  "pool@latent",
+  "predict@distribution",
+  "process@latent",
+  "reconstruct@distribution",
+  "reconstruct@latent",
+  "sample@distribution",
+  "transform@latent"
+ ]
+}

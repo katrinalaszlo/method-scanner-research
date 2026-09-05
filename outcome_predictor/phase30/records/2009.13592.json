@@ -1,0 +1,200 @@
+{
+ "arxiv_id": "2009.13592",
+ "source": "abstract",
+ "words": 172,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 14,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:classification",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:localisation",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute ranking",
+   "canonical": "compute ranking",
+   "object": "INVALID:classification",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute ranking",
+   "canonical": "compute ranking",
+   "object": "INVALID:localisation",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "combine error",
+   "canonical": "aggregate",
+   "object": "INVALID:classification",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "combine error",
+   "canonical": "aggregate",
+   "object": "INVALID:localisation",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:classification",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:localisation",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "aggregate loss",
+   "canonical": "aggregate",
+   "object": "INVALID:classification",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "aggregate loss",
+   "canonical": "aggregate",
+   "object": "INVALID:localisation",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "aLRP Loss has only one hyperparameter, which we did not tune in practice",
+   "grounded": true
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "INVALID:classification",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute recall",
+   "canonical": "compute recall",
+   "object": "INVALID:classification",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "INVALID:localisation",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute recall",
+   "canonical": "compute recall",
+   "object": "INVALID:localisation",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute balance",
+   "canonical": "compute balance",
+   "object": "error",
+   "quote": "aLRP provides provable balance between positives and negatives",
+   "grounded": true
+  },
+  {
+   "op": "compute ranking",
+   "canonical": "compute ranking",
+   "object": "task",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute ranking",
+   "canonical": "compute ranking",
+   "object": "trajectory",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute ranking",
+   "canonical": "compute ranking",
+   "object": "distribution",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute ranking",
+   "canonical": "compute ranking",
+   "object": "sample",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute ranking",
+   "canonical": "compute ranking",
+   "object": "policy",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute ranking",
+   "canonical": "compute ranking",
+   "object": "value",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute ranking",
+   "canonical": "compute ranking",
+   "object": "reward",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute ranking",
+   "canonical": "compute ranking",
+   "object": "input",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  },
+  {
+   "op": "compute ranking",
+   "canonical": "compute ranking",
+   "object": "noise",
+   "quote": "aLRP extends the Localisation-Recall-Precision (LRP) performance metric",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute balance@error",
+  "compute ranking@distribution",
+  "compute ranking@input",
+  "compute ranking@noise",
+  "compute ranking@policy",
+  "compute ranking@reward",
+  "compute ranking@sample",
+  "compute ranking@task",
+  "compute ranking@trajectory",
+  "compute ranking@value",
+  "correct@parameter"
+ ]
+}

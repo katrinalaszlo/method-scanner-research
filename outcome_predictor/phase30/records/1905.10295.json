@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1905.10295",
+ "source": "abstract",
+ "words": 229,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 3,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the target-set contains additional task-specific information",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the base-model learns on a support-set using existing methods",
+   "grounded": false
+  },
+  {
+   "op": "predict label",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "the base-model learns on a support-set using existing methods",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the learnt loss function is itself optimized",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the base-model learns on a support-set using existing methods",
+   "grounded": false
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "the learnt loss function is itself optimized",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the target-set contains only unlabelled input data-points",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "experiments demonstrate that SCA offers substantially reduced error-rates",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute gradient@gradient",
+  "correct@parameter",
+  "evaluate@error",
+  "improve@parameter",
+  "predict@input",
+  "sample@action"
+ ]
+}

@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2103.10697",
+ "source": "abstract",
+ "words": 222,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "state",
+   "quote": "we introduce gated positional self-attention (GPSA",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "we conclude by presenting various ablations",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we conclude by presenting various ablations",
+   "grounded": true
+  },
+  {
+   "op": "initialize parameter",
+   "canonical": "initialize parameter",
+   "object": "parameter",
+   "quote": "we initialise the GPSA layers to mimic the locality",
+   "grounded": true
+  },
+  {
+   "op": "adjust parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we give each attention head the freedom to escape locality",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we further investigate the role of locality in learning",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we quantify how it is encouraged in vanilla self-attention layers",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "we analyse how it is escaped in GPSA layers",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we conclude by presenting various ablations",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we conclude by presenting various ablations",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we further investigate the role of locality in learning",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we conclude by presenting various ablations",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we further investigate the role of locality in learning",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we conclude by presenting various ablations",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we conclude by presenting various ablations",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we conclude by presenting various ablations",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "we conclude by presenting various ablations",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we introduce gated positional self-attention (GPSA",
+   "grounded": true
+  },
+  {
+   "op": "transform state",
+   "canonical": "transform state",
+   "object": "state",
+   "quote": "we introduce gated positional self-attention (GPSA",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "we introduce gated positional self-attention (GPSA",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@state",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@error",
+  "compute gradient@parameter",
+  "compute latent@latent",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "initialize parameter@parameter",
+  "predict@reward",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "transform state@state"
+ ]
+}

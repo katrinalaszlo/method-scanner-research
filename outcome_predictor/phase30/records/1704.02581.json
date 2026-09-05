@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1704.02581",
+ "source": "abstract",
+ "words": 200,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose a novel two-stream RNN architecture",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "state",
+   "quote": "we explore two different structures for the temporal stream",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "to model both temporal dynamics and spatial configurations",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "we further exploit 3D transformation based data augmentation techniques",
+   "grounded": false
+  },
+  {
+   "op": "rotate",
+   "canonical": "rotate",
+   "object": "input",
+   "quote": "we further exploit 3D transformation based data augmentation techniques",
+   "grounded": false
+  },
+  {
+   "op": "scale",
+   "canonical": "scale",
+   "object": "input",
+   "quote": "we further exploit 3D transformation based data augmentation techniques",
+   "grounded": false
+  },
+  {
+   "op": "convert",
+   "canonical": "convert",
+   "object": "distribution",
+   "quote": "to model the spatial structure by converting the spatial graph into a sequence of joints",
+   "grounded": false
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "we explore two different structures for the temporal stream",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "convert@distribution",
+  "encode@input",
+  "predict@action",
+  "process@state",
+  "rotate@input",
+  "sample@trajectory",
+  "scale@input",
+  "transform@input"
+ ]
+}

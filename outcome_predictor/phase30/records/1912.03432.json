@@ -1,0 +1,142 @@
+{
+ "arxiv_id": "1912.03432",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "state",
+   "quote": "the Mahalanobis distance",
+   "grounded": true
+  },
+  {
+   "op": "estimate covariance",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "estimation of the high dimensional feature covariances",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "adaptive feature extractors",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "prediction error or residual",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "up to 9.2% fewer trainable parameters",
+   "grounded": true
+  },
+  {
+   "op": "classify input",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "few-shot image classification",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "reward / return / value signal",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "control action or policy output",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "diffusion, SDE",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "gradient of an objective w.r.t. parameters",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "a drawn sample or particle set",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "reward / return / value signal",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "probability distribution, density, score function",
+   "grounded": false
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "gradient of an objective w.r.t. parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "a sequence of states and/or actions over time",
+   "grounded": false
+  },
+  {
+   "op": "evaluate policy",
+   "canonical": "evaluate",
+   "object": "policy",
+   "quote": "a policy / behaviour function or its parameters",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "classify@input",
+  "clip@gradient",
+  "compare@value",
+  "compute distance@state",
+  "compute distribution@distribution",
+  "compute reward@value",
+  "compute trajectory@trajectory",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@policy",
+  "predict@latent",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

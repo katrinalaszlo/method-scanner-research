@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "1908.01748",
+ "source": "abstract",
+ "words": 181,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we advance the state-of-the-art accuracy",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we demonstrate that significant performance gains",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we advance the state-of-the-art accuracy",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we present what we believe to be the first proxyless",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "we demonstrate that significant performance gains",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "for real time applications utilizing Deep Neural Networks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we present what we believe to be the first proxyless",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we demonstrate that significant performance gains",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we demonstrate that significant performance gains",
+   "grounded": true
+  },
+  {
+   "op": "evaluate value",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "we advance the state-of-the-art accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we demonstrate that significant performance gains",
+   "grounded": true
+  },
+  {
+   "op": "optimize task",
+   "canonical": "improve",
+   "object": "task",
+   "quote": "we demonstrate that significant performance gains",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we present what we believe to be the first proxyless",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "we demonstrate that significant performance gains",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we present what we believe to be the first proxyless",
+   "grounded": true
+  },
+  {
+   "op": "evaluate policy",
+   "canonical": "evaluate",
+   "object": "policy",
+   "quote": "we demonstrate that significant performance gains",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "we present what we believe to be the first proxy,",
+   "grounded": true
+  },
+  {
+   "op": "sample latent",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "we demonstrate that significant performance gains",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we advance the state-of-the-art accuracy",
+   "grounded": true
+  },
+  {
+   "op": "resample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "we demonstrate that significant performance gains",
+   "grounded": true
+  },
+  {
+   "op": "evaluate trajectory",
+   "canonical": "evaluate",
+   "object": "trajectory",
+   "quote": "we demonstrate that significant performance gains",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "for real time applications utilizing Deep Neural Networks",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we present what we believe to be the first proxyless",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "we demonstrate that significant performance gains",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we demonstrate that significant performance gains",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute input@input",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@policy",
+  "evaluate@trajectory",
+  "evaluate@value",
+  "improve@task",
+  "predict@distribution",
+  "predict@reward",
+  "reconstruct@input",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@input",
+  "sample@latent",
+  "sample@sample",
+  "sample@trajectory"
+ ]
+}

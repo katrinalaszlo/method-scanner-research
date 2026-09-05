@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "2211.11317",
+ "source": "abstract",
+ "words": 183,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we train the student network to match the teacher network feature",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "integrate a pre-trained teacher network, a denoising student encoder-decoder",
+   "grounded": false
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "integrate a pre-trained teacher network, a denoning student encoder-decoder",
+   "grounded": false
+  },
+  {
+   "op": "match",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "train the student network to match the teacher network feature",
+   "grounded": true
+  },
+  {
+   "op": "segment",
+   "canonical": "segment",
+   "object": "input",
+   "quote": "train a segmentation network with rich supervision from synthetic anomaly masks",
+   "grounded": true
+  },
+  {
+   "op": "fuse",
+   "canonical": "fuse",
+   "object": "latent",
+   "quote": "fuse the multi-level S-T features adaptively",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "achieve a substantial performance improvement",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we introduce a denoising procedure that allows the student network to learn more robust representations",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train the student network to match the teacher network feature",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "from synthetically corrupted normal images",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "train a segmentation network with rich supervision from synthetic anomaly masks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "achieve a substantial performance improvement",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "achieve a substantial performance improvement",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "experiments on the industrial inspection benchmark dataset",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "trajectory",
+   "quote": "experiments on the industrial inspection benchmark dataset",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "policy",
+   "quote": "achieve a substantial performance improvement",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "action",
+   "quote": "achieve a substantial performance improvement",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "state",
+   "quote": "experiments on the industrial inspection benchmark dataset",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "noise",
+   "quote": "from synthetically corrupted normal images",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "sample",
+   "quote": "from synthetically corrupted normal images",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "achieve a substantial performance improvement",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "achieve a substantial performance improvement",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "gradient",
+   "quote": "achieve a substantial performance improvement",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "parameter",
+   "quote": "achieve a substantial performance improvement",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "experiments on the industrial inspection benchmark dataset",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@latent",
+  "compute@action",
+  "compute@distribution",
+  "compute@error",
+  "compute@gradient",
+  "compute@noise",
+  "compute@parameter",
+  "compute@policy",
+  "compute@reward",
+  "compute@sample",
+  "compute@state",
+  "compute@task",
+  "compute@trajectory",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "fuse@latent",
+  "predict@distribution",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "sample@input",
+  "segment@input",
+  "train@parameter"
+ ]
+}

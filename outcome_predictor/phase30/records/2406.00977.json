@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "2406.00977",
+ "source": "abstract",
+ "words": 269,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 4,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "extracting features from a large number of image sub-crops",
+   "grounded": true
+  },
+  {
+   "op": "aggregate tokens",
+   "canonical": "aggregate",
+   "object": "INVALID:token",
+   "quote": "a simple mean-pooling aggregation over tokens is effective",
+   "grounded": true
+  },
+  {
+   "op": "preserve resolution",
+   "canonical": "preserve resolution",
+   "object": "input",
+   "quote": "processing images at higher resolutions and utilizing multi-crop features to preserve native resolution details",
+   "grounded": true
+  },
+  {
+   "op": "zoom in",
+   "canonical": "zoom in",
+   "object": "input",
+   "quote": "zooming in beyond it and extracting features from a large number of image sub-crops",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the model achieves competitive performance on general-domain tasks",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our model, Dragonfly, achieves competitive performance on general-domain tasks",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "excels in tasks requiring fine-grained image understanding",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "extracting features from a large number of image sub-crops",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "sets new benchmarks on several medical tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute f1 score",
+   "canonical": "compute f1 score",
+   "object": "task",
+   "quote": "a 67.1% token F1 score on Path-VQA",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "outperforming models that are significantly larger or trained on larger datasets",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "processing images at higher resolutions and utilizing multi-crop features",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "extracting features from a large number of image sub-crops",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "overcoming the limitations of current ViTs",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "achieves the highest or second-highest scores in most cases",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "setting new benchmarks on several medical tasks",
+   "grounded": false
+  },
+  {
+   "op": "compute token",
+   "canonical": "compute token",
+   "object": "INVALID:token",
+   "quote": "a simple mean-pooling aggregation over tokens is effective",
+   "grounded": true
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "value",
+   "quote": "state-of-the-art results across the majority of image captioning tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute embedding",
+   "canonical": "compute embedding",
+   "object": "latent",
+   "quote": "extracting features from a large number of image sub-crops",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "INVALID:token",
+   "quote": "a simple mean-pooling aggregation over tokens is effective",
+   "grounded": true
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "INVALID:token",
+   "quote": "a simple mean-pooling aggregation over tokens is effective",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "our model, Dragonfly, achieves competitive performance on general-domain tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "outperforming models that are significantly larger or trained on larger datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "sets new benchmarks on several medical tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "overcoming the limitations of current ViTs",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute accuracy@task",
+  "compute distribution@distribution",
+  "compute embedding@latent",
+  "compute f1 score@task",
+  "compute gradient@parameter",
+  "compute reward@reward",
+  "compute score@value",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@value",
+  "preserve resolution@input",
+  "reconstruct@input",
+  "sample@input",
+  "zoom in@input"
+ ]
+}

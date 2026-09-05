@@ -1,0 +1,172 @@
+{
+ "arxiv_id": "2402.03752",
+ "source": "abstract",
+ "words": 136,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 21,
+ "n_invalid_object": 0,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Our experiments on the CIFAR-10 and CIFAR-100 datasets involved ViT models",
+   "grounded": true
+  },
+  {
+   "op": "mask",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "using a masked auto-encoder technique with minimal image scaling",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "Our experiments on the CIFAR-10 and CIFAR-100 datasets involved ViT models",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "using a masked auto-encoder technique with minimal image scaling",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "using a masked auto-encoder technique with minimal image scaling",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "using a masked auto-encoder technique with minimal image scaling",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "using a masked auto-encoder technique with minimal image scaling",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "using a masked auto-encoder technique with minimal image scaling",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "using a masked auto-encoder technique with minimal image scaling",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "using a masked auto-encoder technique with minimal image scaling",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "using a masked auto-encoder technique with minimal image scaling",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Our experiments on the CIFAR-10 and CIFAR-100 datasets involved ViT models",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "Our experiments on the CIFAR-10 and CIFAR-100 datasets involved ViT models",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "Our experiments on the CIFAR-10 and CIFAR-100 datasets involved ViT models",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Our experiments on the CIFAR-10 and CIFAR-100 datasets involved ViT models",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Our experiments on the CIFAR-10 and CIFAR-100 datasets involved ViT models",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "Our experiments on the CIFAR-10 and CIFAR-100 datasets involved ViT models",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "Our experiments on the CIFAR-10 and CIFAR-100 datasets involved ViT models",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Our experiments on the CIFAR-10 and CIFAR-100 datasets involved ViT models",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "Our experiments on the CIFAR-10 and CIFAR-100 datasets involved ViT models",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "Our experiments on the CIFAR-10 and CIFAR-100 datasets involved ViT models",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "mask@input",
+  "predict@latent",
+  "reconstruct@latent",
+  "sample@input",
+  "sample@latent"
+ ]
+}

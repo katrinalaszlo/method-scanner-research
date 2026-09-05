@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "1906.06874",
+ "source": "abstract",
+ "words": 176,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "nonlinear mapping from low-resolution inputs to high-resolution outputs",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "nonlinear mapping from low-resolution inputs to high-resolution outputs",
+   "grounded": true
+  },
+  {
+   "op": "upsample",
+   "canonical": "upsample",
+   "object": "latent",
+   "quote": "error correlated up and down-sampling process",
+   "grounded": true
+  },
+  {
+   "op": "downsample",
+   "canonical": "downsample",
+   "object": "latent",
+   "quote": "error correlated up and down-sampling process",
+   "grounded": true
+  },
+  {
+   "op": "project",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "back projection blocks to provide the error correlated up and down-sampling process",
+   "grounded": false
+  },
+  {
+   "op": "backproject",
+   "canonical": "backproject",
+   "object": "latent",
+   "quote": "back projection blocks to provide the error correlated up and down-sampling process",
+   "grounded": false
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "new Softmax based Weighted Reconstruction (WR) process is used to combine the outputs",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "consolidates the best representation for reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "error correlated up and down-sampling process",
+   "grounded": true
+  },
+  {
+   "op": "weight",
+   "canonical": "weight",
+   "object": "distribution",
+   "quote": "Softmax based Weighted Reconstruction (WR) process",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "new Softmax based Weighted Reconstruction (WR) process",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "sample",
+   "quote": "combine the outputs of HG modules",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "distribution",
+   "quote": "Softmax based Weighted Reconstruction (WR) process",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "state",
+   "quote": "nonlinear mapping from low-resolution inputs to high-resolution outputs",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "trajectory",
+   "quote": "cascades multiple HourGlass (HG) modules to bottom-up and top-down process features",
+   "grounded": true
+  },
+  {
+   "op": "analyze",
+   "canonical": "analyze",
+   "object": "latent",
+   "quote": "process features across all scales to capture various spatial correlations",
+   "grounded": true
+  },
+  {
+   "op": "abstraction",
+   "canonical": "abstraction",
+   "object": "latent",
+   "quote": "process features across all scales to capture various spatial correlations",
+   "grounded": true
+  },
+  {
+   "op": "consolidate",
+   "canonical": "consolidate",
+   "object": "latent",
+   "quote": "consolidates the best representation for reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "estimate",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "replace simple deconvolution and pooling process for better estimation",
+   "grounded": true
+  },
+  {
+   "op": "map",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "nonlinear mapping from low-resolution inputs to high-resolution outputs",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "process features across all scales to capture various spatial correlations",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "consolidates the best representation for reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "nonlinear mapping from low-resolution inputs to high-resolution outputs",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "nonlinear mapping from low-resolution inputs to high-resolution outputs",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "new Softmax based Weighted Reconstruction (WR) process",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "abstraction@latent",
+  "aggregate@distribution",
+  "aggregate@sample",
+  "analyze@latent",
+  "backproject@latent",
+  "compare@error",
+  "compute@value",
+  "consolidate@latent",
+  "correct@state",
+  "downsample@latent",
+  "encode@input",
+  "normalize@distribution",
+  "output@state",
+  "predict@state",
+  "process@trajectory",
+  "project@latent",
+  "reconstruct@latent",
+  "reconstruct@state",
+  "sample@distribution",
+  "transform@latent",
+  "upsample@latent",
+  "weight@distribution"
+ ]
+}

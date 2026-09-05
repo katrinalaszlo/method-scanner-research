@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "1907.10399",
+ "source": "abstract",
+ "words": 234,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:pixel",
+   "quote": "the first phase concentrates on minimizing pixel-wise error",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "state",
+   "quote": "the second stage utilizes the features extracted by the previous stage",
+   "grounded": true
+  },
+  {
+   "op": "retain structure",
+   "canonical": "retain structure",
+   "object": "state",
+   "quote": "pursue results with better structural retention",
+   "grounded": true
+  },
+  {
+   "op": "distill feature",
+   "canonical": "distill feature",
+   "object": "latent",
+   "quote": "the final stage employs fine structure features distilled by the second phase",
+   "grounded": true
+  },
+  {
+   "op": "generate image",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "the proposed method can build three types of images in a feed-forward process",
+   "grounded": true
+  },
+  {
+   "op": "fuse feature",
+   "canonical": "fuse feature",
+   "object": "latent",
+   "quote": "explore a new generator that adopts multi-scale hierarchical features fusion",
+   "grounded": true
+  },
+  {
+   "op": "produce output",
+   "canonical": "produce output",
+   "object": "state",
+   "quote": "produce more realistic results",
+   "grounded": true
+  },
+  {
+   "op": "maintain information",
+   "canonical": "maintain information",
+   "object": "state",
+   "quote": "maintain the pixel, and structural level information in the perceptual image as much as possible",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the first phase concentrates on minimizing pixel-wise error",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the second stage utilizes the features extracted by the previous stage",
+   "grounded": true
+  },
+  {
+   "op": "sample output",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "produce more realistic results",
+   "grounded": true
+  },
+  {
+   "op": "combine feature",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "adopt multi-scale hierarchical features fusion",
+   "grounded": false
+  },
+  {
+   "op": "generate result",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "progressively generates visually high-quality results",
+   "grounded": true
+  },
+  {
+   "op": "refine output",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "produce more realistic results",
+   "grounded": true
+  },
+  {
+   "op": "aggregate feature",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "adopt multi-scale hierarchical features fusion",
+   "grounded": false
+  },
+  {
+   "op": "construct image",
+   "canonical": "construct image",
+   "object": "state",
+   "quote": "build three types of images in a feed-forward process",
+   "grounded": true
+  },
+  {
+   "op": "compute quality",
+   "canonical": "compute quality",
+   "object": "state",
+   "quote": "maintain the pixel, and structural level information in the perceptual image as much as possible",
+   "grounded": true
+  },
+  {
+   "op": "output image",
+   "canonical": "output image",
+   "object": "state",
+   "quote": "produce more realistic results",
+   "grounded": true
+  },
+  {
+   "op": "generate texture",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "show impressive results with synthetic high-frequency textures",
+   "grounded": true
+  },
+  {
+   "op": "denoise image",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "produce more realistic results",
+   "grounded": true
+  },
+  {
+   "op": "enhance detail",
+   "canonical": "enhance detail",
+   "object": "state",
+   "quote": "produce more realistic results",
+   "grounded": true
+  },
+  {
+   "op": "preserve structure",
+   "canonical": "preserve structure",
+   "object": "state",
+   "quote": "pursue results with better structural retention",
+   "grounded": true
+  },
+  {
+   "op": "refine structure",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "produce more realistic results",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "progressively generates visually high-quality results",
+   "grounded": true
+  },
+  {
+   "op": "compute quality",
+   "canonical": "compute quality",
+   "object": "state",
+   "quote": "maintain the pixel, and structural level information in the perceptual image as much as possible",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute quality@state",
+  "construct image@state",
+  "correct@parameter",
+  "correct@state",
+  "distill feature@latent",
+  "enhance detail@state",
+  "evaluate@error",
+  "extract feature@state",
+  "fuse feature@latent",
+  "maintain information@state",
+  "output image@state",
+  "preserve structure@state",
+  "produce output@state",
+  "reconstruct@state",
+  "retain structure@state",
+  "sample@state"
+ ]
+}

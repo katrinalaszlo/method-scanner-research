@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1905.11946",
+ "source": "abstract",
+ "words": 187,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "scale depth",
+   "canonical": "scale depth",
+   "object": "parameter",
+   "quote": "uniformly scales all dimensions of depth/width/resolution",
+   "grounded": true
+  },
+  {
+   "op": "scale width",
+   "canonical": "scale width",
+   "object": "parameter",
+   "quote": "uniformly scales all dimensions of depth/width/resolution",
+   "grounded": true
+  },
+  {
+   "op": "scale resolution",
+   "canonical": "scale resolution",
+   "object": "parameter",
+   "quote": "uniformly scales all dimensions of depth/width/resolution",
+   "grounded": true
+  },
+  {
+   "op": "compute compound coefficient",
+   "canonical": "compute compound coefficient",
+   "object": "parameter",
+   "quote": "uniformly scales all dimensions of depth/width/resolution",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "demonstrate the effectiveness of this method on scaling up MobileNets and ResNet",
+   "grounded": true
+  },
+  {
+   "op": "perform inference",
+   "canonical": "perform inference",
+   "object": "input",
+   "quote": "8.4x smaller and 6.1x faster on inference than the best existing ConvNet",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "achieve state-of-the-art 84.3% top-1 accuracy on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "compute transfer accuracy",
+   "canonical": "compute transfer accuracy",
+   "object": "task",
+   "quote": "achieve state-of-the-art accuracy on CIFAR-100 (91.7%)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute accuracy@task",
+  "compute compound coefficient@parameter",
+  "compute transfer accuracy@task",
+  "perform inference@input",
+  "scale depth@parameter",
+  "scale resolution@parameter",
+  "scale width@parameter",
+  "train@parameter"
+ ]
+}

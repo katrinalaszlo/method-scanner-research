@@ -1,0 +1,89 @@
+{
+ "arxiv_id": "2012.14371",
+ "source": "abstract",
+ "words": 260,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 5,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute tensor",
+   "canonical": "compute tensor",
+   "object": "input",
+   "quote": "we propose novel tensor representations for compactly capturing such higher-order relationships",
+   "grounded": true
+  },
+  {
+   "op": "build kernel",
+   "canonical": "build kernel",
+   "object": "state",
+   "quote": "SCK builds on the spatio-temporal correlations between features",
+   "grounded": true
+  },
+  {
+   "op": "model dynamics",
+   "canonical": "model dynamics",
+   "object": "trajectory",
+   "quote": "DCK explicitly models the action dynamics of a sequence",
+   "grounded": true
+  },
+  {
+   "op": "operate subsequence",
+   "canonical": "operate subsequence",
+   "object": "trajectory",
+   "quote": "SCK(+) operates on subsequences to capture the local-global interplay of correlations",
+   "grounded": false
+  },
+  {
+   "op": "incorporate input",
+   "canonical": "incorporate input",
+   "object": "input",
+   "quote": "can incorporate multi-modal inputs e.g., skeleton 3D body-joints and per-frame classifier scores",
+   "grounded": true
+  },
+  {
+   "op": "linearize kernel",
+   "canonical": "linearize kernel",
+   "object": "INVALID:tensor",
+   "quote": "we introduce linearization of these kernels that lead to compact and fast descriptors",
+   "grounded": true
+  },
+  {
+   "op": "compute eigenvalue",
+   "canonical": "compute eigenvalue",
+   "object": "INVALID:tensor",
+   "quote": "we use higher-order tensors and so-called Eigenvalue Power Normalization (EPN)",
+   "grounded": true
+  },
+  {
+   "op": "normalize tensor",
+   "canonical": "normalize tensor",
+   "object": "INVALID:tensor",
+   "quote": "Eigenvalue Power Normalization (EPN) which have been long speculated to perform spectral detection",
+   "grounded": true
+  },
+  {
+   "op": "detect occurrence",
+   "canonical": "detect occurrence",
+   "object": "INVALID:tensor",
+   "quote": "detects if at least one higher-order occurrence is `projected' into one of its binom(Z*,r) subspaces",
+   "grounded": true
+  },
+  {
+   "op": "form metric",
+   "canonical": "form metric",
+   "object": "INVALID:tensor",
+   "quote": "forming a Tensor Power Normal, metric endowed with binom(Z*,r) such `detectors'",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "build kernel@state",
+  "compute tensor@input",
+  "incorporate input@input",
+  "model dynamics@trajectory",
+  "operate subsequence@trajectory"
+ ]
+}

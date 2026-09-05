@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1712.03563",
+ "source": "abstract",
+ "words": 253,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "state",
+   "quote": "Convolutional neural networks (CNNs) can be applied to graph similarity matching",
+   "grounded": true
+  },
+  {
+   "op": "map kernel to nodes",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "The DGCL uses a mixed Gaussian function to realize the mapping between the convolution kernel and the nodes in the neighborhood of the graph",
+   "grounded": false
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "The output of the DGCL is the input of the CNN",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We further implement a backward-propagation optimization process of the convolutional layer",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the optimization of the convolution kernel becomes part of the neural network learning process",
+   "grounded": true
+  },
+  {
+   "op": "accept input",
+   "canonical": "accept input",
+   "object": "state",
+   "quote": "The DGC/N can accept arbitrary scaled and disordered neighborhood graph structures as the receptive fields of CNNs",
+   "grounded": false
+  },
+  {
+   "op": "reduce information loss",
+   "canonical": "reduce information loss",
+   "object": "trajectory",
+   "quote": "which reduces information loss during graph transformation",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the results show that the proposed method outperforms the state-of-the-art methods in graph classification and retrieval",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "accept input@state",
+  "apply convolution@state",
+  "backpropagate@gradient",
+  "compare@error",
+  "correct@parameter",
+  "encode@latent",
+  "process input@input",
+  "reduce information loss@trajectory"
+ ]
+}

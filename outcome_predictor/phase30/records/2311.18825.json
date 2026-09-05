@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "2311.18825",
+ "source": "abstract",
+ "words": 122,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "extract input",
+   "canonical": "extract input",
+   "object": "input",
+   "quote": "using only RGB input",
+   "grounded": true
+  },
+  {
+   "op": "split input",
+   "canonical": "split input",
+   "object": "input",
+   "quote": "two-stream architecture",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "spatio-temporal understanding",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "spatial and temporal expert models",
+   "grounded": true
+  },
+  {
+   "op": "generate latent",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "bottleneck cross-attention mechanism",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "spatial and temporal expert models",
+   "grounded": true
+  },
+  {
+   "op": "exchange information",
+   "canonical": "exchange information",
+   "object": "latent",
+   "quote": "spatial and temporal expert models",
+   "grounded": true
+  },
+  {
+   "op": "make prediction",
+   "canonical": "make prediction",
+   "object": "latent",
+   "quote": "synergistic predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "improved performance",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "proposed method",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "favorable performance",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "consistently shows favorable performance",
+   "grounded": true
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "performance of existing methods fluctuates",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "spatio-temporal understanding",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "synergistic predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "improved performance",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "spatio-temporal understanding",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "spatio-temporal understanding",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate error",
+   "canonical": "backpropagate error",
+   "object": "gradient",
+   "quote": "improved performance",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "improved performance",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "proposed method",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "spatio-temporal understanding",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "synergistic predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "public benchmarks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate error@gradient",
+  "clip gradient@gradient",
+  "compare@error",
+  "compare@value",
+  "compute attention@latent",
+  "compute distribution@distribution",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@value",
+  "exchange information@latent",
+  "extract input@input",
+  "make prediction@latent",
+  "predict@action",
+  "process input@input",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "sample@action",
+  "sample@input",
+  "split input@input"
+ ]
+}

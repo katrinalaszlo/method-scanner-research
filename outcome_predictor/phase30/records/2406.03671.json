@@ -1,0 +1,190 @@
+{
+ "arxiv_id": "2406.03671",
+ "source": "abstract",
+ "words": 156,
+ "model": "qwen3:8b",
+ "salvaged": true,
+ "n_ops": 23,
+ "n_invalid_object": 8,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "compute centrality",
+   "canonical": "compute centrality",
+   "object": "INVALID:node",
+   "quote": "nodes with high centrality, a potential source of over-squashing",
+   "grounded": true
+  },
+  {
+   "op": "expand width",
+   "canonical": "expand width",
+   "object": "INVALID:node",
+   "quote": "nodes with high centrality ... are selectively expanded in width",
+   "grounded": false
+  },
+  {
+   "op": "aggregate messages",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "message passing paradigm",
+   "grounded": true
+  },
+  {
+   "op": "propagate information",
+   "canonical": "transmit",
+   "object": "INVALID:graph",
+   "quote": "impedes the propagation of long-range information",
+   "grounded": true
+  },
+  {
+   "op": "compute message",
+   "canonical": "compute message",
+   "object": "INVALID:edge",
+   "quote": "message passing paradigm",
+   "grounded": true
+  },
+  {
+   "op": "update hidden state",
+   "canonical": "correct",
+   "object": "INVALID:node",
+   "quote": "selectively expanding the hidden state of nodes",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "message passing paradigm",
+   "grounded": true
+  },
+  {
+   "op": "apply nonlinearity",
+   "canonical": "apply nonlinearity",
+   "object": "INVALID:node",
+   "quote": "message passing paradigm",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Experimental results show that our method outperforms existing rewiring methods",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "message passing paradigm",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "message passing paradigm",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "message passing paradigm",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "message, reward, value signal",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "reward / return / value signal",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "message passing paradigm",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "a sequence of states and/or actions over time",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "message passing paradigm",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "message passing paradigm",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "message passing paradigm",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "distribution",
+   "quote": "message passing paradigm",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "message passing paradigm",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "task, environment instance, or episode drawn for (meta-)learning",
+   "grounded": false
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "raw observation: pixels, tokens, audio, measurement",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compute distribution@distribution",
+  "compute input@input",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "normalize@distribution",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

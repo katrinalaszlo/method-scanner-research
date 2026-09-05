@@ -1,0 +1,201 @@
+{
+ "arxiv_id": "1805.10123",
+ "source": "abstract",
+ "words": 166,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 1,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "simple metric scaling completely changes the nature of few-shot algorithm parameter updates",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "simple metric scaling completely changes the nature of few-shot algorithm parameter updates",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "we propose a simple and effective way of conditioning a learner on the task sample set",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "we propose a simple and effective way of conditioning a learner on the task sample set",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "task",
+   "quote": "we propose and empirically test a practical end-to-end optimization procedure based on auxiliary task co-training",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "we propose and empirically test a practical end-to-end optimization procedure based on auxiliary task co-training",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose and empirically test a practical end-to-end optimization procedure based on auxiliary task co-training",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "the resulting few-shot learning model based on the task-dependent scaled metric achieves state of the art on mini-Imagenet",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "the resulting few-shot learning model based on the task-dependent scaled metric achieves state of the art on mini-Imagenet",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the resulting few-shot learning model based on the task-dependent scaled metric achieves state of the art on mini-Imagenet",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "task",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we confirm these results on another few-shot dataset that we introduce in this paper based on CIFAR100",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@task",
+  "compute distribution@task",
+  "compute value@task",
+  "correct@parameter",
+  "sample@task"
+ ]
+}

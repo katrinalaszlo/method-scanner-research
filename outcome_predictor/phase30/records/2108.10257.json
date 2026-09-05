@@ -1,0 +1,196 @@
+{
+ "arxiv_id": "2108.10257",
+ "source": "abstract",
+ "words": 174,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "shallow feature extraction",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "latent",
+   "quote": "deep feature extraction",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct image",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "high-quality image reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "apply transformer",
+   "canonical": "apply transformer",
+   "object": "latent",
+   "quote": "residual Swin Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "apply residual connection",
+   "canonical": "apply residual connection",
+   "object": "latent",
+   "quote": "residual Swin Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "image denoising",
+   "grounded": true
+  },
+  {
+   "op": "reduce artifact",
+   "canonical": "reduce artifact",
+   "object": "input",
+   "quote": "JPEG compression artifact reduction",
+   "grounded": true
+  },
+  {
+   "op": "upsample",
+   "canonical": "upsample",
+   "object": "latent",
+   "quote": "image super-resolution",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "image super-resolution",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "image denoising",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "outperforms state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "JPEG compression artifact reduction",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "value",
+   "quote": "image denoising",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "image deno,ising",
+   "grounded": false
+  },
+  {
+   "op": "reconstruct image",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "high-quality image reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "apply transformer",
+   "canonical": "apply transformer",
+   "object": "latent",
+   "quote": "residual Swin Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "apply residual connection",
+   "canonical": "apply residual connection",
+   "object": "latent",
+   "quote": "residual Swin Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "outperforms state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "JPEG compression artifact reduction",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "value",
+   "quote": "image denoising",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply residual connection@latent",
+  "apply transformer@latent",
+  "backpropagate@gradient",
+  "clip@value",
+  "compare@error",
+  "correct@parameter",
+  "extract feature@input",
+  "extract feature@latent",
+  "predict@input",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reduce artifact@input",
+  "sample@sample",
+  "upsample@latent"
+ ]
+}

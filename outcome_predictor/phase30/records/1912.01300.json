@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1912.01300",
+ "source": "abstract",
+ "words": 179,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we propose a novel approach, called Viewpoint-Aware Loss with Angular Regularization",
+   "grounded": true
+  },
+  {
+   "op": "project feature",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "our method projects the feature from different viewpoints into a unified hypersphere",
+   "grounded": true
+  },
+  {
+   "op": "model distribution",
+   "canonical": "model distribution",
+   "object": "distribution",
+   "quote": "effectively models the feature distribution on both the identity-level and the viewpoint-level",
+   "grounded": true
+  },
+  {
+   "op": "assign label",
+   "canonical": "assign label",
+   "object": "sample",
+   "quote": "introduce viewpoint-aware adaptive label smoothing regularization (VALSR) that assigns the adaptive soft label to feature representation",
+   "grounded": true
+  },
+  {
+   "op": "regularize label",
+   "canonical": "regularize label",
+   "object": "distribution",
+   "quote": "effectively solve the ambiguity of the viewpoint cluster label assignment",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "Extensive experiments on the Market1501 and DukeMTMC-reID datasets demonstrated that our method outperforms the state-of-the-art supervised Re-ID methods",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Extensive experiments on the Market1501 and DukeMTMC-reID datasets demonstrated that our method outperforms the state-of-the-art supervised Re-ID methods",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "model the feature distribution on both the identity-level and the viewpoint-level",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "assign label@sample",
+  "compute gradient@gradient",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "model distribution@distribution",
+  "project@latent",
+  "regularize label@distribution"
+ ]
+}

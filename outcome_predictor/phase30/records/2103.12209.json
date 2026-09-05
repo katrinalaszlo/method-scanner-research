@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "2103.12209",
+ "source": "abstract",
+ "words": 179,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Best MDE models are based on Convolutional Neural Networks (CNNs) trained in a supervised manner",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Best MDE models are based on Convolutional Neural Networks (CNNs) trained in a supervised manner",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Best MDE models are based on Convolution, Neural Networks (CNNs) trained in a supervised manner",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "Monocular depth estimation (MDE) is very appealing since it allows for appearance and depth being on direct pixelwise correspondence",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Monocular depth estimation (MDE) is very appealing since it allows for appearance and depth being on direct pixelwise correspondence",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "Monocular depth estimation (MDE) is very appealing since it allows for appearance and depth being on direct pixelwise correspondence",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "Monocular depth estimation (MDE) is very appealing since it allows for appearance and depth being on direct pixelwise correspondence",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "generate supervision",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "match features",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute disparity",
+   "canonical": "compute disparity",
+   "object": "distribution",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "transform input",
+   "canonical": "transform input",
+   "object": "input",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "align images",
+   "canonical": "align images",
+   "object": "input",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute depth map",
+   "canonical": "compute depth map",
+   "object": "distribution",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "input",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "generate trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "We compensate the SfM self-supervision limitations by leveraging virtual-world images with accurate semantic and depth supervision",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align images@input",
+  "apply transformation@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compare@input",
+  "compute depth map@distribution",
+  "compute disparity@distribution",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@distribution",
+  "reconstruct@input",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@sample",
+  "transform input@input"
+ ]
+}

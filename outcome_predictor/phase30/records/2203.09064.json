@@ -1,0 +1,201 @@
+{
+ "arxiv_id": "2203.09064",
+ "source": "abstract",
+ "words": 235,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "pool tokens",
+   "canonical": "pool tokens",
+   "object": "input",
+   "quote": "utilize intrinsic image structure to reduce ambiguity between foreground content and background noise by spectral tokens pooling",
+   "grounded": false
+  },
+  {
+   "op": "learn attributes",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "attribute surrogate learning scheme is designed to benefit from the rich visual information in image-label pairs",
+   "grounded": true
+  },
+  {
+   "op": "transform input",
+   "canonical": "transform input",
+   "object": "input",
+   "quote": "hierarchically cascaded transformers that exploit intrinsic image structures through spectral tokens pooling",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "vision transformers have recently been thought of as a promising alternative to convolutional neural networks for visual recognition",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "optimize the learnable parameters through latent attribute surrogates",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the intrinsic image structure is utilized to reduce the ambiguity between foreground content and background noise by spectral tokens pooling",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "hierarchically cascaded transformers that exploit intrinsic image structures through spectral tokens pooling",
+   "grounded": true
+  },
+  {
+   "op": "sample tokens",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "spectral tokens pooling and optimize the learnable parameters through latent attribute surrogates",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "HCTransformers surpass the DINO baseline by a large margin of 9.7% 5-way 1-shot accuracy",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "show clear advantages over SOTA few-shot classification methods in both 5-way 1-shot and 5-way 5-shot settings",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "HCTransformers are efficient to extract discriminative features",
+   "grounded": true
+  },
+  {
+   "op": "resample tokens",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "attribute surrogate learning scheme is designed to benefit from the rich visual information in image-label pairs",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "utilize intrinsic image structure to reduce the ambiguity between foreground content and background noise by spectral tokens pooling",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "hierarchically cascaded transformers that exploit intrinsic image structures through spectral tokens pooling",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "attribute surrogate learning scheme is designed to benefit from the rich visual information in image-label pairs",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "HCTransformers show clear advantages over SOTA few-shot classification methods in both 5-way 1-shot and 5-way 5-shot settings",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "attribute surrogate learning scheme is designed to benefit from the rich visual information in image-label pairs",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "optimize the learnable parameters through latent attribute surrogates",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the intrinsic image structure is utilized to reduce the ambiguity between foreground content and background noise by spectral tokens pooling",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "show clear advantages over SOTA few-shot classification methods in both 5-way 1-shot and 5-way 5-shot settings",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "HCTransformers surpass the DINO baseline by a large margin of 9.7% 5-way 1-shot accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "HCTransformers are efficient to extract discriminative features",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "attribute surrogate learning scheme is designed to benefit from the rich visual information in image-label pairs",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "attribute surrogate learning scheme is designed to benefit from the rich visual information in image-label pairs",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "pool tokens@input",
+  "predict@reward",
+  "reconstruct@noise",
+  "sample@distribution",
+  "sample@sample",
+  "train@latent",
+  "transform input@input"
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "arxiv_id": "1707.01083",
+ "source": "abstract",
+ "words": 109,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 4,
+ "n_invalid_object": 0,
+ "n_grounded": 2,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "The new architecture utilizes two new operations, pointwise group convolution",
+   "grounded": true
+  },
+  {
+   "op": "shuffle channels",
+   "canonical": "shuffle channels",
+   "object": "latent",
+   "quote": "The new architecture utilizes two new operations, pointwise group convolution and channel shuffle",
+   "grounded": true
+  },
+  {
+   "op": "compute feature map",
+   "canonical": "compute feature map",
+   "object": "latent",
+   "quote": "Experiments on ImageNet classification and MS COCO object detection demonstrate the superior performance of ShuffleNet",
+   "grounded": false
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "Experiments on ImageNet classification and MS COCO object detection demonstrate the superior performance of Shuffle",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "compute feature map@latent",
+  "shuffle channels@latent"
+ ]
+}

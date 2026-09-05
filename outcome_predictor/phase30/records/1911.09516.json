@@ -1,0 +1,110 @@
+{
+ "arxiv_id": "1911.09516",
+ "source": "abstract",
+ "words": 135,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 12,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Pyramidal feature representation is the common practice",
+   "grounded": true
+  },
+  {
+   "op": "split features",
+   "canonical": "split features",
+   "object": "state",
+   "quote": "the inconsistency across different feature scales",
+   "grounded": true
+  },
+  {
+   "op": "compute weights",
+   "canonical": "compute weights",
+   "object": "latent",
+   "quote": "adaptively spatial feature fusion (ASFF)",
+   "grounded": true
+  },
+  {
+   "op": "apply weights",
+   "canonical": "apply weights",
+   "object": "latent",
+   "quote": "spatially filter conflictive information",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "suppress the inconsistency",
+   "grounded": true
+  },
+  {
+   "op": "generate proposal",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "improving the scale-invariance of features",
+   "grounded": true
+  },
+  {
+   "op": "predict bounding box",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "single-shot detectors based on feature pyramid",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the best speed-accuracy trade-off on the MS COCO dataset",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "introduces nearly free inference overhead",
+   "grounded": true
+  },
+  {
+   "op": "apply parameters",
+   "canonical": "apply parameters",
+   "object": "latent",
+   "quote": "achieve the best speed-accuracy trade-off",
+   "grounded": true
+  },
+  {
+   "op": "output detection",
+   "canonical": "output detection",
+   "object": "action",
+   "quote": "reporting 38.1% AP at 60 FPS",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "value",
+   "quote": "42.4% AP at 45 FPS and 43.9% AP at 29 FPS",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply parameters@latent",
+  "apply weights@latent",
+  "compute accuracy@value",
+  "compute weights@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "output detection@action",
+  "predict@state",
+  "reconstruct@distribution",
+  "split features@state"
+ ]
+}

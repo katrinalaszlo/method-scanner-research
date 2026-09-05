@@ -1,0 +1,91 @@
+{
+ "arxiv_id": "1809.04983",
+ "source": "abstract",
+ "words": 147,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 2,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we show that using relative coordinates and temporal displacements boosts performance",
+   "grounded": true
+  },
+  {
+   "op": "construct",
+   "canonical": "construct",
+   "object": "INVALID:graph",
+   "quote": "human skeleton is intuitively represented as a sparse graph",
+   "grounded": true
+  },
+  {
+   "op": "split",
+   "canonical": "split",
+   "object": "INVALID:graph",
+   "quote": "we divide the skeleton graph into four subgraphs",
+   "grounded": false
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "graph convolutional networks have been used to recognize actions",
+   "grounded": false
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we learn a recognition model using a part-based graph convolutional network",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "our model achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "human actions comprise of joint motion of articulated body parts",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "instead of using 3D joint coordinates as node features",
+   "grounded": true
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "gradient",
+   "quote": "we show that such a model improves performance of recognition",
+   "grounded": false
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we learn a recognition model using a part-based graph convolutional network",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@action",
+  "transform@input",
+  "transmit@gradient"
+ ]
+}

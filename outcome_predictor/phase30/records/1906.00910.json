@@ -1,0 +1,83 @@
+{
+ "arxiv_id": "1906.00910",
+ "source": "abstract",
+ "words": 189,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 9,
+ "n_invalid_object": 3,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute mutual information",
+   "canonical": "compute mutual information",
+   "object": "latent",
+   "quote": "maximizing mutual information between features extracted from multiple views",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "INVALID:view",
+   "quote": "features extracted from multiple views of a shared context",
+   "grounded": true
+  },
+  {
+   "op": "generate view",
+   "canonical": "reconstruct",
+   "object": "INVALID:context",
+   "quote": "produce multiple views of a shared context",
+   "grounded": false
+  },
+  {
+   "op": "apply data augmentation",
+   "canonical": "apply data augmentation",
+   "object": "input",
+   "quote": "repeatedly applying data augmentation",
+   "grounded": true
+  },
+  {
+   "op": "learn representation",
+   "canonical": "train",
+   "object": "input",
+   "quote": "learns image representations",
+   "grounded": true
+  },
+  {
+   "op": "evaluate linearly",
+   "canonical": "evaluate",
+   "object": "latent",
+   "quote": "using standard linear evaluation",
+   "grounded": true
+  },
+  {
+   "op": "achieve accuracy",
+   "canonical": "achieve accuracy",
+   "object": "latent",
+   "quote": "achieves 68.1% accuracy on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "learn mixture representation",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "extend our model to use mixture-based representations",
+   "grounded": true
+  },
+  {
+   "op": "emerge segmentation",
+   "canonical": "emerge segmentation",
+   "object": "INVALID:behaviour",
+   "quote": "segmentation behaviour emerges as a natural side-effect",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "achieve accuracy@latent",
+  "apply data augmentation@input",
+  "compute mutual information@latent",
+  "evaluate@latent",
+  "train@input",
+  "train@parameter"
+ ]
+}

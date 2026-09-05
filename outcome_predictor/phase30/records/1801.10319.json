@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1801.10319",
+ "source": "abstract",
+ "words": 165,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "single image super resolution is a very important computer vision task",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we proposed a novel single image super resolution method via recursive squeeze and excitation networks",
+   "grounded": true
+  },
+  {
+   "op": "apply squeeze",
+   "canonical": "apply squeeze",
+   "object": "latent",
+   "quote": "by introducing the squeeze and excitation module",
+   "grounded": false
+  },
+  {
+   "op": "apply excitation",
+   "canonical": "apply excitation",
+   "object": "latent",
+   "quote": "our SESR can model the interdependencies and relationships between channels",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "our model more efficiency",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct image",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the recursive structure and progressive reconstruction method in our model",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "enabled SESR to simultaneously train multi-scale super resolution in a single model",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "our model is proved to be above the state-of-the-art methods in terms of speed and accuracy",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply excitation@latent",
+  "apply squeeze@latent",
+  "correct@parameter",
+  "encode@input",
+  "process input@input",
+  "reconstruct@latent",
+  "reconstruct@state"
+ ]
+}

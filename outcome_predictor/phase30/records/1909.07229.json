@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1909.07229",
+ "source": "abstract",
+ "words": 177,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute mask",
+   "canonical": "compute mask",
+   "object": "state",
+   "quote": "The size of each pattern at each position is estimated in the network as a per-channel mask map.",
+   "grounded": true
+  },
+  {
+   "op": "aggregate globally",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "modelling long-range dependencies in fully convolutional networks (FCNs) via global aggregation modules",
+   "grounded": true
+  },
+  {
+   "op": "apply mask",
+   "canonical": "apply mask",
+   "object": "latent",
+   "quote": "the size of each pattern at each position is estimated in the network as a per-channel mask map",
+   "grounded": true
+  },
+  {
+   "op": "distribute locally",
+   "canonical": "distribute locally",
+   "object": "latent",
+   "quote": "we propose to first use Global Aggregation and then Local Distribution",
+   "grounded": false
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "long-range dependencies are more confidently used inside large pattern regions and vice versa",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "GALD is end-to-end trainable",
+   "grounded": true
+  },
+  {
+   "op": "predict mask",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "the size of each pattern at each position is estimated in the network as a per,channel mask map",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "GALD used in semantic segmentation achieves new state-of-the-art performance on Cityscapes test set",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply mask@latent",
+  "compute mask@state",
+  "correct@parameter",
+  "distribute locally@latent",
+  "predict@state",
+  "reconstruct@state"
+ ]
+}

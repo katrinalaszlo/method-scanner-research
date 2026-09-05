@@ -1,0 +1,90 @@
+{
+ "arxiv_id": "2305.15956",
+ "source": "abstract",
+ "words": 158,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 1,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "condition input",
+   "canonical": "intervene",
+   "object": "input",
+   "quote": "the target image is set as the input image to guide the denoising process",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we introduce Denoising Diffusion Anomaly Detection (DDAD), a novel denoising process for image reconstruction conditioned on a target image",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "ensuring a coherent restoration that closely resembles the target image",
+   "grounded": false
+  },
+  {
+   "op": "compare input",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "anomalies are then localised via a pixel-wise and feature-wise comparison of the input and reconstructed image",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "to enhance the effectiveness of the feature-wise comparison",
+   "grounded": true
+  },
+  {
+   "op": "fine tune",
+   "canonical": "fine tune",
+   "object": "INVALID:feature extractor",
+   "quote": "we introduce a domain adaptation method that utilises nearly identical generated examples from our conditioned denoising process to fine-tune the pretrained feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "generate example",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we introduce a domain adaptation method that utilises nearly identical generated examples from our conditioned denoising process",
+   "grounded": true
+  },
+  {
+   "op": "localise anomaly",
+   "canonical": "localise anomaly",
+   "object": "input",
+   "quote": "anomalies are then localised via a pixel-wise and feature-wise comparison of the input and reconstructed image",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "anomalies are then localised via a pixel-wise and feature-wise comparison of the input and reconstructed image",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "input",
+   "quote": "the veracity of DDAD is demonstrated on various datasets including MVTec and VisA benchmarks, achieving state-of-the-art results of $99.8 \\%$ and $98.9 \\%$ image-level AUROC respectively",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@input",
+  "compute metric@input",
+  "extract feature@input",
+  "intervene@input",
+  "localise anomaly@input",
+  "reconstruct@input"
+ ]
+}

@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "1504.01013",
+ "source": "abstract",
+ "words": 160,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we formulate Conditional Random Fields (CRFs)",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "efficient piecewise training of the proposed deep structured model",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "efficient piecewise training of the proposed deep structured model",
+   "grounded": true
+  },
+  {
+   "op": "sample patch",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "we explore `patch-patch' context between image regions",
+   "grounded": true
+  },
+  {
+   "op": "compute pairwise potential",
+   "canonical": "compute pairwise potential",
+   "object": "distribution",
+   "quote": "we formulate Conditional Random Fields (CRFs) with CNN-based pairwise potential functions",
+   "grounded": false
+  },
+  {
+   "op": "compute semantic correlation",
+   "canonical": "compute semantic correlation",
+   "object": "latent",
+   "quote": "to capture semantic correlations between neighboring patches",
+   "grounded": false
+  },
+  {
+   "op": "compute multi-scale input",
+   "canonical": "compute multi-scale input",
+   "object": "input",
+   "quote": "a network design with traditional multi-scale image input",
+   "grounded": true
+  },
+  {
+   "op": "compute sliding pyramid pooling",
+   "canonical": "compute sliding pyramid pooling",
+   "object": "latent",
+   "quote": "sliding pyramid pooling is effective for improving performance",
+   "grounded": true
+  },
+  {
+   "op": "compute intersection-over-union",
+   "canonical": "compute intersection-over-union",
+   "object": "value",
+   "quote": "we achieve an intersection-over-union score of 78.0",
+   "grounded": false
+  },
+  {
+   "op": "compute contextual information",
+   "canonical": "compute contextual information",
+   "object": "latent",
+   "quote": "we show how to improve semantic segmentation through the use of contextual information",
+   "grounded": false
+  },
+  {
+   "op": "compute patch-background context",
+   "canonical": "compute patch-background context",
+   "object": "input",
+   "quote": "we show that a network design with traditional multi-scale image input and sliding pyramid pooling is effective for improving performance",
+   "grounded": true
+  },
+  {
+   "op": "compute semantic segmentation",
+   "canonical": "compute semantic segmentation",
+   "object": "INVALID:output",
+   "quote": "our experimental results set new state-of-the-art performance on a number of popular semantic segmentation datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "our experimental results set new state-of-the-art performance on a number of popular semantic segmentation datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute input features",
+   "canonical": "compute input features",
+   "object": "latent",
+   "quote": "we explore `patch-patch' context between image regions",
+   "grounded": true
+  },
+  {
+   "op": "compute output features",
+   "canonical": "compute output features",
+   "object": "latent",
+   "quote": "we explore `patch-patch' context between image regions",
+   "grounded": true
+  },
+  {
+   "op": "compute patch-patch context",
+   "canonical": "compute patch-patch context",
+   "object": "input",
+   "quote": "we explore `patch-patch' context between image regions",
+   "grounded": true
+  },
+  {
+   "op": "compute patch-background context",
+   "canonical": "compute patch-background context",
+   "object": "input",
+   "quote": "we show that a network design with traditional multi-scale image input and sliding pyramid pooling is effective for improving performance",
+   "grounded": true
+  },
+  {
+   "op": "compute loss function",
+   "canonical": "compute loss function",
+   "object": "error",
+   "quote": "we formulate Conditional Random Fields (CRFs) with CNN-based pairwise potential functions",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient update",
+   "canonical": "compute gradient update",
+   "object": "parameter",
+   "quote": "efficient piecewise training of the proposed deep structured model",
+   "grounded": true
+  },
+  {
+   "op": "compute model parameters",
+   "canonical": "compute model parameters",
+   "object": "parameter",
+   "quote": "efficient piecewise training of the proposed deep structured model",
+   "grounded": true
+  },
+  {
+   "op": "compute model output",
+   "canonical": "compute model output",
+   "object": "INVALID:output",
+   "quote": "our experimental results set new state-of-the-art performance on a number of popular semantic segmentation datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute model input",
+   "canonical": "compute model input",
+   "object": "input",
+   "quote": "we explore `patch-patch' context between image regions",
+   "grounded": true
+  },
+  {
+   "op": "compute model features",
+   "canonical": "compute model features",
+   "object": "latent",
+   "quote": "we explore `patch-patch' context between image regions",
+   "grounded": true
+  },
+  {
+   "op": "compute model loss",
+   "canonical": "compute model loss",
+   "object": "error",
+   "quote": "we formulate Conditional Random Fields (CRFs) with CNN-based pairwise potential functions",
+   "grounded": false
+  },
+  {
+   "op": "compute model gradient",
+   "canonical": "compute model gradient",
+   "object": "gradient",
+   "quote": "efficient piecewise training of the proposed deep structured model",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "compute contextual information@latent",
+  "compute gradient update@parameter",
+  "compute input features@latent",
+  "compute intersection-over-union@value",
+  "compute loss function@error",
+  "compute model features@latent",
+  "compute model gradient@gradient",
+  "compute model input@input",
+  "compute model loss@error",
+  "compute model parameters@parameter",
+  "compute multi-scale input@input",
+  "compute output features@latent",
+  "compute pairwise potential@distribution",
+  "compute patch-background context@input",
+  "compute patch-patch context@input",
+  "compute semantic correlation@latent",
+  "compute sliding pyramid pooling@latent",
+  "compute task@task",
+  "evaluate@error",
+  "sample@input"
+ ]
+}

@@ -1,0 +1,199 @@
+{
+ "arxiv_id": "2007.07875",
+ "source": "abstract",
+ "words": 113,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "the regularization factors in our proposed method are updated adaptively through backpropagation",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the regularization factors in our proposed method are updated adaptively through backpropagation",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the regularization factors in our proposed method are updated adaptively through backpropagation",
+   "grounded": true
+  },
+  {
+   "op": "apply function",
+   "canonical": "apply function",
+   "object": "INVALID:scalar",
+   "quote": "trainable scalar variables as the regularization factors",
+   "grounded": true
+  },
+  {
+   "op": "feed into",
+   "canonical": "feed into",
+   "object": "parameter",
+   "quote": "trainable scalar variables as the regularization factors",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "reward",
+   "quote": "extensive experiments on the Market-1501, DukeMTMC-reID and MSMT17 datasets validate the effectiveness of our framework",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "extensive experiments on the Market-1501, DukeMTMC-reID and MSMT17 datasets validate the effectiveness of our framework",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "extensive experiments on the Market-1501, DukeMTMC-reI and MSMT17 datasets validate the effectiveness of our framework",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "extensive experiments on the Market-1501, DukeMTMC-reID and MSMT17 datasets validate the effectiveness of our framework",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "sample",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "trajectory",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "sample",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "trajectory",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "sample",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "trajectory",
+   "quote": "we obtain state-of-the-art performance on MSMT17, which is the largest dataset for person re-identification",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compare@trajectory",
+  "compute distribution@sample",
+  "compute gradient@error",
+  "compute value@reward",
+  "compute value@task",
+  "correct@parameter",
+  "feed into@parameter",
+  "sample@action"
+ ]
+}

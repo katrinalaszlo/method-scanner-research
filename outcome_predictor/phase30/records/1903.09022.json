@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1903.09022",
+ "source": "abstract",
+ "words": 209,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "construct subgraph",
+   "canonical": "construct subgraph",
+   "object": "state",
+   "quote": "algorithms designed for constructing the 1st-order and 2nd-order SGNs",
+   "grounded": true
+  },
+  {
+   "op": "expand feature space",
+   "canonical": "expand feature space",
+   "object": "state",
+   "quote": "used to expand the structural feature space of the underlying network",
+   "grounded": true
+  },
+  {
+   "op": "compute structural features",
+   "canonical": "compute structural features",
+   "object": "state",
+   "quote": "network classification model based on the structural features",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "structural features of SGNs can complement that of the original network",
+   "grounded": true
+  },
+  {
+   "op": "classify network",
+   "canonical": "classify",
+   "object": "state",
+   "quote": "network classification model based on the structural features",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "regardless of the feature extraction method used",
+   "grounded": true
+  },
+  {
+   "op": "apply method",
+   "canonical": "apply method",
+   "object": "state",
+   "quote": "network classification model based on the structural features",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "always performs the best as compared to the models based only on one or two of such networks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "apply method@state",
+  "classify@state",
+  "compare@state",
+  "compute structural features@state",
+  "construct subgraph@state",
+  "encode@state",
+  "expand feature space@state"
+ ]
+}

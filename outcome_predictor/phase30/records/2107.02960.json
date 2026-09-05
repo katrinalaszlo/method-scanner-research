@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2107.02960",
+ "source": "abstract",
+ "words": 193,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we introduce a locality module that models the local correlations in images explicitly",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "the transformer is designed for NLP tasks and thus could be sub-optimal when directly used for image recognition",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "our search space is defined to let the search algorithm freely trade off between global and local information",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "a hierarchical neural architecture search method is proposed to search the optimal vision transformer",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "extensive experiments on the ImageNet dataset demonstrate that our method can find more discriminative and efficient transformer variants",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "a hierarchical neural architecture search method is proposed to search the optimal vision transformer",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the transformer is designed for NLP tasks and thus could be sub-optimal when directly used for image recognition",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "our search space is defined to let the search algorithm freely trade off between global and local information",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "a hierarchical neural architecture search method is proposed to search the optimal vision transformer",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the transformer is designed for NLP tasks and thus could be sub-optimal when directly used for image recognition",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "a hierarchical neural architecture search method is proposed to search the optimal vision transformer",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "extensive experiments on the ImageNet dataset demonstrate that our method can find more discrimin. efficient transformer variants",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "the transformer is designed for NLP tasks and thus could be sub-optimal when directly used for image recognition",
+   "grounded": true
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "sample",
+   "quote": "a hierarchical neural architecture search method is proposed to search the optimal vision transformer",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "extensive experiments on the ImageNet dataset demonstrate that our method can find more discriminative and efficient transformer variants",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "a hierarchical neural architecture search method is proposed to search the optimal vision transformer",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the transformer is designed for NLP tasks and thus could be sub-optimal when directly used for image recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "a hierarchical neural architecture search method is proposed to search the optimal vision transformer",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "we introduce a locality module that models the local correlations in images explicitly",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "the transformer is designed for NLP tasks and thus could be sub-optimal when directly used for image recognition",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute reward@reward",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "improve@parameter",
+  "predict@value",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@distribution",
+  "sample@sample",
+  "select@sample",
+  "transform@latent"
+ ]
+}

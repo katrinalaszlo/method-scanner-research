@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "1912.05027",
+ "source": "abstract",
+ "words": 186,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Convolutional neural networks typically encode an input image into a series of intermediate features",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "SpineNet models outperform ResNet-FPN models by ~3% AP at various scales",
+   "grounded": true
+  },
+  {
+   "op": "connect",
+   "canonical": "connect",
+   "object": "INVALID:cross-scale",
+   "quote": "SpineNet, a backbone with scale-permuted intermediate features and cross-scale connections",
+   "grounded": true
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "SpineNet is learned on an object detection task by Neural Architecture Search",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "SpineNet can transfer to classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "SpineNet-190 achieves 52.5% AP with a MaskR-CNN detector",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "SpineNet-190 achieves 52.1% AP with a RetinaNet detector on COCO",
+   "grounded": false
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "SpineNet can transfer to classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "SpineNet models outperform ResNet-FPN models by ~3% AP at various scales",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "trajectory",
+   "quote": "SpineNet-190 achieves 52.5% AP with a MaskR-CNN detector",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "SpineNet is learned on an object detection task by Neural Architecture Search",
+   "grounded": false
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "SpineNet, a backbone with scale-permuted intermediate features and cross-scale connections",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "SpineNet can transfer to classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "SpineNet-190 achieves 52.1% AP with a RetinaNet detector on COCO",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "SpineNet-190 achieves 52.5% AP with a MaskR-CNN detector",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "SpineNet is learned on an object detection task by Neural Architecture Search",
+   "grounded": false
+  },
+  {
+   "op": "filter",
+   "canonical": "filter",
+   "object": "distribution",
+   "quote": "SpineNet can transfer to classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "gradient",
+   "quote": "SpineNet is learned on an object detection task by Neural Architecture Search",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "SpineNet can transfer to classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "trajectory",
+   "quote": "SpineNet-190 achieves 52.5% AP with a MaskR-CNN detector",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "SpineNet models outperform ResNet-FPN models by ~3% AP at various scales",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "SpineNet-190 achieves 52.1% AP with a RetinaNet detector on COCO",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "SpineNet can transfer to classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "sample",
+   "quote": "SpineNet-190 achieves 52.1% AP with a RetinaNet detector on COCO",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "SpineNet-190 achieves 52.5% AP with a MaskR-CNN detector",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@trajectory",
+  "compare@error",
+  "compute@distribution",
+  "compute@error",
+  "compute@reward",
+  "compute@sample",
+  "compute@task",
+  "compute@trajectory",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "filter@distribution",
+  "improve@parameter",
+  "predict@distribution",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "train@parameter",
+  "transform@state",
+  "transmit@gradient"
+ ]
+}

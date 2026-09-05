@@ -1,0 +1,93 @@
+{
+ "arxiv_id": "2303.11381",
+ "source": "abstract",
+ "words": 171,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "accept input",
+   "canonical": "accept input",
+   "object": "input",
+   "quote": "language models to accept, associate, and process multimodal information",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "language models to accept, associate, and process multimodal information",
+   "grounded": true
+  },
+  {
+   "op": "represent description",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "textual prompt design that can represent text descriptions",
+   "grounded": true
+  },
+  {
+   "op": "encode coordinates",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "textual prompt design that can represent text descriptions, textualized spatial coordinates",
+   "grounded": true
+  },
+  {
+   "op": "align file names",
+   "canonical": "align file names",
+   "object": "state",
+   "quote": "textual prompt design that can represent text descriptions, textualized spatial coordinates, and aligned file names",
+   "grounded": true
+  },
+  {
+   "op": "associate information",
+   "canonical": "associate",
+   "object": "input",
+   "quote": "language models to accept, associate, and process multimodal information",
+   "grounded": true
+  },
+  {
+   "op": "combine information",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "synergetic combination of ChatGPT and various vision experts",
+   "grounded": true
+  },
+  {
+   "op": "generate response",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "achieve multimodal reasoning and action",
+   "grounded": true
+  },
+  {
+   "op": "output action",
+   "canonical": "output action",
+   "object": "action",
+   "quote": "achieve multimodal reasoning and action",
+   "grounded": true
+  },
+  {
+   "op": "execute action",
+   "canonical": "act",
+   "object": "action",
+   "quote": "achieve multimodal reasoning and action",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "accept input@input",
+  "act@action",
+  "aggregate@state",
+  "align file names@state",
+  "associate@input",
+  "encode@state",
+  "output action@action",
+  "process input@input",
+  "reconstruct@distribution"
+ ]
+}

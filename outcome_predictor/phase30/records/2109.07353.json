@@ -1,0 +1,200 @@
+{
+ "arxiv_id": "2109.07353",
+ "source": "abstract",
+ "words": 174,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 21,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute affinity",
+   "canonical": "compute affinity",
+   "object": "INVALID:joint",
+   "quote": "dynamically identify human-joint affinity",
+   "grounded": true
+  },
+  {
+   "op": "estimate pose",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "estimate 3d pose by adaptively learning spatial/temporal joint relations",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "INVALID:joint",
+   "quote": "spatial distance/temporal movement similarity between human joints",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "INVALID:joint",
+   "quote": "spatial distance/temporal movement similarity between human joints",
+   "grounded": true
+  },
+  {
+   "op": "build graph",
+   "canonical": "build graph",
+   "object": "INVALID:joint",
+   "quote": "dynamical spatial/temporal graph convolution",
+   "grounded": true
+  },
+  {
+   "op": "convolve graph",
+   "canonical": "convolve graph",
+   "object": "INVALID:graph",
+   "quote": "dynamical spatial/temporal graph convolution",
+   "grounded": true
+  },
+  {
+   "op": "reduce ambiguity",
+   "canonical": "reduce ambiguity",
+   "object": "INVALID:depth",
+   "quote": "reducing depth ambiguity and/or motion uncertainty",
+   "grounded": true
+  },
+  {
+   "op": "lift pose",
+   "canonical": "lift pose",
+   "object": "state",
+   "quote": "lifting 2d pose to 3d pose",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "learn spatial/temporal joint relations from videos",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "adaptively learning spatial/temporal joint relations",
+   "grounded": true
+  },
+  {
+   "op": "compute motion",
+   "canonical": "compute motion",
+   "object": "INVALID:joint",
+   "quote": "spatial distance/temporal movement similarity between human joints",
+   "grounded": true
+  },
+  {
+   "op": "compute spatial relation",
+   "canonical": "compute spatial relation",
+   "object": "INVALID:joint",
+   "quote": "spatial distance/temporal movement similarity between human joints",
+   "grounded": true
+  },
+  {
+   "op": "compute temporal relation",
+   "canonical": "compute temporal relation",
+   "object": "INVALID:joint",
+   "quote": "spatial distance/temporal movement similarity between human joints",
+   "grounded": true
+  },
+  {
+   "op": "generate graph",
+   "canonical": "reconstruct",
+   "object": "INVALID:graph",
+   "quote": "dynamical spatial/temporal graph convolution",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "INVALID:graph",
+   "quote": "dynamical spatial/temporal graph convolution",
+   "grounded": true
+  },
+  {
+   "op": "predict state",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "estimate 3d pose by adaptively learning spatial/temporal joint relations",
+   "grounded": true
+  },
+  {
+   "op": "compute joint relation",
+   "canonical": "compute joint relation",
+   "object": "INVALID:joint",
+   "quote": "spatial distance/temporal movement similarity between human joints",
+   "grounded": true
+  },
+  {
+   "op": "learn relation",
+   "canonical": "train",
+   "object": "INVALID:joint",
+   "quote": "adaptively learning spatial/temporal joint relations",
+   "grounded": true
+  },
+  {
+   "op": "compute affinity matrix",
+   "canonical": "compute affinity matrix",
+   "object": "INVALID:joint",
+   "quote": "dynamically identify human-joint affinity",
+   "grounded": true
+  },
+  {
+   "op": "compute spatial similarity",
+   "canonical": "compute spatial similarity",
+   "object": "INVALID:joint",
+   "quote": "spatial distance/temporal movement similarity between human joints",
+   "grounded": true
+  },
+  {
+   "op": "compute temporal similarity",
+   "canonical": "compute temporal similarity",
+   "object": "INVALID:joint",
+   "quote": "spatial distance/temporal movement similarity between human joints",
+   "grounded": true
+  },
+  {
+   "op": "construct graph",
+   "canonical": "construct graph",
+   "object": "INVALID:graph",
+   "quote": "dynamical spatial/temporal graph convolution",
+   "grounded": true
+  },
+  {
+   "op": "apply graph convolution",
+   "canonical": "apply graph convolution",
+   "object": "INVALID:graph",
+   "quote": "dynamical spatial/temporal graph convolution",
+   "grounded": true
+  },
+  {
+   "op": "compute joint affinity",
+   "canonical": "compute joint affinity",
+   "object": "INVALID:joint",
+   "quote": "dynamically identify human-joint affinity",
+   "grounded": true
+  },
+  {
+   "op": "compute spatial distance",
+   "canonical": "compute spatial distance",
+   "object": "INVALID:joint",
+   "quote": "spatial distance/temporal movement similarity between human joints",
+   "grounded": true
+  },
+  {
+   "op": "compute temporal movement",
+   "canonical": "compute temporal movement",
+   "object": "INVALID:joint",
+   "quote": "spatial distance/temporal movement similarity between human joints",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "lift pose@state",
+  "predict@state",
+  "process input@input"
+ ]
+}

@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "2503.16591",
+ "source": "abstract",
+ "words": 192,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Our camera component features a novel, model-independent representation",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "Our method introduces a spherical 3D representation",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "We also introduce an angular loss",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "A comprehensive zero-shot evaluation on 13 diverse datasets",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "Our camera component features a novel, model-independent representation",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "Our method introduces a spherical 3D representation",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "enables accurate metric 3D reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "demonstrates the state-of-the-art performance of UniK3D",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "value",
+   "quote": "with substantial gains in challenging large-field-of-view",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "while maintaining top accuracy in conventional pinhole",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "Our method introduces a spherical 3D representation",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "Our camera component features a novel, model-independent representation",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "sample",
+   "quote": "Our method introduces a spherical 3D representation",
+   "grounded": true
+  },
+  {
+   "op": "project",
+   "canonical": "project",
+   "object": "state",
+   "quote": "Our camera component features a novel, model-independent representation",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "Our method introduces a spherical 3D representation",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "A comprehensive zero-shot evaluation on 13 diverse datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "demonstrates the state-of-the-art performance of UniK3D",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "Our method introduces a spherical 3D representation",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "Our camera component features a novel, model-independent representation",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "Our method introduces a spherical 3D representation",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "Our method introduces a spherical 3D representation",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "error",
+   "quote": "We also introduce an angular loss",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "parameter",
+   "quote": "A comprehensive zero-shot evaluation on 13 diverse datasets",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "task",
+   "quote": "A comprehensive zero-shot evaluation on 13 diverse datasets",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "Our camera component features a novel, model-independent representation",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@sample",
+  "compare@value",
+  "compute metric@value",
+  "compute reward@value",
+  "correct@parameter",
+  "correct@state",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@value",
+  "improve@parameter",
+  "predict@latent",
+  "project@state",
+  "reconstruct@action",
+  "reconstruct@distribution",
+  "reconstruct@error",
+  "reconstruct@noise",
+  "reconstruct@parameter",
+  "reconstruct@state",
+  "reconstruct@task",
+  "reconstruct@trajectory",
+  "sample@distribution",
+  "sample@sample",
+  "transform@state"
+ ]
+}

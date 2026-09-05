@@ -1,0 +1,110 @@
+{
+ "arxiv_id": "2108.07755",
+ "source": "abstract",
+ "words": 194,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 12,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "detect object",
+   "canonical": "detect object",
+   "object": "input",
+   "quote": "one-stage object detection is commonly implemented",
+   "grounded": true
+  },
+  {
+   "op": "classify object",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "optimizing two sub-tasks: object classification and localization",
+   "grounded": true
+  },
+  {
+   "op": "localize object",
+   "canonical": "localize object",
+   "object": "input",
+   "quote": "optimizing two sub-tasks: object classification and localization",
+   "grounded": true
+  },
+  {
+   "op": "align task",
+   "canonical": "align task",
+   "object": "task",
+   "quote": "explicitly aligns the two tasks in a learning-based manner",
+   "grounded": true
+  },
+  {
+   "op": "predict feature",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "offers a better balance between learning task-interactive and task-specific features",
+   "grounded": true
+  },
+  {
+   "op": "learn alignment",
+   "canonical": "train",
+   "object": "task",
+   "quote": "greater flexibility to learn the alignment via a task-aligned predictor",
+   "grounded": true
+  },
+  {
+   "op": "assign sample",
+   "canonical": "assign sample",
+   "object": "sample",
+   "quote": "designed sample assignment scheme",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "task-aligned loss",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "extensive experiments are conducted on MS-COCO",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "TOOD achieves a 51.1 AP at single-model single-scale testing",
+   "grounded": true
+  },
+  {
+   "op": "compare result",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "surpasses the recent one-stage detectors by a large margin",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "qualitative results also demonstrate the effectiveness of TOOD",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align task@task",
+  "assign sample@sample",
+  "classify@input",
+  "compare@task",
+  "correct@parameter",
+  "detect object@input",
+  "evaluate@error",
+  "evaluate@task",
+  "localize object@input",
+  "predict@latent",
+  "reconstruct@action",
+  "train@task"
+ ]
+}

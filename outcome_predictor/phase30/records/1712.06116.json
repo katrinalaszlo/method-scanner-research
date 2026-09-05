@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1712.06116",
+ "source": "abstract",
+ "words": 173,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "take input",
+   "canonical": "take input",
+   "object": "input",
+   "quote": "take two key factors of the SISR degradation process",
+   "grounded": false
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "single convolutional super-resolution network",
+   "grounded": true
+  },
+  {
+   "op": "compute feature map",
+   "canonical": "compute feature map",
+   "object": "latent",
+   "quote": "single convolutional super-resolution network",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "dimensionality stretching strategy",
+   "grounded": true
+  },
+  {
+   "op": "predict noise level",
+   "canonical": "predict",
+   "object": "noise",
+   "quote": "take blur kernel and noise level as input",
+   "grounded": false
+  },
+  {
+   "op": "generate high-resolution",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "super-resolver can handle multiple degradations",
+   "grounded": true
+  },
+  {
+   "op": "denoise image",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "super-resolver can handle multiple degradations",
+   "grounded": true
+  },
+  {
+   "op": "output image",
+   "canonical": "output image",
+   "object": "state",
+   "quote": "produce favorable results on multiple degradations",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "compute feature map@latent",
+  "output image@state",
+  "predict@noise",
+  "reconstruct@state",
+  "take input@input"
+ ]
+}

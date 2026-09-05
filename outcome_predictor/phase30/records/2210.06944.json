@@ -1,0 +1,123 @@
+{
+ "arxiv_id": "2210.06944",
+ "source": "abstract",
+ "words": 201,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 15,
+ "n_invalid_object": 11,
+ "n_grounded": 15,
+ "ops": [
+  {
+   "op": "compute saliency",
+   "canonical": "compute saliency",
+   "object": "INVALID:point cloud",
+   "quote": "we extract salient regions from two point clouds",
+   "grounded": true
+  },
+  {
+   "op": "combine point clouds",
+   "canonical": "aggregate",
+   "object": "INVALID:point cloud",
+   "quote": "smoothly combine them into one continuous shape",
+   "grounded": true
+  },
+  {
+   "op": "reweight saliency",
+   "canonical": "reweight saliency",
+   "object": "INVALID:saliency score",
+   "quote": "simple sequential sampling by re-weighted saliency scores",
+   "grounded": true
+  },
+  {
+   "op": "sample points",
+   "canonical": "sample",
+   "object": "INVALID:point cloud",
+   "quote": "simple sequential sampling by re-weighted saliency scores",
+   "grounded": true
+  },
+  {
+   "op": "preserve structure",
+   "canonical": "preserve structure",
+   "object": "INVALID:point cloud",
+   "quote": "preserves the local structure of salient regions",
+   "grounded": true
+  },
+  {
+   "op": "generate augmented data",
+   "canonical": "reconstruct",
+   "object": "INVALID:point cloud",
+   "quote": "data augmentation is key to improving the generalization ability",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "our method achieves an accuracy gain of 2.6%",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "INVALID:point cloud",
+   "quote": "extensive experiments demonstrate that the proposed method consistently outperforms",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "INVALID:point cloud",
+   "quote": "achieves an accuracy gain of 2.6% and 4.0%",
+   "grounded": true
+  },
+  {
+   "op": "compute robustness",
+   "canonical": "compute robustness",
+   "object": "INVALID:point cloud",
+   "quote": "improves robustness and uncertainty calibration",
+   "grounded": true
+  },
+  {
+   "op": "compute uncertainty",
+   "canonical": "compute uncertainty",
+   "object": "INVALID:point cloud",
+   "quote": "improves robustness and uncertainty calibration",
+   "grounded": true
+  },
+  {
+   "op": "apply to task",
+   "canonical": "apply to task",
+   "object": "task",
+   "quote": "when adopting our method to various tasks including part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "classify image",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "when adopting our method to various tasks including part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "segment part",
+   "canonical": "segment part",
+   "object": "INVALID:point cloud",
+   "quote": "when adopting our method to various tasks including part segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute performance",
+   "canonical": "compute performance",
+   "object": "task",
+   "quote": "our method achieves competitive performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply to task@task",
+  "classify@input",
+  "compute performance@task",
+  "train@parameter"
+ ]
+}

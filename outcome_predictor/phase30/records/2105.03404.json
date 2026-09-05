@@ -1,0 +1,160 @@
+{
+ "arxiv_id": "2105.03404",
+ "source": "abstract",
+ "words": 121,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 19,
+ "n_invalid_object": 0,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "apply linear transformation",
+   "canonical": "apply linear transformation",
+   "object": "input",
+   "quote": "a linear layer in which image patches interact",
+   "grounded": true
+  },
+  {
+   "op": "apply feed-forward network",
+   "canonical": "apply feed-forward network",
+   "object": "latent",
+   "quote": "a two-layer feed-forward network in which channels interact",
+   "grounded": true
+  },
+  {
+   "op": "add residual connection",
+   "canonical": "add residual connection",
+   "object": "latent",
+   "quote": "a simple residual network that alternates",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "trained with a modern training strategy",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "trained with a modern training strategy",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "trained with a modern training strategy",
+   "grounded": true
+  },
+  {
+   "op": "apply data augmentation",
+   "canonical": "apply data augmentation",
+   "object": "input",
+   "quote": "trained with a modern training strategy using heavy data-augmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute prediction",
+   "canonical": "compute prediction",
+   "object": "distribution",
+   "quote": "self-supervised setup to further remove priors",
+   "grounded": false
+  },
+  {
+   "op": "compute self-supervised loss",
+   "canonical": "compute self-supervised loss",
+   "object": "error",
+   "quote": "train ResMLP models in a self-supervised setup",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "train ResMLP models in a self-supervised setup",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train ResMLP models in a self. supervised setup",
+   "grounded": false
+  },
+  {
+   "op": "apply distillation",
+   "canonical": "apply distillation",
+   "object": "input",
+   "quote": "trained with a modern training strategy using heavy data-augmentation and optionally distillation",
+   "grounded": true
+  },
+  {
+   "op": "compute distillation loss",
+   "canonical": "compute distillation loss",
+   "object": "error",
+   "quote": "trained with a modern training strategy using heavy data-augmentation and optionally distillation",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "trained with a modern training strategy using heavy data-augmentation and optionally distillation",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "trained with a modern training strategy using heavy data-augmentation and optionally distillation",
+   "grounded": true
+  },
+  {
+   "op": "apply translation adaptation",
+   "canonical": "apply translation adaptation",
+   "object": "input",
+   "quote": "adapting our model to machine translation",
+   "grounded": true
+  },
+  {
+   "op": "compute translation loss",
+   "canonical": "compute translation loss",
+   "object": "error",
+   "quote": "adapting our model to machine translation",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "adapting our model to machine translation",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "adapting our model to machine translation",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "add residual connection@latent",
+  "apply data augmentation@input",
+  "apply distillation@input",
+  "apply feed-forward network@latent",
+  "apply linear transformation@input",
+  "apply translation adaptation@input",
+  "backpropagate@gradient",
+  "compute distillation loss@error",
+  "compute prediction@distribution",
+  "compute self-supervised loss@error",
+  "compute translation loss@error",
+  "correct@parameter",
+  "evaluate@error"
+ ]
+}

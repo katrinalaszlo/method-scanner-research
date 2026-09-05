@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2206.04046",
+ "source": "abstract",
+ "words": 170,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "domain generalization (dg) aims to close this gap",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "transformer-based models trained with empirical risk minimization (erm) outperform",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we develop a formal framework to characterize a network's robustness",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "transformer-based models trained with empirical risk minimization (erm) outperform",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "we develop a formal framework to characterize a network's robustness",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "transformer-based models trained with empirical risk minimization (erm) outperform",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we develop a formal framework to characterize a network's robust,ness",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "domain generalization (dg) aims to close this gap",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we develop a formal framework to characterize a network's robustness",
+   "grounded": true
+  },
+  {
+   "op": "evaluate error",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "domain generalization (dg) aims to close this gap",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "transformer-based models trained with empirical risk minimization (erm) outperform",
+   "grounded": true
+  },
+  {
+   "op": "compute correlation",
+   "canonical": "compute correlation",
+   "object": "distribution",
+   "quote": "we develop a formal framework to characterize a network's robustness",
+   "grounded": true
+  },
+  {
+   "op": "align architecture",
+   "canonical": "align architecture",
+   "object": "parameter",
+   "quote": "we develop a formal framework to characterize a network's robustness",
+   "grounded": true
+  },
+  {
+   "op": "generate trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "extensive experiments on domainbed demonstrate that gmoe trained with erm",
+   "grounded": true
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "gmoe is complementary to existing dg methods",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "domain generalization (dg) aims to close this gap",
+   "grounded": true
+  },
+  {
+   "op": "update policy",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "we develop a formal framework to characterize a network's robustness",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "extensive experiments on domainbed demonstrate that gmoe trained with erm",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "gmoe is complementary to existing dg methods",
+   "grounded": true
+  },
+  {
+   "op": "evaluate task",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "gmoe is complementary to existing dg methods",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align architecture@parameter",
+  "backpropagate@gradient",
+  "compare@value",
+  "compute correlation@distribution",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute task@task",
+  "correct@parameter",
+  "correct@policy",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@value",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@sample",
+  "sample@trajectory",
+  "train@parameter"
+ ]
+}

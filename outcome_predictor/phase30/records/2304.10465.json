@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "2304.10465",
+ "source": "abstract",
+ "words": 204,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 5,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "predict point",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "an interactive point is predicted in each frame",
+   "grounded": true
+  },
+  {
+   "op": "enhance features",
+   "canonical": "enhance features",
+   "object": "latent",
+   "quote": "enhancing the features around the interactive point",
+   "grounded": true
+  },
+  {
+   "op": "align features",
+   "canonical": "align features",
+   "object": "latent",
+   "quote": "two frames are implicitly aligned",
+   "grounded": true
+  },
+  {
+   "op": "pool features",
+   "canonical": "pool features",
+   "object": "latent",
+   "quote": "the aligned features are then pooled into a single token",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "INVALID:token",
+   "quote": "is leveraged in the subsequent spatial self-attention",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "minimizes the temporal modeling effort",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "achieves incredibly high performance",
+   "grounded": false
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "frame pair",
+   "grounded": true
+  },
+  {
+   "op": "generate token",
+   "canonical": "reconstruct",
+   "object": "INVALID:token",
+   "quote": "pooled into a single token",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "distribution",
+   "quote": "spatial self-attention",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "aligned features are then pooled",
+   "grounded": true
+  },
+  {
+   "op": "extract token",
+   "canonical": "extract token",
+   "object": "INVALID:token",
+   "quote": "is leveraged in the subsequent spatial self-attention",
+   "grounded": true
+  },
+  {
+   "op": "compute mutual information",
+   "canonical": "compute mutual information",
+   "object": "distribution",
+   "quote": "interactive point is predicted in each frame",
+   "grounded": true
+  },
+  {
+   "op": "sample token",
+   "canonical": "sample",
+   "object": "INVALID:token",
+   "quote": "pooled into a single token",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "minimizes the temporal modeling effort",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "achieves incredibly high performance",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "value",
+   "quote": "top-1 accuracy of 88.7%",
+   "grounded": true
+  },
+  {
+   "op": "process trajectory",
+   "canonical": "process trajectory",
+   "object": "trajectory",
+   "quote": "frame pair",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "top-1 accuracy of 88.7%",
+   "grounded": true
+  },
+  {
+   "op": "denoise features",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "enhancing the features around the interactive point",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "interactive point is predicted in each frame",
+   "grounded": true
+  },
+  {
+   "op": "compute token",
+   "canonical": "compute token",
+   "object": "INVALID:token",
+   "quote": "pooled into a single token",
+   "grounded": true
+  },
+  {
+   "op": "compute mutual information",
+   "canonical": "compute mutual information",
+   "object": "distribution",
+   "quote": "interactive point is predicted in each frame",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "minimizes the temporal modeling effort",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "achieves incredibly high performance",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "align features@latent",
+  "apply gradient@parameter",
+  "compute accuracy@value",
+  "compute attention@distribution",
+  "compute gradient@gradient",
+  "compute mutual information@distribution",
+  "compute reward@reward",
+  "compute similarity@distribution",
+  "correct@parameter",
+  "enhance features@latent",
+  "evaluate@error",
+  "pool features@latent",
+  "predict@input",
+  "process input@input",
+  "process trajectory@trajectory",
+  "reconstruct@latent"
+ ]
+}

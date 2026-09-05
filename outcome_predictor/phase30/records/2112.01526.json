@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "2112.01526",
+ "source": "abstract",
+ "words": 125,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "pool",
+   "canonical": "pool",
+   "object": "latent",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we present an improved, improved version of MViT",
+   "grounded": false
+  },
+  {
+   "op": "apply residual",
+   "canonical": "apply residual",
+   "object": "latent",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "compare accuracy",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "compute boxap",
+   "canonical": "compute boxap",
+   "object": "value",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "value",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "compute return",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we present an improved version of MViT",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@latent",
+  "apply residual@latent",
+  "backpropagate@gradient",
+  "compare@error",
+  "compare@value",
+  "compute accuracy@value",
+  "compute boxap@value",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute trajectory@trajectory",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "evaluate@value",
+  "pool@latent",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@latent"
+ ]
+}

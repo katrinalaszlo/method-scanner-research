@@ -1,0 +1,93 @@
+{
+ "arxiv_id": "1703.05693",
+ "source": "abstract",
+ "words": 175,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 1,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute projection basis",
+   "canonical": "compute projection basis",
+   "object": "INVALID:weight",
+   "quote": "We view each weight vector within a fully connected (FC) layer",
+   "grounded": false
+  },
+  {
+   "op": "apply orthogonality constraint",
+   "canonical": "apply orthogonality constraint",
+   "object": "parameter",
+   "quote": "we are able to iteratively integrate the orthogonality constraint",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we are able to iteratively integrate the orthogonality constraint",
+   "grounded": true
+  },
+  {
+   "op": "compute descriptor",
+   "canonical": "compute descriptor",
+   "object": "latent",
+   "quote": "the weight vectors are usually highly correlated",
+   "grounded": true
+  },
+  {
+   "op": "compute euclidean distance",
+   "canonical": "compute euclidean distance",
+   "object": "state",
+   "quote": "compromises the retrieval performance based on the Euclidean distance",
+   "grounded": true
+  },
+  {
+   "op": "optimize representation",
+   "canonical": "improve",
+   "object": "latent",
+   "quote": "optimize the deep representation learning process with Singular Vector Decomposition",
+   "grounded": false
+  },
+  {
+   "op": "perform relaxation iteration",
+   "canonical": "perform relaxation iteration",
+   "object": "parameter",
+   "quote": "with the restraint and relaxation iteration (RRI) training scheme",
+   "grounded": true
+  },
+  {
+   "op": "compute correlation",
+   "canonical": "compute correlation",
+   "object": "latent",
+   "quote": "the problem leads to correlations among entries of the FC descriptor",
+   "grounded": false
+  },
+  {
+   "op": "generate descriptor",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "produces more discriminative FC descriptors",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "rank-1 accuracy is improved from 55.3% to 80.5% for CaffeNet",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply orthogonality constraint@parameter",
+  "compute accuracy@task",
+  "compute correlation@latent",
+  "compute descriptor@latent",
+  "compute euclidean distance@state",
+  "correct@parameter",
+  "improve@latent",
+  "perform relaxation iteration@parameter",
+  "reconstruct@latent"
+ ]
+}

@@ -1,0 +1,171 @@
+{
+ "arxiv_id": "1611.05666",
+ "source": "abstract",
+ "words": 144,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 0,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the network predicts the identities of the two images and whether they belong to the same identity",
+   "grounded": false
+  },
+  {
+   "op": "predict identity",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "the network predicts the identities of the two images and whether they belong to the same identity",
+   "grounded": false
+  },
+  {
+   "op": "predict similarity",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "the network predicts the identities of the two images and whether they belong to the same identity",
+   "grounded": false
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose a new siamese network that simultaneously computes identification loss and verification loss",
+   "grounded": false
+  },
+  {
+   "op": "learn parameters",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the network learns a discriminative embedding and a similarity measurement at the same time",
+   "grounded": false
+  },
+  {
+   "op": "measure similarity",
+   "canonical": "measure similarity",
+   "object": "latent",
+   "quote": "the network learns a discriminative embedding and a similarity measurement at the same time",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the network learns a discriminative embedding and a similarity measurement at the same time",
+   "grounded": false
+  },
+  {
+   "op": "generate embedding",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the network learns a discriminative embedding and a similarity measurement at the same time",
+   "grounded": false
+  },
+  {
+   "op": "compute identification loss",
+   "canonical": "compute identification loss",
+   "object": "error",
+   "quote": "the network predicts the identities of the two images and whether they belong to the same identity",
+   "grounded": false
+  },
+  {
+   "op": "compute verification loss",
+   "canonical": "compute verification loss",
+   "object": "error",
+   "quote": "the network predicts the identities of the two images and whether they belong to the same identity",
+   "grounded": false
+  },
+  {
+   "op": "combine losses",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "the network predicts the identities of the two images and whether they belong to the same identity",
+   "grounded": false
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the network learns a discriminative embedding and a similarity measurement at the same time",
+   "grounded": false
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we propose a new siamese network that simultaneously computes identification loss and verification loss",
+   "grounded": false
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose a new siames, network that simultaneously computes identification loss and verification loss",
+   "grounded": false
+  },
+  {
+   "op": "compare embeddings",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "the network learns a discriminative embedding and a similarity measurement at the same time",
+   "grounded": false
+  },
+  {
+   "op": "compute similarity score",
+   "canonical": "compute similarity score",
+   "object": "distribution",
+   "quote": "the network learns a discriminative embedding and a similarity measurement at the same time",
+   "grounded": false
+  },
+  {
+   "op": "store embedding",
+   "canonical": "store embedding",
+   "object": "latent",
+   "quote": "the network learns a discriminative embedding and a similarity measurement at the same time",
+   "grounded": false
+  },
+  {
+   "op": "retrieve embedding",
+   "canonical": "retrieve embedding",
+   "object": "latent",
+   "quote": "the network learns a discriminative embedding and a similarity measurement at the same time",
+   "grounded": false
+  },
+  {
+   "op": "apply similarity measurement",
+   "canonical": "apply similarity measurement",
+   "object": "distribution",
+   "quote": "the network learns a discriminative embedding and a similarity measurement at the same time",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the network learns a discriminative embedding and a similarity measurement at the same time",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "apply gradient@parameter",
+  "apply similarity measurement@distribution",
+  "compare@latent",
+  "compute identification loss@error",
+  "compute similarity score@distribution",
+  "compute verification loss@error",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "measure similarity@latent",
+  "predict@input",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "retrieve embedding@latent",
+  "store embedding@latent",
+  "train@parameter"
+ ]
+}

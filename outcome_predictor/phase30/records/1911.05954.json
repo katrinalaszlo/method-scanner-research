@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1911.05954",
+ "source": "abstract",
+ "words": 188,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "select nodes",
+   "canonical": "select nodes",
+   "object": "state",
+   "quote": "the graph pooling operation adaptively selects a subset of nodes",
+   "grounded": true
+  },
+  {
+   "op": "form subgraph",
+   "canonical": "form subgraph",
+   "object": "state",
+   "quote": "to form an induced subgraph for the subsequent layers",
+   "grounded": true
+  },
+  {
+   "op": "learn structure",
+   "canonical": "train",
+   "object": "state",
+   "quote": "we introduce a structure learning mechanism to learn a refined graph structure",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we perform graph level representation learning with focus on graph classification task",
+   "grounded": true
+  },
+  {
+   "op": "pool graph",
+   "canonical": "pool graph",
+   "object": "state",
+   "quote": "the graph pooling operation adaptively selects a subset of nodes",
+   "grounded": true
+  },
+  {
+   "op": "preserve topology",
+   "canonical": "preserve topology",
+   "object": "state",
+   "quote": "to preserve the integrity of graph's topological information",
+   "grounded": true
+  },
+  {
+   "op": "generate representation",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "to generate hierarchical representations of graphs",
+   "grounded": true
+  },
+  {
+   "op": "integrate module",
+   "canonical": "integrate module",
+   "object": "parameter",
+   "quote": "HGP-SL can be integrated into various graph neural network architectures",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "form subgraph@state",
+  "integrate module@parameter",
+  "pool graph@state",
+  "preserve topology@state",
+  "reconstruct@state",
+  "select nodes@state",
+  "train@state"
+ ]
+}

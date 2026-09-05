@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2311.10605",
+ "source": "abstract",
+ "words": 228,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "sample",
+   "quote": "Jaccard distance is a widely used distance metric",
+   "grounded": true
+  },
+  {
+   "op": "find neighbors",
+   "canonical": "find neighbors",
+   "object": "sample",
+   "quote": "find k-reciprocal nearest neighbors",
+   "grounded": true
+  },
+  {
+   "op": "filter neighbors",
+   "canonical": "filter neighbors",
+   "object": "sample",
+   "quote": "design camera-aware k-reciprocal nearest neighbors",
+   "grounded": true
+  },
+  {
+   "op": "compute overlap",
+   "canonical": "compute overlap",
+   "object": "sample",
+   "quote": "calculates the distance based on the overlap of relevant neighbors",
+   "grounded": true
+  },
+  {
+   "op": "assign weight",
+   "canonical": "assign weight",
+   "object": "sample",
+   "quote": "assign these samples higher weights in overlap",
+   "grounded": true
+  },
+  {
+   "op": "compute reliability",
+   "canonical": "compute reliability",
+   "object": "sample",
+   "quote": "improves the reliability of relevant neighbors",
+   "grounded": true
+  },
+  {
+   "op": "update distance",
+   "canonical": "correct",
+   "object": "sample",
+   "quote": "enhance the reliability of Jaccard distance",
+   "grounded": true
+  },
+  {
+   "op": "compute contribution",
+   "canonical": "compute contribution",
+   "object": "sample",
+   "quote": "guarantees the contribution of inter-camera samples",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "assign weight@sample",
+  "compute contribution@sample",
+  "compute distance@sample",
+  "compute overlap@sample",
+  "compute reliability@sample",
+  "correct@sample",
+  "filter neighbors@sample",
+  "find neighbors@sample"
+ ]
+}

@@ -1,0 +1,197 @@
+{
+ "arxiv_id": "2312.02145",
+ "source": "abstract",
+ "words": 192,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 6,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "The estimator can be fine-tuned in a couple of days on a single GPU using only synthetic training data.",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:depth",
+   "quote": "Monocular depth estimation is a fundamental computer vision task.",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "The impressive progress of monocular depth estimators has mirrored the growth in model capacity.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "The estimator can be fine-tuned in a couple of days on a single GPU using only synthetic training data.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "The estimator can be fine-tuned in a couple of days on a single GPU using only synthetic training data.",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "INVALID:depth",
+   "quote": "Marigold, a method for affine-invariant monocular depth estimation that is derived from Stable Diffusion.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "The rise of deep learning has led to a breakthrough.",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:depth",
+   "quote": "Marigold delivers state-of-the-art performance across a wide range of datasets.",
+   "grounded": false
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "INVALID:depth",
+   "quote": "Monocular depth estimation is a fundamental computer vision task.",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "INVALID:depth",
+   "quote": "It delivers state-of-the-art performance across a wide range of datasets.",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Monocular depth estimation is a fundamental computer vision task.",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "INVALID:depth",
+   "quote": "Marigold, a method for affine-invariant monocular depth estimation that is derived from Stable Diffusion.",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "The impressive progress of monocular depth estimators has mirrored the growth in model capacity.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "The rise of deep learning has led to a breakthrough.",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "The impressive progress of monocular depth estimators has mirrored the growth in model capacity.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "The rise of deep, learning has led to a breakthrough.",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "The rise of deep learning has led to a breakthrough.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "The rise of deep learning has led to a breakthrough.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "The rise of deep learning has led to a breakthrough.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "The rise of deep learning has led to a breakthrough.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "The rise of deep learning has led to a breakthrough.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "The rise of deep learning has led to a breakthrough.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "The rise of deep learning has led to a breakthrough.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "The rise of deep learning has led to a breakthrough.",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "The rise of deep learning has led to a breakthrough.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "reconstruct@noise"
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1406.4216",
+ "source": "abstract",
+ "words": 209,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute feature",
+   "canonical": "compute feature",
+   "object": "input",
+   "quote": "An effective feature representation should be robust to illumination and viewpoint changes",
+   "grounded": true
+  },
+  {
+   "op": "apply transform",
+   "canonical": "apply transform",
+   "object": "input",
+   "quote": "we apply the Retinex transform and a scale invariant texture operator",
+   "grounded": false
+  },
+  {
+   "op": "extract local features",
+   "canonical": "extract local features",
+   "object": "input",
+   "quote": "LOMO feature analyzes the horizontal occurrence of local features",
+   "grounded": true
+  },
+  {
+   "op": "maximize occurrence",
+   "canonical": "maximize occurrence",
+   "object": "latent",
+   "quote": "maximizes the occurrence to make a stable representation against viewpoint changes",
+   "grounded": true
+  },
+  {
+   "op": "learn subspace",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "learn a discriminant low dimensional subspace by cross-view quadratic discrimin,",
+   "grounded": true
+  },
+  {
+   "op": "learn metric",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "simultaneously, a QDA metric is learned on the derived subspace",
+   "grounded": true
+  },
+  {
+   "op": "compute projection",
+   "canonical": "compute projection",
+   "object": "latent",
+   "quote": "we propose to learn a discriminant low dimensional subspace by cross-view quadratic discriminant analysis",
+   "grounded": true
+  },
+  {
+   "op": "regularize model",
+   "canonical": "regularize model",
+   "object": "parameter",
+   "quote": "we also present a practical computation method for XQDA, as well as its regularization",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply transform@input",
+  "compute feature@input",
+  "compute projection@latent",
+  "extract local features@input",
+  "maximize occurrence@latent",
+  "regularize model@parameter",
+  "train@latent"
+ ]
+}

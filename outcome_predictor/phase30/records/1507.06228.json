@@ -1,0 +1,178 @@
+{
+ "arxiv_id": "1507.06228",
+ "source": "abstract",
+ "words": 106,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 22,
+ "n_invalid_object": 4,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "training of very deep networks remains an open problem",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "highway networks can be trained directly through simple gradient descent",
+   "grounded": true
+  },
+  {
+   "op": "apply gate",
+   "canonical": "apply gate",
+   "object": "latent",
+   "quote": "use adaptive gating units to regulate the information flow",
+   "grounded": true
+  },
+  {
+   "op": "pass information",
+   "canonical": "transmit",
+   "object": "latent",
+   "quote": "allow unimpeded information flow across many layers",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "training becomes more difficult as depth increases",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "training of very deep networks remains an open problem",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "enable the study of extremely deep and efficient architectures",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "reward",
+   "quote": "training becomes more difficult as depth increases",
+   "grounded": true
+  },
+  {
+   "op": "regulate flow",
+   "canonical": "regulate flow",
+   "object": "INVALID:information",
+   "quote": "use adaptive gating units to regulate the information flow",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "training becomes more difficult as depth increases",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "training of very, deep networks remains an open problem",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "use adaptive gating units to regulate the information flow",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "training of very deep networks remains an open problem",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "highway networks can be trained directly through simple gradient descent",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "training becomes more difficult as depth increases",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "training of very deep networks remains an open problem",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "enable the study of extremely deep and efficient architectures",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "reward",
+   "quote": "training becomes more difficult as depth increases",
+   "grounded": true
+  },
+  {
+   "op": "regulate flow",
+   "canonical": "regulate flow",
+   "object": "INVALID:information",
+   "quote": "use adaptive gating units to regulate the information flow",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "training becomes more difficult as depth increases",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "training of very, deep networks remains an open problem",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "use adaptive gating units to regulate the information flow",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gate@latent",
+  "backpropagate@gradient",
+  "compute distribution@latent",
+  "compute gradient@error",
+  "compute value@reward",
+  "correct@parameter",
+  "evaluate@error",
+  "reconstruct@noise",
+  "sample@policy",
+  "transmit@latent"
+ ]
+}

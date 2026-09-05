@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "2411.18941",
+ "source": "abstract",
+ "words": 157,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 6,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we direct our approach to focus on the fine-grained motion of local skeleton components",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "ProtoGCN breaks down the dynamics of entire skeleton sequences into a combination of learnable prototypes",
+   "grounded": false
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:prototype",
+   "quote": "ProtoGCN can effectively identify and enhance the discriminative representation of similar actions",
+   "grounded": true
+  },
+  {
+   "op": "contrast",
+   "canonical": "compare",
+   "object": "INVALID:prototype",
+   "quote": "ProtoGCN can effectively identify and enhance the discriminative representation of similar actions",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "INVALID:prototype",
+   "quote": "ProtoGCN breaks down the dynamics of entire skeleton sequences into a combination of learnable prototypes",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "ProtoGCN can effectively identify and enhance the discriminative representation of similar actions",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "ProtoGCN achieves state-of-the-art performance on multiple benchmark datasets",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "ProtoGCN breaks down the dynamics of entire skeleton sequences into a combination of learnable prototypes",
+   "grounded": false
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "ProtoGCN breaks down the dynamics of entire skeleton sequences into a combination of learnable prototypes",
+   "grounded": false
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "INVALID:prototype",
+   "quote": "ProtoGCN can effectively identify and enhance the discriminative representation of similar actions",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "ProtoGCN can effectively identify and enhance the discriminative representation of similar actions",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "ProtoGCN can effectively identify and enhance the discriminative representation of similar actions",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "ProtoGCN breaks down the dynamics of entire skeleton sequences into a combination of learnable prototypes",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "ProtoGCN can effectively identify and enhance the discriminative representation of similar actions",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "error",
+   "quote": "ProtoGCN can effectively identify and enhance the discriminative representation of similar actions",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "we direct our approach to focus on the fine-grained motion of local skeleton components",
+   "grounded": true
+  },
+  {
+   "op": "cluster",
+   "canonical": "cluster",
+   "object": "latent",
+   "quote": "ProtoGCN breaks down the dynamics of entire skeleton sequences into a combination of learnable prototypes",
+   "grounded": false
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "ProtoGCN can effectively identify and enhance the discriminative representation of similar actions",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "ProtoGCN achieves state-of-the-art performance on multiple benchmark datasets",
+   "grounded": true
+  },
+  {
+   "op": "map",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we direct our approach to focus on the fine-grained motion of local skeleton components",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "INVALID:prototype",
+   "quote": "ProtoGCN breaks down the dynamics of entire skeleton sequences into a combination of learnable prototypes",
+   "grounded": false
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "INVALID:prototype",
+   "quote": "ProtoGCN can effectively identify and enhance the discriminative representation of similar actions",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "ProtoGCN achieves state-of-the-art performance on multiple benchmark datasets",
+   "grounded": true
+  },
+  {
+   "op": "track",
+   "canonical": "track",
+   "object": "trajectory",
+   "quote": "we direct our approach to focus on the fine-grained motion of local skeleton components",
+   "grounded": true
+  },
+  {
+   "op": "analyze",
+   "canonical": "analyze",
+   "object": "distribution",
+   "quote": "ProtoGCN can effectively identify and enhance the discriminative representation of similar actions",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "analyze@distribution",
+  "cluster@latent",
+  "compute@error",
+  "compute@task",
+  "compute@value",
+  "correct@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "extract@latent",
+  "improve@parameter",
+  "normalize@error",
+  "predict@distribution",
+  "reconstruct@latent",
+  "sample@distribution",
+  "track@trajectory",
+  "transform@input"
+ ]
+}

@@ -1,0 +1,28 @@
+papers with arxiv abstract: 508818
+boards total: 10176
+boards=25 tasks=17 papers=900 pairs=5000
+   40 Image Classification                     | ImageNet                            | Top 1 Accuracy
+   40 Image Classification                     | CIFAR-10                            | Percentage correct
+   40 Visual Question Answering                | MM-Vet                              | GPT-4 score
+   40 Image Classification                     | CIFAR-100                           | Percentage correct
+   40 Object Detection                         | COCO test-dev                       | box mAP
+   40 Semantic Segmentation                    | ADE20K                              | Validation mIoU
+   40 Object Detection                         | COCO minival                        | box AP
+   40 Action Classification                    | Kinetics-400                        | Acc@1
+   40 Person Re-Identification                 | Market-1501                         | Rank-1
+   40 Few-Shot Image Classification            | Mini-Imagenet 5-way (1-shot)        | Accuracy
+   40 Semantic Segmentation                    | Cityscapes test                     | Mean IoU (class)
+   40 Skeleton Based Action Recognition        | NTU RGB+D                           | Accuracy (CS)
+   40 3D Point Cloud Classification            | ModelNet40                          | Overall Accuracy
+   40 Image Super-Resolution                   | Set14 - 4x upscaling                | PSNR
+   40 Anomaly Detection                        | MVTec AD                            | Detection AUROC
+   40 Semantic Segmentation                    | NYU Depth v2                        | Mean IoU
+   40 Domain Generalization                    | PACS                                | Average Accuracy
+   40 Few-Shot Image Classification            | Mini-Imagenet 5-way (5-shot)        | Accuracy
+   40 Person Re-Identification                 | DukeMTMC-reID                       | mAP
+   40 Monocular Depth Estimation               | KITTI Eigen split                   | absolute relative error
+   40 Action Recognition                       | Something-Something V2              | Top-1 Accuracy
+   40 Self-Supervised Image Classification     | ImageNet                            | Top 1 Accuracy
+   40 Graph Classification                     | PROTEINS                            | Accuracy
+   40 3D Human Pose Estimation                 | MPI-INF-3DHP                        | MPJPE
+   40 Image Super-Resolution                   | Urban100 - 4x upscaling             | PSNR

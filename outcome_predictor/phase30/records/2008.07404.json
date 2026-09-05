@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2008.07404",
+ "source": "abstract",
+ "words": 206,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "using joints' coordinates as input",
+   "grounded": true
+  },
+  {
+   "op": "apply spatial attention",
+   "canonical": "apply spatial attention",
+   "object": "latent",
+   "quote": "a Spatial Self-Attention module (SSA) is used",
+   "grounded": true
+  },
+  {
+   "op": "compute spatial interactions",
+   "canonical": "compute spatial interactions",
+   "object": "state",
+   "quote": "understand intra-frame interactions between different body parts",
+   "grounded": true
+  },
+  {
+   "op": "apply temporal attention",
+   "canonical": "apply temporal attention",
+   "object": "latent",
+   "quote": "a Temporal Self-Attention module (TSA) to model inter-frame correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute temporal interactions",
+   "canonical": "compute temporal interactions",
+   "object": "trajectory",
+   "quote": "model inter-frame correlations",
+   "grounded": true
+  },
+  {
+   "op": "combine spatial and temporal",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the two are combined in a two-stream network",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "Skeleton-based Action Recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the proposed ST-TR achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the proposed ST-TR achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed ST-TR achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "Skeleton-based Action Recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Skeleton-based Action Recognition",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "Skeleton-based Action Recognition",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "Skeleton-based Action Recognition",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "Skeleton-based Action Recognition",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "Skeleton, Skeleton-based Action Recognition",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "Skeleton-based Action Recognition",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "Skeleton-based Action Recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "model inter-frame correlations",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the proposed ST-TR achieves state-of-the-art performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply spatial attention@latent",
+  "apply temporal attention@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute spatial interactions@state",
+  "compute temporal interactions@trajectory",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@action",
+  "predict@reward",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

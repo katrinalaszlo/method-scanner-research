@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2408.09940",
+ "source": "abstract",
+ "words": 178,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "extract high-level semantic details from images",
+   "grounded": true
+  },
+  {
+   "op": "split frequency",
+   "canonical": "split frequency",
+   "object": "input",
+   "quote": "utilizing low-high frequency information in multiple scales",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "operate spatial and channel self-attention",
+   "grounded": true
+  },
+  {
+   "op": "compute correlation",
+   "canonical": "compute correlation",
+   "object": "latent",
+   "quote": "exploiting the inherent correlations across spatial and channel axis",
+   "grounded": true
+  },
+  {
+   "op": "cross attention",
+   "canonical": "cross attention",
+   "object": "latent",
+   "quote": "devise a cross-attention block for super-resolution",
+   "grounded": true
+  },
+  {
+   "op": "combine feature",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "explore the correlations between low and high-frequency information",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "super-resolution methods (e.g., 0.15 dB gain @Manga109",
+   "grounded": true
+  },
+  {
+   "op": "upsample image",
+   "canonical": "upsample image",
+   "object": "latent",
+   "quote": "super-resolving Transformer",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention@latent",
+  "compute correlation@latent",
+  "cross attention@latent",
+  "extract feature@input",
+  "reconstruct@latent",
+  "split frequency@input",
+  "upsample image@latent"
+ ]
+}

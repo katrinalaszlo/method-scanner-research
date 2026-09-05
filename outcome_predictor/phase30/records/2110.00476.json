@@ -1,0 +1,102 @@
+{
+ "arxiv_id": "2110.00476",
+ "source": "abstract",
+ "words": 161,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 11,
+ "n_invalid_object": 0,
+ "n_grounded": 11,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "We share competitive training settings",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We share competitive training settings",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We share competitive training settings",
+   "grounded": true
+  },
+  {
+   "op": "apply data augmentation",
+   "canonical": "apply data augmentation",
+   "object": "input",
+   "quote": "Novel optimization & data-augmentation have increased",
+   "grounded": true
+  },
+  {
+   "op": "sample batch",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "We re-evaluate the performance of the vanilla ResNet-50",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "The influential Residual Networks designed by He et al.",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "They typically serve as the default architecture",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "error",
+   "quote": "a vanilla ResNet-50 reaches 80.4% top-1 accuracy",
+   "grounded": true
+  },
+  {
+   "op": "store model",
+   "canonical": "store model",
+   "object": "parameter",
+   "quote": "We share competitive training settings and pre-trained models",
+   "grounded": true
+  },
+  {
+   "op": "load model",
+   "canonical": "load model",
+   "object": "parameter",
+   "quote": "We share competitive training settings and pre-trained models",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "We also report the performance achieved with popular models",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply data augmentation@input",
+  "backpropagate@gradient",
+  "compute accuracy@error",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "evaluate@value",
+  "load model@parameter",
+  "predict@value",
+  "sample@input",
+  "store model@parameter"
+ ]
+}

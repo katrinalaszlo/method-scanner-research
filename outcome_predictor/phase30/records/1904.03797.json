@@ -1,0 +1,197 @@
+{
+ "arxiv_id": "1904.03797",
+ "source": "abstract",
+ "words": 209,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "predict category sensitive map",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "predict category-sensitive semantic maps for the object existing possibility",
+   "grounded": false
+  },
+  {
+   "op": "produce bounding box",
+   "canonical": "produce bounding box",
+   "object": "state",
+   "quote": "producing category-agnostic bounding box for each position that potentially contains an object",
+   "grounded": true
+  },
+  {
+   "op": "assign instance to feature level",
+   "canonical": "assign instance to feature level",
+   "object": "trajectory",
+   "quote": "an instance is assigned to adjacent feature levels to make the model more accurate",
+   "grounded": true
+  },
+  {
+   "op": "compute feature pyramid representation",
+   "canonical": "compute feature pyramid representation",
+   "object": "state",
+   "quote": "the scales of target boxes are naturally associated with feature pyramid representations",
+   "grounded": true
+  },
+  {
+   "op": "generate bounding box coordinates",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "directly learns the object existing possibility and the bounding box coordinates without anchor reference",
+   "grounded": true
+  },
+  {
+   "op": "compute object existence possibility",
+   "canonical": "compute object existence possibility",
+   "object": "state",
+   "quote": "directly learns the object existing possibility and the bounding box coordinates without anchor reference",
+   "grounded": true
+  },
+  {
+   "op": "map object existence to semantic map",
+   "canonical": "encode",
+   "object": "distribution",
+   "quote": "predict category-sensitive semantic maps for the object existing possibility",
+   "grounded": false
+  },
+  {
+   "op": "compute bounding box scale",
+   "canonical": "compute bounding box scale",
+   "object": "state",
+   "quote": "the scales of target boxes are naturally associated with feature pyramid representations",
+   "grounded": true
+  },
+  {
+   "op": "generate bounding box for object",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "producing category-agnostic bounding box for each position that potentially contains an object",
+   "grounded": true
+  },
+  {
+   "op": "assign instance to feature level",
+   "canonical": "assign instance to feature level",
+   "object": "trajectory",
+   "quote": "an instance is assigned to adjacent feature levels to make the model more accurate",
+   "grounded": true
+  },
+  {
+   "op": "compute feature pyramid representation",
+   "canonical": "compute feature pyramid representation",
+   "object": "state",
+   "quote": "the scales of target boxes are naturally associated with feature pyramid representations",
+   "grounded": true
+  },
+  {
+   "op": "generate bounding box coordinates",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "directly learns the object existing possibility and the bounding box coordinates without anchor reference",
+   "grounded": true
+  },
+  {
+   "op": "compute object existence possibility",
+   "canonical": "compute object existence possibility",
+   "object": "state",
+   "quote": "directly learns the object existing possibility and the bounding box coordinates without anchor reference",
+   "grounded": true
+  },
+  {
+   "op": "map object existence to semantic map",
+   "canonical": "encode",
+   "object": "distribution",
+   "quote": "predict category-sensitive semantic maps for the object existing possibility",
+   "grounded": false
+  },
+  {
+   "op": "compute bounding box scale",
+   "canonical": "compute bounding box scale",
+   "object": "state",
+   "quote": "the scales of target boxes are naturally associated with feature pyramid representations",
+   "grounded": true
+  },
+  {
+   "op": "generate bounding box for object",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "producing category-agnostic bounding box for each position that potentially contains an object",
+   "grounded": true
+  },
+  {
+   "op": "assign instance to feature level",
+   "canonical": "assign instance to feature level",
+   "object": "trajectory",
+   "quote": "an instance is assigned to adjacent feature levels to make the model more accurate",
+   "grounded": true
+  },
+  {
+   "op": "compute feature pyramid representation",
+   "canonical": "compute feature pyramid representation",
+   "object": "state",
+   "quote": "the scales of target boxes are naturally associated with feature pyramid representations",
+   "grounded": true
+  },
+  {
+   "op": "generate bounding box coordinates",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "directly learns the object existing possibility and the bounding box coordinates without anchor reference",
+   "grounded": true
+  },
+  {
+   "op": "compute object existence possibility",
+   "canonical": "compute object existence possibility",
+   "object": "state",
+   "quote": "directly learns the object existing possibility and the bounding box coordinates without anchor reference",
+   "grounded": true
+  },
+  {
+   "op": "map object existence to semantic map",
+   "canonical": "encode",
+   "object": "distribution",
+   "quote": "predict category-sensitive semantic maps for the object existing possibility",
+   "grounded": false
+  },
+  {
+   "op": "compute bounding box scale",
+   "canonical": "compute bounding box scale",
+   "object": "state",
+   "quote": "the scales of target boxes are naturally associated with feature pyramid representations",
+   "grounded": true
+  },
+  {
+   "op": "generate bounding box for object",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "producing category-agnostic bounding box for each position that potentially contains an object",
+   "grounded": true
+  },
+  {
+   "op": "assign instance to feature level",
+   "canonical": "assign instance to feature level",
+   "object": "trajectory",
+   "quote": "an instance is assigned to adjacent feature levels to make the model more accurate",
+   "grounded": true
+  },
+  {
+   "op": "compute feature pyramid representation",
+   "canonical": "compute feature pyramid representation",
+   "object": "state",
+   "quote": "the scales of target boxes are naturally associated with feature pyramid representations",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "assign instance to feature level@trajectory",
+  "compute bounding box scale@state",
+  "compute feature pyramid representation@state",
+  "compute object existence possibility@state",
+  "encode@distribution",
+  "predict@state",
+  "produce bounding box@state",
+  "reconstruct@state"
+ ]
+}

@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "2003.02455",
+ "source": "abstract",
+ "words": 115,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 0,
+ "n_grounded": 26,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "upper-bound the error evaluated on any, even unseen, tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "the models trained with our proposed meta-learning algorithm",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the models trained with our proposed meta-learning algorithm",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "state-of-the-art calibration and classification results",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "state-of-the-art calibration and classification results",
+   "grounded": true
+  },
+  {
+   "op": "estimate distribution",
+   "canonical": "predict",
+   "object": "parameter",
+   "quote": "generative-based approach to estimate the posterior",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "upper-bound the error evaluated on any, even unseen, tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "upper-bound the error evaluated on any, even unseen, tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "task",
+   "quote": "generative-based approach to estimate the posterior",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "generative-based approach to estimate the posterior",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "generative-based approach to estimate the posterior",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the models trained with our proposed meta-learning algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "task",
+   "quote": "state-of-the-art calibration and classification results",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "task",
+   "quote": "state-of-the-art calibration and classification results",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "task",
+   "quote": "state-of-the-art calibration and classification results",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "state-of-the-art calibration and classification results",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "task",
+   "quote": "state-of-the-art calibration and classification results",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "task",
+   "quote": "state-of-the-art calibration and classification results",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "upper-bound the error evaluated on any, even unseen, tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "upper-bound the error evaluated on any, even unseen, tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "the models trained with our proposed meta-learning algorithm",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the models trained with our proposed meta-learning algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "task",
+   "quote": "generative-based approach to estimate the posterior",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "generative-based approach to estimate the posterior",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "generative-based approach to estimate the posterior",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the models trained with our proposed meta-learning algorithm",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@task",
+  "compute distribution@task",
+  "compute gradient@parameter",
+  "compute input@task",
+  "compute latent@task",
+  "compute policy@task",
+  "compute reward@task",
+  "compute sample@task",
+  "compute trajectory@task",
+  "compute value@task",
+  "correct@parameter",
+  "evaluate@task",
+  "predict@parameter",
+  "predict@task",
+  "reconstruct@noise",
+  "sample@policy",
+  "sample@sample"
+ ]
+}

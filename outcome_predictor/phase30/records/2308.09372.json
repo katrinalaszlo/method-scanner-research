@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2308.09372",
+ "source": "abstract",
+ "words": 191,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Our benchmark provides a standardized baseline for efficiency-oriented transformers.",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "We evaluate key efficiency aspects, including accuracy, speed, and memory usage.",
+   "grounded": false
+  },
+  {
+   "op": "measure speed",
+   "canonical": "measure speed",
+   "object": "task",
+   "quote": "We evaluate key efficiency aspects, including accuracy, speed, and memory usage.",
+   "grounded": false
+  },
+  {
+   "op": "track memory",
+   "canonical": "track memory",
+   "object": "task",
+   "quote": "We evaluate key efficiency aspects, including accuracy, speed, and memory usage.",
+   "grounded": false
+  },
+  {
+   "op": "compare models",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "We perform a large-scale benchmark of more than 45 models for image classification.",
+   "grounded": true
+  },
+  {
+   "op": "select model",
+   "canonical": "select model",
+   "object": "task",
+   "quote": "Thanks to our holistic evaluation, we provide a centralized resource for practitioners and researchers.",
+   "grounded": true
+  },
+  {
+   "op": "analyze results",
+   "canonical": "analyze results",
+   "object": "task",
+   "quote": "We analyze the results based on the Pareto front -- the boundary of optimal models.",
+   "grounded": true
+  },
+  {
+   "op": "identify optimal",
+   "canonical": "identify optimal",
+   "object": "task",
+   "quote": "We analyze the results based on the Pareto front -- the boundary of optimal models.",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "task",
+   "quote": "We evaluate key efficiency aspects, including accuracy, speed, and memory usage.",
+   "grounded": false
+  },
+  {
+   "op": "record performance",
+   "canonical": "record performance",
+   "object": "task",
+   "quote": "We evaluate key efficiency aspects,  including accuracy, speed, and memory usage.",
+   "grounded": false
+  },
+  {
+   "op": "store results",
+   "canonical": "store results",
+   "object": "task",
+   "quote": "Thanks to our holistic evaluation, we provide a centralized resource for practitioners and researchers.",
+   "grounded": true
+  },
+  {
+   "op": "generate report",
+   "canonical": "reconstruct",
+   "object": "task",
+   "quote": "Thanks to our holistic evaluation, we provide a centralized resource for practitioners and researchers.",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Self-attention in Transformers comes with a high computational cost because of their quadratic computational complexity.",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "Self-attention in Transformers comes with a high computational cost because of their quadratic computational complexity.",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "input",
+   "quote": "Self-attention in Transformers comes with a high computational cost because of their quadratic computational complexity.",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "Self-attention in Transformers comes with a high computational cost because of their quadratic computational complexity.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Self-attention in Transformers comes with a high computational cost because of their quadratic computational complexity.",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "Self-attention in Transformers comes with a high computational cost because of their quadratic computational complexity.",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "task",
+   "quote": "We evaluate key efficiency aspects, including accuracy, speed, and memory usage.",
+   "grounded": false
+  },
+  {
+   "op": "compute efficiency",
+   "canonical": "compute efficiency",
+   "object": "task",
+   "quote": "We evaluate key efficiency aspects, including accuracy, speed, and memory usage.",
+   "grounded": false
+  },
+  {
+   "op": "compute resolution",
+   "canonical": "compute resolution",
+   "object": "input",
+   "quote": "Thanks to our holistic evaluation, we provide a centralized resource for practitioners and researchers.",
+   "grounded": true
+  },
+  {
+   "op": "compute size",
+   "canonical": "compute size",
+   "object": "task",
+   "quote": "Thanks to our holistic evaluation, we provide a centralized resource for practitioners and researchers.",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "Thanks to our holistic evaluation, we provide a centralized resource for practitioners and researchers.",
+   "grounded": true
+  },
+  {
+   "op": "compute memory",
+   "canonical": "compute memory",
+   "object": "task",
+   "quote": "We evaluate key efficiency aspects, including accuracy, speed, and memory usage.",
+   "grounded": false
+  },
+  {
+   "op": "compute speed",
+   "canonical": "compute speed",
+   "object": "task",
+   "quote": "We evaluate key efficiency aspects, including accuracy, speed, and memory usage.",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "analyze results@task",
+  "compare@task",
+  "compute attention@input",
+  "compute efficiency@task",
+  "compute gradient@parameter",
+  "compute memory@task",
+  "compute metric@task",
+  "compute parameter@parameter",
+  "compute resolution@input",
+  "compute size@task",
+  "compute speed@task",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "identify optimal@task",
+  "measure speed@task",
+  "process input@input",
+  "reconstruct@task",
+  "record performance@task",
+  "select model@task",
+  "store results@task",
+  "track memory@task",
+  "train@parameter"
+ ]
+}

@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2011.08036",
+ "source": "abstract",
+ "words": 146,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "detect objects",
+   "canonical": "detect objects",
+   "object": "input",
+   "quote": "YOLOv4 object detection neural network",
+   "grounded": true
+  },
+  {
+   "op": "scale network",
+   "canonical": "scale network",
+   "object": "parameter",
+   "quote": "network scaling approach",
+   "grounded": true
+  },
+  {
+   "op": "modify structure",
+   "canonical": "modify structure",
+   "object": "parameter",
+   "quote": "modifies not only the depth, width, resolution, but also structure",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "state-of-the-art results: 55.5% AP",
+   "grounded": true
+  },
+  {
+   "op": "compute speed",
+   "canonical": "compute speed",
+   "object": "task",
+   "quote": "speed of ~16 FPS on Tesla V100",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "with the test time augmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute fps",
+   "canonical": "compute fps",
+   "object": "task",
+   "quote": "YOLOv4-tiny achieves 1774 FPS",
+   "grounded": true
+  },
+  {
+   "op": "convert precision",
+   "canonical": "convert precision",
+   "object": "parameter",
+   "quote": "using TensorRT, batch size = 4 and FP16-precision",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "YOLOv4 object detection neural network",
+   "grounded": true
+  },
+  {
+   "op": "output detection",
+   "canonical": "output detection",
+   "object": "action",
+   "quote": "YOLOv4 object detection neural network",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "state-of-the-art results: 55.5% AP",
+   "grounded": true
+  },
+  {
+   "op": "compute ap50",
+   "canonical": "compute ap50",
+   "object": "task",
+   "quote": "73.4% AP50 for the MS COCO dataset",
+   "grounded": false
+  },
+  {
+   "op": "compute ap",
+   "canonical": "compute ap",
+   "object": "task",
+   "quote": "55.5% AP (73.4% AP50) for the MS COCO dataset",
+   "grounded": true
+  },
+  {
+   "op": "process trajectory",
+   "canonical": "process trajectory",
+   "object": "trajectory",
+   "quote": "YOLOv4 object detection neural network",
+   "grounded": true
+  },
+  {
+   "op": "compute fps tiny",
+   "canonical": "compute fps tiny",
+   "object": "task",
+   "quote": "YOLOv4-tiny achieves 1774 FPS",
+   "grounded": true
+  },
+  {
+   "op": "apply tensorrt",
+   "canonical": "apply tensorrt",
+   "object": "parameter",
+   "quote": "using TensorRT, batch size = 4 and FP16-precision",
+   "grounded": true
+  },
+  {
+   "op": "compute batch size",
+   "canonical": "compute batch size",
+   "object": "parameter",
+   "quote": "using TensorRT, batch size = 4 and FP16-precision",
+   "grounded": true
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "parameter",
+   "quote": "using TensorRT, batch size = 4 and FP16-precision",
+   "grounded": true
+  },
+  {
+   "op": "output trajectory",
+   "canonical": "output trajectory",
+   "object": "trajectory",
+   "quote": "YOLOv4 object detection neural network",
+   "grounded": true
+  },
+  {
+   "op": "compute fps large",
+   "canonical": "compute fps large",
+   "object": "task",
+   "quote": "YOLOv4-large achieves 56.0% AP (73.3 AP50)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply augmentation@input",
+  "apply tensorrt@parameter",
+  "compute accuracy@task",
+  "compute ap50@task",
+  "compute ap@task",
+  "compute batch size@parameter",
+  "compute fps large@task",
+  "compute fps tiny@task",
+  "compute fps@task",
+  "compute precision@parameter",
+  "compute speed@task",
+  "convert precision@parameter",
+  "detect objects@input",
+  "evaluate@task",
+  "modify structure@parameter",
+  "output detection@action",
+  "output trajectory@trajectory",
+  "process input@input",
+  "process trajectory@trajectory",
+  "scale network@parameter"
+ ]
+}

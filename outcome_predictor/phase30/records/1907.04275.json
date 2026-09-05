@@ -1,0 +1,153 @@
+{
+ "arxiv_id": "1907.04275",
+ "source": "abstract",
+ "words": 149,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 20,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute normalization statistics",
+   "canonical": "compute normalization statistics",
+   "object": "INVALID:activation",
+   "quote": "the activations are normalized by a weighted average of multiple normalization statistics",
+   "grounded": true
+  },
+  {
+   "op": "track normalization statistics",
+   "canonical": "track normalization statistics",
+   "object": "INVALID:normalization statistic",
+   "quote": "the normalization statistics are kept track of separately for each normalization type if necessary",
+   "grounded": true
+  },
+  {
+   "op": "apply weighted average",
+   "canonical": "apply weighted average",
+   "object": "INVALID:normalization statistic",
+   "quote": "the activations are normalized by a weighted average of multiple normalization statistics",
+   "grounded": true
+  },
+  {
+   "op": "normalize activation",
+   "canonical": "normalize activation",
+   "object": "INVALID:activation",
+   "quote": "the activations are normalized by a weighted average of multiple normalization statistics",
+   "grounded": true
+  },
+  {
+   "op": "learn affine parameters",
+   "canonical": "train",
+   "object": "INVALID:domain",
+   "quote": "learning separate affine parameters per domain",
+   "grounded": true
+  },
+  {
+   "op": "combine normalization methods",
+   "canonical": "aggregate",
+   "object": "INVALID:normalization",
+   "quote": "identify the best combination of these two normalization methods in each domain",
+   "grounded": true
+  },
+  {
+   "op": "update normalization parameters",
+   "canonical": "correct",
+   "object": "INVALID:normalization",
+   "quote": "learning separate affine parameters per domain",
+   "grounded": true
+  },
+  {
+   "op": "compute normalization weights",
+   "canonical": "compute normalization weights",
+   "object": "INVALID:domain",
+   "quote": "the activations are normalized by a weighted average of multiple normalization statistics",
+   "grounded": true
+  },
+  {
+   "op": "apply batch normalization",
+   "canonical": "apply batch normalization",
+   "object": "INVALID:activation",
+   "quote": "we employ batch and instance normalizations in our implementation",
+   "grounded": true
+  },
+  {
+   "op": "apply instance normalization",
+   "canonical": "apply instance normalization",
+   "object": "INVALID:activation",
+   "quote": "we employ batch and instance normalizations in our implementation",
+   "grounded": true
+  },
+  {
+   "op": "compute domain specific normalization",
+   "canonical": "compute domain specific normalization",
+   "object": "INVALID:activation",
+   "quote": "the activations are normalized by a weighted average of multiple normalization statistics",
+   "grounded": true
+  },
+  {
+   "op": "compute normalization combination",
+   "canonical": "compute normalization combination",
+   "object": "INVALID:normalization",
+   "quote": "identify the best combination of these two normalization methods in each domain",
+   "grounded": true
+  },
+  {
+   "op": "compute normalization weights per domain",
+   "canonical": "compute normalization weights per domain",
+   "object": "INVALID:domain",
+   "quote": "the activations are normalized by a weighted, average of multiple normalization statistics",
+   "grounded": true
+  },
+  {
+   "op": "compute normalization statistics per domain",
+   "canonical": "compute normalization statistics per domain",
+   "object": "INVALID:domain",
+   "quote": "the normalization statistics are kept track of separately for each normalization type if necessary",
+   "grounded": true
+  },
+  {
+   "op": "compute normalization weights across domains",
+   "canonical": "compute normalization weights across domains",
+   "object": "INVALID:domain",
+   "quote": "the activations are normalized by a weighted average of multiple normalization statistics",
+   "grounded": true
+  },
+  {
+   "op": "compute normalization statistics across domains",
+   "canonical": "compute normalization statistics across domains",
+   "object": "INVALID:domain",
+   "quote": "the normalization statistics are kept track of separately for each normalization type if necessary",
+   "grounded": true
+  },
+  {
+   "op": "compute normalization weights for each domain",
+   "canonical": "compute normalization weights for each domain",
+   "object": "INVALID:domain",
+   "quote": "the activations are normalized by a weighted average of multiple normalization statistics",
+   "grounded": true
+  },
+  {
+   "op": "compute normalization statistics for each domain",
+   "canonical": "compute normalization statistics for each domain",
+   "object": "INVALID:domain",
+   "quote": "the normalization statistics are kept track of separately for each normalization type if necessary",
+   "grounded": true
+  },
+  {
+   "op": "compute normalization weights for normalization type",
+   "canonical": "compute normalization weights for normalization type",
+   "object": "INVALID:normalization type",
+   "quote": "the normalization statistics are kept track of separately for each normalization type if necessary",
+   "grounded": true
+  },
+  {
+   "op": "compute normalization statistics for normalization type",
+   "canonical": "compute normalization statistics for normalization type",
+   "object": "INVALID:normalization type",
+   "quote": "the normalization statistics are kept track of separately for each normalization type if necessary",
+   "grounded": true
+  }
+ ],
+ "tuples": []
+}

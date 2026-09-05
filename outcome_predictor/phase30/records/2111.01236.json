@@ -1,0 +1,91 @@
+{
+ "arxiv_id": "2111.01236",
+ "source": "abstract",
+ "words": 179,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 3,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Vision Transformers (ViTs) have emerged with superior performance",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "latent",
+   "quote": "enhances ViTs to learn semantically-rich and spatially-precise multi-scale representations",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "integrating high-resolution multi-branch architectures with ViTs",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "balance the model performance and efficiency of HRViT by various branch-block co-optimization techniques",
+   "grounded": true
+  },
+  {
+   "op": "design",
+   "canonical": "design",
+   "object": "INVALID:branch",
+   "quote": "explore heterogeneous branch designs",
+   "grounded": true
+  },
+  {
+   "op": "reduce",
+   "canonical": "reduce",
+   "object": "INVALID:redundancy",
+   "quote": "reduce the redundancy in linear layers",
+   "grounded": true
+  },
+  {
+   "op": "enhance",
+   "canonical": "enhance",
+   "object": "INVALID:attention",
+   "quote": "augment the attention block with enhanced expressiveness",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "push the Pareto frontier of performance and efficiency on semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "HRViT achieves 50.20% mIoU on ADE20K and 83.16% mIoU on Cityscapes",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "surpassing state-of-the-art MiT and CSWin backbones with an average of +1.78 mIoU improvement",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compare@task",
+  "compute@value",
+  "encode@input",
+  "improve@parameter",
+  "predict@distribution",
+  "process@latent"
+ ]
+}

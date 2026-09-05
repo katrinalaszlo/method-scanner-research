@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2007.02355",
+ "source": "abstract",
+ "words": 174,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "collect votes",
+   "canonical": "collect votes",
+   "object": "state",
+   "quote": "Votes are collected from both near and long-distance locations based on a log-polar vote field.",
+   "grounded": true
+  },
+  {
+   "op": "compute vote sum",
+   "canonical": "compute vote sum",
+   "object": "state",
+   "quote": "HoughNet determines the presence of an object at a certain location by the sum of the votes cast on that location.",
+   "grounded": true
+  },
+  {
+   "op": "generate votes",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "Votes are collected from both near and long-distance locations based on a log-polar vote field.",
+   "grounded": true
+  },
+  {
+   "op": "integrate evidence",
+   "canonical": "integrate evidence",
+   "object": "state",
+   "quote": "HoughNet is able to integrate both near and long-range, class-conditional evidence for visual recognition.",
+   "grounded": true
+  },
+  {
+   "op": "detect object",
+   "canonical": "detect object",
+   "object": "state",
+   "quote": "HoughNet determines the presence of an object at a certain location by the sum of the votes cast on that location.",
+   "grounded": true
+  },
+  {
+   "op": "output detection",
+   "canonical": "output detection",
+   "object": "state",
+   "quote": "Hough,Net's best model achieves 46.4 $AP$ (and 65.1 $AP_{50}$), performing on par with the state-of-the-art in bottom-up object detection.",
+   "grounded": false
+  },
+  {
+   "op": "generate image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "We further validate the effectiveness of our proposal in another task, namely, 'labels to photo' image generation.",
+   "grounded": true
+  },
+  {
+   "op": "integrate module",
+   "canonical": "integrate module",
+   "object": "input",
+   "quote": "integrating the voting module of HoughNet to two different GAN models and showing that the accuracy is significantly improved in both cases.",
+   "grounded": true
+  },
+  {
+   "op": "sample image",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "integrating the voting module of HoughNet to two different GAN models and showing that the accuracy is significantly improved in both cases.",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "input",
+   "quote": "integrating the voting module of HoughNet to two different GAN models and showing that the accuracy is significantly improved in both cases.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "collect votes@state",
+  "compute accuracy@input",
+  "compute vote sum@state",
+  "detect object@state",
+  "integrate evidence@state",
+  "integrate module@input",
+  "output detection@state",
+  "reconstruct@input",
+  "reconstruct@state",
+  "sample@input"
+ ]
+}

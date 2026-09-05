@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "2011.02578",
+ "source": "abstract",
+ "words": 162,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "learn self-supervised representations from one-class data",
+   "grounded": true
+  },
+  {
+   "op": "contrast",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "extends training distributions via data augmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "obstruct the uniformity of contrastive representations",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "learn self-supervised representations from one-class data",
+   "grounded": true
+  },
+  {
+   "op": "build classifier",
+   "canonical": "build classifier",
+   "object": "latent",
+   "quote": "build one-class classifiers on learned representations",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "latent",
+   "quote": "classifiers inspired by the statistical perspective in generative or discriminative models",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "extends training distributions via data augmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "demonstrate state-of-the-art performance on visual domain one-class classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "INVALID:classifier",
+   "quote": "thoroughly evaluate different self-supervised representation learning algorithms",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "extends training distributions via data augmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "learn self-supervised representations from one-class data",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learn self-supervised representations from one-class data",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "build one-class classifiers on learned representations",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "demonstrate state-of-the-art performance on visual domain one-class classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "extends training distributions via data augmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "task",
+   "quote": "classifiers inspired by the statistical perspective in generative or discriminative models",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "demonstrate state-of-the-art performance on visual domain one-class classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "classifiers inspired by the statistical perspective in generative or discriminative models",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "task",
+   "quote": "demonstrate state-of-the-art performance on visual domain one-class classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "demonstrate state-of-the-art performance on visual domain one-class classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "task",
+   "quote": "demonstrate state-of-the-art performance on visual domain one-class classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "task",
+   "quote": "demonstrate state-of-the-art performance on visual domain one-class classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "demonstrate state-of-the-art performance on visual domain one-class classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "demonstrate state-of-the-art performance on visual domain one-class classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "task",
+   "quote": "demonstrate state-of-the-art performance on visual domain one-class classification benchmarks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "build classifier@latent",
+  "compare@distribution",
+  "compare@task",
+  "compute distribution@latent",
+  "compute distribution@task",
+  "compute gradient@parameter",
+  "compute gradient@task",
+  "compute policy@task",
+  "compute reward@task",
+  "compute value@latent",
+  "compute value@task",
+  "correct@parameter",
+  "correct@task",
+  "encode@input",
+  "predict@latent",
+  "reconstruct@distribution",
+  "reconstruct@sample",
+  "sample@distribution"
+ ]
+}

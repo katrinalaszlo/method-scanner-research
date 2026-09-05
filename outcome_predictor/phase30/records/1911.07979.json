@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "1911.07979",
+ "source": "abstract",
+ "words": 214,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 9,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "INVALID:node",
+   "quote": "utilizes a novel self-attention network",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "modified GNN formulation to capture the importance",
+   "grounded": true
+  },
+  {
+   "op": "assign cluster",
+   "canonical": "assign cluster",
+   "object": "INVALID:node",
+   "quote": "learns a sparse soft cluster assignment",
+   "grounded": true
+  },
+  {
+   "op": "pool subgraph",
+   "canonical": "pool subgraph",
+   "object": "INVALID:subgraph",
+   "quote": "effectively pool the subgraphs to form the pooled graph",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "combining existing GNN architectures with ASAP leads to state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "through extensive experiments on multiple datasets",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "differentiable pooling method",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "update parameters",
+   "grounded": false
+  },
+  {
+   "op": "generate representation",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "capture the importance of each node",
+   "grounded": true
+  },
+  {
+   "op": "summarize information",
+   "canonical": "summarize information",
+   "object": "INVALID:node",
+   "quote": "downsampling and summarizing the information present in the nodes",
+   "grounded": true
+  },
+  {
+   "op": "compute importance",
+   "canonical": "compute importance",
+   "object": "INVALID:node",
+   "quote": "modified GNN formulation to capture the importance",
+   "grounded": true
+  },
+  {
+   "op": "form pooled graph",
+   "canonical": "form pooled graph",
+   "object": "trajectory",
+   "quote": "effectively pool the subgraphs to form the pooled graph",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "state-of-the-art results on multiple graph classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "average improvement of 4%",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "extensive experiments on multiple datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "state-of-the-art results on multiple graph classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "INVALID:node",
+   "quote": "utilizes a novel self-attention network",
+   "grounded": true
+  },
+  {
+   "op": "compute cluster",
+   "canonical": "compute cluster",
+   "object": "INVALID:node",
+   "quote": "learns a sparse soft cluster assignment",
+   "grounded": true
+  },
+  {
+   "op": "generate cluster",
+   "canonical": "reconstruct",
+   "object": "INVALID:node",
+   "quote": "sparse soft cluster assignment",
+   "grounded": true
+  },
+  {
+   "op": "compute representation",
+   "canonical": "compute representation",
+   "object": "latent",
+   "quote": "capture the importance of each node",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "differentiable pooling method",
+   "grounded": true
+  },
+  {
+   "op": "update weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "through extensive experiments on multiple datasets",
+   "grounded": true
+  },
+  {
+   "op": "apply loss",
+   "canonical": "apply loss",
+   "object": "error",
+   "quote": "compute loss",
+   "grounded": false
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "distribution",
+   "quote": "state-of-the-art results on multiple graph classification benchmarks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "apply loss@error",
+  "backpropagate@gradient",
+  "compare@error",
+  "compare@task",
+  "compute gradient@gradient",
+  "compute representation@latent",
+  "compute reward@reward",
+  "compute score@distribution",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "form pooled graph@trajectory",
+  "reconstruct@latent"
+ ]
+}

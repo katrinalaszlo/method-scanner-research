@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2405.01101",
+ "source": "abstract",
+ "words": 201,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "features extracted independently from multiple images",
+   "grounded": true
+  },
+  {
+   "op": "generate feature",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "generates multi-view features using features extracted independently",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "relying only on similarity based on multi-view features",
+   "grounded": true
+  },
+  {
+   "op": "compute measure",
+   "canonical": "compute measure",
+   "object": "distribution",
+   "quote": "generating a more robust similarity measure by combining various measures",
+   "grounded": false
+  },
+  {
+   "op": "combine measure",
+   "canonical": "aggregate",
+   "object": "value",
+   "quote": "generating a more robust similarity measure by combining various measures",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "improves Rank@1 accuracy and Mean Average Precision (mAP)",
+   "grounded": true
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "task",
+   "quote": "improves Rank@1 accuracy and Mean Average Precision (mAP)",
+   "grounded": true
+  },
+  {
+   "op": "compute rank",
+   "canonical": "compute rank",
+   "object": "task",
+   "quote": "improves Rank@3 accuracy and Mean Average Precision (mAP)",
+   "grounded": false
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "task",
+   "quote": "improves Rank@1 accuracy and Mean Average Precision (mAP)",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "when evaluated on person re-identification datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "improves Rank@1 accuracy and Mean Average Precision (mAP)",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "improves Rank@1 accuracy and Mean Average Precision (mAP)",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improves Rank@1 accuracy and Mean Average Precision (mAP)",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "generating a more robust similarity measure by combining various measures",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "generating a more robust similarity measure by combining various measures",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "generating a more robust similarity measure by combining various measures",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "when evaluated on person re-identification datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "when evaluated on person re-identification datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute measure",
+   "canonical": "compute measure",
+   "object": "value",
+   "quote": "generating a more robust similarity measure by combining various measures",
+   "grounded": false
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "value",
+   "quote": "generating a more robust similarity measure by combining various measures",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "improves Rank@1 accuracy and Mean Average Precision (mAP)",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "improves Rank@1 accuracy and Mean Average Precision (mAP)",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "improves Rank@1 accuracy and Mean Average Precision (mAP)",
+   "grounded": true
+  },
+  {
+   "op": "update model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improves Rank@1 accuracy and Mean Average Precision (mAP)",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "improves Rank@1 accuracy and Mean Average Precision (mAP)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@value",
+  "compare@error",
+  "compute accuracy@task",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute measure@distribution",
+  "compute measure@value",
+  "compute metric@task",
+  "compute precision@task",
+  "compute rank@task",
+  "compute reward@task",
+  "compute sample@sample",
+  "compute similarity@latent",
+  "compute similarity@value",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "extract feature@input",
+  "reconstruct@latent"
+ ]
+}

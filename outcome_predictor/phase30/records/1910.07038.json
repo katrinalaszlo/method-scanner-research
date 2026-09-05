@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "1910.07038",
+ "source": "abstract",
+ "words": 130,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "initialize parameters",
+   "canonical": "initialize parameters",
+   "object": "parameter",
+   "quote": "a small-sized randomly initialized model",
+   "grounded": true
+  },
+  {
+   "op": "forward pass",
+   "canonical": "forward pass",
+   "object": "input",
+   "quote": "most SotA methods are based on heavy pre-trained models",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we show the robustness of the network",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we show the robustness of the network",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we show the robust andness of the network",
+   "grounded": false
+  },
+  {
+   "op": "sample batch",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "we show the robustness of the network",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we show the representation power of our ReID network",
+   "grounded": true
+  },
+  {
+   "op": "predict embedding",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "we show the representation power of our ReID network",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we show the representation power of our ReID network",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we show the representation power of our ReID network",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we show the representation power of our ReID network",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "we show the robustness of the network",
+   "grounded": true
+  },
+  {
+   "op": "store trajectory",
+   "canonical": "store trajectory",
+   "object": "trajectory",
+   "quote": "we show the representation power of our ReID network",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we show the robustness of the network",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "we show the robustness of the network",
+   "grounded": true
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "task",
+   "quote": "we show the robustness of the network",
+   "grounded": true
+  },
+  {
+   "op": "compute recall",
+   "canonical": "compute recall",
+   "object": "task",
+   "quote": "we show the robustness of the network",
+   "grounded": true
+  },
+  {
+   "op": "compute f1 score",
+   "canonical": "compute f1 score",
+   "object": "task",
+   "quote": "we show the robustness of the network",
+   "grounded": true
+  },
+  {
+   "op": "log metrics",
+   "canonical": "log metrics",
+   "object": "task",
+   "quote": "we show the robustness of the network",
+   "grounded": true
+  },
+  {
+   "op": "save model",
+   "canonical": "save model",
+   "object": "parameter",
+   "quote": "we show the robustness of the network",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compute accuracy@task",
+  "compute f1 score@task",
+  "compute precision@task",
+  "compute recall@task",
+  "compute reward@reward",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "forward pass@input",
+  "initialize parameters@parameter",
+  "log metrics@task",
+  "predict@latent",
+  "reconstruct@noise",
+  "sample@input",
+  "sample@sample",
+  "save model@parameter",
+  "store trajectory@trajectory"
+ ]
+}

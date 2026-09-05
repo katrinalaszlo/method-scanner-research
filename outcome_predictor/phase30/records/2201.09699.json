@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2201.09699",
+ "source": "abstract",
+ "words": 160,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "obtain good classification performance on new problems",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "reaching or even beating state of the art performance",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "simple methodology that reaches or even beats state of the art performance",
+   "grounded": false
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "leveraging knowledge learned by one or more deep learning models",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "obtain good classification performance on new problems",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "state-of-the-art few-shot classification with simple ingredients",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "simple methodology that reaches or even beats state of the art performance",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "using better initial models without the introduced ingredients",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "reward",
+   "quote": "obtain good classification performance on new problems",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "state-of-the-art few-shot classification with simple ingredients",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "using better initial models without the introduced ingredients",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "state-of-the-art few than shot classification with simple ingredients",
+   "grounded": false
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "policy",
+   "quote": "simple methodology that reaches or even beats state of the art performance",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "obtain good classification performance on new problems",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "reaching or even beating state of the art performance",
+   "grounded": false
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "state-of-the-art few-shot classification with simple ingredients",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "obtain good classification performance on new problems",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "state-of-the-art few-shot classification with simple ingredients",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "state-of-the-art few-shot classification with simple ingredients",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "error",
+   "quote": "using better initial models without the introduced ingredients",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "obtain good classification performance on new problems",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "state-of-the-art few-shot classification with simple ingredients",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "task",
+   "quote": "state-of-the-art few-shot classification with simple ingredients",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "reaching or even beating state of the art performance",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "obtain good classification performance on new problems",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@error",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@task",
+  "compute distribution@latent",
+  "compute distribution@task",
+  "compute reward@task",
+  "compute value@reward",
+  "compute value@task",
+  "correct@parameter",
+  "correct@policy",
+  "encode@input",
+  "predict@policy",
+  "predict@task",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@policy",
+  "sample@sample",
+  "sample@task",
+  "sample@trajectory"
+ ]
+}

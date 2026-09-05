@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2109.12932",
+ "source": "abstract",
+ "words": 221,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "split image",
+   "canonical": "split image",
+   "object": "input",
+   "quote": "divide each input image into several image patches",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "obtain dense local features",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "latent",
+   "quote": "calculate the distance between dense local representations",
+   "grounded": true
+  },
+  {
+   "op": "select patches",
+   "canonical": "select patches",
+   "object": "latent",
+   "quote": "select task-relevant image patches",
+   "grounded": true
+  },
+  {
+   "op": "suppress patches",
+   "canonical": "suppress",
+   "object": "latent",
+   "quote": "suppress task-irrelevant image patches",
+   "grounded": true
+  },
+  {
+   "op": "find correspondence",
+   "canonical": "find correspondence",
+   "object": "latent",
+   "quote": "find spatial correspondence between the query image and the full support set",
+   "grounded": true
+  },
+  {
+   "op": "match patches",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "calculate the distance between dense local representations",
+   "grounded": true
+  },
+  {
+   "op": "determine category",
+   "canonical": "determine category",
+   "object": "latent",
+   "quote": "determine which category the query image belongs to in the support set",
+   "grounded": false
+  },
+  {
+   "op": "transform features",
+   "canonical": "transform features",
+   "object": "latent",
+   "quote": "find task-relevant features and suppress task-irrelevant features",
+   "grounded": false
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "obtain dense local features",
+   "grounded": true
+  },
+  {
+   "op": "compare features",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "calculate the distance between dense local representations",
+   "grounded": true
+  },
+  {
+   "op": "assign class",
+   "canonical": "assign class",
+   "object": "latent",
+   "quote": "determine which category the query image belongs to in the support set",
+   "grounded": false
+  },
+  {
+   "op": "process patches",
+   "canonical": "process patches",
+   "object": "latent",
+   "quote": "obtain dense local features",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "calculate the distance between dense local representations",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "determine which category the query image belongs to in the support set",
+   "grounded": false
+  },
+  {
+   "op": "filter features",
+   "canonical": "filter features",
+   "object": "latent",
+   "quote": "select task-relevant image patches and suppress task-irrelevant image patches",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "obtain dense local features",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "latent",
+   "quote": "calculate the distance between dense local representations",
+   "grounded": true
+  },
+  {
+   "op": "classify image",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "determine which category the query image belongs to in the support set",
+   "grounded": false
+  },
+  {
+   "op": "match representations",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "calculate the distance between dense local representations",
+   "grounded": true
+  },
+  {
+   "op": "select relevant",
+   "canonical": "select relevant",
+   "object": "latent",
+   "quote": "select task-relevant image patches",
+   "grounded": true
+  },
+  {
+   "op": "remove irrelevant",
+   "canonical": "remove irrelevant",
+   "object": "latent",
+   "quote": "suppress task-irrelevant image patches",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "latent",
+   "quote": "calculate the distance between dense local representations",
+   "grounded": true
+  },
+  {
+   "op": "assign label",
+   "canonical": "assign label",
+   "object": "latent",
+   "quote": "determine which category the query image belongs to in the support set",
+   "grounded": false
+  },
+  {
+   "op": "find features",
+   "canonical": "find features",
+   "object": "input",
+   "quote": "obtain dense local features",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "assign class@latent",
+  "assign label@latent",
+  "classify@input",
+  "compare@latent",
+  "compute distance@latent",
+  "compute metric@latent",
+  "compute similarity@latent",
+  "determine category@latent",
+  "encode@input",
+  "filter features@latent",
+  "find correspondence@latent",
+  "find features@input",
+  "process patches@latent",
+  "reconstruct@latent",
+  "remove irrelevant@latent",
+  "select patches@latent",
+  "select relevant@latent",
+  "split image@input",
+  "suppress@latent",
+  "transform features@latent"
+ ]
+}

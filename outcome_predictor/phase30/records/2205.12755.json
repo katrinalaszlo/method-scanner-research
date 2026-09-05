@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "2205.12755",
+ "source": "abstract",
+ "words": 229,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "initialize parameters",
+   "canonical": "initialize parameters",
+   "object": "parameter",
+   "quote": "We propose an evolutionary method capable of generating large scale multitask models",
+   "grounded": true
+  },
+  {
+   "op": "evaluate task performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "We demonstrate empirically that the proposed method can jointly solve and achieve competitive results on 69public image classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "We demonstrate empirically that the proposed method can jointly solve and achieve competitive results on 69public image classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We propose an evolutionary method capable of generating large scale multitask models",
+   "grounded": true
+  },
+  {
+   "op": "route task",
+   "canonical": "route task",
+   "object": "task",
+   "quote": "The generated multitask models are sparsely activated and integrates a task-based routing that guarantees bounded compute cost",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "The proposed method relies on a knowledge compartmentalization technique to achieve immunity against catastrophic forgetting",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "The proposed method relies on a knowledge compartmentalization technique to achieve immunity against catastrophic forgetting",
+   "grounded": true
+  },
+  {
+   "op": "select task",
+   "canonical": "select task",
+   "object": "task",
+   "quote": "We propose an evolutionary method capable of generating large scale multitask models that support the dynamic addition of new tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "We demonstrate empirically that the proposed method can jointly solve and achieve competitive results on 69public image classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "The proposed method relies on a knowledge compartmentalization technique to achieve immunity against catastrophic forgetting",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "The generated multitask models are sparsely activated and integrates a task-based routing that guarantees bounded compute cost",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "We demonstrate empirically that the proposed method can jointly solve and achieve competitive results on 69public image classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "The generated multitask models are sparsely activated and integrates a task-based routing that guarantees bounded compute cost",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "The proposed method relies on a knowledge compartmentalization technique to achieve immunity against catastrophic forgetting",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "The proposed method relies on a knowledge compartmentalization technique to achieve immunity against catastrophic forgetting",
+   "grounded": true
+  },
+  {
+   "op": "store trajectory",
+   "canonical": "store trajectory",
+   "object": "trajectory",
+   "quote": "We demonstrate empirically that the proposed method can jointly solve and achieve competitive results on 69public image classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "The proposed method relies on a knowledge compartmentalization technique to achieve immunity against catastrophic forgetting",
+   "grounded": true
+  },
+  {
+   "op": "generate task",
+   "canonical": "reconstruct",
+   "object": "task",
+   "quote": "We propose an evolutionary method capable of generating large scale multitask models that support the dynamic addition of new tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "The generated multitask models are sparsely activated and integrates a task-based routing that guarantees bounded compute cost",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "We demonstrate empirically that the proposed method can jointly solve and achieve competitive results on 69public image classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "denoise trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "We demonstrate empirically that the proposed method can jointly solve and achieve competitive results on 69public image classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "update task",
+   "canonical": "correct",
+   "object": "task",
+   "quote": "We propose an evolutionary method capable of generating large scale multitask models that support the dynamic addition of new tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "We demonstrate empirically that the proposed method can jointly solve and achieve competitive results on 69public image classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "The generated multitask models are sparsely activated and integrates a task-based routing that guarantees bounded compute cost",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "The generated multitask models are sparsely activated and integrates a task-based routing that guarantees bounded compute cost",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute value@value",
+  "correct@parameter",
+  "correct@task",
+  "evaluate@task",
+  "initialize parameters@parameter",
+  "predict@reward",
+  "reconstruct@noise",
+  "reconstruct@task",
+  "reconstruct@trajectory",
+  "route task@task",
+  "sample@action",
+  "sample@sample",
+  "select task@task",
+  "store trajectory@trajectory"
+ ]
+}

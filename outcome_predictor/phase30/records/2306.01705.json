@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2306.01705",
+ "source": "abstract",
+ "words": 214,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "sample attention",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "the number of possible connectivity patterns increases exponentially",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "the dense self-attention mechanism which gives a lot of flexibility",
+   "grounded": true
+  },
+  {
+   "op": "aggregate attention",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the number of possible connectivity patterns increases exponentially",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose Stochastically Subsampled self-Attention (SSA)",
+   "grounded": false
+  },
+  {
+   "op": "predict attention",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "the overall distribution of these pathways is often predictable",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "input",
+   "quote": "the dynamic (i.e., input-dependent) nature of these pathways",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "improving generalization over dense training",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose Stochastically Subsampled self-Attention (SSA)",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention@input",
+  "compute attention@latent",
+  "compute gradient@gradient",
+  "correct@parameter",
+  "predict@distribution",
+  "sample@input"
+ ]
+}

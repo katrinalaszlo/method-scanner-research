@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2012.12111",
+ "source": "abstract",
+ "words": 294,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we applied it to autoencoders",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "the autoencoder is trained on the reconstruction task only",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "minimizing the L_2 distance between the output representation and a reference point",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the autoencoder is trained on the reconstruction task only",
+   "grounded": true
+  },
+  {
+   "op": "retain encoder",
+   "canonical": "retain encoder",
+   "object": "INVALID:encoder",
+   "quote": "we only retain the encoder tasked with minimizing the L_2 distance",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "latent",
+   "quote": "the deep representations extracted from the trained layers",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we combine the deep features extracted at the various trained layers",
+   "grounded": true
+  },
+  {
+   "op": "detect anomaly",
+   "canonical": "detect anomaly",
+   "object": "state",
+   "quote": "the deep representations extracted from the trained layers are combined to detect anomalies",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compare@state",
+  "correct@parameter",
+  "detect anomaly@state",
+  "encode@input",
+  "extract feature@latent",
+  "reconstruct@state"
+ ]
+}

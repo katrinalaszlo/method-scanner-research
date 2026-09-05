@@ -1,0 +1,198 @@
+{
+ "arxiv_id": "2207.09176",
+ "source": "abstract",
+ "words": 176,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 8,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "compute mutual information",
+   "canonical": "compute mutual information",
+   "object": "INVALID:instance",
+   "quote": "we maximize the mutual information (MI) of instances and their representations",
+   "grounded": true
+  },
+  {
+   "op": "estimate mutual information",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "with a low-bias MI estimator to perform self-supervised pre-training",
+   "grounded": true
+  },
+  {
+   "op": "learn representation",
+   "canonical": "train",
+   "object": "input",
+   "quote": "learning representations with self-supervision",
+   "grounded": true
+  },
+  {
+   "op": "maximize mutual information",
+   "canonical": "maximize mutual information",
+   "object": "INVALID:instance",
+   "quote": "we maximize the mutual information (MI) of instances and their representations",
+   "grounded": true
+  },
+  {
+   "op": "capture intrinsic structure",
+   "canonical": "capture intrinsic structure",
+   "object": "INVALID:data",
+   "quote": "learning comprehensive representations by capturing the intrinsic structure of the data",
+   "grounded": false
+  },
+  {
+   "op": "compute mutual information objective",
+   "canonical": "compute mutual information objective",
+   "object": "INVALID:instance",
+   "quote": "we maximize the mutual, information (MI) of instances and their representations",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "self-supervised pre-training",
+   "grounded": true
+  },
+  {
+   "op": "generalize to unseen classes",
+   "canonical": "generalize to unseen classes",
+   "object": "task",
+   "quote": "resulting in better generalization for unseen classes",
+   "grounded": true
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "extensive experiments are further conducted to analyze their FSL performance",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Surprisingly, the results show that self-supervised pre-training can outperform supervised pre-training",
+   "grounded": true
+  },
+  {
+   "op": "achieve comparable performance",
+   "canonical": "achieve comparable performance",
+   "object": "task",
+   "quote": "our approach achieves comparable performance on widely used FSL benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "self-supervised pre-training",
+   "grounded": true
+  },
+  {
+   "op": "pre-train model",
+   "canonical": "pre-train model",
+   "object": "parameter",
+   "quote": "self-supervised pre-training",
+   "grounded": true
+  },
+  {
+   "op": "learn representation",
+   "canonical": "train",
+   "object": "input",
+   "quote": "learning representations with self-supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute mutual information",
+   "canonical": "compute mutual information",
+   "object": "INVALID:instance",
+   "quote": "we maximize the mutual information (MI) of instances and their representations",
+   "grounded": true
+  },
+  {
+   "op": "maximize mutual information",
+   "canonical": "maximize mutual information",
+   "object": "INVALID:instance",
+   "quote": "we maximize the mutual information (MI) of instances and their representations",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "self-supervised pre-training",
+   "grounded": true
+  },
+  {
+   "op": "generalize to unseen classes",
+   "canonical": "generalize to unseen classes",
+   "object": "task",
+   "quote": "resulting in better generalization for unseen classes",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Surprisingly, the results show that self-supervised pre-training can outperform supervised pre-training",
+   "grounded": true
+  },
+  {
+   "op": "achieve comparable performance",
+   "canonical": "achieve comparable performance",
+   "object": "task",
+   "quote": "our approach achieves comparable performance on widely used FSL benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "self-supervised pre-training",
+   "grounded": true
+  },
+  {
+   "op": "pre-train model",
+   "canonical": "pre-train model",
+   "object": "parameter",
+   "quote": "self-supervised pre-training",
+   "grounded": true
+  },
+  {
+   "op": "learn representation",
+   "canonical": "train",
+   "object": "input",
+   "quote": "learning representations with self-supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute mutual information",
+   "canonical": "compute mutual information",
+   "object": "INVALID:instance",
+   "quote": "we maximize the mutual information (MI) of instances and their representations",
+   "grounded": true
+  },
+  {
+   "op": "maximize mutual information",
+   "canonical": "maximize mutual information",
+   "object": "INVALID:instance",
+   "quote": "we maximize the mutual information (MI) of instances and their representations",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "achieve comparable performance@task",
+  "compare@task",
+  "correct@parameter",
+  "evaluate@task",
+  "generalize to unseen classes@task",
+  "pre-train model@parameter",
+  "predict@latent",
+  "train@input",
+  "train@parameter"
+ ]
+}

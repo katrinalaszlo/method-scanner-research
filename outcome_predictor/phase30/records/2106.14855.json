@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2106.14855",
+ "source": "abstract",
+ "words": 183,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "generate mask",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "each kernel is responsible for generating a mask for either a potential instance or a stuff class",
+   "grounded": true
+  },
+  {
+   "op": "update kernel",
+   "canonical": "correct",
+   "object": "INVALID:kernel",
+   "quote": "we propose a kernel update strategy that enables each kernel dynamic and conditional on its meaningful group in the input image",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "K-Net can be trained in an end-to-end manner with bipartite matching",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "K-Net can be trained in an end-to-end manner with bipart,ite matching",
+   "grounded": true
+  },
+  {
+   "op": "apply kernel",
+   "canonical": "apply kernel",
+   "object": "input",
+   "quote": "each kernel is responsible for generating a mask for either a potential instance or a stuff class",
+   "grounded": true
+  },
+  {
+   "op": "predict mask",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "K-Net segments both instances and semantic categories consistently by a group of learnable kernels",
+   "grounded": false
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "we propose a kernel update strategy that enables each kernel dynamic and conditional on its meaningful group in the input image",
+   "grounded": true
+  },
+  {
+   "op": "select kernel",
+   "canonical": "select kernel",
+   "object": "input",
+   "quote": "each kernel is responsible for generating a mask for either a potential instance or a stuff class",
+   "grounded": true
+  },
+  {
+   "op": "apply kernel",
+   "canonical": "apply kernel",
+   "object": "input",
+   "quote": "each kernel is responsible for generating a mask for either a potential instance or a stuff class",
+   "grounded": true
+  },
+  {
+   "op": "compute mask",
+   "canonical": "compute mask",
+   "object": "input",
+   "quote": "each kernel is responsible for generating a mask for either a potential instance or a stuff class",
+   "grounded": true
+  },
+  {
+   "op": "aggregate masks",
+   "canonical": "aggregate",
+   "object": "INVALID:mask",
+   "quote": "K-Net segments both instances and semantic categories consistently by a group of learnable kernels",
+   "grounded": false
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "distribution",
+   "quote": "we propose a kernel update strategy that enables each kernel dynamic and conditional on its meaningful group in the input image",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "K-Net can be trained in an end-to-end manner with bipartite matching",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "K-Net can be trained in an end-to-end manner with bipartite matching",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "K-Net can be trained in an end-to-end manner with bipartite matching",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "K-Net segments both instances and semantic categories consistently by a group of learnable kernels",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "K-Net can be trained in an end-to-end manner with bipartite matching",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "K-Net can be trained in an end-to-end manner with bipartite matching",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "K-Net can be trained in an end-to-end manner with bipartite matching",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "K-Net can be trained in an end-to-end manner with bipartite matching",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "K-Net can be trained in an end-to-end manner with bipartite matching",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "K-Net can be trained in an end-to-end manner with bipartite matching",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "K-Net can be trained in an end-to-end manner with bipartite matching",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "K-Net can be trained in an end-to-end manner with bipartite matching",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "K-Net can be trained in an end-to-end manner with bipartite matching",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply kernel@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute mask@input",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute score@distribution",
+  "compute similarity@distribution",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "predict@input",
+  "reconstruct@input",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "select kernel@input"
+ ]
+}

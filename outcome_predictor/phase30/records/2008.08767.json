@@ -1,0 +1,89 @@
+{
+ "arxiv_id": "2008.08767",
+ "source": "abstract",
+ "words": 136,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 5,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "INVALID:layer",
+   "quote": "the proposed LAM adaptively emphasizes hierarchical features",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "INVALID:channel",
+   "quote": "CSAM learns the confidence at all the positions of each channel",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "INVALID:position",
+   "quote": "CSAM learns the confidence at all the positions of each channel",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "informative features play a crucial role",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "channel attention has been demonstrated to be effective",
+   "grounded": true
+  },
+  {
+   "op": "aggregate feature",
+   "canonical": "aggregate",
+   "object": "INVALID:layer",
+   "quote": "LAM adaptively emphasizes hierarchical features",
+   "grounded": true
+  },
+  {
+   "op": "aggregate feature",
+   "canonical": "aggregate",
+   "object": "INVALID:channel",
+   "quote": "CSAM learns the confidence at all the positions of each channel",
+   "grounded": true
+  },
+  {
+   "op": "select feature",
+   "canonical": "select feature",
+   "object": "distribution",
+   "quote": "selectively capture more informative features",
+   "grounded": true
+  },
+  {
+   "op": "combine feature",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "model the holistic interdependencies among layers, channels, and positions",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "the proposed HAN performs favorably against the state-of-the-art",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention@latent",
+  "extract feature@input",
+  "reconstruct@input",
+  "select feature@distribution"
+ ]
+}

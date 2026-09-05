@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "1912.05070",
+ "source": "abstract",
+ "words": 182,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 2,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "detect object",
+   "canonical": "detect object",
+   "object": "input",
+   "quote": "object detection and instance segmentation are two fundamental computer vision tasks.",
+   "grounded": true
+  },
+  {
+   "op": "segment instance",
+   "canonical": "segment instance",
+   "object": "input",
+   "quote": "object detection and instance segmentation are two fundamental computer vision tasks.",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "we design a two-stream structure to learn features on both the object level (i.e., bounding boxes) and the pixel level (i.e., instance masks) jointly.",
+   "grounded": true
+  },
+  {
+   "op": "fuse information",
+   "canonical": "fuse information",
+   "object": "latent",
+   "quote": "information from the two streams is fused alternately",
+   "grounded": true
+  },
+  {
+   "op": "refine localization",
+   "canonical": "correct",
+   "object": "INVALID:object",
+   "quote": "information on the pixel level refines the localization accuracy of objects on the object level in return.",
+   "grounded": true
+  },
+  {
+   "op": "generate mask",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "a correlation module and a cropping module are proposed to yield instance masks",
+   "grounded": true
+  },
+  {
+   "op": "refine boundary",
+   "canonical": "correct",
+   "object": "INVALID:bounding box",
+   "quote": "a mask based boundary refinement module for more accurate bounding boxes",
+   "grounded": true
+  },
+  {
+   "op": "produce output",
+   "canonical": "produce output",
+   "object": "input",
+   "quote": "extensive experimental analyses and comparisons on the COCO dataset demonstrate the effectiveness and efficiency of RDSNet.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "detect object@input",
+  "extract feature@input",
+  "fuse information@latent",
+  "produce output@input",
+  "reconstruct@input",
+  "segment instance@input"
+ ]
+}

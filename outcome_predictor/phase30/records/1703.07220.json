@@ -1,0 +1,171 @@
+{
+ "arxiv_id": "1703.07220",
+ "source": "abstract",
+ "words": 199,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 2,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose an attribute-person recognition (APR) network",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:attribute",
+   "quote": "predicts pedestrian attributes",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "re-weight the attribute predictions",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learns a re-ID embedding",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "benefit from each other",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "manually annotate attribute labels",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:identity",
+   "quote": "take identity labels of pedestrians into consideration",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "systematically investigate how person re-ID and attribute recognition benefit from each other",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "re-weight the attribute predictions considering the dependencies and correlations among the attributes",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "speed up the retrieval process",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "apply APR on the attribute recognition task",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "demonstrate improvement over the baselines",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "learns a re-ID embedding and at the same, predicts pedestrian attributes",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "systematically investigate how person re-ID and attribute recognition benefit from each other",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "learn a more discriminative representation",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "manually annotate attribute labels for two large-scale re-ID datasets",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "speed up the retrieval process by ten times",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "demonstrate improvement over the baselines",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "achieves competitive re-ID performance compared with the state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "filter",
+   "canonical": "filter",
+   "object": "sample",
+   "quote": "re-weight the attribute predictions considering the dependencies and correlations among the attributes",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "backpropagate@gradient",
+  "compare@value",
+  "compute@distribution",
+  "compute@error",
+  "compute@reward",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "filter@sample",
+  "predict@task",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "sample@distribution",
+  "sample@sample",
+  "transform@latent"
+ ]
+}

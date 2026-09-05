@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "2107.06278",
+ "source": "abstract",
+ "words": 148,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "predict mask",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "predicts a set of binary masks, each associated with a single global class label prediction",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "classify class",
+   "canonical": "classify",
+   "object": "distribution",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the proposed mask, classification-based method simplifies the landscape of effective approaches",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the proposed mask classification-based method simplifies the landscape of effective approaches",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "classify@distribution",
+  "clip@gradient",
+  "compare@error",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute input@input",
+  "compute latent@latent",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@reward",
+  "predict@state",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

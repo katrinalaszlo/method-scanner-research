@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1906.12021",
+ "source": "abstract",
+ "words": 166,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "super-resolution convolutional neural networks have recently demonstrated high-quality restoration for single images",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "current convolutional neural networks for super-resolution are unable to exploit features at multiple scales",
+   "grounded": true
+  },
+  {
+   "op": "apply residual",
+   "canonical": "apply residual",
+   "object": "latent",
+   "quote": "the proposed network employs cascading residual on the residual structure",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "deep supervision is achieved via the densely concatenated residual blocks settings",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "we propose Laplacian attention to model the crucial features",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "densely concatenated residual blocks settings, which also helps in learning from high-level complex features",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "super-resolution convolutional neural networks have recently demonstrated high-quality restoration for single images",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "comprehensive quantitative and qualitative evaluations on low-resolution, noisy low-resolution, and real historical image benchmark datasets",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@distribution",
+  "aggregate@latent",
+  "apply residual@latent",
+  "compute attention@latent",
+  "encode@input",
+  "encode@state",
+  "predict@state",
+  "reconstruct@state"
+ ]
+}

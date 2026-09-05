@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2011.10566",
+ "source": "abstract",
+ "words": 147,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "state",
+   "quote": "maximize the similarity between two augmentations of one image",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "maximize the similarity between two augmentations of one image",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "maximize the similarity between two augmentations of one image",
+   "grounded": true
+  },
+  {
+   "op": "apply stop gradient",
+   "canonical": "apply stop gradient",
+   "object": "gradient",
+   "quote": "a stop-gradient operation plays an essential role in preventing collapsing",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Our SimSiam method achieves competitive results on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "predict representation",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "Siamese networks have become a common structure",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "Siames, networks have become a common structure",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "a stop-gradient operation plays an essential role in preventing collapsing",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient descent",
+   "canonical": "apply gradient descent",
+   "object": "parameter",
+   "quote": "Our SimSiam method achieves competitive results on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "Our SimSiam method achieves competitive results on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Our SimSiam method achieves competitive results on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "store representation",
+   "canonical": "store representation",
+   "object": "latent",
+   "quote": "Siamese networks have become a common structure",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Our SimSiam method achieves competitive results on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "apply normalization",
+   "canonical": "apply normalization",
+   "object": "state",
+   "quote": "Siamese networks have become a common structure",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "Siamese networks have become a common structure",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "Siamese networks have become a common structure",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "Our SimSiam method achieves competitive results on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "state",
+   "quote": "Siamese networks have become a common structure",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "Siamese networks have become a common structure",
+   "grounded": true
+  },
+  {
+   "op": "apply clipping",
+   "canonical": "apply clipping",
+   "object": "gradient",
+   "quote": "a stop-gradient operation plays an essential role in preventing collapsing",
+   "grounded": true
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "Our SimSiam method achieves competitive results on ImageNet",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "maximize the similarity between two augmentations of one image",
+   "grounded": true
+  },
+  {
+   "op": "apply scaling",
+   "canonical": "apply scaling",
+   "object": "state",
+   "quote": "Siamese networks have become a common structure",
+   "grounded": true
+  },
+  {
+   "op": "apply mapping",
+   "canonical": "apply mapping",
+   "object": "state",
+   "quote": "Siamese networks have become a common structure",
+   "grounded": true
+  },
+  {
+   "op": "apply filtering",
+   "canonical": "apply filtering",
+   "object": "state",
+   "quote": "Siamese networks have become a common structure",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply augmentation@input",
+  "apply clipping@gradient",
+  "apply filtering@state",
+  "apply gradient descent@parameter",
+  "apply mapping@state",
+  "apply normalization@state",
+  "apply regularization@parameter",
+  "apply scaling@state",
+  "apply stop gradient@gradient",
+  "apply transformation@state",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute similarity@state",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@latent",
+  "reconstruct@state",
+  "sample@input",
+  "store representation@latent"
+ ]
+}

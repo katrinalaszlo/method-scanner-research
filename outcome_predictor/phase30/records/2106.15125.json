@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2106.15125",
+ "source": "abstract",
+ "words": 205,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "extract discriminative features over all skeleton joints",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "recent advanced separable convolutional layers are embedded",
+   "grounded": true
+  },
+  {
+   "op": "combine branches",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "early fused Multiple Input Branches (MIB) network",
+   "grounded": true
+  },
+  {
+   "op": "compute graph convolution",
+   "canonical": "compute graph convolution",
+   "object": "latent",
+   "quote": "constructing an efficient Graph Convolutional Network (GCN) baseline",
+   "grounded": true
+  },
+  {
+   "op": "scale model width",
+   "canonical": "scale model width",
+   "object": "parameter",
+   "quote": "design a compound scaling strategy to expand the model's width",
+   "grounded": true
+  },
+  {
+   "op": "scale model depth",
+   "canonical": "scale model depth",
+   "object": "parameter",
+   "quote": "expand the model's width and depth synchronously",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "model training and inference has increased the validation costs",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "the proposed EfficientGCN-B4 baseline outperforms other SOTA methods",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "compute graph convolution@latent",
+  "evaluate@task",
+  "process input@input",
+  "scale model depth@parameter",
+  "scale model width@parameter",
+  "train@parameter"
+ ]
+}

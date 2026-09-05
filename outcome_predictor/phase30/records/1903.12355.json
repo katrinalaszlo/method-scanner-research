@@ -1,0 +1,222 @@
+{
+ "arxiv_id": "1903.12355",
+ "source": "abstract",
+ "words": 179,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "maximizing a metric of local aggregation",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "training an embedding function",
+   "grounded": false
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "learning visual embeddings",
+   "grounded": false
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "state",
+   "quote": "similar data instances to move together",
+   "grounded": true
+  },
+  {
+   "op": "aggregate local",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "causing similar data instances to move together",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "state",
+   "quote": "allowing dissimilar instances to separate",
+   "grounded": true
+  },
+  {
+   "op": "sample cluster",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "dynamic, allowing soft clusters of different scales to emerge",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "maximizing a metric of local aggregation",
+   "grounded": false
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "training an embedding function",
+   "grounded": false
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "error",
+   "quote": "maximizing a metric of local aggregation",
+   "grounded": false
+  },
+  {
+   "op": "compare instance",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "similar data instances to move together",
+   "grounded": true
+  },
+  {
+   "op": "separate dissimilar",
+   "canonical": "separate dissimilar",
+   "object": "state",
+   "quote": "allowing dissimilar instances to separate",
+   "grounded": true
+  },
+  {
+   "op": "compute cluster",
+   "canonical": "compute cluster",
+   "object": "distribution",
+   "quote": "dynamic, allowing soft clusters of different scales to emerge",
+   "grounded": true
+  },
+  {
+   "op": "compute embedding",
+   "canonical": "compute embedding",
+   "object": "latent",
+   "quote": "learning visual embeddings",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "maximizing a metric of local aggregation",
+   "grounded": false
+  },
+  {
+   "op": "denoise embedding",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "learning visual embeddings",
+   "grounded": false
+  },
+  {
+   "op": "normalize embedding",
+   "canonical": "normalize embedding",
+   "object": "latent",
+   "quote": "learning visual embeddings",
+   "grounded": false
+  },
+  {
+   "op": "project input",
+   "canonical": "project",
+   "object": "input",
+   "quote": "learning visual embeddings",
+   "grounded": false
+  },
+  {
+   "op": "compute activation",
+   "canonical": "compute activation",
+   "object": "state",
+   "quote": "learning visual embeddings",
+   "grounded": false
+  },
+  {
+   "op": "compute feature",
+   "canonical": "compute feature",
+   "object": "latent",
+   "quote": "learning visual embeddings",
+   "grounded": false
+  },
+  {
+   "op": "compute representation",
+   "canonical": "compute representation",
+   "object": "latent",
+   "quote": "learning visual embeddings",
+   "grounded": false
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "distribution",
+   "quote": "dynamic, allowing soft clusters of different scales to emerge",
+   "grounded": true
+  },
+  {
+   "op": "compute probability",
+   "canonical": "compute probability",
+   "object": "distribution",
+   "quote": "dynamic, allowing soft clusters of different scales to emerge",
+   "grounded": true
+  },
+  {
+   "op": "compute likelihood",
+   "canonical": "compute likelihood",
+   "object": "distribution",
+   "quote": "dynamic, allowing soft clusters of different scales to emerge",
+   "grounded": true
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "distribution",
+   "quote": "dynamic, allowing soft clusters of different scales to emerge",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "distribution",
+   "quote": "dynamic, allowing soft clusters of different scales to emerge",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "apply gradient@parameter",
+  "compare@state",
+  "compute activation@state",
+  "compute cluster@distribution",
+  "compute distance@state",
+  "compute embedding@latent",
+  "compute feature@latent",
+  "compute gradient@gradient",
+  "compute likelihood@distribution",
+  "compute mean@distribution",
+  "compute metric@error",
+  "compute probability@distribution",
+  "compute representation@latent",
+  "compute reward@value",
+  "compute score@distribution",
+  "compute similarity@state",
+  "compute variance@distribution",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "normalize embedding@latent",
+  "project@input",
+  "reconstruct@latent",
+  "sample@distribution",
+  "separate dissimilar@state"
+ ]
+}

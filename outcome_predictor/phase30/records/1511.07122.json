@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "1511.07122",
+ "source": "abstract",
+ "words": 128,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "we develop a new convolutional network module",
+   "grounded": true
+  },
+  {
+   "op": "aggregate context",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "systematically aggregate multi-scale contextual information",
+   "grounded": true
+  },
+  {
+   "op": "expand receptive field",
+   "canonical": "expand receptive field",
+   "object": "latent",
+   "quote": "dilated convolutions support exponential expansion of the receptive field",
+   "grounded": true
+  },
+  {
+   "op": "preserve resolution",
+   "canonical": "preserve resolution",
+   "object": "input",
+   "quote": "without losing resolution or coverage",
+   "grounded": false
+  },
+  {
+   "op": "compute feature map",
+   "canonical": "compute feature map",
+   "object": "latent",
+   "quote": "adaptations of convolutional networks that had originally been designed for image classification",
+   "grounded": false
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "multi-scale context aggregation by dilated convolutions",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the presented context module increases the accuracy",
+   "grounded": false
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "increases the accuracy of state-of-the-art semantic segmentation systems",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "compute feature map@latent",
+  "correct@parameter",
+  "evaluate@value",
+  "expand receptive field@latent",
+  "preserve resolution@input"
+ ]
+}

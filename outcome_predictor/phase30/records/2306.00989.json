@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "2306.00989",
+ "source": "abstract",
+ "words": 134,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we can strip out all the bells-and-whistles",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "we create Hiera, an extremely simple hierarchical vision transformer",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "we can strip out all the bells-and-whistles",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we can strip out all the bells-and-whistles",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we can strip out all the bells-and-whistles",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "we can strip out all the bells-and-whistles",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "we can strip out all the bells-and-whistles",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we can strip out all the bells-and-whistles",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "trajectory",
+   "quote": "we can strip out all the bells-and-whistles",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "state",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "track",
+   "canonical": "track",
+   "object": "state",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "store",
+   "canonical": "store",
+   "object": "trajectory",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "policy",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "parameter",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "gradient",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we evaluate Hiera on a variety of tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@trajectory",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute@distribution",
+  "compute@error",
+  "compute@gradient",
+  "compute@parameter",
+  "compute@policy",
+  "compute@reward",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "predict@latent",
+  "process@state",
+  "reconstruct@action",
+  "reconstruct@noise",
+  "sample@distribution",
+  "sample@sample",
+  "store@trajectory",
+  "track@state",
+  "transform@latent"
+ ]
+}

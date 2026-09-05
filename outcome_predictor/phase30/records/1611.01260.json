@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "1611.01260",
+ "source": "abstract",
+ "words": 188,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "apply gate",
+   "canonical": "apply gate",
+   "object": "parameter",
+   "quote": "we provide a way to learn identity mappings by optimizing only one parameter",
+   "grounded": false
+  },
+  {
+   "op": "compute residual",
+   "canonical": "compute residual",
+   "object": "state",
+   "quote": "a layer is reformulated in order to make learning identity mappings less problematic to the optimizer",
+   "grounded": true
+  },
+  {
+   "op": "add gate",
+   "canonical": "add gate",
+   "object": "parameter",
+   "quote": "we propose a new layer design by adding a linear gating mechanism to shortcut connections",
+   "grounded": true
+  },
+  {
+   "op": "scale residual",
+   "canonical": "scale residual",
+   "object": "state",
+   "quote": "we provide a way to learn identity mappings by optimizing only one parameter",
+   "grounded": false
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the augmentation introduces only one extra parameter per layer",
+   "grounded": false
+  },
+  {
+   "op": "compute identity",
+   "canonical": "compute identity",
+   "object": "state",
+   "quote": "learning identity mappings",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "experimental results show that augmenting layers provides better optimization",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we evaluate our method on MNIST using fully-connected networks",
+   "grounded": false
+  },
+  {
+   "op": "remove layer",
+   "canonical": "remove layer",
+   "object": "trajectory",
+   "quote": "the model retains over 90% of its performance even after half of its layers have been randomly removed",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "achieving 3.65% and 18.27% error, respectively",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "add gate@parameter",
+  "apply gate@parameter",
+  "compare@error",
+  "compute identity@state",
+  "compute residual@state",
+  "correct@parameter",
+  "evaluate@task",
+  "remove layer@trajectory",
+  "scale residual@state",
+  "train@parameter"
+ ]
+}

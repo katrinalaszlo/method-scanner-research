@@ -1,0 +1,194 @@
+{
+ "arxiv_id": "2203.08534",
+ "source": "abstract",
+ "words": 214,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 23,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "extract input",
+   "canonical": "extract input",
+   "object": "input",
+   "quote": "from a video",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "to capture human motion",
+   "grounded": true
+  },
+  {
+   "op": "compute motion continuity",
+   "canonical": "compute motion continuity",
+   "object": "state",
+   "quote": "to adaptively recalibrate the range",
+   "grounded": true
+  },
+  {
+   "op": "attend to sequence",
+   "canonical": "attend to sequence",
+   "object": "latent",
+   "quote": "that needs attention in the sequence",
+   "grounded": true
+  },
+  {
+   "op": "integrate past features",
+   "canonical": "integrate past features",
+   "object": "latent",
+   "quote": "to strengthen temporal correlation",
+   "grounded": true
+  },
+  {
+   "op": "integrate future features",
+   "canonical": "integrate future features",
+   "object": "latent",
+   "quote": "to refine the feature representation",
+   "grounded": false
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "to strengthen temporal correlation",
+   "grounded": true
+  },
+  {
+   "op": "refine feature representation",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "to refine the feature representation",
+   "grounded": false
+  },
+  {
+   "op": "predict pose",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "to estimate accurate 3D human pose",
+   "grounded": false
+  },
+  {
+   "op": "predict shape",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "to estimate accurate 3D human shape",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "to estimate accurate 3D human pose",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "to estimate accurate 3D human shape",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "to estimate accurate 3D human pose",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "to estimate accurate 3D human shape",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "to update parameters",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "to improve estimation accuracy",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "to capture human motion",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "to capture human motion",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "to capture human motion",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "to update parameters",
+   "grounded": false
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "distribution",
+   "quote": "to refine the feature representation",
+   "grounded": false
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "to strengthen temporal correlation",
+   "grounded": true
+  },
+  {
+   "op": "refine trajectory",
+   "canonical": "correct",
+   "object": "trajectory",
+   "quote": "to estimate accurate 3D human pose",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "attend to sequence@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compute motion continuity@state",
+  "correct@latent",
+  "correct@parameter",
+  "correct@trajectory",
+  "encode@input",
+  "evaluate@error",
+  "extract input@input",
+  "integrate future features@latent",
+  "integrate past features@latent",
+  "normalize@distribution",
+  "predict@state",
+  "reconstruct@noise",
+  "reconstruct@state",
+  "sample@action",
+  "sample@sample"
+ ]
+}

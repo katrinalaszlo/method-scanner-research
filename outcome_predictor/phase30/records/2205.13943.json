@@ -1,0 +1,93 @@
+{
+ "arxiv_id": "2205.13943",
+ "source": "abstract",
+ "words": 152,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "mask input",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "a portion of the input image is masked out",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "reconstructed via a pre-text task",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the working principle behind MIM is not well explained",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "previous studies insist that MIM primarily works for the Transformer family",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "A$^2$MIM learns better representations without explicit design",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "MIM essentially teaches the model to learn better middle-order interactions among patches",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "endows the backbone model with the stronger capability to transfer to various downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "apply model",
+   "canonical": "apply model",
+   "object": "input",
+   "quote": "A$^2$MIM is compatible with both Transformers and CNNs in a unified way",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "MIM primarily works for the Transformer family but is incompatible with CNNs",
+   "grounded": true
+  },
+  {
+   "op": "sample patch",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a portion of the input image is masked out",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply model@input",
+  "backpropagate@gradient",
+  "compute value@value",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "mask@input",
+  "reconstruct@input",
+  "sample@input"
+ ]
+}

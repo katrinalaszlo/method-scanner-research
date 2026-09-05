@@ -1,0 +1,195 @@
+{
+ "arxiv_id": "2112.09802",
+ "source": "abstract",
+ "words": 248,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 8,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "the na\"ive ERM solution of pooling all source data together and training a single classifier is surprisingly effective",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose (i) Group-DRO++, which incorporates an explicit clustering step to identify custom domains in an existing DRO technique",
+   "grounded": true
+  },
+  {
+   "op": "cluster",
+   "canonical": "cluster",
+   "object": "INVALID:data",
+   "quote": "we propose (i) Group-DRO++, which incorporates an explicit clustering step to identify custom domains in an existing DRO technique",
+   "grounded": true
+  },
+  {
+   "op": "relabel",
+   "canonical": "relabel",
+   "object": "INVALID:domain",
+   "quote": "DReaME, which produces effective multi-domain ensembles through implicit domain re-labeling with a novel meta-optimization algorithm",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "DReaME, which produces effective multi-domain ensembles through implicit domain re-labeling with a novel meta-optimization algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "reward",
+   "quote": "we show that our variants consistently outperform ERM by significant margins (1.5% - 9%)",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "we show that our variants consistently outperform ERM by significant margins (1.5% - 9%)",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "we show that our variants consistently outperform ERM by significant margins (1.5% - 9%)",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:domain",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "reward",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "reward",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "reward",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "we consider two popular classes of MDG algorithms -- distributional robust optimization (DRO) and multi-domain ensembles",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@value",
+  "compute gradient@parameter",
+  "compute value@reward",
+  "correct@parameter",
+  "evaluate@parameter",
+  "improve@parameter"
+ ]
+}

@@ -1,0 +1,161 @@
+{
+ "arxiv_id": "2103.09460",
+ "source": "abstract",
+ "words": 177,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 12,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "we introduce an alternative way to address the problem",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we introduce an alternative way to address the problem",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we introduce an alternative way to address the problem",
+   "grounded": true
+  },
+  {
+   "op": "apply dilation",
+   "canonical": "apply dilation",
+   "object": "latent",
+   "quote": "we introduce an alternative way to address the problem",
+   "grounded": true
+  },
+  {
+   "op": "generate proposal",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we introduce an alternative way to address the problem",
+   "grounded": true
+  },
+  {
+   "op": "match proposals",
+   "canonical": "compare",
+   "object": "INVALID:proposal",
+   "quote": "we introduce an alternative way to address the problem",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we introduce an alternative way to address the problem",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we introduce an alternative way to address the problem",
+   "grounded": true
+  },
+  {
+   "op": "predict bounding box",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "we introduce an alternative way to address the problem",
+   "grounded": true
+  },
+  {
+   "op": "compute confidence",
+   "canonical": "compute confidence",
+   "object": "INVALID:bounding box",
+   "quote": "we introduce an alternative way to address the problem",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "INVALID:bounding box",
+   "quote": "we introduce an alternative way to address the problem",
+   "grounded": true
+  },
+  {
+   "op": "apply non-maximum suppression",
+   "canonical": "apply non-maximum suppression",
+   "object": "INVALID:bounding box",
+   "quote": "we introduce an alternative way to address the problem",
+   "grounded": true
+  },
+  {
+   "op": "compute map",
+   "canonical": "compute map",
+   "object": "INVALID:output",
+   "quote": "YOLOF achieves 44.3 mAP running at 60 fps",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "INVALID:output",
+   "quote": "YOLOF achieves 44.3 mAP running at 60 fps",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "INVALID:output",
+   "quote": "YOLOF achieves 44.3 mAP running at 60 fps",
+   "grounded": true
+  },
+  {
+   "op": "track objects",
+   "canonical": "track objects",
+   "object": "INVALID:bounding box",
+   "quote": "YOLOF achieves 44.3 mAP running at 60 fps",
+   "grounded": true
+  },
+  {
+   "op": "compute fps",
+   "canonical": "compute fps",
+   "object": "INVALID:output",
+   "quote": "YOLOF achieves 44.3 mAP running at 60 fps",
+   "grounded": true
+  },
+  {
+   "op": "log results",
+   "canonical": "log results",
+   "object": "INVALID:output",
+   "quote": "YOLOF achieves 44.3 mAP running at 60 fps",
+   "grounded": true
+  },
+  {
+   "op": "store output",
+   "canonical": "store output",
+   "object": "INVALID:bounding box",
+   "quote": "YOLOF achieves 44.3 mAP running at 60 fps",
+   "grounded": true
+  },
+  {
+   "op": "display output",
+   "canonical": "display output",
+   "object": "INVALID:bounding box",
+   "quote": "YOLOF achieves 44.3 mAP running at 60 fps",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply dilation@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@latent",
+  "process input@input",
+  "reconstruct@latent"
+ ]
+}

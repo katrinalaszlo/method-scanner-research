@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2110.10832",
+ "source": "abstract",
+ "words": 215,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 10,
+ "n_grounded": 26,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "trajectory",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "action",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "policy",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "gradient",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "noise",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "sample",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:ensemble",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:average",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:validation",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:test",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:optimization",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:stochasticity",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:rank",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:correlation",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:early",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:stopping",
+   "quote": "improving model selection and boosting performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@action",
+  "compare@distribution",
+  "compare@error",
+  "compare@gradient",
+  "compare@input",
+  "compare@latent",
+  "compare@noise",
+  "compare@parameter",
+  "compare@policy",
+  "compare@reward",
+  "compare@sample",
+  "compare@state",
+  "compare@task",
+  "compare@trajectory",
+  "compare@value"
+ ]
+}

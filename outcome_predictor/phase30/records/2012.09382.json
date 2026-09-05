@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2012.09382",
+ "source": "abstract",
+ "words": 211,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "designing a general OoD generalization framework",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "designing a general OoD generalization framework",
+   "grounded": true
+  },
+  {
+   "op": "orthogonalize",
+   "canonical": "orthogonalize",
+   "object": "gradient",
+   "quote": "orthogonalizing the two gradients",
+   "grounded": true
+  },
+  {
+   "op": "predict label",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "predicting category and context labels",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "latent",
+   "quote": "disentangles the category-related and context-related features",
+   "grounded": true
+  },
+  {
+   "op": "augment feature",
+   "canonical": "augment",
+   "object": "latent",
+   "quote": "gradient-based augmentation on context-related features",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "gradient-based augmentation on context-related features",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "designing a general OoD generalization framework",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "gradient-based augmentation on context-related features",
+   "grounded": true
+  },
+  {
+   "op": "sample feature",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "gradient-based augmentation on context-related features",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "orthogonalizing the two gradients",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "gradient-based augmentation on context-related features",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "predicting category and context labels",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "designing a general OoD generalization framework",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "deal with different types of OoD generalization challenges",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "deal with different types of OoD generalization challenges",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "deal with different types of OoD generalization challenges",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "designing a general OoD generalization framework",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "deal with different types of OoD generalization challenges",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "gradient-based augmentation on context-related features",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "augment@latent",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "extract feature@latent",
+  "orthogonalize@gradient",
+  "predict@distribution",
+  "reconstruct@noise",
+  "sample@sample"
+ ]
+}

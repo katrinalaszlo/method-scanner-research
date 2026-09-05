@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2010.07367",
+ "source": "abstract",
+ "words": 198,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "refine pose",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "the network first refines the poses before they are further processed to recognize the action",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "graph convolutional networks have been proposed for this task",
+   "grounded": true
+  },
+  {
+   "op": "fuse information",
+   "canonical": "fuse information",
+   "object": "latent",
+   "quote": "a parallel structure that gradually fuses motion and spatial information",
+   "grounded": true
+  },
+  {
+   "op": "reduce resolution",
+   "canonical": "reduce resolution",
+   "object": "trajectory",
+   "quote": "reducing the temporal resolution as early as possible",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the network first refines the poses before they are further processed to recognize the action",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our network requires 86\\%-93\\% less parameters",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "graph convolutional networks have been proposed for this task",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "skeleton data is commonly represented by graphs",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "graph convolutional networks have been proposed for this task",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "our network requires 86\\%-93\\% less parameters",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "graph convolutional networks have been proposed for this task",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "graph convolutional networks have been proposed for this task",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "human poses can contain errors",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the network first refines the poses before they are further processed to recognize the action",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "graph convolutional networks have been proposed for this task",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "our network requires 86\\%-93\\% less parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "graph convolutional networks have been proposed for this task",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "reducing the temporal resolution as early as possible",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "our network requires 86\\%-93\\% less parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "graph convolutional networks have been proposed for this task",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "graph convolutional networks have been proposed for this task",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the network first refines the poses before they are further processed to recognize the action",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "the network first refines the poses before they are further processed to recognize the action",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "graph convolutional networks have been proposed for this task",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "graph convolutional networks have been proposed for this task",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "correct@state",
+  "encode@state",
+  "fuse information@latent",
+  "predict@action",
+  "process input@input",
+  "reconstruct@noise",
+  "reduce resolution@trajectory",
+  "sample@action",
+  "sample@sample"
+ ]
+}

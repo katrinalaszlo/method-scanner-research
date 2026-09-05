@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2210.06989",
+ "source": "abstract",
+ "words": 264,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "it can learn in fewer steps whilst offering a performance at least as good as conventional single task learning",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train a multi-task model",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "learn how to adapt to unseen tasks",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "delivering good qualitative results",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "semantic segmentation, depth estimation, surface normal estimation, and edge detection",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "it was discovered that many pseudo-labeled segmentation masks lacked classes",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "our MTML approach was found to be effective in detecting these missing classes",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "train a multi-task model",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "quantitatively its performance was affected due to the presence of incorrect ground truth labels",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "it was discovered that many pseudo-labeled segmentation masks lacked classes",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "learn how to adapt to unseen tasks",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "train a multi-task model",
+   "grounded": true
+  },
+  {
+   "op": "sample task",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "it can learn in fewer steps whilst offering a performance at least as good as conventional single task learning",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "semantic segmentation, depth estimation, surface normal estimation, and edge detection",
+   "grounded": true
+  },
+  {
+   "op": "update policy",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "learn how to adapt to unseen tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "delivering good qualitative results",
+   "grounded": true
+  },
+  {
+   "op": "denoise trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "it was discovered that many pseudo-labeled segmentation masks lacked classes",
+   "grounded": true
+  },
+  {
+   "op": "resample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "our MTML approach was found to be effective in detecting these missing classes",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate error",
+   "canonical": "backpropagate error",
+   "object": "error",
+   "quote": "train a multi-task model",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "quantitatively its performance was affected due to the presence of incorrect ground truth labels",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate error@error",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@task",
+  "compute distribution@distribution",
+  "compute latent@latent",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "correct@policy",
+  "encode@input",
+  "predict@distribution",
+  "predict@value",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@policy",
+  "sample@sample",
+  "sample@task",
+  "sample@trajectory"
+ ]
+}

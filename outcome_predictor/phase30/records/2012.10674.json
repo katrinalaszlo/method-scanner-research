@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2012.10674",
+ "source": "abstract",
+ "words": 203,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "assign cluster",
+   "canonical": "assign cluster",
+   "object": "state",
+   "quote": "some previous methods adopt clustering techniques to generate pseudo labels",
+   "grounded": true
+  },
+  {
+   "op": "split cluster",
+   "canonical": "split cluster",
+   "object": "latent",
+   "quote": "we propose to split each single cluster into multiple proxies",
+   "grounded": true
+  },
+  {
+   "op": "represent instance",
+   "canonical": "encode",
+   "object": "sample",
+   "quote": "each proxy represents the instances coming from the same camera",
+   "grounded": true
+  },
+  {
+   "op": "compute contrastive loss",
+   "canonical": "compute contrastive loss",
+   "object": "error",
+   "quote": "we design both intra- and inter-camera contrastive learning components",
+   "grounded": true
+  },
+  {
+   "op": "sample proxy",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "a proxy-balanced sampling strategy is also designed",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we design both intra- and inter-camera contrastive learning components",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "we design both intra- and inter-camera contrastive learning components",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we design both intra- and inter-camera contrastive learning components",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "we design both intra- and inter-camera contrastive learning components",
+   "grounded": true
+  },
+  {
+   "op": "generate pseudo label",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "some previous methods adopt clustering techniques to generate pseudo labels",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we design both intra- and inter-camera contrastive learning components",
+   "grounded": true
+  },
+  {
+   "op": "update policy",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "we design both intra- and inter-camera contrastive learning components",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we design both intra- and inter-camera contrastive learning components",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we design both intra- and inter-camera contrast, learning components",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we design both intra- and inter-camera contrastive learning components",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we design both intra- and inter-camera contrastive learning components",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we design both intra- and inter-camera contrastive learning components",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we design both intra- and inter-camera contrastive learning components",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "we design both intra- and inter-camera contrastive learning components",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "noise",
+   "quote": "we design both intra- and inter-camera contrastive learning components",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "assign cluster@state",
+  "compare@error",
+  "compute contrastive loss@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute noise@noise",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute similarity@distribution",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "correct@policy",
+  "encode@sample",
+  "reconstruct@sample",
+  "sample@distribution",
+  "split cluster@latent"
+ ]
+}

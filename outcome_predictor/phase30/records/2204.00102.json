@@ -1,0 +1,196 @@
+{
+ "arxiv_id": "2204.00102",
+ "source": "abstract",
+ "words": 169,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 16,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "compute gate",
+   "canonical": "compute gate",
+   "object": "latent",
+   "quote": "we propose a gating function to provide modality-level or fusion-level decisions",
+   "grounded": true
+  },
+  {
+   "op": "generate path",
+   "canonical": "reconstruct",
+   "object": "INVALID:fusion",
+   "quote": "generates data-dependent forward paths during inference",
+   "grounded": true
+  },
+  {
+   "op": "apply gate",
+   "canonical": "apply gate",
+   "object": "INVALID:modality",
+   "quote": "provide modality-level or fusion-level decisions on-the-fly",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:resource",
+   "quote": "resource-aware loss function that encourages computational efficiency",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "results on various multimodal tasks demonstrate the efficiency",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "INVALID:multimodal",
+   "quote": "process and fuse multimodal inputs with identical computation",
+   "grounded": true
+  },
+  {
+   "op": "fuse feature",
+   "canonical": "fuse feature",
+   "object": "INVALID:modality",
+   "quote": "process and fuse multimodal inputs with identical computation",
+   "grounded": true
+  },
+  {
+   "op": "select feature",
+   "canonical": "select feature",
+   "object": "INVALID:modality",
+   "quote": "generate data-dependent forward paths during inference",
+   "grounded": false
+  },
+  {
+   "op": "compute residual",
+   "canonical": "compute residual",
+   "object": "INVALID:fusion",
+   "quote": "resource-aware loss function that encourages computational efficiency",
+   "grounded": true
+  },
+  {
+   "op": "apply decision",
+   "canonical": "apply decision",
+   "object": "INVALID:fusion",
+   "quote": "provide modality-level or fusion-level decisions on-the-fly",
+   "grounded": true
+  },
+  {
+   "op": "evaluate path",
+   "canonical": "evaluate",
+   "object": "INVALID:fusion",
+   "quote": "generate data-dependent forward paths during inference",
+   "grounded": false
+  },
+  {
+   "op": "compute cost",
+   "canonical": "compute cost",
+   "object": "INVALID:computation",
+   "quote": "reduce the computation costs by 46.5% with only a negligible accuracy loss",
+   "grounded": true
+  },
+  {
+   "op": "compare cost",
+   "canonical": "compare",
+   "object": "INVALID:computation",
+   "quote": "improve segmentation performance with over 21% savings in computation",
+   "grounded": true
+  },
+  {
+   "op": "track efficiency",
+   "canonical": "track efficiency",
+   "object": "INVALID:resource",
+   "quote": "resource-aware loss function that encourages computational efficiency",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "INVALID:fusion",
+   "quote": "generate data-dependent forward paths during inference",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "reduce the computation costs by 46.5% with only a negligible accuracy loss",
+   "grounded": true
+  },
+  {
+   "op": "update model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "results on various multimodal tasks demonstrate the efficiency",
+   "grounded": true
+  },
+  {
+   "op": "select path",
+   "canonical": "select path",
+   "object": "INVALID:fusion",
+   "quote": "generate data-dependent forward paths during inference",
+   "grounded": false
+  },
+  {
+   "op": "compute signal",
+   "canonical": "compute signal",
+   "object": "task",
+   "quote": "reduce the computation costs by 46.5% with only a negligible accuracy loss",
+   "grounded": true
+  },
+  {
+   "op": "evaluate signal",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "improve segmentation performance with over 21% savings in computation",
+   "grounded": true
+  },
+  {
+   "op": "compute performance",
+   "canonical": "compute performance",
+   "object": "task",
+   "quote": "improve segmentation performance with over 21% savings in computation",
+   "grounded": true
+  },
+  {
+   "op": "track performance",
+   "canonical": "track performance",
+   "object": "task",
+   "quote": "improve segmentation performance with over 21% savings in computation",
+   "grounded": true
+  },
+  {
+   "op": "compute efficiency",
+   "canonical": "compute efficiency",
+   "object": "INVALID:resource",
+   "quote": "resource-aware loss function that encourages computational efficiency",
+   "grounded": true
+  },
+  {
+   "op": "update loss",
+   "canonical": "correct",
+   "object": "INVALID:resource",
+   "quote": "resource-aware loss function that encourages computational efficiency",
+   "grounded": true
+  },
+  {
+   "op": "compute signal",
+   "canonical": "compute signal",
+   "object": "task",
+   "quote": "reduce the computation costs by 46.5% with only a negligible accuracy loss",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute accuracy@task",
+  "compute gate@latent",
+  "compute performance@task",
+  "compute signal@task",
+  "correct@parameter",
+  "evaluate@task",
+  "track performance@task"
+ ]
+}

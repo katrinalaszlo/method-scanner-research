@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2106.03650",
+ "source": "abstract",
+ "words": 135,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "shuffle",
+   "canonical": "shuffle",
+   "object": "state",
+   "quote": "we revisit the spatial shuffle as an efficient way to build connections among windows",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "Window-based Transformers, which computed self-attention within non-overlapping local windows",
+   "grounded": true
+  },
+  {
+   "op": "concatenate",
+   "canonical": "concatenate",
+   "object": "state",
+   "quote": "the depth-wise convolution is introduced to complement the spatial shuffle for enhancing neighbor-window connections",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "state",
+   "quote": "the depth-wise convolution is introduced to complement the spatial shuffle for enhancing neighbor-window connections",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the proposed architectures achieve excellent performance on a wide range of visual tasks",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "the proposed architectures achieve excellent performance on a wide range of visual tasks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed architectures achieve excellent performance on a wide range of visual tasks",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "Window-based Transformers, which computed self-attention within non-overlapping local windows",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@state",
+  "compute attention@latent",
+  "concatenate@state",
+  "correct@parameter",
+  "process input@input",
+  "reconstruct@state",
+  "shuffle@state"
+ ]
+}

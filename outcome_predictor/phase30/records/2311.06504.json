@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "2311.06504",
+ "source": "abstract",
+ "words": 179,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "split image",
+   "canonical": "split image",
+   "object": "input",
+   "quote": "dividing the target image into nine patches",
+   "grounded": true
+  },
+  {
+   "op": "predict position",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "tasking the encoder with predicting the relative position relationships between any two patches",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the encoder with predicting the relative position relationships between any two patches to extract rich semantics",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "derive an optimal encoder by tackling the renowned jigsaw puzzle",
+   "grounded": true
+  },
+  {
+   "op": "compute affinity",
+   "canonical": "compute affinity",
+   "object": "latent",
+   "quote": "introduce an affinity-augmentation method to accentuate differences between normal and abnormal latent representations",
+   "grounded": true
+  },
+  {
+   "op": "augment latent",
+   "canonical": "augment",
+   "object": "latent",
+   "quote": "accentuate differences between normal and abnormal latent representations",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "leveraging the classic support vector data description algorithm yields final detection results",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "yields final detection results",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "segment image",
+   "canonical": "segment image",
+   "object": "input",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "detect defect",
+   "canonical": "detect defect",
+   "object": "input",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "establishing a state-of-the-art benchmark for both texture and object defects",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "task",
+   "quote": "experimental outcomes demonstrate that our proposed than outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "compute recall",
+   "canonical": "compute recall",
+   "object": "task",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "compute f1 score",
+   "canonical": "compute f1 score",
+   "object": "task",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "log results",
+   "canonical": "log results",
+   "object": "task",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "save model",
+   "canonical": "save model",
+   "object": "parameter",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "load model",
+   "canonical": "load model",
+   "object": "parameter",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "visualize output",
+   "canonical": "visualize output",
+   "object": "distribution",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "display metrics",
+   "canonical": "display metrics",
+   "object": "task",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "track performance",
+   "canonical": "track performance",
+   "object": "task",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "analyze results",
+   "canonical": "analyze results",
+   "object": "task",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  },
+  {
+   "op": "report findings",
+   "canonical": "report findings",
+   "object": "task",
+   "quote": "experimental outcomes demonstrate that our proposed method achieves outstanding detection and segmentation performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "analyze results@task",
+  "augment@latent",
+  "compare@error",
+  "compare@task",
+  "compute accuracy@task",
+  "compute affinity@latent",
+  "compute f1 score@task",
+  "compute precision@task",
+  "compute recall@task",
+  "compute reward@reward",
+  "correct@parameter",
+  "detect defect@input",
+  "display metrics@task",
+  "evaluate@task",
+  "load model@parameter",
+  "log results@task",
+  "predict@latent",
+  "reconstruct@distribution",
+  "report findings@task",
+  "save model@parameter",
+  "segment image@input",
+  "split image@input",
+  "track performance@task",
+  "train@parameter",
+  "visualize output@distribution"
+ ]
+}

@@ -1,0 +1,202 @@
+{
+ "arxiv_id": "2301.00182",
+ "source": "abstract",
+ "words": 199,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 11,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Vision-language models (VLMs) pre-trained on large-scale image-text pairs",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:textual",
+   "quote": "generate textual auxiliary attributes for complementing video recognition",
+   "grounded": true
+  },
+  {
+   "op": "associate",
+   "canonical": "associate",
+   "object": "INVALID:attribute",
+   "quote": "Video Attribute Association mechanism, which leverages the Video-to-Text knowledge",
+   "grounded": true
+  },
+  {
+   "op": "capture",
+   "canonical": "capture",
+   "object": "INVALID:temporal",
+   "quote": "capture temporal saliency in a parameter-free manner",
+   "grounded": true
+  },
+  {
+   "op": "spot",
+   "canonical": "spot",
+   "object": "INVALID:concept",
+   "quote": "Temporal Concept Spotting mechanism that uses the Text-to-Video expertise",
+   "grounded": true
+  },
+  {
+   "op": "enhance",
+   "canonical": "enhance",
+   "object": "latent",
+   "quote": "leading to enhanced video representation",
+   "grounded": true
+  },
+  {
+   "op": "map",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "build a bridge between visual and textual domains",
+   "grounded": false
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "INVALID:attribute",
+   "quote": "generate textual auxiliary attributes for complementing video recognition",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "INVALID:attribute",
+   "quote": "complementing video recognition",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:attribute",
+   "quote": "generate textual auxiliary attributes for complementing video recognition",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "build a bridge between visual and textual domains",
+   "grounded": false
+  },
+  {
+   "op": "align",
+   "canonical": "align",
+   "object": "INVALID:modality",
+   "quote": "build a bridge between visual and textual domains",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "enhanced video representation",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "INVALID:attribute",
+   "quote": "complementing video recognition",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "leading to enhanced video representation",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "enhanced video representation",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "enhanced video representation",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "enhanced video representation",
+   "grounded": true
+  },
+  {
+   "op": "map",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "build a bridge between visual and textual domains",
+   "grounded": false
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "INVALID:text",
+   "quote": "Vision-language models (VLMs) pre-trained on large-scale image-text pairs",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "build a bridge between visual and textual domains",
+   "grounded": false
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:attribute",
+   "quote": "generate textual auxiliary attributes for complementing video recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "extensive studies on six popular video datasets",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "extensive studies on six popular video datasets",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "our method achieves state-of-the-art performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute@distribution",
+  "compute@error",
+  "compute@value",
+  "correct@latent",
+  "encode@input",
+  "encode@state",
+  "enhance@latent",
+  "evaluate@parameter",
+  "extract@latent",
+  "improve@parameter",
+  "reconstruct@state",
+  "transform@input"
+ ]
+}

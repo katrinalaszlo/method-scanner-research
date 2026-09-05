@@ -1,0 +1,200 @@
+{
+ "arxiv_id": "2006.03806",
+ "source": "abstract",
+ "words": 120,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "standardize input",
+   "canonical": "standardize input",
+   "object": "input",
+   "quote": "preprocessing the feature vectors so that they become closer to Gaussian-like distributions",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "preprocessing the feature vectors so that they become closer to Gaussian-like distributions",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "preprocessing the feature vectors so that they become closer to Gaussian-like distributions",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "lever,aging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "leveraging this preprocessing using an optimal-transport inspired algorithm",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@latent",
+  "compute distribution@latent",
+  "correct@parameter",
+  "standardize input@input"
+ ]
+}

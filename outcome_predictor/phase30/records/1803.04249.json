@@ -1,0 +1,170 @@
+{
+ "arxiv_id": "1803.04249",
+ "source": "abstract",
+ "words": 143,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 21,
+ "n_invalid_object": 11,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "INVALID:point",
+   "quote": "conducting point-to-node k nearest neighbor search",
+   "grounded": true
+  },
+  {
+   "op": "assign neighbor",
+   "canonical": "assign neighbor",
+   "object": "INVALID:node",
+   "quote": "conducting point-to-node k nearest neighbor search",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "INVALID:point",
+   "quote": "hierarchical feature extraction on individual points",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "INVALID:node",
+   "quote": "hierarchical feature extraction on individual points",
+   "grounded": true
+  },
+  {
+   "op": "aggregate feature",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "hierarchical feature extraction on individual points",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "INVALID:node",
+   "quote": "hierarchical feature extraction on individual points",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "training speed is significantly faster than existing point cloud recognition networks",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "latent",
+   "quote": "hierarchical feature extraction on individual points",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "training speed is significantly faster than existing point cloud recognition networks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "training speed is significantly faster than existing point cloud recognition networks",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "training speed is significantly faster than existing point cloud recognition networks",
+   "grounded": true
+  },
+  {
+   "op": "normalize feature",
+   "canonical": "normalize feature",
+   "object": "latent",
+   "quote": "hierarchical feature extraction on individual points",
+   "grounded": true
+  },
+  {
+   "op": "compute feature vector",
+   "canonical": "compute feature vector",
+   "object": "input",
+   "quote": "ultimately represents the input point cloud by a single feature vector",
+   "grounded": true
+  },
+  {
+   "op": "map input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "models the spatial distribution of point cloud by building a Self-Organizing Map",
+   "grounded": false
+  },
+  {
+   "op": "assign node",
+   "canonical": "assign node",
+   "object": "INVALID:point",
+   "quote": "conducting point-to-node k nearest neighbor search",
+   "grounded": true
+  },
+  {
+   "op": "compute receptive field",
+   "canonical": "compute receptive field",
+   "object": "INVALID:node",
+   "quote": "receptive field of the network can be systematically adjusted",
+   "grounded": true
+  },
+  {
+   "op": "sample neighbor",
+   "canonical": "sample",
+   "object": "INVALID:point",
+   "quote": "conducting point-to-node k nearest neighbor search",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "INVALID:point",
+   "quote": "conducting point-to-node k nearest neighbor search",
+   "grounded": true
+  },
+  {
+   "op": "compute cluster",
+   "canonical": "compute cluster",
+   "object": "INVALID:node",
+   "quote": "models the spatial distribution of point cloud by building a Self-Organizing Map",
+   "grounded": false
+  },
+  {
+   "op": "compute representation",
+   "canonical": "compute representation",
+   "object": "input",
+   "quote": "ultimately represents the input point cloud by a single feature vector",
+   "grounded": true
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "latent",
+   "quote": "ultimately represents the input point cloud by a single feature vector",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply activation@latent",
+  "backpropagate@gradient",
+  "compute feature vector@input",
+  "compute output@latent",
+  "compute representation@input",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "normalize feature@latent"
+ ]
+}

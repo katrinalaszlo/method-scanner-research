@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2110.02178",
+ "source": "abstract",
+ "words": 198,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Light-weight convolutional neural networks (CNNs) are the de-facto for mobile vision tasks.",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "Their spatial inductive biases allow them to learn representations with fewer parameters across different vision tasks.",
+   "grounded": true
+  },
+  {
+   "op": "apply self-attention",
+   "canonical": "apply self-attention",
+   "object": "latent",
+   "quote": "self-attention-based vision transformers (ViTs) have been adopted.",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "is it possible to combine the strengths of CNNs and ViTs to build a light-weight and low latency network for mobile vision tasks?",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "Our results show that MobileViT significantly outperforms CNN- and ViT-based networks across different tasks and datasets.",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "On the ImageNet-1k dataset, MobileViT achieves top-1 accuracy of 78.4% with about 6 million parameters.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "MobileViT is 5.7% more accurate than MobileNetv3 for a similar number of parameters.",
+   "grounded": true
+  },
+  {
+   "op": "apply transformer",
+   "canonical": "apply transformer",
+   "object": "latent",
+   "quote": "transformers as convolutions.",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "On the MS-COCO object detection task, MobileViT is 5.7% more accurate than MobileNetv3 for a similar number of parameters.",
+   "grounded": true
+  },
+  {
+   "op": "store parameters",
+   "canonical": "store parameters",
+   "object": "parameter",
+   "quote": "Our source code is open-source and available at: https://github.com/apple/ml-cvnets.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@latent",
+  "apply self-attention@latent",
+  "apply transformer@latent",
+  "compute accuracy@task",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "reconstruct@latent",
+  "store parameters@parameter"
+ ]
+}

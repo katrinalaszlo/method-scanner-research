@@ -1,0 +1,194 @@
+{
+ "arxiv_id": "1707.05005",
+ "source": "abstract",
+ "words": 182,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 20,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "embed graph",
+   "canonical": "encode",
+   "object": "INVALID:graph",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "compute node features",
+   "canonical": "compute node features",
+   "object": "INVALID:node",
+   "quote": "learning distributed representations of graph substructures such as nodes",
+   "grounded": true
+  },
+  {
+   "op": "aggregate node features",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "learning distributed representations of graph substructures such as nodes",
+   "grounded": true
+  },
+  {
+   "op": "encode graph structure",
+   "canonical": "encode",
+   "object": "INVALID:graph",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "generate latent representation",
+   "canonical": "reconstruct",
+   "object": "INVALID:graph",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "normalize latent representation",
+   "canonical": "normalize latent representation",
+   "object": "latent",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "INVALID:graph",
+   "quote": "graph kernels remain as the most effective way of obtaining them",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "predict graph representation",
+   "canonical": "predict",
+   "object": "INVALID:graph",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate loss",
+   "canonical": "backpropagate loss",
+   "object": "gradient",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "apply gradient update",
+   "canonical": "apply gradient update",
+   "object": "parameter",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "sample graph",
+   "canonical": "sample",
+   "object": "INVALID:graph",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "compute graph features",
+   "canonical": "compute graph features",
+   "object": "INVALID:graph",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "compute graph statistics",
+   "canonical": "compute graph statistics",
+   "object": "INVALID:graph",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "compute graph similarity",
+   "canonical": "compute graph similarity",
+   "object": "INVALID:graph",
+   "quote": "graph kernels remain as the most effective way of obtaining them",
+   "grounded": false
+  },
+  {
+   "op": "compute graph classification",
+   "canonical": "compute graph classification",
+   "object": "INVALID:graph",
+   "quote": "graph classification and clustering require representing entire graphs as fixed length feature vectors",
+   "grounded": true
+  },
+  {
+   "op": "compute graph clustering",
+   "canonical": "compute graph clustering",
+   "object": "INVALID:graph",
+   "quote": "graph classification and clustering require representing entire graphs as fixed length feature vectors",
+   "grounded": true
+  },
+  {
+   "op": "compute graph embedding",
+   "canonical": "compute graph embedding",
+   "object": "INVALID:graph",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "compute graph representation",
+   "canonical": "compute graph representation",
+   "object": "INVALID:graph",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "compute graph features",
+   "canonical": "compute graph features",
+   "object": "INVALID:graph",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "compute graph statistics",
+   "canonical": "compute graph statistics",
+   "object": "INVALID:graph",
+   "quote": "learn data-driven distributed representations of arbitrary sized graphs",
+   "grounded": false
+  },
+  {
+   "op": "compute graph similarity",
+   "canonical": "compute graph similarity",
+   "object": "INVALID:graph",
+   "quote": "graph kernels remain as the most effective way of obtaining them",
+   "grounded": false
+  },
+  {
+   "op": "compute graph classification",
+   "canonical": "compute graph classification",
+   "object": "INVALID:graph",
+   "quote": "graph classification and clustering require representing entire graphs as fixed length feature vectors",
+   "grounded": true
+  },
+  {
+   "op": "compute graph clustering",
+   "canonical": "compute graph clustering",
+   "object": "INVALID:graph",
+   "quote": "graph classification and clustering require representing entire graphs as fixed length feature vectors",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient update@parameter",
+  "backpropagate loss@gradient",
+  "correct@parameter",
+  "evaluate@error",
+  "normalize latent representation@latent"
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "arxiv_id": "1812.08249",
+ "source": "abstract",
+ "words": 196,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 2,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the spatial stream, which takes RGB frames as input",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the temporal stream, which takes optical flow as input",
+   "grounded": true
+  },
+  {
+   "op": "apply filter",
+   "canonical": "apply filter",
+   "object": "input",
+   "quote": "3D Convolutional Neural Networks, which apply spatiotemporal filters",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "state",
+   "quote": "3D Convolutional Neural Networks, which apply spatiotemporal filters before performing classification",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:output",
+   "quote": "tuning the spatial stream to predict the outputs of the temporal stream",
+   "grounded": false
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "INVALID:output",
+   "quote": "effectively combining both models into a single stream",
+   "grounded": false
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "tuning the spatial stream to predict the outputs of the temporal stream",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "our Distilled 3D Network (D3D) achieves performance on par with two-stream approaches",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply filter@input",
+  "classify@state",
+  "compute@value",
+  "encode@input",
+  "train@parameter"
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2202.09741",
+ "source": "abstract",
+ "words": 200,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "input",
+   "quote": "the self-attention mechanism has recently taken various computer vision areas by storm",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "we propose a novel linear attention named large kernel attention (LKA)",
+   "grounded": true
+  },
+  {
+   "op": "generate representation",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "enable self-adaptive and long-range correlations in self-attention",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "we present a neural network based on LKA, namely Visual Attention Network (VAN)",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "VAN surpasses similar size vision transformers(ViTs) and convolutional neural networks(CNNs) in various tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "latent",
+   "quote": "VAN-B6 achieves 87.8% accuracy on ImageNet benchmark",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "set new state-of-the-art performance (58.2 PQ) for panoptic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "VAN-B2 surpasses Swin-T 4% mIoU (50.1 vs. 46.1) for semantic segmentation on ADE20K benchmark",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "2.6% AP (48.8 vs. 46.2) for object detection on COCO dataset",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "it provides a novel method and a simple yet strong baseline for the community",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@latent",
+  "compare@task",
+  "compute accuracy@task",
+  "compute attention@input",
+  "compute output@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "process input@input",
+  "reconstruct@latent"
+ ]
+}

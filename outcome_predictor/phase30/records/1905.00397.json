@@ -1,0 +1,171 @@
+{
+ "arxiv_id": "1905.00397",
+ "source": "abstract",
+ "words": 118,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 21,
+ "n_invalid_object": 5,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "data augmentation is an essential technique for improving generalization ability",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "INVALID:augmentation",
+   "quote": "automatically search for augmentation policies from a dataset",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "automatically search for augmentation policies from a dataset",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "significantly enhanced performances on many image recognition tasks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "finds effective augmentation policies via a more efficient search strategy",
+   "grounded": true
+  },
+  {
+   "op": "compute density",
+   "canonical": "compute density",
+   "object": "distribution",
+   "quote": "based on density matching",
+   "grounded": true
+  },
+  {
+   "op": "compare density",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "based on density matching",
+   "grounded": true
+  },
+  {
+   "op": "select policy",
+   "canonical": "select policy",
+   "object": "INVALID:augmentation",
+   "quote": "finds effective augmentation policies via a more efficient search strategy",
+   "grounded": true
+  },
+  {
+   "op": "evaluate policy",
+   "canonical": "evaluate",
+   "object": "INVALID:augmentation",
+   "quote": "finds effective augmentation policies via a more efficient search strategy",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "based on density matching",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "based on density matching",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "based on density matching",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "based on density matching",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "significantly enhanced performances on many image recognition tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "significantly enhanced performances on many image recognition tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "based on density matching",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "based on density, matching",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "based on density matching",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "based on density matching",
+   "grounded": true
+  },
+  {
+   "op": "select policy",
+   "canonical": "select policy",
+   "object": "INVALID:augmentation",
+   "quote": "finds effective augmentation policies via a more efficient search strategy",
+   "grounded": true
+  },
+  {
+   "op": "evaluate policy",
+   "canonical": "evaluate",
+   "object": "INVALID:augmentation",
+   "quote": "finds effective augmentation policies via a more efficient search strategy",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply augmentation@input",
+  "compare@distribution",
+  "compare@error",
+  "compute density@distribution",
+  "compute gradient@gradient",
+  "compute reward@value",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "sample@input"
+ ]
+}

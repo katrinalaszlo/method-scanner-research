@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1611.08323",
+ "source": "abstract",
+ "words": 191,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 3,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "current state-of-the-art approaches in semantic image segmentation rely on pre-trained networks",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we combine multi-scale context with pixel-level accuracy by using two processing streams",
+   "grounded": true
+  },
+  {
+   "op": "apply pooling",
+   "canonical": "apply pooling",
+   "object": "input",
+   "quote": "the other stream undergoes a sequence of pooling operations to obtain robust features",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the two streams are coupled at the full image resolution using residuals",
+   "grounded": false
+  },
+  {
+   "op": "residual connect",
+   "canonical": "residual connect",
+   "object": "latent",
+   "quote": "the two streams are coupled at the full image resolution using residuals",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "our approach achieves an intersection-over-union score of 71.8% on the Cityscapes dataset",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "our approach achieves an intersection-over-union score of 71.8% on the Cityscapes dataset",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "without additional processing steps and without pre-training, our approach achieves",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply pooling@input",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "process input@input",
+  "reconstruct@distribution",
+  "residual connect@latent"
+ ]
+}

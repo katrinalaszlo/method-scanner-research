@@ -1,0 +1,432 @@
+{
+ "arxiv_id": "2206.02777",
+ "source": "abstract",
+ "words": 174,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 57,
+ "n_invalid_object": 0,
+ "n_grounded": 57,
+ "ops": [
+  {
+   "op": "compute embedding",
+   "canonical": "compute embedding",
+   "object": "input",
+   "quote": "It makes use of the query embeddings from DINO to dot-product a high-resolution pixel embedding map",
+   "grounded": true
+  },
+  {
+   "op": "dot product",
+   "canonical": "dot product",
+   "object": "latent",
+   "quote": "It makes use of the query embeddings from DINO to dot-product a high-resolution pixel embedding map",
+   "grounded": true
+  },
+  {
+   "op": "predict mask",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "It makes use of the query embeddings from DINO to dot-product a high-resolution pixel embedding map to predict a set of binary masks",
+   "grounded": true
+  },
+  {
+   "op": "generate mask",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "It makes use of the query embeddings from DINO to dot-product a high-resolution pixel embedding map to predict a set of binary masks",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Some key components in DINO are extended for segmentation through a shared architecture and training process",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Some key components in DINO are extended for segmentation through a shared architecture and training process",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Some key components in DINO are extended for segmentation through a shared architecture and training process",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "error",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "task",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "trajectory",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "distribution",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "reward",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "input",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "state",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "action",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "policy",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "task",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "trajectory",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "distribution",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "error",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "value",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "reward",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "input",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "state",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "action",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "policy",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "task",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "trajectory",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "distribution",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "error",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "value",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "reward",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "input",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "state",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "action",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "policy",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "task",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "trajectory",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "distribution",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "error",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "value",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "reward",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "input",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "state",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "action",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "policy",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "task",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "trajectory",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "distribution",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "error",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "value",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "reward",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "input",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "state",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "action",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "policy",
+   "quote": "Our experiments show that Mask DINO significantly outperforms all existing specialized segmentation methods",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute accuracy@error",
+  "compute embedding@input",
+  "compute metric@action",
+  "compute metric@distribution",
+  "compute metric@error",
+  "compute metric@input",
+  "compute metric@policy",
+  "compute metric@reward",
+  "compute metric@state",
+  "compute metric@task",
+  "compute metric@trajectory",
+  "compute metric@value",
+  "compute value@value",
+  "correct@parameter",
+  "dot product@latent",
+  "evaluate@error",
+  "predict@distribution",
+  "reconstruct@sample"
+ ]
+}

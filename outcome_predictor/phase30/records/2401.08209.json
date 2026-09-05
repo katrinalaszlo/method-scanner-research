@@ -1,0 +1,169 @@
+{
+ "arxiv_id": "2401.08209",
+ "source": "abstract",
+ "words": 165,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 21,
+ "n_invalid_object": 12,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "estimating high-resolution (HR) images from low-resolution (LR) ones",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "learn prior information from training data",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "adapt the learned prior to specific testing image",
+   "grounded": true
+  },
+  {
+   "op": "group",
+   "canonical": "group",
+   "object": "INVALID:token",
+   "quote": "group image tokens into categories",
+   "grounded": true
+  },
+  {
+   "op": "attend",
+   "canonical": "attend",
+   "object": "INVALID:token",
+   "quote": "leverage distant but similar tokens for enhancing input features",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "enhancing input features",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:output",
+   "quote": "estimating high-resolution (HR) images from low-resolution (LR) ones",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learn prior information from training data",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "INVALID:token",
+   "quote": "adapt the learned prior to specific testing image",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "INVALID:token",
+   "quote": "group image tokens into categories",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "leverage distant but similar tokens for enhancing input features",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "enhancing input features",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "estimating high-resolution (HR) images from low-resolution (LR) ones",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "INVALID:output",
+   "quote": "estimating high-resolution (HR) images from low-resolution (LR) ones",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "INVALID:output",
+   "quote": "adapt the learned prior to specific testing image",
+   "grounded": true
+  },
+  {
+   "op": "scale",
+   "canonical": "scale",
+   "object": "INVALID:output",
+   "quote": "estimating high-resolution (HR) images from low-resolution (LR) ones",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "INVALID:output",
+   "quote": "estimating high-resolution (HR) images from low-resolution (LR) ones",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "INVALID:output",
+   "quote": "estimating high-resolution (HR) images from low-resolution (LR) ones",
+   "grounded": true
+  },
+  {
+   "op": "filter",
+   "canonical": "filter",
+   "object": "latent",
+   "quote": "enhancing input features",
+   "grounded": true
+  },
+  {
+   "op": "align",
+   "canonical": "align",
+   "object": "INVALID:token",
+   "quote": "leverage distant but similar tokens for enhancing input features",
+   "grounded": true
+  },
+  {
+   "op": "interpolate",
+   "canonical": "interpolate",
+   "object": "INVALID:output",
+   "quote": "estimating high-resolution (HR) images from low-resolutio",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute@value",
+  "correct@latent",
+  "correct@parameter",
+  "encode@input",
+  "filter@latent",
+  "reconstruct@latent",
+  "transform@latent"
+ ]
+}

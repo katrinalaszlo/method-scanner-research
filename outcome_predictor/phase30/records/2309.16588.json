@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2309.16588",
+ "source": "abstract",
+ "words": 133,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Transformers have recently emerged as a powerful tool for learning visual representations.",
+   "grounded": true
+  },
+  {
+   "op": "compute token",
+   "canonical": "compute token",
+   "object": "latent",
+   "quote": "artifacts correspond to high-norm tokens appearing during inference",
+   "grounded": true
+  },
+  {
+   "op": "generate token",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we propose a simple yet effective solution based on providing additional tokens",
+   "grounded": true
+  },
+  {
+   "op": "append token",
+   "canonical": "append token",
+   "object": "input",
+   "quote": "we propose a simple yet effective solution based on providing additional tokens",
+   "grounded": true
+  },
+  {
+   "op": "process token",
+   "canonical": "process token",
+   "object": "latent",
+   "quote": "artifacts correspond to high-norm tokens appearing during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "we show that this solution fixes that problem entirely",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we show that this solution fixes that problem entirely",
+   "grounded": true
+  },
+  {
+   "op": "compute feature map",
+   "canonical": "compute feature map",
+   "object": "latent",
+   "quote": "artifacts correspond to high-norm tokens appearing during inference",
+   "grounded": true
+  },
+  {
+   "op": "compute attention map",
+   "canonical": "compute attention map",
+   "object": "distribution",
+   "quote": "most importantly leads to smoother feature maps and attention maps",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we show that this solution fixes that problem entirely",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we show that this solution fixes that problem entirely",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we show that this solution fixes that problem entirely",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "sets a new state of the art for self-supervised visual models",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "sets a new state of the art for self-",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "enables object discovery methods with larger models",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "most importantly leads to smoother feature maps and attention maps",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "most importantly leads to smoother feature maps and attention maps",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "most importantly leads to smoother feature maps and attention maps",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "most importantly leads to smoother feature maps and attention maps",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "most importantly leads to smoother feature maps and attention maps",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "append token@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute attention map@distribution",
+  "compute attention@latent",
+  "compute distribution@distribution",
+  "compute feature map@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute token@latent",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "process token@latent",
+  "reconstruct@latent"
+ ]
+}

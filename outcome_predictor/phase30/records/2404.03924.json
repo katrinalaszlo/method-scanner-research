@@ -1,0 +1,190 @@
+{
+ "arxiv_id": "2404.03924",
+ "source": "abstract",
+ "words": 109,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 24,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "compute attention map",
+   "canonical": "compute attention map",
+   "object": "INVALID:key query",
+   "quote": "StructSA generates attention maps by recognizing space-time structures of key-query correlations via convolution",
+   "grounded": true
+  },
+  {
+   "op": "aggregate local context",
+   "canonical": "aggregate",
+   "object": "INVALID:value feature",
+   "quote": "StructSA ... dynamically aggregate local contexts of value features",
+   "grounded": false
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "StructViT ... as a main building block",
+   "grounded": false
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "INVALID:key query",
+   "quote": "StructSA ... recognizing space-time structures of key-query correlations via convolution",
+   "grounded": false
+  },
+  {
+   "op": "recognize correlation",
+   "canonical": "classify",
+   "object": "INVALID:key query",
+   "quote": "StructSA ... recognizing space-time structures of key-query correlations via convolution",
+   "grounded": false
+  },
+  {
+   "op": "generate structure",
+   "canonical": "reconstruct",
+   "object": "INVALID:attention map",
+   "quote": "StructSA generates attention maps by recognizing space-time structures of key-query correlations via convolution",
+   "grounded": true
+  },
+  {
+   "op": "use structure",
+   "canonical": "use structure",
+   "object": "INVALID:value feature",
+   "quote": "StructSA ... dynamically aggregate local contexts of value features",
+   "grounded": false
+  },
+  {
+   "op": "form attention map",
+   "canonical": "form attention map",
+   "object": "INVALID:key query",
+   "quote": "StructSA generates attention maps by recognizing space-time structures of key-query correlations via convolution",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "INVALID:value feature",
+   "quote": "StructSA ... dynamically aggregate local contexts of value features",
+   "grounded": false
+  },
+  {
+   "op": "compute correlation",
+   "canonical": "compute correlation",
+   "object": "INVALID:key query",
+   "quote": "StructSA ... recognizing space-time structures of key-query correlations via convolution",
+   "grounded": false
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "INVALID:value feature",
+   "quote": "Struct,SA ... dynamically aggregate local contexts of value features",
+   "grounded": false
+  },
+  {
+   "op": "compute spatial correlation",
+   "canonical": "compute spatial correlation",
+   "object": "INVALID:key query",
+   "quote": "StructSA ... recognizing space-time structures of key-query correlations via convolution",
+   "grounded": false
+  },
+  {
+   "op": "compute temporal correlation",
+   "canonical": "compute temporal correlation",
+   "object": "INVALID:key query",
+   "quote": "StructSA ... recognizing space-time structures of key-query correlations via convolution",
+   "grounded": false
+  },
+  {
+   "op": "aggregate context",
+   "canonical": "aggregate",
+   "object": "INVALID:value feature",
+   "quote": "StructSA ... dynamically aggregate local contexts of value features",
+   "grounded": false
+  },
+  {
+   "op": "form representation",
+   "canonical": "form representation",
+   "object": "INVALID:value feature",
+   "quote": "StructSA ... dynamically aggregate local contexts of value features",
+   "grounded": false
+  },
+  {
+   "op": "compute spatial structure",
+   "canonical": "compute spatial structure",
+   "object": "INVALID:key query",
+   "quote": "StructSA ... recognizing space-time structures of key-query correlations via convolution",
+   "grounded": false
+  },
+  {
+   "op": "compute temporal structure",
+   "canonical": "compute temporal structure",
+   "object": "INVALID:key, query",
+   "quote": "StructSA ... recognizing space-time structures of key-query correlations via convolution",
+   "grounded": false
+  },
+  {
+   "op": "use spatial structure",
+   "canonical": "use spatial structure",
+   "object": "INVALID:value feature",
+   "quote": "StructSA ... dynamically aggregate local contexts of value features",
+   "grounded": false
+  },
+  {
+   "op": "use temporal structure",
+   "canonical": "use temporal structure",
+   "object": "INVALID:value feature",
+   "quote": "StructSA ... dynamically aggregate local contexts of value features",
+   "grounded": false
+  },
+  {
+   "op": "form attention weights",
+   "canonical": "form attention weights",
+   "object": "INVALID:key query",
+   "quote": "StructSA generates attention maps by recognizing space-time structures of key-query correlations via convolution",
+   "grounded": true
+  },
+  {
+   "op": "apply attention weights",
+   "canonical": "apply attention weights",
+   "object": "INVALID:value feature",
+   "quote": "StructSA ... dynamically aggregate local contexts of value features",
+   "grounded": false
+  },
+  {
+   "op": "compute spatial-temporal structure",
+   "canonical": "compute spatial-temporal structure",
+   "object": "INVALID:key query",
+   "quote": "StructSA ... recognizing space-time structures of key-query correlations via convolution",
+   "grounded": false
+  },
+  {
+   "op": "form spatial-temporal structure",
+   "canonical": "form spatial-temporal structure",
+   "object": "INVALID:key query",
+   "quote": "StructSA ... recognizing space-time structures of key-query correlations via convolution",
+   "grounded": false
+  },
+  {
+   "op": "use spatial-temporal structure",
+   "canonical": "use spatial-temporal structure",
+   "object": "INVALID:value feature",
+   "quote": "StructSA ... dynamically aggregate local contexts of value features",
+   "grounded": false
+  },
+  {
+   "op": "compute correlation pattern",
+   "canonical": "compute correlation pattern",
+   "object": "INVALID:key query",
+   "quote": "StructSA ... recognizing space-time structures of key-query correlations via convolution",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "extract feature@input"
+ ]
+}

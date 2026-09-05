@@ -1,0 +1,93 @@
+{
+ "arxiv_id": "2302.11951",
+ "source": "abstract",
+ "words": 227,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "RGB-D semantic segmentation can be advanced with convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "split input",
+   "canonical": "split input",
+   "object": "input",
+   "quote": "PDCNet consists of a Depth branch and an RGB branch",
+   "grounded": true
+  },
+  {
+   "op": "extract depth features",
+   "canonical": "extract depth features",
+   "object": "input",
+   "quote": "For the Depth branch, we propose a Pixel Difference Convolution",
+   "grounded": true
+  },
+  {
+   "op": "compute intensity gradient",
+   "canonical": "compute intensity gradient",
+   "object": "input",
+   "quote": "we propose a Pixel Difference Convolution (PDC) to consider local and detailed geometric information",
+   "grounded": true
+  },
+  {
+   "op": "aggregate intensity gradient",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "via aggregating both intensity and gradient information",
+   "grounded": true
+  },
+  {
+   "op": "extract rgb features",
+   "canonical": "extract rgb features",
+   "object": "input",
+   "quote": "For the RGB branch, we contribute a lightweight Cascade Large Kernel (CLK) to extend PDC",
+   "grounded": true
+  },
+  {
+   "op": "compute global context",
+   "canonical": "compute global context",
+   "object": "input",
+   "quote": "to enjoy global contexts for RGB data",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "both modal data's local and global pixel differences are seamlessly incorporated into PDCNet",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "achieves state-of-the-art performance for the semantic segmentation task",
+   "grounded": true
+  },
+  {
+   "op": "apply non-linear transformation",
+   "canonical": "apply non-linear transformation",
+   "object": "latent",
+   "quote": "we propose a Pixel Difference Convolution (PDC) to consider local and detailed geometric information",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply non-linear transformation@latent",
+  "compute global context@input",
+  "compute intensity gradient@input",
+  "extract depth features@input",
+  "extract rgb features@input",
+  "process input@input",
+  "reconstruct@distribution",
+  "split input@input"
+ ]
+}

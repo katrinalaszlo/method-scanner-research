@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2009.03558",
+ "source": "abstract",
+ "words": 244,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "learning the similarity between the features of samples",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "to train models for new classes",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "use only a limited number of labeled examples",
+   "grounded": true
+  },
+  {
+   "op": "compare region",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "find out specific regions that are related to each other",
+   "grounded": true
+  },
+  {
+   "op": "visualize variable",
+   "canonical": "visualize variable",
+   "object": "distribution",
+   "quote": "visualizing intermediate variables in our network",
+   "grounded": true
+  },
+  {
+   "op": "map activation",
+   "canonical": "encode",
+   "object": "sample",
+   "quote": "intuitively explain what our method has learned",
+   "grounded": true
+  },
+  {
+   "op": "compute prototype",
+   "canonical": "compute prototype",
+   "object": "task",
+   "quote": "generalize the interpretability from the level of tasks",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "effectively use only a limited number of labeled examples",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "classification performance through learning the similarity",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "training robust classifiers usually requires a large amount of well-labeled data",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "learning the similarity between the features of samples",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "extensive experiments on four benchmark datasets",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "find the prototypical parts for supporting the final decision",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "reveal how few-shot learning works as in a neural network",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "intuitively explain what our method has learned",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "training robust classifiers usually requires a large amount of well-labeled data",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "task",
+   "quote": "generalize the interpretability from the level of tasks",
+   "grounded": true
+  },
+  {
+   "op": "update value",
+   "canonical": "correct",
+   "object": "value",
+   "quote": "classification performance through learning the similarity",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "input",
+   "quote": "find out specific regions that are related to each other",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "task",
+   "quote": "generalize the interpretability from the level of tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@latent",
+  "compare@value",
+  "compute latent@input",
+  "compute policy@task",
+  "compute prototype@task",
+  "compute reward@task",
+  "compute similarity@latent",
+  "compute trajectory@task",
+  "correct@parameter",
+  "correct@value",
+  "encode@sample",
+  "extract feature@input",
+  "predict@input",
+  "reconstruct@input",
+  "reconstruct@noise",
+  "sample@distribution",
+  "sample@sample",
+  "visualize variable@distribution"
+ ]
+}

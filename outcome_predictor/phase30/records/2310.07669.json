@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2310.07669",
+ "source": "abstract",
+ "words": 173,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "Signals from different modalities each have their own combination algebra",
+   "grounded": true
+  },
+  {
+   "op": "apply morphological haar sampling",
+   "canonical": "apply morphological haar sampling",
+   "object": "latent",
+   "quote": "morphological Haar sampling is applied to both feature channels",
+   "grounded": true
+  },
+  {
+   "op": "split extreme values",
+   "canonical": "split extreme values",
+   "object": "latent",
+   "quote": "splits extreme values and high-frequency information",
+   "grounded": true
+  },
+  {
+   "op": "process high-frequency information",
+   "canonical": "process high-frequency information",
+   "object": "latent",
+   "quote": "splits extreme values and high-frequency information",
+   "grounded": true
+  },
+  {
+   "op": "apply morphologically parameterised relu",
+   "canonical": "apply morphologically parameterised relu",
+   "object": "INVALID:activation",
+   "quote": "morphologically parameterised ReLU is used",
+   "grounded": true
+  },
+  {
+   "op": "upsample",
+   "canonical": "upsample",
+   "object": "latent",
+   "quote": "morphologically-sound up-sampling is applied",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "obtain a full-resolution output",
+   "grounded": true
+  },
+  {
+   "op": "combine feature channels",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "both kinds of operators available in its layers",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply morphological haar sampling@latent",
+  "process high-frequency information@latent",
+  "reconstruct@latent",
+  "sample@input",
+  "split extreme values@latent",
+  "upsample@latent"
+ ]
+}

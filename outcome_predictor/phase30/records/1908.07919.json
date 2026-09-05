@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1908.07919",
+ "source": "abstract",
+ "words": 156,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "encode the input image as a low-resolution representation",
+   "grounded": true
+  },
+  {
+   "op": "recover",
+   "canonical": "recover",
+   "object": "latent",
+   "quote": "recover the high-resolution representation from the encoded low-resolution representation",
+   "grounded": true
+  },
+  {
+   "op": "maintain",
+   "canonical": "maintain",
+   "object": "latent",
+   "quote": "maintains high-resolution representations through the whole process",
+   "grounded": true
+  },
+  {
+   "op": "connect",
+   "canonical": "connect",
+   "object": "latent",
+   "quote": "Connect the high-to-low resolution convolution streams",
+   "grounded": true
+  },
+  {
+   "op": "exchange",
+   "canonical": "exchange",
+   "object": "latent",
+   "quote": "Repeatedly exchange the information across resolutions",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "latent",
+   "quote": "the resulting representation is semantically richer and spatially more precise",
+   "grounded": true
+  },
+  {
+   "op": "apply",
+   "canonical": "apply",
+   "object": "latent",
+   "quote": "the proposed HRNet is a stronger backbone for computer vision problems",
+   "grounded": false
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "recover the high-resolution representation from the encoded low-resolution representation",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply@latent",
+  "connect@latent",
+  "encode@input",
+  "exchange@latent",
+  "maintain@latent",
+  "process@latent",
+  "reconstruct@latent",
+  "recover@latent"
+ ]
+}

@@ -1,0 +1,93 @@
+{
+ "arxiv_id": "1905.02693",
+ "source": "abstract",
+ "words": 172,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 1,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Our architecture leverages novel symmetrical packing and unpacking blocks",
+   "grounded": true
+  },
+  {
+   "op": "compress",
+   "canonical": "compress",
+   "object": "latent",
+   "quote": "to jointly learn to compress and decompress detail-preserving representations",
+   "grounded": true
+  },
+  {
+   "op": "decompress",
+   "canonical": "decompress",
+   "object": "latent",
+   "quote": "to jointly learn to compress and decompress detail-preserving representations",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "using 3D convolutions",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "self-supervised monocular depth estimation method",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "self-supervised, our method outperforms other self, semi, and fully supervised methods",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learned only from unlabeled monocular videos",
+   "grounded": true
+  },
+  {
+   "op": "generalize",
+   "canonical": "generalize",
+   "object": "task",
+   "quote": "generalizing better on out-of-domain data such as the NuScenes dataset",
+   "grounded": true
+  },
+  {
+   "op": "run in real-time",
+   "canonical": "run in real-time",
+   "object": "trajectory",
+   "quote": "can run in real-time",
+   "grounded": true
+  },
+  {
+   "op": "generate ground-truth",
+   "canonical": "reconstruct",
+   "object": "INVALID:depth",
+   "quote": "thanks to longer-range and denser ground-truth depth generated from high-density LiDARs",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply convolution@latent",
+  "compare@error",
+  "compress@latent",
+  "correct@parameter",
+  "decompress@latent",
+  "encode@input",
+  "generalize@task",
+  "predict@state",
+  "run in real-time@trajectory"
+ ]
+}

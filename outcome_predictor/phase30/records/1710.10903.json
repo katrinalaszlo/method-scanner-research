@@ -1,0 +1,72 @@
+{
+ "arxiv_id": "1710.10903",
+ "source": "abstract",
+ "words": 147,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 6,
+ "n_grounded": 2,
+ "ops": [
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "INVALID:neighborhood",
+   "quote": "nodes are able to attend over their neighborhoods' features",
+   "grounded": false
+  },
+  {
+   "op": "apply attention weights",
+   "canonical": "apply attention weights",
+   "object": "latent",
+   "quote": "enabling (implicitly) specifying different weights to different nodes",
+   "grounded": false
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "stacking layers in which nodes are able to attend over their neighborhoods' features",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "enabling (implicitly) specifying different weights to different nodes",
+   "grounded": false
+  },
+  {
+   "op": "update node representation",
+   "canonical": "correct",
+   "object": "INVALID:node",
+   "quote": "stacking layers in which nodes are able to attend over their neighborhoods' features",
+   "grounded": true
+  },
+  {
+   "op": "compute masked attention",
+   "canonical": "compute masked attention",
+   "object": "INVALID:neighborhood",
+   "quote": "leveraging masked self-attentional layers",
+   "grounded": false
+  },
+  {
+   "op": "apply masked attention",
+   "canonical": "apply masked attention",
+   "object": "latent",
+   "quote": "leveraging masked self-attentional layers",
+   "grounded": false
+  },
+  {
+   "op": "compute self-attention",
+   "canonical": "compute self-attention",
+   "object": "INVALID:node",
+   "quote": "leveraging masked self-attentional layers",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply attention weights@latent",
+  "apply masked attention@latent"
+ ]
+}

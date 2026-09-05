@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2211.05778",
+ "source": "abstract",
+ "words": 194,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "takes deformable convolution as the core operator",
+   "grounded": true
+  },
+  {
+   "op": "aggregate spatial features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "adaptive spatial aggregation conditioned by input and task information",
+   "grounded": true
+  },
+  {
+   "op": "compute receptive field",
+   "canonical": "compute receptive field",
+   "object": "state",
+   "quote": "large effective receptive field required for downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "obtain the gain from increasing parameters and training data",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "large-scale models based on convolutional neural networks",
+   "grounded": true
+  },
+  {
+   "op": "learn patterns",
+   "canonical": "train",
+   "object": "distribution",
+   "quote": "learn stronger and more robust patterns with large-scale parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the effectiveness of our model is proven on challenging benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "make it possible to learn stronger and more robust patterns",
+   "grounded": false
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "outperforming current leading CNNs and ViTs",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "proposed InternImage reduces the strict inductive bias of traditional CNNs",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "compute receptive field@state",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "improve@parameter",
+  "process input@input",
+  "reconstruct@action",
+  "train@distribution"
+ ]
+}

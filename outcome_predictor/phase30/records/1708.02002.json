@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "1708.02002",
+ "source": "abstract",
+ "words": 201,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 11,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "reshaping the standard cross entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "prevents the vast number of easy negatives from overwhelming the detector during training",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "applied over a regular, dense sampling of possible object locations",
+   "grounded": false
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the extreme foreground-background class imbalance encountered during training",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "a classifier is applied to a sparse set of candidate object locations",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we design and train a simple dense detector we call RetinaNet",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "when trained with the focal loss, RetinaNet is able to match the speed",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "surpassing the accuracy of all existing state-of-the-art two-stage detectors",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the focal loss focuses training on a sparse set of hard examples",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the standard cross entropy loss such that it down-weights the loss assigned",
+   "grounded": true
+  },
+  {
+   "op": "apply policy",
+   "canonical": "apply policy",
+   "object": "policy",
+   "quote": "applied over a regular, dense sampling of possible object locations",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the focal loss focuses training on a sparse set of hard examples",
+   "grounded": false
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "prevents the vast number of easy negatives from overwhelming the detector during training",
+   "grounded": false
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "we design and train a simple dense detector we call RetinaNet",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the extreme foreground-background class imbalance encountered during training",
+   "grounded": true
+  },
+  {
+   "op": "update policy",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "when trained with the focal loss, Retina,Net is able to match the speed",
+   "grounded": false
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "the focal loss focuses training on a sparse set of hard examples",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we design and train a simple dense detector we call RetinaNet",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a classifier is applied to a sparse set of candidate object locations",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the extreme foreground-background class imbalance encountered during training",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply policy@policy",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute task@task",
+  "compute value@value",
+  "correct@parameter",
+  "correct@policy",
+  "encode@input",
+  "evaluate@error",
+  "predict@distribution",
+  "predict@reward",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@input",
+  "sample@sample",
+  "sample@trajectory"
+ ]
+}

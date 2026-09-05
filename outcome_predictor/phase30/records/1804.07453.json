@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1804.07453",
+ "source": "abstract",
+ "words": 212,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "transform skeleton",
+   "canonical": "transform skeleton",
+   "object": "state",
+   "quote": "transforms the skeletons to those viewpoints for the end-to-end recognition",
+   "grounded": true
+  },
+  {
+   "op": "learn viewpoint",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "learns and determines the most suitable observation viewpoints",
+   "grounded": true
+  },
+  {
+   "op": "classify skeleton",
+   "canonical": "classify",
+   "object": "state",
+   "quote": "end-to-end recognition with a main classification network",
+   "grounded": true
+  },
+  {
+   "op": "fuse scores",
+   "canonical": "fuse scores",
+   "object": "distribution",
+   "quote": "fuses the scores of the two networks to provide the fused prediction",
+   "grounded": true
+  },
+  {
+   "op": "determine viewpoint",
+   "canonical": "determine viewpoint",
+   "object": "latent",
+   "quote": "automatically determines the virtual observation viewpoints",
+   "grounded": true
+  },
+  {
+   "op": "adapt view",
+   "canonical": "adapt view",
+   "object": "state",
+   "quote": "transforms the skeletons of various viewpoints to much more consistent virtual viewpoints",
+   "grounded": false
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "provides the fused prediction",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the proposed view adaptive models are capable of transforming",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "adapt view@state",
+  "classify@state",
+  "compare@error",
+  "determine viewpoint@latent",
+  "fuse scores@distribution",
+  "predict@action",
+  "train@latent",
+  "transform skeleton@state"
+ ]
+}

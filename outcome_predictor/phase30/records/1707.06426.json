@@ -1,0 +1,92 @@
+{
+ "arxiv_id": "1707.06426",
+ "source": "abstract",
+ "words": 128,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "Recent development in fully convolutional neural network enables efficient end-to-end learning of semantic segmentation.",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "Traditionally, the convolutional classifiers are taught to learn the representative semantic features of labeled semantic objects.",
+   "grounded": true
+  },
+  {
+   "op": "compute feature map",
+   "canonical": "compute feature map",
+   "object": "latent",
+   "quote": "In this work, we propose a reverse attention network (RAN) architecture that trains the network to capture the opposite concept (i.e., what are not associated with a target class) as well.",
+   "grounded": true
+  },
+  {
+   "op": "generate direct branch",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "The RAN is a three-branch network that performs the direct, reverse and reverse-attention learning processes simultaneously.",
+   "grounded": false
+  },
+  {
+   "op": "generate reverse branch",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "The RAN is a three-branch network that performs the direct, reverse and reverse-attention learning processes simultaneously.",
+   "grounded": false
+  },
+  {
+   "op": "generate reverse attention branch",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "The RAN is a three-branch network that performs the direct, reverse and reverse-attack learning processes simultaneously.",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Extensive experiments are conducted to show the effectiveness of the RAN in semantic segmentation.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Being built upon the DeepLabv2-LargeFOV, the RAN achieves the state-of-the-art mIoU score (48.1%) for the challenging PASCAL-Context dataset.",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Significant performance improvements are also observed for the PASCAL-VOC, Person-Part, NYUDv2 and ADE20K datasets.",
+   "grounded": false
+  },
+  {
+   "op": "output segmentation map",
+   "canonical": "output segmentation map",
+   "object": "distribution",
+   "quote": "Recent development in fully convolutional neural network enables efficient end-to-end learning of semantic segmentation.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply convolution@input",
+  "backpropagate@gradient",
+  "compute feature map@latent",
+  "correct@parameter",
+  "evaluate@error",
+  "output segmentation map@distribution",
+  "process input@input",
+  "reconstruct@latent"
+ ]
+}

@@ -1,0 +1,191 @@
+{
+ "arxiv_id": "2111.08799",
+ "source": "abstract",
+ "words": 159,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 23,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "we aim to construct anisotropic convolution layers",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our convolutions are robust and simple to implement",
+   "grounded": true
+  },
+  {
+   "op": "process directional information",
+   "canonical": "process directional information",
+   "object": "INVALID:vector",
+   "quote": "the vector stream enables the network to explicitly represent",
+   "grounded": true
+  },
+  {
+   "op": "apply geometric operator",
+   "canonical": "apply geometric operator",
+   "object": "INVALID:scalar-field",
+   "quote": "we introduce deltaconv, a convolution layer that combines geometric operators",
+   "grounded": true
+  },
+  {
+   "op": "apply geometric operator",
+   "canonical": "apply geometric operator",
+   "object": "INVALID:vector-field",
+   "quote": "we introduce deltaconv, a convolution layer that combines geometric operators",
+   "grounded": true
+  },
+  {
+   "op": "separate network",
+   "canonical": "separate network",
+   "object": "INVALID:stream",
+   "quote": "we separate the network into a scalar- and a vector-stream",
+   "grounded": true
+  },
+  {
+   "op": "construct anisotropic filter",
+   "canonical": "construct anisotropic filter",
+   "object": "INVALID:point cloud",
+   "quote": "enable the construction of anisotropic filters on point clouds",
+   "grounded": true
+  },
+  {
+   "op": "evaluate directional information",
+   "canonical": "evaluate",
+   "object": "INVALID:vector",
+   "quote": "the vector stream enables the network to explicitly represent",
+   "grounded": true
+  },
+  {
+   "op": "represent directional information",
+   "canonical": "encode",
+   "object": "INVALID:vector",
+   "quote": "the vector stream enables the network to explicitly represent",
+   "grounded": true
+  },
+  {
+   "op": "process scalar information",
+   "canonical": "process scalar information",
+   "object": "INVALID:scalar-field",
+   "quote": "we separate the network into a scalar- and a vector-stream",
+   "grounded": true
+  },
+  {
+   "op": "combine scalar and vector information",
+   "canonical": "aggregate",
+   "object": "INVALID:stream",
+   "quote": "we separate the network into a scalar- and a vector-stream",
+   "grounded": true
+  },
+  {
+   "op": "compute scalar field",
+   "canonical": "compute scalar field",
+   "object": "INVALID:point cloud",
+   "quote": "enable the construction of anisotropic filters on point clouds",
+   "grounded": true
+  },
+  {
+   "op": "compute vector field",
+   "canonical": "compute vector field",
+   "object": "INVALID:point cloud",
+   "quote": "enable the construction of anisotropic filters on point clouds",
+   "grounded": true
+  },
+  {
+   "op": "construct anisotropic convolution",
+   "canonical": "construct anisotropic convolution",
+   "object": "INVALID:point cloud",
+   "quote": "enable the construction of anisotropic filters on point clouds",
+   "grounded": true
+  },
+  {
+   "op": "perform convolution operation",
+   "canonical": "perform convolution operation",
+   "object": "INVALID:point cloud",
+   "quote": "enable the construction of anisotropic filters on point clouds",
+   "grounded": true
+  },
+  {
+   "op": "compute directional information",
+   "canonical": "compute directional information",
+   "object": "INVALID:vector",
+   "quote": "the vector stream enables the network to explicitly represent",
+   "grounded": true
+  },
+  {
+   "op": "compute scalar information",
+   "canonical": "compute scalar information",
+   "object": "INVALID:scalar-field",
+   "quote": "we separate the network into a scalar- and a vector-stream",
+   "grounded": true
+  },
+  {
+   "op": "compute vector information",
+   "canonical": "compute vector information",
+   "object": "INVALID:vector-field",
+   "quote": "we separate the network into a scalar- and a vector-stream",
+   "grounded": true
+  },
+  {
+   "op": "combine scalar and vector fields",
+   "canonical": "aggregate",
+   "object": "INVALID:point cloud",
+   "quote": "enable the construction of anisotropic filters on point clouds",
+   "grounded": true
+  },
+  {
+   "op": "process scalar and vector fields",
+   "canonical": "process scalar and vector fields",
+   "object": "INVALID:point cloud",
+   "quote": "enable the construction of anisotropic filters on point clouds",
+   "grounded": true
+  },
+  {
+   "op": "construct anisotropic filter",
+   "canonical": "construct anisotropic filter",
+   "object": "INVALID:point cloud",
+   "quote": "enable the construction of anisotropic filters on point clouds",
+   "grounded": true
+  },
+  {
+   "op": "compute anisotropic filter",
+   "canonical": "compute anisotropic filter",
+   "object": "INVALID:point cloud",
+   "quote": "enable the construction of anisotropic filters on point clouds",
+   "grounded": true
+  },
+  {
+   "op": "apply anisotropic filter",
+   "canonical": "apply anisotropic filter",
+   "object": "INVALID:point cloud",
+   "quote": "enable the construction of anisotropic filters on point clouds",
+   "grounded": true
+  },
+  {
+   "op": "compute convolution output",
+   "canonical": "compute convolution output",
+   "object": "INVALID:point cloud",
+   "quote": "enable the construction of anisotropic filters on point clouds",
+   "grounded": true
+  },
+  {
+   "op": "compute convolution result",
+   "canonical": "compute convolution result",
+   "object": "INVALID:point cloud",
+   "quote": "enable the construction of anisotropic filters on point clouds",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute gradient@error",
+  "correct@parameter"
+ ]
+}

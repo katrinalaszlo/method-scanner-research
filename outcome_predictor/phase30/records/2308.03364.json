@@ -1,0 +1,216 @@
+{
+ "arxiv_id": "2308.03364",
+ "source": "abstract",
+ "words": 165,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 0,
+ "n_grounded": 26,
+ "ops": [
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "state",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "Our DAT aggregates features across spatial and channel dimensions",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "Extensive experiments show that our DAT surpasses current methods",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "interact features",
+   "canonical": "act",
+   "object": "latent",
+   "quote": "AIM complements two self-attention mechanisms from corresponding dimensions",
+   "grounded": true
+  },
+  {
+   "op": "feed forward",
+   "canonical": "feed forward",
+   "object": "latent",
+   "quote": "SGFN introduces additional non-linear spatial information in the feed-forward network",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "SGFN introduces additional non-linear spatial information in the feed-forward network",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we alternately apply spatial and channel self, attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "SGFN introduces additional non-linear spatial information in the feed-forward network",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we alternately apply spatial and channel self-attention in consecutive Transformer blocks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "act@latent",
+  "aggregate@latent",
+  "apply attention@state",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "correct@parameter",
+  "feed forward@latent",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

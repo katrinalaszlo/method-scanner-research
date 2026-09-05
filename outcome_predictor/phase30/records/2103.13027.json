@@ -1,0 +1,199 @@
+{
+ "arxiv_id": "2103.13027",
+ "source": "abstract",
+ "words": 189,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 10,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "a learnable lightweight mixup generator, Mix Block, is designed to generate mixed samples",
+   "grounded": true
+  },
+  {
+   "op": "match label",
+   "canonical": "compare",
+   "object": "sample",
+   "quote": "match the mixed samples and labels via complex offline optimization",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "sample",
+   "quote": "the ultimate classification goal directly",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "INVALID:generator",
+   "quote": "direct supervision of the corresponding mixed labels",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "bi-level optimization framework",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "INVALID:classifier",
+   "quote": "solve them in a bi-level optimization framework",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "prevent the degradation and instability of bi-level optimization",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "INVALID:generator",
+   "quote": "momentum pipeline to train AutoMix in an end-to-end manner",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "sample",
+   "quote": "reformulates the mixup classification into two sub-tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "corresponding sub-networks and solves them in a bi-level optimization framework",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "INVALID:classifier",
+   "quote": "direct supervision of the corresponding mixed labels",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "sample",
+   "quote": "prevent the degradation and instability of bi-level optimization",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "INVALID:generator",
+   "quote": "momentum pipeline to train AutoMix in an end-to-end manner",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "sample",
+   "quote": "reformulates the mixup classification into two sub-tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "corresponding sub-networks and solves them in a bi-level optimization framework",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "INVALID:classifier",
+   "quote": "direct supervision of the corresponding mixed labels",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "sample",
+   "quote": "prevent the degradation and instability of bi-level optimization",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "INVALID:generator",
+   "quote": "momentum pipeline to train AutoMix in an end-to-end manner",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "sample",
+   "quote": "reformulates the mixup classification into two sub-tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "corresponding sub-networks and solves them in a bi-level optimization framework",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "INVALID:classifier",
+   "quote": "direct supervision of the corresponding mixed labels",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "sample",
+   "quote": "prevent the degradation and instability of bi-level optimization",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "INVALID:generator",
+   "quote": "momentum pipeline to train AutoMix in an end-to-end manner",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "sample",
+   "quote": "reformulates the mixup classification into two sub-tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "corresponding sub-networks and solves them in a bi-level optimization framework",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "INVALID:classifier",
+   "quote": "direct supervision of the corresponding mixed labels",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@sample",
+  "compute gradient@error",
+  "reconstruct@input"
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2304.02147",
+ "source": "abstract",
+ "words": 200,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "we propose ConvFormer, a novel convolutional transformer",
+   "grounded": false
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "we designed a spatial and temporal convolutional transformer",
+   "grounded": true
+  },
+  {
+   "op": "model relations",
+   "canonical": "model relations",
+   "object": "state",
+   "quote": "to comprehensively model human joint relations",
+   "grounded": true
+  },
+  {
+   "op": "fuse information",
+   "canonical": "fuse information",
+   "object": "latent",
+   "quote": "introduce a novel notion of temporal joints profile",
+   "grounded": false
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "temporal ConvFormer that fuses complete temporal information",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "extensive experiments have been conducted to identify the optimal hyper-parameter set",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we achieved a significant parameter reduction relative to prior transformer models",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we achieved State-of-the-Art (SOTA) or near SOTA on all three datasets",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we obtained SOTA on all three metrics for the MPI-INF-3DHP dataset",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we have quantitatively and qualitatively validated our method on three common benchmark datasets",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply convolution@input",
+  "backpropagate@gradient",
+  "compute attention@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "fuse information@latent",
+  "model relations@state",
+  "sample@action"
+ ]
+}

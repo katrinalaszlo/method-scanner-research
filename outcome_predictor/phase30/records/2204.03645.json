@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2204.03645",
+ "source": "abstract",
+ "words": 251,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 11,
+ "n_invalid_object": 8,
+ "n_grounded": 11,
+ "ops": [
+  {
+   "op": "split tokens",
+   "canonical": "split tokens",
+   "object": "input",
+   "quote": "we propose approaching the problem from an orthogonal angle",
+   "grounded": true
+  },
+  {
+   "op": "create spatial tokens",
+   "canonical": "create spatial tokens",
+   "object": "input",
+   "quote": "spatial tokens, the spatial dimension defines the token scope",
+   "grounded": true
+  },
+  {
+   "op": "create channel tokens",
+   "canonical": "create channel tokens",
+   "object": "input",
+   "quote": "channel tokens, we have the inverse: the channel dimension defines the token scope",
+   "grounded": true
+  },
+  {
+   "op": "group tokens",
+   "canonical": "group tokens",
+   "object": "INVALID:token",
+   "quote": "we further group tokens along the sequence direction for both spatial and channel tokens",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "INVALID:token",
+   "quote": "exploiting self-attention mechanisms with both spatial tokens and channel tokens",
+   "grounded": true
+  },
+  {
+   "op": "compute attention scores",
+   "canonical": "compute attention scores",
+   "object": "INVALID:token",
+   "quote": "the channel attention naturally captures global interactions and representations",
+   "grounded": true
+  },
+  {
+   "op": "refine local representations",
+   "canonical": "correct",
+   "object": "INVALID:token",
+   "quote": "spatial attention refines the local representations by performing fine-grained interactions",
+   "grounded": true
+  },
+  {
+   "op": "aggregate global information",
+   "canonical": "aggregate",
+   "object": "INVALID:token",
+   "quote": "the channel attention naturally captures global interactions and representations",
+   "grounded": true
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "INVALID:token",
+   "quote": "we show that these two self-attentions complement each other",
+   "grounded": true
+  },
+  {
+   "op": "combine outputs",
+   "canonical": "aggregate",
+   "object": "INVALID:token",
+   "quote": "we further group tokens along the sequence direction for both spatial and channel tokens",
+   "grounded": true
+  },
+  {
+   "op": "generate final output",
+   "canonical": "reconstruct",
+   "object": "INVALID:token",
+   "quote": "DaViT achieves state-of-the-art performance on four different tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "create channel tokens@input",
+  "create spatial tokens@input",
+  "split tokens@input"
+ ]
+}

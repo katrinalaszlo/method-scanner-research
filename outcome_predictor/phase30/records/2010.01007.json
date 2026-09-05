@@ -1,0 +1,73 @@
+{
+ "arxiv_id": "2010.01007",
+ "source": "abstract",
+ "words": 156,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 5,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "state",
+   "quote": "Based on our proposed object state similarity metric",
+   "grounded": true
+  },
+  {
+   "op": "share pattern",
+   "canonical": "share pattern",
+   "object": "INVALID:object",
+   "quote": "object patterns across different HOIs are shared",
+   "grounded": true
+  },
+  {
+   "op": "augment feature",
+   "canonical": "augment",
+   "object": "INVALID:appearance",
+   "quote": "augment local object appearance features",
+   "grounded": true
+  },
+  {
+   "op": "shift correlation",
+   "canonical": "shift correlation",
+   "object": "INVALID:spatial",
+   "quote": "shift spatial correlation between humans and objects",
+   "grounded": true
+  },
+  {
+   "op": "generate configuration",
+   "canonical": "reconstruct",
+   "object": "INVALID:feasible",
+   "quote": "to other feasible configurations",
+   "grounded": true
+  },
+  {
+   "op": "preserve interaction",
+   "canonical": "preserve interaction",
+   "object": "INVALID:interaction",
+   "quote": "while preserving their interactions",
+   "grounded": true
+  },
+  {
+   "op": "model mixture",
+   "canonical": "model mixture",
+   "object": "distribution",
+   "quote": "with the aid of a pose-guided Gaussian Mixture Model",
+   "grounded": true
+  },
+  {
+   "op": "integrate model",
+   "canonical": "integrate model",
+   "object": "parameter",
+   "quote": "Our method can be easily integrated into various HOI detection models",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute similarity@state",
+  "integrate model@parameter",
+  "model mixture@distribution"
+ ]
+}

@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2310.11031",
+ "source": "abstract",
+ "words": 164,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Our focus in this study is on leveraging the knowledge of large pretrained models",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we employ parameter-efficient fine-tuning (PEFT) techniques",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we achieve state-of-the-art performance in domain generalization tasks",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Learning robust vision models that perform well in out-of-distribution",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "Our focus in this study is on leveraging the knowledge of large pretrained models",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we employ parameter-efficient fine-tuning (PEFT) techniques",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we achieve state-of-the-art performance in domain generalization tasks",
+   "grounded": true
+  },
+  {
+   "op": "resample noise",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "Learning robust vision models that perform well in out-of-distribution",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we employ parameter-efficient fine-tyuning (PEFT) techniques",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "we achieve state-of-the-art performance in domain generalization tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "Learning robust vision models that perform well in out-of-distribution",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "we achieve state-of-the-art performance in domain generalization tasks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate error",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Our focus in this study is on leveraging the knowledge of large pretrained models",
+   "grounded": true
+  },
+  {
+   "op": "aggregate error",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "we employ parameter-efficient fine-tuning (PEFT) techniques",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "Learning robust vision models that perform well in out-of-distribution",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "we achieve state-of-the-art performance in domain generalization tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "Learning robust vision models that perform well in out-of-distribution",
+   "grounded": true
+  },
+  {
+   "op": "apply policy",
+   "canonical": "apply policy",
+   "object": "policy",
+   "quote": "we achieve state-of-the-art performance in domain generalization tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "Our focus in this study is on leveraging the knowledge of large pretrained models",
+   "grounded": true
+  },
+  {
+   "op": "update latent",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "we employ parameter-efficient fine-tuning (PEFT) techniques",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "Learning robust vision models that perform well in out-of-distribution",
+   "grounded": true
+  },
+  {
+   "op": "apply input",
+   "canonical": "apply input",
+   "object": "input",
+   "quote": "we achieve state-of-the-art performance in domain generalization tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "Learning robust vision models that perform well in out-of-distribution",
+   "grounded": true
+  },
+  {
+   "op": "apply sample",
+   "canonical": "apply sample",
+   "object": "sample",
+   "quote": "we achieve state-of-the-art performance in domain generalization tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we achieve state-of-the-art performance in domain generalization tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "apply gradient@parameter",
+  "apply input@input",
+  "apply policy@policy",
+  "apply sample@sample",
+  "backpropagate@gradient",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "correct@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@distribution",
+  "sample@noise",
+  "sample@trajectory"
+ ]
+}

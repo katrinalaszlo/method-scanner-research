@@ -1,0 +1,141 @@
+{
+ "arxiv_id": "2010.07922",
+ "source": "abstract",
+ "words": 177,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 1,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "compute invariant",
+   "canonical": "compute invariant",
+   "object": "INVALID:proxy target",
+   "quote": "explicit invariance constraints on the proxy classifiers",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "data augmentations can be more effectively utilized",
+   "grounded": true
+  },
+  {
+   "op": "predict target",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "enforces invariant prediction of proxy targets",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "prediction error or residual (target minus prediction)",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "improved generalization guarantees",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "self-supervised objective, Representation Learning via Invariant Causal Mechanisms",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "probability distribution, density, score function, posterior",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "a plan -> trajectory",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "a Q-function, critic, target, return or advantage -> value",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "a task, environment instance, or episode drawn for (meta-)learning",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "a sequence of states and/or actions over time",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "reward / return / value signal",
+   "grounded": false
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "learned representation / embedding / feature vector",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "loss/objective -> error",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "gradient of an objective w.r.t. parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "model weights or hyperparameters",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply augmentation@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compare@value",
+  "compute distribution@latent",
+  "compute gradient@gradient",
+  "compute latent@latent",
+  "compute parameter@parameter",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "predict@latent",
+  "sample@action"
+ ]
+}

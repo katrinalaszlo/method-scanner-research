@@ -1,0 +1,207 @@
+{
+ "arxiv_id": "2111.14585",
+ "source": "abstract",
+ "words": 240,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 6,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "INVALID:instance",
+   "quote": "A good data representation should contain relations, or semantic similarity, between the instances.",
+   "grounded": true
+  },
+  {
+   "op": "generate view",
+   "canonical": "reconstruct",
+   "object": "INVALID:instance",
+   "quote": "we estimate from one view of a batch a continuous distribution to push or pull instances based on their semantic similarities.",
+   "grounded": true
+  },
+  {
+   "op": "estimate distribution",
+   "canonical": "predict",
+   "object": "INVALID:instance",
+   "quote": "we estimate from one view of a batch a continuous distribution to push or pull instances based on their semantic similarities.",
+   "grounded": true
+  },
+  {
+   "op": "sharpen distribution",
+   "canonical": "sharpen distribution",
+   "object": "distribution",
+   "quote": "The target similarity distribution is sharpened to eliminate noisy relations.",
+   "grounded": false
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "INVALID:instance",
+   "quote": "The model predicts for each instance, from another view, the target distribution while contrasting its positive with negatives.",
+   "grounded": true
+  },
+  {
+   "op": "contrast positive negative",
+   "canonical": "compare",
+   "object": "INVALID:instance",
+   "quote": "The model predicts for each instance, from another view, the target distribution while contrasting its positive with negatives.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Our training objective is a soft contrastive learning one.",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Our training objective is a soft contrastive learning one.",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "Our training objective is a soft contrastive learning one.",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "The model predicts for each instance, from another view, the target distribution while contrasting its positive with negatives.",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "Experimental results show that SCE is Top-1 on the ImageNet linear evaluation protocol at 100 pretraining epochs with 72.1% accuracy.",
+   "grounded": true
+  },
+  {
+   "op": "evaluate task",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Experimental results show that SCE is Top-1 on the ImageNet linear evaluation protocol at 100 pretraining epochs with 72.1% accuracy.",
+   "grounded": true
+  },
+  {
+   "op": "generalize task",
+   "canonical": "generalize task",
+   "object": "task",
+   "quote": "We also show that SCE is able to generalize to several tasks.",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "We also show that SCE is able to generalize to several tasks.",
+   "grounded": true
+  },
+  {
+   "op": "track trajectory",
+   "canonical": "track trajectory",
+   "object": "trajectory",
+   "quote": "We also show that SCE is able to generalize to several tasks.",
+   "grounded": true
+  },
+  {
+   "op": "denoise distribution",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "The target similarity distribution is sharpened to eliminate noisy relations.",
+   "grounded": false
+  },
+  {
+   "op": "resample instance",
+   "canonical": "sample",
+   "object": "INVALID:instance",
+   "quote": "we estimate from one view of a batch a continuous distribution to push or pull instances based on their semantic similarities.",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Our training objective is a soft contrastive learning one.",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "Our training objective is a soft contrastive learning one.",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate gradient",
+   "canonical": "backpropagate gradient",
+   "object": "gradient",
+   "quote": "Our training objective is a soft contrastive learning one.",
+   "grounded": true
+  },
+  {
+   "op": "apply noise",
+   "canonical": "apply noise",
+   "object": "noise",
+   "quote": "The target similarity distribution is sharpened to eliminate noisy relations.",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "The model predicts for each instance, from another view, the target distribution while contrasting its positive with negatives.",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "Our training objective is a soft contrastive learning one.",
+   "grounded": true
+  },
+  {
+   "op": "update model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Our training objective is a soft contrastive learning one.",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "We also show that SCE is able to generalize to several tasks.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "apply noise@noise",
+  "backpropagate gradient@gradient",
+  "compare@error",
+  "compute accuracy@task",
+  "compute gradient@gradient",
+  "compute reward@task",
+  "compute task@task",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "generalize task@task",
+  "reconstruct@distribution",
+  "sample@action",
+  "sample@distribution",
+  "sharpen distribution@distribution",
+  "track trajectory@trajectory"
+ ]
+}

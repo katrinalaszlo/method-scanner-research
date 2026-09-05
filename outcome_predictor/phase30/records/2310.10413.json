@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2310.10413",
+ "source": "abstract",
+ "words": 214,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Convolutional neural networks (CNNs) depend on deep network architectures to extract accurate information for image super-resolution.",
+   "grounded": true
+  },
+  {
+   "op": "enhance features",
+   "canonical": "enhance features",
+   "object": "latent",
+   "quote": "The residual enhancement block is composed of a residual enhanced architecture to facilitate hierarchical features for image super-resolution.",
+   "grounded": true
+  },
+  {
+   "op": "refine features",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "A refinement block utilizes a stacked architecture to accurately learn obtained features.",
+   "grounded": true
+  },
+  {
+   "op": "learn robust features",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "A wide enhancement block achieves a dynamic architecture to learn more robust information to enhance applicability of an obtained super-resolution model for varying scenes.",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct image",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "A construction block is responsible for reconstructing high-quality images.",
+   "grounded": true
+  },
+  {
+   "op": "apply residual learning",
+   "canonical": "apply residual learning",
+   "object": "latent",
+   "quote": "A residual learning operation is embedded in the refinement block to prevent long-term dependency problem.",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "Designed heterogeneous architecture can not only facilitate richer structural information, but also be lightweight.",
+   "grounded": true
+  },
+  {
+   "op": "output image",
+   "canonical": "output image",
+   "object": "state",
+   "quote": "A construction block is responsible for reconstructing high-quality images.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "apply residual learning@latent",
+  "correct@latent",
+  "encode@input",
+  "enhance features@latent",
+  "output image@state",
+  "reconstruct@state",
+  "train@latent"
+ ]
+}

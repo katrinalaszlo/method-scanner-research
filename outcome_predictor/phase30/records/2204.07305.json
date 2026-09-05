@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "2204.07305",
+ "source": "abstract",
+ "words": 183,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "how pre-training on external data benefits FSL",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "how state-of-the-art transformer architectures can be exploited",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "how fine-tuning mitigates domain shift",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we explore few-shot learning from the perspective of neural network architecture",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "how state-of-the-art transformer architectures can be exploited",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "how fine-tuning mitigates domain shift",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "how fine-tuning mitigates domain shift",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "how pre-training on external data benefits FSL",
+   "grounded": true
+  },
+  {
+   "op": "simulate task",
+   "canonical": "simulate task",
+   "object": "task",
+   "quote": "base categories are used to simulate few-shot tasks for meta-training",
+   "grounded": true
+  },
+  {
+   "op": "fine-tune",
+   "canonical": "fine-tune",
+   "object": "parameter",
+   "quote": "the scarcely labelled data of an novel task is taken for fine-tuning",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "how fine-tuning mitigates domain shift",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "how state-of-the-art transformer architectures can be exploited",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "how fine-tuning mitigates domain shift",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "how fine-tuning mitigates domain shift",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we show that a simple transformer-based pipeline yields surprisingly good performance",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "how fine-tuning mitigates domain shift",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "how state-of-the-art transformer architectures can be exploited",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "how state-of-the-art transformer architectures can be exploited",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we explore few-shot learning from the perspective of neural network architecture",
+   "grounded": true
+  },
+  {
+   "op": "update policy",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "how fine-tuning mitigates domain shift",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "how pre-training on external data benefits FSL",
+   "grounded": true
+  },
+  {
+   "op": "apply noise",
+   "canonical": "apply noise",
+   "object": "noise",
+   "quote": "how pre-training on external data benefits FSL",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "how state-of-the-art transformer architectures can be exploited",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "we explore few-shot learning from the perspective of neural network architecture",
+   "grounded": true
+  },
+  {
+   "op": "denoise trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "how pre-training on external data benefits FSL",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "apply noise@noise",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "correct@policy",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "fine-tune@parameter",
+  "predict@distribution",
+  "predict@value",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@sample",
+  "sample@trajectory",
+  "simulate task@task",
+  "train@parameter"
+ ]
+}

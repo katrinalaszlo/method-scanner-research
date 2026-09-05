@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "1911.04131",
+ "source": "abstract",
+ "words": 220,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "construct graph",
+   "canonical": "construct graph",
+   "object": "state",
+   "quote": "we enrich the search space by providing multiple dynamic graph modules",
+   "grounded": true
+  },
+  {
+   "op": "model correlations",
+   "canonical": "model correlations",
+   "object": "state",
+   "quote": "fully exploring the spatial-temporal correlations between nodes",
+   "grounded": true
+  },
+  {
+   "op": "compute connections",
+   "canonical": "compute connections",
+   "object": "state",
+   "quote": "introduce multiple-hop modules and expect to break the limitation",
+   "grounded": true
+  },
+  {
+   "op": "approximate value",
+   "canonical": "approximate value",
+   "object": "value",
+   "quote": "mainstream spectral GCN is approximated by one-order hop",
+   "grounded": true
+  },
+  {
+   "op": "sample architecture",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "a sampling- and memory-efficient evolution strategy is proposed",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "search an optimal architecture for this task",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "conduct extensive experiments on two very large scaled datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the results show that our model gets the state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "the resulted architecture proves the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "track trajectory",
+   "canonical": "track trajectory",
+   "object": "trajectory",
+   "quote": "temporal interactions, which is barely discussed before",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the results show that our model gets the state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "denoise signal",
+   "canonical": "reconstruct",
+   "object": "reward",
+   "quote": "the results show that our model gets the state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "resample data",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "we conduct extensive experiments on two very large scaled datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the resulted architecture proves the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "we enrich the search space by providing multiple dynamic graph modules",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the resulted architecture proves the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "a sampling- and memory-efficient evolution strategy is proposed",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "a sampling- and memory-efficient evolution strategy is proposed",
+   "grounded": true
+  },
+  {
+   "op": "update model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "search an optimal architecture for this task",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we conduct extensive experiments on two very large scaled datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "temporal interactions, which is barely discussed before",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "a sampling- and memory-efficient evolution strategy is proposed",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "we conduct extensive experiments on two very large scaled datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "action",
+   "quote": "the resulted architecture proves the effectiveness",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the results show that our model gets the state-of-the-art results",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "approximate value@value",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute connections@state",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute output@action",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "construct graph@state",
+  "correct@parameter",
+  "evaluate@task",
+  "model correlations@state",
+  "predict@action",
+  "reconstruct@reward",
+  "sample@input",
+  "sample@task",
+  "track trajectory@trajectory"
+ ]
+}

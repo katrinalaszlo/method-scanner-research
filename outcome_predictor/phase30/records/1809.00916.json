@@ -1,0 +1,93 @@
+{
+ "arxiv_id": "1809.00916",
+ "source": "abstract",
+ "words": 249,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 1,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "compute relation matrix",
+   "canonical": "compute relation matrix",
+   "object": "input",
+   "quote": "we use a binary relation matrix to represent the relationship between all pixels",
+   "grounded": true
+  },
+  {
+   "op": "estimate dense relation matrix",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "we propose to use a dense relation matrix to serve as a surrogate for the binary relation,",
+   "grounded": true
+  },
+  {
+   "op": "compute sparse relation matrix",
+   "canonical": "compute sparse relation matrix",
+   "object": "input",
+   "quote": "we propose an efficient interlaced sparse self-attention scheme",
+   "grounded": true
+  },
+  {
+   "op": "combine sparse relation matrices",
+   "canonical": "aggregate",
+   "object": "input",
+   "quote": "the combination of two sparse relation matrices",
+   "grounded": true
+  },
+  {
+   "op": "apply self-attention",
+   "canonical": "apply self-attention",
+   "object": "INVALID:relation",
+   "quote": "to model the dense relations between any two of all pixels",
+   "grounded": true
+  },
+  {
+   "op": "aggregate context information",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we further combine our interlaced sparse self-attention scheme with the conventional multi-scale context schemes",
+   "grounded": true
+  },
+  {
+   "op": "apply pyramid pooling",
+   "canonical": "apply pyramid pooling",
+   "object": "input",
+   "quote": "including pyramid pooling",
+   "grounded": true
+  },
+  {
+   "op": "apply atrous spatial pyramid pooling",
+   "canonical": "apply atrous spatial pyramid pooling",
+   "object": "input",
+   "quote": "and atrous spatial pyramid pooling",
+   "grounded": true
+  },
+  {
+   "op": "compute context features",
+   "canonical": "compute context features",
+   "object": "input",
+   "quote": "to capture richer context information",
+   "grounded": true
+  },
+  {
+   "op": "generate output map",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we empirically show the advantages of our approach with competitive performances",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@input",
+  "aggregate@latent",
+  "apply atrous spatial pyramid pooling@input",
+  "apply pyramid pooling@input",
+  "compute context features@input",
+  "compute relation matrix@input",
+  "compute sparse relation matrix@input",
+  "predict@input",
+  "reconstruct@input"
+ ]
+}

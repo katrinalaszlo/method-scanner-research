@@ -1,0 +1,154 @@
+{
+ "arxiv_id": "1805.02556",
+ "source": "abstract",
+ "words": 218,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 18,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "extract spatio-temporal information embedded in the skeleton sequences",
+   "grounded": true
+  },
+  {
+   "op": "model spatial configuration",
+   "canonical": "model spatial configuration",
+   "object": "state",
+   "quote": "model spatial configurations and temporal dynamics in skeletons",
+   "grounded": true
+  },
+  {
+   "op": "model temporal dynamics",
+   "canonical": "model temporal dynamics",
+   "object": "state",
+   "quote": "model spatial configurations and temporal dynamics in skeletons",
+   "grounded": true
+  },
+  {
+   "op": "learn spatial features",
+   "canonical": "train",
+   "object": "state",
+   "quote": "learn the spatial features in a single skeleton",
+   "grounded": false
+  },
+  {
+   "op": "learn temporal features",
+   "canonical": "train",
+   "object": "state",
+   "quote": "learn the temporal features in the skeleton sequences",
+   "grounded": false
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "state",
+   "quote": "focus attention on the most discriminative parts in the single skeleton",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "state",
+   "quote": "design an adaptive attentional module to focus attention",
+   "grounded": false
+  },
+  {
+   "op": "compute structural features",
+   "canonical": "compute structural features",
+   "object": "state",
+   "quote": "learn the structural features among joints and lines simultaneously",
+   "grounded": true
+  },
+  {
+   "op": "compute joint features",
+   "canonical": "compute joint features",
+   "object": "state",
+   "quote": "learn the structural features among joints and lines simultaneously",
+   "grounded": true
+  },
+  {
+   "op": "compute line features",
+   "canonical": "compute line features",
+   "object": "state",
+   "quote": "learn the structural features among joints and lines simultaneously",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "exploit the complementarity from different geometries in the skeleton",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learn the spatial features in a single skeleton",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learn the temporal features in the skeleton sequences",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "design an adaptive attentional module to focus attention",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learn the structural features among joints and lines simultaneously",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "extensive experiments are conducted on several popular skeleton datasets",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "extensive experiments are conducted on several popular skeleton datasets",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "the proposed approach achieves better results than most mainstream methods",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "backpropagate@gradient",
+  "compute attention weights@state",
+  "compute attention@state",
+  "compute joint features@state",
+  "compute line features@state",
+  "compute structural features@state",
+  "correct@parameter",
+  "encode@state",
+  "evaluate@error",
+  "improve@parameter",
+  "model spatial configuration@state",
+  "model temporal dynamics@state",
+  "train@state"
+ ]
+}

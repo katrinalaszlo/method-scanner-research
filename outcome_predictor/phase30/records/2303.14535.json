@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2303.14535",
+ "source": "abstract",
+ "words": 241,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "processes an image in less than a millisecond on a modern GPU",
+   "grounded": true
+  },
+  {
+   "op": "predict feature",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "train a student network to predict the extracted features",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "training loss that hinders the student from imitating",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train a student network to predict the extracted features",
+   "grounded": true
+  },
+  {
+   "op": "encode image",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "efficiently incorporating an autoencoder that analyzes images globally",
+   "grounded": true
+  },
+  {
+   "op": "decode image",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "efficiently incorporating an autoencoder that analyzes images globally",
+   "grounded": true
+  },
+  {
+   "op": "detect anomaly",
+   "canonical": "detect anomaly",
+   "object": "state",
+   "quote": "student failing to predict their features",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "detection of anomalies at test time is enabled by the student failing",
+   "grounded": true
+  },
+  {
+   "op": "analyze global",
+   "canonical": "analyze global",
+   "object": "input",
+   "quote": "efficiently incorporating an autoencoder that analyzes images globally",
+   "grounded": true
+  },
+  {
+   "op": "localize anomaly",
+   "canonical": "localize anomaly",
+   "object": "state",
+   "quote": "sets new standards for both the detection and the localization of anomalies",
+   "grounded": true
+  },
+  {
+   "op": "process image",
+   "canonical": "process image",
+   "object": "input",
+   "quote": "processes an image in less than a millisecond on a modern GPU",
+   "grounded": true
+  },
+  {
+   "op": "compute latency",
+   "canonical": "compute latency",
+   "object": "task",
+   "quote": "latency of two milliseconds and a throughput of six hundred images per second",
+   "grounded": true
+  },
+  {
+   "op": "compute throughput",
+   "canonical": "compute throughput",
+   "object": "task",
+   "quote": "latency of two milliseconds and a throughput of six hundred images per second",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "evaluate our method, called EfficientAD, on 32 datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute error rate",
+   "canonical": "compute error rate",
+   "object": "error",
+   "quote": "low error rate, this makes it an economical solution",
+   "grounded": true
+  },
+  {
+   "op": "detect logical anomaly",
+   "canonical": "detect logical anomaly",
+   "object": "state",
+   "quote": "address the detection of challenging logical anomalies",
+   "grounded": true
+  },
+  {
+   "op": "analyze combination",
+   "canonical": "analyze combination",
+   "object": "state",
+   "quote": "invalid combinations of normal local features",
+   "grounded": true
+  },
+  {
+   "op": "detect invalid",
+   "canonical": "detect invalid",
+   "object": "state",
+   "quote": "invalid combinations of normal local features",
+   "grounded": true
+  },
+  {
+   "op": "compute anomaly score",
+   "canonical": "compute anomaly score",
+   "object": "distribution",
+   "quote": "sets new standards for both the detection and the localization of anomalies",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "enables a fast handling of anomalies",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "analyze combination@state",
+  "analyze global@input",
+  "compare@error",
+  "compute anomaly score@distribution",
+  "compute error rate@error",
+  "compute latency@task",
+  "compute reward@reward",
+  "compute throughput@task",
+  "correct@parameter",
+  "detect anomaly@state",
+  "detect invalid@state",
+  "detect logical anomaly@state",
+  "encode@input",
+  "evaluate@task",
+  "extract feature@input",
+  "localize anomaly@state",
+  "predict@state",
+  "process image@input",
+  "reconstruct@latent",
+  "reconstruct@state"
+ ]
+}

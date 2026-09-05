@@ -1,0 +1,188 @@
+{
+ "arxiv_id": "2408.08862",
+ "source": "abstract",
+ "words": 205,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 22,
+ "n_invalid_object": 1,
+ "n_grounded": 3,
+ "ops": [
+  {
+   "op": "select mode",
+   "canonical": "select mode",
+   "object": "task",
+   "quote": "dynamically select between System 1/2 modes",
+   "grounded": true
+  },
+  {
+   "op": "adjust confidence",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "adjusting model confidence",
+   "grounded": true
+  },
+  {
+   "op": "integrate data",
+   "canonical": "integrate data",
+   "object": "INVALID:context",
+   "quote": "integrating new contextual data",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "raw observation: pixels, tokens, audio, measurement",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "state",
+   "quote": "a value function, Q-function, advantage, or expected return",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "reward / return / value signal",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "policy / behaviour function or its parameters (pi, actor)",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "model weights or hyperparameters",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "noise variable or noise level (diffusion, SDE)",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "gradient of an objective w.r.t. parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "prediction error or residual (target minus prediction)",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "a drawn sample or particle set",
+   "grounded": false
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "raw observation: pixels, tokens, audio, measurement",
+   "grounded": false
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "learned representation / embedding / feature vector",
+   "grounded": false
+  },
+  {
+   "op": "generate trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "a sequence of states and/or actions over time",
+   "grounded": false
+  },
+  {
+   "op": "evaluate policy",
+   "canonical": "evaluate",
+   "object": "policy",
+   "quote": "policy / behaviour function or its parameters (pi, actor)",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "probability distribution, density, score function, posterior",
+   "grounded": false
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "probability distribution, density, score function, posterior",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "action",
+   "quote": "reward / return / value signal",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "loss/objective -> error",
+   "grounded": false
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "model weights or hyperparameters",
+   "grounded": false
+  },
+  {
+   "op": "track state",
+   "canonical": "track state",
+   "object": "state",
+   "quote": "estimate of a dynamical system's hidden state (x_t, belief, track)",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute reward@action",
+  "compute value@state",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@policy",
+  "improve@parameter",
+  "predict@action",
+  "process input@input",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@distribution",
+  "sample@policy",
+  "sample@sample",
+  "select mode@task",
+  "track state@state"
+ ]
+}

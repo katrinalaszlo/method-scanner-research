@@ -1,0 +1,180 @@
+{
+ "arxiv_id": "1512.03385",
+ "source": "abstract",
+ "words": 204,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 22,
+ "n_invalid_object": 10,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "compute residual",
+   "canonical": "compute residual",
+   "object": "INVALID:layer input",
+   "quote": "We explicitly reformulate the layers as learning residual functions with reference to the layer inputs",
+   "grounded": true
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "input",
+   "quote": "We present a residual learning framework to ease the training of networks",
+   "grounded": false
+  },
+  {
+   "op": "add residual",
+   "canonical": "add residual",
+   "object": "INVALID:output",
+   "quote": "We explicitly reformulate the layers as learning residual functions with reference to the layer inputs",
+   "grounded": true
+  },
+  {
+   "op": "pass through network",
+   "canonical": "transmit",
+   "object": "input",
+   "quote": "We present a residual learning framework to ease the training of networks",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:output",
+   "quote": "We provide comprehensive empirical evidence showing that these residual networks are easier to optimize",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "error",
+   "quote": "We provide comprehensive empirical evidence showing that these residual networks are easier to optimize",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We provide comprehensive empirical evidence showing that these residual networks are easier to optimize",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "INVALID:output",
+   "quote": "On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "We provide comprehensive empirical evidence showing that these residual networks are easier to optimize",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "We provide comprehensive empirical evidence showing that these residual networks are easier to optimize",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "We provide comprehensive empirical evidence showing that these residual networks are easier to optimize",
+   "grounded": true
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "input",
+   "quote": "We present a residual learning framework to ease the training of networks",
+   "grounded": false
+  },
+  {
+   "op": "compute prediction",
+   "canonical": "compute prediction",
+   "object": "input",
+   "quote": "We present a residual learning framework to ease the training of networks",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "INVALID:output",
+   "quote": "An ensemble of these residual nets achieves 3.57% error on the ImageNet test set",
+   "grounded": true
+  },
+  {
+   "op": "compute error rate",
+   "canonical": "compute error rate",
+   "object": "INVALID:output",
+   "quote": "An ensemble of these residual nets achieves 3.57% error on the ImageNet test set",
+   "grounded": true
+  },
+  {
+   "op": "compute performance",
+   "canonical": "compute performance",
+   "object": "INVALID:output",
+   "quote": "This result won the 1st place on the ILSVRC 2015 classification task",
+   "grounded": true
+  },
+  {
+   "op": "compute depth",
+   "canonical": "compute depth",
+   "object": "parameter",
+   "quote": "On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers",
+   "grounded": true
+  },
+  {
+   "op": "compute complexity",
+   "canonical": "compute complexity",
+   "object": "parameter",
+   "quote": "On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers",
+   "grounded": true
+  },
+  {
+   "op": "compute relative improvement",
+   "canonical": "compute relative improvement",
+   "object": "INVALID:output",
+   "quote": "Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset",
+   "grounded": true
+  },
+  {
+   "op": "compute task performance",
+   "canonical": "compute task performance",
+   "object": "INVALID:output",
+   "quote": "Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions",
+   "grounded": false
+  },
+  {
+   "op": "compute task accuracy",
+   "canonical": "compute task accuracy",
+   "object": "INVALID:output",
+   "quote": "We also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "apply transformation@input",
+  "backpropagate@error",
+  "compute complexity@parameter",
+  "compute depth@parameter",
+  "compute gradient@error",
+  "compute output@input",
+  "compute prediction@input",
+  "correct@parameter",
+  "evaluate@error",
+  "sample@input",
+  "transmit@input"
+ ]
+}

@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2102.05095",
+ "source": "abstract",
+ "words": 154,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "input",
+   "quote": "self-attention over space and time",
+   "grounded": true
+  },
+  {
+   "op": "split input",
+   "canonical": "split input",
+   "object": "input",
+   "quote": "spatiotemporal feature learning",
+   "grounded": true
+  },
+  {
+   "op": "apply spatial attention",
+   "canonical": "apply spatial attention",
+   "object": "input",
+   "quote": "divided attention, where temporal attention and spatial attention are separately applied",
+   "grounded": false
+  },
+  {
+   "op": "apply temporal attention",
+   "canonical": "apply temporal attention",
+   "object": "input",
+   "quote": "divided attention, where temporal attention and spatial attention are separately applied",
+   "grounded": false
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "spatiotemporal feature learning",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "value function, Q-function, target, return or advantage",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "prediction error or residual",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "model is faster to train",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "video classification",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "control action or policy output",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "diffusion, SDE",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "drawn sample or particle set",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "gradient of an objective w.r.t. parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "probability distribution, density, score function, posterior",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "sequence of states and/or actions over time",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "reward / return / value signal",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "policy / behaviour function or its parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "task, environment instance, or episode drawn for (meta-)learning",
+   "grounded": false
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "learned representation / embedding / feature vector",
+   "grounded": false
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "raw observation: pixels, tokens, audio, measurement",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention@input",
+  "apply spatial attention@input",
+  "apply temporal attention@input",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute input@input",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "predict@input",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "split input@input"
+ ]
+}

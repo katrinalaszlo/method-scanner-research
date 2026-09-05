@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "2012.10921",
+ "source": "abstract",
+ "words": 199,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 2,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "split points",
+   "canonical": "split points",
+   "object": "INVALID:point cloud",
+   "quote": "dynamically disentangle point clouds into the contour and flat part",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "INVALID:point cloud",
+   "quote": "exploits Sharp-Gentle Complementary Attention Module",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "pays different attentions to them while fusing them",
+   "grounded": true
+  },
+  {
+   "op": "fuse features",
+   "canonical": "fuse features",
+   "object": "latent",
+   "quote": "pays different attentions to them while fusing them",
+   "grounded": true
+  },
+  {
+   "op": "generate representation",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "captures and refines the holistic and complementary 3D geometric semantics",
+   "grounded": true
+  },
+  {
+   "op": "refine representation",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "captures and refines the holistic and complementary 3D geometric semantics",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Extensive experiments on 3D object classification and segmentation benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "GDANet achieves the state-of-the-arts with fewer parameters",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute attention@latent",
+  "correct@latent",
+  "correct@parameter",
+  "evaluate@error",
+  "fuse features@latent",
+  "reconstruct@latent"
+ ]
+}

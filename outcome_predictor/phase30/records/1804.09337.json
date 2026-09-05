@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1804.09337",
+ "source": "abstract",
+ "words": 116,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 2,
+ "ops": [
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "we specially design a Smooth Network with Channel Attention Block",
+   "grounded": false
+  },
+  {
+   "op": "pool features",
+   "canonical": "pool features",
+   "object": "latent",
+   "quote": "and global average pooling to select the more discriminative features",
+   "grounded": false
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose a Discriminative Feature Network (DFN}, which contains two sub-networks",
+   "grounded": true
+  },
+  {
+   "op": "compute boundary",
+   "canonical": "compute boundary",
+   "object": "latent",
+   "quote": "we propose a Border Network to make the bilateral features of boundary distinguishable",
+   "grounded": false
+  },
+  {
+   "op": "apply supervision",
+   "canonical": "apply supervision",
+   "object": "latent",
+   "quote": "with deep semantic boundary supervision",
+   "grounded": false
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we achieve state-of-the-art performance 86.2% mean IOU on PASCAL VOC 2012",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "to tackle these two problems",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose a Discriminative Feature Network (DFN}",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention@latent",
+  "apply supervision@latent",
+  "compute boundary@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "pool features@latent"
+ ]
+}

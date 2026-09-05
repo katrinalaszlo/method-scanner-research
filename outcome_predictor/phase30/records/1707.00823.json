@@ -1,0 +1,166 @@
+{
+ "arxiv_id": "1707.00823",
+ "source": "abstract",
+ "words": 209,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "render image",
+   "canonical": "render image",
+   "object": "input",
+   "quote": "render each from 180 camera viewpoints",
+   "grounded": false
+  },
+  {
+   "op": "vary lighting",
+   "canonical": "vary lighting",
+   "object": "input",
+   "quote": "randomly varying the clothing textures, background and lighting",
+   "grounded": true
+  },
+  {
+   "op": "generate synthetic data",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we develop a framework for synthesizing the training data",
+   "grounded": true
+  },
+  {
+   "op": "fit synthetic human",
+   "canonical": "fit synthetic human",
+   "object": "input",
+   "quote": "fit synthetic 3D humans with different body shapes to each pose",
+   "grounded": false
+  },
+  {
+   "op": "learn human pose",
+   "canonical": "train",
+   "object": "input",
+   "quote": "learn representative human poses from a large corpus of real motion captured human skeleton data",
+   "grounded": true
+  },
+  {
+   "op": "train gans",
+   "canonical": "train",
+   "object": "input",
+   "quote": "Generative Adversarial Networks are employed to minimize the gap between synthetic and real image distributions",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "CNN models are then learned that transfer human poses to a shared high-level invariant space",
+   "grounded": false
+  },
+  {
+   "op": "model temporal variation",
+   "canonical": "model temporal variation",
+   "object": "input",
+   "quote": "the temporal variations are modelled by Fourier Temporal Pyramid",
+   "grounded": true
+  },
+  {
+   "op": "classify input",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "linear SVM is used for classification",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the learned CNN models are then used as invariant feature extractors from real RGB and depth frames of human action videos",
+   "grounded": false
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "render each from 18,000 camera viewpoints",
+   "grounded": false
+  },
+  {
+   "op": "sample camera viewpoint",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "render each from 180 camera viewpoints",
+   "grounded": false
+  },
+  {
+   "op": "sample clothing texture",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "randomly varying the clothing textures, background and lighting",
+   "grounded": true
+  },
+  {
+   "op": "sample background",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "randomly varying the clothing textures, background and lighting",
+   "grounded": true
+  },
+  {
+   "op": "sample lighting",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "randomly varying the clothing textures, background and lighting",
+   "grounded": true
+  },
+  {
+   "op": "generate synthetic image",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "Generative Adversarial Networks are employed to minimize the gap between synthetic and real image distributions",
+   "grounded": true
+  },
+  {
+   "op": "train cnn",
+   "canonical": "train",
+   "object": "input",
+   "quote": "CNN models are then learned that transfer human poses to a shared high-level invariant space",
+   "grounded": false
+  },
+  {
+   "op": "extract invariant features",
+   "canonical": "extract invariant features",
+   "object": "input",
+   "quote": "the learned CNN models are then used as invariant feature extractors from real RGB and depth frames of human action videos",
+   "grounded": false
+  },
+  {
+   "op": "model temporal pattern",
+   "canonical": "model temporal pattern",
+   "object": "input",
+   "quote": "the temporal variations are modelled by Fourier Temporal Pyramid",
+   "grounded": true
+  },
+  {
+   "op": "compute classification",
+   "canonical": "compute classification",
+   "object": "input",
+   "quote": "linear SVM is used for classification",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "classify@input",
+  "compute classification@input",
+  "encode@input",
+  "extract invariant features@input",
+  "fit synthetic human@input",
+  "model temporal pattern@input",
+  "model temporal variation@input",
+  "reconstruct@input",
+  "render image@input",
+  "sample@input",
+  "train@input",
+  "vary lighting@input"
+ ]
+}

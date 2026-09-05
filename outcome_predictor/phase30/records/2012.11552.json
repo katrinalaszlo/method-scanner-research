@@ -1,0 +1,190 @@
+{
+ "arxiv_id": "2012.11552",
+ "source": "abstract",
+ "words": 227,
+ "model": "qwen3:8b",
+ "salvaged": true,
+ "n_ops": 23,
+ "n_invalid_object": 0,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "generate target",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "to generate the BoW targets",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct input",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "to reconstruct a bag-of-visual-words (BoW) representation",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the idea of making such a representation invariant",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "online training of both the teacher network",
+   "grounded": true
+  },
+  {
+   "op": "update vocabulary",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "online update of the visual-words vocabulary",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "given as input a perturbed version of that same image",
+   "grounded": true
+  },
+  {
+   "op": "compare target",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "contrastive-based instance discrimination training",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "online training of both the teacher network",
+   "grounded": true
+  },
+  {
+   "op": "sample visual-word",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "online update of the visual-words vocabulary",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the idea of making such a representation invariant",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "online training of both the teacher network",
+   "grounded": true
+  },
+  {
+   "op": "generate visual-word",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "online update of the visual-words vocabulary",
+   "grounded": true
+  },
+  {
+   "op": "update teacher",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "online training of both the teacher network",
+   "grounded": true
+  },
+  {
+   "op": "update student",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "online training of both the teacher network",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "given as input a perturbed version of that same image",
+   "grounded": true
+  },
+  {
+   "op": "encode perturbed input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "given as input a perturbed version of that same image",
+   "grounded": true
+  },
+  {
+   "op": "train teacher",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "online training of both the teacher network",
+   "grounded": true
+  },
+  {
+   "op": "train student",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "online training of both the teacher network",
+   "grounded": true
+  },
+  {
+   "op": "generate bag-of-words",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "to generate the BoW targets",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct latent",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "to reconstruct a bag-of-visual-words (BoW) representation",
+   "grounded": true
+  },
+  {
+   "op": "compute reconstruction error",
+   "canonical": "compute reconstruction error",
+   "object": "error",
+   "quote": "the idea of making such a representation invariant",
+   "grounded": true
+  },
+  {
+   "op": "update visual-words",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "online update of the visual-words vocabulary",
+   "grounded": true
+  },
+  {
+   "op": "apply optimization",
+   "canonical": "apply optimization",
+   "object": "parameter",
+   "quote": "online training of both the teacher network",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "apply optimization@parameter",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute reconstruction error@error",
+  "correct@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reconstruct@sample",
+  "reconstruct@state",
+  "sample@sample",
+  "train@parameter"
+ ]
+}

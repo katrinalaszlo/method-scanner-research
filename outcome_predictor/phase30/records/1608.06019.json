@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "1608.06019",
+ "source": "abstract",
+ "words": 246,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 3,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "extract image representations that are partitioned into two subspaces",
+   "grounded": false
+  },
+  {
+   "op": "split",
+   "canonical": "split",
+   "object": "latent",
+   "quote": "partitioned into two subspaces: one component which is private to each domain",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "use the partitioned representation to reconstruct the images from both domains",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "perform the task we care about in the source domain",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "trained not only to perform the task we care about in the source domain",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Our novel architecture results in a model that outperforms the state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "produces visualizations of the private and shared representations",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "explicitly learn to extract image representations that are partitioned into two subspaces",
+   "grounded": true
+  },
+  {
+   "op": "map",
+   "canonical": "encode",
+   "object": "INVALID:domain",
+   "quote": "mapping representations from one domain to the other",
+   "grounded": true
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "explicitly learn to extract image representations that are partitioned into two subspaces",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "INVALID:domain",
+   "quote": "learn to extract features that are invariant to the domain from which they were extracted",
+   "grounded": false
+  },
+  {
+   "op": "partition",
+   "canonical": "partition",
+   "object": "latent",
+   "quote": "partitioned into two subspaces: one component which is private to each domain",
+   "grounded": true
+  },
+  {
+   "op": "visualize",
+   "canonical": "visualize",
+   "object": "distribution",
+   "quote": "produces visualizations of the private and shared representations",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "perform the task we care about in the source domain",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "use the partitioned representation to reconstruct the images from both domains",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "use the partitioned representation to reconstruct the images from both domains",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "trained not only to perform the task we care about in the source domain",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "Our novel architecture results in a model that outperforms the state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "produces visualizations of the private and shared representations",
+   "grounded": true
+  },
+  {
+   "op": "reweight",
+   "canonical": "reweight",
+   "object": "error",
+   "quote": "trained not only to perform the task we care to care about in the source domain",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "explicitly learn to extract image representations that are partitioned into two subspaces",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "INVALID:domain",
+   "quote": "learn to extract features that are invariant to the domain from which they were extracted",
+   "grounded": false
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "perform the task we care about in the source domain",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "perform the task we care about in the source domain",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "use the partitioned representation to reconstruct the images from both domains",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "compute@distribution",
+  "compute@error",
+  "compute@reward",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "extract@latent",
+  "improve@parameter",
+  "partition@latent",
+  "predict@task",
+  "reconstruct@input",
+  "reconstruct@sample",
+  "reweight@error",
+  "sample@input",
+  "split@latent",
+  "train@latent",
+  "transform@latent",
+  "visualize@distribution"
+ ]
+}

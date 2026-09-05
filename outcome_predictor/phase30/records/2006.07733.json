@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2006.07733",
+ "source": "abstract",
+ "words": 160,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "augment input",
+   "canonical": "augment",
+   "object": "input",
+   "quote": "From an augmented view of an image",
+   "grounded": true
+  },
+  {
+   "op": "predict latent",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "train the online network to predict the target network representation",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "prediction error or residual (target minus prediction)",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we update the target network with a slow-moving average of the online network",
+   "grounded": true
+  },
+  {
+   "op": "apply moving average",
+   "canonical": "apply moving average",
+   "object": "parameter",
+   "quote": "update the target network with a slow-moving average of the online network",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "store latent",
+   "canonical": "store latent",
+   "object": "latent",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "retrieve latent",
+   "canonical": "retrieve latent",
+   "object": "latent",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "normalize input",
+   "canonical": "normalize input",
+   "object": "input",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "decode latent",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "store trajectory",
+   "canonical": "store trajectory",
+   "object": "trajectory",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "retrieve trajectory",
+   "canonical": "retrieve trajectory",
+   "object": "trajectory",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "none",
+   "grounded": false
+  },
+  {
+   "op": "apply policy",
+   "canonical": "apply policy",
+   "object": "action",
+   "quote": "none",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "apply moving average@parameter",
+  "apply policy@action",
+  "augment@input",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute policy@policy",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "normalize input@input",
+  "predict@latent",
+  "reconstruct@input",
+  "reconstruct@noise",
+  "retrieve latent@latent",
+  "retrieve trajectory@trajectory",
+  "sample@action",
+  "sample@sample",
+  "store latent@latent",
+  "store trajectory@trajectory"
+ ]
+}

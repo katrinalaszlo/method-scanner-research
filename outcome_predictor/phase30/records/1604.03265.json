@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1604.03265",
+ "source": "abstract",
+ "words": 179,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "3D information crucial for progress in object classification",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "CNNs to address this problem",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "CNNs based upon volumetric representations",
+   "grounded": false
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "multi-view representations",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "empirical results from these two types of CNNs exhibit a large gap",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we aim to improve both volumetric CNNs and multi-view CNNs",
+   "grounded": false
+  },
+  {
+   "op": "apply multi-resolution filtering",
+   "canonical": "apply multi-resolution filtering",
+   "object": "input",
+   "quote": "we examine multi-view CNNs, where we introduce multi-resolution filtering in 3D",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "provide extensive experiments designed to evaluate underlying design choices",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "apply multi-resolution filtering@input",
+  "compare@error",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "process input@input"
+ ]
+}

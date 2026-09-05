@@ -1,0 +1,187 @@
+{
+ "arxiv_id": "1606.00915",
+ "source": "abstract",
+ "words": 261,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 22,
+ "n_invalid_object": 3,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "we highlight convolution with upsampled filters, or 'atrous convolution'",
+   "grounded": false
+  },
+  {
+   "op": "compute feature responses",
+   "canonical": "compute feature responses",
+   "object": "state",
+   "quote": "explicitly control the resolution at which feature responses are computed",
+   "grounded": false
+  },
+  {
+   "op": "enlarge field of view",
+   "canonical": "enlarge field of view",
+   "object": "INVALID:filter",
+   "quote": "enlarge the field of view of filters to incorporate larger context",
+   "grounded": false
+  },
+  {
+   "op": "apply spatial pyramid pooling",
+   "canonical": "apply spatial pyramid pooling",
+   "object": "latent",
+   "quote": "propose atrous spatial pyramid pooling (ASPP) to robustly segment objects",
+   "grounded": false
+  },
+  {
+   "op": "sample at multiple rates",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "probes an incoming convolutional feature layer with filters at multiple sampling rates",
+   "grounded": true
+  },
+  {
+   "op": "combine responses",
+   "canonical": "aggregate",
+   "object": "INVALID:layer",
+   "quote": "combine the responses at the final DCNN layer with a fully connected Conditional Random Field",
+   "grounded": false
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "combine methods from DCNNs and probabilistic graphical models",
+   "grounded": false
+  },
+  {
+   "op": "refine localization",
+   "canonical": "correct",
+   "object": "INVALID:boundary",
+   "quote": "improve localization of object boundaries by combining methods from DCNNs and probabilistic graphical models",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "achieves invariance but has a toll on localization accuracy",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "overcome this by combining the responses at the final DCNN layer with a fully connected Conditional Random Field",
+   "grounded": false
+  },
+  {
+   "op": "apply conditional random field",
+   "canonical": "apply conditional random field",
+   "object": "distribution",
+   "quote": "combine the responses at the final DCNN layer with a fully connected Conditional Random Field",
+   "grounded": false
+  },
+  {
+   "op": "compute miou",
+   "canonical": "compute miou",
+   "object": "task",
+   "quote": "sets the new state-of-art at the PASCAL VOC-2012 semantic image segmentation task",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "advances the results on three other datasets: PASCAL-Context, PASCAL-Person-Part, and Cityscapes",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "reaching 79.7% mIOU in the test set",
+   "grounded": true
+  },
+  {
+   "op": "apply upsampling",
+   "canonical": "apply upsampling",
+   "object": "latent",
+   "quote": "atrous convolution allows us to explicitly control the resolution at which feature responses are computed",
+   "grounded": true
+  },
+  {
+   "op": "compute context",
+   "canonical": "compute context",
+   "object": "input",
+   "quote": "enlarge the field of view of filters to incorporate larger context",
+   "grounded": false
+  },
+  {
+   "op": "compute scale",
+   "canonical": "compute scale",
+   "object": "latent",
+   "quote": "probes an incoming convolutional feature layer with filters at multiple sampling rates",
+   "grounded": true
+  },
+  {
+   "op": "compute object",
+   "canonical": "compute object",
+   "object": "distribution",
+   "quote": "capture objects as well as image context at multiple scales",
+   "grounded": false
+  },
+  {
+   "op": "compute image context",
+   "canonical": "compute image context",
+   "object": "distribution",
+   "quote": "capture objects as well as image context at multiple scales",
+   "grounded": false
+  },
+  {
+   "op": "compute boundary",
+   "canonical": "compute boundary",
+   "object": "distribution",
+   "quote": "improve localization of object boundaries by combining methods from DCNNs and probabilistic graphical models",
+   "grounded": false
+  },
+  {
+   "op": "compute localization",
+   "canonical": "compute localization",
+   "object": "distribution",
+   "quote": "improve localization of object boundaries by combining methods from DCNN, and probabilistic graphical models",
+   "grounded": false
+  },
+  {
+   "op": "compute task performance",
+   "canonical": "compute task performance",
+   "object": "task",
+   "quote": "sets the new state-of-art at the PASCAL VOC-2012 semantic image segmentation task",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply conditional random field@distribution",
+  "apply convolution@input",
+  "apply spatial pyramid pooling@latent",
+  "apply upsampling@latent",
+  "compute accuracy@task",
+  "compute boundary@distribution",
+  "compute context@input",
+  "compute feature responses@state",
+  "compute image context@distribution",
+  "compute localization@distribution",
+  "compute miou@task",
+  "compute object@distribution",
+  "compute scale@latent",
+  "compute task performance@task",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@distribution",
+  "sample@latent"
+ ]
+}

@@ -1,0 +1,119 @@
+{
+ "arxiv_id": "2308.06748",
+ "source": "abstract",
+ "words": 251,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 14,
+ "n_invalid_object": 7,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "select similar images",
+   "canonical": "select similar images",
+   "object": "input",
+   "quote": "the top-K most similar training images are first selected",
+   "grounded": true
+  },
+  {
+   "op": "compute histogram",
+   "canonical": "compute histogram",
+   "object": "input",
+   "quote": "based on a robust histogram matching process",
+   "grounded": true
+  },
+  {
+   "op": "retrieve nearest neighbor",
+   "canonical": "retrieve nearest neighbor",
+   "object": "INVALID:patch",
+   "quote": "the nearest neighbor of each test patch is retrieved",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "INVALID:patch",
+   "quote": "the anomaly score of each test image patch is calculated based on the distance",
+   "grounded": true
+  },
+  {
+   "op": "compute probability",
+   "canonical": "compute probability",
+   "object": "INVALID:patch",
+   "quote": "the anomaly score of each test image patch is calculated based on the distance to its \"local nearest neighbor\" and the \"non-background\" probability",
+   "grounded": true
+  },
+  {
+   "op": "assign anomaly score",
+   "canonical": "assign anomaly score",
+   "object": "INVALID:patch",
+   "quote": "the anomaly score of each test image patch is calculated based on the distance to its \"local nearest neighbor\" and the \"non-background\" probability",
+   "grounded": true
+  },
+  {
+   "op": "retrieve global neighbors",
+   "canonical": "retrieve global neighbors",
+   "object": "input",
+   "quote": "the nearest neighbor of each test patch is retrieved over the similar geometrical locations on those \"global nearest neighbors\"",
+   "grounded": true
+  },
+  {
+   "op": "compute local metric",
+   "canonical": "compute local metric",
+   "object": "INVALID:patch",
+   "quote": "by using a carefully trained local metric",
+   "grounded": true
+  },
+  {
+   "op": "compare patches",
+   "canonical": "compare",
+   "object": "INVALID:patch",
+   "quote": "the nearest neighbor of each test patch is retrieved over the similar geometrical locations on those \"global nearest neighbors\"",
+   "grounded": true
+  },
+  {
+   "op": "process image",
+   "canonical": "process image",
+   "object": "input",
+   "quote": "its simplified version only requires less than 1 ms to process an image",
+   "grounded": true
+  },
+  {
+   "op": "compute anomaly score",
+   "canonical": "compute anomaly score",
+   "object": "INVALID:patch",
+   "quote": "the anomaly score of each test image patch is calculated based on the distance to its \"local nearest neighbor\" and the \"non-background\" probability",
+   "grounded": true
+  },
+  {
+   "op": "retrieve test patch",
+   "canonical": "retrieve test patch",
+   "object": "input",
+   "quote": "the nearest neighbor of each test patch is retrieved over the similar geometrical locations on those \"global nearest neighbors\"",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "input",
+   "quote": "the top-K most similar training images are first selected based on a robust histogram matching process",
+   "grounded": true
+  },
+  {
+   "op": "select target images",
+   "canonical": "select target images",
+   "object": "input",
+   "quote": "CPR selects proper \"targets\" (reference images and locations) before \"shooting\" (patch-matching)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute histogram@input",
+  "compute similarity@input",
+  "process image@input",
+  "retrieve global neighbors@input",
+  "retrieve test patch@input",
+  "select similar images@input",
+  "select target images@input"
+ ]
+}

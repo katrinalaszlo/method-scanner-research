@@ -1,0 +1,87 @@
+{
+ "arxiv_id": "2003.13081",
+ "source": "abstract",
+ "words": 192,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 7,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "input",
+   "quote": "we exploit gradient maps of images to guide the recovery",
+   "grounded": true
+  },
+  {
+   "op": "restore gradient",
+   "canonical": "restore gradient",
+   "object": "INVALID:map",
+   "quote": "we restore high-resolution gradient maps by a gradient branch",
+   "grounded": true
+  },
+  {
+   "op": "generate image",
+   "canonical": "reconstruct",
+   "object": "INVALID:high-resolution",
+   "quote": "we restore high-resolution gradient maps by a gradient branch",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "gradient",
+   "quote": "we propose a gradient loss which imposes a second-order restriction",
+   "grounded": true
+  },
+  {
+   "op": "combine loss",
+   "canonical": "aggregate",
+   "object": "INVALID:image-space",
+   "quote": "along with the previous image-space loss functions",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "our method is model-agnostic, which can be potentially used for off-the-shelf SR networks",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "INVALID:performance",
+   "quote": "experimental results show that we achieve the best PI and LPIPS performance",
+   "grounded": true
+  },
+  {
+   "op": "generate image",
+   "canonical": "reconstruct",
+   "object": "INVALID:super-resolved",
+   "quote": "we achieve the best PI and LPI, and meanwhile comparable PSNR and SSIM",
+   "grounded": true
+  },
+  {
+   "op": "evaluate image",
+   "canonical": "evaluate",
+   "object": "INVALID:structure",
+   "quote": "visual results demonstrate our superiority in restoring structures",
+   "grounded": true
+  },
+  {
+   "op": "generate image",
+   "canonical": "reconstruct",
+   "object": "INVALID:natural",
+   "quote": "while generating natural SR images",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute gradient@input",
+  "evaluate@gradient",
+  "improve@parameter"
+ ]
+}

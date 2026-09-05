@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2206.04325",
+ "source": "abstract",
+ "words": 199,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "embed features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "a learnable patch descriptor that learns and embeds target-oriented features",
+   "grounded": true
+  },
+  {
+   "op": "adapt features",
+   "canonical": "adapt features",
+   "object": "latent",
+   "quote": "features adapted to the target dataset",
+   "grounded": true
+  },
+  {
+   "op": "store features",
+   "canonical": "store features",
+   "object": "latent",
+   "quote": "scalable memory bank independent of the size of the target dataset",
+   "grounded": true
+  },
+  {
+   "op": "compute density",
+   "canonical": "compute density",
+   "object": "latent",
+   "quote": "increase the normal feature density",
+   "grounded": true
+  },
+  {
+   "op": "compare features",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "abnormal features can be clearly distinguished",
+   "grounded": true
+  },
+  {
+   "op": "predict anomaly",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "precisely discriminate normal and abnormal features",
+   "grounded": true
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "distribution",
+   "quote": "provides an AUROC score of 99.5% in anomaly detection",
+   "grounded": true
+  },
+  {
+   "op": "localize anomaly",
+   "canonical": "localize anomaly",
+   "object": "state",
+   "quote": "provides an AUROC score of 98.5% in anomaly localization",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "adapt features@latent",
+  "compare@latent",
+  "compute density@latent",
+  "compute score@distribution",
+  "encode@input",
+  "localize anomaly@state",
+  "predict@latent",
+  "store features@latent"
+ ]
+}

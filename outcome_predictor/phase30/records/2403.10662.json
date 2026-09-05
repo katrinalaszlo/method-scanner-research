@@ -1,0 +1,138 @@
+{
+ "arxiv_id": "2403.10662",
+ "source": "abstract",
+ "words": 167,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 3,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the proposed approach is based on a shared encoder-decoder architecture",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the proposed approach is based on a shared encoder-decoder architecture",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:depth",
+   "quote": "to improve the accuracy of the depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:segmentation",
+   "quote": "to improve the accuracy of the semantic segmentation task",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the framework is thoroughly evaluated on two datasets",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the framework is thoroughly evaluated on two datasets",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the framework is thoroughly evaluated on two datasets",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "the paper incorporates an adversarial training component",
+   "grounded": true
+  },
+  {
+   "op": "compute critic loss",
+   "canonical": "compute critic loss",
+   "object": "error",
+   "quote": "employing a Wasserstein GAN framework with a critic network",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "employing a Wasserstein GAN framework with a critic network",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "advanced image augmentations",
+   "grounded": true
+  },
+  {
+   "op": "scale depth",
+   "canonical": "scale depth",
+   "object": "INVALID:depth",
+   "quote": "the use of logarithmic depth scaling",
+   "grounded": true
+  },
+  {
+   "op": "pretrain model",
+   "canonical": "pretrain model",
+   "object": "parameter",
+   "quote": "pre-training strategies",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "the framework is thoroughly evaluated on two datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute metrics",
+   "canonical": "compute metrics",
+   "object": "task",
+   "quote": "the framework is thoroughly evaluated on two datasets",
+   "grounded": true
+  },
+  {
+   "op": "analyze contribution",
+   "canonical": "analyze contribution",
+   "object": "task",
+   "quote": "ablation studies to analyze the contributions of different components",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "analyze contribution@task",
+  "apply augmentation@input",
+  "backpropagate@gradient",
+  "compute critic loss@error",
+  "compute metrics@task",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "pretrain model@parameter",
+  "reconstruct@latent",
+  "sample@distribution"
+ ]
+}

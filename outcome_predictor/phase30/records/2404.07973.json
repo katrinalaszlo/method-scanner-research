@@ -1,0 +1,170 @@
+{
+ "arxiv_id": "2404.07973",
+ "source": "abstract",
+ "words": 160,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 13,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "integrating the additional DINOv2 encoder",
+   "grounded": true
+  },
+  {
+   "op": "align",
+   "canonical": "align",
+   "object": "distribution",
+   "quote": "image-caption alignment",
+   "grounded": true
+  },
+  {
+   "op": "align",
+   "canonical": "align",
+   "object": "distribution",
+   "quote": "high-resolution dense alignment",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "three-stage training paradigm",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "input",
+   "quote": "higher image resolution",
+   "grounded": true
+  },
+  {
+   "op": "ground",
+   "canonical": "ground",
+   "object": "state",
+   "quote": "referencing and grounding capability",
+   "grounded": false
+  },
+  {
+   "op": "refer",
+   "canonical": "refer",
+   "object": "state",
+   "quote": "referencing and grounding capability",
+   "grounded": false
+  },
+  {
+   "op": "scale",
+   "canonical": "scale",
+   "object": "input",
+   "quote": "high-resolution scaling",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "latent",
+   "quote": "fine-grained visual processing",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "multi-granularity visual encoding",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "three-stage training paradigm",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "referencing and grounding capability",
+   "grounded": false
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "referencing and grounding capability",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "referencing and grounding capability",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "image-caption alignment",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "high-resolution dense alignment",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "high-resolution scaling",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "high-resolution scaling",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "align@distribution",
+  "compute@error",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "encode@latent",
+  "ground@state",
+  "predict@distribution",
+  "process@input",
+  "process@latent",
+  "reconstruct@noise",
+  "refer@state",
+  "sample@action",
+  "sample@sample",
+  "scale@input",
+  "train@parameter"
+ ]
+}

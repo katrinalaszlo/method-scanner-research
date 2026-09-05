@@ -1,0 +1,85 @@
+{
+ "arxiv_id": "2407.12322",
+ "source": "abstract",
+ "words": 170,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 9,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "embed features",
+   "canonical": "encode",
+   "object": "INVALID:joint",
+   "quote": "embedding joint features into frequency attention maps",
+   "grounded": true
+  },
+  {
+   "op": "compute frequency",
+   "canonical": "compute frequency",
+   "object": "INVALID:attention map",
+   "quote": "unweave skeleton frequency representations",
+   "grounded": true
+  },
+  {
+   "op": "generate attention",
+   "canonical": "reconstruct",
+   "object": "INVALID:map",
+   "quote": "embedding joint features into frequency attention maps",
+   "grounded": true
+  },
+  {
+   "op": "extract spatial features",
+   "canonical": "extract spatial features",
+   "object": "INVALID:skeleton",
+   "quote": "incorporate spatial features with frequency features",
+   "grounded": true
+  },
+  {
+   "op": "extract frequency features",
+   "canonical": "extract frequency features",
+   "object": "INVALID:skeleton",
+   "quote": "incorporate spatial features with frequency features",
+   "grounded": true
+  },
+  {
+   "op": "model frequency-spatial",
+   "canonical": "model frequency-spatial",
+   "object": "INVALID:pattern",
+   "quote": "incorporate spatial features with frequency features",
+   "grounded": true
+  },
+  {
+   "op": "extract global correlations",
+   "canonical": "extract global correlations",
+   "object": "input",
+   "quote": "extract the global correlations across frames",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "INVALID:spatial",
+   "quote": "incorporate spatial features with frequency features",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "INVALID:frequency",
+   "quote": "incorporate spatial features with frequency features",
+   "grounded": true
+  },
+  {
+   "op": "recognize action",
+   "canonical": "classify",
+   "object": "INVALID:skeleton",
+   "quote": "specifically designed for recognizing similar skeletal actions",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "extract global correlations@input"
+ ]
+}

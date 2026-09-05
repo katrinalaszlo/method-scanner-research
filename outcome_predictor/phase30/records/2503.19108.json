@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2503.19108",
+ "source": "abstract",
+ "words": 185,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Vision Transformers (ViTs) have shown remarkable performance",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "a convolutional adapter to generate multi-scale features",
+   "grounded": true
+  },
+  {
+   "op": "fuse",
+   "canonical": "fuse",
+   "object": "latent",
+   "quote": "a pixel decoder to fuse these features",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "Transformer decoder that uses the fused features to make predictions",
+   "grounded": true
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "the inductive biases introduced by these task-specific components can instead be learned",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "given sufficiently large models and extensive pre-training",
+   "grounded": true
+  },
+  {
+   "op": "segment",
+   "canonical": "segment",
+   "object": "input",
+   "quote": "Encoder-only Mask Transformer (EoMT), which repurposes the plain ViT architecture to conduct image segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "EoMT obtains a segmentation accuracy similar to state-of-the-art models",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "EoMT is significantly faster than these methods",
+   "grounded": true
+  },
+  {
+   "op": "scale",
+   "canonical": "scale",
+   "object": "parameter",
+   "quote": "Across a range of model sizes, EoMT demonstrates an optimal balance",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "distribution",
+   "quote": "Transformer decoder that uses the fused features to make predictions",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "input",
+   "quote": "Vision Transformers (ViTs) have shown remarkable performance",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "Encoder-only Mask Transformer (EoMT), which repurposes the plain ViT architecture",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "a pixel decoder to fuse these features",
+   "grounded": true
+  },
+  {
+   "op": "estimate",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "Transformer decoder that uses the fused features to make predictions",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "given sufficiently large models and extensive pre-training",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "EoMT obtains a segmentation accuracy similar to state-of-the-art models",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "given sufficiently large models and extensive pre-training",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "Transformer decoder that uses the fused features to make predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "EoMT obtains a segmentation accuracy similar to state-of-the-art models",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "Transformer decoder that uses the fused features to make predictions",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "Transformer decoder that uses the fused features to make predictions",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "Transformer decoder that uses the fused features to make predictions",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "given sufficiently large models and extensive pre-training",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "Transformer decoder that uses the fused features to make predictions",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "backpropagate@gradient",
+  "compare@value",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@value",
+  "fuse@latent",
+  "improve@parameter",
+  "output@distribution",
+  "predict@distribution",
+  "process@input",
+  "reconstruct@distribution",
+  "reconstruct@latent",
+  "sample@distribution",
+  "sample@sample",
+  "scale@parameter",
+  "segment@input",
+  "train@latent",
+  "train@parameter",
+  "transform@input"
+ ]
+}

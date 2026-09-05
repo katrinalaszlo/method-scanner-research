@@ -1,0 +1,92 @@
+{
+ "arxiv_id": "1702.08502",
+ "source": "abstract",
+ "words": 172,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 1,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "we design dense upsampling convolution (DUC)",
+   "grounded": true
+  },
+  {
+   "op": "upsample",
+   "canonical": "upsample",
+   "object": "latent",
+   "quote": "generate pixel-level prediction",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "capture and decode more detailed information",
+   "grounded": false
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "propose a hybrid dilated convolution (HDC) framework",
+   "grounded": true
+  },
+  {
+   "op": "enlarge receptive field",
+   "canonical": "enlarge receptive field",
+   "object": "parameter",
+   "quote": "effectively enlarges the receptive fields (RF) of the network",
+   "grounded": true
+  },
+  {
+   "op": "aggregate information",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "aggregate global information",
+   "grounded": true
+  },
+  {
+   "op": "apply dilation",
+   "canonical": "apply dilation",
+   "object": "INVALID:convolution",
+   "quote": "alleviates what we call the \"gridding issue\"",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "generate pixel-level prediction",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "evaluate our approaches thoroughly on the Cityscapes dataset",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "achieve a state-of-the-art result of 80.1% mIOU",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "correct@parameter",
+  "enlarge receptive field@parameter",
+  "evaluate@error",
+  "predict@distribution",
+  "reconstruct@latent",
+  "upsample@latent"
+ ]
+}

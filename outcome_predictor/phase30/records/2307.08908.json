@@ -1,0 +1,71 @@
+{
+ "arxiv_id": "2307.08908",
+ "source": "abstract",
+ "words": 186,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 7,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute addition",
+   "canonical": "compute addition",
+   "object": "INVALID:frame feature",
+   "quote": "computing addition, subtraction, multiplication, and division between pairs of extracted frame features",
+   "grounded": true
+  },
+  {
+   "op": "compute subtraction",
+   "canonical": "compute subtraction",
+   "object": "INVALID:frame feature",
+   "quote": "computing addition, subtraction, multiplication, and division between pairs of extracted frame features",
+   "grounded": true
+  },
+  {
+   "op": "compute multiplication",
+   "canonical": "compute multiplication",
+   "object": "INVALID:frame feature",
+   "quote": "computing addition, subtraction, multiplication, and division between pairs of extracted frame features",
+   "grounded": true
+  },
+  {
+   "op": "compute division",
+   "canonical": "compute division",
+   "object": "INVALID:frame feature",
+   "quote": "computing addition, subtraction, multiplication, and division between pairs of extracted frame features",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "INVALID:cue",
+   "quote": "extract corresponding features from these cues to benefit the original temporal-irrespective domain",
+   "grounded": true
+  },
+  {
+   "op": "operate on",
+   "canonical": "operate on",
+   "object": "INVALID:stem",
+   "quote": "operates on the stem of a visual backbone with a plug-and-play style",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "extract corresponding features from these cues to benefit the original temporal-irrespective domain",
+   "grounded": true
+  },
+  {
+   "op": "apply arithmetic",
+   "canonical": "apply arithmetic",
+   "object": "INVALID:frame feature",
+   "quote": "computing addition, subtraction, multiplication, and division between pairs of extracted frame features",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "extract feature@input"
+ ]
+}

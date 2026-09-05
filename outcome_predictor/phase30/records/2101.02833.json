@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "2101.02833",
+ "source": "abstract",
+ "words": 128,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 2,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "meta-learning is fast and memory-efficient",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "INVALID:classifier",
+   "quote": "we take an orthogonal approach that is agnostic to the features used",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "sample",
+   "quote": "it leads to robust performance in cross-domain few-shot learning",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "it leads to better uncertainty calibration in predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "we introduce MetaQDA, a Bayesian meta-learning generalization",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "it is agnostic to the off-the-shelf features chosen",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "it will continue to benefit from advances in feature representations",
+   "grounded": false
+  },
+  {
+   "op": "evaluate distribution",
+   "canonical": "evaluate",
+   "object": "sample",
+   "quote": "this setup has several benefits of interest to practitioners",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute gradient@error",
+  "evaluate@sample",
+  "predict@sample",
+  "reconstruct@latent",
+  "sample@distribution"
+ ]
+}

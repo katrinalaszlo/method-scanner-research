@@ -1,0 +1,74 @@
+{
+ "arxiv_id": "1811.11721",
+ "source": "abstract",
+ "words": 206,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 4,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "INVALID:pixel",
+   "quote": "a novel criss-cross attention module harvests the contextual information",
+   "grounded": true
+  },
+  {
+   "op": "aggregate context",
+   "canonical": "aggregate",
+   "object": "INVALID:pixel",
+   "quote": "harvests the contextual information of all the pixels on its criss-cross path",
+   "grounded": true
+  },
+  {
+   "op": "apply recurrent operation",
+   "canonical": "apply recurrent operation",
+   "object": "INVALID:pixel",
+   "quote": "By taking a further recurrent operation, each pixel can finally capture the full-image dependencies",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "latent",
+   "quote": "a category consistent loss is proposed to enforce the criss-cross attention module to produce more discriminative features",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed recurrent criss-cross attention module requires 11x less GPU memory usage",
+   "grounded": true
+  },
+  {
+   "op": "reduce flops",
+   "canonical": "reduce flops",
+   "object": "INVALID:operation",
+   "quote": "the recurrent criss-cross attention significantly reduces FLOPs by about 85% of the non-local block",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we conduct extensive experiments on semantic segmentation benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "task",
+   "quote": "our CCNet achieves the mIoU scores of 81.9%, 45.76% and 55.47% on the Cityscapes test set",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute metric@task",
+  "correct@parameter",
+  "evaluate@latent",
+  "evaluate@task"
+ ]
+}

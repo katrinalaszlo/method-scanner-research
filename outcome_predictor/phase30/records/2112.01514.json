@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2112.01514",
+ "source": "abstract",
+ "words": 140,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 4,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "create view",
+   "canonical": "create view",
+   "object": "INVALID:video",
+   "quote": "we create local and global spatiotemporal views",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "INVALID:view",
+   "quote": "seek to match the features of these different views",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "seek to match the features of these different views",
+   "grounded": false
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed approach is the first to alleviate the dependency on negative samples",
+   "grounded": true
+  },
+  {
+   "op": "apply positional encoding",
+   "canonical": "apply positional encoding",
+   "object": "INVALID:video",
+   "quote": "supports slow-fast video processing within a single architecture",
+   "grounded": true
+  },
+  {
+   "op": "model relationship",
+   "canonical": "model relationship",
+   "object": "trajectory",
+   "quote": "supports long-term relationship modeling along spatiotemporal dimensions",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "INVALID:video",
+   "quote": "using unlabeled video data",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the proposed approach is the first to alleviate the dependency on negative samples",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "seek to match the features of these different views",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the proposed approach is the first to alleviate the dependency on negative samples",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "supports slow-fast video processing within a single architecture",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "supports long-term relationship modeling along spatiotemporal dimensions",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "supports long-term relationship modeling along spatiotemporal dimensions",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "the proposed approach is the first to alleviate the dependency on negative samples",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "the proposed approach is the first to alleviate the dependency on negative samples",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "performs well on four action recognition benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "trajectory",
+   "quote": "supports long-term relationship modeling along spatiotemporal dimensions",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "supports slow-fast video processing within a single architecture",
+   "grounded": true
+  },
+  {
+   "op": "store parameter",
+   "canonical": "store parameter",
+   "object": "parameter",
+   "quote": "the proposed approach is the first to alleviate the dependency on negative samples",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "seek to match the features of these different views",
+   "grounded": false
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "input",
+   "quote": "using unlabeled video data",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "distribution",
+   "quote": "seek to match the features of these different views",
+   "grounded": false
+  },
+  {
+   "op": "update gradient",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed approach is the first to alleviate the dependency on negative samples",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "action",
+   "quote": "supports long-term relationship modeling along spatiotemporal dimensions",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "the proposed approach is the first to alleviate the dependency on negative samples",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply transformation@input",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@latent",
+  "compute distribution@latent",
+  "compute reward@task",
+  "compute sample@distribution",
+  "compute trajectory@action",
+  "compute value@trajectory",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "model relationship@trajectory",
+  "predict@task",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@policy",
+  "sample@trajectory",
+  "store parameter@parameter",
+  "train@parameter"
+ ]
+}

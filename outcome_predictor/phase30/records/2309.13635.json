@@ -1,0 +1,134 @@
+{
+ "arxiv_id": "2309.13635",
+ "source": "abstract",
+ "words": 172,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 15,
+ "n_invalid_object": 0,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "scene understanding becomes increasingly crucial",
+   "grounded": true
+  },
+  {
+   "op": "estimate state",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "precise knowledge about what objects are present",
+   "grounded": true
+  },
+  {
+   "op": "compute occupancy",
+   "canonical": "compute occupancy",
+   "object": "state",
+   "quote": "information about free space is also crucial",
+   "grounded": true
+  },
+  {
+   "op": "build map",
+   "canonical": "build map",
+   "object": "state",
+   "quote": "building 3D panoptic maps with high spatial resolution",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "an efficient and robust panoptic mapping approach",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "providing such information",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "how they can be reached",
+   "grounded": true
+  },
+  {
+   "op": "denoise data",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "limited computing capabilities",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "real-time panoptic mapping on mobile robots",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we evaluate our approach on the publicly available datasets",
+   "grounded": true
+  },
+  {
+   "op": "generate trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "a sequence of states and/or actions over time",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "higher level of detail than other state-of-the-art approaches",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate error",
+   "canonical": "backpropagate error",
+   "object": "gradient",
+   "quote": "enabling real-time panoptic mapping",
+   "grounded": true
+  },
+  {
+   "op": "resample data",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "real-world applicability of PanopticNDT",
+   "grounded": true
+  },
+  {
+   "op": "apply policy",
+   "canonical": "apply policy",
+   "object": "policy",
+   "quote": "domestic application",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply policy@policy",
+  "backpropagate error@gradient",
+  "build map@state",
+  "compare@error",
+  "compute occupancy@state",
+  "compute reward@reward",
+  "correct@parameter",
+  "evaluate@task",
+  "predict@distribution",
+  "predict@state",
+  "process input@input",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@sample"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2103.15584",
+ "source": "abstract",
+ "words": 166,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "we consider allocating intenser computation for the processing of the important busy information",
+   "grounded": true
+  },
+  {
+   "op": "separate feature",
+   "canonical": "separate feature",
+   "object": "latent",
+   "quote": "we design a trainable Motion Band-Pass Module (MBPM) for separating busy information from quiet information",
+   "grounded": true
+  },
+  {
+   "op": "process feature",
+   "canonical": "process feature",
+   "object": "latent",
+   "quote": "the efficiency of BQN is determined by avoiding redundancy in the feature space processed by the two pathways",
+   "grounded": true
+  },
+  {
+   "op": "encode feature",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "one operating on Quiet features of low-resolution, while the other processes Busy features",
+   "grounded": true
+  },
+  {
+   "op": "combine feature",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we define a Busy-Quiet Net (BQN)",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "the proposed BQN outperforms many recent video processing models",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the efficiency of BQN is determined by avoiding redundancy in the feature space processed by the two pathways",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we design a trainable Motion Band-Pass Module (MBPM)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "extract feature@input",
+  "predict@distribution",
+  "process feature@latent",
+  "separate feature@latent"
+ ]
+}

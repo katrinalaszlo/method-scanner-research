@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2303.09190",
+ "source": "abstract",
+ "words": 225,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "Resolution Enhancement Processing on Low Quality Images",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "using the self-attention mechanism like SwinIR",
+   "grounded": true
+  },
+  {
+   "op": "connect blocks",
+   "canonical": "connect blocks",
+   "object": "latent",
+   "quote": "connects different blocks according to the newly designed algorithm",
+   "grounded": true
+  },
+  {
+   "op": "apply strategy",
+   "canonical": "apply strategy",
+   "object": "parameter",
+   "quote": "apply this strategy to SwinIR and present a new model",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "an ablation study is conducted to demonstrate the positive effect",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "evaluate our model on various popular benchmark datasets",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "perform object detection and real-life image super-resolution",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "reward",
+   "quote": "SwinOIR obtains a PSNR of 26.62 dB for x4 upscaling",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply strategy@parameter",
+  "compute metric@reward",
+  "connect blocks@latent",
+  "correct@parameter",
+  "evaluate@error",
+  "extract feature@input",
+  "process input@input",
+  "reconstruct@input"
+ ]
+}

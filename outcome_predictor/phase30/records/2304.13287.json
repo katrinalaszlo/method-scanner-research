@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2304.13287",
+ "source": "abstract",
+ "words": 232,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "input",
+   "quote": "we generate its corresponding transformed episode by applying a random geometric transformation to all the images in it",
+   "grounded": true
+  },
+  {
+   "op": "compute consistency",
+   "canonical": "compute consistency",
+   "object": "latent",
+   "quote": "our ESPT objective is defined as maximizing the local spatial relationship consistency between the original episode and the transformed one",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "compare latent",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "maximizing the local spatial relationship consistency between the original episode and the transformed one",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the ESPT-augment",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "track state",
+   "canonical": "track state",
+   "object": "state",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "store trajectory",
+   "canonical": "store trajectory",
+   "object": "trajectory",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the ESPT-augmented FSL objective promotes learning more transferable feature representations",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply transformation@input",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@latent",
+  "compute consistency@latent",
+  "compute distribution@distribution",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "correct@parameter",
+  "encode@input",
+  "predict@value",
+  "reconstruct@latent",
+  "reconstruct@sample",
+  "sample@action",
+  "sample@sample",
+  "store trajectory@trajectory",
+  "track state@state"
+ ]
+}

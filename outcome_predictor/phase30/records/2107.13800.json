@@ -1,0 +1,202 @@
+{
+ "arxiv_id": "2107.13800",
+ "source": "abstract",
+ "words": 189,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 11,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we introduce self-attention block in the encoder to generate attention map",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:attention map",
+   "quote": "we introduce self-attention block in the encoder to generate attention map",
+   "grounded": true
+  },
+  {
+   "op": "create",
+   "canonical": "create",
+   "object": "INVALID:attention map",
+   "quote": "with supervision from the ideal attention map created by semantic label",
+   "grounded": true
+  },
+  {
+   "op": "supervise",
+   "canonical": "supervise",
+   "object": "INVALID:prediction",
+   "quote": "with supervision from the ideal attention map created by semantic label",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "parameter",
+   "quote": "the network is embedded with contextual information",
+   "grounded": true
+  },
+  {
+   "op": "understand",
+   "canonical": "understand",
+   "object": "INVALID:scene",
+   "quote": "the network is embedded with contextual information so that it could understand scene better",
+   "grounded": true
+  },
+  {
+   "op": "utilize",
+   "canonical": "utilize",
+   "object": "latent",
+   "quote": "the network is embedded with contextual information so that it could understand scene better and utilize correlated features",
+   "grounded": true
+  },
+  {
+   "op": "fuse",
+   "canonical": "fuse",
+   "object": "latent",
+   "quote": "a feature sharing module is constructed to make the task-specific features deeply fused",
+   "grounded": true
+  },
+  {
+   "op": "guide",
+   "canonical": "guide",
+   "object": "latent",
+   "quote": "a consistency loss is devised to make the features mutually guided",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "a consistency loss is devised to make the features mutually guided",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:depth",
+   "quote": "the experimental results validate that our proposed CI-Net could effectively improve the accuracy of semantic segmentation and depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:segmentation",
+   "quote": "the experimental results validate that our proposed CI-Net could effectively improve the accuracy of semantic segmentation and depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "we evaluate the proposed CI-Net on the NYU-Depth-v2 and SUN-RGBD datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:accuracy",
+   "quote": "the experimental results validate that our proposed CI-Net could effectively improve the accuracy of semantic segmentation and depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "INVALID:results",
+   "quote": "the experimental results validate that our proposed CI-Net could effectively improve the accuracy of semantic segmentation and depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we evaluate the proposed CI-Net on the NYU-Depth-v2 and SUN-RGBD datasets",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we evaluate the proposed CI-Net on the NYU-Depth-v2 and SUN-RGBD datasets",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "input",
+   "quote": "we introduce self-attention block in the encoder to generate attention map",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "a feature sharing module is constructed to make the task-specific features deeply fused",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "a feature sharing module is constructed to make the task-specific features deeply fused",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "a consistency loss is devised to make the features mutually guided",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "we evaluate the proposed CI-Net on the NYU-Depth-v2 and SUN-RGBD datasets",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "INVALID:depth",
+   "quote": "the experimental results validate that our proposed CI-Net could effectively improve the accuracy of semantic segmentation and depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "INVALID:segmentation",
+   "quote": "the experimental results validate that our proposed CI-Net could effectively improve the accuracy of semantic segmentation and depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:accuracy",
+   "quote": "the experimental results validate that our proposed CI-Net could effectively improve the accuracy of semantic segmentation and depth estimation",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute@error",
+  "correct@parameter",
+  "encode@input",
+  "encode@parameter",
+  "evaluate@parameter",
+  "extract@latent",
+  "fuse@latent",
+  "guide@latent",
+  "improve@parameter",
+  "process@input",
+  "train@parameter",
+  "utilize@latent"
+ ]
+}

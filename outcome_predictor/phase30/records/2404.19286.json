@@ -1,0 +1,96 @@
+{
+ "arxiv_id": "2404.19286",
+ "source": "abstract",
+ "words": 183,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 11,
+ "n_invalid_object": 6,
+ "n_grounded": 11,
+ "ops": [
+  {
+   "op": "generate prompt",
+   "canonical": "reconstruct",
+   "object": "INVALID:domain",
+   "quote": "introduce soft prompt label for each domain",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "INVALID:generator",
+   "quote": "two-stage training phase",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "soft prompt is proposed to replace manually designed prompt",
+   "grounded": true
+  },
+  {
+   "op": "predict prompt",
+   "canonical": "predict",
+   "object": "INVALID:domain",
+   "quote": "generator of the generative model is employed to obtain instance-specific soft prompts",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "INVALID:prompt",
+   "quote": "inference phase",
+   "grounded": true
+  },
+  {
+   "op": "apply prompt",
+   "canonical": "apply prompt",
+   "object": "input",
+   "quote": "soft prompt is proposed to replace manually designed prompt",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "soft prompt label for each domain",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "two-stage training phase",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "INVALID:prompt",
+   "quote": "generator of the generative model is employed to obtain instance-specific soft prompts",
+   "grounded": true
+  },
+  {
+   "op": "denoise prompt",
+   "canonical": "reconstruct",
+   "object": "INVALID:prompt",
+   "quote": "inference phase",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "extensive experiments on five domain generalization benchmarks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply prompt@input",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task"
+ ]
+}

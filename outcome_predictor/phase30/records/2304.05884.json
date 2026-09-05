@@ -1,0 +1,208 @@
+{
+ "arxiv_id": "2304.05884",
+ "source": "abstract",
+ "words": 189,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "extract image-level descriptors",
+   "grounded": true
+  },
+  {
+   "op": "cluster",
+   "canonical": "cluster",
+   "object": "state",
+   "quote": "cluster the large-scale LAION400M into one million pseudo classes",
+   "grounded": true
+  },
+  {
+   "op": "compute features",
+   "canonical": "compute features",
+   "object": "state",
+   "quote": "joint textual and visual features extracted by the CLIP model",
+   "grounded": true
+  },
+  {
+   "op": "construct loss",
+   "canonical": "construct loss",
+   "object": "error",
+   "quote": "construct the margin-based softmax loss",
+   "grounded": true
+  },
+  {
+   "op": "select prototypes",
+   "canonical": "select prototypes",
+   "object": "latent",
+   "quote": "randomly select partial inter-class prototypes",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "calculating the similarities between embeddings and class-wise prototypes",
+   "grounded": true
+  },
+  {
+   "op": "select dimensions",
+   "canonical": "select dimensions",
+   "object": "latent",
+   "quote": "randomly select partial feature dimensions",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "enhance the low-dimensional feature representation",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "margin-based softmax loss",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "construct the margin-based softmax loss",
+   "grounded": true
+  },
+  {
+   "op": "embed input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "extract image-level descriptors",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "construct the margin-based softmax loss",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "randomly select partial inter-class prototypes",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "enhance the low-dimensional feature representation",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "randomly select partial feature dimensions",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "randomly select partial feature dimensions",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "enhance the low-dimensional feature representation",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "construct the margin, margin-based softmax loss",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "construct the margin-based softmax loss",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "randomly select partial feature dimensions",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "construct the margin-based softmax loss",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "construct the margin-based softmax loss",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "enhance the low-dimensional feature representation",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "construct the margin-based softmax loss",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "construct the margin-based softmax loss",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "cluster@state",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute features@state",
+  "compute gradient@gradient",
+  "compute similarity@latent",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "construct loss@error",
+  "correct@parameter",
+  "encode@input",
+  "improve@parameter",
+  "predict@reward",
+  "reconstruct@latent",
+  "sample@action",
+  "sample@sample",
+  "select dimensions@latent",
+  "select prototypes@latent"
+ ]
+}

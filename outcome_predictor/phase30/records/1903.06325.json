@@ -1,0 +1,189 @@
+{
+ "arxiv_id": "1903.06325",
+ "source": "abstract",
+ "words": 216,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 22,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we propose a deep model for the soft multilabel learning",
+   "grounded": true
+  },
+  {
+   "op": "compare features",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "by comparing (and representing) the unlabeled person",
+   "grounded": false
+  },
+  {
+   "op": "generate label",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "learn a soft multilabel (real-valued label likelihood vector)",
+   "grounded": true
+  },
+  {
+   "op": "mining negative",
+   "canonical": "mining negative",
+   "object": "sample",
+   "quote": "soft multilabel-guided hard negative mining",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "to learn a discriminative embedding",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "state",
+   "quote": "exploring the similarity consistency of the visual features",
+   "grounded": true
+  },
+  {
+   "op": "learn label",
+   "canonical": "train",
+   "object": "distribution",
+   "quote": "cross-view consistent soft multilabel learning",
+   "grounded": true
+  },
+  {
+   "op": "embed reference",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "represent each reference person by a reference agent",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "in a joint embedding",
+   "grounded": true
+  },
+  {
+   "op": "predict label",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "learn a soft multilabel (real-valued label likelihood vector)",
+   "grounded": true
+  },
+  {
+   "op": "compute consistency",
+   "canonical": "compute consistency",
+   "object": "distribution",
+   "quote": "the soft multilabels are consistently good across different camera views",
+   "grounded": true
+  },
+  {
+   "op": "sample pair",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "most target pairs are cross-view pairs",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "to enable efficient soft multilabel learning",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "we develop the cross-view consistent soft multilabel learning",
+   "grounded": true
+  },
+  {
+   "op": "update agent",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "introduce the reference agent learning",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "represent each reference person by a reference agent",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "to learn a discriminative embedding",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "to enable efficient soft multilabel learning",
+   "grounded": false
+  },
+  {
+   "op": "denoise signal",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we propose a deep model for the soft multilabel learning",
+   "grounded": true
+  },
+  {
+   "op": "resample data",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "soft multilabel-guided hard negative mining",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we evaluate our unified deep model on Market-1501 and DukeMTMC-reID",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "value",
+   "quote": "our model outperforms the state-of-the-art unsupervised RE-ID methods",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "backpropagate@gradient",
+  "compare@state",
+  "compute accuracy@value",
+  "compute consistency@distribution",
+  "compute gradient@gradient",
+  "compute reward@value",
+  "compute similarity@state",
+  "correct@parameter",
+  "encode@latent",
+  "encode@state",
+  "evaluate@error",
+  "evaluate@task",
+  "mining negative@sample",
+  "predict@distribution",
+  "reconstruct@distribution",
+  "reconstruct@noise",
+  "sample@sample",
+  "sample@trajectory",
+  "train@distribution",
+  "train@parameter"
+ ]
+}

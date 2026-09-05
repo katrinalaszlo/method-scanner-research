@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2405.18358",
+ "source": "abstract",
+ "words": 152,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "analyze input",
+   "canonical": "analyze input",
+   "object": "input",
+   "quote": "iteratively analyzes multi-modal information",
+   "grounded": true
+  },
+  {
+   "op": "decompose query",
+   "canonical": "decompose query",
+   "object": "input",
+   "quote": "iteratively analyzes multi-modal information",
+   "grounded": true
+  },
+  {
+   "op": "plan strategy",
+   "canonical": "plan",
+   "object": "task",
+   "quote": "iteratively analyzes multi-modal information",
+   "grounded": true
+  },
+  {
+   "op": "evolve reasoning",
+   "canonical": "evolve reasoning",
+   "object": "latent",
+   "quote": "iteratively analyzes multi-modal information",
+   "grounded": true
+  },
+  {
+   "op": "verify answer",
+   "canonical": "verify answer",
+   "object": "INVALID:output",
+   "quote": "verification of final answers",
+   "grounded": true
+  },
+  {
+   "op": "self-reflect",
+   "canonical": "self-reflect",
+   "object": "policy",
+   "quote": "self-reflection through a novel approach",
+   "grounded": true
+  },
+  {
+   "op": "define critic",
+   "canonical": "define critic",
+   "object": "task",
+   "quote": "defines a vision-based critic",
+   "grounded": true
+  },
+  {
+   "op": "evaluate criteria",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "identifies task-specific evaluation criteria",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "reward",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "track state",
+   "canonical": "track state",
+   "object": "state",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "update policy",
+   "canonical": "correct",
+   "object": "policy",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "enhancing its decision-making abilities",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "analyze input@input",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compare@error",
+  "compute gradient@gradient",
+  "compute trajectory@trajectory",
+  "compute value@reward",
+  "compute value@value",
+  "correct@parameter",
+  "correct@policy",
+  "decompose query@input",
+  "define critic@task",
+  "evaluate@error",
+  "evaluate@task",
+  "evolve reasoning@latent",
+  "plan@task",
+  "predict@reward",
+  "reconstruct@distribution",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@distribution",
+  "sample@sample",
+  "self-reflect@policy",
+  "track state@state"
+ ]
+}

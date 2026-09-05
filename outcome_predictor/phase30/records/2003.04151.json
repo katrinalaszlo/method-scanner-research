@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "2003.04151",
+ "source": "abstract",
+ "words": 197,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "state",
+   "quote": "interpolations between the extracted features of a neural network based on a similarity graph",
+   "grounded": true
+  },
+  {
+   "op": "interpolate features",
+   "canonical": "interpolate features",
+   "object": "latent",
+   "quote": "interpolations between the extracted features of a neural network based on a similarity graph",
+   "grounded": true
+  },
+  {
+   "op": "propagate embeddings",
+   "canonical": "transmit",
+   "object": "distribution",
+   "quote": "embedding propagation leverages interpolations between the extracted features of a neural network based on a similarity graph",
+   "grounded": true
+  },
+  {
+   "op": "update embeddings",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "embedding propagation yields a smoother embedding manifold",
+   "grounded": true
+  },
+  {
+   "op": "smooth manifold",
+   "canonical": "smooth manifold",
+   "object": "latent",
+   "quote": "manifold smoothing has been shown to address the distribution shift problem by extending the decision boundaries and reducing the noise of the class representations",
+   "grounded": true
+  },
+  {
+   "op": "reduce noise",
+   "canonical": "reduce noise",
+   "object": "latent",
+   "quote": "manifold smoothing has been shown to address the distribution shift problem by extending the decision boundaries and reducing the noise of the class representations",
+   "grounded": true
+  },
+  {
+   "op": "extend boundaries",
+   "canonical": "extend boundaries",
+   "object": "latent",
+   "quote": "manifold smoothing has been shown to address the distribution, shift problem by extending the decision boundaries and reducing the noise of the class representations",
+   "grounded": true
+  },
+  {
+   "op": "regularize model",
+   "canonical": "regularize model",
+   "object": "parameter",
+   "quote": "embedding propagation is used as an unsupervised non-parametric regularizer for manifold smoothing",
+   "grounded": false
+  },
+  {
+   "op": "integrate layer",
+   "canonical": "integrate layer",
+   "object": "parameter",
+   "quote": "the proposed embedding propagation operation can be easily integrated as a non-parametric layer into a neural network",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we empirically show that embedding propagation yields a smoother embedding manifold",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "embedding propagation yields a smoother embedding manifold",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we empirically show that embedding propagation yields a smoother embedding manifold",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we show that embedding propagation consistently improves the accuracy of the models in multiple semi-supervised learning scenarios by up to 16\\% points",
+   "grounded": true
+  },
+  {
+   "op": "apply classifier",
+   "canonical": "apply classifier",
+   "object": "task",
+   "quote": "applying embedding propagation to a transductive classifier achieves new state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "embedding propagation yields a smoother embedding manifold",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "embedding propagation yields a smoother embedding manifold",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "embedding propagation yields a smoother embedding manifold",
+   "grounded": true
+  },
+  {
+   "op": "denoise latent",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "manifold smoothing has been shown to address the distribution shift problem by extending the decision boundaries and reducing the noise of the class representations",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "embedding propagation is used as an unsupervised non-parametric regularizer for manifold smoothing",
+   "grounded": false
+  },
+  {
+   "op": "update gradient",
+   "canonical": "correct",
+   "object": "gradient",
+   "quote": "embedding propagation is used as an unsupervised non-parametric regularizer for manifold smoothing",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate error",
+   "canonical": "backpropagate error",
+   "object": "gradient",
+   "quote": "embedding propagation is used as an unsupervised non-parametric regularizer for manifold smoothing",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "embedding propagation yields a smoother embedding manifold",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "embedding propagation yields a smoother embedding manifold",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "embedding propagation yields a smoother embedding manifold",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "embedding propagation yields a smoother embedding manifold",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply classifier@task",
+  "backpropagate error@gradient",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute similarity@state",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@gradient",
+  "correct@latent",
+  "evaluate@error",
+  "evaluate@task",
+  "extend boundaries@latent",
+  "improve@parameter",
+  "integrate layer@parameter",
+  "interpolate features@latent",
+  "predict@value",
+  "reconstruct@action",
+  "reconstruct@latent",
+  "reduce noise@latent",
+  "regularize model@parameter",
+  "sample@distribution",
+  "sample@trajectory",
+  "smooth manifold@latent",
+  "train@parameter",
+  "transmit@distribution"
+ ]
+}

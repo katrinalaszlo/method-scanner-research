@@ -1,0 +1,162 @@
+{
+ "arxiv_id": "2103.14431",
+ "source": "abstract",
+ "words": 157,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 12,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "INVALID:pseudo label",
+   "quote": "a multimodal student model consistently denoises pseudo labels",
+   "grounded": true
+  },
+  {
+   "op": "generalize",
+   "canonical": "generalize",
+   "object": "task",
+   "quote": "generalizes better than its teacher",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:pseudo label",
+   "quote": "denoises pseudo labels",
+   "grounded": true
+  },
+  {
+   "op": "transfer",
+   "canonical": "transfer",
+   "object": "INVALID:knowledge",
+   "quote": "transfer a pre-trained unimodal network",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the modality gap between a unimodal network and unlabeled multimodal data",
+   "grounded": true
+  },
+  {
+   "op": "distill",
+   "canonical": "distill",
+   "object": "INVALID:knowledge",
+   "quote": "a knowledge distillation-based framework",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "INVALID:student",
+   "quote": "we propose multimodal knowledge expansion (MKE)",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "we observe that a multimodal student model",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Extensive experiments on four tasks",
+   "grounded": true
+  },
+  {
+   "op": "connect",
+   "canonical": "connect",
+   "object": "INVALID:mechanism",
+   "quote": "we connect the mechanism of MKE to semi-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "explain",
+   "canonical": "explain",
+   "object": "INVALID:denoising",
+   "quote": "offer both empirical and theoretical explanations",
+   "grounded": true
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "task",
+   "quote": "to perform the same task on unlabeled multimodal data",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "INVALID:data",
+   "quote": "massive amount of unlabeled multimodal data",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "INVALID:data",
+   "quote": "the accessibility of the Internet have brought us",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "INVALID:data",
+   "quote": "utilize multimodal data without requiring labels",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:pseudo label",
+   "quote": "denoises pseudo labels",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "we propose multimodal knowledge expansion (MKE)",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "the denoising capability of a multimodal student",
+   "grounded": true
+  },
+  {
+   "op": "infer",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "to perform the same task on unlabeled multimodal data",
+   "grounded": true
+  },
+  {
+   "op": "analyze",
+   "canonical": "analyze",
+   "object": "INVALID:data",
+   "quote": "Extensive experiments on four tasks and different modalities",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@parameter",
+  "compute@error",
+  "compute@value",
+  "evaluate@task",
+  "generalize@task",
+  "improve@parameter",
+  "predict@task",
+  "train@task"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2311.05770",
+ "source": "abstract",
+ "words": 209,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "dense prediction tasks, such as semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "generate latent",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "mask transformers, which directly predicts a label for a mask",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "depth estimation, achieved by discretizing the continuous output space",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we propose to generalize the cluster-prediction based method",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the resulting model PolyMaX demonstrates state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we hope our simple yet effective design can inspire",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the community has been witnessing a shift of paradigm",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the resulting model PolyMaX demonstrates state-of-the-art performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "correct@parameter",
+  "encode@input",
+  "predict@value",
+  "reconstruct@latent",
+  "sample@action",
+  "sample@sample"
+ ]
+}

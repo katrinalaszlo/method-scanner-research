@@ -1,0 +1,196 @@
+{
+ "arxiv_id": "1902.09868",
+ "source": "abstract",
+ "words": 203,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 17,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "reproject",
+   "canonical": "reproject",
+   "object": "INVALID:pose",
+   "quote": "reprojection of the estimated 3D pose back to 2D",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:reprojection",
+   "quote": "results in a reprojection loss function",
+   "grounded": false
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "INVALID:pose",
+   "quote": "a distribution of 2D poses",
+   "grounded": true
+  },
+  {
+   "op": "map",
+   "canonical": "encode",
+   "object": "INVALID:pose",
+   "quote": "a mapping from a distribution of 2D poses to a distribution of 3D poses",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "using an adversarial training approach",
+   "grounded": true
+  },
+  {
+   "op": "estimate",
+   "canonical": "predict",
+   "object": "INVALID:camera",
+   "quote": "estimates the camera",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:pose",
+   "quote": "infer the 3D pose from the observations",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:reprojection",
+   "quote": "reprojection constraint has to be satisfied",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "weakly supervised training",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "INVALID:pose",
+   "quote": "efficiently avoids a simple memorization of the training data",
+   "grounded": false
+  },
+  {
+   "op": "generalize",
+   "canonical": "generalize",
+   "object": "parameter",
+   "quote": "generalizes well to unknown data",
+   "grounded": false
+  },
+  {
+   "op": "run",
+   "canonical": "run",
+   "object": "parameter",
+   "quote": "runs in real-time on a standard desktop PC",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "INVALID:pose",
+   "quote": "a distribution of 2D poses",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "weakly supervised training",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:pose",
+   "quote": "a distribution of 2D poses",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:pose",
+   "quote": "a distribution of 3D poses",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "adversarial training approach",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "INVALID:reprojection",
+   "quote": "reprojection constraint has to be satisfied",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:reprojection",
+   "quote": "reprojection loss function",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:reprojection",
+   "quote": "reprojection constraint has to be satisfied",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "adversarial training approach",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "weakly supervised training",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:reprojection",
+   "quote": "results in a reprojection loss function",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:pose",
+   "quote": "a distribution of 2D poses",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:pose",
+   "quote": "a distribution of 3D poses",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute gradient@parameter",
+  "correct@parameter",
+  "generalize@parameter",
+  "improve@parameter",
+  "run@parameter",
+  "train@parameter"
+ ]
+}

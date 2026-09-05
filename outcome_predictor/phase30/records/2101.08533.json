@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2101.08533",
+ "source": "abstract",
+ "words": 281,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "drop color info",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "dropouting partial color information in the training data",
+   "grounded": true
+  },
+  {
+   "op": "compute feature",
+   "canonical": "compute feature",
+   "object": "input",
+   "quote": "the neural network by dropouting partial color information",
+   "grounded": true
+  },
+  {
+   "op": "balance weights",
+   "canonical": "balance weights",
+   "object": "latent",
+   "quote": "balances the weights between color features and color-independent features",
+   "grounded": true
+  },
+  {
+   "op": "ignore color info",
+   "canonical": "ignore color info",
+   "object": "input",
+   "quote": "ignoring the color information",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the neural network by dropouting partial color information",
+   "grounded": true
+  },
+  {
+   "op": "apply model",
+   "canonical": "apply model",
+   "object": "input",
+   "quote": "can be combined with various existing ReID models",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "the retrieval results of some examples will be better",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Experiments on several ReID baselines and three common large-scale datasets",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply model@input",
+  "balance weights@latent",
+  "compute feature@input",
+  "evaluate@task",
+  "ignore color info@input",
+  "mask@input",
+  "predict@input",
+  "train@parameter"
+ ]
+}

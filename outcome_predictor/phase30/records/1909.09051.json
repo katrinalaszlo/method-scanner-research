@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1909.09051",
+ "source": "abstract",
+ "words": 189,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "photometric reprojection losses used with self-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "depth maps of limited quality",
+   "grounded": true
+  },
+  {
+   "op": "apply stereo algorithm",
+   "canonical": "apply stereo algorithm",
+   "object": "input",
+   "quote": "complementary depth suggestions obtained from simple off-the-shelf stereo algorithms",
+   "grounded": true
+  },
+  {
+   "op": "generate hint",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "Depth Hints are complementary depth suggestions",
+   "grounded": true
+  },
+  {
+   "op": "combine loss",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "enhance an existing photometric loss function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "guide a network to learn better weights",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "using our Depth Hints gives a substantial boost",
+   "grounded": true
+  },
+  {
+   "op": "evaluate depth",
+   "canonical": "evaluate",
+   "object": "state",
+   "quote": "produce state-of-the-art depth predictions",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "apply stereo algorithm@input",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@state",
+  "predict@state",
+  "reconstruct@latent",
+  "train@parameter"
+ ]
+}

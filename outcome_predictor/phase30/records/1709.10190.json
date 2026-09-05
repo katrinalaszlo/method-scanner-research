@@ -1,0 +1,201 @@
+{
+ "arxiv_id": "1709.10190",
+ "source": "abstract",
+ "words": 151,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 12,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "alignment and separation of semantic probability distributions",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "alignment and separation of semantic probability distributions",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "alignment and separation of semantic probability distributions",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "learn an embedding subspace that is discriminative",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "mapped visual domains are semantically aligned",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "trajectory",
+   "quote": "mapped visual domains are semantically aligned",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "mapped visual domains are semantically aligned",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "mapped visual domains are semantically aligned",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "mapped visual domains are semantically aligned",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "sample",
+   "quote": "mapped visual domains are semantically aligned",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "policy",
+   "quote": "mapped visual domains are semantically aligned",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "learn an embedding subspace that is discriminative",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "noise",
+   "quote": "reverting to point-wise surrogates of distribution distances",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "reverting to point-wise surrog, of distribution distances",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "sample",
+   "quote": "reverting to point-wise surrogates of distribution distances",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "reverting to point-wise surrogates of distribution distances",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "reverting to point-wise surrogates of distribution distances",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "trajectory",
+   "quote": "reverting to point-wise surrogates of distribution distances",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "reverting to point-wise surrogates of distribution distances",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "policy",
+   "quote": "reverting to point-wise surrogates of distribution distances",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "reverting to point-wise surrogates of distribution distances",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "reward",
+   "quote": "reverting to point-wise surrogates of distribution distances",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "reverting to point-wise surrogates of distribution distances",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "reverting to point-wise surrogates of distribution distances",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "reverting to point-wise surrogates of distribution distances",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compare@distribution",
+  "compare@input",
+  "compare@latent",
+  "compare@noise",
+  "compare@parameter",
+  "compare@policy",
+  "compare@reward",
+  "compare@sample",
+  "compare@state",
+  "compare@task",
+  "compare@trajectory",
+  "compare@value"
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "2207.04535",
+ "source": "abstract",
+ "words": 195,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 2,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We propose a novel attention-based architecture, Depthformer",
+   "grounded": true
+  },
+  {
+   "op": "self-attend",
+   "canonical": "self-attend",
+   "object": "latent",
+   "quote": "multi-head self-attention to produce the multiscale feature maps",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "effectively combined by our proposed decoder network",
+   "grounded": true
+  },
+  {
+   "op": "estimate",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "center value is estimated adaptively per image",
+   "grounded": true
+  },
+  {
+   "op": "linear combine",
+   "canonical": "linear combine",
+   "object": "distribution",
+   "quote": "final depth estimated is a linear combination of bin centers",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:depth",
+   "quote": "monocular depth estimation that uses multi-head self-attention",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "global receptive field using the transformer module in the encoding stage",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "INVALID:depth",
+   "quote": "final depth estimated is a linear combination of bin centers",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "encode@input",
+  "linear combine@distribution",
+  "predict@distribution",
+  "self-attend@latent",
+  "transform@state"
+ ]
+}

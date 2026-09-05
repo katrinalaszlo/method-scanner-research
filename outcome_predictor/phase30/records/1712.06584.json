@@ -1,0 +1,200 @@
+{
+ "arxiv_id": "1712.06584",
+ "source": "abstract",
+ "words": 212,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "reconstruct mesh",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "reconstructing a full 3d mesh of a human body from a single rgb image",
+   "grounded": true
+  },
+  {
+   "op": "compute reprojection loss",
+   "canonical": "compute reprojection loss",
+   "object": "error",
+   "quote": "the main objective is to minimize the reprojection loss of keypoints",
+   "grounded": true
+  },
+  {
+   "op": "train adversary",
+   "canonical": "train",
+   "object": "distribution",
+   "quote": "introducing an adversary trained to tell whether a human body parameter is real or not",
+   "grounded": true
+  },
+  {
+   "op": "generate 3d joint angles",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "produce a richer and more useful mesh representation that is parameterized by shape and 3d joint angles",
+   "grounded": true
+  },
+  {
+   "op": "infer shape parameters",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "infer 3d pose and shape parameters directly from image pixels",
+   "grounded": false
+  },
+  {
+   "op": "infer pose parameters",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "infer 3d pose and shape parameters directly from image pixels",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "end-to-end recovery of human shape and pose",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "our model runs in real-time given a bounding box containing the person",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the main objective is to minimize the reprojection loss of keypoints",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "we show that hmr can be trained with and without using any paired 2d-to-3d supervision",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the main objective is to minimize the reprojection loss of keypoints",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we show that hmr can be trained with and without using any paired 2d-to-3d supervision",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "end-to-end recovery of human shape and pose",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "our model runs in real-time given a bounding box containing the person",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the main objective is to minimize the reprojection loss of keypoints",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "we show that hmr can be trained with and without using any paired 2d-to-3d supervision",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the main objective is to minimize the reprojection loss of keypoints",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we show that hmr can be trained with and without using any paired 2d-to-3d supervision",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "end-to-end recovery of human shape and pose",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "our model runs in real-time given a bounding box containing the person",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the main objective is to minimize the reprojection loss of keypoints",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "we show that hmr can be trained with and without using any paired 2d-to-3d supervision",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the main objective is to minimize the reprojection loss of keypoints",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we show that hmr can be trained with and without using any paired 2d-to-3d supervision",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "end-to-end recovery of human shape and pose",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute reprojection loss@error",
+  "correct@parameter",
+  "predict@reward",
+  "predict@state",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "reconstruct@state",
+  "sample@action",
+  "sample@sample",
+  "train@distribution"
+ ]
+}

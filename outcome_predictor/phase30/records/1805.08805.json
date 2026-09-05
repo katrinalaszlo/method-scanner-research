@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "1805.08805",
+ "source": "abstract",
+ "words": 153,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute embedding",
+   "canonical": "compute embedding",
+   "object": "state",
+   "quote": "effective embeddings built on multiple convolutional network layers",
+   "grounded": true
+  },
+  {
+   "op": "apply supervision",
+   "canonical": "apply supervision",
+   "object": "error",
+   "quote": "trained with deep-supervision",
+   "grounded": true
+  },
+  {
+   "op": "generate reward",
+   "canonical": "reconstruct",
+   "object": "task",
+   "quote": "trade off accuracy and computation in the presence of resource constraints",
+   "grounded": false
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "improves substantially over the previous state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "use to effectively trade off accuracy and computation",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "trained with deep-supervision",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "improves substantially over the previous state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "resource-constrained environments",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "trade off accuracy and computation in the presence of resource constraints",
+   "grounded": false
+  },
+  {
+   "op": "evaluate trajectory",
+   "canonical": "evaluate",
+   "object": "trajectory",
+   "quote": "trade off accuracy and computation in the presence of resource constraints",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "resource-constrained environments",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "task",
+   "quote": "trade off accuracy and computation in the presence of resource constraints",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "improves substantially over the previous state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "resource-constrained environments",
+   "grounded": false
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "effective embeddings built on multiple convolutional network layers",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "use to effectively trade off accuracy and computation",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "trade off accuracy and computation in the presence of resource constraints",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "trade off accuracy and computation in the presence of resource constraints",
+   "grounded": false
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "trained with deep-supervlicity",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "resource-constrained environments",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "improves substantially over the previous state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "resource-constrained environments",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "trade off accuracy and computation in the presence of resource constraints",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "trade off accuracy and computation in the presence of resource constraints",
+   "grounded": false
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "use to effectively trade off accuracy and computation",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply supervision@error",
+  "clip@gradient",
+  "compare@error",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute embedding@state",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@trajectory",
+  "predict@state",
+  "predict@task",
+  "reconstruct@noise",
+  "reconstruct@task",
+  "sample@policy",
+  "sample@sample"
+ ]
+}

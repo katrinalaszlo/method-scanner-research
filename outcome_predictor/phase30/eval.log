@@ -1,0 +1,24 @@
+papers=893 pairs=4927 boards=25 L-dims=109 S-dims=2457 mean tuples/paper=13.5 papers with any tag=486
+  board-held-out chance    acc=0.500 per-board=0.500
+  board-held-out T         acc=0.711 per-board=0.711
+  board-held-out L         acc=0.565 per-board=0.566
+  board-held-out E         acc=0.665 per-board=0.665
+  board-held-out S         acc=0.603 per-board=0.603
+  board-held-out T+L       acc=0.712 per-board=0.712
+  board-held-out T+E       acc=0.725 per-board=0.726
+  board-held-out T+S       acc=0.710 per-board=0.711
+  board-held-out T+L+S     acc=0.711 per-board=0.711
+  board-held-out T+L+E     acc=0.718 per-board=0.719
+  board-held-out T+L+E+S   acc=0.712 per-board=0.712
+  within-board   chance    acc=0.500 per-board=0.500
+  within-board   T         acc=0.711 per-board=0.711
+  within-board   L         acc=0.614 per-board=0.614
+  within-board   E         acc=0.790 per-board=0.790
+  within-board   S         acc=0.873 per-board=0.873
+  within-board   T+L       acc=0.728 per-board=0.729
+  within-board   T+E       acc=0.816 per-board=0.816
+  within-board   T+S       acc=0.882 per-board=0.882
+  within-board   T+L+S     acc=0.889 per-board=0.889
+  within-board   T+L+E     acc=0.829 per-board=0.829
+  within-board   T+L+E+S   acc=0.898 per-board=0.898
+{'H1_TLS_gt_TL': False, 'H2_S_gt_chance': True, 'H3_TLES_gt_TLE': False}

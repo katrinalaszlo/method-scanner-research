@@ -1,0 +1,172 @@
+{
+ "arxiv_id": "2211.12634",
+ "source": "abstract",
+ "words": 152,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 1,
+ "n_grounded": 13,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "pre-trained networks and non-parametric modeling to estimate encoded feature distribution",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "estimate the normal distribution using conditional probability given neighborhood features",
+   "grounded": false
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "create a histogram of representative features at each position",
+   "grounded": false
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "INVALID:position",
+   "quote": "position information is utilized by creating a histogram of representative features at each position",
+   "grounded": true
+  },
+  {
+   "op": "interpolate",
+   "canonical": "interpolate",
+   "object": "input",
+   "quote": "employs an additional refine network trained on synthetic anomaly images to better interpolate",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "input",
+   "quote": "employs an additional refine network trained on synthetic anomaly images to better interpolate",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "estimate the normal distribution using conditional probability given neighborhood features",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "pre-trained networks and non-param,etric modeling to estimate encoded feature distribution",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "employs an additional refine network trained on synthetic anomaly images",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "create a histogram of representative features at each position",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "distribution",
+   "quote": "estimate the normal distribution using conditional probability given neighborhood features",
+   "grounded": false
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "pre-trained networks and non-parametric modeling to estimate encoded feature distribution",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "employs an additional refine network trained on synthetic anomaly images to better interpolate",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "estimate the normal distribution using conditional probability given neighborhood features",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "We conducted experiments on the MVTec AD benchmark dataset",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "We conducted experiments on the MVTec AD benchmark dataset",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "input",
+   "quote": "create a histogram of representative features at each position",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "input",
+   "quote": "employs an additional refine network trained on synthetic anomaly images to better interpolate",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "employs an additional refine network trained on synthetic anomaly images",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "employs an additional refine network trained on synthetic anomaly images",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "backpropagate@gradient",
+  "compare@distribution",
+  "compute distribution@latent",
+  "compute gradient@parameter",
+  "compute policy@input",
+  "compute reward@task",
+  "compute trajectory@input",
+  "compute value@distribution",
+  "correct@input",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "interpolate@input",
+  "predict@distribution",
+  "reconstruct@input",
+  "reconstruct@sample",
+  "sample@distribution"
+ ]
+}

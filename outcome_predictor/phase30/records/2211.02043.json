@@ -1,0 +1,144 @@
+{
+ "arxiv_id": "2211.02043",
+ "source": "abstract",
+ "words": 212,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 18,
+ "n_invalid_object": 1,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Frozen pretrained models have become a viable alternative",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "Frozen pretrained models have become a viable alternative",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "Frozen pretrained models have become a viable alternative",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "how to make the frozen setting more flexible to various downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "how to make the frozen setting more flexible to various downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "the effect of larger model sizes",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "the effect of larger model sizes",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "we additionally examine the upper bound of performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "we additionally examine the upper bound of performance",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "it reaches competitive performance on a varied set of major benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "it reaches competitive performance on a varied set of major benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "60.0 box mAP and 52.2 mask mAP on COCO object detection test-dev",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "60.0 box mAP and 52.2 mask mAP on COCO object detection test-dev",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "57.6 val mIoU on ADE20K semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "57.6 val mIoU on ADE20K semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "81.7 top-1 accuracy on Kinetics-400 action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "81.7 top-1 accuracy on Kinetics-400 action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "With this work, we hope to bring greater attention to this promising path",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@task",
+  "compute value@task",
+  "encode@input",
+  "predict@distribution"
+ ]
+}

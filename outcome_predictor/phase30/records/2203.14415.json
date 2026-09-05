@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2203.14415",
+ "source": "abstract",
+ "words": 250,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we propose an effective MUlti-Granular Self-supervised learning (Mugs) framework",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "LGDS aggregates features of an image and its neighbors into a local-group feature",
+   "grounded": true
+  },
+  {
+   "op": "pull features",
+   "canonical": "pull features",
+   "object": "latent",
+   "quote": "pulls local-group features from different crops of the same image together",
+   "grounded": true
+  },
+  {
+   "op": "push features",
+   "canonical": "push features",
+   "object": "latent",
+   "quote": "push them away for others",
+   "grounded": true
+  },
+  {
+   "op": "align features",
+   "canonical": "align features",
+   "object": "latent",
+   "quote": "provides complementary instance supervision to IDS via an extra alignment on local neighbors",
+   "grounded": true
+  },
+  {
+   "op": "scatter features",
+   "canonical": "scatter features",
+   "object": "latent",
+   "quote": "scatters different local-groups separately to increase discriminability",
+   "grounded": true
+  },
+  {
+   "op": "bring samples close",
+   "canonical": "bring samples close",
+   "object": "latent",
+   "quote": "GDS brings similar samples close and thus pulls similar local-groups together",
+   "grounded": true
+  },
+  {
+   "op": "learn features",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "Mugs can capture three granular features that often enjoy higher generality on diverse downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "pretrain model",
+   "canonical": "pretrain model",
+   "object": "parameter",
+   "quote": "By only pretraining on ImageNet-1K",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Mugs sets new SoTA linear probing accuracy 82.1% on ImageNet-1K",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "align features@latent",
+  "bring samples close@latent",
+  "evaluate@error",
+  "evaluate@task",
+  "pretrain model@parameter",
+  "pull features@latent",
+  "push features@latent",
+  "scatter features@latent",
+  "train@latent"
+ ]
+}

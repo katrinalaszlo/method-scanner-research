@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "2405.05001",
+ "source": "abstract",
+ "words": 175,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "RHTB combines channel attention and self-attention to enhance non-local feature fusion",
+   "grounded": true
+  },
+  {
+   "op": "compute residual",
+   "canonical": "compute residual",
+   "object": "latent",
+   "quote": "RHTB combines channel attention and self-attention to enhance non-local feature fusion",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "RHTB combines channel attention and self-attention to enhance non-local feature fusion",
+   "grounded": true
+  },
+  {
+   "op": "interact cross-domain",
+   "canonical": "act",
+   "object": "latent",
+   "quote": "GAB is used in cross-domain information interaction to jointly model similar features",
+   "grounded": true
+  },
+  {
+   "op": "model similar features",
+   "canonical": "model similar features",
+   "object": "latent",
+   "quote": "GAB is used in cross-domain information interaction to jointly model similar features",
+   "grounded": true
+  },
+  {
+   "op": "expand perceptual field",
+   "canonical": "expand perceptual field",
+   "object": "latent",
+   "quote": "GAB is used in cross-domain information interaction to jointly model similar features",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "a novel pre-training method is designed to enhance the model representation capabilities",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "a novel pre-training method is designed to enhance the model representation capabilities",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "a novel pre-training method is designed to enhance the model representation capabilities",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "a novel pre-training method is designed to enhance the model representation capabilities",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "RHTB combines channel attention and self-attention to enhance non-local feature fusion",
+   "grounded": true
+  },
+  {
+   "op": "produce visual results",
+   "canonical": "produce visual results",
+   "object": "latent",
+   "quote": "RHTB combines channel, attention and self-attention to enhance non-local feature fusion",
+   "grounded": false
+  },
+  {
+   "op": "enhance representation",
+   "canonical": "enhance representation",
+   "object": "latent",
+   "quote": "a novel pre-training method is designed to enhance the model representation capabilities",
+   "grounded": true
+  },
+  {
+   "op": "validate model",
+   "canonical": "validate model",
+   "object": "parameter",
+   "quote": "validate the proposed model's effectiveness through many experiments",
+   "grounded": true
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "the experimental results show that HMA outperforms the state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "evaluate results",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "the experimental results show that HMA outperforms the state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "store model",
+   "canonical": "store model",
+   "object": "parameter",
+   "quote": "We provide code and models at https://github.com/korouuuuu/HMA",
+   "grounded": true
+  },
+  {
+   "op": "save code",
+   "canonical": "save code",
+   "object": "task",
+   "quote": "We provide code and models at https://github.com/korouuuuu/HMA",
+   "grounded": true
+  },
+  {
+   "op": "output image",
+   "canonical": "output image",
+   "object": "input",
+   "quote": "Transformer-based methods have demonstrated excellent performance on super-resolution visual tasks",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "Transformer-based methods have demonstrated excellent performance on super-resolution visual tasks",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "RHTB combines channel attention and self-attention to enhance non-local feature fusion",
+   "grounded": true
+  },
+  {
+   "op": "combine attention",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "RHTB combines channel attention and self-attention to enhance non-local feature fusion",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "RHTB combines channel attention and self-attention to enhance non-local feature fusion",
+   "grounded": true
+  },
+  {
+   "op": "model features",
+   "canonical": "model features",
+   "object": "latent",
+   "quote": "GAB is used in cross-domain information interaction to jointly model similar features",
+   "grounded": true
+  },
+  {
+   "op": "interact features",
+   "canonical": "act",
+   "object": "latent",
+   "quote": "GAB is used in cross-domain information interaction to jointly model similar features",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "act@latent",
+  "aggregate@latent",
+  "apply attention@latent",
+  "backpropagate@gradient",
+  "compare@value",
+  "compute attention@latent",
+  "compute residual@latent",
+  "correct@parameter",
+  "encode@latent",
+  "enhance representation@latent",
+  "evaluate@error",
+  "evaluate@value",
+  "expand perceptual field@latent",
+  "model features@latent",
+  "model similar features@latent",
+  "output image@input",
+  "process input@input",
+  "produce visual results@latent",
+  "reconstruct@latent",
+  "save code@task",
+  "store model@parameter",
+  "train@parameter",
+  "validate model@parameter"
+ ]
+}

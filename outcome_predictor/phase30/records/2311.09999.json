@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2311.09999",
+ "source": "abstract",
+ "words": 180,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "reconstructive network followed by a discriminative network",
+   "grounded": true
+  },
+  {
+   "op": "diffuse",
+   "canonical": "diffuse",
+   "object": "noise",
+   "quote": "transparency-based diffusion process",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "reconstructive network followed by a discriminative network",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "transparency-based diffusion process",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "transparency of anomalous regions is progressively increased",
+   "grounded": true
+  },
+  {
+   "op": "localize",
+   "canonical": "localize",
+   "object": "INVALID:anomaly",
+   "quote": "maintaining the appearance of anomaly-free regions using localization cues",
+   "grounded": true
+  },
+  {
+   "op": "mask",
+   "canonical": "mask",
+   "object": "state",
+   "quote": "restoring their normal appearance accurately",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "transparency-based diffusion process",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "discriminative network learns a strong normal appearance signal",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "reconstructive networks miss",
+   "grounded": true
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "gradient",
+   "quote": "transparency-based diffusion process",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "discrim thanative network learns a strong normal appearance signal",
+   "grounded": false
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "transparency of anomalous regions is progressively increased",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "restoring their normal appearance accurately",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "discriminative network learns a strong normal appearance signal",
+   "grounded": true
+  },
+  {
+   "op": "feedback",
+   "canonical": "feedback",
+   "object": "gradient",
+   "quote": "transparency-based diffusion process",
+   "grounded": true
+  },
+  {
+   "op": "iterate",
+   "canonical": "iterate",
+   "object": "trajectory",
+   "quote": "single-stage iterative process",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "action",
+   "quote": "transparency-based diffusion process",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "error",
+   "quote": "discriminative network learns a strong normal appearance signal",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "transparency of anomalous regions is progressively increased",
+   "grounded": true
+  },
+  {
+   "op": "track",
+   "canonical": "track",
+   "object": "INVALID:anomaly",
+   "quote": "maintaining the appearance of anomaly-free regions using localization cues",
+   "grounded": true
+  },
+  {
+   "op": "adjust",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "transparency-based diffusion process",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "discriminative network learns a strong normal appearance signal",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "transparency-based diffusion process",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "distribution",
+   "quote": "transparency of anomalous regions is progressively increased",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "compare@error",
+  "compute@reward",
+  "compute@value",
+  "correct@distribution",
+  "correct@parameter",
+  "correct@state",
+  "diffuse@noise",
+  "encode@input",
+  "evaluate@error",
+  "feedback@gradient",
+  "iterate@trajectory",
+  "mask@state",
+  "normalize@error",
+  "output@action",
+  "predict@latent",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "reconstruct@state",
+  "sample@distribution",
+  "transform@state",
+  "transmit@gradient"
+ ]
+}

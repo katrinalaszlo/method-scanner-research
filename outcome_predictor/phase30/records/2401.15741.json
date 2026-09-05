@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2401.15741",
+ "source": "abstract",
+ "words": 200,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Based on the recent success and problems that convolutional neural networks (CNNs) encounter in semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "apply residual",
+   "canonical": "apply residual",
+   "object": "latent",
+   "quote": "the unique efficient residual network, Efficient-ResNet",
+   "grounded": false
+  },
+  {
+   "op": "fuse context",
+   "canonical": "fuse context",
+   "object": "latent",
+   "quote": "aiming to fuse the equivariant and feature-based semantic information",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "Attention-boosting gates (AbGs) and attention-boosting modules (AbMs) are deployed",
+   "grounded": true
+  },
+  {
+   "op": "generate feature",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the equivalent sizes of the output of global context of the efficient residual network",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the decoder network is developed with the additional attention-fusion networks (AfNs)",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "AfNs are designed to improve the efficiency in the one-to-one conversion of the semantic information",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "the proposed methods reveal significant improvements on the residual networks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@latent",
+  "apply convolution@latent",
+  "apply residual@latent",
+  "encode@input",
+  "fuse context@latent",
+  "predict@latent",
+  "reconstruct@latent"
+ ]
+}

@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "1807.02758",
+ "source": "abstract",
+ "words": 161,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "Convolutional neural network (CNN) depth is of crucial importance for image",
+   "grounded": true
+  },
+  {
+   "op": "apply residual connection",
+   "canonical": "apply residual connection",
+   "object": "latent",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  },
+  {
+   "op": "apply skip connection",
+   "canonical": "apply skip connection",
+   "object": "latent",
+   "quote": "Each residual group contains some residual blocks with short skip connections",
+   "grounded": true
+  },
+  {
+   "op": "apply channel attention",
+   "canonical": "apply channel attention",
+   "object": "latent",
+   "quote": "we propose a channel attention mechanism to adaptively rescale channel-wise features",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Extensive experiments show that our RCAN achieves better accuracy",
+   "grounded": true
+  },
+  {
+   "op": "apply activation function",
+   "canonical": "apply activation function",
+   "object": "latent",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  },
+  {
+   "op": "apply pooling",
+   "canonical": "apply pooling",
+   "object": "latent",
+   "quote": "Convolutional neural network (CNN) depth is of crucial importance for image",
+   "grounded": true
+  },
+  {
+   "op": "apply upsampling",
+   "canonical": "apply upsampling",
+   "object": "latent",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Extensive experiments show that our RCAN achieves better accuracy",
+   "grounded": true
+  },
+  {
+   "op": "rescale features",
+   "canonical": "rescale features",
+   "object": "latent",
+   "quote": "we propose a channel attention mechanism to adaptively rescale channel-wise features",
+   "grounded": false
+  },
+  {
+   "op": "apply normalization",
+   "canonical": "apply normalization",
+   "object": "latent",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  },
+  {
+   "op": "apply non-linearity",
+   "canonical": "apply non-linearity",
+   "object": "latent",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  },
+  {
+   "op": "apply residual block",
+   "canonical": "apply residual block",
+   "object": "latent",
+   "quote": "Each residual group contains some residual blocks with short skip connections",
+   "grounded": true
+  },
+  {
+   "op": "apply channel-wise scaling",
+   "canonical": "apply channel-wise scaling",
+   "object": "latent",
+   "quote": "we propose a channel attention mechanism to adaptably rescale channel-wise features",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  },
+  {
+   "op": "apply weight sharing",
+   "canonical": "apply weight sharing",
+   "object": "parameter",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  },
+  {
+   "op": "apply feature extraction",
+   "canonical": "apply feature extraction",
+   "object": "input",
+   "quote": "Convolutional neural network (CNN) depth is of crucial importance for image",
+   "grounded": true
+  },
+  {
+   "op": "apply feature aggregation",
+   "canonical": "apply feature aggregation",
+   "object": "latent",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  },
+  {
+   "op": "apply feature fusion",
+   "canonical": "apply feature fusion",
+   "object": "latent",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  },
+  {
+   "op": "apply feature transformation",
+   "canonical": "apply feature transformation",
+   "object": "latent",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  },
+  {
+   "op": "apply feature mapping",
+   "canonical": "apply feature mapping",
+   "object": "latent",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  },
+  {
+   "op": "apply feature refinement",
+   "canonical": "apply feature refinement",
+   "object": "latent",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  },
+  {
+   "op": "apply feature reconstruction",
+   "canonical": "apply feature reconstruction",
+   "object": "latent",
+   "quote": "we propose a residual in residual (RIR) structure to form very deep network",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply activation function@latent",
+  "apply channel attention@latent",
+  "apply channel-wise scaling@latent",
+  "apply convolution@input",
+  "apply feature aggregation@latent",
+  "apply feature extraction@input",
+  "apply feature fusion@latent",
+  "apply feature mapping@latent",
+  "apply feature reconstruction@latent",
+  "apply feature refinement@latent",
+  "apply feature transformation@latent",
+  "apply non-linearity@latent",
+  "apply normalization@latent",
+  "apply pooling@latent",
+  "apply residual block@latent",
+  "apply residual connection@latent",
+  "apply skip connection@latent",
+  "apply upsampling@latent",
+  "apply weight sharing@parameter",
+  "backpropagate@gradient",
+  "compare@latent",
+  "compute gradient@gradient",
+  "correct@parameter",
+  "evaluate@error",
+  "rescale features@latent"
+ ]
+}

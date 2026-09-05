@@ -1,0 +1,120 @@
+{
+ "arxiv_id": "2107.00651",
+ "source": "abstract",
+ "words": 182,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 14,
+ "n_invalid_object": 5,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "pure transformer-based models have shown great potentials for vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "the design of transformer networks is challenging",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the depth, embedding dimension, and number of heads can largely affect the performance",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the weights of different blocks in the same layers during supernet training",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:subnet",
+   "quote": "the trained supernet allows thousands of subnets to be very well-trained",
+   "grounded": true
+  },
+  {
+   "op": "inherit",
+   "canonical": "inherit",
+   "object": "parameter",
+   "quote": "the performance of these subnets with weights inherited from the supernet",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "INVALID:subnet",
+   "quote": "the performance of these subnets with weights inherited from the supernet is comparable",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "INVALID:subnet",
+   "quote": "the trained supernet allows thousands of subnets to be very well-trained",
+   "grounded": true
+  },
+  {
+   "op": "search",
+   "canonical": "search",
+   "object": "parameter",
+   "quote": "we propose a new one-shot architecture search framework",
+   "grounded": true
+  },
+  {
+   "op": "select",
+   "canonical": "select",
+   "object": "INVALID:subnet",
+   "quote": "the searched models, which we refer to AutoFormers",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "AutoFormer-tiny/small/base achieve 74.7%/81.7%/82.4% top-1 accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "the searched models, which we refer to AutoFormers, surpass the recent state-of-the-arts",
+   "grounded": true
+  },
+  {
+   "op": "transfer",
+   "canonical": "transfer",
+   "object": "task",
+   "quote": "we verify the transferability of AutoFormer by providing the performance on downstream benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "distill",
+   "canonical": "distill",
+   "object": "INVALID:subnet",
+   "quote": "we verify the transferability of AutoFormer by providing the performance on downstream benchmarks and distillation experiments",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compare@value",
+  "compute@value",
+  "encode@input",
+  "inherit@parameter",
+  "search@parameter",
+  "transfer@task",
+  "transform@latent"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2107.00420",
+ "source": "abstract",
+ "words": 248,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "modern top-performing object detectors depend heavily on backbone networks",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "integrate the high- and low-level features of multiple backbone networks",
+   "grounded": false
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "groups multiple identical backbones, which are connected through composite connections",
+   "grounded": true
+  },
+  {
+   "op": "expand receptive field",
+   "canonical": "expand receptive field",
+   "object": "latent",
+   "quote": "gradually expands the receptive field to more efficiently perform object detection",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "CBNetV2 can be adapted to various backbones",
+   "grounded": true
+  },
+  {
+   "op": "apply supervision",
+   "canonical": "apply supervision",
+   "object": "error",
+   "quote": "proposes a better training strategy with assistant supervision",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "without additional pre-training of the composite backbone",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "experiments provide strong evidence that",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply supervision@error",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "expand receptive field@latent",
+  "process input@input",
+  "reconstruct@distribution"
+ ]
+}

@@ -1,0 +1,196 @@
+{
+ "arxiv_id": "2206.08927",
+ "source": "abstract",
+ "words": 143,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 23,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "We conduct extensive experiments across three multi-task setups",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We conduct extensive experiments across three multi-task setups",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We conduct extensive experiments across three multi-task setups",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We propose a novel multi-task learning architecture",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "leveraging pairwise cross-task exchange through correlation-guided attention",
+   "grounded": false
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "distribution",
+   "quote": "leveraging pairwise cross-task exchange through correlation-guided attention",
+   "grounded": false
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "leveraging pairwise cross-task exchange through correlation-guided attention",
+   "grounded": false
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "We propose a novel multi-task learning architecture",
+   "grounded": true
+  },
+  {
+   "op": "sample output",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "We propose a novel multi-task learning architecture",
+   "grounded": true
+  },
+  {
+   "op": "compute task-specific loss",
+   "canonical": "compute task-specific loss",
+   "object": "error",
+   "quote": "We propose a novel multi-task learning architecture",
+   "grounded": true
+  },
+  {
+   "op": "combine losses",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "We propose a novel multi-task learning architecture",
+   "grounded": true
+  },
+  {
+   "op": "apply self-attention",
+   "canonical": "apply self-attention",
+   "object": "latent",
+   "quote": "leveraging pairwise cross-task exchange through correlation-guided attention",
+   "grounded": false
+  },
+  {
+   "op": "compute cross-task correlation",
+   "canonical": "compute cross-task correlation",
+   "object": "distribution",
+   "quote": "leveraging pairwise cross-task exchange through correlation-guided attention",
+   "grounded": false
+  },
+  {
+   "op": "generate task-specific features",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "leveraging pairwise cross-task exchange through correlation-guided attention",
+   "grounded": false
+  },
+  {
+   "op": "apply task-specific head",
+   "canonical": "apply task-specific head",
+   "object": "distribution",
+   "quote": "We propose a novel multi,task learning architecture",
+   "grounded": false
+  },
+  {
+   "op": "compute task-specific value",
+   "canonical": "compute task-specific value",
+   "object": "value",
+   "quote": "We propose a novel multi-task learning architecture",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "We extend our method to the novel multi-task unsupervised domain adaptation setting",
+   "grounded": true
+  },
+  {
+   "op": "apply domain adaptation",
+   "canonical": "apply domain adaptation",
+   "object": "input",
+   "quote": "We extend our method to the novel multi-task unsupervised domain adaptation setting",
+   "grounded": true
+  },
+  {
+   "op": "compute domain-specific loss",
+   "canonical": "compute domain-specific loss",
+   "object": "error",
+   "quote": "We extend our method to the novel multi-task unsupervised domain adaptation setting",
+   "grounded": true
+  },
+  {
+   "op": "combine domain and task losses",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "We extend our method to the novel multi-task unsupervised domain adaptation setting",
+   "grounded": true
+  },
+  {
+   "op": "update domain adaptation parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We extend our method to the novel multi-task unsupervised domain adaptation setting",
+   "grounded": true
+  },
+  {
+   "op": "apply task-specific normalization",
+   "canonical": "apply task-specific normalization",
+   "object": "distribution",
+   "quote": "We extend our method to the novel multi-task unsupervised domain adaptation setting",
+   "grounded": true
+  },
+  {
+   "op": "compute final output",
+   "canonical": "compute final output",
+   "object": "distribution",
+   "quote": "We propose a novel multi-task learning architecture",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "aggregate@latent",
+  "apply attention@latent",
+  "apply domain adaptation@input",
+  "apply self-attention@latent",
+  "apply task-specific head@distribution",
+  "apply task-specific normalization@distribution",
+  "backpropagate@gradient",
+  "compute attention weights@distribution",
+  "compute cross-task correlation@distribution",
+  "compute domain-specific loss@error",
+  "compute final output@distribution",
+  "compute task-specific loss@error",
+  "compute task-specific value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@distribution",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "sample@sample"
+ ]
+}

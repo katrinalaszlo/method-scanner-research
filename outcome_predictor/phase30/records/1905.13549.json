@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "1905.13549",
+ "source": "abstract",
+ "words": 147,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "our method confers improved generalization out of the domain",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "our method confers improved generalization out of the domain",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our method confers improved generalization out of the domain",
+   "grounded": true
+  },
+  {
+   "op": "apply penalty",
+   "canonical": "apply penalty",
+   "object": "latent",
+   "quote": "penalizing the predictive power of the local representations",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "penalizing the predictive power of the local representations",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "penalizing the predictive power of the local representations",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "to evaluate cross-domain transfer, we introduce ImageNet-Sketch",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "to evaluate cross-domain transfer, we introduce ImageNet-Sketch",
+   "grounded": true
+  },
+  {
+   "op": "feed forward",
+   "canonical": "feed forward",
+   "object": "latent",
+   "quote": "penalizing the predictive power of the local representations",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "our method confers improved general than out of the domain",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "our method confers improved generalization out of the domain",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "our method confers improved generalization out of the domain",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "to evaluate cross-domain transfer, we introduce ImageNet-Sketch",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "to evaluate cross-domain transfer, we introduce ImageNet-Sketch",
+   "grounded": true
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "penalizing the predictive power of the local representations",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "to evaluate cross-domain transfer, we introduce ImageNet-Sketch",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "to evaluate cross-domain transfer, we introduce ImageNet-Sketch",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our method confers improved generalization out of the domain",
+   "grounded": true
+  },
+  {
+   "op": "track trajectory",
+   "canonical": "track trajectory",
+   "object": "trajectory",
+   "quote": "to evaluate cross-domain transfer, we introduce ImageNet-Sketch",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "our method confers improved generalization out of the domain",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply penalty@latent",
+  "apply regularization@parameter",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute value@value",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "evaluate@task",
+  "feed forward@latent",
+  "predict@action",
+  "process input@input",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "sample@input",
+  "sample@sample",
+  "track trajectory@trajectory"
+ ]
+}

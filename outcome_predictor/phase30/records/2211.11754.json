@@ -1,0 +1,98 @@
+{
+ "arxiv_id": "2211.11754",
+ "source": "abstract",
+ "words": 141,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 11,
+ "n_invalid_object": 4,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute sequence",
+   "canonical": "compute sequence",
+   "object": "input",
+   "quote": "computes a new sequence with specified length and vector size",
+   "grounded": true
+  },
+  {
+   "op": "maximize benefit",
+   "canonical": "maximize benefit",
+   "object": "input",
+   "quote": "maximizes 'bang per bit,' the difference between a net benefit to use and net cost to ignore data",
+   "grounded": false
+  },
+  {
+   "op": "assign credit",
+   "canonical": "assign credit",
+   "object": "latent",
+   "quote": "describe output vectors as latent variables that assign credit",
+   "grounded": false
+  },
+  {
+   "op": "query state",
+   "canonical": "query state",
+   "object": "state",
+   "quote": "describe output vectors as query states in a model of associative memory",
+   "grounded": false
+  },
+  {
+   "op": "model agent",
+   "canonical": "model agent",
+   "object": "INVALID:agent",
+   "quote": "describe output vectors as agents in a model of a Society of Mind",
+   "grounded": false
+  },
+  {
+   "op": "reduce parameter",
+   "canonical": "reduce parameter",
+   "object": "parameter",
+   "quote": "implement the algorithm with optimizations that reduce parameter count",
+   "grounded": true
+  },
+  {
+   "op": "reduce computation",
+   "canonical": "reduce computation",
+   "object": "INVALID:computation",
+   "quote": "implement the algorithm with optimizations that reduce computation",
+   "grounded": true
+  },
+  {
+   "op": "reduce memory",
+   "canonical": "reduce memory",
+   "object": "INVALID:memory",
+   "quote": "implement the algorithm with optimizations that reduce memory use",
+   "grounded": true
+  },
+  {
+   "op": "route sequence",
+   "canonical": "route sequence",
+   "object": "INVALID:sequence",
+   "quote": "enabling us to route sequences of greater length than previously possible",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "evaluate our implementation on natural language and visual classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "assign credit",
+   "canonical": "assign credit",
+   "object": "distribution",
+   "quote": "obtaining competitive or state-of-the-art accuracy and end-to-end credit assignments that are interpretable",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "assign credit@distribution",
+  "assign credit@latent",
+  "compute sequence@input",
+  "evaluate@task",
+  "maximize benefit@input",
+  "query state@state",
+  "reduce parameter@parameter"
+ ]
+}

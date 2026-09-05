@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "1202.2745",
+ "source": "abstract",
+ "words": 141,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "inputs preprocessed in different ways",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "small receptive fields of convolutional winner-take-all neurons",
+   "grounded": false
+  },
+  {
+   "op": "compute activation",
+   "canonical": "compute activation",
+   "object": "latent",
+   "quote": "winner neurons are trained",
+   "grounded": true
+  },
+  {
+   "op": "aggregate predictions",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "their predictions are averaged",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "graphics cards allow for fast training",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "our method is the first to achieve near-human performance",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate error",
+   "canonical": "backpropagate error",
+   "object": "gradient",
+   "quote": "graphics cards allow for fast training",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "inputs preprocessed in different ways",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "winner neurons are trained",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "our method is the first to achieve near-human performance",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "their predictions are averaged",
+   "grounded": false
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our method is the first to achieve near-human performance",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "it outperforms humans by a factor of two",
+   "grounded": false
+  },
+  {
+   "op": "store parameters",
+   "canonical": "store parameters",
+   "object": "parameter",
+   "quote": "graphics cards allow for fast training",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "graphics cards allow for fast training",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "winner neurons are trained",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "their predictions are averaged",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "our method is the first to achieve near-human performance",
+   "grounded": true
+  },
+  {
+   "op": "update weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "winner neurons are trained",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "it outperforms humans by a factor of two",
+   "grounded": false
+  },
+  {
+   "op": "log results",
+   "canonical": "log results",
+   "object": "task",
+   "quote": "we also improve the state-of-the-art on a plethora of common image classification benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "normalize input",
+   "canonical": "normalize input",
+   "object": "input",
+   "quote": "inputs preprocessed in different ways",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "it outperforms humans by a factor of two",
+   "grounded": false
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "inputs preprocessed in different ways",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "inputs preprocessed in different ways",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@distribution",
+  "apply convolution@input",
+  "apply gradient@parameter",
+  "backpropagate error@gradient",
+  "compare@error",
+  "compare@value",
+  "compute accuracy@task",
+  "compute activation@latent",
+  "compute gradient@gradient",
+  "compute reward@value",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "log results@task",
+  "normalize input@input",
+  "predict@distribution",
+  "process input@input",
+  "reconstruct@distribution",
+  "reconstruct@input",
+  "sample@input",
+  "store parameters@parameter",
+  "train@parameter"
+ ]
+}

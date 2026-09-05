@@ -1,0 +1,92 @@
+{
+ "arxiv_id": "2402.19474",
+ "source": "abstract",
+ "words": 194,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 2,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "understanding object relations in images",
+   "grounded": true
+  },
+  {
+   "op": "localize object",
+   "canonical": "localize object",
+   "object": "state",
+   "quote": "perceiving and recognizing all objects",
+   "grounded": true
+  },
+  {
+   "op": "generate text",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "integrating text generation, object localization",
+   "grounded": false
+  },
+  {
+   "op": "comprehend relation",
+   "canonical": "comprehend relation",
+   "object": "INVALID:relation",
+   "quote": "grasping the intricate relation graph",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "diminishing the relation hallucination",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "training and evaluation of MLLMs",
+   "grounded": true
+  },
+  {
+   "op": "evaluate relation",
+   "canonical": "evaluate",
+   "object": "INVALID:relation",
+   "quote": "comprehensively evaluating the relation comprehension",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "relation-aware benchmark",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "surpassing the 43.14 of LLaVA-1.5",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "overall accuracy of 52.04",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compute accuracy@task",
+  "correct@parameter",
+  "localize object@state",
+  "predict@value",
+  "process input@input",
+  "reconstruct@distribution",
+  "sample@action"
+ ]
+}

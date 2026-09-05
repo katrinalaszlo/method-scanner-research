@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1804.01438",
+ "source": "abstract",
+ "words": 185,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "partition image",
+   "canonical": "partition image",
+   "object": "input",
+   "quote": "we uniformly partition the images into several stripes",
+   "grounded": true
+  },
+  {
+   "op": "extract global features",
+   "canonical": "extract global features",
+   "object": "input",
+   "quote": "one branch for global feature representations",
+   "grounded": true
+  },
+  {
+   "op": "extract local features",
+   "canonical": "extract local features",
+   "object": "input",
+   "quote": "two branches for local feature representations",
+   "grounded": true
+  },
+  {
+   "op": "vary parts number",
+   "canonical": "vary parts number",
+   "object": "input",
+   "quote": "vary the number of parts in different local branches",
+   "grounded": false
+  },
+  {
+   "op": "compute local features",
+   "canonical": "compute local features",
+   "object": "input",
+   "quote": "obtain local feature representations with multiple granularities",
+   "grounded": false
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "integrating discriminative information with various granularities",
+   "grounded": true
+  },
+  {
+   "op": "generate representation",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "carefully design the Multiple Granularity Network",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "comprehensive experiments implemented on the mainstream evaluation datasets",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute local features@input",
+  "evaluate@error",
+  "extract global features@input",
+  "extract local features@input",
+  "partition image@input",
+  "reconstruct@latent",
+  "vary parts number@input"
+ ]
+}

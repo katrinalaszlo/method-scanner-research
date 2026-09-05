@@ -1,0 +1,196 @@
+{
+ "arxiv_id": "2302.04774",
+ "source": "abstract",
+ "words": 118,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 9,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "pretrained convolution backbone",
+   "grounded": true
+  },
+  {
+   "op": "upsample features",
+   "canonical": "upsample features",
+   "object": "latent",
+   "quote": "deconvolution to lift 3D pose from 2D convolution features",
+   "grounded": true
+  },
+  {
+   "op": "predict pose",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "deconvolution to lift 3D pose from 2D convolution features",
+   "grounded": true
+  },
+  {
+   "op": "apply inverse kinematics",
+   "canonical": "apply inverse kinematics",
+   "object": "INVALID:pose",
+   "quote": "analytical inverse kinematics pass correcting deep learning prediction",
+   "grounded": true
+  },
+  {
+   "op": "sample angles",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "correcting deep learning prediction using learned distribution of plausible twist and swing angles",
+   "grounded": true
+  },
+  {
+   "op": "refine pose",
+   "canonical": "correct",
+   "object": "INVALID:pose",
+   "quote": "analytical inverse kinematics pass correcting deep learning prediction",
+   "grounded": true
+  },
+  {
+   "op": "transform features",
+   "canonical": "transform features",
+   "object": "latent",
+   "quote": "replacing deconvolution with Transformer",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "INVALID:pose",
+   "quote": "replacing deconv, with Transformer",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "replacing deconvolution with Transformer",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "replacing deconvolution with Transformer",
+   "grounded": true
+  },
+  {
+   "op": "predict pose",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "replacing deconvolution with Transformer",
+   "grounded": true
+  },
+  {
+   "op": "apply inverse kinematics",
+   "canonical": "apply inverse kinematics",
+   "object": "INVALID:pose",
+   "quote": "analytical inverse kinematics pass correcting deep learning prediction",
+   "grounded": true
+  },
+  {
+   "op": "sample angles",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "correcting deep learning prediction using learned distribution of plausible twist and swing angles",
+   "grounded": true
+  },
+  {
+   "op": "refine pose",
+   "canonical": "correct",
+   "object": "INVALID:pose",
+   "quote": "analytical inverse kinematics pass correcting deep learning prediction",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "INVALID:pose",
+   "quote": "replacing deconvolution with Transformer",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "replacing deconvolution with Transformer",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "replacing deconvolution with Transformer",
+   "grounded": true
+  },
+  {
+   "op": "predict pose",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "replacing deconvolution with Transformer",
+   "grounded": true
+  },
+  {
+   "op": "apply inverse kinematics",
+   "canonical": "apply inverse kinematics",
+   "object": "INVALID:pose",
+   "quote": "analytical inverse kinematics pass correcting deep learning prediction",
+   "grounded": true
+  },
+  {
+   "op": "sample angles",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "correcting deep learning prediction using learned distribution of plausible twist and swing angles",
+   "grounded": true
+  },
+  {
+   "op": "refine pose",
+   "canonical": "correct",
+   "object": "INVALID:pose",
+   "quote": "analytical inverse kinematics pass correcting deep learning prediction",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "INVALID:pose",
+   "quote": "replacing deconvolution with Transformer",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "replacing deconvolution with Transformer",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "replacing deconvolution with Transformer",
+   "grounded": true
+  },
+  {
+   "op": "predict pose",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "replacing deconvolution with Transformer",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@latent",
+  "sample@distribution",
+  "transform features@latent",
+  "upsample features@latent"
+ ]
+}

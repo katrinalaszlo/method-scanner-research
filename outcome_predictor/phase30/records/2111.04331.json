@@ -1,0 +1,208 @@
+{
+ "arxiv_id": "2111.04331",
+ "source": "abstract",
+ "words": 166,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 6,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "to avoid the discriminative location bias between the base and novel categories",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we present (a) a local-agnostic training strategy",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "INVALID:local-level feature",
+   "quote": "a novel local-level similarity measure to capture the accurate comparison",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "INVALID:local-level feature",
+   "quote": "by mixing all local-level features",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:local-level feature",
+   "quote": "to capture the accurate comparison between local-level features",
+   "grounded": true
+  },
+  {
+   "op": "transfer knowledge",
+   "canonical": "transfer knowledge",
+   "object": "INVALID:base category",
+   "quote": "a local-level knowledge transfer that can synthesize different knowledge transfers",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:local-level feature",
+   "quote": "to capture the accurate comparison between local-level features",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "to synthesize different knowledge transfers from the base category",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "achieves state-of-the-art accuracy",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "to capture the accurate comparison between local-level features",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "to synthesize different knowledge transfers from the base category",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we present (a) a local-agnostic training strategy",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "to synthesize different knowledge transfers from the base category",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "to synthesize different knowledge transfers from the base category",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "achieves state-of-the-art accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "by mixing all local-level features",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "to capture the accurate comparison between local-level features",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "achieves state-of-the-art accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "we present (a) a local-agnostic training strategy",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "to synthesize different knowledge transfers from the base category",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "task",
+   "quote": "achieves state-of-the-art accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "task",
+   "quote": "achieves state-of-the-art accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "trajectory",
+   "quote": "to synthesize different knowledge transfers from the base category",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "trajectory",
+   "quote": "to synthesize different knowledge transfers from the base category",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "task",
+   "quote": "achieves state-of-the-art accuracy",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@task",
+  "compare@trajectory",
+  "compute distribution@task",
+  "compute gradient@parameter",
+  "compute gradient@task",
+  "compute input@input",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@task",
+  "compute reward@trajectory",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@task",
+  "correct@parameter",
+  "reconstruct@latent",
+  "sample@action",
+  "sample@sample"
+ ]
+}

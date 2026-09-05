@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1604.02808",
+ "source": "abstract",
+ "words": 188,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "collect input",
+   "canonical": "collect input",
+   "object": "input",
+   "quote": "collected from 40 distinct subjects",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "utilize them for better action classification",
+   "grounded": false
+  },
+  {
+   "op": "model temporal correlation",
+   "canonical": "model temporal correlation",
+   "object": "latent",
+   "quote": "model the long-term temporal correlation of the features",
+   "grounded": false
+  },
+  {
+   "op": "predict action class",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "for better action classification",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "experimental results show the advantages",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "utilize them for better action classification",
+   "grounded": false
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "apply, develop and adapt various data-hungry learning techniques",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "on the suggested cross-subject and cross-view evaluation criteria",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "collect input@input",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "model temporal correlation@latent",
+  "predict@distribution",
+  "sample@trajectory"
+ ]
+}

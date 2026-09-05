@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "1904.01355",
+ "source": "abstract",
+ "words": 181,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "detect object",
+   "canonical": "detect object",
+   "object": "input",
+   "quote": "solve object detection in a per-pixel prediction fashion",
+   "grounded": true
+  },
+  {
+   "op": "predict bounding box",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "per-pixel prediction fashion",
+   "grounded": true
+  },
+  {
+   "op": "compute confidence",
+   "canonical": "compute confidence",
+   "object": "distribution",
+   "quote": "per-pixel prediction fashion",
+   "grounded": true
+  },
+  {
+   "op": "generate score",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "per-pixel prediction fashion",
+   "grounded": true
+  },
+  {
+   "op": "apply non-maximum suppression",
+   "canonical": "apply non-maximum suppression",
+   "object": "sample",
+   "quote": "only post-processing non-maximum suppression",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "eliminating the predefined set of anchor boxes",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "eliminating the predefined set of anchor boxes",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "eliminating the predefined set of anchor boxes",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "sample task",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "much simpler and flexible detection than previous methods",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "sample policy",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "sample latent",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "much simpler and flexible detection framework",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply non-maximum suppression@sample",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute confidence@distribution",
+  "compute distribution@distribution",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "detect object@input",
+  "evaluate@error",
+  "predict@reward",
+  "predict@state",
+  "reconstruct@distribution",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@distribution",
+  "sample@latent",
+  "sample@policy",
+  "sample@sample",
+  "sample@task",
+  "sample@trajectory"
+ ]
+}

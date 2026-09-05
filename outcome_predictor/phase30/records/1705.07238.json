@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "1705.07238",
+ "source": "abstract",
+ "words": 205,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute disparity",
+   "canonical": "compute disparity",
+   "object": "input",
+   "quote": "The depth gating signal is provided by stereo disparity",
+   "grounded": true
+  },
+  {
+   "op": "estimate depth",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "The depth gating signal is provided by stereo disparity or estimated directly from monocular input",
+   "grounded": true
+  },
+  {
+   "op": "select pooling size",
+   "canonical": "select pooling size",
+   "object": "latent",
+   "quote": "adaptively selects the pooling field size in a convolutional network architecture",
+   "grounded": false
+  },
+  {
+   "op": "apply pooling",
+   "canonical": "apply pooling",
+   "object": "latent",
+   "quote": "a convolutional network architecture",
+   "grounded": true
+  },
+  {
+   "op": "refine segmentation",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "Our recurrent module iteratively refines the segmentation results",
+   "grounded": false
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "leveraging the depth and semantic predictions from the previous iterations",
+   "grounded": false
+  },
+  {
+   "op": "predict semantic",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "leveraging the depth and semantic predictions from the previous iterations",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "integrate this depth-aware gating into a recurrent convolutional neural network",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "semantic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "Through extensive experiments on four popular large-scale RGB-D datasets",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Through extensive experiments on four popular large-scale RGB-D datasets",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "We carry out extensive analysis of this architecture",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "We carry out extensive analysis of this architecture",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "We find that gated pooling for joint semantic segmentation and depth yields",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "We find that gated pooling for joint semantic segmentation and depth yields",
+   "grounded": false
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "We find that gated pooling for joint semantic segmentation and depth yields",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "Our recurrent module iteratively refines the segmentation results",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "Our recurrent module iteratively refines the segmentation results",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "We carry out extensive analysis of this architecture",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "We carry out extensive than analysis of this architecture",
+   "grounded": false
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "Our recurrent module iteratively refines the segmentation results",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "We carry out extensive analysis of this architecture",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "We carry out extensive analysis of this architecture",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "We carry out extensive analysis of this architecture",
+   "grounded": false
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "We carry out extensive analysis of this architecture",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply pooling@latent",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute disparity@input",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute latent@latent",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "correct@parameter",
+  "correct@state",
+  "predict@input",
+  "predict@state",
+  "predict@value",
+  "process input@input",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "select pooling size@latent"
+ ]
+}

@@ -1,0 +1,198 @@
+{
+ "arxiv_id": "2309.00526",
+ "source": "abstract",
+ "words": 248,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 23,
+ "n_invalid_object": 0,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "compute self cost volume",
+   "canonical": "compute self cost volume",
+   "object": "state",
+   "quote": "we propose a novel Self Query Layer (SQL) to build a self-cost volume",
+   "grounded": true
+  },
+  {
+   "op": "infer depth",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "infer depth from it, rather than inferring depth from feature maps",
+   "grounded": true
+  },
+  {
+   "op": "capture geometry",
+   "canonical": "capture geometry",
+   "object": "state",
+   "quote": "the self-cost volume implicitly captures the intrinsic geometry of the scene",
+   "grounded": true
+  },
+  {
+   "op": "compute relative distance",
+   "canonical": "compute relative distance",
+   "object": "latent",
+   "quote": "each individual slice of the volume signifies the relative distances between points and objects",
+   "grounded": true
+  },
+  {
+   "op": "compress volume",
+   "canonical": "compress volume",
+   "object": "state",
+   "quote": "this volume is compressed to the depth map via a novel decoding approach",
+   "grounded": true
+  },
+  {
+   "op": "decode depth map",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "this volume is compressed to the depth map via a novel decoding approach",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "experimental results on KITTI and Cityscapes show that our method attains remarkable state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the self-supervised pre-trained and metric fine-tuned SQLdepth can surpass existing supervised methods by significant margins",
+   "grounded": true
+  },
+  {
+   "op": "fine-tune model",
+   "canonical": "fine-tune model",
+   "object": "parameter",
+   "quote": "the self-supervised pre-trained and metric fine-tuned SQLdepth can surpass existing supervised methods by significant margins",
+   "grounded": true
+  },
+  {
+   "op": "compute absolute error",
+   "canonical": "compute absolute error",
+   "object": "error",
+   "quote": "AbsRel = $0.082$ on KITTI, $0.052$ on KITT with improved ground-truth and $0.106$ on Cityscapes",
+   "grounded": true
+  },
+  {
+   "op": "compute relative error",
+   "canonical": "compute relative error",
+   "object": "error",
+   "quote": "AbsRel = $0.082$ on KITTI, $0.052$ on KITTI with improved ground-truth and $0.106$ on Cityscapes",
+   "grounded": true
+  },
+  {
+   "op": "compute error reduction",
+   "canonical": "compute error reduction",
+   "object": "error",
+   "quote": "achieves $9.9\\%$, $5.5\\%$ and $4.5\\%$ error reduction from the previous best",
+   "grounded": true
+  },
+  {
+   "op": "compute training complexity",
+   "canonical": "compute training complexity",
+   "object": "task",
+   "quote": "our approach showcases reduced training complexity, computational efficiency, improved generalization",
+   "grounded": true
+  },
+  {
+   "op": "compute computational efficiency",
+   "canonical": "compute computational efficiency",
+   "object": "task",
+   "quote": "our approach showcases reduced training complexity, computational efficiency, improved generalization",
+   "grounded": true
+  },
+  {
+   "op": "compute generalization",
+   "canonical": "compute generalization",
+   "object": "task",
+   "quote": "our approach showcases reduced training complexity, computational efficiency, improved generalization",
+   "grounded": true
+  },
+  {
+   "op": "recover scene details",
+   "canonical": "recover scene details",
+   "object": "state",
+   "quote": "the ability to recover fine-grained scene details",
+   "grounded": true
+  },
+  {
+   "op": "compute zero-shot generalization",
+   "canonical": "compute zero-shot generalization",
+   "object": "task",
+   "quote": "self-matching-oriented relative distance querying in SQL improves the robustness and zero-shot generalization capability of SQLdepth",
+   "grounded": true
+  },
+  {
+   "op": "compute robustness",
+   "canonical": "compute robustness",
+   "object": "task",
+   "quote": "self-matching-oriented relative distance querying in SQL improves the robustness and zero-shot generalization capability of SQLdepth",
+   "grounded": true
+  },
+  {
+   "op": "compute performance",
+   "canonical": "compute performance",
+   "object": "value",
+   "quote": "experimental results on KITTI and Cityscapes show that our method attains remarkable state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error margin",
+   "canonical": "compute error margin",
+   "object": "error",
+   "quote": "the self-supervised pre-trained and metric fine-tuned SQLdepth can surpass existing supervised methods by significant margins",
+   "grounded": true
+  },
+  {
+   "op": "compute absolute error margin",
+   "canonical": "compute absolute error margin",
+   "object": "error",
+   "quote": "AbsRel = $0.043$, $14\\%$ error reduction",
+   "grounded": true
+  },
+  {
+   "op": "compute error reduction margin",
+   "canonical": "compute error reduction margin",
+   "object": "error",
+   "quote": "AbsRel = $0.043$, $14\\%$ error reduction",
+   "grounded": true
+  },
+  {
+   "op": "compute task performance",
+   "canonical": "compute task performance",
+   "object": "task",
+   "quote": "our approach showcases reduced training complexity, computational efficiency, improved generalization",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "capture geometry@state",
+  "compress volume@state",
+  "compute absolute error margin@error",
+  "compute absolute error@error",
+  "compute computational efficiency@task",
+  "compute error margin@error",
+  "compute error reduction margin@error",
+  "compute error reduction@error",
+  "compute generalization@task",
+  "compute performance@value",
+  "compute relative distance@latent",
+  "compute relative error@error",
+  "compute robustness@task",
+  "compute self cost volume@state",
+  "compute task performance@task",
+  "compute training complexity@task",
+  "compute zero-shot generalization@task",
+  "correct@parameter",
+  "evaluate@error",
+  "fine-tune model@parameter",
+  "predict@latent",
+  "reconstruct@state",
+  "recover scene details@state"
+ ]
+}

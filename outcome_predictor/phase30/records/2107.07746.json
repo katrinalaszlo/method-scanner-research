@@ -1,0 +1,142 @@
+{
+ "arxiv_id": "2107.07746",
+ "source": "abstract",
+ "words": 101,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 0,
+ "n_grounded": 2,
+ "ops": [
+  {
+   "op": "extract foreground",
+   "canonical": "extract foreground",
+   "object": "input",
+   "quote": "extracting foreground objects in images",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "state",
+   "quote": "in-class classification",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "prediction error or residual",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "model weights or hyperparameters",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "control action or policy output",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "diffusion, SDE",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "reward / return / value signal",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "drawn sample or particle set",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "gradient of an objective w.r.t. parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "value function, Q-function, advantage",
+   "grounded": false
+  },
+  {
+   "op": "track state",
+   "canonical": "track state",
+   "object": "state",
+   "quote": "estimate of a dynamical system's hidden state",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "probability distribution, density, score function",
+   "grounded": false
+  },
+  {
+   "op": "generate trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "sequence of states and/or actions over time",
+   "grounded": false
+  },
+  {
+   "op": "evaluate task",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "task, environment instance, or episode",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "loss/objective -> error",
+   "grounded": false
+  },
+  {
+   "op": "apply clip",
+   "canonical": "apply clip",
+   "object": "gradient",
+   "quote": "clip gradient of an objective w.r.t. parameters",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply clip@gradient",
+  "backpropagate@gradient",
+  "classify@state",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "extract foreground@input",
+  "predict@reward",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@sample",
+  "track state@state"
+ ]
+}

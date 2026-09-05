@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "1711.06025",
+ "source": "abstract",
+ "words": 145,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 11,
+ "ops": [
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "state",
+   "quote": "learn to learn a deep distance metric to compare",
+   "grounded": false
+  },
+  {
+   "op": "compare images",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "compute relation scores between query images and the few examples",
+   "grounded": false
+  },
+  {
+   "op": "aggregate relations",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "compute relation scores between query images and the few examples",
+   "grounded": false
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "classify images of new classes by computing relation scores",
+   "grounded": true
+  },
+  {
+   "op": "sample episode",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "each of which is designed to simulate the few-shot setting",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "trained end-to-end from scratch",
+   "grounded": true
+  },
+  {
+   "op": "store examples",
+   "canonical": "store examples",
+   "object": "input",
+   "quote": "few examples from each",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "learn to recognise new classes given only few examples",
+   "grounded": true
+  },
+  {
+   "op": "compute relation score",
+   "canonical": "compute relation score",
+   "object": "state",
+   "quote": "compute relation scores between query images and the few examples",
+   "grounded": false
+  },
+  {
+   "op": "apply metric",
+   "canonical": "apply metric",
+   "object": "state",
+   "quote": "learn to learn a deep distance metric to compare",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "classify images of new classes by computing relation scores",
+   "grounded": true
+  },
+  {
+   "op": "classify input",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "classify images of new classes by computing relation scores",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "trained end-to-end from scratch",
+   "grounded": true
+  },
+  {
+   "op": "process episode",
+   "canonical": "process episode",
+   "object": "trajectory",
+   "quote": "each of which is designed to simulate the few-shot setting",
+   "grounded": false
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "state",
+   "quote": "learn to learn a deep distance metric to compare",
+   "grounded": false
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "action",
+   "quote": "classify images of new classes by computing relation scores",
+   "grounded": true
+  },
+  {
+   "op": "store class",
+   "canonical": "store class",
+   "object": "task",
+   "quote": "few examples from each",
+   "grounded": true
+  },
+  {
+   "op": "compute class",
+   "canonical": "compute class",
+   "object": "task",
+   "quote": "classify images of new classes by computing relation scores",
+   "grounded": true
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "state",
+   "quote": "compute relation scores between query images and the few examples",
+   "grounded": false
+  },
+  {
+   "op": "apply classifier",
+   "canonical": "apply classifier",
+   "object": "state",
+   "quote": "classify images of new classes by computing relation scores",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "apply classifier@state",
+  "apply metric@state",
+  "classify@input",
+  "compare@state",
+  "compute class@task",
+  "compute distance@state",
+  "compute metric@state",
+  "compute output@action",
+  "compute relation score@state",
+  "compute score@state",
+  "correct@parameter",
+  "encode@input",
+  "predict@state",
+  "process episode@trajectory",
+  "reconstruct@action",
+  "sample@trajectory",
+  "store class@task",
+  "store examples@input",
+  "train@parameter"
+ ]
+}

@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "2307.12349",
+ "source": "abstract",
+ "words": 219,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "ComPtr treats different inputs equally",
+   "grounded": true
+  },
+  {
+   "op": "build sequence",
+   "canonical": "build sequence",
+   "object": "input",
+   "quote": "builds an efficient dense interaction model in the form of sequence-to-sequence",
+   "grounded": true
+  },
+  {
+   "op": "interact sequence",
+   "canonical": "act",
+   "object": "INVALID:sequence",
+   "quote": "builds an efficient dense interaction model in the form of sequence-to-sequence",
+   "grounded": true
+  },
+  {
+   "op": "collect cues",
+   "canonical": "collect cues",
+   "object": "input",
+   "quote": "can evacuate and collect important visual semantic cues",
+   "grounded": true
+  },
+  {
+   "op": "enhance consistency",
+   "canonical": "enhance consistency",
+   "object": "latent",
+   "quote": "proposes consistency enhancement and difference awareness components",
+   "grounded": false
+  },
+  {
+   "op": "aware difference",
+   "canonical": "aware difference",
+   "object": "latent",
+   "quote": "proposes consistency enhancement and difference awareness components",
+   "grounded": false
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "builds an efficient dense interaction model in the form of sequence-to-sequence",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "builds an efficient dense than sequence-to-sequence",
+   "grounded": false
+  },
+  {
+   "op": "output task",
+   "canonical": "output task",
+   "object": "task",
+   "quote": "task-generic design provides a smooth foundation",
+   "grounded": true
+  },
+  {
+   "op": "process task",
+   "canonical": "process task",
+   "object": "task",
+   "quote": "task-generic design provides a smooth foundation",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "can simultaneously deal with various bi-source information",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "can simultaneously deal with various bi-source information",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "proposes consistency enhancement and difference awareness components",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "task-generic design provides a smooth foundation",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "can simultaneously deal with various bi-source information",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "builds an efficient dense interaction model in the form of sequence-to-sequence",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "builds an efficient dense interaction model in the form of sequence-to-sequence",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "task-generic design provides a smooth foundation",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "task-generic design provides a smooth foundation",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "proposes consistency enhancement and difference awareness components",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "task-generic design provides a smooth foundation",
+   "grounded": true
+  },
+  {
+   "op": "update model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "task-generic design provides a smooth foundation",
+   "grounded": true
+  },
+  {
+   "op": "collect data",
+   "canonical": "collect data",
+   "object": "trajectory",
+   "quote": "can simultaneously deal with various bi-source information",
+   "grounded": true
+  },
+  {
+   "op": "process data",
+   "canonical": "process data",
+   "object": "trajectory",
+   "quote": "can simultaneously deal with various bi-source information",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "task-generic design provides a smooth foundation",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aware difference@latent",
+  "backpropagate@gradient",
+  "build sequence@input",
+  "clip gradient@gradient",
+  "collect cues@input",
+  "collect data@trajectory",
+  "compare@error",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute task@task",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "enhance consistency@latent",
+  "evaluate@error",
+  "output task@task",
+  "predict@distribution",
+  "process data@trajectory",
+  "process task@task",
+  "reconstruct@distribution",
+  "reconstruct@input",
+  "sample@action",
+  "sample@input"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1705.04724",
+ "source": "abstract",
+ "words": 152,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "optimise person re-id when using only generic matching metrics",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "jointly learning local and global feature selection losses",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "design a novel CNN architecture for Jointly Learning Multi-Loss",
+   "grounded": false
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "formulate a method for joint learning of local and global feature selection",
+   "grounded": true
+  },
+  {
+   "op": "select features",
+   "canonical": "select features",
+   "object": "latent",
+   "quote": "jointly learning local and global discriminative feature optimisation",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "subject concurrently to the same re-id labelled information",
+   "grounded": true
+  },
+  {
+   "op": "compare features",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "discover correlated local and global features in different context",
+   "grounded": true
+  },
+  {
+   "op": "apply loss",
+   "canonical": "apply loss",
+   "object": "error",
+   "quote": "optimise person re-id when using only generic matching metrics",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply loss@error",
+  "backpropagate@gradient",
+  "compare@latent",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "select features@latent"
+ ]
+}

@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "2207.01297",
+ "source": "abstract",
+ "words": 213,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "initialize parameters",
+   "canonical": "initialize parameters",
+   "object": "parameter",
+   "quote": "Conventional methods randomly initialize the linear classifier head",
+   "grounded": true
+  },
+  {
+   "op": "generate semantic target",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "we utilize the well-pretrained language model to generate good semantic target",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the empirical study shows that our method improves both the performance and the training speed",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the empirical study shows that our method improves both the performance and the training speed",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the empirical study shows that our method improves both the performance and the training speed",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we utilize the well-pretrained language model to generate good semantic target",
+   "grounded": true
+  },
+  {
+   "op": "transform input",
+   "canonical": "transform input",
+   "object": "input",
+   "quote": "we utilize the well-pretrained language model to generate good semantic target",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "evaluate trajectory",
+   "canonical": "evaluate",
+   "object": "trajectory",
+   "quote": "our simple yet effective tuning, paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "apply policy",
+   "canonical": "apply policy",
+   "object": "policy",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "update distribution",
+   "canonical": "correct",
+   "object": "distribution",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "gradient",
+   "quote": "our simple yet effective tuning paradigm achieves state-of-the-art performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@gradient",
+  "apply policy@policy",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute policy@policy",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@distribution",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@trajectory",
+  "initialize parameters@parameter",
+  "predict@reward",
+  "reconstruct@distribution",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@distribution",
+  "sample@sample",
+  "sample@trajectory",
+  "transform input@input"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2109.15222",
+ "source": "abstract",
+ "words": 139,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "blend patches",
+   "canonical": "blend patches",
+   "object": "input",
+   "quote": "integrate Poisson image editing to seamlessly blend scaled patches",
+   "grounded": false
+  },
+  {
+   "op": "scale patches",
+   "canonical": "scale patches",
+   "object": "input",
+   "quote": "blend scaled patches of various sizes from separate images",
+   "grounded": true
+  },
+  {
+   "op": "extract patches",
+   "canonical": "extract patches",
+   "object": "input",
+   "quote": "blend scaled patches of various sizes from separate images",
+   "grounded": true
+  },
+  {
+   "op": "generate anomalies",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "creates a wide range of synthetic anomalies",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "training an end-to-end model for anomaly detection",
+   "grounded": true
+  },
+  {
+   "op": "detect anomalies",
+   "canonical": "detect anomalies",
+   "object": "input",
+   "quote": "model trained to localize NSA anomalies generalizes well",
+   "grounded": true
+  },
+  {
+   "op": "compute metrics",
+   "canonical": "compute metrics",
+   "object": "task",
+   "quote": "experiments with the MVTec AD dataset show",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "achieves an overall detection AUROC of 97.2",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "blend patches@input",
+  "compute metrics@task",
+  "detect anomalies@input",
+  "evaluate@task",
+  "extract patches@input",
+  "reconstruct@input",
+  "scale patches@input",
+  "train@parameter"
+ ]
+}

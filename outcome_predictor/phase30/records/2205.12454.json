@@ -1,0 +1,92 @@
+{
+ "arxiv_id": "2205.12454",
+ "source": "abstract",
+ "words": 233,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 1,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "encode position",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "we summarize the different types of encodings",
+   "grounded": true
+  },
+  {
+   "op": "aggregate edges",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "decoupling the local real-edge aggregation",
+   "grounded": true
+  },
+  {
+   "op": "pass message",
+   "canonical": "transmit",
+   "object": "state",
+   "quote": "local message-passing mechanism",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "INVALID:global",
+   "quote": "global attention mechanism",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "universal function approximator on graphs",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "proposing the first architecture with a complexity linear",
+   "grounded": false
+  },
+  {
+   "op": "scale computation",
+   "canonical": "scale computation",
+   "object": "trajectory",
+   "quote": "providing efficiency and scalability both in small and large graphs",
+   "grounded": false
+  },
+  {
+   "op": "apply encoding",
+   "canonical": "apply encoding",
+   "object": "input",
+   "quote": "choosing positional/structural encoding",
+   "grounded": false
+  },
+  {
+   "op": "transform features",
+   "canonical": "transform features",
+   "object": "latent",
+   "quote": "modular framework GraphGPS that supports multiple types of encodings",
+   "grounded": false
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "distribution",
+   "quote": "show-casing the empirical benefits gained by the modularity",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply encoding@input",
+  "compute output@distribution",
+  "correct@parameter",
+  "encode@state",
+  "scale computation@trajectory",
+  "transform features@latent",
+  "transmit@state"
+ ]
+}

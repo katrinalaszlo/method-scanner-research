@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2501.02576",
+ "source": "abstract",
+ "words": 209,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose a Feature Alignment module",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "to enhance the denoising network's representation capability",
+   "grounded": true
+  },
+  {
+   "op": "align",
+   "canonical": "align",
+   "object": "latent",
+   "quote": "incorporates high-quality semantic features",
+   "grounded": true
+  },
+  {
+   "op": "enhance",
+   "canonical": "enhance",
+   "object": "distribution",
+   "quote": "to adaptively balance low-frequency structure and high-frequency details",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we adopt a two-stage training strategy",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "to fully leverage the potential of the two modules",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "to improve the visual quality",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "our model achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "to mitigate overfitting to texture details",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "to maintain comparable performance",
+   "grounded": false
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "our model achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "to maintain comparable performance",
+   "grounded": false
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "distribution",
+   "quote": "to adaptively balance low-frequency structure and high-frequency details",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "to maintain comparable performance",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "to enhance the denoising network's representation capability",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "to adaptively balance low-frequency structure and high-frequency details",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "incorporates high-quality semantic features",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "to enhance the denoising network's representation capability",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "our model achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "error",
+   "quote": "to mitigate overfitting to texture details",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "parameter",
+   "quote": "to fully leverage the potential of the two modules",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "task",
+   "quote": "our model achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "reward",
+   "quote": "our model achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "our model achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "policy",
+   "quote": "our model achieves state-of-the-art performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "aggregate@latent",
+  "align@latent",
+  "compute@error",
+  "correct@distribution",
+  "correct@parameter",
+  "encode@input",
+  "enhance@distribution",
+  "evaluate@error",
+  "improve@parameter",
+  "predict@value",
+  "reconstruct@action",
+  "reconstruct@distribution",
+  "reconstruct@error",
+  "reconstruct@latent",
+  "reconstruct@parameter",
+  "reconstruct@policy",
+  "reconstruct@reward",
+  "reconstruct@state",
+  "reconstruct@task",
+  "reconstruct@trajectory",
+  "sample@distribution",
+  "train@parameter",
+  "transform@input"
+ ]
+}

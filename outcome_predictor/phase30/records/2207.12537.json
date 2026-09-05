@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2207.12537",
+ "source": "abstract",
+ "words": 201,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we present a temporally embedded 3D human body pose and shape estimation",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "use previous predictions as a bridge to feedback the error",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "to feedback the error for better estimation in the current frame",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "to learn the correspondence between data frames and predictions",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "a multi-scale spatio-temporal graph convolutional network",
+   "grounded": true
+  },
+  {
+   "op": "discriminate",
+   "canonical": "discriminate",
+   "object": "trajectory",
+   "quote": "presented as the motion discriminator for adversarial training",
+   "grounded": true
+  },
+  {
+   "op": "load data",
+   "canonical": "load data",
+   "object": "input",
+   "quote": "propose a sequential data loading strategy",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "reward",
+   "quote": "demonstrate the importance of each proposed module",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the results show the effectiveness of TePose",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "to improve the accuracy and temporal consistency",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "to meet the special start-to-end data processing requirement",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "live stream videos is still a rarely-touched area",
+   "grounded": true
+  },
+  {
+   "op": "estimate",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "3D human body pose and shape estimation within a temporal sequence",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "with state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "to learn the correspondence between data frames and predictions",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "action",
+   "quote": "to improve the accuracy and temporal consistency",
+   "grounded": true
+  },
+  {
+   "op": "feedback",
+   "canonical": "feedback",
+   "object": "error",
+   "quote": "use previous predictions as a bridge to feedback the error",
+   "grounded": false
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "using datasets without any 3D labeling",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "input",
+   "quote": "to meet the special start-to-end data processing requirement",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "with state-of-the-art performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "backpropagate@gradient",
+  "compare@state",
+  "compare@value",
+  "compute trajectory@trajectory",
+  "compute value@reward",
+  "correct@parameter",
+  "discriminate@trajectory",
+  "encode@input",
+  "evaluate@value",
+  "feedback@error",
+  "load data@input",
+  "predict@state",
+  "process@input",
+  "reconstruct@action",
+  "reconstruct@noise",
+  "sample@distribution",
+  "sample@sample",
+  "train@parameter"
+ ]
+}

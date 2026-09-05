@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "2208.01521",
+ "source": "abstract",
+ "words": 154,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 7,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "We propose an architecture based on quantized feature space representation",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "DSR generates the anomalies at the feature level by sampling the learned quantized feature space",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "DSR generates the anomalies at the feature level by sampling the learned quantized feature space",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "DSR generates the anomalies at the feature level by sampling the learned quantized feature space",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "DSR generates the anomalies at the feature level by sampling the learned quantized feature space",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "DSR achieves state-of-the-art results on the KSDD2 and MVTec anomaly detection datasets",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "DSR generates the anomalies at the feature level by sampling the learned quantized feature space",
+   "grounded": true
+  },
+  {
+   "op": "project",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "DSR generates the anomalies at the feature level by sampling the learned quantized feature space",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "input",
+   "quote": "DSR generates the anomalies at the feature level by sampling the learned quantized feature space",
+   "grounded": true
+  },
+  {
+   "op": "compute anomaly",
+   "canonical": "compute anomaly",
+   "object": "input",
+   "quote": "DSR achieves state-of- the-art results on the KSDD2 and MVTec anomaly detection datasets",
+   "grounded": false
+  },
+  {
+   "op": "localize",
+   "canonical": "localize",
+   "object": "INVALID:anomaly",
+   "quote": "improving the previous top-performing methods by 10% AP in anomaly detection and 35% AP in anomaly localization",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "INVALID:anomaly",
+   "quote": "improving the previous top-performing methods by 10% AP in anomaly detection and 35% AP in anomaly localization",
+   "grounded": true
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "INVALID:anomaly",
+   "quote": "improving the previous top-performing methods by 10% AP in anomaly detection and 35% AP in anomaly localization",
+   "grounded": true
+  },
+  {
+   "op": "store",
+   "canonical": "store",
+   "object": "INVALID:anomaly",
+   "quote": "improving the previous top-performing methods by 10% AP in anomaly detection and 35% AP in anomaly localization",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:anomaly",
+   "quote": "DSR achieves state-of-the-art results on the KSDD2 and MVTec anomaly detection datasets",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "DSR generates the anomalies at the feature level by sampling the learned quantized feature space",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "input",
+   "quote": "DSR generates the anomalies at the feature level by sampling the learned quantized feature space",
+   "grounded": true
+  },
+  {
+   "op": "quantize",
+   "canonical": "quantize",
+   "object": "latent",
+   "quote": "DSR generates the anomalies at the feature level by sampling the learned quantized feature space",
+   "grounded": true
+  },
+  {
+   "op": "reproject",
+   "canonical": "reproject",
+   "object": "latent",
+   "quote": "DSR generates the anomalies at the feature level by sampling the learned quantized feature space",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "DSR generates the anomalies at the feature level by sampling the learned quantized feature space",
+   "grounded": true
+  },
+  {
+   "op": "filter",
+   "canonical": "filter",
+   "object": "input",
+   "quote": "DSR generates the anomalies at the feature level by sampling the learned quantized feature space",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "DSR generates the anomalies at the feature level by sampling the learned quantized feature space",
+   "grounded": true
+  },
+  {
+   "op": "segment",
+   "canonical": "segment",
+   "object": "input",
+   "quote": "DSR achieves state-of-the-art results on the KSDD2 and MVTec anomaly detection datasets",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "INVALID:anomaly",
+   "quote": "DSR achieves state-of-the-art results on the KSDD2 and MVTec anomaly detection datasets",
+   "grounded": true
+  },
+  {
+   "op": "visualize",
+   "canonical": "visualize",
+   "object": "INVALID:anomaly",
+   "quote": "DSR achieves state-of-the-art results on the KSDD2 and MVTec anomaly detection datasets",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "compare@input",
+  "compute anomaly@input",
+  "correct@parameter",
+  "encode@input",
+  "filter@input",
+  "normalize@input",
+  "project@latent",
+  "quantize@latent",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reproject@latent",
+  "sample@latent",
+  "segment@input",
+  "transform@input"
+ ]
+}

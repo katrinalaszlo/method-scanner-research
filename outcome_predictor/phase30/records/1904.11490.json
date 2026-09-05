@@ -1,0 +1,196 @@
+{
+ "arxiv_id": "1904.11490",
+ "source": "abstract",
+ "words": 170,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 18,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "sample points",
+   "canonical": "sample",
+   "object": "INVALID:object",
+   "quote": "RepPoints learn to automatically arrange themselves in a manner that bounds the spatial extent of an object",
+   "grounded": true
+  },
+  {
+   "op": "localize",
+   "canonical": "localize",
+   "object": "INVALID:object",
+   "quote": "RepPoints ... indicate semantically significant local areas",
+   "grounded": false
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "INVALID:object",
+   "quote": "provides only a coarse localization of objects and leads to a correspondingly coarse extraction of object features",
+   "grounded": true
+  },
+  {
+   "op": "generate proposals",
+   "canonical": "reconstruct",
+   "object": "INVALID:object",
+   "quote": "modern object detectors rely heavily on rectangular bounding boxes, such as anchors, proposals and the final predictions",
+   "grounded": true
+  },
+  {
+   "op": "predict bounding box",
+   "canonical": "predict",
+   "object": "INVALID:object",
+   "quote": "modern object detectors rely heavily on rectangular bounding boxes, such as anchors, proposals and the final predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Given ground truth localization and recognition targets for training",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "RepPoints learn to automatically arrange themselves in a manner that bounds the spatial extent of an object",
+   "grounded": true
+  },
+  {
+   "op": "detect objects",
+   "canonical": "detect objects",
+   "object": "INVALID:object",
+   "quote": "an anchor-free object detector based on RepPoints can be as effective as the state-of-the-art anchor-based detection methods",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "value",
+   "quote": "46.5 AP and 67.4 $AP_{50}$ on the COCO test-dev detection benchmark",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "46.5 AP and 67.4 $AP_{50}$ on the COCO test-dev detection benchmark",
+   "grounded": true
+  },
+  {
+   "op": "track objects",
+   "canonical": "track objects",
+   "object": "INVALID:object",
+   "quote": "RepPoints ... indicate semantically significant local areas",
+   "grounded": false
+  },
+  {
+   "op": "generate points",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "RepPoints learn to automatically arrange themselves in a manner that bounds the spatial extent of an object",
+   "grounded": true
+  },
+  {
+   "op": "compute localization",
+   "canonical": "compute localization",
+   "object": "INVALID:object",
+   "quote": "RepPoints ... indicate semantically significant local areas",
+   "grounded": false
+  },
+  {
+   "op": "compute recognition",
+   "canonical": "compute recognition",
+   "object": "INVALID:object",
+   "quote": "Given ground truth localization and recognition targets for training",
+   "grounded": true
+  },
+  {
+   "op": "compute spatial extent",
+   "canonical": "compute spatial extent",
+   "object": "INVALID:object",
+   "quote": "RepPoints learn to automatically arrange themselves in a manner that bounds the spatial extent of an object",
+   "grounded": true
+  },
+  {
+   "op": "compute semantic significance",
+   "canonical": "compute semantic significance",
+   "object": "INVALID:object",
+   "quote": "RepPoints ... indicate semantically significant local areas",
+   "grounded": false
+  },
+  {
+   "op": "compute object features",
+   "canonical": "compute object features",
+   "object": "INVALID:object",
+   "quote": "provides only a coarse localization of objects and leads to a correspondingly coarse extraction of object features",
+   "grounded": true
+  },
+  {
+   "op": "compute bounding box",
+   "canonical": "compute bounding box",
+   "object": "INVALID:object",
+   "quote": "modern object detectors rely heavily on rectangular bounding boxes, such as anchors, proposals and the final predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute proposal",
+   "canonical": "compute proposal",
+   "object": "INVALID:object",
+   "quote": "modern object detectors rely heavily on rectangular bounding boxes, such as anchors, proposals and the final predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute final prediction",
+   "canonical": "compute final prediction",
+   "object": "INVALID:object",
+   "quote": "modern object detectors rely heavily on rectangular bounding boxes, such as anchors, proposals and the final predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute detection accuracy",
+   "canonical": "compute detection accuracy",
+   "object": "value",
+   "quote": "46.5 AP and 67.4 $AP_{50}$ on the COCO test-dev detection benchmark",
+   "grounded": true
+  },
+  {
+   "op": "compute detection performance",
+   "canonical": "compute detection performance",
+   "object": "value",
+   "quote": "46.5 AP and 67.4 $AP_{50}$ on the COCO test-dev detection benchmark",
+   "grounded": true
+  },
+  {
+   "op": "compute object localization",
+   "canonical": "compute object localization",
+   "object": "INVALID:object",
+   "quote": "RepPoints ... indicate semantically significant local areas",
+   "grounded": false
+  },
+  {
+   "op": "compute object recognition",
+   "canonical": "compute object recognition",
+   "object": "INVALID:object",
+   "quote": "Given ground truth localization and recognition targets for training",
+   "grounded": true
+  },
+  {
+   "op": "compute object features",
+   "canonical": "compute object features",
+   "object": "INVALID:object",
+   "quote": "provides only a coarse localization of objects and leads to a correspondingly coarse extraction of object features",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute accuracy@value",
+  "compute detection accuracy@value",
+  "compute detection performance@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@value",
+  "reconstruct@sample"
+ ]
+}

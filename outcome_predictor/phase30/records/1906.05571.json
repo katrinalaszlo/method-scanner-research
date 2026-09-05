@@ -1,0 +1,172 @@
+{
+ "arxiv_id": "1906.05571",
+ "source": "abstract",
+ "words": 223,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "diffuse local",
+   "canonical": "diffuse",
+   "object": "latent",
+   "quote": "diffusions effectively interact two aspects of information",
+   "grounded": true
+  },
+  {
+   "op": "diffuse global",
+   "canonical": "diffuse",
+   "object": "latent",
+   "quote": "diffusions effectively interact two aspects of information",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "a kernelized classifier is introduced to combine the representations",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the best competitors by 3.5% and 0.7%",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the best competitors by 3.5% and 0.7%",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the best competitors by 3.5% and 0.7%",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the best competitors by 3.5% and 0.7%",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the best competitors by 3.5% and 0.7%",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the best competitors by 3.5% and 0.7%",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "diffusions effectively interact two aspects of information",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "diffusions effectively interact two aspects of information",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "a kernelized classifier is introduced to combine the representations",
+   "grounded": true
+  },
+  {
+   "op": "decode latent",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "a kernelized classifier is introduced to combine the representations",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the best competitors by 3.5% and 0.7%",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "the best competitors by 3.5% and 0.7%",
+   "grounded": true
+  },
+  {
+   "op": "apply policy",
+   "canonical": "apply policy",
+   "object": "action",
+   "quote": "the best competitors by 3.5% and 0.7%",
+   "grounded": true
+  },
+  {
+   "op": "evaluate value",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "the best competitors by 3.5% and 0.7%",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the best competitors by 3.5% and 0.7%",
+   "grounded": true
+  },
+  {
+   "op": "process task",
+   "canonical": "process task",
+   "object": "task",
+   "quote": "the best competitors by 3.5% and 0.7%",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "the best competitors by 3.5% and 0.7%",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply policy@action",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "correct@parameter",
+  "diffuse@latent",
+  "encode@latent",
+  "evaluate@error",
+  "evaluate@value",
+  "predict@value",
+  "process task@task",
+  "reconstruct@input",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

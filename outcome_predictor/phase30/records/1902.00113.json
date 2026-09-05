@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "1902.00113",
+ "source": "abstract",
+ "words": 217,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 3,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "split input",
+   "canonical": "split input",
+   "object": "input",
+   "quote": "decompose a deep network into feature extractor and classifier components",
+   "grounded": true
+  },
+  {
+   "op": "train classifier",
+   "canonical": "train",
+   "object": "INVALID:classifier",
+   "quote": "train each component by simulating it interacting with a partner",
+   "grounded": true
+  },
+  {
+   "op": "train feature extractor",
+   "canonical": "train",
+   "object": "INVALID:feature extractor",
+   "quote": "using an ImageNet trained CNN as a fixed feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "simulate interaction",
+   "canonical": "simulate interaction",
+   "object": "INVALID:classifier",
+   "quote": "simulating it interacting with a partner who is badly tuned",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "training a single deep network in a way that exposes it to the domain shift",
+   "grounded": false
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "our networks producing state-of-the-art performance on three DG benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the pervasive workflow of using an ImageNet trained CNN as a fixed feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "explicitly training a feature for robustness to novel problems",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "using the Visual Decathlon benchmark",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the simple approach of aggreging data from all source domains",
+   "grounded": false
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  },
+  {
+   "op": "evaluate policy",
+   "canonical": "evaluate",
+   "object": "policy",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the simple approach of aggregating data from all source domains",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute latent@latent",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@policy",
+  "predict@reward",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "split input@input"
+ ]
+}

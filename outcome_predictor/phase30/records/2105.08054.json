@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2105.08054",
+ "source": "abstract",
+ "words": 148,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "We test this hypothesis with a new approach",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "We explore the effects of contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "We explore the effects of contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "contrastive learn",
+   "canonical": "contrastive learn",
+   "object": "latent",
+   "quote": "We explore the effects of contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "cluster samples",
+   "canonical": "cluster samples",
+   "object": "sample",
+   "quote": "We test this hypothesis with a new approach",
+   "grounded": true
+  },
+  {
+   "op": "mine negative",
+   "canonical": "mine negative",
+   "object": "sample",
+   "quote": "We test this hypothesis with a new approach",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We test this hypothesis with a new approach",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "We explore the effects of contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "We test this hypothesis with a new approach",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We test this hypothesis with a new approach",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "We explore the effects of contrast, learning",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "We test this hypothesis with a new approach",
+   "grounded": true
+  },
+  {
+   "op": "evaluate task",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "We explore the effects of contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "We explore the effects of contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "We explore the effects of contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "We explore the effects of contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "We explore the effects of contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "We explore the effects of contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "We explore the effects of contrastive learning",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "We explore the effects of contrastive learning",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "cluster samples@sample",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "contrastive learn@latent",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "evaluate@task",
+  "mine negative@sample",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@policy",
+  "sample@sample"
+ ]
+}

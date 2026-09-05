@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "2008.11297",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 3,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute mutual information",
+   "canonical": "compute mutual information",
+   "object": "INVALID:query features",
+   "quote": "maximizes the mutual information between the query features and their label predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute supervision loss",
+   "canonical": "compute supervision loss",
+   "object": "INVALID:support set",
+   "quote": "supervision loss based on the support set",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "alternating-direction solver for our mutual-information loss",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "alternating-direction solver for our mutual-information loss",
+   "grounded": true
+  },
+  {
+   "op": "predict label",
+   "canonical": "predict",
+   "object": "INVALID:query features",
+   "quote": "maximizes the mutual information between the query features and their label predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "supervision loss based on the support set",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "Following standard transductive few-shot settings",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "Following standard transductive few-shot settings",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "TIM inference is modular: it can be used on top, of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "noise",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute state",
+   "canonical": "compute state",
+   "object": "state",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "TIM inference is modular: it can be used on top of any base-training feature extractor",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute noise@noise",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute state@state",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "sample@action"
+ ]
+}

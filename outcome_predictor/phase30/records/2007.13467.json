@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2007.13467",
+ "source": "abstract",
+ "words": 193,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "group pixels",
+   "canonical": "group pixels",
+   "object": "input",
+   "quote": "we first group them to foreground or background",
+   "grounded": true
+  },
+  {
+   "op": "assign cluster",
+   "canonical": "assign cluster",
+   "object": "latent",
+   "quote": "cluster assignments are subsequently used as pseudo-labels",
+   "grounded": true
+  },
+  {
+   "op": "supervise estimation",
+   "canonical": "supervise estimation",
+   "object": "latent",
+   "quote": "to supervise the part estimation",
+   "grounded": true
+  },
+  {
+   "op": "learn feature maps",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "ISP iteratively learns the feature maps",
+   "grounded": true
+  },
+  {
+   "op": "group feature maps",
+   "canonical": "group feature maps",
+   "object": "latent",
+   "quote": "and groups them",
+   "grounded": true
+  },
+  {
+   "op": "extract local features",
+   "canonical": "extract local features",
+   "object": "latent",
+   "quote": "local features of both human body parts and personal belongings are obtained",
+   "grounded": true
+  },
+  {
+   "op": "utilize visible parts",
+   "canonical": "utilize visible parts",
+   "object": "latent",
+   "quote": "only features of visible parts are utilized for the retrieval",
+   "grounded": true
+  },
+  {
+   "op": "generate pseudo-labels",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "to generate the pseudo-labels of human parts",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "assign cluster@latent",
+  "extract local features@latent",
+  "group feature maps@latent",
+  "group pixels@input",
+  "reconstruct@latent",
+  "supervise estimation@latent",
+  "train@latent",
+  "utilize visible parts@latent"
+ ]
+}

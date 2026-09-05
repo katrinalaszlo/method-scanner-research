@@ -1,0 +1,198 @@
+{
+ "arxiv_id": "2003.06054",
+ "source": "abstract",
+ "words": 171,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "generate data",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "the generated data can be correctly classified by the label classifier",
+   "grounded": true
+  },
+  {
+   "op": "classify label",
+   "canonical": "classify",
+   "object": "state",
+   "quote": "the generated data can be correctly classified by the label classifier",
+   "grounded": true
+  },
+  {
+   "op": "classify domain",
+   "canonical": "classify",
+   "object": "state",
+   "quote": "fooling the domain classifier",
+   "grounded": true
+  },
+  {
+   "op": "transform domain",
+   "canonical": "transform domain",
+   "object": "state",
+   "quote": "map the source training data to unseen domains",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learning objective formulated to ensure",
+   "grounded": true
+  },
+  {
+   "op": "augment data",
+   "canonical": "augment",
+   "object": "state",
+   "quote": "augmenting the source training data with the generated unseen domain data",
+   "grounded": true
+  },
+  {
+   "op": "evaluate error",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "learning objective formulated to ensure",
+   "grounded": true
+  },
+  {
+   "op": "minimize error",
+   "canonical": "minimize error",
+   "object": "error",
+   "quote": "learning objective formulated to ensure",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "learning objective formulated to ensure",
+   "grounded": true
+  },
+  {
+   "op": "predict label",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "the generated data can be correctly classified by the label classifier",
+   "grounded": true
+  },
+  {
+   "op": "predict domain",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "fooling the domain classifier",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "learning objective formulated to ensure",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "learning objective formulated to ensure",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "learning objective formulated to ensure",
+   "grounded": true
+  },
+  {
+   "op": "sample data",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "augmenting the source training data with the generated unseen domain data",
+   "grounded": true
+  },
+  {
+   "op": "combine data",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "augmenting the source training data with the generated unseen domain data",
+   "grounded": true
+  },
+  {
+   "op": "train classifier",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "learning objective formulated to ensure",
+   "grounded": true
+  },
+  {
+   "op": "train domain classifier",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "fooling the domain classifier",
+   "grounded": true
+  },
+  {
+   "op": "train label classifier",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the generated data can be correctly classified by the label classifier",
+   "grounded": true
+  },
+  {
+   "op": "update domain classifier",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "fooling the domain, domain classifier",
+   "grounded": false
+  },
+  {
+   "op": "update label classifier",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the generated data can be correctly classified by the label classifier",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "error",
+   "quote": "the generated data can be correctly classified by the label classifier",
+   "grounded": true
+  },
+  {
+   "op": "compute domain accuracy",
+   "canonical": "compute domain accuracy",
+   "object": "error",
+   "quote": "fooling the domain classifier",
+   "grounded": true
+  },
+  {
+   "op": "compute label accuracy",
+   "canonical": "compute label accuracy",
+   "object": "error",
+   "quote": "the generated data can be correctly classified by the label classifier",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "apply gradient@parameter",
+  "augment@state",
+  "backpropagate@gradient",
+  "classify@state",
+  "compute accuracy@error",
+  "compute domain accuracy@error",
+  "compute label accuracy@error",
+  "correct@parameter",
+  "evaluate@error",
+  "minimize error@error",
+  "predict@state",
+  "reconstruct@state",
+  "sample@state",
+  "train@parameter",
+  "transform domain@state"
+ ]
+}

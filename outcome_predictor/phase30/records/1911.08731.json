@@ -1,0 +1,70 @@
+{
+ "arxiv_id": "1911.08731",
+ "source": "abstract",
+ "words": 200,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 7,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "minimize the worst-case training loss over a set of pre-defined groups",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "stochastic optimization algorithm, with convergence guarantees",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "stochastic optimization algorithm, with convergence guarantees",
+   "grounded": true
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "coupling group DRO models with increased regularization",
+   "grounded": true
+  },
+  {
+   "op": "compute group loss",
+   "canonical": "compute group loss",
+   "object": "error",
+   "quote": "minimize the worst-case training loss over a set of pre-defined groups",
+   "grounded": true
+  },
+  {
+   "op": "sample group",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "minimize the worst-case training loss over a set of pre-defined groups",
+   "grounded": true
+  },
+  {
+   "op": "compute average loss",
+   "canonical": "compute average loss",
+   "object": "error",
+   "quote": "any model with vanishing average training loss also already has vanishing worst-case training",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply regularization@parameter",
+  "compute average loss@error",
+  "compute gradient@gradient",
+  "compute group loss@error",
+  "correct@parameter",
+  "evaluate@error",
+  "sample@task"
+ ]
+}

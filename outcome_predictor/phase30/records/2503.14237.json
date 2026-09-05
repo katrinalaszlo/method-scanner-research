@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "2503.14237",
+ "source": "abstract",
+ "words": 178,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "select tokens",
+   "canonical": "select tokens",
+   "object": "input",
+   "quote": "optimizes the size-limited set of input tokens through token selection",
+   "grounded": true
+  },
+  {
+   "op": "sample tokens",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "sampled from a predetermined spatiotemporal grid",
+   "grounded": true
+  },
+  {
+   "op": "flexible grid",
+   "canonical": "flexible grid",
+   "object": "input",
+   "quote": "making the sampling grid flexible",
+   "grounded": true
+  },
+  {
+   "op": "augment input",
+   "canonical": "augment",
+   "object": "input",
+   "quote": "propose a novel augmentation tool termed Flux",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "integrate Flux in large-scale video pre-training",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "boosting model robustness with nearly no additional cost",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "integrate Flux in large-scale video pre-training",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "establishing new state-of-the-art results across extensive tasks",
+   "grounded": false
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "with 1/4 tokens only, it can still match the performance",
+   "grounded": true
+  },
+  {
+   "op": "compare models",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "yielding nearly 90% savings",
+   "grounded": false
+  },
+  {
+   "op": "store model",
+   "canonical": "store model",
+   "object": "parameter",
+   "quote": "All models and data are available at https://github.com/OpenGVLab/FluxViT",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "hindering applications of the most competitive model in real-world scenes",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "leveraging token selection",
+   "grounded": true
+  },
+  {
+   "op": "generate trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "the resulting FluxViT establishes new state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "boosting model robustness with nearly no additional cost",
+   "grounded": true
+  },
+  {
+   "op": "resample tokens",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "optimizes the size-limited set of input tokens through token selection",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "leveraging token selection",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the resulting FluxViT establishes new state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the resulting FluxViT establishes new state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the resulting FluxViT establishes new state-of-the-art results",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "establishing new state-of-the-art results across extensive tasks",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "boosting model robustness with nearly no additional cost",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "optimizes the size-limited set of input tokens through token selection",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "leveraging token selection",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "hindering applications of the most competitive model in real-world scenes",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "augment@input",
+  "compare@error",
+  "compare@task",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "flexible grid@input",
+  "predict@value",
+  "reconstruct@input",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@input",
+  "select tokens@input",
+  "store model@parameter",
+  "train@parameter"
+ ]
+}

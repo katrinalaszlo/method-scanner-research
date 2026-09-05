@@ -1,0 +1,196 @@
+{
+ "arxiv_id": "2103.15808",
+ "source": "abstract",
+ "words": 198,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "embed token",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "a new convolutional token embedding",
+   "grounded": true
+  },
+  {
+   "op": "project convolution",
+   "canonical": "project",
+   "object": "latent",
+   "quote": "a convolutional projection",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "dynamic attention, global context",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "state",
+   "quote": "better generalization",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improves Vision Transformer (ViT) in performance and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "state-of-the-art performance over other Vision Transformers",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "achieves state-of-the-art performance over other Vision Transformers",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "pretrained on ImageNet-22k, our CvT-W24 obtains a top-1 accuracy of 87.7%",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "fine-tuned to downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "positional encoding, a crucial component in existing Vision Transformers",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "simplifying the design for higher resolution vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "pretrained on ImageNet-22k, our CvT-W24 obtains a top-1 accuracy of 87.7%",
+   "grounded": false
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "achieves state-of-the-art performance over other Vision Transformers",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "positional encoding, a crucial component in existing Vision Transformers",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "dynamic attention, global context",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improves Vision Transformer (ViT) in performance and efficiency",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "state-of-the-art performance over other Vision Transformers",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "achieves state-of-the-art performance over other Vision Transformers",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "pretrained on ImageNet-22k, our CvT-W24 obtains a top-1 accuracy of 87.7%",
+   "grounded": false
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "fine-tuned to downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "simplifying the design for higher resolution vision tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "pretrained on ImageNet-22k, our CvT-W24 obtains a top-1 accuracy of 87.7%",
+   "grounded": false
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "achieves state-of-the-art performance over other Vision Transformers",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "dynamic attention, global context",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute trajectory@trajectory",
+  "compute value@state",
+  "correct@parameter",
+  "encode@input",
+  "predict@reward",
+  "project@latent",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

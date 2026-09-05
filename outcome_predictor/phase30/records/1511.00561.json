@@ -1,0 +1,194 @@
+{
+ "arxiv_id": "1511.00561",
+ "source": "abstract",
+ "words": 283,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 12,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "The architecture of the encoder network is topologically identical to the 13 convolutional layers in the VGG16 network.",
+   "grounded": false
+  },
+  {
+   "op": "max pool",
+   "canonical": "max pool",
+   "object": "INVALID:feature map",
+   "quote": "the decoder uses pooling indices computed in the max-pooling step of the corresponding encoder to perform non-linear upsampling.",
+   "grounded": true
+  },
+  {
+   "op": "upsample",
+   "canonical": "upsample",
+   "object": "INVALID:feature map",
+   "quote": "the decoder uses pooling indices computed in the max-pool,ing step of the corresponding encoder to perform non-linear upsampling.",
+   "grounded": true
+  },
+  {
+   "op": "convolve",
+   "canonical": "convolve",
+   "object": "INVALID:feature map",
+   "quote": "The upsampled maps are sparse and are then convolved with trainable filters to produce dense feature maps.",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "INVALID:feature map",
+   "quote": "decoder network followed by a pixel-wise classification layer.",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:pixel",
+   "quote": "decoder network followed by a pixel-wise classification layer.",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "the core trainable segmentation engine consists of an encoder network, a corresponding decoder network followed by a pixel-wise classification layer.",
+   "grounded": false
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the core trainable segmentation engine consists of an encoder network, a corresponding decoder network followed by a pixel-wise classification layer.",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "We compare our proposed architecture with the widely adopted FCN and also with the well known DeepLab-LargeFOV, DeconvNet architectures.",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "We compare our proposed architecture with the widely adopted FCN and also with the well known DeepLab-LargeFOV, DeconvNet architectures.",
+   "grounded": false
+  },
+  {
+   "op": "apply filter",
+   "canonical": "apply filter",
+   "object": "INVALID:feature map",
+   "quote": "The upsampled maps are sparse and are then convolved with trainable filters to produce dense feature maps.",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "INVALID:pixel",
+   "quote": "decoder network followed by a pixel-wise classification layer.",
+   "grounded": true
+  },
+  {
+   "op": "compute activation",
+   "canonical": "compute activation",
+   "object": "INVALID:feature map",
+   "quote": "The architecture of the encoder network is topologically identical to the 13 convolutional layers in the VGG16 network.",
+   "grounded": false
+  },
+  {
+   "op": "compute index",
+   "canonical": "compute index",
+   "object": "INVALID:feature map",
+   "quote": "the decoder uses pooling indices computed in the max-pooling step of the corresponding encoder to perform non-linear upsampling.",
+   "grounded": true
+  },
+  {
+   "op": "apply non-linear",
+   "canonical": "apply non-linear",
+   "object": "INVALID:feature map",
+   "quote": "the decoder uses pooling indices computed in the max-pooling step of the corresponding encoder to perform non-linear upsampling.",
+   "grounded": true
+  },
+  {
+   "op": "compute sparse",
+   "canonical": "compute sparse",
+   "object": "INVALID:feature map",
+   "quote": "The upsampled maps are sparse and are then convolved with trainable filters to produce dense feature maps.",
+   "grounded": true
+  },
+  {
+   "op": "compute dense",
+   "canonical": "compute dense",
+   "object": "INVALID:feature map",
+   "quote": "The upsampled maps are sparse and are then convolved with trainable filters to produce dense feature maps.",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "It is also significantly smaller in the number of trainable parameters than other competing architectures.",
+   "grounded": true
+  },
+  {
+   "op": "compute memory",
+   "canonical": "compute memory",
+   "object": "task",
+   "quote": "SegNet was primarily motivated by scene understanding applications. Hence, it is designed to be efficient both in terms of memory and computational time during inference.",
+   "grounded": true
+  },
+  {
+   "op": "compute time",
+   "canonical": "compute time",
+   "object": "task",
+   "quote": "SegNet was primarily motivated by scene understanding applications. Hence, it is designed to be efficient both in terms of memory and computational time during inference.",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "This comparison reveals the memory versus accuracy trade-off involved in achieving good segmentation performance.",
+   "grounded": true
+  },
+  {
+   "op": "compute trade-off",
+   "canonical": "compute trade-off",
+   "object": "task",
+   "quote": "This comparison reveals the memory versus accuracy trade-off involved in achieving good segmentation performance.",
+   "grounded": true
+  },
+  {
+   "op": "compute performance",
+   "canonical": "compute performance",
+   "object": "task",
+   "quote": "We show that SegNet provides good performance with competitive inference time and more efficient inference memory-wise as compared to other architectures.",
+   "grounded": true
+  },
+  {
+   "op": "compute efficiency",
+   "canonical": "compute efficiency",
+   "object": "task",
+   "quote": "We show that SegNet provides good performance with competitive inference time and more efficient inference memory-wise as compared to other architectures.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute accuracy@task",
+  "compute efficiency@task",
+  "compute gradient@parameter",
+  "compute memory@task",
+  "compute parameter@parameter",
+  "compute performance@task",
+  "compute time@task",
+  "compute trade-off@task",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error"
+ ]
+}

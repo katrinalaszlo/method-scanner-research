@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "1905.05178",
+ "source": "abstract",
+ "words": 213,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "project vector",
+   "canonical": "project",
+   "object": "parameter",
+   "quote": "based on their scalar projection values on a trainable projection vector",
+   "grounded": true
+  },
+  {
+   "op": "select nodes",
+   "canonical": "select nodes",
+   "object": "state",
+   "quote": "adaptively selects some nodes to form a smaller graph",
+   "grounded": true
+  },
+  {
+   "op": "form graph",
+   "canonical": "form graph",
+   "object": "state",
+   "quote": "form a smaller graph based on their scalar projection values",
+   "grounded": true
+  },
+  {
+   "op": "pool graph",
+   "canonical": "pool graph",
+   "object": "state",
+   "quote": "we propose novel graph pooling (gPool) and unpooling (gUnpool) operations",
+   "grounded": true
+  },
+  {
+   "op": "restore graph",
+   "canonical": "restore graph",
+   "object": "state",
+   "quote": "restores the graph into its original structure using the position information",
+   "grounded": true
+  },
+  {
+   "op": "unpool graph",
+   "canonical": "unpool graph",
+   "object": "state",
+   "quote": "gUnpool layer as the inverse operation of the gPool layer",
+   "grounded": true
+  },
+  {
+   "op": "encode graph",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "develop an encoder-decoder model on graph, known as the graph U-Nets",
+   "grounded": true
+  },
+  {
+   "op": "decode graph",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "develop an encoder-decoder model on graph, known as the graph U-Nets",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "Our experimental results on node classification and graph classification tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Our experimental results on node classification and graph classification tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "encode@state",
+  "evaluate@error",
+  "form graph@state",
+  "pool graph@state",
+  "predict@value",
+  "project@parameter",
+  "reconstruct@state",
+  "restore graph@state",
+  "select nodes@state",
+  "unpool graph@state"
+ ]
+}

@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2109.12909",
+ "source": "abstract",
+ "words": 199,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 1,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Learning effective visual representations",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "allowing us to both measure and control",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "backpropagate",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "update parameters",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the compressed version of BYOL achieves",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "linear evaluation accuracies",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "model robustness across",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "Conditional Entropy Bottleneck",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we explore the relationship",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "tractable lower bound on",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "robustness, this provides",
+   "grounded": true
+  },
+  {
+   "op": "measure compression",
+   "canonical": "measure compression",
+   "object": "latent",
+   "quote": "measure and control the amount",
+   "grounded": true
+  },
+  {
+   "op": "control compression",
+   "canonical": "act",
+   "object": "latent",
+   "quote": "measure and control the amount",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "linear evaluation accuracies",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "linear evaluation accuracies",
+   "grounded": true
+  },
+  {
+   "op": "compute lipschitz",
+   "canonical": "compute lipschitz",
+   "object": "INVALID:encoder",
+   "quote": "tractable lower bound on",
+   "grounded": true
+  },
+  {
+   "op": "compute robustness",
+   "canonical": "compute robustness",
+   "object": "parameter",
+   "quote": "model robustness across",
+   "grounded": true
+  },
+  {
+   "op": "compute top-1 accuracy",
+   "canonical": "compute top-1 accuracy",
+   "object": "task",
+   "quote": "76.0% Top-1 linear evaluation",
+   "grounded": true
+  },
+  {
+   "op": "compute domain shift",
+   "canonical": "compute domain shift",
+   "object": "task",
+   "quote": "across a wide range of domain",
+   "grounded": true
+  },
+  {
+   "op": "compute model performance",
+   "canonical": "compute model performance",
+   "object": "task",
+   "quote": "improves linear evaluation accuracies",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "act@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compute distribution@distribution",
+  "compute domain shift@task",
+  "compute model performance@task",
+  "compute robustness@parameter",
+  "compute top-1 accuracy@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "measure compression@latent",
+  "predict@reward",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

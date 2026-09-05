@@ -9,3 +9,4 @@ phase23/diffuser/
 phase23/venv/
 phase23/d4rl_data/
 phase23/*.log
+outcome_predictor/phase30/pwc/

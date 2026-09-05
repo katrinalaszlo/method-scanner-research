@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2106.05968",
+ "source": "abstract",
+ "words": 213,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "attend spatial",
+   "canonical": "attend spatial",
+   "object": "input",
+   "quote": "it uses efficient space-time mixing to attend jointly spatial and temporal locations",
+   "grounded": true
+  },
+  {
+   "op": "attend temporal",
+   "canonical": "attend temporal",
+   "object": "input",
+   "quote": "it restricts time attention to a local temporal window",
+   "grounded": true
+  },
+  {
+   "op": "mix spatial temporal",
+   "canonical": "mix spatial temporal",
+   "object": "input",
+   "quote": "it uses efficient space-time mixing to attend jointly spatial and temporal locations",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "input",
+   "quote": "it uses efficient space-time mixing to attend jointly spatial and temporal locations",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "state",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we demonstrate that our model produces very high recognition than other Video Transformer models",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute state",
+   "canonical": "compute state",
+   "object": "state",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we demonstrate that our model produces very high recognition accuracy",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply attention@input",
+  "attend spatial@input",
+  "attend temporal@input",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute state@state",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@state",
+  "correct@parameter",
+  "mix spatial temporal@input",
+  "predict@state",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

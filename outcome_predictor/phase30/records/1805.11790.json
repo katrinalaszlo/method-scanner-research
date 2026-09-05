@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1805.11790",
+ "source": "abstract",
+ "words": 157,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "segment",
+   "canonical": "segment",
+   "object": "trajectory",
+   "quote": "we first segment a skeleton sequence into distinct temporal segments",
+   "grounded": false
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "temporal and spatial features of a skeleton sequence are then extracted",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "utilizing a fine-to-coarse (F2C) CNN architecture",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "latent",
+   "quote": "temporal and spatial features of a skeleton sequence are then extracted",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "temporal and spatial features of a skeleton sequence are then extracted",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "human action recognition from a 3D skeleton sequence",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "achieves 79.6% and 84.6% of accuracies on NTU RGB+D",
+   "grounded": false
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we evaluate our proposed method on NTU RGB+D and SBU Kinect Interaction dataset",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute@value",
+  "encode@input",
+  "evaluate@task",
+  "extract@latent",
+  "predict@action",
+  "process@latent",
+  "segment@trajectory"
+ ]
+}

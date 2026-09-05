@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "1803.02735",
+ "source": "abstract",
+ "words": 135,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 2,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "learn representations of low-resolution inputs",
+   "grounded": true
+  },
+  {
+   "op": "upsample",
+   "canonical": "upsample",
+   "object": "latent",
+   "quote": "iterative up- and down-sampling layers",
+   "grounded": false
+  },
+  {
+   "op": "downsample",
+   "canonical": "downsample",
+   "object": "latent",
+   "quote": "iterative up- and down-sampling layers",
+   "grounded": false
+  },
+  {
+   "op": "feedback",
+   "canonical": "feedback",
+   "object": "error",
+   "quote": "error feedback mechanism for projection errors",
+   "grounded": true
+  },
+  {
+   "op": "concatenate",
+   "canonical": "concatenate",
+   "object": "latent",
+   "quote": "concatenation of features across up- and down-sampling stages",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "INVALID:output",
+   "quote": "reconstruct further improve super-resolution",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:high-resolution",
+   "quote": "non-linear mapping from those to high-resolution output",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "projection errors at each stage",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "concatenate@latent",
+  "downsample@latent",
+  "encode@input",
+  "feedback@error",
+  "upsample@latent"
+ ]
+}

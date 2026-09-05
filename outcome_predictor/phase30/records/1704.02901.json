@@ -1,0 +1,194 @@
+{
+ "arxiv_id": "1704.02901",
+ "source": "abstract",
+ "words": 131,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 19,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "condition weights",
+   "canonical": "intervene",
+   "object": "INVALID:edge",
+   "quote": "filter weights are conditioned on the specific edge labels",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "INVALID:graph",
+   "quote": "generalize the convolution operator from regular grids to arbitrary graphs",
+   "grounded": true
+  },
+  {
+   "op": "compute neighborhood",
+   "canonical": "compute neighborhood",
+   "object": "INVALID:vertex",
+   "quote": "filter weights are conditioned on the specific edge labels in the neighborhood of a vertex",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "we explore constructing deep neural networks for graph classification",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we demonstrate the generality of our formulation in point cloud classification",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "INVALID:node",
+   "quote": "we set the new state of the art",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:prediction",
+   "quote": "we outperform other deep learning approaches",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we demonstrate the generality of our formulation in point cloud classification",
+   "grounded": true
+  },
+  {
+   "op": "coarsen graph",
+   "canonical": "coarsen graph",
+   "object": "INVALID:structure",
+   "quote": "Together with the proper choice of graph coarsening",
+   "grounded": true
+  },
+  {
+   "op": "classify graph",
+   "canonical": "classify",
+   "object": "INVALID:structure",
+   "quote": "we explore constructing deep neural networks for graph classification",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "INVALID:graph",
+   "quote": "A number of problems can be formulated as prediction on graph-structured data",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "INVALID:node",
+   "quote": "we generalize the convolution operator from regular grids to arbitrary graphs",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "we demonstrate the generality of our formulation in point cloud classification",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "INVALID:node",
+   "quote": "we set the new state of the art",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we outperform other deep, learning approaches",
+   "grounded": false
+  },
+  {
+   "op": "store parameters",
+   "canonical": "store parameters",
+   "object": "parameter",
+   "quote": "we demonstrate the generality of our formulation in point cloud classification",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "we outperform other deep learning approaches",
+   "grounded": true
+  },
+  {
+   "op": "update weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we demonstrate the generality of our formulation in point cloud classification",
+   "grounded": true
+  },
+  {
+   "op": "process trajectory",
+   "canonical": "process trajectory",
+   "object": "INVALID:graph",
+   "quote": "we explore constructing deep neural networks for graph classification",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:node",
+   "quote": "we set the new state of the art",
+   "grounded": true
+  },
+  {
+   "op": "denoise signal",
+   "canonical": "reconstruct",
+   "object": "INVALID:graph",
+   "quote": "we generalize the convolution operator from regular grids to arbitrary graphs",
+   "grounded": true
+  },
+  {
+   "op": "resample data",
+   "canonical": "sample",
+   "object": "INVALID:graph",
+   "quote": "we demonstrate the generality of our formulation in point cloud classification",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "INVALID:node",
+   "quote": "we outperform other deep learning approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:node",
+   "quote": "we generalize the convolution operator from regular grids to arbitrary graphs",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "we outperform other deep learning approaches",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute gradient@error",
+  "correct@parameter",
+  "evaluate@task",
+  "store parameters@parameter"
+ ]
+}

@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2311.03938",
+ "source": "abstract",
+ "words": 171,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "not a number (NaN) loss, which disrupts gradient descent optimization",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "disrupts gradient descent optimization",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improvement of optimization stability",
+   "grounded": false
+  },
+  {
+   "op": "apply log sigmoid",
+   "canonical": "apply log sigmoid",
+   "object": "input",
+   "quote": "log-sigmoid function, which exhibits numerical stability issues",
+   "grounded": true
+  },
+  {
+   "op": "compute square root",
+   "canonical": "compute square root",
+   "object": "input",
+   "quote": "use of square root loss, which leads to an unstable gradient",
+   "grounded": true
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "noise",
+   "quote": "certain variance implementations, which yield incorrect computations",
+   "grounded": true
+  },
+  {
+   "op": "apply activation function",
+   "canonical": "apply activation function",
+   "object": "distribution",
+   "quote": "log-sigmoid function, which exhibits numerical stability issues",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "disrupts gradient descent optimization",
+   "grounded": true
+  },
+  {
+   "op": "apply clipping",
+   "canonical": "apply clipping",
+   "object": "gradient",
+   "quote": "practical guidelines to prevent NaN loss",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "certain variance implementations, which yield incorrect computations",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "improvement of optimization stability",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "not a number (NaN) loss, which disrupts gradient descent optimization",
+   "grounded": true
+  },
+  {
+   "op": "apply normalization",
+   "canonical": "apply normalization",
+   "object": "input",
+   "quote": "log-sigmoid function, which exhibits numerical stability issues",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "distribution",
+   "quote": "certain variance implementations, which yield incorrect computations",
+   "grounded": true
+  },
+  {
+   "op": "apply softmax",
+   "canonical": "apply softmax",
+   "object": "distribution",
+   "quote": "log-sigmoid function, which exhibits numerical stability issues",
+   "grounded": true
+  },
+  {
+   "op": "compute entropy",
+   "canonical": "compute entropy",
+   "object": "distribution",
+   "quote": "log-sigmoid function, which exhibits numerical stability issues",
+   "grounded": true
+  },
+  {
+   "op": "apply threshold",
+   "canonical": "apply threshold",
+   "object": "input",
+   "quote": "log-sigmoid function, which exhibits numerical stability issues",
+   "grounded": true
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "input",
+   "quote": "certain variance implementations, which yield incorrect computations",
+   "grounded": true
+  },
+  {
+   "op": "apply scaling",
+   "canonical": "apply scaling",
+   "object": "input",
+   "quote": "log-sigmoid function, which exhibits numerical stability issues",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "improvement of optimization stability",
+   "grounded": false
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "practical guidelines to prevent NaN loss",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "disrupts gradient descent optimization",
+   "grounded": true
+  },
+  {
+   "op": "apply dropout",
+   "canonical": "apply dropout",
+   "object": "input",
+   "quote": "log-sigmoid function, which exhibits numerical stability issues",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "distribution",
+   "quote": "log-sigmoid function, which exhibits numerical stability issues",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "distribution",
+   "quote": "log-sigmoid function, which exhibits numerical stability issues",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply activation function@distribution",
+  "apply activation@distribution",
+  "apply clipping@gradient",
+  "apply dropout@input",
+  "apply log sigmoid@input",
+  "apply normalization@input",
+  "apply regularization@parameter",
+  "apply scaling@input",
+  "apply softmax@distribution",
+  "apply threshold@input",
+  "compare@error",
+  "compute entropy@distribution",
+  "compute gradient@distribution",
+  "compute gradient@error",
+  "compute gradient@gradient",
+  "compute gradient@parameter",
+  "compute mean@distribution",
+  "compute square root@input",
+  "compute value@value",
+  "compute variance@input",
+  "compute variance@noise",
+  "correct@parameter",
+  "evaluate@error",
+  "sample@input"
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "1812.03282",
+ "source": "abstract",
+ "words": 180,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 2,
+ "ops": [
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "state",
+   "quote": "compute the feature distances between the query image and all the gallery images",
+   "grounded": false
+  },
+  {
+   "op": "rank similarity",
+   "canonical": "rank similarity",
+   "object": "state",
+   "quote": "return a similarity ranked table",
+   "grounded": true
+  },
+  {
+   "op": "integrate information",
+   "canonical": "integrate information",
+   "object": "latent",
+   "quote": "integrate two kinds of heterogeneous information into a unified framework",
+   "grounded": false
+  },
+  {
+   "op": "apply logistic smoothing",
+   "canonical": "apply logistic smoothing",
+   "object": "distribution",
+   "quote": "a joint similarity metric with Logistic Smoothing (LS) is introduced",
+   "grounded": false
+  },
+  {
+   "op": "approximate distribution",
+   "canonical": "approximate distribution",
+   "object": "distribution",
+   "quote": "approximate a complex spatial-temporal probability distribution",
+   "grounded": false
+  },
+  {
+   "op": "compute histogram",
+   "canonical": "compute histogram",
+   "object": "state",
+   "quote": "develop a fast Histogram-Parzen (HP) method",
+   "grounded": false
+  },
+  {
+   "op": "apply parzen window",
+   "canonical": "apply parzen window",
+   "object": "distribution",
+   "quote": "develop a fast Histogram-Parzen (HP) method",
+   "grounded": false
+  },
+  {
+   "op": "filter gallery images",
+   "canonical": "filter gallery images",
+   "object": "trajectory",
+   "quote": "the st-ReID model eliminates lots of irrelevant images",
+   "grounded": true
+  },
+  {
+   "op": "reduce database size",
+   "canonical": "reduce database size",
+   "object": "trajectory",
+   "quote": "narrow the gallery database",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "achieves rank-1 accuracy of 98.1% on Market-1501",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply logistic smoothing@distribution",
+  "apply parzen window@distribution",
+  "approximate distribution@distribution",
+  "compute accuracy@task",
+  "compute distance@state",
+  "compute histogram@state",
+  "filter gallery images@trajectory",
+  "integrate information@latent",
+  "rank similarity@state",
+  "reduce database size@trajectory"
+ ]
+}

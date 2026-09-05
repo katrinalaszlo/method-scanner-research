@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1912.05656",
+ "source": "abstract",
+ "words": 168,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose Video Inference for Body Pose and Shape Estimation (VIBE)",
+   "grounded": true
+  },
+  {
+   "op": "regress",
+   "canonical": "regress",
+   "object": "latent",
+   "quote": "temporal pose and shape regression networks",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "produce kinematically plausible motion sequences",
+   "grounded": false
+  },
+  {
+   "op": "discriminate",
+   "canonical": "discriminate",
+   "object": "distribution",
+   "quote": "leverage AMASS to discriminate between real human motions",
+   "grounded": false
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "adversarial training, at the sequence level",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "show that adversarial training, at the sequence level",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "produce kinematically plausible motion sequences",
+   "grounded": false
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "discriminate between real human motions and those produced by our temporal pose and shape regression networks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@distribution",
+  "discriminate@distribution",
+  "encode@input",
+  "predict@value",
+  "reconstruct@sample",
+  "regress@latent",
+  "sample@trajectory",
+  "train@parameter"
+ ]
+}

@@ -1,0 +1,115 @@
+{
+ "arxiv_id": "2201.10801",
+ "source": "abstract",
+ "words": 208,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 13,
+ "n_invalid_object": 3,
+ "n_grounded": 13,
+ "ops": [
+  {
+   "op": "exchange channels",
+   "canonical": "exchange channels",
+   "object": "latent",
+   "quote": "exchange a small portion of the channels between neighboring features",
+   "grounded": true
+  },
+  {
+   "op": "construct network",
+   "canonical": "construct network",
+   "object": "parameter",
+   "quote": "we construct a new backbone network, namely ShiftViT",
+   "grounded": true
+  },
+  {
+   "op": "replace layer",
+   "canonical": "replace layer",
+   "object": "INVALID:layer",
+   "quote": "the attention layers in ViT are substituted by shift operations",
+   "grounded": true
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "parameter",
+   "quote": "ShiftViT works quite well in several mainstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "classification, detection, and segmentation",
+   "grounded": true
+  },
+  {
+   "op": "detect",
+   "canonical": "detect",
+   "object": "input",
+   "quote": "classification, detection, and segmentation",
+   "grounded": true
+  },
+  {
+   "op": "segment",
+   "canonical": "segment",
+   "object": "input",
+   "quote": "classification, detection, and segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "performance is on par with or even better than the strong baseline Swin Transformer",
+   "grounded": true
+  },
+  {
+   "op": "evaluate task",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "classification, detection, and segmentation",
+   "grounded": true
+  },
+  {
+   "op": "analyze factor",
+   "canonical": "analyze factor",
+   "object": "parameter",
+   "quote": "the attention mechanism might not be the vital factor that makes ViT successful",
+   "grounded": true
+  },
+  {
+   "op": "propose alternative",
+   "canonical": "propose alternative",
+   "object": "INVALID:operation",
+   "quote": "it can be even replaced by a zero-parameter operation",
+   "grounded": true
+  },
+  {
+   "op": "suggest focus",
+   "canonical": "suggest focus",
+   "object": "parameter",
+   "quote": "we should pay more attentions to the remaining parts of ViT in the future work",
+   "grounded": true
+  },
+  {
+   "op": "provide code",
+   "canonical": "provide code",
+   "object": "INVALID:code",
+   "quote": "Code is available at github.com/microsoft/SPACH",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "analyze factor@parameter",
+  "classify@input",
+  "compare@parameter",
+  "compute output@parameter",
+  "construct network@parameter",
+  "detect@input",
+  "evaluate@task",
+  "exchange channels@latent",
+  "segment@input",
+  "suggest focus@parameter"
+ ]
+}

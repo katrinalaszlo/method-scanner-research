@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "1812.03982",
+ "source": "abstract",
+ "words": 111,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "Our model involves (i) a Slow pathway, operating at low frame rate",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "to capture spatial semantics",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "and (ii) a Fast pathway, operating at high frame rate",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "to capture motion at fine temporal resolution",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "Our models achieve strong performance for both action classification",
+   "grounded": true
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "state",
+   "quote": "and detection in video",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "large improvements are pin-pointed as contributions by our SlowFast concept",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "We report state-of-the-art accuracy on major video recognition benchmarks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "compute output@state",
+  "correct@parameter",
+  "encode@state",
+  "predict@value",
+  "process input@input"
+ ]
+}

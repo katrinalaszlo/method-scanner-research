@@ -1,0 +1,93 @@
+{
+ "arxiv_id": "2205.09962",
+ "source": "abstract",
+ "words": 271,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "sample points",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "Existing point cloud feature learning networks often incorporate sequences of sampling",
+   "grounded": true
+  },
+  {
+   "op": "group neighbors",
+   "canonical": "group neighbors",
+   "object": "state",
+   "quote": "neighborhood grouping, neighborhood-wise feature learning",
+   "grounded": true
+  },
+  {
+   "op": "learn features",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "neighborhood-wise feature learning",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "feature aggregation to learn high-semantic point features",
+   "grounded": true
+  },
+  {
+   "op": "pool features",
+   "canonical": "pool features",
+   "object": "latent",
+   "quote": "learnable pooling (LP) is used as a generalized pooling function",
+   "grounded": false
+  },
+  {
+   "op": "compute weights",
+   "canonical": "compute weights",
+   "object": "distribution",
+   "quote": "calculates the weighted sum of multi-resolution point features through the attention mechanism",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "extract all possible information from all available point features",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "multi-resolution feature learning is realized by aggregating point features of various resolutions",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "distribution",
+   "quote": "through the attention mechanism with learnable queries",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the final aggregated point features can effectively represent both global and local contexts",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention@distribution",
+  "compute weights@distribution",
+  "encode@latent",
+  "group neighbors@state",
+  "pool features@latent",
+  "reconstruct@latent",
+  "sample@input",
+  "train@latent"
+ ]
+}

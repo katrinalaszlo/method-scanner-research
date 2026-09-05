@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2103.10994",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we propose a mathematically motivated variant of the cross-entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "predict label",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "same-class prediction of two augmented views of the same sample",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "two augmented views of the same sample",
+   "grounded": true
+  },
+  {
+   "op": "compute log probability",
+   "canonical": "compute log probability",
+   "object": "distribution",
+   "quote": "cross-entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "apply uniform prior",
+   "canonical": "apply uniform prior",
+   "object": "INVALID:label",
+   "quote": "uniform prior asserted on the predicted labels",
+   "grounded": true
+  },
+  {
+   "op": "aggregate loss",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "optimizing for same-class prediction",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Self-Classifier learns labels and representations simultaneously",
+   "grounded": true
+  },
+  {
+   "op": "sample label",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "predicted labels",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "apply augmentation@input",
+  "compute log probability@distribution",
+  "correct@parameter",
+  "evaluate@error",
+  "predict@distribution",
+  "sample@sample"
+ ]
+}

@@ -1,0 +1,161 @@
+{
+ "arxiv_id": "1904.02365",
+ "source": "abstract",
+ "words": 211,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 12,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "INVALID:architecture",
+   "quote": "All these decisions are being made by a recurrent neural network",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "INVALID:template",
+   "quote": "predicts which template and how many times should be applied at each step",
+   "grounded": true
+  },
+  {
+   "op": "generate connectivity",
+   "canonical": "reconstruct",
+   "object": "INVALID:structure",
+   "quote": "while also generating the connectivity structure and downsampling factors",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "trained using reinforcement learning",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:architecture",
+   "quote": "rewarded based on the score of the emitted architecture on the holdout set",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "trained using reinforcement learning",
+   "grounded": true
+  },
+  {
+   "op": "apply template",
+   "canonical": "apply template",
+   "object": "INVALID:operation",
+   "quote": "predicts which template and how many times should be applied at each step",
+   "grounded": true
+  },
+  {
+   "op": "downsample",
+   "canonical": "downsample",
+   "object": "latent",
+   "quote": "while also generating the connectivity structure and downsampling factors",
+   "grounded": true
+  },
+  {
+   "op": "build structure",
+   "canonical": "build structure",
+   "object": "INVALID:methodology",
+   "quote": "progressively build up a methodology that relies on templates of sets of operations",
+   "grounded": true
+  },
+  {
+   "op": "select template",
+   "canonical": "select template",
+   "object": "INVALID:set",
+   "quote": "predicts which template and how many times should be applied at each step",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "distribution",
+   "quote": "rewarded based on the score of the emitted architecture on the holdout set",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "trained using reinforcement learning",
+   "grounded": true
+  },
+  {
+   "op": "evaluate architecture",
+   "canonical": "evaluate",
+   "object": "INVALID:performance",
+   "quote": "rewarded based on the score of the emitted architecture on the holdout set",
+   "grounded": true
+  },
+  {
+   "op": "generate sequence",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "progressively build up a methodology that relies on templates of sets of operations",
+   "grounded": true
+  },
+  {
+   "op": "predict template",
+   "canonical": "predict",
+   "object": "INVALID:operation",
+   "quote": "predicts which template and how many times should be applied at each step",
+   "grounded": true
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "INVALID:architecture",
+   "quote": "rewarded based on the score of the emitted architecture on the holdout set",
+   "grounded": true
+  },
+  {
+   "op": "apply operation",
+   "canonical": "apply operation",
+   "object": "INVALID:template",
+   "quote": "predicts which template and how many times should be applied at each step",
+   "grounded": true
+  },
+  {
+   "op": "construct network",
+   "canonical": "construct network",
+   "object": "INVALID:architecture",
+   "quote": "progressively build up a methodology that relies on templates of sets of operations",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "rewarded based on the score of the emitted architecture on the holdout set",
+   "grounded": true
+  },
+  {
+   "op": "update policy",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "trained using reinforcement learning",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute reward@distribution",
+  "correct@parameter",
+  "downsample@latent",
+  "evaluate@error",
+  "reconstruct@trajectory",
+  "train@parameter"
+ ]
+}

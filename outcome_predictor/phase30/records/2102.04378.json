@@ -1,0 +1,199 @@
+{
+ "arxiv_id": "2102.04378",
+ "source": "abstract",
+ "words": 213,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 6,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we first encode an image as a sequence of patches",
+   "grounded": true
+  },
+  {
+   "op": "shuffle",
+   "canonical": "shuffle",
+   "object": "latent",
+   "quote": "patch shuffle operations which generates robust features",
+   "grounded": true
+  },
+  {
+   "op": "shift",
+   "canonical": "shift",
+   "object": "latent",
+   "quote": "shift and patch shuffle operations which generates robust features",
+   "grounded": true
+  },
+  {
+   "op": "embed",
+   "canonical": "encode",
+   "object": "INVALID:patch",
+   "quote": "encode an image as a sequence of patches",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "build a transformer-based strong baseline",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "latent",
+   "quote": "transformer-based strong baseline",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "generates robust features with improved discrimination ability",
+   "grounded": true
+  },
+  {
+   "op": "incorporate",
+   "canonical": "incorporate",
+   "object": "INVALID:side information",
+   "quote": "plug in learnable embeddings to incorporate these non-visual clues",
+   "grounded": false
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "plug in learnable embeddings to incorporate these non-visual clues",
+   "grounded": false
+  },
+  {
+   "op": "rearrange",
+   "canonical": "rearrange",
+   "object": "latent",
+   "quote": "rearrange the patch embeddings via shift and patch shuffle operations",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "enhance the robust feature learning",
+   "grounded": true
+  },
+  {
+   "op": "improve",
+   "canonical": "improve",
+   "object": "INVALID:discrimination",
+   "quote": "generates robust features with improved discrimination ability",
+   "grounded": true
+  },
+  {
+   "op": "cover",
+   "canonical": "cover",
+   "object": "latent",
+   "quote": "more diversified coverage",
+   "grounded": true
+  },
+  {
+   "op": "reduce",
+   "canonical": "reduce",
+   "object": "INVALID:bias",
+   "quote": "mitigate feature bias towards camera/view variations",
+   "grounded": true
+  },
+  {
+   "op": "model",
+   "canonical": "model",
+   "object": "parameter",
+   "quote": "pure transformer-based object ReID framework",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "achieve state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "INVALID:performance",
+   "quote": "achieve state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "INVALID:performance",
+   "quote": "achieve state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "latent",
+   "quote": "extracting robust feature representation",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "trajectory",
+   "quote": "transformer-based strong baseline",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "enhance the robust feature learning",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "generates robust features with improved discrimination ability",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "enhance the robust feature learning",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "generate robust features with improved discrimination ability",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute@value",
+  "cover@latent",
+  "encode@input",
+  "extract@latent",
+  "model@parameter",
+  "output@latent",
+  "process@latent",
+  "process@trajectory",
+  "rearrange@latent",
+  "reconstruct@latent",
+  "reconstruct@sample",
+  "sample@latent",
+  "shift@latent",
+  "shuffle@latent",
+  "train@latent",
+  "train@parameter"
+ ]
+}

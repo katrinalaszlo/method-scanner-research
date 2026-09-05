@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "2206.06931",
+ "source": "abstract",
+ "words": 226,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute offset",
+   "canonical": "compute offset",
+   "object": "input",
+   "quote": "re-scaling the offset predictions by the difference between two frames",
+   "grounded": true
+  },
+  {
+   "op": "extract query",
+   "canonical": "extract query",
+   "object": "state",
+   "quote": "Taking each spatial location in the current frame as the query",
+   "grounded": true
+  },
+  {
+   "op": "extract key",
+   "canonical": "extract key",
+   "object": "state",
+   "quote": "locally deformable neighbors in the next frame are regarded as the keys/values",
+   "grounded": true
+  },
+  {
+   "op": "extract value",
+   "canonical": "extract value",
+   "object": "state",
+   "quote": "locally deformable neighbors in the next frame are regarded as the keys/values",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "measures the similarity between query and keys as stand-alone attention",
+   "grounded": true
+  },
+  {
+   "op": "weighted average",
+   "canonical": "weighted average",
+   "object": "value",
+   "quote": "weighted average the values for temporal aggregation",
+   "grounded": true
+  },
+  {
+   "op": "aggregate temporal",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "weighted average the values for temporal aggregation",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "state",
+   "quote": "measures the similarity between query and keys as stand-alone attention",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "remoulds the deformable design via re-scaling the offset predictions",
+   "grounded": true
+  },
+  {
+   "op": "integrate attention",
+   "canonical": "integrate attention",
+   "object": "state",
+   "quote": "measures the similarity between query and keys as stand-alone attention",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "plug SIFA block into ConvNets and Vision Transformer",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "measures the similarity between query and keys as stand-alone attention",
+   "grounded": true
+  },
+  {
+   "op": "compute attention map",
+   "canonical": "compute attention map",
+   "object": "distribution",
+   "quote": "measures the similarity between query and keys as stand-alone attention",
+   "grounded": true
+  },
+  {
+   "op": "apply attention weights",
+   "canonical": "apply attention weights",
+   "object": "value",
+   "quote": "weighted average the values for temporal aggregation",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "weighted average the values for temporal aggregation",
+   "grounded": true
+  },
+  {
+   "op": "compute temporal aggregation",
+   "canonical": "compute temporal aggregation",
+   "object": "state",
+   "quote": "weighted average the values for temporal aggregation",
+   "grounded": true
+  },
+  {
+   "op": "compute spatial location",
+   "canonical": "compute spatial location",
+   "object": "state",
+   "quote": "Taking each spatial location in the current frame as the query",
+   "grounded": true
+  },
+  {
+   "op": "compute deformation",
+   "canonical": "compute deformation",
+   "object": "input",
+   "quote": "delves into the deformation across frames to estimate local self-attention",
+   "grounded": true
+  },
+  {
+   "op": "compute local attention",
+   "canonical": "compute local attention",
+   "object": "distribution",
+   "quote": "delves into the deformation across frames to estimate local self-attention",
+   "grounded": true
+  },
+  {
+   "op": "compute attention score",
+   "canonical": "compute attention score",
+   "object": "distribution",
+   "quote": "measures the similarity between query and keys as stand-alone attention",
+   "grounded": true
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "distribution",
+   "quote": "measures the similarity between query and keys as stand-alone attention",
+   "grounded": true
+  },
+  {
+   "op": "compute attention output",
+   "canonical": "compute attention output",
+   "object": "state",
+   "quote": "weighted average the values for temporal aggregation",
+   "grounded": true
+  },
+  {
+   "op": "compute attention map",
+   "canonical": "compute attention map",
+   "object": "distribution",
+   "quote": "measures the similarity between query and keys as stand-alone attention",
+   "grounded": true
+  },
+  {
+   "op": "compute attention value",
+   "canonical": "compute attention value",
+   "object": "value",
+   "quote": "weighted average the values for temporal aggregation",
+   "grounded": true
+  },
+  {
+   "op": "compute attention result",
+   "canonical": "compute attention result",
+   "object": "state",
+   "quote": "weighted average the values for temporal aggregation",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "apply attention weights@value",
+  "apply attention@state",
+  "compute attention map@distribution",
+  "compute attention output@state",
+  "compute attention result@state",
+  "compute attention score@distribution",
+  "compute attention value@value",
+  "compute attention weights@distribution",
+  "compute deformation@input",
+  "compute local attention@distribution",
+  "compute offset@input",
+  "compute similarity@distribution",
+  "compute spatial location@state",
+  "compute temporal aggregation@state",
+  "correct@parameter",
+  "extract key@state",
+  "extract query@state",
+  "extract value@state",
+  "integrate attention@state",
+  "reconstruct@state",
+  "weighted average@value"
+ ]
+}

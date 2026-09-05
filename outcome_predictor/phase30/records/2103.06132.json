@@ -1,0 +1,172 @@
+{
+ "arxiv_id": "2103.06132",
+ "source": "abstract",
+ "words": 192,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 2,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "multiple inputs simultaneously provided",
+   "grounded": true
+  },
+  {
+   "op": "split input",
+   "canonical": "split input",
+   "object": "input",
+   "quote": "each subnetwork learns to classify only one of the multiple inputs",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we draw inspiration from successful mixed sample data augmentations",
+   "grounded": true
+  },
+  {
+   "op": "mix features",
+   "canonical": "mix features",
+   "object": "latent",
+   "quote": "binary mixing in features - particularly with rectangular patches from CutMix",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "binary mixing in features - particularly with rectangular patches from CutMix",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "binary mixing in features - particularly with rectangular patches from CutMix",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "INVALID:output",
+   "quote": "we introduce MixMo, a new generalized framework for learning multi-input multi-output deep subnetworks",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we show that binary mixing in features - particularly with rectangular patches from CutMix",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we improve state of the art for image classification on CIFAR-100 and Tiny ImageNet datasets",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "latent",
+   "quote": "we draw inspiration from successful mixed sample data augmentations",
+   "grounded": true
+  },
+  {
+   "op": "aggregate outputs",
+   "canonical": "aggregate",
+   "object": "INVALID:output",
+   "quote": "we introduce MixMo, a new generalized framework for learning multi-input multi-output deep subnetworks",
+   "grounded": true
+  },
+  {
+   "op": "denoise features",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we show that binary mixing in features - particularly with rectangular patches from CutMix",
+   "grounded": true
+  },
+  {
+   "op": "resample features",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "binary mixing in features - particularly with rectangular patches from CutMix",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we improve state of the art for image classification on CIFAR-100 and Tiny ImageNet datasets",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate gradient",
+   "canonical": "backpropagate gradient",
+   "object": "gradient",
+   "quote": "we improve state of the art for image classification on CIFAR-100 and Tiny ImageNet datasets",
+   "grounded": true
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "our easy to implement models notably outperform data augmented deep ensembles",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we operate in features and simply better leverage the expressiveness of large networks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we operate in features and simply better leverage the expressiveness of large networks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we improve state of the art for image classification on CIFAR-100 and Tiny ImageNet datasets",
+   "grounded": true
+  },
+  {
+   "op": "store trajectory",
+   "canonical": "store trajectory",
+   "object": "trajectory",
+   "quote": "we open a new line of research complementary to previous works",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply activation@latent",
+  "apply regularization@parameter",
+  "backpropagate gradient@gradient",
+  "compute gradient@gradient",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "mix features@latent",
+  "process input@input",
+  "reconstruct@latent",
+  "reconstruct@sample",
+  "sample@action",
+  "sample@latent",
+  "split input@input",
+  "store trajectory@trajectory"
+ ]
+}

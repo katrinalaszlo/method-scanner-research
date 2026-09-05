@@ -1,0 +1,203 @@
+{
+ "arxiv_id": "2404.11202",
+ "source": "abstract",
+ "words": 193,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we introduce a strong training strategy for compact models",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we introduce a strong training strategy for compact models",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we introduce a strong training strategy for compact models",
+   "grounded": true
+  },
+  {
+   "op": "apply reparameterization",
+   "canonical": "apply reparameterization",
+   "object": "parameter",
+   "quote": "the appropriate designs of re-parameterization and knowledge distillation are crucial",
+   "grounded": true
+  },
+  {
+   "op": "apply knowledge distillation",
+   "canonical": "apply knowledge distillation",
+   "object": "parameter",
+   "quote": "the appropriate designs of re-parameterization and knowledge distillation are crucial",
+   "grounded": true
+  },
+  {
+   "op": "generate augmented data",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "some commonly used data augmentations for training conventional models",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "error",
+   "quote": "our experiments on ImageNet-1K dataset demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our experiments on ImageNet-1K dataset demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "track latency",
+   "canonical": "track latency",
+   "object": "trajectory",
+   "quote": "GhostNetV3 1.3\u00d7 achieves a top-1 accuracy of 79.1% with only 269M FLOPs and a latency of 14.46ms",
+   "grounded": false
+  },
+  {
+   "op": "compute flops",
+   "canonical": "compute flops",
+   "object": "trajectory",
+   "quote": "GhostNetV3 1.3\u00d7 achieves a top-1 accuracy of 79.1% with only 269M FLOPs and a latency of 14.46ms",
+   "grounded": false
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "error",
+   "quote": "GhostNetV3 1.3\u00d7 achieves a top-1 accuracy of 79.1% with only 269M FLOPs and a latency of 14.46ms",
+   "grounded": false
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "surpassing its ordinarily trained counterpart by a large margin",
+   "grounded": true
+  },
+  {
+   "op": "apply data augmentation",
+   "canonical": "apply data augmentation",
+   "object": "input",
+   "quote": "some commonly used data augmentations for training conventional models",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "our observation can also be extended to object detection scenarios",
+   "grounded": true
+  },
+  {
+   "op": "evaluate detection performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our observation can also be extended to object detection scenarios",
+   "grounded": true
+  },
+  {
+   "op": "track inference time",
+   "canonical": "track inference time",
+   "object": "trajectory",
+   "quote": "GhostNetV3 1.3\u00d7 achieves a top-1 accuracy of 79.1% with only 269M FLOPs and a latency of 14.46ms",
+   "grounded": false
+  },
+  {
+   "op": "compute model size",
+   "canonical": "compute model size",
+   "object": "parameter",
+   "quote": "GhostNetV3 1.3\u00d7 achieves a top-1 accuracy of 79.1% with only 269M FLOPs and a latency of 14.46ms",
+   "grounded": false
+  },
+  {
+   "op": "compute top-1 accuracy",
+   "canonical": "compute top-1 accuracy",
+   "object": "error",
+   "quote": "GhostNetV3 1.3\u00d7 achieves a top-1 accuracy of 79.1% with only 269M FLOPs and a latency of 14.46ms",
+   "grounded": false
+  },
+  {
+   "op": "apply training strategy",
+   "canonical": "apply training strategy",
+   "object": "parameter",
+   "quote": "we introduce a strong training strategy for compact models",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we introduce a strong training strategy for compact models",
+   "grounded": true
+  },
+  {
+   "op": "compute inference speed",
+   "canonical": "compute inference speed",
+   "object": "trajectory",
+   "quote": "GhostNetV3 1.3\u00d7 achieves a top-1 accuracy of 79.1% with only 269M FLOPs and a latency of 14.46ms",
+   "grounded": false
+  },
+  {
+   "op": "compute model efficiency",
+   "canonical": "compute model efficiency",
+   "object": "parameter",
+   "quote": "GhostNetV3 1.3\u00d7 achieves a top-1 accuracy of 79.1% with only 269M FLOPs and a latency of 14.46ms",
+   "grounded": false
+  },
+  {
+   "op": "evaluate model performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our experiments on ImageNet-1K dataset demonstrate",
+   "grounded": true
+  },
+  {
+   "op": "compute training time",
+   "canonical": "compute training time",
+   "object": "trajectory",
+   "quote": "our experiments on ImageNet-1K dataset demonstrate",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply data augmentation@input",
+  "apply knowledge distillation@parameter",
+  "apply reparameterization@parameter",
+  "apply training strategy@parameter",
+  "backpropagate@gradient",
+  "compare@task",
+  "compute accuracy@error",
+  "compute flops@trajectory",
+  "compute inference speed@trajectory",
+  "compute model efficiency@parameter",
+  "compute model size@parameter",
+  "compute reward@value",
+  "compute top-1 accuracy@error",
+  "compute training time@trajectory",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "reconstruct@input",
+  "track inference time@trajectory",
+  "track latency@trajectory",
+  "train@parameter"
+ ]
+}

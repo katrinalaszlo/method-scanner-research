@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2105.03889",
+ "source": "abstract",
+ "words": 162,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "extract local features",
+   "canonical": "extract local features",
+   "object": "input",
+   "quote": "convolution operations are good at extracting local features",
+   "grounded": true
+  },
+  {
+   "op": "capture global representations",
+   "canonical": "capture global representations",
+   "object": "input",
+   "quote": "cascaded self-attention modules can capture long-distance feature dependencies",
+   "grounded": true
+  },
+  {
+   "op": "fuse local features",
+   "canonical": "fuse local features",
+   "object": "latent",
+   "quote": "fuses local features and global representations under different resolutions",
+   "grounded": true
+  },
+  {
+   "op": "fuse global representations",
+   "canonical": "fuse global representations",
+   "object": "latent",
+   "quote": "fuses local features and global representations under different resolutions",
+   "grounded": true
+  },
+  {
+   "op": "retain local features",
+   "canonical": "retain local features",
+   "object": "latent",
+   "quote": "local features and global representations are retained to the maximum extent",
+   "grounded": true
+  },
+  {
+   "op": "retain global representations",
+   "canonical": "retain global representations",
+   "object": "latent",
+   "quote": "local features and global representations are retained to the maximum extent",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "fuses local features and global representations under different resolutions",
+   "grounded": true
+  },
+  {
+   "op": "produce output",
+   "canonical": "produce output",
+   "object": "latent",
+   "quote": "enhanced representation learning",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "capture global representations@input",
+  "extract local features@input",
+  "fuse global representations@latent",
+  "fuse local features@latent",
+  "produce output@latent",
+  "retain global representations@latent",
+  "retain local features@latent"
+ ]
+}

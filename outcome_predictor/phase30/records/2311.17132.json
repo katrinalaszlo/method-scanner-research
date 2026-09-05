@@ -1,0 +1,187 @@
+{
+ "arxiv_id": "2311.17132",
+ "source": "abstract",
+ "words": 249,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 23,
+ "n_invalid_object": 11,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "INVALID:query",
+   "quote": "we propose Aggregated Attention, a biomimetic design-based token mixer",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "INVALID:key",
+   "quote": "we propose Aggregated Attention, a biomimetic design-based token mixer",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "value",
+   "quote": "we propose Aggregated Attention, a biomimetic design-based token mixer",
+   "grounded": true
+  },
+  {
+   "op": "compute affinity",
+   "canonical": "compute affinity",
+   "object": "INVALID:matrix",
+   "quote": "furthermore, we incorporate learnable tokens that interact with conventional queries and keys",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "INVALID:query key",
+   "quote": "furthermore, we incorporate learnable tokens that interact with conventional queries and keys",
+   "grounded": true
+  },
+  {
+   "op": "compute channel attention",
+   "canonical": "compute channel attention",
+   "object": "INVALID:token",
+   "quote": "convolutional GLU empowers each token to have channel attention based on its nearest neighbor image features",
+   "grounded": false
+  },
+  {
+   "op": "compute local feature",
+   "canonical": "compute local feature",
+   "object": "INVALID:token",
+   "quote": "convolutional GLU empowers each token to have channel attention based on its nearest neighbor image features",
+   "grounded": false
+  },
+  {
+   "op": "combine attention",
+   "canonical": "aggregate",
+   "object": "INVALID:affinity",
+   "quote": "we combine aggregated attention and convolutional GLU to create a new visual backbone",
+   "grounded": true
+  },
+  {
+   "op": "combine attention",
+   "canonical": "aggregate",
+   "object": "INVALID:channel",
+   "quote": "we combine aggregated attention and convolutional GLU to create a new visual backbone",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "INVALID:token",
+   "quote": "aggregated attention enables each token on the feature map to have a global perception",
+   "grounded": false
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "aggregated attention enables each token on the feature map to have a global perception",
+   "grounded": false
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "convolutional GLU bridges the gap between GLU and SE mechanism",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "our approach does not rely on stacking for information exchange",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our approach does not rely on stacking for information exchange",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "extensive experiments demonstrate that our TransNeXt achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "extensive experiments demonstrate that our TransNeXt achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "sample token",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "we incorporate learnable tokens that interact with conventional queries and keys",
+   "grounded": true
+  },
+  {
+   "op": "compute representation",
+   "canonical": "compute representation",
+   "object": "INVALID:token",
+   "quote": "aggregated attention enables each token on the feature map to have a global perception",
+   "grounded": false
+  },
+  {
+   "op": "compute representation",
+   "canonical": "compute representation",
+   "object": "latent",
+   "quote": "convolutional GLU empowers each token to have channel attention based on its nearest neighbor image features",
+   "grounded": false
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "INVALID:token",
+   "quote": "we combine aggregated attention and convolutional GLU to create a new visual backbone",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "TransNeXt-Tiny attains an ImageNet accuracy of 84.0%",
+   "grounded": true
+  },
+  {
+   "op": "compute map",
+   "canonical": "compute map",
+   "object": "task",
+   "quote": "TransNeXt-Base achieves a COCO object detection mAP of 57.1",
+   "grounded": false
+  },
+  {
+   "op": "compute miou",
+   "canonical": "compute miou",
+   "object": "task",
+   "quote": "TransNeXt-Base achieves an ADE20K semantic segmentation mIoU of 54.7",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply attention@latent",
+  "apply convolution@latent",
+  "backpropagate@gradient",
+  "compute accuracy@task",
+  "compute attention@value",
+  "compute gradient@parameter",
+  "compute map@task",
+  "compute miou@task",
+  "compute representation@latent",
+  "correct@parameter",
+  "evaluate@error",
+  "sample@latent"
+ ]
+}

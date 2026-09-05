@@ -1,0 +1,73 @@
+{
+ "arxiv_id": "1609.05158",
+ "source": "abstract",
+ "words": 229,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 5,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "upscale input",
+   "canonical": "upscale input",
+   "object": "input",
+   "quote": "the low resolution (LR) input image is upscaled to the high resolution (HR) space",
+   "grounded": false
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "feature maps are extracted in the LR space",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "INVALID:feature map",
+   "quote": "we propose a novel CNN architecture where the feature maps are extracted in the LR space",
+   "grounded": false
+  },
+  {
+   "op": "upscale features",
+   "canonical": "upscale features",
+   "object": "INVALID:feature map",
+   "quote": "we introduce an efficient sub-pixel convolution layer which learns an array of upscaling filters to upscale the final LR feature maps into the HR output",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "INVALID:feature map",
+   "quote": "we introduce an efficient sub-pixel convolution layer which learns an array of upscaling filters to upscale the final LR feature maps into the HR output",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "INVALID:feature map",
+   "quote": "we introduce an efficient sub-pixel convolution layer which learns an array of upscaling filters to upscale the final LR feature maps into the HR output",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:output",
+   "quote": "we evaluate the proposed approach using images and videos from publicly available datasets",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we introduce an efficient sub-pixel convolution layer which learns an array of upscaling filters",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "encode@input",
+  "upscale input@input"
+ ]
+}

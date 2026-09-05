@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1905.00953",
+ "source": "abstract",
+ "words": 166,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "discriminative features, which not only capture different spatial scales",
+   "grounded": true
+  },
+  {
+   "op": "detect feature",
+   "canonical": "detect feature",
+   "object": "state",
+   "quote": "each detecting features at a certain scale",
+   "grounded": true
+  },
+  {
+   "op": "fuse feature",
+   "canonical": "fuse feature",
+   "object": "latent",
+   "quote": "dynamically fuse multi-scale features with input-dependent channel-wise weights",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "using pointwise and depthwise convolutions",
+   "grounded": false
+  },
+  {
+   "op": "aggregate feature",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "a novel unified aggregation gate",
+   "grounded": true
+  },
+  {
+   "op": "compute weight",
+   "canonical": "compute weight",
+   "object": "parameter",
+   "quote": "input-dependent channel-wise weights",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "efficiently learn spatial-channel correlations",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "can be trained from scratch on existing ReID benchmarks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@latent",
+  "compute weight@parameter",
+  "correct@parameter",
+  "detect feature@state",
+  "extract feature@input",
+  "fuse feature@latent",
+  "train@parameter"
+ ]
+}

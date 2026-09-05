@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2211.09013",
+ "source": "abstract",
+ "words": 221,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "mask input",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "we utilize the masking operation for stronger augmentation",
+   "grounded": false
+  },
+  {
+   "op": "reconstruct input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we employ the reconstruction task to regularize the discriminative task",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we conduct comprehensive experiments and show the superiority of the proposed model",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose the Masked Reconstruction Contrastive Learning (MRCL) model to improve CL models",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we present a new perspective that CL is an instantiation of the IB principle",
+   "grounded": true
+  },
+  {
+   "op": "predict representation",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "we theoretically analyze the optimal information situation",
+   "grounded": true
+  },
+  {
+   "op": "compare representations",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "contrastive learning (CL) has shown great power in self-supervised learning",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we propose to tackle the above problems from the aspect of the Information Bottleneck (IB) principle",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate gradient",
+   "canonical": "backpropagate gradient",
+   "object": "gradient",
+   "quote": "we conduct comprehensive experiments and show the superiority of the proposed model",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we employ the reconstruction task to regularize the discrimin,ative task",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "we utilize the masking operation for stronger augmentation",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we demonstrate that minimum sufficient augmentation and information-generalized representation are the optimal requirements",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we propose the Masked Reconstruction Contrastive Learning (MRCL) model to improve CL models",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we conduct comprehensive experiments and show the superiority of the proposed model",
+   "grounded": true
+  },
+  {
+   "op": "generate trajectory",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "we present a new perspective that CL is an instantiation of the IB principle",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we theoretically analyze the optimal information situation",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "we demonstrate that minimum sufficient augmentation and information-generalized representation are the optimal requirements",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we conduct comprehensive experiments and show the superiority of the proposed model",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "we propose to tackle the above problems from the aspect of the Information Bottleneck (IB) principle",
+   "grounded": true
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "we utilize the masking operation for stronger augmentation",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we conduct comprehensive experiments and show the superiority of the proposed model",
+   "grounded": true
+  },
+  {
+   "op": "denoise representation",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we theoretically analyze the optimal information situation",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we present a new perspective that CL is an instantiation of the IB principle",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we present a new perspective that CL is an instantiation of the IB principle",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we demonstrate that minimum sufficient augmentation and information-generalized representation are the optimal requirements",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "backpropagate gradient@gradient",
+  "clip gradient@gradient",
+  "compare@error",
+  "compare@latent",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "evaluate@task",
+  "mask@input",
+  "predict@latent",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@distribution",
+  "sample@input",
+  "train@parameter"
+ ]
+}

@@ -1,0 +1,205 @@
+{
+ "arxiv_id": "2005.05859",
+ "source": "abstract",
+ "words": 230,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 8,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "sample subnet",
+   "canonical": "sample",
+   "object": "INVALID:subnet",
+   "quote": "specialized subnets can be sampled without any additional training",
+   "grounded": true
+  },
+  {
+   "op": "adapt supernet",
+   "canonical": "adapt supernet",
+   "object": "INVALID:supernet",
+   "quote": "A pre-trained supernet is iteratively adapted",
+   "grounded": true
+  },
+  {
+   "op": "search subnets",
+   "canonical": "search subnets",
+   "object": "INVALID:subnet",
+   "quote": "simultaneously searching for task-specific subnets",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the key to our approach is an integrated online transfer learning",
+   "grounded": true
+  },
+  {
+   "op": "evolve architecture",
+   "canonical": "evolve architecture",
+   "object": "INVALID:architecture",
+   "quote": "many-objective evolutionary search procedure",
+   "grounded": true
+  },
+  {
+   "op": "train supernet",
+   "canonical": "train",
+   "object": "INVALID:supernet",
+   "quote": "learn task-specific supernets",
+   "grounded": true
+  },
+  {
+   "op": "generate model",
+   "canonical": "reconstruct",
+   "object": "parameter",
+   "quote": "efficiently generate task-specific custom models",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "improve upon the state-of-the-art under mobile settings",
+   "grounded": true
+  },
+  {
+   "op": "compare architectures",
+   "canonical": "compare",
+   "object": "INVALID:architecture",
+   "quote": "NATNets improve upon the state-of-the-art",
+   "grounded": true
+  },
+  {
+   "op": "optimize objectives",
+   "canonical": "improve",
+   "object": "error",
+   "quote": "competitive under multiple conflicting objectives",
+   "grounded": true
+  },
+  {
+   "op": "transfer knowledge",
+   "canonical": "transfer knowledge",
+   "object": "INVALID:knowledge",
+   "quote": "integrated online transfer learning",
+   "grounded": true
+  },
+  {
+   "op": "select subnetwork",
+   "canonical": "select subnetwork",
+   "object": "INVALID:subnet",
+   "quote": "specialized subnets can be sampled",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the key to our approach is an integrated online transfer learning",
+   "grounded": true
+  },
+  {
+   "op": "update weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the key to our approach is an integrated online transfer learning",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "integrated online transfer learning and many-objective evolutionary search",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "integrated online transfer learning and many-objective evolutionary search",
+   "grounded": true
+  },
+  {
+   "op": "track progress",
+   "canonical": "track progress",
+   "object": "task",
+   "quote": "NAT is designed to efficiently generate task-specific custom models",
+   "grounded": true
+  },
+  {
+   "op": "evaluate task",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "NAT is an appreciably more effective alternative",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "N, NATNets improve upon the state-of-the-art",
+   "grounded": false
+  },
+  {
+   "op": "select best model",
+   "canonical": "select best model",
+   "object": "parameter",
+   "quote": "NATNets improve upon the state-of-the-art under mobile settings",
+   "grounded": true
+  },
+  {
+   "op": "store model",
+   "canonical": "store model",
+   "object": "parameter",
+   "quote": "NAT is an appreciably more effective alternative",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "value",
+   "quote": "NATNets improve upon the state-of-the-art under mobile settings",
+   "grounded": true
+  },
+  {
+   "op": "compute metrics",
+   "canonical": "compute metrics",
+   "object": "task",
+   "quote": "NAT is an appreciably more effective alternative",
+   "grounded": true
+  },
+  {
+   "op": "log results",
+   "canonical": "log results",
+   "object": "task",
+   "quote": "the experimental evaluation indicates",
+   "grounded": true
+  },
+  {
+   "op": "save model",
+   "canonical": "save model",
+   "object": "parameter",
+   "quote": "the experimental evaluation indicates",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "compute accuracy@value",
+  "compute gradient@gradient",
+  "compute metrics@task",
+  "compute reward@reward",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@parameter",
+  "evaluate@task",
+  "improve@error",
+  "log results@task",
+  "reconstruct@parameter",
+  "save model@parameter",
+  "select best model@parameter",
+  "store model@parameter",
+  "track progress@task"
+ ]
+}

@@ -1,0 +1,92 @@
+{
+ "arxiv_id": "2401.16753",
+ "source": "abstract",
+ "words": 264,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 2,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "compute patch features",
+   "canonical": "compute patch features",
+   "object": "input",
+   "quote": "obtain the patch features that are capable of representing anomalies in varying sizes",
+   "grounded": true
+  },
+  {
+   "op": "aggregate local neighborhood",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "perform Local Neighborhood Aggregation with Multiple Degrees (LNAMD)",
+   "grounded": true
+  },
+  {
+   "op": "score anomaly",
+   "canonical": "compare",
+   "object": "INVALID:patch",
+   "quote": "assign the anomaly score to each other",
+   "grounded": true
+  },
+  {
+   "op": "compare patch similarity",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "the normal image patches could find a relatively large number of similar patches",
+   "grounded": true
+  },
+  {
+   "op": "compute anomaly score",
+   "canonical": "compute anomaly score",
+   "object": "INVALID:patch",
+   "quote": "leverage the unlabeled test images to assign the anomaly score",
+   "grounded": true
+  },
+  {
+   "op": "rescore image",
+   "canonical": "rescore image",
+   "object": "input",
+   "quote": "Re-scoring with Constrained Image-level Neighborhood (RsCIN)",
+   "grounded": true
+  },
+  {
+   "op": "suppress false positives",
+   "canonical": "suppress",
+   "object": "error",
+   "quote": "suppress the false positives caused by noises in normal images",
+   "grounded": true
+  },
+  {
+   "op": "classify image",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "image-level anomaly classification",
+   "grounded": true
+  },
+  {
+   "op": "compute pixel-wise score",
+   "canonical": "compute pixel-wise score",
+   "object": "input",
+   "quote": "pixel-AP gain and a 14.7% pixel-AUROC gain on VisA",
+   "grounded": false
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "task",
+   "quote": "superior performance on the challenging MVTec AD and VisA datasets",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "classify@input",
+  "compare@latent",
+  "compute metric@task",
+  "compute patch features@input",
+  "compute pixel-wise score@input",
+  "rescore image@input",
+  "suppress@error"
+ ]
+}

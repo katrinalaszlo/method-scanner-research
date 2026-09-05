@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1412.6830",
+ "source": "abstract",
+ "words": 82,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 2,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "using gradient descent",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "using gradient descent",
+   "grounded": false
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "state",
+   "quote": "non-linear activation function",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "prediction error or residual",
+   "grounded": false
+  },
+  {
+   "op": "propagate error",
+   "canonical": "transmit",
+   "object": "gradient",
+   "quote": "backpropagate",
+   "grounded": false
+  },
+  {
+   "op": "sample activation",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "learned independently for each neuron",
+   "grounded": true
+  },
+  {
+   "op": "denoise activation",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "piecewise linear activation function",
+   "grounded": false
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "deep neural network architectures",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply activation@state",
+  "compare@error",
+  "compute gradient@error",
+  "correct@parameter",
+  "predict@state",
+  "reconstruct@noise",
+  "sample@distribution",
+  "transmit@gradient"
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "2210.04006",
+ "source": "abstract",
+ "words": 205,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 2,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "learn the rules of 2d-3d projection from spatial and temporal correlation",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "state",
+   "quote": "model the global features of the entire body joint in the time domain",
+   "grounded": true
+  },
+  {
+   "op": "track",
+   "canonical": "track",
+   "object": "trajectory",
+   "quote": "ignore the motion trajectory of individual joint",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "trajectory",
+   "quote": "deal with the temporal relationship of each joint separately",
+   "grounded": false
+  },
+  {
+   "op": "fuse",
+   "canonical": "fuse",
+   "object": "latent",
+   "quote": "global spatio-temporal features and local joint trajectory features are fused",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "INVALID:pose",
+   "quote": "eliminate the influence of bad 2d poses on 3d projections",
+   "grounded": true
+  },
+  {
+   "op": "balance",
+   "canonical": "balance",
+   "object": "INVALID:consistency",
+   "quote": "balance the consistency of 3d projections",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the results show an improvement of 2.4% mpjpe and 4.3% p-mpjpe",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute@error",
+  "encode@input",
+  "extract@state",
+  "fuse@latent",
+  "process@trajectory",
+  "track@trajectory"
+ ]
+}

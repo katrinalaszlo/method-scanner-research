@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2408.02014",
+ "source": "abstract",
+ "words": 191,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "input",
+   "quote": "matching their self-attention vectors, which are the distributions of similarities to the entire set of augmented images of a batch.",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "latent",
+   "quote": "matching these distributions to their globally balanced and entropy regularized version",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "minimizing a loss that matches these distributions to their globally balanced and entropy regularized version",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "minimizing a loss that matches these distributions to their globally balanced and entropy regularized version",
+   "grounded": true
+  },
+  {
+   "op": "compute transport",
+   "canonical": "compute transport",
+   "object": "distribution",
+   "quote": "which is obtained through a simple self-optimal-transport computation",
+   "grounded": true
+  },
+  {
+   "op": "compute entropy",
+   "canonical": "compute entropy",
+   "object": "distribution",
+   "quote": "globally balanced and entropy regularized version",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "input",
+   "quote": "distributions of similarities to the entire set of augmented images of a batch",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "input",
+   "quote": "matching their self-attention vectors, which are the distributions of similarities to the entire set of augmented images of a batch",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply augmentation@input",
+  "compute attention@input",
+  "compute distribution@latent",
+  "compute entropy@distribution",
+  "compute similarity@input",
+  "compute transport@distribution",
+  "correct@parameter",
+  "evaluate@error"
+ ]
+}

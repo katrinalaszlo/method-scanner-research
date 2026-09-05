@@ -1,0 +1,92 @@
+{
+ "arxiv_id": "2005.10243",
+ "source": "abstract",
+ "words": 166,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 2,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we devise unsupervised and semi-supervised frameworks",
+   "grounded": true
+  },
+  {
+   "op": "reduce mutual information",
+   "canonical": "reduce mutual information",
+   "object": "INVALID:view",
+   "quote": "we should reduce the mutual information (MI) between views",
+   "grounded": true
+  },
+  {
+   "op": "generate view",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "contrastive learning between multiple views of the data",
+   "grounded": true
+  },
+  {
+   "op": "apply data augmentation",
+   "canonical": "apply data augmentation",
+   "object": "input",
+   "quote": "data augmentation as a way to reduce MI",
+   "grounded": true
+  },
+  {
+   "op": "compute mutual information",
+   "canonical": "compute mutual information",
+   "object": "INVALID:view",
+   "quote": "aiming to reduce their MI",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we devise unsupervised and semi-supervised frameworks",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "increasing data augmentation indeed leads to decreasing MI",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "improves downstream classification accuracy",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we devise unsupervised and semi-supervised frameworks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "transferring our models to PASCAL VOC object detection",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply data augmentation@input",
+  "compute accuracy@task",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "reconstruct@input",
+  "sample@action",
+  "train@parameter"
+ ]
+}

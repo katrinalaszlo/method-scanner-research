@@ -1,0 +1,71 @@
+{
+ "arxiv_id": "2103.14635",
+ "source": "abstract",
+ "words": 185,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 7,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "assemble kernel",
+   "canonical": "assemble kernel",
+   "object": "INVALID:weight",
+   "quote": "construct the convolution kernel by dynamically assembling basic weight matrices",
+   "grounded": true
+  },
+  {
+   "op": "learn coefficients",
+   "canonical": "train",
+   "object": "INVALID:weight",
+   "quote": "the coefficients of these weight matrices are self-adaptively learned from point positions through ScoreNet",
+   "grounded": true
+  },
+  {
+   "op": "predict kernel",
+   "canonical": "predict",
+   "object": "INVALID:position",
+   "quote": "the complexity of the learning process is reduced by combining weight matrices instead of brutally predicting kernels from point positions",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "INVALID:point cloud",
+   "quote": "PAConv is a generic convolution operation for 3D point cloud processing",
+   "grounded": false
+  },
+  {
+   "op": "integrate network",
+   "canonical": "integrate network",
+   "object": "parameter",
+   "quote": "we integrate our PAConv into classical MLP-based point cloud pipelines without changing network configurations",
+   "grounded": true
+  },
+  {
+   "op": "compute classification",
+   "canonical": "compute classification",
+   "object": "INVALID:point cloud",
+   "quote": "our method still approaches or even surpasses the state-of-the-art models, and significantly improves baseline performance on both classification and segmentation tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute segmentation",
+   "canonical": "compute segmentation",
+   "object": "INVALID:point cloud",
+   "quote": "our method still approaches or even surpasses the state-of-the-art models, and significantly improves baseline performance on both classification and segmentation tasks",
+   "grounded": true
+  },
+  {
+   "op": "visualize results",
+   "canonical": "visualize results",
+   "object": "INVALID:output",
+   "quote": "Thorough ablation studies and visualizations are provided to understand PAConv",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "integrate network@parameter"
+ ]
+}

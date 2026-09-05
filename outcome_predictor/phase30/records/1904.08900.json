@@ -1,0 +1,268 @@
+{
+ "arxiv_id": "1904.08900",
+ "source": "abstract",
+ "words": 199,
+ "model": "qwen3:8b",
+ "salvaged": true,
+ "n_ops": 35,
+ "n_invalid_object": 18,
+ "n_grounded": 26,
+ "ops": [
+  {
+   "op": "detect keypoint",
+   "canonical": "detect keypoint",
+   "object": "input",
+   "quote": "Keypoint-based methods are a relatively new paradigm in object detection",
+   "grounded": true
+  },
+  {
+   "op": "generate corner",
+   "canonical": "reconstruct",
+   "object": "INVALID:keypoint",
+   "quote": "Keypoint-based CornerNet achieves state of the art accuracy",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "input",
+   "quote": "CornerNet-Saccade uses an attention mechanism",
+   "grounded": false
+  },
+  {
+   "op": "process image",
+   "canonical": "process image",
+   "object": "input",
+   "quote": "eliminating the need for exhaustively processing all pixels of the image",
+   "grounded": false
+  },
+  {
+   "op": "compute feature",
+   "canonical": "compute feature",
+   "object": "input",
+   "quote": "introduces a new compact backbone architecture",
+   "grounded": true
+  },
+  {
+   "op": "predict keypoint",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "improving the efficiency of CornerNet by 6.0x",
+   "grounded": true
+  },
+  {
+   "op": "refine keypoint",
+   "canonical": "correct",
+   "object": "INVALID:keypoint",
+   "quote": "improving both the efficiency and accuracy",
+   "grounded": true
+  },
+  {
+   "op": "output detection",
+   "canonical": "output detection",
+   "object": "INVALID:keypoint",
+   "quote": "CornerNet-Squeeze is suitable for real-time detection",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "INVALID:detection",
+   "quote": "improving the efficiency and accuracy of the popular real-time detector YOLOv3",
+   "grounded": false
+  },
+  {
+   "op": "compute efficiency",
+   "canonical": "compute efficiency",
+   "object": "INVALID:detection",
+   "quote": "improving both the efficiency and accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compare accuracy",
+   "canonical": "compare",
+   "object": "INVALID:detection",
+   "quote": "improving both the efficiency and accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute ap score",
+   "canonical": "compute ap score",
+   "object": "INVALID:detection",
+   "quote": "34.4% AP at 30ms for CornerNet-Squeeze",
+   "grounded": true
+  },
+  {
+   "op": "compute time",
+   "canonical": "compute time",
+   "object": "INVALID:detection",
+   "quote": "33.0% AP at 39ms for YOLOv3 on COCO",
+   "grounded": true
+  },
+  {
+   "op": "select task",
+   "canonical": "select task",
+   "object": "task",
+   "quote": "improving the efficiency of CornerNet by 6.0x",
+   "grounded": true
+  },
+  {
+   "op": "process trajectory",
+   "canonical": "process trajectory",
+   "object": "trajectory",
+   "quote": "improving the efficiency and accuracy of the popular real-time detector YOLOv3",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:detection",
+   "quote": "improving both the efficiency and accuracy",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "introduces a new compact backbone architecture",
+   "grounded": true
+  },
+  {
+   "op": "detect keypoint",
+   "canonical": "detect keypoint",
+   "object": "input",
+   "quote": "Keypoint-based methods are a relatively new paradigm in object detection",
+   "grounded": true
+  },
+  {
+   "op": "generate corner",
+   "canonical": "reconstruct",
+   "object": "INVALID:keypoint",
+   "quote": "Keypoint-based CornerNet achieves state of the art accuracy",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "input",
+   "quote": "CornerNet-Saccade uses an attention mechanism",
+   "grounded": false
+  },
+  {
+   "op": "process image",
+   "canonical": "process image",
+   "object": "input",
+   "quote": "eliminating the need for exhaustively processing all pixels of the image",
+   "grounded": false
+  },
+  {
+   "op": "compute feature",
+   "canonical": "compute feature",
+   "object": "input",
+   "quote": "introduces a new compact backbone architecture",
+   "grounded": true
+  },
+  {
+   "op": "predict keypoint",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "improving the efficiency of CornerNet by 6.0x",
+   "grounded": true
+  },
+  {
+   "op": "refine keypoint",
+   "canonical": "correct",
+   "object": "INVALID:keypoint",
+   "quote": "improving both the efficiency and accuracy",
+   "grounded": true
+  },
+  {
+   "op": "output detection",
+   "canonical": "output detection",
+   "object": "INVALID:keypoint",
+   "quote": "CornerNet-Squeeze is suitable for real-time detection",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "INVALID:detection",
+   "quote": "improving the efficiency and accuracy of the popular real-time detector YOLOv3",
+   "grounded": false
+  },
+  {
+   "op": "compute efficiency",
+   "canonical": "compute efficiency",
+   "object": "INVALID:detection",
+   "quote": "improving both the efficiency and accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compare accuracy",
+   "canonical": "compare",
+   "object": "INVALID:detection",
+   "quote": "improving both the efficiency and accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute ap score",
+   "canonical": "compute ap score",
+   "object": "INVALID:detection",
+   "quote": "34.4% AP at 30ms for CornerNet-Squeeze",
+   "grounded": true
+  },
+  {
+   "op": "compute time",
+   "canonical": "compute time",
+   "object": "INVALID:detection",
+   "quote": "33.0% AP at 39ms for YOLOv3 on COCO",
+   "grounded": true
+  },
+  {
+   "op": "select task",
+   "canonical": "select task",
+   "object": "task",
+   "quote": "improving the efficiency of CornerNet by 6.0x",
+   "grounded": true
+  },
+  {
+   "op": "process trajectory",
+   "canonical": "process trajectory",
+   "object": "trajectory",
+   "quote": "improving the efficiency and accuracy of the popular real-time detector YOLOv3",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:detection",
+   "quote": "improving both the efficiency and accuracy",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "introduces a new compact backbone architecture",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "improving the efficiency and accuracy of the popular real-time detector YOLOv3",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply attention@input",
+  "apply gradient@parameter",
+  "compute feature@input",
+  "correct@parameter",
+  "detect keypoint@input",
+  "predict@input",
+  "process image@input",
+  "process trajectory@trajectory",
+  "select task@task"
+ ]
+}

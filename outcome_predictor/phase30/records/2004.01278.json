@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2004.01278",
+ "source": "abstract",
+ "words": 178,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "factorizing the high-dimensional video feature data into low-dimensional meaningful spaces",
+   "grounded": true
+  },
+  {
+   "op": "split",
+   "canonical": "split",
+   "object": "latent",
+   "quote": "1D channel vector for `what' and 2D spatial tensors for `where'",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "lightweight temporal attention reasoning",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "state",
+   "quote": "action recognition in unconstrained videos",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "action recognition in unconstrained videos",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:prediction",
+   "quote": "extensive experiments show that our attention model brings significant improvements",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our attention model brings significant improvements to existing action recognition models",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "policy",
+   "quote": "action recognition in unconstrained videos",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "state",
+   "quote": "lightweight temporal attention reasoning",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "factorizing the high-dimensional video feature data into low-dimensional meaningful spaces",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "lightweight temporal attention reasoning",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "our attention model brings significant improvements to existing action recognition models",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "our attention model brings significant improvements to existing action recognition models",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "lightweight temporal attention reasoning",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "trajectory",
+   "quote": "lightweight temporal attention reasoning",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "action",
+   "quote": "action recognition in unconstrained videos",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "trajectory",
+   "quote": "lightweight temporal attention reasoning",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "state",
+   "quote": "action recognition in unconstrained videos",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "action",
+   "quote": "action recognition in unconstrained videos",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "extensive experiments show that our attention model brings significant improvements",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "factorizing the high-dimensional video feature data into low-dimensional meaningful spaces",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "lightweight temporal attention, reasoning",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "action",
+   "quote": "lightweight temporal attention reasoning",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "state",
+   "quote": "lightweight temporal attention reasoning",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "trajectory",
+   "quote": "lightweight temporal attention reasoning",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@trajectory",
+  "apply attention@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@value",
+  "compute distribution@action",
+  "compute distribution@state",
+  "compute gradient@parameter",
+  "compute policy@state",
+  "compute reward@action",
+  "compute sample@trajectory",
+  "compute task@trajectory",
+  "compute trajectory@state",
+  "compute value@action",
+  "compute value@state",
+  "correct@parameter",
+  "encode@input",
+  "predict@state",
+  "reconstruct@latent",
+  "reconstruct@state",
+  "sample@distribution",
+  "sample@policy",
+  "sample@sample",
+  "split@latent"
+ ]
+}

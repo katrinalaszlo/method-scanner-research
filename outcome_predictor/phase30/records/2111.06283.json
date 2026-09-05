@@ -1,0 +1,153 @@
+{
+ "arxiv_id": "2111.06283",
+ "source": "abstract",
+ "words": 137,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 20,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "drop nodes",
+   "canonical": "mask",
+   "object": "INVALID:graph",
+   "quote": "some of the nodes randomly and independently dropped",
+   "grounded": true
+  },
+  {
+   "op": "run gnn",
+   "canonical": "run gnn",
+   "object": "INVALID:graph",
+   "quote": "execute multiple runs of a GNN on the input graph",
+   "grounded": true
+  },
+  {
+   "op": "combine results",
+   "canonical": "aggregate",
+   "object": "INVALID:results",
+   "quote": "we combine the results of these runs to obtain the final result",
+   "grounded": true
+  },
+  {
+   "op": "compute neighborhood",
+   "canonical": "compute neighborhood",
+   "object": "INVALID:graph",
+   "quote": "distinguish various graph neighborhoods",
+   "grounded": true
+  },
+  {
+   "op": "propagate messages",
+   "canonical": "transmit",
+   "object": "INVALID:graph",
+   "quote": "message passing GNNs",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "INVALID:graph",
+   "quote": "message passing GNNs",
+   "grounded": true
+  },
+  {
+   "op": "compute representation",
+   "canonical": "compute representation",
+   "object": "INVALID:graph",
+   "quote": "expressiveness of Graph Neural Networks",
+   "grounded": true
+  },
+  {
+   "op": "apply dropout",
+   "canonical": "apply dropout",
+   "object": "INVALID:graph",
+   "quote": "randomly and independently dropped",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "INVALID:graph",
+   "quote": "obtain the final result",
+   "grounded": true
+  },
+  {
+   "op": "evaluate expressiveness",
+   "canonical": "evaluate",
+   "object": "INVALID:graph",
+   "quote": "experimentally validate our theoretical findings on expressiveness",
+   "grounded": true
+  },
+  {
+   "op": "compute bounds",
+   "canonical": "compute bounds",
+   "object": "INVALID:runs",
+   "quote": "derive theoretical bounds for the number of runs",
+   "grounded": true
+  },
+  {
+   "op": "analyze properties",
+   "canonical": "analyze properties",
+   "object": "INVALID:gnn",
+   "quote": "prove several properties regarding the expressive capabilities and limits",
+   "grounded": true
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "INVALID:gnn",
+   "quote": "perform competitively on established GNN benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:output",
+   "quote": "experimentally validate our theoretical findings on expressiveness",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "INVALID:gnn",
+   "quote": "experimentally validate our theoretical findings on expressiveness",
+   "grounded": true
+  },
+  {
+   "op": "sample graph",
+   "canonical": "sample",
+   "object": "INVALID:graph",
+   "quote": "execute multiple runs of a GNN on the input graph",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:dropout",
+   "quote": "derive theoretical bounds for the number of runs",
+   "grounded": true
+  },
+  {
+   "op": "compute reliability",
+   "canonical": "compute reliability",
+   "object": "INVALID:dropout",
+   "quote": "derive theoretical bounds for the number of runs",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "INVALID:graph",
+   "quote": "experimentally validate our theoretical findings on expressiveness",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "INVALID:graph",
+   "quote": "execute multiple runs of a GNN on the input graph",
+   "grounded": true
+  }
+ ],
+ "tuples": []
+}

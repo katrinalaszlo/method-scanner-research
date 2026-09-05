@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1709.04329",
+ "source": "abstract",
+ "words": 181,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 3,
+ "ops": [
+  {
+   "op": "extract part",
+   "canonical": "extract part",
+   "object": "state",
+   "quote": "several part regions are first detected",
+   "grounded": true
+  },
+  {
+   "op": "learn representation",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "deep neural networks are designed for representation learning",
+   "grounded": false
+  },
+  {
+   "op": "generate descriptor",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "generate a discriminative and robust representation",
+   "grounded": false
+  },
+  {
+   "op": "index gallery",
+   "canonical": "index gallery",
+   "object": "trajectory",
+   "quote": "a hierarchical indexing and retrieval framework is designed",
+   "grounded": true
+  },
+  {
+   "op": "retrieve item",
+   "canonical": "retrieve item",
+   "object": "trajectory",
+   "quote": "accelerate the online Re-ID procedure",
+   "grounded": false
+  },
+  {
+   "op": "compare descriptor",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "GLAD achieves competitive accuracy compared to the state-of-the-art methods",
+   "grounded": false
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "Our retrieval framework significantly accelerates the online Re-ID procedure",
+   "grounded": false
+  },
+  {
+   "op": "filter redundant",
+   "canonical": "filter redundant",
+   "object": "trajectory",
+   "quote": "eliminate the huge redundancy in the gallery set",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@distribution",
+  "compute similarity@distribution",
+  "extract part@state",
+  "filter redundant@trajectory",
+  "index gallery@trajectory",
+  "reconstruct@latent",
+  "retrieve item@trajectory",
+  "train@latent"
+ ]
+}

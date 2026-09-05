@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2207.04526",
+ "source": "abstract",
+ "words": 187,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 3,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "semantic scene understanding is essential for mobile agents acting in various environments",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose an efficient multi-task approach for RGB-D scene analysis",
+   "grounded": true
+  },
+  {
+   "op": "generate latent",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we show that all tasks can be accomplished using a single neural network",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the individual tasks are able to benefit from each other",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "we extend the annotations of the common RGB-D indoor datasets",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we are the first to provide results in such a comprehensive multi-task setting",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we show that all tasks can be accomplished using a single neural network",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the individual tasks are able to benefit from each other",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we show that all tasks can be accomplished using a single neural,",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we are the first to provide results in such a comprehensive multi-task setting",
+   "grounded": true
+  },
+  {
+   "op": "classify task",
+   "canonical": "classify",
+   "object": "task",
+   "quote": "we extend the annotations of the common RGB-D indoor datasets",
+   "grounded": true
+  },
+  {
+   "op": "segment instance",
+   "canonical": "segment instance",
+   "object": "INVALID:instance",
+   "quote": "we propose an efficient multi-task approach for RGB-D scene analysis",
+   "grounded": true
+  },
+  {
+   "op": "estimate orientation",
+   "canonical": "predict",
+   "object": "INVALID:orientation",
+   "quote": "we are the first to provide results in such a comprehensive multi-task setting",
+   "grounded": true
+  },
+  {
+   "op": "segment semantic",
+   "canonical": "segment semantic",
+   "object": "INVALID:semantic",
+   "quote": "semantic segmentation already provides a lot of information",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "semantic scene understanding is essential for mobile agents acting in various environments",
+   "grounded": true
+  },
+  {
+   "op": "predict trajectory",
+   "canonical": "predict",
+   "object": "trajectory",
+   "quote": "we are the first to provide results in such a comprehensive multi-task setting",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we are the first to provide results in such a comprehensive multi-task setting",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we propose an efficient multi-task approach for RGB-D scene analysis",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we are the first to provide results in such a comprehensive multi-task setting",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we extend the annotations of the common RGB-D indoor datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the individual tasks are able to benefit from each other",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we extend the annotations of the common RGB-D indoor datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the individual tasks are able to benefit from each other",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we show that all tasks can be accomplished using a single neural network",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "we show that all tasks can be accomplished using a single neural network",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "classify@task",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@distribution",
+  "predict@trajectory",
+  "predict@value",
+  "process input@input",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

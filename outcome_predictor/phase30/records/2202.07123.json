@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2202.07123",
+ "source": "abstract",
+ "words": 205,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "point cloud analysis is challenging due to irregularity and unordered data structure",
+   "grounded": true
+  },
+  {
+   "op": "apply affine transformation",
+   "canonical": "apply affine transformation",
+   "object": "latent",
+   "quote": "equipped with a proposed lightweight geometric affine module",
+   "grounded": true
+  },
+  {
+   "op": "add residual",
+   "canonical": "add residual",
+   "object": "latent",
+   "quote": "we introduce a pure residual MLP network",
+   "grounded": true
+  },
+  {
+   "op": "feed forward",
+   "canonical": "feed forward",
+   "object": "latent",
+   "quote": "we introduce a pure residual MLP network",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "the performance saturates over the past few years",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we emphasize that PointMLP achieves this strong performance without any sophisticated operations",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "PointMLP trains 2x faster, tests 7x faster, and is more accurate on ModelNet40 benchmark",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "our method even surpasses the prior best method by 3.3% accuracy",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our method even surpasses the prior best method by 3.3% accuracy",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "we hope our PointMLP may help the community towards a better understanding of point cloud analysis",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the performance saturates over the past few years",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we introduce a pure residual MLP network",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we introduce a pure residual MLP network",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "our method even surpasses the prior best method by 3.3% accuracy",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we emphasize that PointMLP achieves this strong performance without any sophisticated operations",
+   "grounded": true
+  },
+  {
+   "op": "normalize input",
+   "canonical": "normalize input",
+   "object": "input",
+   "quote": "point cloud analysis is challenging due to irregularity and unordered data structure",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we introduce a pure residual MLP network",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "our method even surpasses the prior best method by 3.3% accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we hope our PointMLP may help the community towards a better understanding of point cloud analysis",
+   "grounded": true
+  },
+  {
+   "op": "track state",
+   "canonical": "track state",
+   "object": "state",
+   "quote": "point cloud analysis is challenging due to irregularity and unordered data structure",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we hope our PointMLP may help the community towards a better understanding of point cloud analysis",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we hope our PointMLP may help the community towards a better understanding of point cloud analysis",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we hope our PointMLP may help the community towards a better understanding of point cloud analysis",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we introduce a pure residual MLP network",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "PointMLP trains 2x faster, tests 7x faster, and is more accurate on ModelNet40 benchmark",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "add residual@latent",
+  "apply affine transformation@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@latent",
+  "compute distribution@distribution",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "feed forward@latent",
+  "normalize input@input",
+  "predict@latent",
+  "process input@input",
+  "reconstruct@latent",
+  "sample@sample",
+  "sample@trajectory",
+  "track state@state"
+ ]
+}

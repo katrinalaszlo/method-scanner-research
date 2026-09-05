@@ -1,0 +1,218 @@
+{
+ "arxiv_id": "1912.02424",
+ "source": "abstract",
+ "words": 214,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 1,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "select sample",
+   "canonical": "select sample",
+   "object": "INVALID:training",
+   "quote": "select positive and negative samples according to statistical characteristics of object",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "improves the performance of anchor-based and anchor-free detectors",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "improves state-of-the-art detectors by a large margin",
+   "grounded": false
+  },
+  {
+   "op": "regress box",
+   "canonical": "regress box",
+   "object": "state",
+   "quote": "regressing from a box or a point",
+   "grounded": true
+  },
+  {
+   "op": "regress point",
+   "canonical": "regress point",
+   "object": "state",
+   "quote": "regressing from a box or a point",
+   "grounded": true
+  },
+  {
+   "op": "define positive",
+   "canonical": "define positive",
+   "object": "sample",
+   "quote": "how to define positive and negative training samples",
+   "grounded": true
+  },
+  {
+   "op": "define negative",
+   "canonical": "define negative",
+   "object": "sample",
+   "quote": "how to define positive and negative training samples",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "value",
+   "quote": "improves state-of-the-art detectors by a large margin",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "improves state-of-the-art detectors by a large margin",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "select positive and negative samples according to statistical characteristics of object",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "update parameters",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "update parameters",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "select positive and negative samples according to statistical characteristics of object",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "improves the performance of anchor-based and anchor-free detectors",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "detect objects",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "detect objects",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "select positive and negative samples according to statistical characteristics of object",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "select positive and negative samples according to statistical characteristics of object",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "improves state-of-the-art detectors by a large margin",
+   "grounded": false
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "select positive and negative samples according to statistical characteristics of object",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "noise",
+   "quote": "select positive and negative samples according to statistical characteristics of object",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "select positive and negative samples according to statistical characteristics of object",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "select positive and negative samples according to statistical characteristics of object",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "improves state-of-the-art detectors by a large margin",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "improves state-of-the-art detectors by a large margin",
+   "grounded": false
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "detect objects",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute noise@noise",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute reward@value",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "define negative@sample",
+  "define positive@sample",
+  "evaluate@error",
+  "regress box@state",
+  "regress point@state",
+  "sample@action"
+ ]
+}

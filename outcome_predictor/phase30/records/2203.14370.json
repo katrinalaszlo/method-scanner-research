@@ -1,0 +1,74 @@
+{
+ "arxiv_id": "2203.14370",
+ "source": "abstract",
+ "words": 189,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 4,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "It trains an encoder by distinguishing positive samples from negative ones given query anchors.",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "INVALID:positive",
+   "quote": "positive and negative samples play critical roles in defining the objective to learn the discriminative encoder",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "INVALID:negative",
+   "quote": "positive and negative samples play critical roles in defining the objective to learn the discriminative encoder",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:contrastive loss",
+   "quote": "we show that the positive and negative samples can be cooperatively and adversarially learned by minimizing and maximizing the contrastive loss",
+   "grounded": true
+  },
+  {
+   "op": "minimize",
+   "canonical": "minimize",
+   "object": "error",
+   "quote": "we show that the positive and negative samples can be cooperatively and adversarially learned by minimizing and maximizing the contrastive loss",
+   "grounded": true
+  },
+  {
+   "op": "maximize",
+   "canonical": "maximize",
+   "object": "error",
+   "quote": "we show that the positive and negative samples can be cooperatively and adversarially learned by minimizing and maximizing the contrastive loss",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "INVALID:encoder",
+   "quote": "positive and negative samples can be cooperatively and adversarially learned by minimizing and maximizing the contrastive loss",
+   "grounded": true
+  },
+  {
+   "op": "track",
+   "canonical": "track",
+   "object": "latent",
+   "quote": "cooperative positives and adversarial negatives with respect to the encoder, which are updated to continuously track the learned representation of the query anchors over mini-batches",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "encode@input",
+  "maximize@error",
+  "minimize@error",
+  "track@latent"
+ ]
+}

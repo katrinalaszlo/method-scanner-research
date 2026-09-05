@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "1804.10745",
+ "source": "abstract",
+ "words": 187,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 12,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "perturb input",
+   "canonical": "intervene",
+   "object": "input",
+   "quote": "domain-guided perturbations of input instances.",
+   "grounded": false
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a sampling step is implemented as data augmentation.",
+   "grounded": true
+  },
+  {
+   "op": "train classifier",
+   "canonical": "train",
+   "object": "INVALID:label",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier.",
+   "grounded": true
+  },
+  {
+   "op": "train classifier",
+   "canonical": "train",
+   "object": "INVALID:domain",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier.",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:label",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:domain",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "augment data",
+   "canonical": "augment",
+   "object": "input",
+   "quote": "a sampling step is implemented as data augmentation.",
+   "grounded": true
+  },
+  {
+   "op": "predict label",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "predict domain",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:label",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:domain",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss, gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "a sampling step is implemented as data augmentation.",
+   "grounded": true
+  },
+  {
+   "op": "compare loss",
+   "canonical": "compare",
+   "object": "INVALID:label",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "compare loss",
+   "canonical": "compare",
+   "object": "INVALID:domain",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "update model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "input",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:label",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:domain",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "domain-guided perturbations of input instances.",
+   "grounded": false
+  },
+  {
+   "op": "resample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "a sampling step is implemented as data augmentation.",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "input",
+   "quote": "a sampling step is implemented as data augmentation.",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:label",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:domain",
+   "quote": "CROSSGRAD parallelly trains a label and a domain classifier on examples perturbed by loss gradients of each other's objectives.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "augment@input",
+  "compute distribution@input",
+  "compute gradient@error",
+  "correct@parameter",
+  "evaluate@input",
+  "intervene@input",
+  "predict@input",
+  "reconstruct@input",
+  "sample@input"
+ ]
+}

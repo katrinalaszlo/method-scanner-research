@@ -1,0 +1,157 @@
+{
+ "arxiv_id": "2203.11378",
+ "source": "abstract",
+ "words": 155,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 16,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "aggregate information",
+   "canonical": "aggregate",
+   "object": "INVALID:support data",
+   "quote": "we utilize a hypernetwork, which takes the aggregated information from support data",
+   "grounded": true
+  },
+  {
+   "op": "return parameters",
+   "canonical": "return parameters",
+   "object": "INVALID:classifier",
+   "quote": "we utilize a hypernetwork, which takes the aggregated information from support data",
+   "grounded": true
+  },
+  {
+   "op": "create parameters",
+   "canonical": "create parameters",
+   "object": "INVALID:classification module",
+   "quote": "we introduce the kernel-based representation of the support examples delivered to hypernetwork to create the parameters of the classification module",
+   "grounded": true
+  },
+  {
+   "op": "represent support examples",
+   "canonical": "encode",
+   "object": "INVALID:support examples",
+   "quote": "we introduce the kernel-based representation of the support examples delivered to hypernetwork to create the parameters of the classification module",
+   "grounded": true
+  },
+  {
+   "op": "rely on relations",
+   "canonical": "rely on relations",
+   "object": "INVALID:embeddings",
+   "quote": "we rely on relations between embeddings of the support examples instead of direct feature values provided by the backbone models",
+   "grounded": true
+  },
+  {
+   "op": "adapt to tasks",
+   "canonical": "adapt to tasks",
+   "object": "INVALID:tasks",
+   "quote": "our model can adapt to highly different tasks",
+   "grounded": true
+  },
+  {
+   "op": "switch parameters",
+   "canonical": "switch parameters",
+   "object": "INVALID:classification module",
+   "quote": "our model aims to switch the classification module parameters depending on the task's embedding",
+   "grounded": true
+  },
+  {
+   "op": "take input",
+   "canonical": "take input",
+   "object": "INVALID:support data",
+   "quote": "we utilize a hypernetwork, which takes the aggregated information from support data",
+   "grounded": true
+  },
+  {
+   "op": "deliver input",
+   "canonical": "deliver input",
+   "object": "INVALID:hypernetwork",
+   "quote": "we introduce the kernel-based representation of the support examples delivered to hypernetwork to create the parameters of the classification module",
+   "grounded": true
+  },
+  {
+   "op": "generate parameters",
+   "canonical": "reconstruct",
+   "object": "INVALID:classification module",
+   "quote": "we introduce the kernel, based representation of the support examples delivered to hypernetwork to create the parameters of the classification module",
+   "grounded": false
+  },
+  {
+   "op": "use embeddings",
+   "canonical": "use embeddings",
+   "object": "INVALID:support examples",
+   "quote": "we rely on relations between embeddings of the support examples instead of direct feature values provided by the backbone models",
+   "grounded": true
+  },
+  {
+   "op": "compare features",
+   "canonical": "compare",
+   "object": "INVALID:backbone models",
+   "quote": "we rely on relations between embeddings of the support examples instead of direct feature values provided by the backbone models",
+   "grounded": true
+  },
+  {
+   "op": "adapt model",
+   "canonical": "adapt model",
+   "object": "parameter",
+   "quote": "our model can adapt to highly different tasks",
+   "grounded": true
+  },
+  {
+   "op": "map task",
+   "canonical": "encode",
+   "object": "task",
+   "quote": "our model aims to switch the classification module parameters depending on the task's embedding",
+   "grounded": true
+  },
+  {
+   "op": "embed task",
+   "canonical": "encode",
+   "object": "task",
+   "quote": "our model aims to switch the classification module parameters depending on the task's embedding",
+   "grounded": true
+  },
+  {
+   "op": "generate classifier",
+   "canonical": "reconstruct",
+   "object": "INVALID:classification module",
+   "quote": "we introduce the kernel-based representation of the support examples delivered to hypernetwork to create the parameters of the classification module",
+   "grounded": true
+  },
+  {
+   "op": "construct parameters",
+   "canonical": "construct parameters",
+   "object": "INVALID:classification module",
+   "quote": "we introduce the kernel-based representation of the support examples delivered to hypernetwork to create the parameters of the classification module",
+   "grounded": true
+  },
+  {
+   "op": "use kernel",
+   "canonical": "use kernel",
+   "object": "INVALID:support examples",
+   "quote": "we introduce the kernel-based representation of the support examples delivered to hypernetwork to create the parameters of the classification module",
+   "grounded": true
+  },
+  {
+   "op": "create representation",
+   "canonical": "create representation",
+   "object": "INVALID:support examples",
+   "quote": "we introduce the kernel-based representation of the support examples delivered to hypernetwork to create the parameters of the classification module",
+   "grounded": true
+  },
+  {
+   "op": "use hypernetwork",
+   "canonical": "use hypernetwork",
+   "object": "task",
+   "quote": "our model aims to switch the classification module parameters depending on the task's embedding",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "adapt model@parameter",
+  "encode@task",
+  "use hypernetwork@task"
+ ]
+}

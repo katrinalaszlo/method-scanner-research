@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2203.15625",
+ "source": "abstract",
+ "words": 245,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 4,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the pose estimator transforms an input 2D pose sequence to a low-fidelity 3D output",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "the imitator that enforces physical constraints",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "INVALID:pose",
+   "quote": "the refined 3D poses are subsequently fed to the hallucinator",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "producing even more diverse data",
+   "grounded": true
+  },
+  {
+   "op": "enforce",
+   "canonical": "enforce",
+   "object": "INVALID:constraint",
+   "quote": "the imitator that enforces physical constraints",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the three components form two loops during the training process",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the imitator and further utilized to train the pose estimator",
+   "grounded": true
+  },
+  {
+   "op": "hallucinate",
+   "canonical": "hallucinate",
+   "object": "INVALID:pose",
+   "quote": "the hallucinator for producing even more diverse data",
+   "grounded": true
+  },
+  {
+   "op": "feed",
+   "canonical": "feed",
+   "object": "INVALID:data",
+   "quote": "the refined 3D poses are subsequently fed to the hallucinator",
+   "grounded": true
+  },
+  {
+   "op": "co-evolve",
+   "canonical": "co-evolve",
+   "object": "parameter",
+   "quote": "such a co-evolution scheme, in practice, enables training a pose estimator",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "self-generated motion data without relying on any given 3D data",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "the three components form two loops during the training process",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the imitator that enforces physical constraints",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the imit,ator that enforces physical constraints",
+   "grounded": false
+  },
+  {
+   "op": "reinforce",
+   "canonical": "reinforce",
+   "object": "policy",
+   "quote": "a reinforcement-learning-based imitator",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "sample",
+   "quote": "producing even more diverse data",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "distribution",
+   "quote": "the refined 3D poses are subsequently fed to the hallucinator",
+   "grounded": true
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "gradient",
+   "quote": "the three components form two loops during the training process",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "parameter",
+   "quote": "the three components form two loops during the training process",
+   "grounded": true
+  },
+  {
+   "op": "simulate",
+   "canonical": "simulate",
+   "object": "trajectory",
+   "quote": "self-generated motion data without relying on any given 3D data",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "extensive experiments across various benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "significantly outperforming the state of the art",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "the imitator that enforces physical constraints",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "self-generated motion data without relying on any given 3D data",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "policy",
+   "quote": "the imitator and further utilized to train the pose estimator",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@parameter",
+  "aggregate@sample",
+  "co-evolve@parameter",
+  "compare@parameter",
+  "compute@error",
+  "compute@value",
+  "correct@distribution",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "improve@parameter",
+  "predict@latent",
+  "reconstruct@latent",
+  "reconstruct@sample",
+  "reconstruct@trajectory",
+  "reinforce@policy",
+  "sample@trajectory",
+  "simulate@trajectory",
+  "train@parameter",
+  "train@policy",
+  "transmit@gradient"
+ ]
+}

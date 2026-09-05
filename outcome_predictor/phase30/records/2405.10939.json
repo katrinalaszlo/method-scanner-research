@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2405.10939",
+ "source": "abstract",
+ "words": 180,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "cross-entropy loss between K-dimensional probability vectors",
+   "grounded": false
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "latent",
+   "quote": "learned representations are L2-normalized",
+   "grounded": false
+  },
+  {
+   "op": "compute dot product",
+   "canonical": "compute dot product",
+   "object": "latent",
+   "quote": "dot product between representations and learnt prototypes",
+   "grounded": true
+  },
+  {
+   "op": "apply softmax",
+   "canonical": "apply softmax",
+   "object": "latent",
+   "quote": "obtained by applying a softmax function to the dot product",
+   "grounded": true
+  },
+  {
+   "op": "compute cluster assignment",
+   "canonical": "compute cluster assignment",
+   "object": "distribution",
+   "quote": "cluster assignment probabilities",
+   "grounded": true
+  },
+  {
+   "op": "normalize prototypes",
+   "canonical": "normalize prototypes",
+   "object": "latent",
+   "quote": "prototypes are also L2-normalized",
+   "grounded": false
+  },
+  {
+   "op": "add normalization constants",
+   "canonical": "add normalization constants",
+   "object": "distribution",
+   "quote": "adds appropriate normalization constants when computing the cluster assignment probabilities",
+   "grounded": true
+  },
+  {
+   "op": "compute representation",
+   "canonical": "compute representation",
+   "object": "latent",
+   "quote": "learned representations",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "DINO-vMF pre-trained model",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "performs better than DINO on a range of downstream tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "improvements for iBOT-vMF vs iBOT",
+   "grounded": true
+  },
+  {
+   "op": "compare models",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "show the relevance of our proposed modification also for other methods derived from DINO",
+   "grounded": true
+  },
+  {
+   "op": "compute probability",
+   "canonical": "compute probability",
+   "object": "distribution",
+   "quote": "cluster assignment probabilities",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "DINO-vMF pre-trained model",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "improvements for iBOT-vMF vs iBOT",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "DINO-vMF pre-trained model",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "cluster assignment probabilities",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "cluster assignment probabilities",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "cross-entropy loss between K-dimensional probability vectors",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "DINO-vMF pre-trained model",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "cluster assignment probabilities",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "DINO-vMF pre-trained model",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "DINO-vMF pre-trained model",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "DINO-vMF pre-trained model",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "cluster assignment probabilities",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "add normalization constants@distribution",
+  "apply softmax@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compare@task",
+  "compute cluster assignment@distribution",
+  "compute distribution@distribution",
+  "compute dot product@latent",
+  "compute gradient@gradient",
+  "compute probability@distribution",
+  "compute representation@latent",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "normalize prototypes@latent",
+  "normalize@latent",
+  "reconstruct@noise",
+  "sample@sample",
+  "train@parameter"
+ ]
+}

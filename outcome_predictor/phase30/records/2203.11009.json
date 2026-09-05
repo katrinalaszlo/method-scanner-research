@@ -1,0 +1,171 @@
+{
+ "arxiv_id": "2203.11009",
+ "source": "abstract",
+ "words": 155,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 2,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "whole temporal sequences as their input",
+   "grounded": true
+  },
+  {
+   "op": "construct graph",
+   "canonical": "construct graph",
+   "object": "state",
+   "quote": "graph-based reasoning over skeleton data",
+   "grounded": true
+  },
+  {
+   "op": "compute message",
+   "canonical": "compute message",
+   "object": "latent",
+   "quote": "spatio-temporal graph convolutional neural network",
+   "grounded": true
+  },
+  {
+   "op": "aggregate messages",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "spatio-temporal graph convolutional neural network",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "spatio-temporal graph convolutional neural network",
+   "grounded": true
+  },
+  {
+   "op": "predict next state",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "step-by-step predictions in time",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "weight transfer strategies and architectural modifications",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "retaining similar predictive accuracy",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate error",
+   "canonical": "backpropagate error",
+   "object": "gradient",
+   "quote": "retaining similar predictive accuracy",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "retaining similar predictive, accuracy",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "online inference",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "online inference",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "online inference",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "online inference",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "online inference",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "online inference",
+   "grounded": true
+  },
+  {
+   "op": "store trajectory",
+   "canonical": "store trajectory",
+   "object": "trajectory",
+   "quote": "online inference",
+   "grounded": true
+  },
+  {
+   "op": "allocate memory",
+   "canonical": "allocate memory",
+   "object": "INVALID:memory",
+   "quote": "reductions in maximum allocated memory",
+   "grounded": true
+  },
+  {
+   "op": "free memory",
+   "canonical": "free memory",
+   "object": "INVALID:memory",
+   "quote": "reductions in maximum allocated memory",
+   "grounded": true
+  },
+  {
+   "op": "accelerate computation",
+   "canonical": "accelerate computation",
+   "object": "parameter",
+   "quote": "on-hardware accelerations of 26x",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "accelerate computation@parameter",
+  "aggregate@latent",
+  "apply convolution@latent",
+  "backpropagate error@gradient",
+  "clip gradient@gradient",
+  "compare@error",
+  "compute message@latent",
+  "compute reward@reward",
+  "compute value@value",
+  "construct graph@state",
+  "correct@parameter",
+  "predict@state",
+  "process input@input",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "store trajectory@trajectory"
+ ]
+}

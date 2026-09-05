@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2102.11533",
+ "source": "abstract",
+ "words": 245,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "we formulate the graph pooling problem as a multiset encoding problem",
+   "grounded": false
+  },
+  {
+   "op": "pool",
+   "canonical": "pool",
+   "object": "latent",
+   "quote": "we propose a Graph Multiset Transformer (GMT) which is a multi-head attention based global pooling layer",
+   "grounded": false
+  },
+  {
+   "op": "attend",
+   "canonical": "attend",
+   "object": "distribution",
+   "quote": "captures the interaction between nodes according to their structural dependencies",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "a simple sum or average over all node representations",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "multi-head attention based global pooling layer",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "our methods can be easily extended to the previous node clustering approaches",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "distribution",
+   "quote": "satisfies both injectiveness and permutation invariance",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "obtains even larger performance gain on graph reconstruction and generation tasks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our experimental results show that GMT significantly outperforms state-of-the-art graph pooling methods",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our methods can be easily extended to the previous node clustering approaches",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "captures the interaction between nodes according to their structural dependencies",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we formulate the graph pooling problem as a multiset encoding problem",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "obtains even larger performance gain on graph reconstruction and generation tasks",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "our methods can be easily extended to the previous node clustering approaches",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "captures the interaction between nodes according to their structural dependencies",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "our experimental results show that GMT significantly outperforms state-of-the-art graph pooling methods",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we propose a Graph Multiset Transformer (GMT) which is a multi-head attention based global pooling layer",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "policy",
+   "quote": "our methods can be easily extended to the previous node clustering approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "our experimental results show that GMT significantly outperforms state-of-the-art graph pooling methods",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "trajectory",
+   "quote": "obtains even larger performance gain on graph reconstruction and generation tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "input",
+   "quote": "we formulate the graph pooling problem as a multiset encoding problem",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "parameter",
+   "quote": "our methods can be easily extended to the previous node clustering approaches",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "captures the interaction between nodes according to their structural dependencies",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we formulate the graph pooling problem as a multiset encoding problem",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "sample",
+   "quote": "captures the interaction between nodes according to their structural dependencies",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "attend@distribution",
+  "backpropagate@gradient",
+  "compare@distribution",
+  "compute@distribution",
+  "compute@error",
+  "compute@input",
+  "compute@parameter",
+  "compute@policy",
+  "compute@reward",
+  "compute@sample",
+  "compute@task",
+  "compute@trajectory",
+  "compute@value",
+  "correct@parameter",
+  "encode@state",
+  "evaluate@task",
+  "pool@latent",
+  "predict@value",
+  "reconstruct@noise",
+  "reconstruct@trajectory",
+  "sample@distribution",
+  "sample@sample",
+  "transform@latent"
+ ]
+}

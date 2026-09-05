@@ -1,0 +1,142 @@
+{
+ "arxiv_id": "2403.05897",
+ "source": "abstract",
+ "words": 195,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 0,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "generate anomaly",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "generating samples with varying anomaly strengths",
+   "grounded": true
+  },
+  {
+   "op": "diffuse",
+   "canonical": "diffuse",
+   "object": "noise",
+   "quote": "diffusion process-based synthesis strategy",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "feature reconstruction methods",
+   "grounded": true
+  },
+  {
+   "op": "select feature",
+   "canonical": "select feature",
+   "object": "latent",
+   "quote": "selecting representative and discriminative pre-trained feature subsets",
+   "grounded": true
+  },
+  {
+   "op": "compute residual",
+   "canonical": "compute residual",
+   "object": "latent",
+   "quote": "Reconstruction Residuals Selection",
+   "grounded": true
+  },
+  {
+   "op": "select residual",
+   "canonical": "select residual",
+   "object": "error",
+   "quote": "adaptively selects discriminative residuals",
+   "grounded": true
+  },
+  {
+   "op": "compute anomaly score",
+   "canonical": "compute anomaly score",
+   "object": "distribution",
+   "quote": "improve anomaly detection performance",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "pre-training bias of pre-trained feature",
+   "grounded": true
+  },
+  {
+   "op": "sample anomaly",
+   "canonical": "sample",
+   "object": "noise",
+   "quote": "Strength-controllable Diffusion Anomaly Synthesis",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "feature redundancy and pre-training bias",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "improve anomaly detection performance",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "pre-training bias of pre-trained feature",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "reward",
+   "quote": "improve anomaly detection performance",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "diffusion process-based synthesis strategy",
+   "grounded": true
+  },
+  {
+   "op": "predict anomaly",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "comprehensive identification of anomalous regions",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "multiple levels of granularity",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "compute anomaly score@distribution",
+  "compute residual@latent",
+  "compute trajectory@trajectory",
+  "compute value@reward",
+  "correct@parameter",
+  "diffuse@noise",
+  "evaluate@error",
+  "predict@distribution",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "sample@noise",
+  "select feature@latent",
+  "select residual@error"
+ ]
+}

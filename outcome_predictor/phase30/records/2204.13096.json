@@ -1,0 +1,201 @@
+{
+ "arxiv_id": "2204.13096",
+ "source": "abstract",
+ "words": 266,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 8,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose a causality-aware self-supervised learning method",
+   "grounded": true
+  },
+  {
+   "op": "predict shape",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "the proposed model structure follows the spirit of the causal map",
+   "grounded": true
+  },
+  {
+   "op": "predict texture",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "the proposed model structure follows the spirit of the causal map",
+   "grounded": true
+  },
+  {
+   "op": "predict illumination",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "the proposed model structure follows the spirit of the causal map",
+   "grounded": true
+  },
+  {
+   "op": "predict camera position",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "the proposed model structure follows the spirit of the causal map",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the causality intervention tool, i.e., two expectation-maximization loops",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the causality intervention tool, i.e., two expectation-maximization loops",
+   "grounded": true
+  },
+  {
+   "op": "disentangle encoders",
+   "canonical": "disentangle encoders",
+   "object": "INVALID:encoder",
+   "quote": "the causality intervention tool, i.e., two expectation-maximization loops",
+   "grounded": true
+  },
+  {
+   "op": "sample from distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "we introduce an explainable structural causal map (SCM} to build our model",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct 3d shape",
+   "canonical": "reconstruct",
+   "object": "INVALID:shape",
+   "quote": "we propose a causality-aware self-supervised learning method",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct 3d texture",
+   "canonical": "reconstruct",
+   "object": "INVALID:texture",
+   "quote": "we propose a causality-aware self-supervised learning method",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct 3d illumination",
+   "canonical": "reconstruct",
+   "object": "INVALID:illumination",
+   "quote": "we propose a causality-aware self-supervised learning method",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct 3d camera position",
+   "canonical": "reconstruct",
+   "object": "INVALID:camera position",
+   "quote": "we propose a caus,ality-aware self-supervised learning method",
+   "grounded": false
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "the causality intervention tool, i.e., two expectation-maximization loops",
+   "grounded": true
+  },
+  {
+   "op": "apply expectation maximization",
+   "canonical": "apply expectation maximization",
+   "object": "parameter",
+   "quote": "the causality intervention tool, i.e., two expectation-maximization loops",
+   "grounded": true
+  },
+  {
+   "op": "intervene causal variables",
+   "canonical": "intervene",
+   "object": "latent",
+   "quote": "the causality intervention tool, i.e., two expectation-maximization loops",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the causality intervention tool, i.e., two expectation-maximization loops",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate gradients",
+   "canonical": "backpropagate gradients",
+   "object": "gradient",
+   "quote": "the causality intervention tool, i.e., two expectation-maximization loops",
+   "grounded": true
+  },
+  {
+   "op": "update encoder weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the causality intervention tool, i.e., two expectation-maximization loops",
+   "grounded": true
+  },
+  {
+   "op": "apply prior template",
+   "canonical": "apply prior template",
+   "object": "INVALID:shape",
+   "quote": "the proposed model structure follows the spirit of the causal map",
+   "grounded": true
+  },
+  {
+   "op": "generate 3d output",
+   "canonical": "reconstruct",
+   "object": "INVALID:shape",
+   "quote": "we propose a causality-aware self-supervised learning method",
+   "grounded": true
+  },
+  {
+   "op": "denoise latent variables",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we introduce an explainable structural causal map (SCM} to build our model",
+   "grounded": true
+  },
+  {
+   "op": "sample from distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "we introduce an explainable structural causal map (SCM} to build our model",
+   "grounded": true
+  },
+  {
+   "op": "compute causal intervention",
+   "canonical": "compute causal intervention",
+   "object": "latent",
+   "quote": "the causality intervention tool, i.e., two expectation-maximization loops",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct 3d object",
+   "canonical": "reconstruct",
+   "object": "INVALID:object",
+   "quote": "we propose a causality-aware self-supervised learning method",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply expectation maximization@parameter",
+  "backpropagate gradients@gradient",
+  "compare@error",
+  "compute causal intervention@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "improve@parameter",
+  "intervene@latent",
+  "predict@latent",
+  "reconstruct@latent",
+  "sample@distribution"
+ ]
+}

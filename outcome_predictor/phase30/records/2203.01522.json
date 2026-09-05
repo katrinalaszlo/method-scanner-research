@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2203.01522",
+ "source": "abstract",
+ "words": 242,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "we propose to enable deep neural networks themselves with the ability to learn the sample relationships",
+   "grounded": true
+  },
+  {
+   "op": "apply batch transformer",
+   "canonical": "apply batch transformer",
+   "object": "INVALID:batch",
+   "quote": "we introduce a batch transformer module or BatchFormer, which is then applied into the batch dimension",
+   "grounded": true
+  },
+  {
+   "op": "compute latent representation",
+   "canonical": "compute latent representation",
+   "object": "state",
+   "quote": "the proposed method enables the collaboration of different samples",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "distribution",
+   "quote": "the proposed method achieves significant improvements on different data scarcity applications",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "to mitigate the gap between training and testing",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we share the classifier between with or without the BatchFormer during training",
+   "grounded": true
+  },
+  {
+   "op": "remove classifier",
+   "canonical": "remove classifier",
+   "object": "policy",
+   "quote": "which can thus be removed during testing",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the proposed method enables the collaboration of different samples",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the proposed method achieves significant improvements on different data scarcity applications",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we propose to enable deep neural networks themselves with the ability to learn the sample relationships",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the proposed method achieves significant improvements on different data scarcity applications",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the proposed to enable deep neural networks themselves with the ability to learn the sample relationships",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we share the classifier between with or without the BatchFormer during training",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the proposed method enables the collaboration of different samples",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the proposed method achieves significant improvements on different data scarcity applications",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the proposed method achieves significant improvements on different data scarcity applications",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we share the classifier between with or without the BatchFormer during training",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "we propose to enable deep neural networks themselves with the ability to learn the sample relationships",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "the proposed method enables the collaboration of different samples",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "to mitigate the gap between training and testing",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we share the classifier between with or without the BatchFormer during training",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the proposed method achieves significant improvements on different data scarcity applications",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the proposed method achieves significant improvements on different data scarcity applications",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the proposed method enables the collaboration of different samples",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the proposed method achieves significant improvements on different data scarcity applications",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute latent representation@state",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@distribution",
+  "compute value@value",
+  "correct@parameter",
+  "predict@value",
+  "process input@input",
+  "reconstruct@noise",
+  "remove classifier@policy",
+  "sample@action",
+  "sample@sample"
+ ]
+}

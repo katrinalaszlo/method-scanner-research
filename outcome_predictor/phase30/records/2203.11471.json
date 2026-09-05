@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2203.11471",
+ "source": "abstract",
+ "words": 180,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "convert input",
+   "canonical": "convert input",
+   "object": "input",
+   "quote": "we convert the input from pixel space to 3D normalized rays",
+   "grounded": true
+  },
+  {
+   "op": "model distribution",
+   "canonical": "model distribution",
+   "object": "distribution",
+   "quote": "jointly models the distribution between the 3D pose rays and camera extrinsic parameters",
+   "grounded": true
+  },
+  {
+   "op": "take input",
+   "canonical": "take input",
+   "object": "INVALID:camera",
+   "quote": "explicitly takes the camera extrinsic parameters as an input",
+   "grounded": true
+  },
+  {
+   "op": "predict ray",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "convert the input from pixel space to 3D normalized rays",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "accurate and generalizable absolute 3D human pose estimation from monocular 2D pose input is an ill-posed problem",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "this novel network design is the key to the outstanding generalizability of Ray3D approach",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we conduct in-depth systematic experiments on three single person 3D benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "evaluate accuracy",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "these experiments demonstrate that our method significantly outperforms existing state-of-the-art models",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "convert input@input",
+  "correct@parameter",
+  "evaluate@value",
+  "model distribution@distribution",
+  "predict@state",
+  "sample@action"
+ ]
+}

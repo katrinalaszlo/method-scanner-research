@@ -1,0 +1,75 @@
+{
+ "arxiv_id": "2103.03230",
+ "source": "abstract",
+ "words": 225,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 3,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute cross correlation",
+   "canonical": "compute cross correlation",
+   "object": "INVALID:output",
+   "quote": "measuring the cross-correlation matrix between the outputs",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "making it as close to the identity matrix as possible",
+   "grounded": true
+  },
+  {
+   "op": "apply distortion",
+   "canonical": "apply distortion",
+   "object": "input",
+   "quote": "fed with distorted versions of a sample",
+   "grounded": true
+  },
+  {
+   "op": "feed input",
+   "canonical": "feed input",
+   "object": "parameter",
+   "quote": "two identical networks fed with distorted versions of a sample",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "parameter",
+   "quote": "outputs of two identical networks",
+   "grounded": true
+  },
+  {
+   "op": "compute identity matrix",
+   "canonical": "compute identity matrix",
+   "object": "INVALID:matrix",
+   "quote": "making it as close to the identity matrix as possible",
+   "grounded": true
+  },
+  {
+   "op": "minimize redundancy",
+   "canonical": "minimize redundancy",
+   "object": "INVALID:vector",
+   "quote": "minimizing the redundancy between the components of these vectors",
+   "grounded": true
+  },
+  {
+   "op": "learn embedding",
+   "canonical": "train",
+   "object": "input",
+   "quote": "learn embeddings which are invariant to distortions of the input sample",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply distortion@input",
+  "correct@parameter",
+  "feed input@parameter",
+  "reconstruct@parameter",
+  "train@input"
+ ]
+}

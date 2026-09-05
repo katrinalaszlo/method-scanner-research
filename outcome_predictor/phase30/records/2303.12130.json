@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2303.12130",
+ "source": "abstract",
+ "words": 181,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute embedding",
+   "canonical": "compute embedding",
+   "object": "state",
+   "quote": "learnable embeddings from augmented and non-augmented views",
+   "grounded": true
+  },
+  {
+   "op": "apply augmentation",
+   "canonical": "apply augmentation",
+   "object": "state",
+   "quote": "learnable embeddings from augmented and non-augmented views",
+   "grounded": true
+  },
+  {
+   "op": "maximize dependence",
+   "canonical": "maximize dependence",
+   "object": "latent",
+   "quote": "maximization of dependence between learnable embeddings",
+   "grounded": true
+  },
+  {
+   "op": "compute representation",
+   "canonical": "compute representation",
+   "object": "state",
+   "quote": "learnable embeddings from augmented view and multiple non-learnable representations",
+   "grounded": true
+  },
+  {
+   "op": "compute non-learnable representation",
+   "canonical": "compute non-learnable representation",
+   "object": "state",
+   "quote": "learnable embeddings from augmented view and multiple non-learnable representations",
+   "grounded": true
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "latent",
+   "quote": "incorporation of constraints on the learnable embeddings",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "maximization of dependence between learnable embeddings",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "proposed method can be used for efficient self-supervised classification",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply augmentation@state",
+  "apply regularization@latent",
+  "compute embedding@state",
+  "compute non-learnable representation@state",
+  "compute representation@state",
+  "correct@parameter",
+  "evaluate@error",
+  "maximize dependence@latent"
+ ]
+}

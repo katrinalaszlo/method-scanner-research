@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2303.15140",
+ "source": "abstract",
+ "words": 207,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "a pre-trained Feature Extractor that generates local features",
+   "grounded": true
+  },
+  {
+   "op": "transfer features",
+   "canonical": "transfer features",
+   "object": "latent",
+   "quote": "a shallow Feature Adapter that transfers local features towards target domain",
+   "grounded": true
+  },
+  {
+   "op": "generate anomaly",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "a simple Anomaly Feature Generator that counterfeits anomaly features",
+   "grounded": true
+  },
+  {
+   "op": "add noise",
+   "canonical": "diffuse",
+   "object": "latent",
+   "quote": "by adding Gaussian noise to normal features",
+   "grounded": true
+  },
+  {
+   "op": "discriminate anomaly",
+   "canonical": "discriminate anomaly",
+   "object": "latent",
+   "quote": "a binary Anomaly Discriminator that distinguishes anomaly features",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "reducing the error by 55.5% compared to the next best performing model",
+   "grounded": true
+  },
+  {
+   "op": "detect anomaly",
+   "canonical": "detect anomaly",
+   "object": "latent",
+   "quote": "detecting and localizing anomalies",
+   "grounded": true
+  },
+  {
+   "op": "output result",
+   "canonical": "output result",
+   "object": "state",
+   "quote": "Our approach is based on three intuitions",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "detect anomaly@latent",
+  "diffuse@latent",
+  "discriminate anomaly@latent",
+  "encode@input",
+  "output result@state",
+  "reconstruct@latent",
+  "transfer features@latent"
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "arxiv_id": "1903.06586",
+ "source": "abstract",
+ "words": 205,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 3,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "input",
+   "quote": "softmax attention that is guided by the information in these branches",
+   "grounded": true
+  },
+  {
+   "op": "fuse branches",
+   "canonical": "fuse branches",
+   "object": "input",
+   "quote": "multiple branches with different kernel sizes are fused using softmax attention",
+   "grounded": false
+  },
+  {
+   "op": "apply kernel",
+   "canonical": "apply kernel",
+   "object": "input",
+   "quote": "multiple branches with different kernel sizes are fused using softmax attention",
+   "grounded": false
+  },
+  {
+   "op": "adjust receptive field",
+   "canonical": "correct",
+   "object": "INVALID:neuron",
+   "quote": "each neuron to adaptively adjust its receptive field size based on multiple scales of input information",
+   "grounded": true
+  },
+  {
+   "op": "select kernel size",
+   "canonical": "select kernel size",
+   "object": "INVALID:neuron",
+   "quote": "each neuron to adaptively adjust its receptive field size based on multiple scales of input information",
+   "grounded": true
+  },
+  {
+   "op": "compute effective receptive field",
+   "canonical": "compute effective receptive field",
+   "object": "INVALID:neuron",
+   "quote": "different attentions on these branches yield different sizes of the effective receptive fields of neurons",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "input",
+   "quote": "multiple branches with different kernel sizes are fused using softmax attention",
+   "grounded": false
+  },
+  {
+   "op": "construct network",
+   "canonical": "construct network",
+   "object": "input",
+   "quote": "multiple SK units are stacked to a deep network termed Selective Kernel Networks (SKNets)",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@input",
+  "apply kernel@input",
+  "compute attention@input",
+  "construct network@input",
+  "fuse branches@input"
+ ]
+}

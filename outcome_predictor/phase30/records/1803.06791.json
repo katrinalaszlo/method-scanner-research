@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1803.06791",
+ "source": "abstract",
+ "words": 140,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 2,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "we present Depth-aware CNN by introducing two intuitive, flexible and effective operations",
+   "grounded": false
+  },
+  {
+   "op": "apply pooling",
+   "canonical": "apply pooling",
+   "object": "latent",
+   "quote": "we present Depth-aware CNN by introducing two intuitive, flexible and effective operations",
+   "grounded": false
+  },
+  {
+   "op": "compute depth similarity",
+   "canonical": "compute depth similarity",
+   "object": "state",
+   "quote": "by leveraging depth similarity between pixels in the process of information propagation",
+   "grounded": false
+  },
+  {
+   "op": "propagate information",
+   "canonical": "transmit",
+   "object": "state",
+   "quote": "by leveraging depth similarity between pixels in the process of information propagation",
+   "grounded": false
+  },
+  {
+   "op": "integrate geometry",
+   "canonical": "integrate geometry",
+   "object": "latent",
+   "quote": "geometry is seamlessly incorporated into CNN",
+   "grounded": true
+  },
+  {
+   "op": "compute feature map",
+   "canonical": "compute feature map",
+   "object": "input",
+   "quote": "we present Depth-aware CNN by introducing two intuitive, flexible and effective operations",
+   "grounded": false
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "we present Depth-aware CNN by introducing two intuitive, flexible and effective operations",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "extensive experiments and ablation studies on challenging RGB-D semantic segmentation benchmarks validate the effectiveness and flexibility of our approach",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "apply pooling@latent",
+  "compute depth similarity@state",
+  "compute feature map@input",
+  "integrate geometry@latent",
+  "reconstruct@distribution",
+  "transmit@state"
+ ]
+}

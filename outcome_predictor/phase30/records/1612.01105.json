@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "1612.01105",
+ "source": "abstract",
+ "words": 114,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "exploit the capability of global context information",
+   "grounded": true
+  },
+  {
+   "op": "pool",
+   "canonical": "pool",
+   "object": "latent",
+   "quote": "different-region-based context aggregation through our pyramid pooling",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "different-region-based context aggregation through our pyramid pooling",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "different-region-based context aggregation through our pyramid pooling",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "superior framework for pixel-level prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "produce good quality results on the scene parsing task",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "superior framework for pixel-level prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "proposed approach achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "produce good quality results on the scene parsing task",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "proposed approach achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "proposed approach achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:accuracy",
+   "quote": "new record of mIoU accuracy 85.4% on PASCAL VOC 2012",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:accuracy",
+   "quote": "new record of mIoU accuracy 80.2% on Cityscapes",
+   "grounded": false
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "value",
+   "quote": "came first in ImageNet scene parsing challenge 2016",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "came first in ImageNet scene parsing challenge 2016",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "distribution",
+   "quote": "superior framework for pixel-level prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "superior framework for pixel-level prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "superior framework for pixel-level prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "distribution",
+   "quote": "superior framework for pixel-level prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "classify",
+   "canonical": "classify",
+   "object": "sample",
+   "quote": "superior framework for pixel-level prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "trajectory",
+   "quote": "superior framework for pixel-level prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "superior framework for pixel-level prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "superior framework for pixel-level prediction tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "proposed approach achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "gradient",
+   "quote": "proposed approach achieves state-of-the-art performance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "classify@sample",
+  "compare@value",
+  "compute@error",
+  "compute@gradient",
+  "compute@reward",
+  "compute@task",
+  "compute@trajectory",
+  "compute@value",
+  "correct@distribution",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@value",
+  "improve@parameter",
+  "output@distribution",
+  "pool@latent",
+  "predict@distribution",
+  "reconstruct@distribution",
+  "reconstruct@sample",
+  "sample@distribution"
+ ]
+}

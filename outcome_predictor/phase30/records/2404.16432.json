@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2404.16432",
+ "source": "abstract",
+ "words": 140,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we introduce a sequencer that orders point cloud patch embeddings",
+   "grounded": true
+  },
+  {
+   "op": "compute proximity",
+   "canonical": "compute proximity",
+   "object": "latent",
+   "quote": "efficiently compute and utilize their proximity based on the indices",
+   "grounded": true
+  },
+  {
+   "op": "select context",
+   "canonical": "select context",
+   "object": "latent",
+   "quote": "during target and context selection",
+   "grounded": true
+  },
+  {
+   "op": "select target",
+   "canonical": "select target",
+   "object": "latent",
+   "quote": "during target and context selection",
+   "grounded": true
+  },
+  {
+   "op": "compute shared proximity",
+   "canonical": "compute shared proximity",
+   "object": "latent",
+   "quote": "shared computations of the patch embeddings' proximity between context and target selection",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "a joint embedding predictive architecture",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our method achieves competitive results with state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "avoiding the reconstruction in the input space or additional modality",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute proximity@latent",
+  "compute shared proximity@latent",
+  "correct@parameter",
+  "encode@input",
+  "predict@latent",
+  "sample@action",
+  "select context@latent",
+  "select target@latent"
+ ]
+}

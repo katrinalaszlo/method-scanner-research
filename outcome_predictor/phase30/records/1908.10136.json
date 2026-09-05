@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "1908.10136",
+ "source": "abstract",
+ "words": 213,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "state",
+   "quote": "extracts this complementary information of different modality",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "jointly optimizing a modality ranking constraint and a cross-entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "jointly optimizing a modality ranking constraint and a cross-entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "compute embedding",
+   "canonical": "compute embedding",
+   "object": "latent",
+   "quote": "constitutes intra-modality discriminative embedding",
+   "grounded": true
+  },
+  {
+   "op": "compute triplet constraint",
+   "canonical": "compute triplet constraint",
+   "object": "distribution",
+   "quote": "constitutes intra-modality discriminative embedding and inter-modality triplet constraint",
+   "grounded": true
+  },
+  {
+   "op": "reduce variation",
+   "canonical": "reduce variation",
+   "object": "latent",
+   "quote": "reduces both the intra-modality and cross-modality feature variations",
+   "grounded": true
+  },
+  {
+   "op": "compute cross-entropy",
+   "canonical": "compute cross-entropy",
+   "object": "error",
+   "quote": "jointly optimizing a modality ranking constraint and a cross-entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "compute ranking constraint",
+   "canonical": "compute ranking constraint",
+   "object": "distribution",
+   "quote": "constitutes intra-modality discriminative embedding and inter-modality triplet constraint",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "extracts this complementary information of different modality from a connection block",
+   "grounded": true
+  },
+  {
+   "op": "compute correlation",
+   "canonical": "compute correlation",
+   "object": "distribution",
+   "quote": "aims at exploring correlations of different stream features",
+   "grounded": true
+  },
+  {
+   "op": "apply constraint",
+   "canonical": "apply constraint",
+   "object": "distribution",
+   "quote": "constitutes intra-modality discriminative embedding and inter-modality triplet constraint",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "reduces both the intra-modality and cross-modality feature variations",
+   "grounded": true
+  },
+  {
+   "op": "compute discriminative embedding",
+   "canonical": "compute discriminative embedding",
+   "object": "latent",
+   "quote": "constitutes intra-modality discrimin,ative embedding",
+   "grounded": true
+  },
+  {
+   "op": "compute inter-modality constraint",
+   "canonical": "compute inter-modality constraint",
+   "object": "distribution",
+   "quote": "constitutes intra-modality discriminative embedding and inter-modality triplet constraint",
+   "grounded": true
+  },
+  {
+   "op": "compute intra-modality constraint",
+   "canonical": "compute intra-modality constraint",
+   "object": "distribution",
+   "quote": "constitutes intra-modality discriminative embedding and inter-modality triplet constraint",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "jointly optimizing a modality ranking constraint and a cross-entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "compute feature correlation",
+   "canonical": "compute feature correlation",
+   "object": "distribution",
+   "quote": "aims at exploring correlations of different stream features",
+   "grounded": true
+  },
+  {
+   "op": "compute modality ranking",
+   "canonical": "compute modality ranking",
+   "object": "distribution",
+   "quote": "constitutes intra-modality discriminative embedding and inter-modality triplet constraint",
+   "grounded": true
+  },
+  {
+   "op": "compute feature variation",
+   "canonical": "compute feature variation",
+   "object": "latent",
+   "quote": "reduces both the intra-modality and cross-modality feature variations",
+   "grounded": true
+  },
+  {
+   "op": "compute feature similarity",
+   "canonical": "compute feature similarity",
+   "object": "distribution",
+   "quote": "aims at exploring correlations of different stream features",
+   "grounded": true
+  },
+  {
+   "op": "compute modality discrepancy",
+   "canonical": "compute modality discrepancy",
+   "object": "error",
+   "quote": "reduces the undesired modality discrepancy",
+   "grounded": true
+  },
+  {
+   "op": "compute modality embedding",
+   "canonical": "compute modality embedding",
+   "object": "latent",
+   "quote": "constitutes intra-modality discriminative embedding",
+   "grounded": true
+  },
+  {
+   "op": "compute feature representation",
+   "canonical": "compute feature representation",
+   "object": "latent",
+   "quote": "extracts this complementary information of different modality from a connection block",
+   "grounded": true
+  },
+  {
+   "op": "compute feature mapping",
+   "canonical": "compute feature mapping",
+   "object": "latent",
+   "quote": "extracts this complementary information of different modality from a connection block",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply constraint@distribution",
+  "compute correlation@distribution",
+  "compute cross-entropy@error",
+  "compute discriminative embedding@latent",
+  "compute embedding@latent",
+  "compute feature correlation@distribution",
+  "compute feature mapping@latent",
+  "compute feature representation@latent",
+  "compute feature similarity@distribution",
+  "compute feature variation@latent",
+  "compute inter-modality constraint@distribution",
+  "compute intra-modality constraint@distribution",
+  "compute modality discrepancy@error",
+  "compute modality embedding@latent",
+  "compute modality ranking@distribution",
+  "compute ranking constraint@distribution",
+  "compute triplet constraint@distribution",
+  "correct@parameter",
+  "evaluate@error",
+  "extract feature@state",
+  "reconstruct@latent",
+  "reduce variation@latent",
+  "train@parameter"
+ ]
+}

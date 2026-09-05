@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2105.05348",
+ "source": "abstract",
+ "words": 142,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "input",
+   "quote": "We employ Discrete Cosine Transformation (DCT) to generate the frequency representation",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "integrate the features from both the spatial domain and frequency domain for classification",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "integrate the features from both the spatial domain and frequency domain for classification",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the proposed strategy and its effectiveness are validated with different backbones, datasets, and algorithms",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed strategy and its effectiveness are validated with different backbones, datasets, and algorithms",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "integrate the features from both the spatial and frequency domains in different few-shot learning tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "Extensive experiments demonstrate that the frequency information is complementary to the spatial representations in few-shot classification",
+   "grounded": true
+  },
+  {
+   "op": "classify input",
+   "canonical": "classify",
+   "object": "input",
+   "quote": "integrate the features from both the spatial and frequency domains in different few-shot learning tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply transformation@input",
+  "classify@input",
+  "compute accuracy@task",
+  "correct@parameter",
+  "encode@state",
+  "evaluate@error",
+  "predict@distribution"
+ ]
+}

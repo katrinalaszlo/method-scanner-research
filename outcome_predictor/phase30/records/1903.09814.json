@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "1903.09814",
+ "source": "abstract",
+ "words": 166,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we use hidden states in an RNN with constraints",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "to refine low-level representations with high-level information",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "to generate powerful high-level representations",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed SRFBN comes with a strong early reconstruction ability",
+   "grounded": true
+  },
+  {
+   "op": "reconstruct",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "can create the final high-resolution image step by step",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the network well suitable for more complicated tasks",
+   "grounded": true
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "task",
+   "quote": "we introduce a curriculum learning strategy",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "low-resolution images are corrupted by multiple types of degradation",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "to refine low-level representations with high-level information",
+   "grounded": true
+  },
+  {
+   "op": "feedback",
+   "canonical": "feedback",
+   "object": "state",
+   "quote": "we use hidden states in an RNN with constraints",
+   "grounded": true
+  },
+  {
+   "op": "propagate",
+   "canonical": "transmit",
+   "object": "error",
+   "quote": "the proposed SRF, comes with a strong early reconstruction ability",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "can create the final high-resolution image step by step",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "sample",
+   "quote": "the network well suitable for more complicated tasks",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "to refine low-level representations with high-level information",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "input",
+   "quote": "we use hidden states in an RNN with constraints",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "the proposed SRFBN comes with a strong early reconstruction ability",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we introduce a curriculum learning strategy",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "low-resolution images are corrupted by multiple types of degradation",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "to refine low-level representations with high-level information",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "can create the final high-resolution image step by step",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "the network well suitable for more complicated tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the proposed SRFBN comes with a strong early reconstruction ability",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "gradient",
+   "quote": "we introduce a curriculum learning strategy",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "low-resolution images are corrupted by multiple types of degradation",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "state",
+   "quote": "to refine low-level representations with high-level information",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@distribution",
+  "aggregate@sample",
+  "aggregate@state",
+  "compute@error",
+  "compute@value",
+  "correct@gradient",
+  "correct@latent",
+  "correct@parameter",
+  "correct@state",
+  "encode@input",
+  "evaluate@task",
+  "feedback@state",
+  "improve@parameter",
+  "predict@state",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "reconstruct@state",
+  "reconstruct@trajectory",
+  "sample@action",
+  "sample@distribution",
+  "train@task",
+  "transform@input",
+  "transmit@error"
+ ]
+}

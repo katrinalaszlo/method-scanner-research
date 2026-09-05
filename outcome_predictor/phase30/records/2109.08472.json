@@ -1,0 +1,93 @@
+{
+ "arxiv_id": "2109.08472",
+ "source": "abstract",
+ "words": 248,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 1,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we model this task as a video-text matching problem",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "INVALID:text",
+   "quote": "we model this task as a video-text matching problem",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "we model this task as a video-text matching problem",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "we model this task as a video-text matching problem",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we model this task as a video-text matching problem",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we model this task as a video-text matching, which strengthens the video representation",
+   "grounded": true
+  },
+  {
+   "op": "pre-train model",
+   "canonical": "pre-train model",
+   "object": "parameter",
+   "quote": "first learns powerful representations from pre-training on a large amount of web image-text or video-text data",
+   "grounded": true
+  },
+  {
+   "op": "prompt model",
+   "canonical": "prompt model",
+   "object": "policy",
+   "quote": "makes the action recognition task to act more like pre-training problems via prompt engineering",
+   "grounded": true
+  },
+  {
+   "op": "fine-tune model",
+   "canonical": "fine-tune model",
+   "object": "parameter",
+   "quote": "finally, it end-to-end fine-tunes on target datasets to obtain strong performance",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "achieves 83.8% top-1 accuracy on Kinetics-400 with a ViT-B/16 as the backbone",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compute accuracy@task",
+  "compute similarity@distribution",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "fine-tune model@parameter",
+  "pre-train model@parameter",
+  "predict@distribution",
+  "prompt model@policy"
+ ]
+}

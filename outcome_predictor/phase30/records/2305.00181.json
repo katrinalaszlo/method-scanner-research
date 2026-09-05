@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2305.00181",
+ "source": "abstract",
+ "words": 157,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we propose to use a neural network to encode video frames to temporal features",
+   "grounded": true
+  },
+  {
+   "op": "attend",
+   "canonical": "attend",
+   "object": "latent",
+   "quote": "using an attention-based neural network",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "we output a per-frame but temporally-informed probability distribution",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "using Normalizing Flows",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "we output a per-frame but temporally-informed probability distribution",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:pose",
+   "quote": "we output a per-frame but temporally-informed probability distribution",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "we show that TAPE outperforms state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose to use a neural network to encode video frames to temporal features",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "attend@latent",
+  "compute@error",
+  "correct@parameter",
+  "encode@input",
+  "reconstruct@distribution",
+  "sample@distribution",
+  "transform@latent"
+ ]
+}

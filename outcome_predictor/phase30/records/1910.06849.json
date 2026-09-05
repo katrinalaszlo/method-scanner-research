@@ -1,0 +1,211 @@
+{
+ "arxiv_id": "1910.06849",
+ "source": "abstract",
+ "words": 237,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "apply residual connection",
+   "canonical": "apply residual connection",
+   "object": "latent",
+   "quote": "transfer concepts such as residual/dense connections",
+   "grounded": false
+  },
+  {
+   "op": "apply dense connection",
+   "canonical": "apply dense connection",
+   "object": "latent",
+   "quote": "transfer concepts such as residual/dense connections",
+   "grounded": false
+  },
+  {
+   "op": "compute convolution",
+   "canonical": "compute convolution",
+   "object": "latent",
+   "quote": "Graph Convolutional Networks (GCNs) offer an alternative",
+   "grounded": true
+  },
+  {
+   "op": "aggregate neighbors",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "Graph Convolutional Networks (GCNs) offer an alternative",
+   "grounded": true
+  },
+  {
+   "op": "normalize features",
+   "canonical": "normalize features",
+   "object": "latent",
+   "quote": "Graph Convolution, Networks (GCNs) offer an alternative",
+   "grounded": false
+  },
+  {
+   "op": "compute activation",
+   "canonical": "compute activation",
+   "object": "latent",
+   "quote": "Graph Convolutional Networks (GCNs) offer an alternative",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "Graph Convolutional Networks (GCNs) offer an alternative",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "noise",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "We show the benefit of using deep GCNs",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply dense connection@latent",
+  "apply residual connection@latent",
+  "compare@error",
+  "compute action@action",
+  "compute activation@latent",
+  "compute convolution@latent",
+  "compute distribution@distribution",
+  "compute gradient@error",
+  "compute input@input",
+  "compute noise@noise",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "normalize features@latent",
+  "sample@input"
+ ]
+}

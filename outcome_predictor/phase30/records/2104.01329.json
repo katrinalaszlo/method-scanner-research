@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2104.01329",
+ "source": "abstract",
+ "words": 179,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "most of the state-of-the-art deep learning networks rely nowadays on cascade architectures",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "state",
+   "quote": "multiple object detectors are trained sequentially, re-sampling the ground truth at each step",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "state",
+   "quote": "the problem of exponentially vanishing positive samples",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose Recursively Refined R-CNN (R^3-CNN) which avoids duplicates by introducing a loop mechanism",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "a specific IoU quality is utilized in each recursion to eventually equally cover the positive spectrum",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the specific encoding of the loop mechanism in the weights, requiring its usage at inference time",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the R^3-CNN architecture is able to surpass the recently proposed HTC model",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "experiments on COCO minival 2017 dataset show performance boost independently from the utilized baseline model",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@state",
+  "compute reward@reward",
+  "correct@parameter",
+  "encode@input",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@state"
+ ]
+}

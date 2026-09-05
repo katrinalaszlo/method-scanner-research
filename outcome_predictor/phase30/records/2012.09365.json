@@ -1,0 +1,202 @@
+{
+ "arxiv_id": "2012.09365",
+ "source": "abstract",
+ "words": 153,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "predict depth up to an unknown scale and shift",
+   "grounded": false
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "use 3D point cloud encoders",
+   "grounded": true
+  },
+  {
+   "op": "predict shift",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "predict the missing depth shift",
+   "grounded": true
+  },
+  {
+   "op": "predict focal length",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "predict the missing depth shift and focal length",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "image-level normalized regression loss",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "normal-based geometry loss",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "enhance depth prediction models",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train on mixed datasets",
+   "grounded": false
+  },
+  {
+   "op": "apply loss",
+   "canonical": "apply loss",
+   "object": "error",
+   "quote": "enhance depth prediction models",
+   "grounded": true
+  },
+  {
+   "op": "sample input",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "test on nine unseen datasets",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "achieve state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "evaluate model",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "test our depth model on nine unseen datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "achieve state-of-the-art performance on zero-shot dataset generalization",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "recover a realistic 3D scene shape",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "recover a realistic 3D scene shape",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "recover a realistic 3D scene shape",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "recover a realistic 3D scene shape",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "recover a realistic 3D scene shape",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "test our depth model on nine unseen datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "test our depth model on nine unseen datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute state",
+   "canonical": "compute state",
+   "object": "state",
+   "quote": "test our depth model on nine unseen datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "test our depth model on nine unseen datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "test our depth model on nine unseen datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "test our depth and achieve state-of-the-art performance",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply loss@error",
+  "backpropagate@gradient",
+  "compute action@action",
+  "compute distribution@distribution",
+  "compute input@input",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute state@state",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@state",
+  "evaluate@error",
+  "evaluate@task",
+  "predict@latent",
+  "predict@state",
+  "reconstruct@noise",
+  "sample@input",
+  "sample@sample"
+ ]
+}

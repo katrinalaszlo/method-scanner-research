@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1802.08797",
+ "source": "abstract",
+ "words": 194,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "convolve",
+   "canonical": "convolve",
+   "object": "input",
+   "quote": "A very deep convolutional neural network (CNN)",
+   "grounded": true
+  },
+  {
+   "op": "concatenate",
+   "canonical": "concatenate",
+   "object": "latent",
+   "quote": "residual dense block (RDB) to extract abundant local features",
+   "grounded": true
+  },
+  {
+   "op": "add",
+   "canonical": "add",
+   "object": "latent",
+   "quote": "direct connections from the state of preceding RDB to all the layers of current RDB",
+   "grounded": false
+  },
+  {
+   "op": "fuse",
+   "canonical": "fuse",
+   "object": "latent",
+   "quote": "Local feature fusion in RDB is then used to adaptively learn more effective features",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "global feature fusion to jointly and adaptively learn global hierarchical features",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "we fully exploit the hierarchical features from all the convolutional layers",
+   "grounded": false
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "stabilizes the training of wider network",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "latent",
+   "quote": "After fully obtaining dense local features",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "add@latent",
+  "aggregate@latent",
+  "concatenate@latent",
+  "convolve@input",
+  "fuse@latent",
+  "output@latent",
+  "predict@latent",
+  "train@parameter"
+ ]
+}

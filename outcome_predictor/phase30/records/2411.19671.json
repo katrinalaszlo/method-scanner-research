@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2411.19671",
+ "source": "abstract",
+ "words": 167,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 1,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "momentum-based optimizers are widely adopted for training neural networks",
+   "grounded": true
+  },
+  {
+   "op": "apply momentum",
+   "canonical": "apply momentum",
+   "object": "gradient",
+   "quote": "momentum-based optimizers are widely adopted for training neural networks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "momentum-based optimizers are widely adopted for training neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the optimal selection of momentum coefficients remains elusive",
+   "grounded": true
+  },
+  {
+   "op": "adjust filter",
+   "canonical": "correct",
+   "object": "gradient",
+   "quote": "adjustments to momentum coefficients modify the filter characteristics",
+   "grounded": true
+  },
+  {
+   "op": "amplify low-frequency",
+   "canonical": "amplify low-frequency",
+   "object": "gradient",
+   "quote": "preserving the original gradient in the early stages, and gradually amplifying low-frequency gradient components during training both enhance performance",
+   "grounded": true
+  },
+  {
+   "op": "preserve gradient",
+   "canonical": "preserve gradient",
+   "object": "gradient",
+   "quote": "preserving the original gradient in the early stages, and gradually amplifying low-frequency gradient components during training both enhance performance",
+   "grounded": true
+  },
+  {
+   "op": "compute magnitude response",
+   "canonical": "compute magnitude response",
+   "object": "INVALID:filter",
+   "quote": "we propose Frequency Stochastic Gradient Descent with Momentum (FSGDM), a heuristic optimizer that dynamically adjusts the momentum filtering characteristic with an empirically effective dynamic magnitude response",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "amplify low-frequency@gradient",
+  "apply momentum@gradient",
+  "compare@error",
+  "compute gradient@error",
+  "correct@gradient",
+  "correct@parameter",
+  "preserve gradient@gradient"
+ ]
+}

@@ -1,0 +1,73 @@
+{
+ "arxiv_id": "2408.11567",
+ "source": "abstract",
+ "words": 190,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 5,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "INVALID:position",
+   "quote": "we attach importance to the position encoding as a high-dimensional part",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "INVALID:patch",
+   "quote": "the patch encoder to offer multi-scale information",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the whole module with position encoding comprehensively constructs a multi-scale feature abstraction module",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "INVALID:local",
+   "quote": "considers both the local parts from the patch",
+   "grounded": true
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "INVALID:global",
+   "quote": "and the global parts from center points as position encoding",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we unfreeze these parameters as a fine-tuning part",
+   "grounded": true
+  },
+  {
+   "op": "synthesize",
+   "canonical": "synthesize",
+   "object": "INVALID:prompt",
+   "quote": "proposing a fresh way of prompts and synthesizing them with adapters as dynamic adjustments",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "our Proposed method of PEFT tasks, namely PPT, with only 1.05% of parameters for training",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "correct@parameter",
+  "train@parameter"
+ ]
+}

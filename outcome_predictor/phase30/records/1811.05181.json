@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1811.05181",
+ "source": "abstract",
+ "words": 186,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "the essential effect of the two disharmonies can be summarized in term of the gradient",
+   "grounded": true
+  },
+  {
+   "op": "harmonize gradient",
+   "canonical": "harmonize gradient",
+   "object": "gradient",
+   "quote": "we propose a novel gradient harmonizing mechanism (GHM) to be a hedging for the disharmonies",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "two novel loss functions called GHM-C and GHM-R are designed to balancing the gradient flow",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "without laborious hyper-parameter tuning, both GHM-C and GHM-R can bring substantial improvement",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "the philosophy behind GHM can be easily embedded into both classification loss function like cross-entropy (CE) and regression loss function like smooth-L1 (SL1) loss",
+   "grounded": false
+  },
+  {
+   "op": "refine bounding box",
+   "canonical": "correct",
+   "object": "distribution",
+   "quote": "two novel loss functions called GHM-C and GHM-R are designed to balancing the gradient flow for anchor classification and bounding box refinement",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the essential effect of the two disharmonies can be summarized in term of the gradient",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "without laborious hyper-parameter tuning, both GHM-C and GHM-R can bring substantial improvement",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute gradient@error",
+  "correct@distribution",
+  "correct@parameter",
+  "evaluate@error",
+  "harmonize gradient@gradient",
+  "predict@distribution"
+ ]
+}

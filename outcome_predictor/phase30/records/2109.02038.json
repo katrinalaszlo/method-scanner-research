@@ -1,0 +1,75 @@
+{
+ "arxiv_id": "2109.02038",
+ "source": "abstract",
+ "words": 235,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 3,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "generate data",
+   "canonical": "reconstruct",
+   "object": "INVALID:data",
+   "quote": "a data generator is learned to synthesize OoD data",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "INVALID:data",
+   "quote": "maximizing losses computed by different neural architectures",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "optimizes the architecture with respect to its performance",
+   "grounded": true
+  },
+  {
+   "op": "minimize loss",
+   "canonical": "minimize loss",
+   "object": "INVALID:data",
+   "quote": "find the optimal architecture parameters that minimize the synthetic OoD data losses",
+   "grounded": true
+  },
+  {
+   "op": "jointly optimize",
+   "canonical": "jointly optimize",
+   "object": "parameter",
+   "quote": "the data generator and the neural architecture are jointly optimized",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "minimax training process effectively discovers robust architectures",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "Extensive experimental results show that NAS-OoD achieves superior performance",
+   "grounded": true
+  },
+  {
+   "op": "reduce error",
+   "canonical": "reduce error",
+   "object": "error",
+   "quote": "the proposed NAS-OoD method reduces the error rate by more than 70%",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "evaluate@task",
+  "jointly optimize@parameter",
+  "reduce error@error",
+  "train@parameter"
+ ]
+}

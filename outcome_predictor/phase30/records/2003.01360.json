@@ -1,0 +1,132 @@
+{
+ "arxiv_id": "2003.01360",
+ "source": "abstract",
+ "words": 213,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 10,
+ "n_grounded": 14,
+ "ops": [
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:photometric",
+   "quote": "using the photometric errors between the target view and the synthesized views",
+   "grounded": true
+  },
+  {
+   "op": "mask error",
+   "canonical": "mask",
+   "object": "error",
+   "quote": "carefully manipulating photometric errors can tackle these difficulties",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "using the photometric errors ... as the loss",
+   "grounded": false
+  },
+  {
+   "op": "predict view",
+   "canonical": "predict",
+   "object": "INVALID:synthesized",
+   "quote": "the target view and the synthesized views from its adjacent source views",
+   "grounded": true
+  },
+  {
+   "op": "compute depth",
+   "canonical": "compute depth",
+   "object": "INVALID:object",
+   "quote": "the depth of objects moving in the opposite direction to the camera can be estimated",
+   "grounded": true
+  },
+  {
+   "op": "compute motion",
+   "canonical": "compute motion",
+   "object": "INVALID:ego",
+   "quote": "unsupervised learning of depth and ego-motion from monocular videos",
+   "grounded": true
+  },
+  {
+   "op": "apply weight",
+   "canonical": "apply weight",
+   "object": "INVALID:depth",
+   "quote": "an efficient weighted multi-scale scheme to reduce the artifacts",
+   "grounded": true
+  },
+  {
+   "op": "resample depth",
+   "canonical": "sample",
+   "object": "INVALID:map",
+   "quote": "reduce the artifacts in the predicted depth maps",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the overall system achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "INVALID:video",
+   "quote": "monocular videos",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "INVALID:video",
+   "quote": "unsupervised learning of depth and ego-motion from monocular videos",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "monocular videos",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "INVALID:view",
+   "quote": "the target view and the synthesized views",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "error",
+   "quote": "carefully manipulating photometric errors",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:depth",
+   "quote": "the depth of objects moving in the opposite direction to the camera",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "error",
+   "quote": "using the photometric errors ... as the loss",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compute distribution@error",
+  "compute input@input",
+  "compute reward@error",
+  "correct@parameter",
+  "evaluate@error",
+  "mask@error"
+ ]
+}

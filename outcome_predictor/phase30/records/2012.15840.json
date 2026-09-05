@@ -1,0 +1,90 @@
+{
+ "arxiv_id": "2012.15840",
+ "source": "abstract",
+ "words": 187,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 4,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we deploy a pure transformer to encode an image as a sequence of patches",
+   "grounded": false
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "INVALID:sequence",
+   "quote": "global context modeled in every layer of the transformer",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "this encoder can be combined with a simple decoder",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "combined with a simple decoder to provide a powerful segmentation model",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "sequence-to-sequence prediction task",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "new state of the art on ADE20K",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "sequence-to-sequence prediction task",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "INVALID:output",
+   "quote": "provide a powerful segmentation model",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "INVALID:output",
+   "quote": "competitive results on Cityscapes",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "INVALID:output",
+   "quote": "first position in the highly competitive ADE20K test server leaderboard",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute@value",
+  "encode@input",
+  "predict@distribution",
+  "reconstruct@latent",
+  "sample@distribution"
+ ]
+}

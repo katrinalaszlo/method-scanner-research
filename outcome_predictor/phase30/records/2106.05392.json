@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "2106.05392",
+ "source": "abstract",
+ "words": 173,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the time dimension is often treated in the same way as the two spatial dimensions",
+   "grounded": true
+  },
+  {
+   "op": "extract motion path",
+   "canonical": "extract motion path",
+   "object": "state",
+   "quote": "trajectory attention aggregates information along implicitly determined motion paths",
+   "grounded": false
+  },
+  {
+   "op": "compute attention weights",
+   "canonical": "compute attention weights",
+   "object": "distribution",
+   "quote": "trajectory attention aggregates information along implicitly determined motion paths",
+   "grounded": false
+  },
+  {
+   "op": "aggregate information",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "trajectory attention aggregates information along implicitly determined motion paths",
+   "grounded": false
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "trajectory attention aggregates information along implicitly determined motion paths",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute value function",
+   "canonical": "compute value function",
+   "object": "value",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "the time dimension is often treated in the same way as the two spatial dimensions",
+   "grounded": true
+  },
+  {
+   "op": "compute state",
+   "canonical": "compute state",
+   "object": "state",
+   "quote": "trajectory attention aggregates information along implicitly determined motion paths",
+   "grounded": false
+  },
+  {
+   "op": "compute action",
+   "canonical": "compute action",
+   "object": "action",
+   "quote": "we apply them to the specific task of video action recognition",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compare@error",
+  "compute action@action",
+  "compute attention weights@distribution",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute state@state",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value function@value",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "extract motion path@state",
+  "predict@reward",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

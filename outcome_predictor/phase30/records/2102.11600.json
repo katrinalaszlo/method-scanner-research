@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2102.11600",
+ "source": "abstract",
+ "words": 117,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "learning algorithms motivated from sharpness of loss surface",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "proposing the corresponding generalization bound",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "sharpness defined in a rigid region with a fixed radius",
+   "grounded": true
+  },
+  {
+   "op": "rescale parameter",
+   "canonical": "rescale parameter",
+   "object": "parameter",
+   "quote": "sensitivity to parameter re-scaling which leaves the loss unaffected",
+   "grounded": true
+  },
+  {
+   "op": "compute sharpness",
+   "canonical": "compute sharpness",
+   "object": "error",
+   "quote": "we introduce the concept of adaptive sharpness which is scale-invariant",
+   "grounded": true
+  },
+  {
+   "op": "compute generalization bound",
+   "canonical": "compute generalization bound",
+   "object": "task",
+   "quote": "proposing the corresponding generalization bound",
+   "grounded": false
+  },
+  {
+   "op": "optimize objective",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "suggesting a novel learning method, adaptive sharpness-aware minimization",
+   "grounded": false
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "experimental results in various benchmark datasets show",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compute generalization bound@task",
+  "compute gradient@error",
+  "compute sharpness@error",
+  "correct@parameter",
+  "evaluate@task",
+  "improve@parameter",
+  "rescale parameter@parameter"
+ ]
+}

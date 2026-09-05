@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2203.15331",
+ "source": "abstract",
+ "words": 225,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "collect filters",
+   "canonical": "collect filters",
+   "object": "parameter",
+   "quote": "we collected and publicly provide a dataset with over 1.4 billion filters",
+   "grounded": true
+  },
+  {
+   "op": "extract filters",
+   "canonical": "extract filters",
+   "object": "parameter",
+   "quote": "we collected and publicly provide a dataset with over 1.4 billion filters",
+   "grounded": true
+  },
+  {
+   "op": "store filters",
+   "canonical": "store filters",
+   "object": "parameter",
+   "quote": "we collected and publicly provide a dataset with over 1.4 billion filters",
+   "grounded": true
+  },
+  {
+   "op": "analyze distribution",
+   "canonical": "analyze distribution",
+   "object": "parameter",
+   "quote": "we analyze distribution shifts (or the lack thereof) between trained filters",
+   "grounded": true
+  },
+  {
+   "op": "compare distribution",
+   "canonical": "compare",
+   "object": "parameter",
+   "quote": "we analyze distribution shifts (or the lack thereof) between trained filters",
+   "grounded": true
+  },
+  {
+   "op": "compute shift",
+   "canonical": "compute shift",
+   "object": "parameter",
+   "quote": "we analyze distribution shifts (or the lack thereof) between trained filters",
+   "grounded": true
+  },
+  {
+   "op": "evaluate robustness",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "we show that many pre-trained models contain degenerated filters which make them less robust",
+   "grounded": true
+  },
+  {
+   "op": "assess suitability",
+   "canonical": "assess suitability",
+   "object": "parameter",
+   "quote": "we show that many pre-trained models contain degenerated filters which make them less robust and less suitable for fine-tuning on target applications",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "analyze distribution@parameter",
+  "assess suitability@parameter",
+  "collect filters@parameter",
+  "compare@parameter",
+  "compute shift@parameter",
+  "evaluate@parameter",
+  "extract filters@parameter",
+  "store filters@parameter"
+ ]
+}

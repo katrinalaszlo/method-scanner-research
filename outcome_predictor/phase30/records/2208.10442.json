@@ -1,0 +1,168 @@
+{
+ "arxiv_id": "2208.10442",
+ "source": "abstract",
+ "words": 138,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 2,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "INVALID:text",
+   "quote": "we perform masked \"language\" modeling on texts (English",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "INVALID:image-text pair",
+   "quote": "we perform masked \"language\" modeling on image-text pairs (",
+   "grounded": true
+  },
+  {
+   "op": "predict masked token",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we perform masked \"language\" modeling on images (Imglish",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@distribution",
+  "predict@reward",
+  "reconstruct@noise",
+  "sample@sample"
+ ]
+}

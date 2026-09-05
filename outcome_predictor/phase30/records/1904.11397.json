@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1904.11397",
+ "source": "abstract",
+ "words": 223,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Deep neural networks (DNN) have recently proven to be effective on person re-identification task.",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "latent",
+   "quote": "diffusing the similarities among the gallery images in an end-to-end manner has proven to be effective",
+   "grounded": true
+  },
+  {
+   "op": "apply constraint",
+   "canonical": "apply constraint",
+   "object": "state",
+   "quote": "the probe image is taken as a constraint (seed) and each cluster corresponds to a set of images corresponding to the same person",
+   "grounded": true
+  },
+  {
+   "op": "optimize",
+   "canonical": "improve",
+   "object": "distribution",
+   "quote": "optimizing the constrained clustering in an end-to-end manner",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "finding a constrained cluster, where the probe image is taken as a constraint (seed) and each cluster corresponds to a set of images corresponding to the same person",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "sample",
+   "quote": "we re-formulate person re-id problem as finding a constrained cluster",
+   "grounded": true
+  },
+  {
+   "op": "integrate",
+   "canonical": "integrate",
+   "object": "parameter",
+   "quote": "we further enhance the performance by integrating an auxiliary net alongside DCDS",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "we naturally leverage the contextual knowledge of a set of images corresponding to the given person-images",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@sample",
+  "apply constraint@state",
+  "compute similarity@latent",
+  "encode@input",
+  "improve@distribution",
+  "integrate@parameter",
+  "predict@value",
+  "sample@trajectory"
+ ]
+}

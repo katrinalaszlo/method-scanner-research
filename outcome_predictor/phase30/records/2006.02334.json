@@ -1,0 +1,202 @@
+{
+ "arxiv_id": "2006.02334",
+ "source": "abstract",
+ "words": 131,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 12,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "convolves the features with different atrous rates",
+   "grounded": true
+  },
+  {
+   "op": "gather results",
+   "canonical": "gather results",
+   "object": "INVALID:result",
+   "quote": "gathers the results using switch functions",
+   "grounded": true
+  },
+  {
+   "op": "perform feedback",
+   "canonical": "perform feedback",
+   "object": "latent",
+   "quote": "incorporates extra feedback connections",
+   "grounded": true
+  },
+  {
+   "op": "compute feature pyramid",
+   "canonical": "compute feature pyramid",
+   "object": "latent",
+   "quote": "Feature Pyramid Networks",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "Combining them results in DetectoRS",
+   "grounded": true
+  },
+  {
+   "op": "detect object",
+   "canonical": "detect object",
+   "object": "INVALID:object",
+   "quote": "object detection",
+   "grounded": true
+  },
+  {
+   "op": "compute mask",
+   "canonical": "compute mask",
+   "object": "INVALID:mask",
+   "quote": "instance segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute segmentation",
+   "canonical": "compute segmentation",
+   "object": "INVALID:segmentation",
+   "quote": "panoptic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute box",
+   "canonical": "compute box",
+   "object": "INVALID:box",
+   "quote": "box AP for object detection",
+   "grounded": true
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "INVALID:precision",
+   "quote": "PQ for panoptic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute recall",
+   "canonical": "compute recall",
+   "object": "INVALID:recall",
+   "quote": "box AP for object detection",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "INVALID:accuracy",
+   "quote": "state-of-the-art 55.7% box AP",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "significantly improves the performances",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "INVALID:output",
+   "quote": "object detection",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "using the mechanism of looking and thinking twice",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "Feature Pyramid Networks",
+   "grounded": true
+  },
+  {
+   "op": "apply switch function",
+   "canonical": "apply switch function",
+   "object": "INVALID:switch",
+   "quote": "gathers the results using switch functions",
+   "grounded": true
+  },
+  {
+   "op": "compute activation",
+   "canonical": "compute activation",
+   "object": "INVALID:activation",
+   "quote": "Switchable Atrous Convolution",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "update parameters",
+   "grounded": false
+  },
+  {
+   "op": "apply non-linearity",
+   "canonical": "apply non-linearity",
+   "object": "INVALID:activation",
+   "quote": "Switchable Atrous Convolution",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "significantly improves the performances",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "update parameters",
+   "grounded": false
+  },
+  {
+   "op": "compute probability",
+   "canonical": "compute probability",
+   "object": "distribution",
+   "quote": "instance segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "distribution",
+   "quote": "panoptic segmentation",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "state-of-the-art 5.7% box AP",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@latent",
+  "compute feature pyramid@latent",
+  "compute gradient@gradient",
+  "compute probability@distribution",
+  "compute score@distribution",
+  "compute value@value",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "improve@parameter",
+  "perform feedback@latent",
+  "process input@input"
+ ]
+}

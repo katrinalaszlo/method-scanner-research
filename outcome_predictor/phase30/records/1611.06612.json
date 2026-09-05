@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1611.06612",
+ "source": "abstract",
+ "words": 180,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "very deep convolutional neural networks (CNNs) have shown outstanding performance",
+   "grounded": true
+  },
+  {
+   "op": "downsample",
+   "canonical": "downsample",
+   "object": "input",
+   "quote": "repeated subsampling operations like pooling or convolution striding",
+   "grounded": true
+  },
+  {
+   "op": "refine features",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "explicitly exploits all the information available along the down-sampling process",
+   "grounded": true
+  },
+  {
+   "op": "connect residual",
+   "canonical": "connect residual",
+   "object": "latent",
+   "quote": "individual components of RefineNet employ residual connections following the identity mapping mindset",
+   "grounded": true
+  },
+  {
+   "op": "pool features",
+   "canonical": "pool features",
+   "object": "latent",
+   "quote": "introduce chained residual pooling, which captures rich background context",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "the deeper layers that capture high-level semantic features can be directly refined using fine-grained features",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "enable high-resolution prediction using long-range residual connections",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "allows for effective end-to-end training",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "connect residual@latent",
+  "correct@latent",
+  "downsample@input",
+  "pool features@latent",
+  "predict@latent",
+  "train@parameter"
+ ]
+}

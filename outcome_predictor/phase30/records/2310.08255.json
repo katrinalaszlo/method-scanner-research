@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "2310.08255",
+ "source": "abstract",
+ "words": 241,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "align modality",
+   "canonical": "align modality",
+   "object": "latent",
+   "quote": "aligns the vision and language modalities of the teacher model",
+   "grounded": true
+  },
+  {
+   "op": "distill representation",
+   "canonical": "distill representation",
+   "object": "latent",
+   "quote": "distills the aligned VLM representations to the student",
+   "grounded": true
+  },
+  {
+   "op": "encode image",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Vision-Language Models (VLMs) such as CLIP are trained on large amounts of image-text pairs",
+   "grounded": true
+  },
+  {
+   "op": "encode text",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Vision-Language Models (VLMs) such as CLIP are trained on large amounts of image-text pairs",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the client aims to minimize inference cost by distilling the VLM to a student model",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the client aims to minimize inference cost by distilling the VLM to a student model",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "maximally retains the pre-trained features of the student",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "further deploying this student model in the downstream application",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the client aims to minimize inference cost by distilling the VLM to a student model",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the client aims to minimize inference than inference cost by distilling the VLM to a student model",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "incorporating the rich representations of the VLM image encoder",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "the client aims to minimize inference cost by distilling the VLM to a student model",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the client aims to minimize inference cost by distilling the VLM to a student model",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the client aims to minimize inference cost by distilling the VLM to a student model",
+   "grounded": true
+  },
+  {
+   "op": "predict trajectory",
+   "canonical": "predict",
+   "object": "trajectory",
+   "quote": "further deploying this student model in the downstream application",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the client aims to minimize inference cost by distilling the VLM to a student model",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "incorporating the rich representations of the VLM image encoder",
+   "grounded": true
+  },
+  {
+   "op": "predict latent",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "maximally retains the pre-trained features of the student",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the client aims to minimize inference cost by distilling the VLM to a student model",
+   "grounded": true
+  },
+  {
+   "op": "predict policy",
+   "canonical": "predict",
+   "object": "policy",
+   "quote": "further deploying this student model in the downstream application",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "maximally retains the pre-trained features of the student",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "the client aims to minimize inference cost by distilling the VLM to a student model",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "Vision-Language Models (VLMs) such as CLIP are trained on large amounts of image-text pairs",
+   "grounded": true
+  },
+  {
+   "op": "predict sample",
+   "canonical": "predict",
+   "object": "sample",
+   "quote": "further deploying this student model in the downstream application",
+   "grounded": true
+  },
+  {
+   "op": "predict distribution",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "incorporating the rich representations of the VLM image encoder",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align modality@latent",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute reward@reward",
+  "compute task@task",
+  "compute value@value",
+  "correct@parameter",
+  "distill representation@latent",
+  "encode@input",
+  "evaluate@error",
+  "predict@distribution",
+  "predict@latent",
+  "predict@policy",
+  "predict@reward",
+  "predict@sample",
+  "predict@trajectory",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@distribution",
+  "sample@sample"
+ ]
+}

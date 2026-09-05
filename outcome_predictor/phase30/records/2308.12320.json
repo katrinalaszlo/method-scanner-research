@@ -1,0 +1,77 @@
+{
+ "arxiv_id": "2308.12320",
+ "source": "abstract",
+ "words": 187,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "previous methods focus on fusing the two modalities but neglect the correlations among semantic classes when minimizing losses to align pixels with labels",
+   "grounded": true
+  },
+  {
+   "op": "contrast cross-modal",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "cross-modal contrast encourages same-class embeddings from across the two modalities to be closer and pushes different-class ones apart",
+   "grounded": true
+  },
+  {
+   "op": "contrast intra-modal",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "intra-modal contrast forces same-class or different-class embeddings within each modality to be together or apart",
+   "grounded": true
+  },
+  {
+   "op": "embed input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "understanding dark scenes based on multi-modal image data is challenging",
+   "grounded": true
+  },
+  {
+   "op": "align input",
+   "canonical": "align input",
+   "object": "input",
+   "quote": "minimizing losses to align pixels with labels",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "class predictions",
+   "grounded": true
+  },
+  {
+   "op": "sample embedding",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "learned multi-modal feature spaces",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "supervised multi-modal contrastive learning approach",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align input@input",
+  "compare@latent",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@distribution",
+  "sample@latent"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1701.08398",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "a k-reciprocal feature is calculated by encoding its k-reciprocal nearest neighbors into a single vector",
+   "grounded": true
+  },
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "distribution",
+   "quote": "the final distance is computed as the combination of the original distance and the Jaccard distance",
+   "grounded": true
+  },
+  {
+   "op": "compare",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the final distance is computed as the combination of the original distance and the Jaccard distance",
+   "grounded": true
+  },
+  {
+   "op": "re-rank",
+   "canonical": "re-rank",
+   "object": "trajectory",
+   "quote": "used for re-ranking under the Jaccard distance",
+   "grounded": true
+  },
+  {
+   "op": "calculate",
+   "canonical": "calculate",
+   "object": "error",
+   "quote": "a k-reciprocal feature is calculated by encoding its k-reciprocal nearest neighbors into a single vector",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "the final distance is computed as the combination of the original distance and the Jaccard distance",
+   "grounded": true
+  },
+  {
+   "op": "use",
+   "canonical": "use",
+   "object": "distribution",
+   "quote": "used for re-ranking under the Jaccard distance",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "the final distance is computed as the combination of the original distance and the Jaccard distance",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "calculate@error",
+  "compare@error",
+  "compute distance@distribution",
+  "compute@error",
+  "encode@state",
+  "re-rank@trajectory",
+  "use@distribution"
+ ]
+}

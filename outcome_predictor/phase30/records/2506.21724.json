@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2506.21724",
+ "source": "abstract",
+ "words": 136,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 2,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Learning semantically meaningful representations from unstructured 3D point clouds",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "AsymDSD builds on a joint embedding architecture",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "unifies masked modeling and invariance learning through prediction in the latent space",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "INVALID:mask",
+   "quote": "multi-mask sampling",
+   "grounded": true
+  },
+  {
+   "op": "apply",
+   "canonical": "apply",
+   "object": "INVALID:mask",
+   "quote": "disabling attention between masked queries to prevent shape leakage",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "its reconstruction-based objective can limit its ability to capture high-level semantics",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "AsymDSD achieves state-of-the-art results on ScanObjectNN",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "AsymDSD introduces several key design choices",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "a point cloud adaptation of multi-crop",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "further improves to 93.72% when pretrained on 930k shapes",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "AsymDSD surpasses prior methods",
+   "grounded": false
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "error",
+   "quote": "AsymDSD unifies masked modeling and invariance learning",
+   "grounded": false
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "an efficient asymmetric setup",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "pretrained on 930k shapes",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "multi-mask sampling",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "AsymDSD surpasses prior methods",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "AsymDSD achieves state-of-the-art results on ScanObjectNN",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "AsymDSD introduces several key design choices",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "a point cloud adaptation of multi-crop",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "multi-mask sampling",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "AsymDSD unifies masked modeling and invariance learning",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "AsymDSD surpasses prior methods",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "its reconstruction-based objective can limit its ability to capture high-level semantics",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "AsymDSD achieves state-of-the-art results on ScanObjectNN",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "further improves to 93.72% when pretrained on 930k shapes",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@error",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compute@distribution",
+  "compute@error",
+  "compute@reward",
+  "compute@task",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "encode@state",
+  "predict@distribution",
+  "predict@latent",
+  "reconstruct@input",
+  "reconstruct@latent",
+  "reconstruct@state",
+  "sample@action",
+  "sample@input",
+  "sample@trajectory",
+  "transform@latent"
+ ]
+}

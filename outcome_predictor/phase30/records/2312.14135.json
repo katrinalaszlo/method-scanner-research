@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2312.14135",
+ "source": "abstract",
+ "words": 156,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "how we see and selectively process what we see is crucial",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the lack of this visual search mechanism in current multimodal LLMs",
+   "grounded": true
+  },
+  {
+   "op": "generate query",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "V* employs the world knowledge in LLMs for efficient visual querying",
+   "grounded": false
+  },
+  {
+   "op": "search visual elements",
+   "canonical": "search visual elements",
+   "object": "state",
+   "quote": "this mechanism enhances collaborative reasoning, contextual understanding",
+   "grounded": true
+  },
+  {
+   "op": "select visual details",
+   "canonical": "select visual details",
+   "object": "state",
+   "quote": "especially when handling high-resolution and visually crowded images",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the code is available https://github.com/penghao-wu/vstar",
+   "grounded": true
+  },
+  {
+   "op": "combine with model",
+   "canonical": "aggregate",
+   "object": "parameter",
+   "quote": "when combined with an MLLM, this mechanism enhances collaborative reasoning",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we further create V*Bench, a benchmark specifically designed to evaluate MLLMs",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@parameter",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "process input@input",
+  "reconstruct@state",
+  "search visual elements@state",
+  "select visual details@state"
+ ]
+}

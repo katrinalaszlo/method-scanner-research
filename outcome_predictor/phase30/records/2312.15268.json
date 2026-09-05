@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2312.15268",
+ "source": "abstract",
+ "words": 165,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute optical flow",
+   "canonical": "compute optical flow",
+   "object": "input",
+   "quote": "we incorporate optical flow and coarse monocular depth",
+   "grounded": true
+  },
+  {
+   "op": "create pseudo-static reference frame",
+   "canonical": "create pseudo-static reference frame",
+   "object": "state",
+   "quote": "we incorporate optical flow and coarse monocular depth to create a pseudo-static reference frame",
+   "grounded": true
+  },
+  {
+   "op": "build motion-aware cost volume",
+   "canonical": "build motion-aware cost volume",
+   "object": "latent",
+   "quote": "this frame is then utilized to build a motion-aware cost volume",
+   "grounded": true
+  },
+  {
+   "op": "integrate feature maps",
+   "canonical": "integrate feature maps",
+   "object": "latent",
+   "quote": "effectively integrates information from feature maps at different resolutions",
+   "grounded": true
+  },
+  {
+   "op": "apply channel attention",
+   "canonical": "apply channel attention",
+   "object": "latent",
+   "quote": "incorporating both channel and non-local attention mechanisms",
+   "grounded": true
+  },
+  {
+   "op": "apply non-local attention",
+   "canonical": "apply non-local attention",
+   "object": "latent",
+   "quote": "incorporating both channel and non-local attention mechanisms",
+   "grounded": true
+  },
+  {
+   "op": "predict depth",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "achieves precise depth estimation for both dynamic objects and static backgrounds",
+   "grounded": false
+  },
+  {
+   "op": "compute root-mean-square error",
+   "canonical": "compute root-mean-square error",
+   "object": "error",
+   "quote": "achieves a significant reduction of approximately five percent in root-mean-square error",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply channel attention@latent",
+  "apply non-local attention@latent",
+  "build motion-aware cost volume@latent",
+  "compute optical flow@input",
+  "compute root-mean-square error@error",
+  "create pseudo-static reference frame@state",
+  "integrate feature maps@latent",
+  "predict@state"
+ ]
+}

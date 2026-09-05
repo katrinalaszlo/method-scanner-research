@@ -1,0 +1,216 @@
+{
+ "arxiv_id": "1908.09699",
+ "source": "abstract",
+ "words": 210,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 28,
+ "n_invalid_object": 0,
+ "n_grounded": 28,
+ "ops": [
+  {
+   "op": "apply residual",
+   "canonical": "apply residual",
+   "object": "state",
+   "quote": "replacing the original bottleneck by our SMG module, which is augmented by local residual",
+   "grounded": true
+  },
+  {
+   "op": "convolve",
+   "canonical": "convolve",
+   "object": "input",
+   "quote": "squeezing the incoming informative but redundant features gradually by hierarchical convolutions",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "implement the effective fusion instead of a simple addition between reused and new features",
+   "grounded": true
+  },
+  {
+   "op": "gate",
+   "canonical": "gate",
+   "object": "latent",
+   "quote": "we further develop a forget and an update gate by introducing the popular attention modules",
+   "grounded": true
+  },
+  {
+   "op": "convolve",
+   "canonical": "convolve",
+   "object": "latent",
+   "quote": "then exciting it by multi-kernel depthwise convolutions",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "the output of which would be compact and hold more informative multi-scale features",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "implement the effective fusion instead of a simple addition between reused and new features",
+   "grounded": true
+  },
+  {
+   "op": "apply residual",
+   "canonical": "apply residual",
+   "object": "state",
+   "quote": "replacing the original bottleneck by our SMG module, which is augmented by local residual",
+   "grounded": true
+  },
+  {
+   "op": "convolve",
+   "canonical": "convolve",
+   "object": "input",
+   "quote": "squeezing the incoming informative but redundant features gradually by hierarchical convolutions",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "implement the effective fusion instead of a simple addition between reused and new features",
+   "grounded": true
+  },
+  {
+   "op": "gate",
+   "canonical": "gate",
+   "object": "latent",
+   "quote": "we further develop a forget and an update gate by introducing the popular attention modules",
+   "grounded": true
+  },
+  {
+   "op": "convolve",
+   "canonical": "convolve",
+   "object": "latent",
+   "quote": "then exciting it by multi-kernel depthwise convolutions",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "the output of which would be compact and hold more informative multi-scale features",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "implement the effective fusion instead of a simple addition between reused and new features",
+   "grounded": true
+  },
+  {
+   "op": "apply residual",
+   "canonical": "apply residual",
+   "object": "state",
+   "quote": "replacing the original bottleneck by our SMG module, which is augmented by local residual",
+   "grounded": true
+  },
+  {
+   "op": "convolve",
+   "canonical": "convolve",
+   "object": "input",
+   "quote": "squeezing the incoming informative but redundant features gradually by hierarchical convolutions",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "implement the effective fusion instead of a simple addition between reused and new features",
+   "grounded": true
+  },
+  {
+   "op": "gate",
+   "canonical": "gate",
+   "object": "latent",
+   "quote": "we further develop a forget and an update gate by introducing the popular attention modules",
+   "grounded": true
+  },
+  {
+   "op": "convolve",
+   "canonical": "convolve",
+   "object": "latent",
+   "quote": "then exciting it by multi-kernel depthwise convolutions",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "the output of which would be compact and hold more informative multi-scale features",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "implement the effective fusion instead of a simple addition between reused and new features",
+   "grounded": true
+  },
+  {
+   "op": "apply residual",
+   "canonical": "apply residual",
+   "object": "state",
+   "quote": "replacing the original bottleneck by our SMG module, which is augmented by local residual",
+   "grounded": true
+  },
+  {
+   "op": "convolve",
+   "canonical": "convolve",
+   "object": "input",
+   "quote": "squeezing the incoming informative but redundant features gradually by hierarchical convolutions",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "implement the effective fusion instead of a simple addition between reused and new features",
+   "grounded": true
+  },
+  {
+   "op": "gate",
+   "canonical": "gate",
+   "object": "latent",
+   "quote": "we further develop a forget and an update gate by introducing the popular attention modules",
+   "grounded": true
+  },
+  {
+   "op": "convolve",
+   "canonical": "convolve",
+   "object": "latent",
+   "quote": "then exciting it by multi-kernel depthwise convolutions",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "state",
+   "quote": "the output of which would be compact and hold more informative multi-scale features",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "distribution",
+   "quote": "implement the effective fusion instead of a simple addition between reused and new features",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@distribution",
+  "apply residual@state",
+  "convolve@input",
+  "convolve@latent",
+  "gate@latent",
+  "transform@state"
+ ]
+}

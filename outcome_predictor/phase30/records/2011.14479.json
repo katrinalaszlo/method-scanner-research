@@ -1,0 +1,173 @@
+{
+ "arxiv_id": "2011.14479",
+ "source": "abstract",
+ "words": 185,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "generate features",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "we first use a multi-scale feature generator to generate multiple features at different scales",
+   "grounded": true
+  },
+  {
+   "op": "select features",
+   "canonical": "select features",
+   "object": "latent",
+   "quote": "an adaptive task attention module is proposed to select the most important LRs among the entire task",
+   "grounded": true
+  },
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "distribution",
+   "quote": "a similarity-to-class module and a fusion layer are utilized to calculate a joint multi-scale similarity between the query image and the support set",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "a similarity-to-class module and a fusion layer are utilized to calculate a joint multi-scale similarity between the query image and the support set",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "a similarity-to-class module and a fusion layer are utilized to calculate a joint multi-scale similarity between the query image and the support set",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "a similarity-to-class module and a fusion, layer are utilized to calculate a joint multi-scale similarity between the query image and the support set",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "extensive experiments on popular benchmarks clearly show the effectiveness of the proposed MATANet compared with state-of-the-art methods",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "an adaptive task attention module is proposed to select the most important LRs among the entire task",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "a similarity-to-class module and a fusion layer are utilized to calculate a joint multi-scale similarity between the query image and the support set",
+   "grounded": true
+  },
+  {
+   "op": "compute joint similarity",
+   "canonical": "compute joint similarity",
+   "object": "distribution",
+   "quote": "a similarity-to-class module and a fusion layer are utilized to calculate a joint multi-scale similarity between the query image and the support set",
+   "grounded": true
+  },
+  {
+   "op": "evaluate class",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "a similarity-to-class module and a fusion layer are utilized to calculate a joint multi-scale similarity between the query image and the support set",
+   "grounded": true
+  },
+  {
+   "op": "compare features",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "a similarity-to-class module and a fusion layer are utilized to calculate a joint multi-scale similarity between the query image and the support set",
+   "grounded": true
+  },
+  {
+   "op": "compute task relevance",
+   "canonical": "compute task relevance",
+   "object": "task",
+   "quote": "an adaptive task attention module is proposed to select the most important LRs among the entire task",
+   "grounded": true
+  },
+  {
+   "op": "refine features",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "a similarity-to-class module and a fusion layer are utilized to calculate a joint multi-scale similarity between the query image and the support set",
+   "grounded": true
+  },
+  {
+   "op": "compute task attention",
+   "canonical": "compute task attention",
+   "object": "task",
+   "quote": "an adaptive task attention module is proposed to select the most important LRs among the entire task",
+   "grounded": true
+  },
+  {
+   "op": "compute feature importance",
+   "canonical": "compute feature importance",
+   "object": "latent",
+   "quote": "an adaptive task attention module is proposed to select the most important LRs among the entire task",
+   "grounded": true
+  },
+  {
+   "op": "compute task similarity",
+   "canonical": "compute task similarity",
+   "object": "distribution",
+   "quote": "a similarity-to-class module and a fusion layer are utilized to calculate a joint multi-scale similarity between the query image and the support set",
+   "grounded": true
+  },
+  {
+   "op": "compute class similarity",
+   "canonical": "compute class similarity",
+   "object": "distribution",
+   "quote": "a similarity-to-class module and a fusion layer are utilized to calculate a joint multi-scale similarity between the query image and the support set",
+   "grounded": true
+  },
+  {
+   "op": "compute multi-scale similarity",
+   "canonical": "compute multi-scale similarity",
+   "object": "distribution",
+   "quote": "a similarity-to-class module and a fusion layer are utilized to calculate a joint multi-scale similarity between the query image and the support set",
+   "grounded": true
+  },
+  {
+   "op": "compute task representation",
+   "canonical": "compute task representation",
+   "object": "latent",
+   "quote": "an adaptive task attention module is proposed to select the most important LRs among the entire task",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply attention@latent",
+  "compare@error",
+  "compare@latent",
+  "compute class similarity@distribution",
+  "compute feature importance@latent",
+  "compute joint similarity@distribution",
+  "compute multi-scale similarity@distribution",
+  "compute similarity@distribution",
+  "compute task attention@task",
+  "compute task relevance@task",
+  "compute task representation@latent",
+  "compute task similarity@distribution",
+  "correct@latent",
+  "correct@parameter",
+  "evaluate@value",
+  "predict@value",
+  "reconstruct@state",
+  "select features@latent"
+ ]
+}

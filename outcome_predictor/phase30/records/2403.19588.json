@@ -1,0 +1,214 @@
+{
+ "arxiv_id": "2403.19588",
+ "source": "abstract",
+ "words": 166,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Our pilot study shows dense connections through concatenation are strong",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "Our pilot study shows dense connections through concatenation are strong",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Our pilot study shows dense connections through concatenation are strong",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "DenseNets can be revitalized to compete with modern architectures",
+   "grounded": true
+  },
+  {
+   "op": "concatenate",
+   "canonical": "concatenate",
+   "object": "state",
+   "quote": "dense connections through concatenation are strong",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "state",
+   "quote": "DenseNets can be revitalized to compete with modern architectures",
+   "grounded": true
+  },
+  {
+   "op": "convolve",
+   "canonical": "convolve",
+   "object": "input",
+   "quote": "DenseNets can be revital,ized to compete with modern architectures",
+   "grounded": false
+  },
+  {
+   "op": "add",
+   "canonical": "add",
+   "object": "state",
+   "quote": "DenseNets can be revitalized to compete with modern architectures",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "state",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "scale",
+   "canonical": "scale",
+   "object": "state",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "reshape",
+   "canonical": "reshape",
+   "object": "state",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "pool",
+   "canonical": "pool",
+   "object": "state",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "error",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "error",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "compute recall",
+   "canonical": "compute recall",
+   "object": "error",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "compute f1 score",
+   "canonical": "compute f1 score",
+   "object": "error",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "error",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "error",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "compute confidence",
+   "canonical": "compute confidence",
+   "object": "error",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient norm",
+   "canonical": "compute gradient norm",
+   "object": "gradient",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "Our models, employing simple architectural elements, ultimately surpass",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "add@state",
+  "apply activation@state",
+  "apply regularization@parameter",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compute accuracy@error",
+  "compute confidence@error",
+  "compute f1 score@error",
+  "compute gradient norm@gradient",
+  "compute gradient@error",
+  "compute mean@error",
+  "compute precision@error",
+  "compute recall@error",
+  "compute variance@error",
+  "concatenate@state",
+  "convolve@input",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "normalize@state",
+  "pool@state",
+  "predict@value",
+  "reshape@state",
+  "sample@distribution",
+  "scale@state"
+ ]
+}

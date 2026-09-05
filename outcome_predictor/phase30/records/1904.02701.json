@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1904.02701",
+ "source": "abstract",
+ "words": 158,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the detection performance is often limited by the imbalance during the training process",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "we carefully revisit the standard training practice of detectors",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we propose Libra R-CNN, a simple but effective framework towards balanced learning for object detection",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "it integrates three novel components: IoU-balanced sampling, balanced feature pyramid, and balanced L1 loss",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "respectively for reducing the imbalance at sample, feature, and objective level",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "benefitted from the overall balanced design, Libra R-CNN significantly improves the detection performance",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "it achieves 2.5 points and 2.0 points higher Average Precision (AP) than FPN Faster R-CNN and RetinaNet respectively on MSCOCO",
+   "grounded": true
+  },
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "we carefully revisit the standard training practice of detectors",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "clip@gradient",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "predict@value",
+  "reconstruct@distribution",
+  "sample@input",
+  "sample@sample"
+ ]
+}

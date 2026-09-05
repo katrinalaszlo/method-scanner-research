@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2203.06108",
+ "source": "abstract",
+ "words": 178,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "mix tokens",
+   "canonical": "mix tokens",
+   "object": "state",
+   "quote": "to actively incorporate flexible contextual information distributed across different channels from other tokens into the given query token",
+   "grounded": true
+  },
+  {
+   "op": "predict context",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "the fundamental operator actively predicts where to capture useful contexts",
+   "grounded": false
+  },
+  {
+   "op": "fuse context",
+   "canonical": "fuse context",
+   "object": "state",
+   "quote": "learns how to fuse the captured contexts with the query token at channel level",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the way of token-mixing is reformed",
+   "grounded": true
+  },
+  {
+   "op": "assemble tokens",
+   "canonical": "assemble tokens",
+   "object": "state",
+   "quote": "we take ATM as the primary operator and assemble ATMs into a cascade architecture",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "Extensive experiments demonstrate that ATMNet is generally applicable",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the spatial range of token-mixing can be expanded to a global scope",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "with limited computational complexity",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "assemble tokens@state",
+  "compute value@value",
+  "correct@parameter",
+  "fuse context@state",
+  "mix tokens@state",
+  "predict@state",
+  "reconstruct@noise",
+  "sample@action"
+ ]
+}

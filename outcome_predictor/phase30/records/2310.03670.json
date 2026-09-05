@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2310.03670",
+ "source": "abstract",
+ "words": 264,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "the encoder encodes the visible patch representation",
+   "grounded": false
+  },
+  {
+   "op": "mask input",
+   "canonical": "mask",
+   "object": "input",
+   "quote": "the mask regressor predicts the masked patch representation",
+   "grounded": false
+  },
+  {
+   "op": "predict masked",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "the mask regressor predicts the masked patch representation",
+   "grounded": false
+  },
+  {
+   "op": "reconstruct target",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the decoder reconstructs the target from the predicted masked patch representation",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "we minimize the impact of decoder updates on the representation space",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the decoder reconstructs the target from the predicted masked patch representation",
+   "grounded": true
+  },
+  {
+   "op": "align representations",
+   "canonical": "align representations",
+   "object": "latent",
+   "quote": "the representations for masked patches are aligned with the masked patch presentations",
+   "grounded": true
+  },
+  {
+   "op": "finetune parameters",
+   "canonical": "finetune parameters",
+   "object": "parameter",
+   "quote": "we design a new finetune mode for the proposed Point-RAE",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "align representations@latent",
+  "compare@latent",
+  "correct@parameter",
+  "encode@input",
+  "finetune parameters@parameter",
+  "mask@input",
+  "predict@latent",
+  "reconstruct@latent"
+ ]
+}

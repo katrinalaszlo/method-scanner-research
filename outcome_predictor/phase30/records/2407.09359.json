@@ -1,0 +1,209 @@
+{
+ "arxiv_id": "2407.09359",
+ "source": "abstract",
+ "words": 161,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "using Gaussian noise guided by gradient ascent",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "using Gaussian noise guided by gradient ascent",
+   "grounded": true
+  },
+  {
+   "op": "project sample",
+   "canonical": "project",
+   "object": "sample",
+   "quote": "truncated projection",
+   "grounded": true
+  },
+  {
+   "op": "generate noise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "using Gaussian noise",
+   "grounded": true
+  },
+  {
+   "op": "apply noise",
+   "canonical": "apply noise",
+   "object": "input",
+   "quote": "using Gaussian noise",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "using Gaussian noise guided by gradient ascent",
+   "grounded": true
+  },
+  {
+   "op": "sample anomaly",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "synthesize near-in-distribution anomalies",
+   "grounded": false
+  },
+  {
+   "op": "denoise input",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "synthesize near-in-distribution anomalies",
+   "grounded": false
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "under the manifold and hypersphere distribution constraints",
+   "grounded": true
+  },
+  {
+   "op": "apply constraint",
+   "canonical": "apply constraint",
+   "object": "distribution",
+   "quote": "under the manifold and hypersphere distribution constraints",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "achieves state-of-the-art results on the MVTec AD",
+   "grounded": true
+  },
+  {
+   "op": "evaluate anomaly",
+   "canonical": "evaluate",
+   "object": "input",
+   "quote": "excels in weak defect detection",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "in industrial applications for woven fabric defect detection",
+   "grounded": true
+  },
+  {
+   "op": "generate sample",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "synthesize near-in-distribution anomalies",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "achieves state-of-the-art results on the MVTec AD",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "synthesize near-in-distribution anomalies",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "in industrial applications for woven fabric defect detection",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "under the manifold and hypersphere distribution constraints",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "using Gaussian noise",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "synthesize near-in-distribution anomalies",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "using Gaussian noise guided by gradient ascent",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "error",
+   "quote": "using Gaussian noise guided by gradient ascent",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "using Gaussian noise guided by gradient ascent",
+   "grounded": true
+  },
+  {
+   "op": "project sample",
+   "canonical": "project",
+   "object": "sample",
+   "quote": "truncated projection",
+   "grounded": true
+  },
+  {
+   "op": "apply noise",
+   "canonical": "apply noise",
+   "object": "input",
+   "quote": "using Gaussian noise",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply constraint@distribution",
+  "apply noise@input",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@error",
+  "compute input@input",
+  "compute latent@latent",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@input",
+  "project@sample",
+  "reconstruct@input",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "sample@sample"
+ ]
+}

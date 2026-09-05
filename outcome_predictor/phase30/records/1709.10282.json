@@ -1,0 +1,212 @@
+{
+ "arxiv_id": "1709.10282",
+ "source": "abstract",
+ "words": 178,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 15,
+ "ops": [
+  {
+   "op": "compute feature",
+   "canonical": "compute feature",
+   "object": "state",
+   "quote": "features propagate through pathways in various routing patterns",
+   "grounded": false
+  },
+  {
+   "op": "apply residual",
+   "canonical": "apply residual",
+   "object": "state",
+   "quote": "residual unit combines a residual subnetwork with an identity shortcut",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "multiple parallel residual-type subnetworks followed by a max operation",
+   "grounded": false
+  },
+  {
+   "op": "max operation",
+   "canonical": "max operation",
+   "object": "state",
+   "quote": "multiple parallel residual-type subnetworks followed by a max operation",
+   "grounded": false
+  },
+  {
+   "op": "encode pathway",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "pathway encoding of category information",
+   "grounded": true
+  },
+  {
+   "op": "reuse feature",
+   "canonical": "reuse feature",
+   "object": "state",
+   "quote": "cross-block shortcut can be added to encourage feature reuse",
+   "grounded": false
+  },
+  {
+   "op": "forward pass",
+   "canonical": "forward pass",
+   "object": "state",
+   "quote": "features propagate through pathways in various routing patterns",
+   "grounded": false
+  },
+  {
+   "op": "propagate feature",
+   "canonical": "transmit",
+   "object": "state",
+   "quote": "features propagate through pathways in various routing patterns",
+   "grounded": false
+  },
+  {
+   "op": "learn feature",
+   "canonical": "train",
+   "object": "state",
+   "quote": "enhances the model capability by learning a variety of features",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "CoPaNet obtained the state-of-the-art or comparable results using similar amounts of parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "CoPaNet obtained the state-of-the-art or comparable results using similar amounts of parameters",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "CoPaNet obtained the state-of-the-art or comparable results using similar amounts of parameters",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameter",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "CoPaNet obtained the state-of-the-art or comparable results using similar amounts of parameters",
+   "grounded": true
+  },
+  {
+   "op": "apply shortcut",
+   "canonical": "apply shortcut",
+   "object": "state",
+   "quote": "cross-block shortcut can be added to encourage feature reuse",
+   "grounded": false
+  },
+  {
+   "op": "combine pathway",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "pathway encoding of category information",
+   "grounded": true
+  },
+  {
+   "op": "route feature",
+   "canonical": "route feature",
+   "object": "state",
+   "quote": "features propagate through pathways in various routing patterns",
+   "grounded": false
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "state",
+   "quote": "enhances the model capability by learning a variety of features",
+   "grounded": true
+  },
+  {
+   "op": "aggregate feature",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "multiple parallel residual-type subnetworks followed by a max operation",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "CoPaNet obtained the state-of-the-art or comparable results using similar amounts of parameters",
+   "grounded": true
+  },
+  {
+   "op": "apply residual shortcut",
+   "canonical": "apply residual shortcut",
+   "object": "state",
+   "quote": "residual unit combines a residual subnetwork with an identity shortcut",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "pathway encoding of category information",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "CoPaNet obtained the state-of-the-art or comparable results using similar amounts of parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "pathway encoding of category information",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "CoPaNet obtained the state-of-the-art or comparable results using similar amounts of parameters",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "features propagate through pathways in various routing patterns",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "apply residual shortcut@state",
+  "apply residual@state",
+  "apply shortcut@state",
+  "backpropagate@gradient",
+  "compute distribution@distribution",
+  "compute feature@state",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@state",
+  "evaluate@error",
+  "extract feature@state",
+  "forward pass@state",
+  "improve@parameter",
+  "max operation@state",
+  "reuse feature@state",
+  "route feature@state",
+  "train@state",
+  "transmit@state"
+ ]
+}

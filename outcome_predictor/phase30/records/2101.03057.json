@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2101.03057",
+ "source": "abstract",
+ "words": 169,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "minimization of the cross-entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "derive target",
+   "canonical": "derive target",
+   "object": "value",
+   "quote": "one or more additional targets that are derived from the original supervised classification task",
+   "grounded": true
+  },
+  {
+   "op": "apply prior",
+   "canonical": "apply prior",
+   "object": "parameter",
+   "quote": "impose low-level priors into the optimization process",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "optimize over a single objective",
+   "grounded": true
+  },
+  {
+   "op": "sample feature",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "focusing on a richer set of class-relevant features",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "classification problems solved with deep neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "optimize over a single objective",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "optimize over a single objective",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "Self-Supervised Autogenous Learning (SSAL) models",
+   "grounded": true
+  },
+  {
+   "op": "encode input",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "classification problems solved with deep neural networks",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "structured predictions that are more interpretable",
+   "grounded": true
+  },
+  {
+   "op": "aggregate features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "focusing on a richer set of class-relevant features",
+   "grounded": true
+  },
+  {
+   "op": "compute objective",
+   "canonical": "compute objective",
+   "object": "error",
+   "quote": "minimization of the cross-entropy loss",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "Self-Supervised Autogenous Learning (SSAL) models",
+   "grounded": true
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "impose low-level priors into the optimization process",
+   "grounded": true
+  },
+  {
+   "op": "compute prediction",
+   "canonical": "compute prediction",
+   "object": "distribution",
+   "quote": "classification problems solved with deep neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "structured predictions that are more interpretable",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "Self-Supervised Autogenous Learning (SSAL) models",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "Self-Supervised Autogenous Learning (SSAL) models",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "structured predictions that are more interpretable",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply prior@parameter",
+  "apply regularization@parameter",
+  "backpropagate@gradient",
+  "compute gradient@gradient",
+  "compute objective@error",
+  "compute policy@policy",
+  "compute prediction@distribution",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "derive target@value",
+  "encode@latent",
+  "evaluate@error",
+  "predict@distribution",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@distribution",
+  "sample@sample"
+ ]
+}

@@ -1,0 +1,88 @@
+{
+ "arxiv_id": "1908.03127",
+ "source": "abstract",
+ "words": 160,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 6,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Estimating depth from a single image represents an attractive alternative",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "An issue softened by self-supervised approaches leveraging monocular sequences",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "INVALID:depth",
+   "quote": "This paper enables to further improve monocular depth estimation",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "INVALID:depth",
+   "quote": "Experimental results on the KITTI dataset show that by exploiting the geometrical prior",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Our proposal: i) outperforms existing approaches in the literature",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "latent",
+   "quote": "Specifically, we propose a sparsity-invariant autoencoder able to process",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "INVALID:depth",
+   "quote": "couple well with both compact and complex depth-from-mono architectures",
+   "grounded": false
+  },
+  {
+   "op": "apply prior",
+   "canonical": "apply prior",
+   "object": "INVALID:depth",
+   "quote": "integrating into existing self-supervised networks a geometrical prior",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "INVALID:depth",
+   "quote": "allowing for its deployment on high-end GPUs as well as on embedded devices",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "INVALID:depth",
+   "quote": "An issue softened by self-supervised approaches leveraging monocular sequences",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "encode@input",
+  "reconstruct@latent",
+  "sample@latent"
+ ]
+}

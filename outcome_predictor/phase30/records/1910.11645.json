@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1910.11645",
+ "source": "abstract",
+ "words": 150,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 6,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "CNNs often fail to maintain their performance when they confront new test domains",
+   "grounded": false
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "disentangle style encodings from class categories",
+   "grounded": true
+  },
+  {
+   "op": "separate",
+   "canonical": "separate",
+   "object": "latent",
+   "quote": "disentangle style encodings from class categories",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "prevent style biased predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "reduce the intrinsic style bias of CNNs",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our method effectively reduces the style bias",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "make the model more robust under domain shift",
+   "grounded": false
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "value",
+   "quote": "achieves remarkable performance improvements",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute@error",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@value",
+  "extract@latent",
+  "predict@distribution",
+  "sample@action",
+  "separate@latent"
+ ]
+}

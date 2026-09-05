@@ -1,0 +1,140 @@
+{
+ "arxiv_id": "2208.11251",
+ "source": "abstract",
+ "words": 206,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 16,
+ "n_invalid_object": 2,
+ "n_grounded": 11,
+ "ops": [
+  {
+   "op": "extract input",
+   "canonical": "extract input",
+   "object": "input",
+   "quote": "from input images through a convolutional neural network",
+   "grounded": false
+  },
+  {
+   "op": "predict vertices",
+   "canonical": "predict",
+   "object": "state",
+   "quote": "estimates the coordinates of mesh vertices through a CNN-based model",
+   "grounded": true
+  },
+  {
+   "op": "fit model",
+   "canonical": "fit model",
+   "object": "latent",
+   "quote": "acquires SMPL parameters by fitting the SMPL model to the estimated vertices",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the lack of information for resolving the ambiguity of joint rotation and shape reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "regresses SMPL parameters directly from the input images through a CNN-based model",
+   "grounded": true
+  },
+  {
+   "op": "sample vertices",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "estimated mesh vertices provide sufficient information for determining joint rotation and shape",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "achieves competitive performance in terms of joint location estimation",
+   "grounded": true
+  },
+  {
+   "op": "evaluate error",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the proposed method significantly outperforms the previous works in terms of joint rotation and shape estimation",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the difficulty of network learning",
+   "grounded": true
+  },
+  {
+   "op": "predict shape",
+   "canonical": "predict",
+   "object": "INVALID:shape",
+   "quote": "joint rotation and shape estimation has received relatively little attention",
+   "grounded": true
+  },
+  {
+   "op": "predict rotation",
+   "canonical": "predict",
+   "object": "INVALID:rotation",
+   "quote": "joint rotation and shape estimation has received relatively little attention",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the accuracy of joint rotation and shape estimation",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "a sequence of states and/or actions over time",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "reward / return / value signal",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "a policy / behaviour function or its parameters (pi, actor)",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "a task, environment instance, or episode drawn for (meta-)learning",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compute distribution@distribution",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "extract input@input",
+  "fit model@latent",
+  "predict@state",
+  "reconstruct@noise",
+  "sample@sample"
+ ]
+}

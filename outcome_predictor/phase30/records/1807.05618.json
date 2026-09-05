@@ -1,0 +1,129 @@
+{
+ "arxiv_id": "1807.05618",
+ "source": "abstract",
+ "words": 210,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 15,
+ "n_invalid_object": 5,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "to guide a backbone convolutional neural network (CNN)",
+   "grounded": false
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "INVALID:saliency",
+   "quote": "taking advantage of the capabilities of both clues: saliency",
+   "grounded": false
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "INVALID:semantic",
+   "quote": "taking advantage of the capabilities of both clues: saliency",
+   "grounded": false
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "INVALID:saliency",
+   "quote": "favoring the combination of them to increase performance",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "INVALID:semantic",
+   "quote": "favoring the combination of them to increase performance",
+   "grounded": true
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "to learn complementary representations",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "our training process follows simple and standard protocols",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "our training process follows simple and standard protocols",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "to guide a backbone convolutional neural network (CNN)",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "our framework can be easily applied to a wide variety of networks",
+   "grounded": false
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "we present extensive evaluation of our approach through five backbones",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:",
+   "quote": "we present extensive evaluation of our approach through five backbones",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "we present extensive evaluation of our approach through five backbones",
+   "grounded": false
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "task",
+   "quote": "we combine our framework with re-ranking techniques to achieve state-of-the-art results",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "trajectory",
+   "quote": "we combine our framework with re-ranking techniques to achieve state-of-the-art results",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@task",
+  "compute@error",
+  "compute@reward",
+  "compute@trajectory",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@task",
+  "predict@distribution",
+  "train@latent"
+ ]
+}

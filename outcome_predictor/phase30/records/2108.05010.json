@@ -1,0 +1,76 @@
+{
+ "arxiv_id": "2108.05010",
+ "source": "abstract",
+ "words": 216,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 2,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "pre-training a feature extractor",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "fine-tuning step makes marginal improvements",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "base classes already form compact clusters",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "primitive knowledge (i.e., class-level part or attribute annotations)",
+   "grounded": true
+  },
+  {
+   "op": "infer feature",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "part/attribute transfer network is designed to learn to infer",
+   "grounded": true
+  },
+  {
+   "op": "complete prototype",
+   "canonical": "complete prototype",
+   "object": "INVALID:prototype",
+   "quote": "prototype completion network is devised to learn to complete",
+   "grounded": true
+  },
+  {
+   "op": "fuse prototype",
+   "canonical": "fuse prototype",
+   "object": "INVALID:prototype",
+   "quote": "Gaussian based prototype fusion strategy that fuses",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "distribution",
+   "quote": "exploiting the unlabeled samples",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compute distribution@distribution",
+  "compute mean@distribution",
+  "compute value@value",
+  "extract feature@input",
+  "predict@latent"
+ ]
+}

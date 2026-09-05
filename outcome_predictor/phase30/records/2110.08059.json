@@ -1,0 +1,165 @@
+{
+ "arxiv_id": "2110.08059",
+ "source": "abstract",
+ "words": 203,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 9,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "compute kernel size",
+   "canonical": "compute kernel size",
+   "object": "parameter",
+   "quote": "learn the kernel size during training",
+   "grounded": true
+  },
+  {
+   "op": "scale kernel",
+   "canonical": "scale kernel",
+   "object": "INVALID:kernel",
+   "quote": "scale kernels by dilation",
+   "grounded": true
+  },
+  {
+   "op": "parameterize kernel",
+   "canonical": "parameterize kernel",
+   "object": "INVALID:kernel",
+   "quote": "propose a novel kernel parameterization",
+   "grounded": true
+  },
+  {
+   "op": "control frequency",
+   "canonical": "act",
+   "object": "INVALID:kernel",
+   "quote": "the frequency of the kernels can be analytically controlled",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "Convolutional Neural Networks (CNNs)",
+   "grounded": true
+  },
+  {
+   "op": "learn parameters",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "learn the kernel size during training",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learn the kernel size during training",
+   "grounded": true
+  },
+  {
+   "op": "compute descriptive power",
+   "canonical": "compute descriptive power",
+   "object": "INVALID:kernel",
+   "quote": "shows higher descriptive power",
+   "grounded": true
+  },
+  {
+   "op": "compute convergence speed",
+   "canonical": "compute convergence speed",
+   "object": "INVALID:kernel",
+   "quote": "shows faster convergence speed",
+   "grounded": false
+  },
+  {
+   "op": "compute classification accuracy",
+   "canonical": "compute classification accuracy",
+   "object": "task",
+   "quote": "leads to important improvements in classification accuracy",
+   "grounded": true
+  },
+  {
+   "op": "deploy model",
+   "canonical": "deploy model",
+   "object": "parameter",
+   "quote": "can be deployed at higher resolutions",
+   "grounded": true
+  },
+  {
+   "op": "avoid aliasing",
+   "canonical": "avoid aliasing",
+   "object": "INVALID:kernel",
+   "quote": "To avoid aliasing, we propose a novel kernel parameterization",
+   "grounded": true
+  },
+  {
+   "op": "model dependencies",
+   "canonical": "model dependencies",
+   "object": "trajectory",
+   "quote": "model long-term dependencies without the use of pooling",
+   "grounded": true
+  },
+  {
+   "op": "compute performance",
+   "canonical": "compute performance",
+   "object": "task",
+   "quote": "achieve state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compare performance",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "outperform recent works with learned kernel sizes",
+   "grounded": true
+  },
+  {
+   "op": "compute benchmark accuracy",
+   "canonical": "compute benchmark accuracy",
+   "object": "task",
+   "quote": "competitive with much deeper ResNets on image benchmark datasets",
+   "grounded": true
+  },
+  {
+   "op": "compute resolution",
+   "canonical": "compute resolution",
+   "object": "input",
+   "quote": "can be deployed at higher resolutions than those seen during training",
+   "grounded": true
+  },
+  {
+   "op": "compute kernel frequency",
+   "canonical": "compute kernel frequency",
+   "object": "INVALID:kernel",
+   "quote": "the frequency of the kernels can be analytically controlled",
+   "grounded": true
+  },
+  {
+   "op": "compute kernel parameters",
+   "canonical": "compute kernel parameters",
+   "object": "INVALID:kernel",
+   "quote": "propose a novel kernel parameterization",
+   "grounded": true
+  },
+  {
+   "op": "compute kernel description",
+   "canonical": "compute kernel description",
+   "object": "INVALID:kernel",
+   "quote": "shows higher descriptive power",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply convolution@input",
+  "compare@task",
+  "compute benchmark accuracy@task",
+  "compute classification accuracy@task",
+  "compute kernel size@parameter",
+  "compute performance@task",
+  "compute resolution@input",
+  "correct@parameter",
+  "deploy model@parameter",
+  "model dependencies@trajectory",
+  "train@parameter"
+ ]
+}

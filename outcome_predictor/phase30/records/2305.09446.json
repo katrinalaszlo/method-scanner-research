@@ -1,0 +1,72 @@
+{
+ "arxiv_id": "2305.09446",
+ "source": "abstract",
+ "words": 174,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 6,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "compute distance",
+   "canonical": "compute distance",
+   "object": "INVALID:data point",
+   "quote": "Determining distance relationships between data points is necessary",
+   "grounded": true
+  },
+  {
+   "op": "discard distance",
+   "canonical": "discard distance",
+   "object": "INVALID:distance",
+   "quote": "most of the computed distances are typically discarded",
+   "grounded": true
+  },
+  {
+   "op": "model distribution",
+   "canonical": "model distribution",
+   "object": "INVALID:distance",
+   "quote": "the distances to other data points can be used to model distance probability distributions",
+   "grounded": true
+  },
+  {
+   "op": "compute probability",
+   "canonical": "compute probability",
+   "object": "distribution",
+   "quote": "use the distributions to turn distance-based outlier scores into outlier probabilities",
+   "grounded": true
+  },
+  {
+   "op": "transform score",
+   "canonical": "transform score",
+   "object": "distribution",
+   "quote": "the transformation is ranking-stable and increases the contrast between normal and outlier data points",
+   "grounded": true
+  },
+  {
+   "op": "generate probability",
+   "canonical": "reconstruct",
+   "object": "INVALID:outlier",
+   "quote": "turn distance-based outlier scores into outlier probabilities",
+   "grounded": true
+  },
+  {
+   "op": "compute contrast",
+   "canonical": "compute contrast",
+   "object": "INVALID:normal outlier",
+   "quote": "increases the contrast between normal and outlier data points",
+   "grounded": true
+  },
+  {
+   "op": "output score",
+   "canonical": "output score",
+   "object": "INVALID:outlier",
+   "quote": "results in interpretable outlier scores",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute probability@distribution",
+  "transform score@distribution"
+ ]
+}

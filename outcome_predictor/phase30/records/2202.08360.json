@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2202.08360",
+ "source": "abstract",
+ "words": 225,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Discriminative self-supervised learning allows training models on any random group of internet images",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "we question if using this ability, we can learn any salient and more representative information",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "we extensively study and validate our model performance on over 50 benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we scale our model size to dense 10 billion parameters to avoid underfitting",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the resulting model, not only captures well semantic information",
+   "grounded": true
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "latent",
+   "quote": "we discover that such model is more robust, more fair, less harmful and less biased",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "it also captures information about artistic style and learns salient information",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "we train models on billions of random images without any data pre-processing",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "predict@distribution",
+  "reconstruct@noise",
+  "sample@sample",
+  "train@latent"
+ ]
+}

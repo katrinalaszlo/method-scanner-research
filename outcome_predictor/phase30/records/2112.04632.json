@@ -1,0 +1,174 @@
+{
+ "arxiv_id": "2112.04632",
+ "source": "abstract",
+ "words": 248,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 0,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "state",
+   "quote": "visual features are extracted as glimpse features from RoIs",
+   "grounded": true
+  },
+  {
+   "op": "expand bounding box",
+   "canonical": "expand bounding box",
+   "object": "state",
+   "quote": "from RoIs with enlarged bounding box areas",
+   "grounded": true
+  },
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "latent",
+   "quote": "the attention of DETR gradually focuses on foreground objects",
+   "grounded": true
+  },
+  {
+   "op": "refine detection",
+   "canonical": "correct",
+   "object": "action",
+   "quote": "provide refined detection results based on both the glimpse features",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "based on both the glimpse features and the attention modeling outputs",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "REGO can be easily embedded in representative DETR variants",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "provide refined detection results based on both the glimpse features",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "REGO helps Deformable DETR achieve 44.8 AP on the MSCOCO dataset",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "compared with the first DETR and the Deformable DETR that require 500 and 50 epochs",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "REGO consistently boosts the performance of different DETR detectors",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "REGO can be easily embedded in representative DETR variants",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "REGO can be easily embedded in representative DETR variants",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "provide refined detection results based on both the glimpse features",
+   "grounded": true
+  },
+  {
+   "op": "track trajectory",
+   "canonical": "track trajectory",
+   "object": "trajectory",
+   "quote": "the attention of DET, gradually focuses on foreground objects",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "REGO helps Deformable DETR achieve 44.8 AP on the MSCOCO dataset",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "REGO can be easily embedded in representative DETR variants",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "provide refined detection results based on both the glimpse features",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "REGO can be easily embedded in representative DETR variants",
+   "grounded": true
+  },
+  {
+   "op": "store result",
+   "canonical": "store result",
+   "object": "action",
+   "quote": "provide refined detection results based on both the glimpse features",
+   "grounded": true
+  },
+  {
+   "op": "log metrics",
+   "canonical": "log metrics",
+   "object": "task",
+   "quote": "REGO consistently boosts the performance of different DETR detectors",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compute attention@latent",
+  "compute reward@reward",
+  "correct@action",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "expand bounding box@state",
+  "extract feature@state",
+  "log metrics@task",
+  "predict@action",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "store result@action",
+  "track trajectory@trajectory",
+  "train@parameter"
+ ]
+}

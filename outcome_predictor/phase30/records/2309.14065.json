@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2309.14065",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "state",
+   "quote": "AsymFormer uses an asymmetrical backbone for multimodal feature extraction",
+   "grounded": true
+  },
+  {
+   "op": "select feature",
+   "canonical": "select feature",
+   "object": "latent",
+   "quote": "a Local Attention-Guided Feature Selection (LAFS) module is used to selectively fuse features",
+   "grounded": true
+  },
+  {
+   "op": "fuse feature",
+   "canonical": "fuse feature",
+   "object": "latent",
+   "quote": "selectively fuse features from different modalities by leveraging their dependencies",
+   "grounded": true
+  },
+  {
+   "op": "extract representation",
+   "canonical": "extract representation",
+   "object": "latent",
+   "quote": "a Cross-Modal Attention-Guided Feature Correlation Embedding (CMA) module is introduced to further extract cross-modal representations",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "AsymFormer demonstrates competitive results with 54.1% mIoU on NYUv2",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "AsymFormer improves real-time semantic segmentation accuracy using RGB-D multi-modal information without substantially increasing network complexity",
+   "grounded": false
+  },
+  {
+   "op": "apply quantization",
+   "canonical": "apply quantization",
+   "object": "parameter",
+   "quote": "after implementing mixed precision quantization",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "AsymFormer can strike a balance between high accuracy and efficiency",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply quantization@parameter",
+  "correct@parameter",
+  "evaluate@error",
+  "extract feature@state",
+  "extract representation@latent",
+  "fuse feature@latent",
+  "predict@distribution",
+  "select feature@latent"
+ ]
+}

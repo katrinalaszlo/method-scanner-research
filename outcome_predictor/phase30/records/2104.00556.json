@@ -1,0 +1,193 @@
+{
+ "arxiv_id": "2104.00556",
+ "source": "abstract",
+ "words": 160,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "estimate flow",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "an optical flow estimation network that predicts dense correspondences between two frames",
+   "grounded": true
+  },
+  {
+   "op": "compute pose",
+   "canonical": "compute pose",
+   "object": "latent",
+   "quote": "a normalized pose estimation module that computes relative camera poses from the 2D optical flow correspondences",
+   "grounded": true
+  },
+  {
+   "op": "estimate depth",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "refine correspondences",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspond, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "reduce search space",
+   "canonical": "reduce search space",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "predict correspondences",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "an optical flow estimation network that predicts dense correspondences between two frames",
+   "grounded": true
+  },
+  {
+   "op": "estimate relative depth",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "compute relative pose",
+   "canonical": "compute relative pose",
+   "object": "latent",
+   "quote": "a normalized pose estimation module that computes relative camera poses from the 2D optical flow correspondences",
+   "grounded": true
+  },
+  {
+   "op": "estimate depth map",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "leverage geometry",
+   "canonical": "leverage geometry",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "compute camera pose",
+   "canonical": "compute camera pose",
+   "object": "latent",
+   "quote": "a normalized pose estimation module that computes relative camera poses from the 2D optical flow correspondences",
+   "grounded": true
+  },
+  {
+   "op": "refine depth map",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "compute relative depth",
+   "canonical": "compute relative depth",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "estimate camera pose",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "a normalized pose estimation module that computes relative camera poses from the 2D optical flow correspondences",
+   "grounded": true
+  },
+  {
+   "op": "compute depth map",
+   "canonical": "compute depth map",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "reduce search space",
+   "canonical": "reduce search space",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "refine correspondences",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "compute depth",
+   "canonical": "compute depth",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "estimate relative depth",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "compute relative depth",
+   "canonical": "compute relative depth",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "estimate depth",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "compute depth map",
+   "canonical": "compute depth map",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "reduce search space",
+   "canonical": "reduce search space",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  },
+  {
+   "op": "refine depth map",
+   "canonical": "correct",
+   "object": "latent",
+   "quote": "a scale-invariant depth estimation network that leverages epipolar geometry to reduce the search space, refine the dense correspondences, and estimate relative depth maps",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute camera pose@latent",
+  "compute depth map@latent",
+  "compute depth@latent",
+  "compute pose@latent",
+  "compute relative depth@latent",
+  "compute relative pose@latent",
+  "correct@latent",
+  "leverage geometry@latent",
+  "predict@input",
+  "predict@latent",
+  "reduce search space@latent"
+ ]
+}

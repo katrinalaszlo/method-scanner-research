@@ -1,0 +1,197 @@
+{
+ "arxiv_id": "1803.10091",
+ "source": "abstract",
+ "words": 148,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 17,
+ "n_grounded": 20,
+ "ops": [
+  {
+   "op": "extend function",
+   "canonical": "extend function",
+   "object": "INVALID:point cloud",
+   "quote": "mapping point cloud functions to volumetric functions",
+   "grounded": false
+  },
+  {
+   "op": "restrict function",
+   "canonical": "restrict function",
+   "object": "INVALID:volumetric",
+   "quote": "mapping point cloud functions to volumetric functions and vise-versa",
+   "grounded": false
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "INVALID:volumetric",
+   "quote": "pull-back of the Euclidean volumetric convolution",
+   "grounded": true
+  },
+  {
+   "op": "compute kernel",
+   "canonical": "compute kernel",
+   "object": "INVALID:convolution",
+   "quote": "the same convolution kernel is used at all points",
+   "grounded": true
+  },
+  {
+   "op": "aggregate points",
+   "canonical": "aggregate",
+   "object": "INVALID:point cloud",
+   "quote": "robust to different samplings and varying densities",
+   "grounded": true
+  },
+  {
+   "op": "compute feature",
+   "canonical": "compute feature",
+   "object": "INVALID:point cloud",
+   "quote": "applying convolutional neural networks to point clouds",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "generalizes image CNNs and allows readily adapting their architectures",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Evaluation of PCNN on three central point cloud learning benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the vast majority of methods working with more informative shape representations",
+   "grounded": false
+  },
+  {
+   "op": "sample points",
+   "canonical": "sample",
+   "object": "INVALID:point cloud",
+   "quote": "robust to different samplings and varying densities",
+   "grounded": true
+  },
+  {
+   "op": "compute invariant",
+   "canonical": "compute invariant",
+   "object": "INVALID:point cloud",
+   "quote": "translation invariant, that is the same convolution kernel is used at all points",
+   "grounded": true
+  },
+  {
+   "op": "compute output",
+   "canonical": "compute output",
+   "object": "parameter",
+   "quote": "applying convolutional neural networks to point clouds",
+   "grounded": true
+  },
+  {
+   "op": "compute kernel weights",
+   "canonical": "compute kernel weights",
+   "object": "parameter",
+   "quote": "the same convolution kernel is used at all points",
+   "grounded": true
+  },
+  {
+   "op": "compute convolution",
+   "canonical": "compute convolution",
+   "object": "INVALID:point cloud",
+   "quote": "pull-back of the Euclidean volumetric convolution",
+   "grounded": true
+  },
+  {
+   "op": "compute feature map",
+   "canonical": "compute feature map",
+   "object": "INVALID:point cloud",
+   "quote": "applying convolutional neural networks to point clouds",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "the vast majority of methods working with more informative shape representations",
+   "grounded": false
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "Evaluation of PCNN on three central point cloud learning benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "INVALID:output",
+   "quote": "applying convolutional neural networks to point clouds",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "INVALID:output",
+   "quote": "applying convolutional neural networks to point clouds",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "INVALID:point cloud",
+   "quote": "robust to different samplings and varying densities",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "INVALID:point cloud",
+   "quote": "the vast majority of methods working with more informative shape representations",
+   "grounded": false
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "INVALID:point cloud",
+   "quote": "robust to different samplings and varying densities",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "INVALID:point cloud",
+   "quote": "applying convolutional neural networks to point clouds",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "generalizes image CNNs and allows readily adapting their architectures",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "INVALID:point cloud",
+   "quote": "robust to different samplings and varying densities",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute gradient@parameter",
+  "compute kernel weights@parameter",
+  "compute output@parameter",
+  "compute parameter@parameter",
+  "correct@parameter",
+  "evaluate@error"
+ ]
+}

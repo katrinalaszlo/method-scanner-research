@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "1709.08325",
+ "source": "abstract",
+ "words": 150,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "Feature extraction and matching are two crucial components",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "Extensive experimental analyses and results",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "To learn improved feature extraction and matching",
+   "grounded": true
+  },
+  {
+   "op": "update parameter",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "Our deep architecture explicitly leverages",
+   "grounded": true
+  },
+  {
+   "op": "apply weighting",
+   "canonical": "apply weighting",
+   "object": "distribution",
+   "quote": "a pose driven feature weighting sub-network",
+   "grounded": false
+  },
+  {
+   "op": "fuse feature",
+   "canonical": "fuse feature",
+   "object": "latent",
+   "quote": "learn adaptive feature fusions",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "To match the features from global human body",
+   "grounded": false
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "learn robust feature representations from both",
+   "grounded": false
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "significant performance improvements of our model",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "large pose deformations and the complex view variations",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply weighting@distribution",
+  "backpropagate@gradient",
+  "compute reward@reward",
+  "correct@parameter",
+  "evaluate@error",
+  "extract feature@input",
+  "fuse feature@latent",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action"
+ ]
+}

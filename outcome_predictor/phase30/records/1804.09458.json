@@ -1,0 +1,205 @@
+{
+ "arxiv_id": "1804.09458",
+ "source": "abstract",
+ "words": 266,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 9,
+ "n_grounded": 21,
+ "ops": [
+  {
+   "op": "compute similarity",
+   "canonical": "compute similarity",
+   "object": "INVALID:feature representation",
+   "quote": "the latter, apart from unifying the recognition of both novel and base categories",
+   "grounded": true
+  },
+  {
+   "op": "compare similarity",
+   "canonical": "compare",
+   "object": "INVALID:feature representation",
+   "quote": "the latter, apart from unifying the recognition of both novel and base categories",
+   "grounded": true
+  },
+  {
+   "op": "generate weight",
+   "canonical": "reconstruct",
+   "object": "INVALID:classification",
+   "quote": "extend an object recognition system with an attention based few-shot classification weight generator",
+   "grounded": false
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "INVALID:weight generator",
+   "quote": "extend an object recognition system with an attention based few-shot classification weight generator",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "INVALID:classifier",
+   "quote": "redesign the classifier of a ConvNet model as the cosine similarity function",
+   "grounded": true
+  },
+  {
+   "op": "compute cosine similarity",
+   "canonical": "compute cosine similarity",
+   "object": "INVALID:feature representation",
+   "quote": "redesign the classifier of a ConvNet model as the cosine similarity function",
+   "grounded": true
+  },
+  {
+   "op": "generalize representation",
+   "canonical": "generalize representation",
+   "object": "latent",
+   "quote": "it also leads to feature representations that generalize better on \"unseen\" categories",
+   "grounded": true
+  },
+  {
+   "op": "classify input",
+   "canonical": "classify",
+   "object": "INVALID:feature representation",
+   "quote": "the latter, apart from unifying the recognition of both novel and base categories",
+   "grounded": true
+  },
+  {
+   "op": "retain accuracy",
+   "canonical": "retain accuracy",
+   "object": "INVALID:base category",
+   "quote": "we do not sacrifice any accuracy on the base categories",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "parameter",
+   "quote": "we extensively evaluate our approach on Mini-ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "INVALID:base category",
+   "quote": "we do not sacrifice any accuracy on the base categories",
+   "grounded": true
+  },
+  {
+   "op": "test model",
+   "canonical": "test model",
+   "object": "task",
+   "quote": "we extensively evaluate our approach on Mini-ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "apply model",
+   "canonical": "apply model",
+   "object": "task",
+   "quote": "we apply our approach on the recently introduced few-shot benchmark of Bharath and Girshick [4]",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we extensively evaluate our approach on Mini-ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "update weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we extensively evaluate our approach on Mini-ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "store model",
+   "canonical": "store model",
+   "object": "parameter",
+   "quote": "the code and models of our paper will be published on",
+   "grounded": false
+  },
+  {
+   "op": "retrieve model",
+   "canonical": "retrieve model",
+   "object": "parameter",
+   "quote": "the code and models of our paper will be published on",
+   "grounded": false
+  },
+  {
+   "op": "compute metric",
+   "canonical": "compute metric",
+   "object": "task",
+   "quote": "we extensively evaluate our approach on Mini-ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "log result",
+   "canonical": "log result",
+   "object": "task",
+   "quote": "we extensively evaluate our approach on Mini-ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "save result",
+   "canonical": "save result",
+   "object": "task",
+   "quote": "we extensively evaluate our approach on Mini-ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "load data",
+   "canonical": "load data",
+   "object": "input",
+   "quote": "we extensively evaluate our approach on Mini-ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "we extensively evaluate our approach on Mini-Image,Net",
+   "grounded": true
+  },
+  {
+   "op": "extract feature",
+   "canonical": "extract feature",
+   "object": "input",
+   "quote": "we extensively evaluate our approach on Mini-ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "we extensively evaluate our approach on Mini-ImageNet",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "we extensively evaluate our approach on Mini-ImageNet",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply gradient@parameter",
+  "apply model@task",
+  "compute gradient@parameter",
+  "compute metric@task",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@parameter",
+  "extract feature@input",
+  "generalize representation@latent",
+  "load data@input",
+  "log result@task",
+  "process input@input",
+  "retrieve model@parameter",
+  "save result@task",
+  "store model@parameter",
+  "test model@task"
+ ]
+}

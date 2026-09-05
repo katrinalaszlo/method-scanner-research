@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2003.00804",
+ "source": "abstract",
+ "words": 142,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "rotate image",
+   "canonical": "rotate image",
+   "object": "input",
+   "quote": "rotating the original images 90, 18, 270 degrees",
+   "grounded": true
+  },
+  {
+   "op": "generate class",
+   "canonical": "reconstruct",
+   "object": "task",
+   "quote": "increases the number of classes",
+   "grounded": true
+  },
+  {
+   "op": "sample task",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "sample more diverse task instances",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "train a deep network by meta-learning methods",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "with little over-fitting",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "train a deep network by meta-learning methods",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "achieves state-of-the-art performance",
+   "grounded": true
+  },
+  {
+   "op": "compare results",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "our approach is better than the rotation for increasing the number of images",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compare@error",
+  "compare@task",
+  "correct@parameter",
+  "evaluate@task",
+  "reconstruct@task",
+  "rotate image@input",
+  "sample@task",
+  "train@parameter"
+ ]
+}

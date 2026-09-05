@@ -1,0 +1,203 @@
+{
+ "arxiv_id": "2207.14284",
+ "source": "abstract",
+ "words": 238,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 0,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "input",
+   "quote": "we show that the key ingredients behind the vision Transformers, namely input-adaptive, long-range and high-order spatial interactions, can also be efficiently implemented with a convolution-based framework.",
+   "grounded": true
+  },
+  {
+   "op": "gate convolution",
+   "canonical": "gate convolution",
+   "object": "latent",
+   "quote": "The new operation is highly flexible and customizable, which is compatible with various variants of convolution and extends the two-order interactions in self-attention to arbitrary orders without introducing significant extra computation.",
+   "grounded": true
+  },
+  {
+   "op": "perform recursion",
+   "canonical": "perform recursion",
+   "object": "latent",
+   "quote": "The new operation is highly flexible and customizable, which is compatible with various variants of convolution and extends the two-order interactions in self-attention to arbitrary orders without introducing significant extra computation.",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "latent",
+   "quote": "we show that the key ingredients behind the vision Transformers, namely input-adaptive, long-range and high-order spatial interactions, can also be efficiently implemented with a convolution-based framework.",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "The new operation is highly flexible and customizable, which is compatible with various variants of convolution and extends the two-order interactions in self-attention to arbitrary orders without introducing significant extra computation.",
+   "grounded": true
+  },
+  {
+   "op": "construct backbone",
+   "canonical": "construct backbone",
+   "object": "input",
+   "quote": "Based on the operation, we construct a new family of generic vision backbones named HorNet.",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "we show that the key ingredients behind the vision Transformers, namely input-adaptive, long-range and high-order spatial interactions, can also be efficiently implemented with a convolution-based framework.",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "The new operation is highly flexible and customizable, which is compatible with various variants of convolution and extends the two,order interactions in self-attention to arbitrary orders without introducing significant extra computation.",
+   "grounded": true
+  },
+  {
+   "op": "apply gated convolution",
+   "canonical": "apply gated convolution",
+   "object": "latent",
+   "quote": "The new operation is highly flexible and customizable, which is compatible with various variants of convolution and extends the two-order interactions in self-attention to arbitrary orders without introducing significant extra computation.",
+   "grounded": true
+  },
+  {
+   "op": "compute spatial interaction",
+   "canonical": "compute spatial interaction",
+   "object": "latent",
+   "quote": "we show that the key ingredients behind the vision Transformers, namely input-adaptive, long-range and high-order spatial interactions, can also be efficiently implemented with a convolution-based framework.",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "The new operation is highly flexible and customizable, which is compatible with various variants of convolution and extends the two-order interactions in self-attention to arbitrary orders without introducing significant extra computation.",
+   "grounded": true
+  },
+  {
+   "op": "apply recursive design",
+   "canonical": "apply recursive design",
+   "object": "latent",
+   "quote": "The new operation is highly flexible and customizable, which is compatible with various variants of convolution and extends the two-order interactions in self-attention to arbitrary orders without introducing significant extra computation.",
+   "grounded": true
+  },
+  {
+   "op": "compute high-order interaction",
+   "canonical": "compute high-order interaction",
+   "object": "latent",
+   "quote": "we show that the key ingredients behind the vision Transformers, namely input-adaptive, long-range and high-order spatial interactions, can also be efficiently implemented with a convolution-based framework.",
+   "grounded": true
+  },
+  {
+   "op": "generate representation",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "The new operation is highly flexible and customizable, which is compatible with various variants of convolution and extends the two-order interactions in self-attention to arbitrary orders without introducing significant extra computation.",
+   "grounded": true
+  },
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "latent",
+   "quote": "we show that the key ingredients behind the vision Transformers, namely input-adaptive, long-range and high-order spatial interactions, can also be efficiently implemented with a convolution-based framework.",
+   "grounded": true
+  },
+  {
+   "op": "compute feature map",
+   "canonical": "compute feature map",
+   "object": "latent",
+   "quote": "The new operation is highly flexible and customizable, which is compatible with various variants of convolution and extends the two-order interactions in self-attention to arbitrary orders without introducing significant extra computation.",
+   "grounded": true
+  },
+  {
+   "op": "apply convolutional filter",
+   "canonical": "apply convolutional filter",
+   "object": "input",
+   "quote": "we show that the key ingredients behind the vision Transformers, namely input-adaptive, long-range and high-order spatial interactions, can also be efficiently implemented with a convolution-based framework.",
+   "grounded": true
+  },
+  {
+   "op": "compute spatial attention",
+   "canonical": "compute spatial attention",
+   "object": "latent",
+   "quote": "The new operation is highly flexible and customizable, which is compatible with various variants of convolution and extends the two-order interactions in self-attention to arbitrary orders without introducing significant extra computation.",
+   "grounded": true
+  },
+  {
+   "op": "generate latent representation",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "we show that the key ingredients behind the vision Transformers, namely input-adaptive, long-range and high-order spatial interactions, can also be efficiently implemented with a convolution-based framework.",
+   "grounded": true
+  },
+  {
+   "op": "apply recursive processing",
+   "canonical": "apply recursive processing",
+   "object": "latent",
+   "quote": "The new operation is highly flexible and customizable, which is compatible with various variants of convolution and extends the two-order interactions in self-attention to arbitrary orders without introducing significant extra computation.",
+   "grounded": true
+  },
+  {
+   "op": "compute interaction pattern",
+   "canonical": "compute interaction pattern",
+   "object": "latent",
+   "quote": "we show that the key ingredients behind the vision Transformers, namely input-adaptive, long-range and high-order spatial interactions, can also be efficiently implemented with a convolution-based framework.",
+   "grounded": true
+  },
+  {
+   "op": "apply gated mechanism",
+   "canonical": "apply gated mechanism",
+   "object": "latent",
+   "quote": "The new operation is highly flexible and customizable, which is compatible with various variants of convolution and extends the two-order interactions in self-attention to arbitrary orders without introducing significant extra computation.",
+   "grounded": true
+  },
+  {
+   "op": "compute spatial features",
+   "canonical": "compute spatial features",
+   "object": "latent",
+   "quote": "we show that the key ingredients behind the vision Transformers, namely input-adaptive, long-range and high-order spatial interactions, can also be efficiently implemented with a convolution-based framework.",
+   "grounded": true
+  },
+  {
+   "op": "generate output features",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "The new operation is highly flexible and customizable, which is compatible with various variants of convolution and extends the two-order interactions in self-attention to arbitrary orders without introducing significant extra computation.",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply convolution@input",
+  "apply convolutional filter@input",
+  "apply gated convolution@latent",
+  "apply gated mechanism@latent",
+  "apply recursive design@latent",
+  "apply recursive processing@latent",
+  "apply transformation@latent",
+  "compare@latent",
+  "compute feature map@latent",
+  "compute high-order interaction@latent",
+  "compute interaction pattern@latent",
+  "compute spatial attention@latent",
+  "compute spatial features@latent",
+  "compute spatial interaction@latent",
+  "construct backbone@input",
+  "correct@parameter",
+  "gate convolution@latent",
+  "perform recursion@latent",
+  "process input@input",
+  "reconstruct@latent"
+ ]
+}

@@ -1,0 +1,92 @@
+{
+ "arxiv_id": "2401.12503",
+ "source": "abstract",
+ "words": 190,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 2,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "enabling it to efficiently encode visual information",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "procedure of generating vision vocabulary",
+   "grounded": true
+  },
+  {
+   "op": "replace",
+   "canonical": "replace",
+   "object": "sample",
+   "quote": "replace negative samples of natural images",
+   "grounded": true
+  },
+  {
+   "op": "detect",
+   "canonical": "detect",
+   "object": "INVALID:object",
+   "quote": "positive sample data driven by object detection",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "Qwen-1.8B as the base ``large'' language model",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "achieve 65.6% ANLS on DocVQA",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "INVALID:accuracy",
+   "quote": "59.1% accuracy on ChartQA",
+   "grounded": true
+  },
+  {
+   "op": "evaluate",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "achieve 88.1% accuracy on RefCOCO",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "29% on MMVet",
+   "grounded": true
+  },
+  {
+   "op": "store",
+   "canonical": "store",
+   "object": "parameter",
+   "quote": "The code will be publicly available on the homepage",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute@distribution",
+  "encode@input",
+  "evaluate@task",
+  "predict@value",
+  "reconstruct@sample",
+  "replace@sample",
+  "store@parameter",
+  "train@parameter"
+ ]
+}

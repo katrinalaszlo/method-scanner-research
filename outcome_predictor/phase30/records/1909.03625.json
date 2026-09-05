@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1909.03625",
+ "source": "abstract",
+ "words": 234,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "the backbone network is a very important component for basic feature extraction",
+   "grounded": true
+  },
+  {
+   "op": "feed forward",
+   "canonical": "feed forward",
+   "object": "latent",
+   "quote": "CBNet iteratively feeds the output features of the previous backbone",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "composite connections between the adjacent backbones",
+   "grounded": true
+  },
+  {
+   "op": "pass features",
+   "canonical": "transmit",
+   "object": "latent",
+   "quote": "in a stage-by-stage fashion",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "the feature maps of the last backbone (named Lead Backbone) are used for object detection",
+   "grounded": true
+  },
+  {
+   "op": "detect objects",
+   "canonical": "detect objects",
+   "object": "latent",
+   "quote": "the feature maps of the last backbone (named Lead Backbone) are used for object detection",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we show that CBNet can be very easily integrated into most state-of-the-art detectors",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "it boosts the mAP of FPN, Mask R-CNN and Cascade R-CNN on the COCO dataset by about 1.5 to 3.0 percent",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "correct@parameter",
+  "detect objects@latent",
+  "encode@state",
+  "evaluate@error",
+  "feed forward@latent",
+  "reconstruct@latent",
+  "transmit@latent"
+ ]
+}

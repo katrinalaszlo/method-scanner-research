@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "1902.04502",
+ "source": "abstract",
+ "words": 156,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 24,
+ "n_invalid_object": 1,
+ "n_grounded": 10,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "The encoder-decoder framework is state-of-the-art for offline semantic image segmentation.",
+   "grounded": true
+  },
+  {
+   "op": "downsample",
+   "canonical": "downsample",
+   "object": "latent",
+   "quote": "our `learning to downsample' module which computes low-level features for multiple resolution branches simultaneously.",
+   "grounded": false
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "Our network combines spatial detail at high resolution with deep features extracted at lower resolution.",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "an above real-time semantic segmentation model on high resolution image data.",
+   "grounded": false
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "without any network modifications.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "yielding an accuracy of 68.0% mean intersection over union at 123.5 frames per second on Cityscapes.",
+   "grounded": false
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "show even faster computation with competitive results on subsampled inputs.",
+   "grounded": true
+  },
+  {
+   "op": "validate",
+   "canonical": "validate",
+   "object": "INVALID:metric",
+   "quote": "we thoroughly validate our metric in experiments with ImageNet pre-training and the coarse labeled data of Cityscapes.",
+   "grounded": false
+  },
+  {
+   "op": "preprocess",
+   "canonical": "preprocess",
+   "object": "input",
+   "quote": "an above real-time semantic segmentation model on high resolution image data.",
+   "grounded": false
+  },
+  {
+   "op": "extract",
+   "canonical": "extract",
+   "object": "latent",
+   "quote": "our `learning to downsample' module which computes low-level features for multiple resolution branches simultaneously.",
+   "grounded": false
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "Our network combines spatial detail at high resolution with deep features extracted at lower resolution.",
+   "grounded": true
+  },
+  {
+   "op": "output",
+   "canonical": "output",
+   "object": "distribution",
+   "quote": "an above real-time semantic segmentation model on high resolution image data.",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "yielding an accuracy of 68.0% mean intersection over union at 123.5 frames per second on Cityscapes.",
+   "grounded": false
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we thoroughly validate our metric in experiments with ImageNet pre-training and the coarse labeled data of Cityscapes.",
+   "grounded": false
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "input",
+   "quote": "an above real-time semantic segmentation model on high resolution image data.",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "trajectory",
+   "quote": "show even faster computation with competitive results on subsampled inputs.",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "an above real-time semantic segmentation model on high resolution image data.",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "we thoroughly validate our metric in experiments with ImageNet pre-training and the coarse labeled data of Cityscapes.",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "show even faster computation with competitive results on subsampled inputs.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "policy",
+   "quote": "without any network modifications.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "sample",
+   "quote": "show even faster computation with competitive results on subsampled inputs.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "noise",
+   "quote": "show even faster computation with competitive results on subsampled inputs.",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "gradient",
+   "quote": "we thoroughly validate our metric in experiments with ImageNet pre-training and the coarse labeled data of Cityscapes.",
+   "grounded": false
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "parameter",
+   "quote": "we thoroughly validate our metric in experiments with ImageNet pre-training and the coarse labeled data of Cityscapes.",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "compute@error",
+  "compute@gradient",
+  "compute@noise",
+  "compute@parameter",
+  "compute@policy",
+  "compute@reward",
+  "compute@sample",
+  "compute@task",
+  "compute@trajectory",
+  "compute@value",
+  "correct@parameter",
+  "downsample@latent",
+  "encode@input",
+  "extract@latent",
+  "output@distribution",
+  "predict@distribution",
+  "preprocess@input",
+  "process@input",
+  "reconstruct@distribution",
+  "sample@action",
+  "sample@input"
+ ]
+}

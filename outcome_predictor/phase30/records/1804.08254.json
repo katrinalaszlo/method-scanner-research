@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1804.08254",
+ "source": "abstract",
+ "words": 167,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "treats the attention calibrated skeleton joint sequences as images",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "state",
+   "quote": "employs a novel attention learning network to recalibrate the temporal attention",
+   "grounded": true
+  },
+  {
+   "op": "recalibrate",
+   "canonical": "recalibrate",
+   "object": "state",
+   "quote": "employs a novel attention learning network to recalibrate the temporal attention",
+   "grounded": true
+  },
+  {
+   "op": "convolve",
+   "canonical": "convolve",
+   "object": "input",
+   "quote": "leverages the Convolution Neural Networks (CNNs) to further model the spatial and temporal information",
+   "grounded": true
+  },
+  {
+   "op": "model",
+   "canonical": "model",
+   "object": "distribution",
+   "quote": "leverages the Convolution Neural Networks (CNNs) to further model the spatial and temporal information",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "these two modules (TARM and STCM) seamlessly form a single network architecture",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "can be trained in an end-to-end fashion",
+   "grounded": false
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "significantly boost the performance of skeleton-based action recognition",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "apply attention@state",
+  "convolve@input",
+  "encode@input",
+  "model@distribution",
+  "predict@value",
+  "recalibrate@state",
+  "train@parameter"
+ ]
+}

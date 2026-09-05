@@ -1,0 +1,171 @@
+{
+ "arxiv_id": "1809.09077",
+ "source": "abstract",
+ "words": 148,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 20,
+ "n_invalid_object": 3,
+ "n_grounded": 19,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "depth maps can be acquired more easily",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "deep convolutional networks in recent years",
+   "grounded": true
+  },
+  {
+   "op": "process depth",
+   "canonical": "process depth",
+   "object": "INVALID:depth",
+   "quote": "includes a sub-network to process depth maps",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "INVALID:depth",
+   "quote": "employs luminance images to assist the depth information in processes",
+   "grounded": true
+  },
+  {
+   "op": "process luminance",
+   "canonical": "process luminance",
+   "object": "INVALID:luminance",
+   "quote": "employs luminance images to assist the depth information in processes",
+   "grounded": true
+  },
+  {
+   "op": "fuse features",
+   "canonical": "fuse features",
+   "object": "latent",
+   "quote": "incorporates Luminance, Depth and Color information by a fusion-based network",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the experimental results show the effectiveness of the proposed multi-modal fusion network",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "LDFNet outperforms the other state-of-art systems on the Cityscapes dataset",
+   "grounded": true
+  },
+  {
+   "op": "predict output",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "semantic segmentation has made encouraging progress due to the success of deep convolutional networks in recent years",
+   "grounded": true
+  },
+  {
+   "op": "apply softmax",
+   "canonical": "apply softmax",
+   "object": "distribution",
+   "quote": "semantic segmentation has made encouraging progress due to the success of deep convolutional networks in recent years",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "its inference speed is faster than most of the existing networks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "the experimental results show the effectiveness of the proposed multi-modal fusion network",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the experimental results show the effectiveness of the proposed multi-modal fusion network",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "its inference speed is faster than most of the existing networks",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the experimental results show the effectiveness of the proposed multi-modal fusion network",
+   "grounded": true
+  },
+  {
+   "op": "clip gradient",
+   "canonical": "clip gradient",
+   "object": "gradient",
+   "quote": "the experimental results show the effectiveness of the proposed multi-modal fusion network",
+   "grounded": true
+  },
+  {
+   "op": "normalize input",
+   "canonical": "normalize input",
+   "object": "input",
+   "quote": "depth maps can be acquired more easily",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the experimental results show the effectiveness of the proposed multi-modal fusion network",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "its inference speed is faster than most of the existing networks",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the experimental, results show the effectiveness of the proposed multi-modal fusion network",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "apply softmax@distribution",
+  "backpropagate@gradient",
+  "clip gradient@gradient",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "fuse features@latent",
+  "normalize input@input",
+  "predict@distribution",
+  "process input@input",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample"
+ ]
+}

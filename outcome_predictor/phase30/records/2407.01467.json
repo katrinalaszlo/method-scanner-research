@@ -1,0 +1,200 @@
+{
+ "arxiv_id": "2407.01467",
+ "source": "abstract",
+ "words": 158,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 11,
+ "n_grounded": 16,
+ "ops": [
+  {
+   "op": "compute cost",
+   "canonical": "compute cost",
+   "object": "latent",
+   "quote": "minimizing the cost between a set of features to itself",
+   "grounded": true
+  },
+  {
+   "op": "solve transport",
+   "canonical": "solve transport",
+   "object": "latent",
+   "quote": "using the transport plan's rows as the new representation",
+   "grounded": false
+  },
+  {
+   "op": "encode relation",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "encodes a rich representation of high order relations between the input features",
+   "grounded": true
+  },
+  {
+   "op": "approximate matching",
+   "canonical": "approximate matching",
+   "object": "latent",
+   "quote": "a particular min-cost-max-flow fractional matching problem",
+   "grounded": true
+  },
+  {
+   "op": "regularize entropy",
+   "canonical": "regularize entropy",
+   "object": "INVALID:cost",
+   "quote": "entropy regularized version can be approximated by an optimal transport (OT) optimization",
+   "grounded": true
+  },
+  {
+   "op": "transform features",
+   "canonical": "transform features",
+   "object": "latent",
+   "quote": "upgrade the features of a set of input items",
+   "grounded": true
+  },
+  {
+   "op": "generate representation",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "using the transport plan's rows as the new representation",
+   "grounded": false
+  },
+  {
+   "op": "compute transport plan",
+   "canonical": "compute transport plan",
+   "object": "latent",
+   "quote": "using the transport plan's rows as the new representation",
+   "grounded": false
+  },
+  {
+   "op": "extract rows",
+   "canonical": "extract rows",
+   "object": "INVALID:transport plan",
+   "quote": "using the transport plan's rows as the new representation",
+   "grounded": false
+  },
+  {
+   "op": "apply transform",
+   "canonical": "apply transform",
+   "object": "latent",
+   "quote": "upgrade the features of a set of input items",
+   "grounded": true
+  },
+  {
+   "op": "produce output",
+   "canonical": "produce output",
+   "object": "latent",
+   "quote": "using the transport plan's rows as the new representation",
+   "grounded": false
+  },
+  {
+   "op": "compute entropy",
+   "canonical": "compute entropy",
+   "object": "INVALID:cost",
+   "quote": "entropy regularized version can be approximated by an optimal transport (OT) optimization",
+   "grounded": true
+  },
+  {
+   "op": "optimize cost",
+   "canonical": "improve",
+   "object": "latent",
+   "quote": "entropy regularized version can be approximated by an optimal, transport (OT) optimization",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "INVALID:cost",
+   "quote": "entropy regularized version can be approximated by an optimal transport (OT) optimization",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "INVALID:transport plan",
+   "quote": "using the transport plan's rows as the new representation",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "INVALID:transport plan",
+   "quote": "using the transport plan's rows as the new representation",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "latent",
+   "quote": "entropy regularized version can be approximated by an optimal transport (OT) optimization",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "INVALID:cost",
+   "quote": "entropy regularized version can be approximated by an optimal transport (OT) optimization",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "latent",
+   "quote": "entropy regularized version can be approximated by an optimal transport (OT) optimization",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "INVALID:transport plan",
+   "quote": "using the transport plan's rows as the new representation",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "latent",
+   "quote": "entropy regularized version can be approximated by an optimal transport (OT) optimization",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "INVALID:cost",
+   "quote": "entropy regularized version can be approximated by an optimal transport (OT) optimization",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "INVALID:transport plan",
+   "quote": "using the transport plan's rows as the new representation",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "latent",
+   "quote": "entropy regularized version can be approximated by an optimal transport (OT) optimization",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "INVALID:cost",
+   "quote": "entropy regularized version can be approximated by an optimal transport (OT) optimization",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply transform@latent",
+  "approximate matching@latent",
+  "compute cost@latent",
+  "compute gradient@latent",
+  "compute transport plan@latent",
+  "encode@latent",
+  "improve@latent",
+  "produce output@latent",
+  "reconstruct@latent",
+  "solve transport@latent",
+  "transform features@latent"
+ ]
+}

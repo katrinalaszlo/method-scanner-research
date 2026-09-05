@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1711.10295",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 4,
+ "ops": [
+  {
+   "op": "style transfer",
+   "canonical": "style transfer",
+   "object": "input",
+   "quote": "labeled training images can be style-transferred to each camera",
+   "grounded": false
+  },
+  {
+   "op": "form augmented set",
+   "canonical": "form augmented set",
+   "object": "input",
+   "quote": "form the augmented training set",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the label smooth regularization (LSR) is adopted",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the vanilla version of our method (without LSR) performs reasonably well",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "we demonstrate consistent improvement in all systems",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the label smooth regularization (LSR) is adopted",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the label smooth regularization (LSR) is adopted",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "the vanilla version of our method (without LSR) performs reasonably well",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "correct@parameter",
+  "evaluate@error",
+  "form augmented set@input",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@action",
+  "style transfer@input",
+  "train@parameter"
+ ]
+}

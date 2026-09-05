@@ -1,0 +1,208 @@
+{
+ "arxiv_id": "1905.11136",
+ "source": "abstract",
+ "words": 248,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute tensor",
+   "canonical": "compute tensor",
+   "object": "state",
+   "quote": "processing high order tensors",
+   "grounded": true
+  },
+  {
+   "op": "apply matrix multiplication",
+   "canonical": "apply matrix multiplication",
+   "object": "latent",
+   "quote": "augmented with a single quadratic operation (matrix multiplication)",
+   "grounded": true
+  },
+  {
+   "op": "apply mlp",
+   "canonical": "apply mlp",
+   "object": "latent",
+   "quote": "interleaves applications of standard Multilayer-Perceptron (MLP) applied to the feature dimension",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "build upon the recent k-order invariant and equivariant graph neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the popular message passing GNN cannot distinguish between graphs that are indistinguishable by the 1-WL test",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we validate this model by presenting state of the art results",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "we suggest a simple model that interleaves applications of standard Multilayer-Perceptron (MLP) applied to the feature dimension",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "we show that such k-order networks can distinguish between non-isomorphic graphs as good as the k-WL tests",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we suggest a simple model that interleaves applications of standard Multilayer-Perceptron (MLP) applied to the feature dimension",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we validate this model by presenting state of the art results on popular graph classification and regression tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "we build upon the recent k-order invariant and equivariant graph neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we validate this model by presenting state of the art results on popular graph classification and regression tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we validate this model by presenting state of the art results on popular graph classification and regression tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "we suggest a simple model that interleaves applications of standard Multilayer-Perceptron (MLP) applied to the feature dimension",
+   "grounded": true
+  },
+  {
+   "op": "compute input",
+   "canonical": "compute input",
+   "object": "input",
+   "quote": "we validate this model by presenting state of the art results on popular graph classification and regression tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute sample",
+   "canonical": "compute sample",
+   "object": "sample",
+   "quote": "we suggest a simple model that interleaves applications of standard Multilayer-Perceptron (MLP) applied to the feature dimension",
+   "grounded": true
+  },
+  {
+   "op": "compute noise",
+   "canonical": "compute noise",
+   "object": "noise",
+   "quote": "processing high order tensors",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we validate this model by presenting state of the art results",
+   "grounded": true
+  },
+  {
+   "op": "compute parameter",
+   "canonical": "compute parameter",
+   "object": "parameter",
+   "quote": "we build upon the recent k-order invariant and equivariant graph neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the popular message passing GNN cannot distinguish between graphs that are indistinguishable by the 1-WL test",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "we suggest a simple model that interleaves applications of standard Multilayer-Perceptron (MLP) applied to the feature dimension",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "we validate this model by presenting state of the art results on popular graph classification and regression tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute latent",
+   "canonical": "compute latent",
+   "object": "latent",
+   "quote": "we build upon the recent k-order invariant and equivariant graph neural networks",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "we validate this model by presenting state of the art results on popular graph classification and regression tasks",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "we validate this model by presenting state of the art results on popular graph classification and regression tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply matrix multiplication@latent",
+  "apply mlp@latent",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@gradient",
+  "compute input@input",
+  "compute latent@latent",
+  "compute noise@noise",
+  "compute parameter@parameter",
+  "compute policy@policy",
+  "compute reward@reward",
+  "compute sample@sample",
+  "compute task@task",
+  "compute tensor@state",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@parameter",
+  "sample@action"
+ ]
+}

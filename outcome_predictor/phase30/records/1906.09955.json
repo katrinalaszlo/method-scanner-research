@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1906.09955",
+ "source": "abstract",
+ "words": 186,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 7,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "video-based human action recognition",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "performance of action recognition is highly dependent on the type of features being extracted",
+   "grounded": true
+  },
+  {
+   "op": "represent action",
+   "canonical": "encode",
+   "object": "state",
+   "quote": "how the actions are represented",
+   "grounded": true
+  },
+  {
+   "op": "compare methods",
+   "canonical": "compare",
+   "object": "task",
+   "quote": "we analyze and compare ten recent Kinect-based algorithms",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our experiments show that the majority of methods perform better",
+   "grounded": true
+  },
+  {
+   "op": "classify features",
+   "canonical": "classify",
+   "object": "latent",
+   "quote": "grouping of feature types, such as handcrafted versus deep learning features",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "task",
+   "quote": "reward / return / value signal",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "we have implemented and improved some of these techniques",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "classify@latent",
+  "compare@task",
+  "compute reward@task",
+  "encode@input",
+  "encode@state",
+  "evaluate@task",
+  "process input@input",
+  "train@parameter"
+ ]
+}

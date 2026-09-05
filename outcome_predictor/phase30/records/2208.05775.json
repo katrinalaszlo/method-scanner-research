@@ -1,0 +1,94 @@
+{
+ "arxiv_id": "2208.05775",
+ "source": "abstract",
+ "words": 262,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 0,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "pose tree are processed as a whole",
+   "grounded": true
+  },
+  {
+   "op": "extract part groups",
+   "canonical": "extract part groups",
+   "object": "state",
+   "quote": "action categories are characterized by localized action dynamics",
+   "grounded": false
+  },
+  {
+   "op": "unify modalities",
+   "canonical": "unify modalities",
+   "object": "latent",
+   "quote": "associated data from multiple modalities is unified",
+   "grounded": true
+  },
+  {
+   "op": "feed forward",
+   "canonical": "feed forward",
+   "object": "latent",
+   "quote": "consumed by the processing pipeline",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "state of the art performance on the widely used NTURGB+D 60/120 dataset",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "conventional approaches employ independent modality streams",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "PSUMNet is highly efficient and outperforms competing methods",
+   "grounded": true
+  },
+  {
+   "op": "predict action",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "pose-based action recognition is predominantly tackled",
+   "grounded": true
+  },
+  {
+   "op": "sample trajectory",
+   "canonical": "sample",
+   "object": "trajectory",
+   "quote": "generalizes to the SHREC hand gesture dataset",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "PSUMNet's scalability, performance and efficiency makes it an attractive choice",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compare@error",
+  "compute value@value",
+  "correct@parameter",
+  "extract part groups@state",
+  "feed forward@latent",
+  "predict@action",
+  "process input@input",
+  "sample@trajectory",
+  "unify modalities@latent"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "1803.02999",
+ "source": "abstract",
+ "words": 152,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 5,
+ "ops": [
+  {
+   "op": "sample task",
+   "canonical": "sample",
+   "object": "task",
+   "quote": "repeatedly sampling a task",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "task",
+   "quote": "training on it",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "using only first-order derivatives",
+   "grounded": false
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "moving the initialization towards the trained weights",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "obtain an agent that performs well",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "using only first-order derivatives",
+   "grounded": false
+  },
+  {
+   "op": "initialize parameters",
+   "canonical": "initialize parameters",
+   "object": "parameter",
+   "quote": "learning a parameter initialization",
+   "grounded": false
+  },
+  {
+   "op": "fine-tune model",
+   "canonical": "fine-tune model",
+   "object": "parameter",
+   "quote": "fine-tuned quickly on a new task",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute gradient@parameter",
+  "correct@parameter",
+  "evaluate@error",
+  "fine-tune model@parameter",
+  "initialize parameters@parameter",
+  "sample@task",
+  "train@task"
+ ]
+}

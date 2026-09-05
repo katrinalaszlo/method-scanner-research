@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "1804.02815",
+ "source": "abstract",
+ "words": 163,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 1,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "apply transformation",
+   "canonical": "apply transformation",
+   "object": "latent",
+   "quote": "generates affine transformation parameters for spatial-wise feature modulation",
+   "grounded": true
+  },
+  {
+   "op": "modulate features",
+   "canonical": "modulate features",
+   "object": "latent",
+   "quote": "modulate features of a few intermediate layers",
+   "grounded": true
+  },
+  {
+   "op": "condition on input",
+   "canonical": "intervene",
+   "object": "INVALID:probability map",
+   "quote": "conditioned on semantic segmentation probability maps",
+   "grounded": true
+  },
+  {
+   "op": "forward pass",
+   "canonical": "forward pass",
+   "object": "input",
+   "quote": "accepts an input image of arbitrary size",
+   "grounded": true
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "generates a high-resolution image",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "trained end-to-end together with the SR network using the same loss function",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "trained end-to-end together with the SR network using the same loss function",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "latent",
+   "quote": "convolutional neural networks (CNN) have recently demonstrated high-quality reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "modulate features of a few intermediate layers",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "modulate features of a few intermediate layers",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "latent",
+   "quote": "convolutional neural networks (CNN) have recently demonstrated high-quality reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "trained end-to-end together with the SR network using the same loss function",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "trained end-to-end together with the SR, network using the same loss function",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "accepts an input image of arbitrary size",
+   "grounded": true
+  },
+  {
+   "op": "apply normalization",
+   "canonical": "apply normalization",
+   "object": "latent",
+   "quote": "modulate features of a few intermediate layers",
+   "grounded": true
+  },
+  {
+   "op": "scale features",
+   "canonical": "scale features",
+   "object": "latent",
+   "quote": "modulate features of a few intermediate layers",
+   "grounded": true
+  },
+  {
+   "op": "apply pooling",
+   "canonical": "apply pooling",
+   "object": "latent",
+   "quote": "convolutional neural networks (CNN) have recently demonstrated high-quality reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "apply upsampling",
+   "canonical": "apply upsampling",
+   "object": "input",
+   "quote": "generates a high-resolution image",
+   "grounded": true
+  },
+  {
+   "op": "apply non-linearity",
+   "canonical": "apply non-linearity",
+   "object": "latent",
+   "quote": "convolutional neural networks (CNN) have recently demonstrated high-quality reconstruction",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "generate more realistic and visually pleasing textures",
+   "grounded": true
+  },
+  {
+   "op": "apply spatial transformation",
+   "canonical": "apply spatial transformation",
+   "object": "latent",
+   "quote": "generates affine transformation parameters for spatial-wise feature modulation",
+   "grounded": true
+  },
+  {
+   "op": "apply affine transformation",
+   "canonical": "apply affine transformation",
+   "object": "latent",
+   "quote": "generates affine transformation parameters for spatial-wise feature modulation",
+   "grounded": true
+  },
+  {
+   "op": "apply feature mapping",
+   "canonical": "apply feature mapping",
+   "object": "latent",
+   "quote": "modulate features of a few intermediate layers",
+   "grounded": true
+  },
+  {
+   "op": "apply feature fusion",
+   "canonical": "apply feature fusion",
+   "object": "latent",
+   "quote": "modulate features of a few intermediate layers",
+   "grounded": true
+  },
+  {
+   "op": "apply feature aggregation",
+   "canonical": "apply feature aggregation",
+   "object": "latent",
+   "quote": "modulate features of a few intermediate layers",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply activation@latent",
+  "apply affine transformation@latent",
+  "apply convolution@latent",
+  "apply feature aggregation@latent",
+  "apply feature fusion@latent",
+  "apply feature mapping@latent",
+  "apply non-linearity@latent",
+  "apply normalization@latent",
+  "apply pooling@latent",
+  "apply spatial transformation@latent",
+  "apply transformation@latent",
+  "apply upsampling@input",
+  "backpropagate@gradient",
+  "compute gradient@gradient",
+  "compute value@value",
+  "correct@parameter",
+  "encode@input",
+  "evaluate@error",
+  "forward pass@input",
+  "modulate features@latent",
+  "reconstruct@input",
+  "sample@sample",
+  "scale features@latent"
+ ]
+}

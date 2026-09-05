@@ -1,0 +1,213 @@
+{
+ "arxiv_id": "2304.08028",
+ "source": "abstract",
+ "words": 196,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 17,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we propose a novel margin-aware distillation (MAD)",
+   "grounded": true
+  },
+  {
+   "op": "predict class",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "weighing the sample contribution with the classification uncertainty",
+   "grounded": true
+  },
+  {
+   "op": "estimate uncertainty",
+   "canonical": "predict",
+   "object": "error",
+   "quote": "weighing the sample contribution with the classification uncertainty",
+   "grounded": true
+  },
+  {
+   "op": "weight contribution",
+   "canonical": "weight contribution",
+   "object": "sample",
+   "quote": "weighing the sample contribution with the classification uncertainty",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the deployment network to focus on the samples near decision boundaries",
+   "grounded": true
+  },
+  {
+   "op": "calculate loss",
+   "canonical": "calculate loss",
+   "object": "error",
+   "quote": "guide the regularization network to calculate prediction loss for them",
+   "grounded": true
+  },
+  {
+   "op": "regularize parameters",
+   "canonical": "regularize parameters",
+   "object": "parameter",
+   "quote": "guide the regularization network to calculate prediction loss for them",
+   "grounded": true
+  },
+  {
+   "op": "minimize loss",
+   "canonical": "minimize loss",
+   "object": "error",
+   "quote": "force the deployment network to improve its representation ability",
+   "grounded": false
+  },
+  {
+   "op": "sample from distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "mine the weak modality combinations and guide the regularization network",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "force the deployment network to improve its representation ability",
+   "grounded": false
+  },
+  {
+   "op": "backpropagate gradient",
+   "canonical": "backpropagate gradient",
+   "object": "gradient",
+   "quote": "force the deployment network to improve its representation ability",
+   "grounded": false
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "force the deployment, network to improve its representation ability",
+   "grounded": false
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "mine the weak modality combinations and guide the regularization network",
+   "grounded": true
+  },
+  {
+   "op": "compute margin",
+   "canonical": "compute margin",
+   "object": "error",
+   "quote": "encourages the deployment network to focus on the samples near decision boundaries",
+   "grounded": true
+  },
+  {
+   "op": "refine margin",
+   "canonical": "correct",
+   "object": "error",
+   "quote": "acquire the refined inter-class margin",
+   "grounded": true
+  },
+  {
+   "op": "select samples",
+   "canonical": "select samples",
+   "object": "sample",
+   "quote": "focus on the samples near decision boundaries",
+   "grounded": true
+  },
+  {
+   "op": "compute uncertainty",
+   "canonical": "compute uncertainty",
+   "object": "error",
+   "quote": "weighing the sample contribution with the classification uncertainty",
+   "grounded": true
+  },
+  {
+   "op": "adjust weights",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the deployment network to focus on the samples near decision boundaries",
+   "grounded": true
+  },
+  {
+   "op": "compute prediction",
+   "canonical": "compute prediction",
+   "object": "distribution",
+   "quote": "mine the weak modality combinations and guide the regularization network",
+   "grounded": true
+  },
+  {
+   "op": "update distribution",
+   "canonical": "correct",
+   "object": "distribution",
+   "quote": "force the deployment network to improve its representation ability",
+   "grounded": false
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "mine the weak modality combinations and guide the regularization network",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "the deployment network to focus on the samples near decision boundaries",
+   "grounded": true
+  },
+  {
+   "op": "extract features",
+   "canonical": "encode",
+   "object": "latent",
+   "quote": "force the deployment network to improve its representation ability",
+   "grounded": false
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "force the deployment network to improve its representation ability",
+   "grounded": false
+  },
+  {
+   "op": "generate output",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "force the deployment network to improve its representation ability",
+   "grounded": false
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply gradient@parameter",
+  "backpropagate gradient@gradient",
+  "calculate loss@error",
+  "compute gradient@gradient",
+  "compute margin@error",
+  "compute prediction@distribution",
+  "compute task@task",
+  "compute uncertainty@error",
+  "correct@distribution",
+  "correct@error",
+  "correct@parameter",
+  "encode@latent",
+  "evaluate@error",
+  "minimize loss@error",
+  "predict@distribution",
+  "predict@error",
+  "predict@value",
+  "process input@input",
+  "reconstruct@distribution",
+  "regularize parameters@parameter",
+  "sample@distribution",
+  "select samples@sample",
+  "weight contribution@sample"
+ ]
+}

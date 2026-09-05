@@ -1,0 +1,88 @@
+{
+ "arxiv_id": "2105.04206",
+ "source": "abstract",
+ "words": 194,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 10,
+ "n_invalid_object": 6,
+ "n_grounded": 9,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "encode implicit knowledge and explicit knowledge together",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "generate a unified representation to simultaneously serve various tasks",
+   "grounded": true
+  },
+  {
+   "op": "align",
+   "canonical": "align",
+   "object": "INVALID:space",
+   "quote": "perform kernel space alignment",
+   "grounded": true
+  },
+  {
+   "op": "refine",
+   "canonical": "correct",
+   "object": "INVALID:prediction",
+   "quote": "perform prediction refinement",
+   "grounded": false
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "task",
+   "quote": "multi-task learning in a convolutional neural network",
+   "grounded": true
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "INVALID:data",
+   "quote": "process data, even they were unseen beforehand",
+   "grounded": true
+  },
+  {
+   "op": "store",
+   "canonical": "store",
+   "object": "INVALID:knowledge",
+   "quote": "encoded and stored in the brain",
+   "grounded": true
+  },
+  {
+   "op": "analyze",
+   "canonical": "analyze",
+   "object": "latent",
+   "quote": "analyze the implicit representation learnt from the proposed unified network",
+   "grounded": true
+  },
+  {
+   "op": "catch",
+   "canonical": "catch",
+   "object": "INVALID:meaning",
+   "quote": "shows great capability on catching the physical meaning of different tasks",
+   "grounded": true
+  },
+  {
+   "op": "benefit",
+   "canonical": "benefit",
+   "object": "INVALID:performance",
+   "quote": "benefits the performance of all tasks",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "analyze@latent",
+  "encode@input",
+  "reconstruct@latent",
+  "train@task"
+ ]
+}

@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2211.14058",
+ "source": "abstract",
+ "words": 154,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 4,
+ "n_grounded": 24,
+ "ops": [
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "penalizes each output for the mismatch with the ensemble",
+   "grounded": true
+  },
+  {
+   "op": "generate ensemble",
+   "canonical": "reconstruct",
+   "object": "INVALID:logits",
+   "quote": "generates an ensemble of the output logits from training data",
+   "grounded": true
+  },
+  {
+   "op": "standardize features",
+   "canonical": "standardize features",
+   "object": "latent",
+   "quote": "standardizes features to encourage the model to produce style-consistent predictions",
+   "grounded": true
+  },
+  {
+   "op": "predict logits",
+   "canonical": "predict",
+   "object": "input",
+   "quote": "generates an ensemble of the output logits from training data",
+   "grounded": true
+  },
+  {
+   "op": "compute ensemble",
+   "canonical": "compute ensemble",
+   "object": "INVALID:logits",
+   "quote": "generates an ensemble of the output logits from training data",
+   "grounded": true
+  },
+  {
+   "op": "compare outputs",
+   "canonical": "compare",
+   "object": "INVALID:logits",
+   "quote": "penalizes each output for the mismatch with the ensemble",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learns domain-invariant features while encouraging the model to converge to flat minima",
+   "grounded": true
+  },
+  {
+   "op": "distill knowledge",
+   "canonical": "distill knowledge",
+   "object": "INVALID:logits",
+   "quote": "penalizes each output for the mismatch with the ensemble",
+   "grounded": true
+  },
+  {
+   "op": "apply regularization",
+   "canonical": "apply regularization",
+   "object": "parameter",
+   "quote": "encourages the model to converge to flat minima",
+   "grounded": false
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "learns domain-invariant features while encouraging the model to converge to flat minima",
+   "grounded": true
+  },
+  {
+   "op": "produce predictions",
+   "canonical": "produce predictions",
+   "object": "input",
+   "quote": "standardizes features to encourage the model to produce style-consistent predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute features",
+   "canonical": "compute features",
+   "object": "latent",
+   "quote": "standardizes features to encourage the model to produce style-consistent predictions",
+   "grounded": true
+  },
+  {
+   "op": "apply de-stylization",
+   "canonical": "apply de-stylization",
+   "object": "latent",
+   "quote": "standardizes features to encourage the model to produce style-consistent predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute domain invariant",
+   "canonical": "compute domain invariant",
+   "object": "latent",
+   "quote": "learns domain-invariant features while encouraging the model to converge to flat minima",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "learns domain-invariant features while encouraging the model to converge to flat minima",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate gradient",
+   "canonical": "backpropagate gradient",
+   "object": "gradient",
+   "quote": "learns domain-invariant features while encouraging the model to converge to flat min\u043d\u044f",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "learns domain-invariant features while encouraging the model to converge to flat minima",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "greatly improves generalization capability in public benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "generate predictions",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "standardizes features to encourage the model to produce style-consistent predictions",
+   "grounded": true
+  },
+  {
+   "op": "compute generalization",
+   "canonical": "compute generalization",
+   "object": "task",
+   "quote": "greatly improves generalization capability in public benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute robustness",
+   "canonical": "compute robustness",
+   "object": "task",
+   "quote": "models learned by our method are robust against adversarial attacks and image corruptions",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "greatly improves generalization capability in public benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "penalizes each output for the mismatch with the ensemble",
+   "grounded": true
+  },
+  {
+   "op": "compute reward",
+   "canonical": "compute reward",
+   "object": "reward",
+   "quote": "models learned by our method are robust against adversarial attacks and image corruptions",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "models learned by our method are robust against adversarial attacks and image corruptions",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "apply de-stylization@latent",
+  "apply regularization@parameter",
+  "backpropagate gradient@gradient",
+  "compare@error",
+  "compute accuracy@task",
+  "compute domain invariant@latent",
+  "compute features@latent",
+  "compute generalization@task",
+  "compute gradient@gradient",
+  "compute reward@reward",
+  "compute robustness@task",
+  "compute value@value",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "improve@parameter",
+  "predict@input",
+  "produce predictions@input",
+  "reconstruct@input",
+  "standardize features@latent",
+  "train@parameter"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "arxiv_id": "2307.15362",
+ "source": "abstract",
+ "words": 160,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 0,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "Our approach designs a Prompt-conditioned Transformer block",
+   "grounded": true
+  },
+  {
+   "op": "apply attention",
+   "canonical": "apply attention",
+   "object": "latent",
+   "quote": "incorporates task-specific prompts in the self-attention mechanism",
+   "grounded": true
+  },
+  {
+   "op": "combine",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "achieve global dependency modeling",
+   "grounded": true
+  },
+  {
+   "op": "adapt",
+   "canonical": "adapt",
+   "object": "latent",
+   "quote": "parameter-efficient feature adaptation across multiple tasks",
+   "grounded": true
+  },
+  {
+   "op": "decode",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "integrated into both the shared encoder and decoder",
+   "grounded": true
+  },
+  {
+   "op": "generate",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "design a lightweight decoder to further reduce parameter usage",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "distribution",
+   "quote": "achieves state-of-the-art results among task-conditional methods",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "maintains a significant balance between performance and parameter size",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "adapt@latent",
+  "aggregate@latent",
+  "apply attention@latent",
+  "encode@input",
+  "predict@distribution",
+  "reconstruct@distribution",
+  "reconstruct@latent",
+  "sample@action"
+ ]
+}

@@ -1,0 +1,204 @@
+{
+ "arxiv_id": "2410.15001",
+ "source": "abstract",
+ "words": 186,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 9,
+ "n_grounded": 22,
+ "ops": [
+  {
+   "op": "coarsen graph",
+   "canonical": "coarsen graph",
+   "object": "INVALID:graph",
+   "quote": "coarsening-based methods are used to reduce the graph into a smaller graph",
+   "grounded": true
+  },
+  {
+   "op": "compute message",
+   "canonical": "compute message",
+   "object": "INVALID:node",
+   "quote": "scalability of Graph Neural Networks (GNNs) remains a significant challenge",
+   "grounded": true
+  },
+  {
+   "op": "aggregate messages",
+   "canonical": "aggregate",
+   "object": "INVALID:node",
+   "quote": "coarsening-based methods are used to reduce the graph into a smaller graph",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we demonstrate two different methods (Extra-Nodes and Cluster-Nodes)",
+   "grounded": true
+  },
+  {
+   "op": "predict node",
+   "canonical": "predict",
+   "object": "INVALID:node",
+   "quote": "our method achieves competitive performance in tasks involving classification and regression on nodes and graphs",
+   "grounded": true
+  },
+  {
+   "op": "predict graph",
+   "canonical": "predict",
+   "object": "INVALID:graph",
+   "quote": "our method achieves competitive performance in tasks involving classification and regression on nodes and graphs",
+   "grounded": true
+  },
+  {
+   "op": "sample coarsened graph",
+   "canonical": "sample",
+   "object": "INVALID:graph",
+   "quote": "we propose a unique application of the coarsening algorithm for graph-level tasks",
+   "grounded": false
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "we conduct extensive experiments on multiple benchmark datasets in the order of $100K$ nodes",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "we conduct extensive experiments on multiple benchmark datasets in the order of $100K$ nodes",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "our approach significantly reduces memory consumption",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "our approach significantly reduces memory consumption",
+   "grounded": true
+  },
+  {
+   "op": "compute inference time",
+   "canonical": "compute inference time",
+   "object": "trajectory",
+   "quote": "single-node inference times that are orders of magnitude faster",
+   "grounded": true
+  },
+  {
+   "op": "store parameters",
+   "canonical": "store parameters",
+   "object": "parameter",
+   "quote": "our approach significantly reduces memory consumption",
+   "grounded": true
+  },
+  {
+   "op": "compute memory usage",
+   "canonical": "compute memory usage",
+   "object": "parameter",
+   "quote": "our approach significantly reduces memory consumption",
+   "grounded": true
+  },
+  {
+   "op": "apply coarsening",
+   "canonical": "apply coarsening",
+   "object": "INVALID:graph",
+   "quote": "we propose a unique application of the coarsening algorithm for graph-level tasks",
+   "grounded": false
+  },
+  {
+   "op": "compute node features",
+   "canonical": "compute node features",
+   "object": "INVALID:node",
+   "quote": "coarsening-based methods are used to reduce the graph into a smaller graph",
+   "grounded": true
+  },
+  {
+   "op": "compute graph features",
+   "canonical": "compute graph features",
+   "object": "INVALID:graph",
+   "quote": "we propose a unique application of the coarsening algorithm for graph-level tasks",
+   "grounded": false
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "gradient",
+   "quote": "we conduct extensive experiments on multiple benchmark datasets in the order of $100K$ nodes",
+   "grounded": true
+  },
+  {
+   "op": "update model",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "we demonstrate two different methods (Extra-Nodes and Cluster-Nodes)",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "our method achieves competitive performance in tasks involving classification and regression on nodes and graphs",
+   "grounded": true
+  },
+  {
+   "op": "compute accuracy",
+   "canonical": "compute accuracy",
+   "object": "task",
+   "quote": "our method achieves competitive performance in tasks involving classification and regression on nodes and graphs",
+   "grounded": true
+  },
+  {
+   "op": "compute precision",
+   "canonical": "compute precision",
+   "object": "task",
+   "quote": "our method achieves competitive performance in tasks involving classification and regression on nodes and graphs",
+   "grounded": true
+  },
+  {
+   "op": "compute recall",
+   "canonical": "compute recall",
+   "object": "task",
+   "quote": "our method achieves competitive performance in tasks involving classification and regression on nodes and graphs",
+   "grounded": true
+  },
+  {
+   "op": "compute f1 score",
+   "canonical": "compute f1 score",
+   "object": "task",
+   "quote": "our method achieves competitive performance in tasks involving classification and regression on nodes and graphs",
+   "grounded": true
+  },
+  {
+   "op": "compute mean squared error",
+   "canonical": "compute mean squared error",
+   "object": "error",
+   "quote": "our method achieves competitive performance in tasks involving classification and regression on nodes and graphs",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "backpropagate@gradient",
+  "compute accuracy@task",
+  "compute f1 score@task",
+  "compute gradient@gradient",
+  "compute inference time@trajectory",
+  "compute mean squared error@error",
+  "compute memory usage@parameter",
+  "compute precision@task",
+  "compute recall@task",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "reconstruct@noise",
+  "sample@sample",
+  "store parameters@parameter"
+ ]
+}

@@ -1,0 +1,197 @@
+{
+ "arxiv_id": "2106.13230",
+ "source": "abstract",
+ "words": 168,
+ "model": "qwen3:8b",
+ "salvaged": true,
+ "n_ops": 23,
+ "n_invalid_object": 0,
+ "n_grounded": 23,
+ "ops": [
+  {
+   "op": "encode",
+   "canonical": "encode",
+   "object": "input",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "self-attend",
+   "canonical": "self-attend",
+   "object": "latent",
+   "quote": "compute self-attention globally even with spatial-temporal factorization",
+   "grounded": true
+  },
+  {
+   "op": "local self-attend",
+   "canonical": "local self-attend",
+   "object": "latent",
+   "quote": "advocate an inductive bias of locality in video Transformers",
+   "grounded": true
+  },
+  {
+   "op": "transform",
+   "canonical": "transform",
+   "object": "latent",
+   "quote": "adapting the Swin Transformer designed for the image domain",
+   "grounded": true
+  },
+  {
+   "op": "leverage",
+   "canonical": "leverage",
+   "object": "parameter",
+   "quote": "continuing to leverage the power of pre-trained image models",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "achieves state-of-the-art accuracy on a broad range of video recognition benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "achieves state-of-the-art accuracy on a broad range of video recognition benchmarks",
+   "grounded": true
+  },
+  {
+   "op": "track",
+   "canonical": "track",
+   "object": "state",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "aggregate",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "reward",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "action",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "distribution",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "task",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "track",
+   "canonical": "track",
+   "object": "trajectory",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "policy",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "pure Transformer architectures have attained top accuracy",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compute@distribution",
+  "compute@error",
+  "compute@reward",
+  "compute@task",
+  "compute@value",
+  "correct@parameter",
+  "encode@input",
+  "leverage@parameter",
+  "local self-attend@latent",
+  "predict@action",
+  "predict@policy",
+  "predict@value",
+  "reconstruct@noise",
+  "sample@distribution",
+  "sample@sample",
+  "self-attend@latent",
+  "track@state",
+  "track@trajectory",
+  "transform@latent"
+ ]
+}

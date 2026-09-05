@@ -1,0 +1,210 @@
+{
+ "arxiv_id": "2206.07369",
+ "source": "abstract",
+ "words": 249,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 4,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute commute time",
+   "canonical": "compute commute time",
+   "object": "INVALID:edge",
+   "quote": "CT-Layer, a layer that learns the commute times",
+   "grounded": true
+  },
+  {
+   "op": "reweight edge",
+   "canonical": "reweight edge",
+   "object": "INVALID:edge",
+   "quote": "CT-Layer, a layer that learns the commute times and uses them as a relevance function for edge re-weighting",
+   "grounded": true
+  },
+  {
+   "op": "compute spectral gap",
+   "canonical": "compute spectral gap",
+   "object": "parameter",
+   "quote": "GAP-Layer, a layer to optimize the spectral gap",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "propagate message",
+   "canonical": "transmit",
+   "object": "state",
+   "quote": "Most GNNs use a message passing framework",
+   "grounded": true
+  },
+  {
+   "op": "aggregate message",
+   "canonical": "aggregate",
+   "object": "state",
+   "quote": "Most GNNs use a message passing framework",
+   "grounded": true
+  },
+  {
+   "op": "apply activation",
+   "canonical": "apply activation",
+   "object": "state",
+   "quote": "Most GNNs use a message passing framework",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "sample edge",
+   "canonical": "sample",
+   "object": "INVALID:edge",
+   "quote": "CT-Layer, a layer that learns the commute times and uses them as a relevance function for edge re-weighting",
+   "grounded": true
+  },
+  {
+   "op": "compute relevance",
+   "canonical": "compute relevance",
+   "object": "INVALID:edge",
+   "quote": "CT-Layer, a layer that learns the commute, and uses them as a relevance function for edge re-weighting",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameter",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "GAP-Layer, a layer to optimize the spectral gap",
+   "grounded": true
+  },
+  {
+   "op": "compute gradient",
+   "canonical": "compute gradient",
+   "object": "parameter",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "update gradient",
+   "canonical": "correct",
+   "object": "gradient",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "apply gradient",
+   "canonical": "apply gradient",
+   "object": "parameter",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "predict value",
+   "canonical": "predict",
+   "object": "value",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "compute task",
+   "canonical": "compute task",
+   "object": "task",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "evaluate task",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "process trajectory",
+   "canonical": "process trajectory",
+   "object": "trajectory",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "sample distribution",
+   "canonical": "sample",
+   "object": "distribution",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "compute error",
+   "canonical": "compare",
+   "object": "error",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  },
+  {
+   "op": "denoise error",
+   "canonical": "reconstruct",
+   "object": "error",
+   "quote": "the proposed approach provides a unified theory for graph rewiring",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@state",
+  "apply activation@state",
+  "apply gradient@parameter",
+  "backpropagate@gradient",
+  "compare@error",
+  "compute distribution@distribution",
+  "compute gradient@parameter",
+  "compute spectral gap@parameter",
+  "compute task@task",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "correct@gradient",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "improve@parameter",
+  "predict@value",
+  "process trajectory@trajectory",
+  "reconstruct@error",
+  "sample@distribution",
+  "transmit@state"
+ ]
+}

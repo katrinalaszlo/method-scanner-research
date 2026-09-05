@@ -1,0 +1,222 @@
+{
+ "arxiv_id": "1909.11855",
+ "source": "abstract",
+ "words": 99,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 26,
+ "n_invalid_object": 0,
+ "n_grounded": 25,
+ "ops": [
+  {
+   "op": "compute attention",
+   "canonical": "compute attention",
+   "object": "state",
+   "quote": "the transformer self-attention network has been extensively used",
+   "grounded": true
+  },
+  {
+   "op": "aggregate information",
+   "canonical": "aggregate",
+   "object": "latent",
+   "quote": "to induce a powerful aggregation function to learn graph representations",
+   "grounded": true
+  },
+  {
+   "op": "apply recurrent transition",
+   "canonical": "apply recurrent transition",
+   "object": "state",
+   "quote": "leveraging a transformer self-attention mechanism followed by a recurrent transition",
+   "grounded": true
+  },
+  {
+   "op": "update parameters",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "the proposed U2GNN achieves state-of-the-art accuracies",
+   "grounded": true
+  },
+  {
+   "op": "process input",
+   "canonical": "process input",
+   "object": "input",
+   "quote": "the transformer self-attention network has been extensively used",
+   "grounded": true
+  },
+  {
+   "op": "generate representation",
+   "canonical": "reconstruct",
+   "object": "latent",
+   "quote": "to learn graph representations",
+   "grounded": true
+  },
+  {
+   "op": "compute loss",
+   "canonical": "evaluate",
+   "object": "error",
+   "quote": "experimental results show that the proposed U2GNN achieves state-of-the-art accuracies",
+   "grounded": true
+  },
+  {
+   "op": "backpropagate",
+   "canonical": "backpropagate",
+   "object": "gradient",
+   "quote": "the proposed U2GNN achieves state-of-the-art accuracies",
+   "grounded": true
+  },
+  {
+   "op": "optimize parameters",
+   "canonical": "improve",
+   "object": "parameter",
+   "quote": "the proposed U2GNN achieves state-of-the-art accuracies",
+   "grounded": true
+  },
+  {
+   "op": "evaluate performance",
+   "canonical": "evaluate",
+   "object": "task",
+   "quote": "experimental results show that the proposed U2GNN achieves state-of-the-art accuracies",
+   "grounded": true
+  },
+  {
+   "op": "store results",
+   "canonical": "store results",
+   "object": "trajectory",
+   "quote": "the proposed U2GNN achieves state-of-the-art accuracies",
+   "grounded": true
+  },
+  {
+   "op": "sample action",
+   "canonical": "sample",
+   "object": "action",
+   "quote": "the transformer self-attention network has been extensively used",
+   "grounded": true
+  },
+  {
+   "op": "compute value",
+   "canonical": "compute value",
+   "object": "value",
+   "quote": "the proposed U2GNN achieves state-of-the-art accuracies",
+   "grounded": true
+  },
+  {
+   "op": "compute distribution",
+   "canonical": "compute distribution",
+   "object": "distribution",
+   "quote": "to induce a powerful aggregation function to learn graph representations",
+   "grounded": true
+  },
+  {
+   "op": "resample",
+   "canonical": "sample",
+   "object": "sample",
+   "quote": "the transformer self-attention network has been extensively used",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "the transformer self-attention network has been extensively used",
+   "grounded": true
+  },
+  {
+   "op": "clip",
+   "canonical": "clip",
+   "object": "gradient",
+   "quote": "the proposed U2GNN achieves state-of-the-art accuracies",
+   "grounded": true
+  },
+  {
+   "op": "predict reward",
+   "canonical": "predict",
+   "object": "reward",
+   "quote": "the proposed U2G/NN achieves state-of-the-art accuracies",
+   "grounded": false
+  },
+  {
+   "op": "compute policy",
+   "canonical": "compute policy",
+   "object": "policy",
+   "quote": "the proposed U2GNN achieves state-of-the-art accuracies",
+   "grounded": true
+  },
+  {
+   "op": "compute trajectory",
+   "canonical": "compute trajectory",
+   "object": "trajectory",
+   "quote": "the proposed U2GNN achieves state-of-the-art accuracies",
+   "grounded": true
+  },
+  {
+   "op": "compute score",
+   "canonical": "compute score",
+   "object": "distribution",
+   "quote": "to induce a powerful aggregation function to learn graph representations",
+   "grounded": true
+  },
+  {
+   "op": "compute likelihood",
+   "canonical": "compute likelihood",
+   "object": "distribution",
+   "quote": "to induce a powerful aggregation function to learn graph representations",
+   "grounded": true
+  },
+  {
+   "op": "compute posterior",
+   "canonical": "compute posterior",
+   "object": "distribution",
+   "quote": "to induce a powerful aggregation function to learn graph representations",
+   "grounded": true
+  },
+  {
+   "op": "compute prior",
+   "canonical": "compute prior",
+   "object": "distribution",
+   "quote": "to induce a powerful aggregation function to learn graph representations",
+   "grounded": true
+  },
+  {
+   "op": "compute mean",
+   "canonical": "compute mean",
+   "object": "distribution",
+   "quote": "to induce a powerful aggregation function to learn graph representations",
+   "grounded": true
+  },
+  {
+   "op": "compute variance",
+   "canonical": "compute variance",
+   "object": "distribution",
+   "quote": "to induce a powerful aggregation function to learn graph representations",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "aggregate@latent",
+  "apply recurrent transition@state",
+  "backpropagate@gradient",
+  "clip@gradient",
+  "compute attention@state",
+  "compute distribution@distribution",
+  "compute likelihood@distribution",
+  "compute mean@distribution",
+  "compute policy@policy",
+  "compute posterior@distribution",
+  "compute prior@distribution",
+  "compute score@distribution",
+  "compute trajectory@trajectory",
+  "compute value@value",
+  "compute variance@distribution",
+  "correct@parameter",
+  "evaluate@error",
+  "evaluate@task",
+  "improve@parameter",
+  "predict@reward",
+  "process input@input",
+  "reconstruct@latent",
+  "reconstruct@noise",
+  "sample@action",
+  "sample@sample",
+  "store results@trajectory"
+ ]
+}

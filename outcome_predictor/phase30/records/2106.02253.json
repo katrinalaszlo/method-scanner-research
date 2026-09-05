@@ -1,0 +1,71 @@
+{
+ "arxiv_id": "2106.02253",
+ "source": "abstract",
+ "words": 203,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 8,
+ "n_invalid_object": 7,
+ "n_grounded": 8,
+ "ops": [
+  {
+   "op": "transform features",
+   "canonical": "transform features",
+   "object": "input",
+   "quote": "approximates a self-attention via the convolution operation on transformed features",
+   "grounded": true
+  },
+  {
+   "op": "apply convolution",
+   "canonical": "apply convolution",
+   "object": "INVALID:transformed features",
+   "quote": "approximates a self-attention via the convolution operation on transformed features",
+   "grounded": true
+  },
+  {
+   "op": "compute self-attention",
+   "canonical": "compute self-attention",
+   "object": "INVALID:transformed features",
+   "quote": "approximates a self-attention via the convolution operation on transformed features",
+   "grounded": true
+  },
+  {
+   "op": "combine features",
+   "canonical": "aggregate",
+   "object": "INVALID:transformed features",
+   "quote": "establish a multi-branch elementary module composed of both convolution and self-attention operation",
+   "grounded": true
+  },
+  {
+   "op": "reparameterize structure",
+   "canonical": "reparameterize structure",
+   "object": "INVALID:multi-branch module",
+   "quote": "could be conditionally converted into a single standard convolution operation via structural re-parameterization",
+   "grounded": true
+  },
+  {
+   "op": "convert to convolution",
+   "canonical": "convert to convolution",
+   "object": "INVALID:multi-branch module",
+   "quote": "could be conditionally converted into a single standard convolution operation via structural re-parameter,ization",
+   "grounded": true
+  },
+  {
+   "op": "train model",
+   "canonical": "train",
+   "object": "INVALID:multi-branch module",
+   "quote": "once trained, this multi-branch module could be conditionally converted",
+   "grounded": true
+  },
+  {
+   "op": "plug into network",
+   "canonical": "plug into network",
+   "object": "INVALID:x-volution",
+   "quote": "ready to be plugged into any modern networks as an atomic operation",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "transform features@input"
+ ]
+}

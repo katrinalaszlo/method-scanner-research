@@ -1,0 +1,206 @@
+{
+ "arxiv_id": "1608.03981",
+ "source": "abstract",
+ "words": 202,
+ "model": "qwen3:8b",
+ "salvaged": false,
+ "n_ops": 25,
+ "n_invalid_object": 0,
+ "n_grounded": 18,
+ "ops": [
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "DnCNN implicitly removes the latent clean image in the hidden layers.",
+   "grounded": true
+  },
+  {
+   "op": "normalize",
+   "canonical": "normalize",
+   "object": "input",
+   "quote": "batch normalization are utilized to speed up the training process",
+   "grounded": false
+  },
+  {
+   "op": "learn",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "embrace the progress in very deep architecture, learning algorithm",
+   "grounded": false
+  },
+  {
+   "op": "regularize",
+   "canonical": "regularize",
+   "object": "parameter",
+   "quote": "learning algorithm, and regularization method into image denoising",
+   "grounded": true
+  },
+  {
+   "op": "predict",
+   "canonical": "predict",
+   "object": "latent",
+   "quote": "DnCNN implicitly removes the latent clean image in the hidden layers",
+   "grounded": true
+  },
+  {
+   "op": "residual",
+   "canonical": "residual",
+   "object": "input",
+   "quote": "residual learning strategy, Dn3CNN implicitly removes the latent clean image",
+   "grounded": true
+  },
+  {
+   "op": "train",
+   "canonical": "train",
+   "object": "parameter",
+   "quote": "speed up the training process as well as boost the denoising performance",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "error",
+   "quote": "different from the existing discriminative denoising models",
+   "grounded": true
+  },
+  {
+   "op": "sample",
+   "canonical": "sample",
+   "object": "input",
+   "quote": "train a single DnCNN model to tackle with several general image denoising tasks",
+   "grounded": false
+  },
+  {
+   "op": "process",
+   "canonical": "process",
+   "object": "input",
+   "quote": "feed-forward denoising convolutional neural networks (DnCNNs) to embrace",
+   "grounded": true
+  },
+  {
+   "op": "update",
+   "canonical": "correct",
+   "object": "parameter",
+   "quote": "learning algorithm, and regularization method into image denoising",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "DnCNN implicitly removes the latent clean image in the hidden layers",
+   "grounded": true
+  },
+  {
+   "op": "compute",
+   "canonical": "compute",
+   "object": "value",
+   "quote": "DnCNN model can not only exhibit high effectiveness in several general image denoising tasks",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "DnCNN model is able to handle Gaussian denoising with unknown noise level",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "train a single DnCNN model to tackle with several general image denoising tasks",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "DnCNN implicitly removes the latent clean image in the hidden layers",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "DnCNN implicitly removes the latent clean image in the hidden layers",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "sample",
+   "quote": "train a single DnCNN model to tackle with several general image denoising tasks",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "task",
+   "quote": "train a single DnCNN model to tackle with several general image denoising tasks",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "trajectory",
+   "quote": "train a single DnCNN model to tackle with several general image denoising tasks",
+   "grounded": false
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "DnCNN implicitly removes the latent clean image in the hidden layers",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "input",
+   "quote": "DnCNN implicitly removes the latent clean image in the hidden layers",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "noise",
+   "quote": "DnCNN model is able to handle Gaussian denoising with unknown noise level",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "distribution",
+   "quote": "DnCNN implicitly removes the latent clean image in the hidden layers",
+   "grounded": true
+  },
+  {
+   "op": "denoise",
+   "canonical": "reconstruct",
+   "object": "state",
+   "quote": "DnCNN implicitly removes the latent clean image in the hidden layers",
+   "grounded": true
+  }
+ ],
+ "tuples": [
+  "compute@error",
+  "compute@value",
+  "correct@parameter",
+  "normalize@input",
+  "predict@latent",
+  "process@input",
+  "reconstruct@distribution",
+  "reconstruct@input",
+  "reconstruct@noise",
+  "reconstruct@sample",
+  "reconstruct@state",
+  "reconstruct@task",
+  "reconstruct@trajectory",
+  "regularize@parameter",
+  "residual@input",
+  "sample@input",
+  "train@parameter"
+ ]
+}
