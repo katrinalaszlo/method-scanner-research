@@ -158,4 +158,6 @@ pip install -r outcome_predictor/requirements.txt
 
 This is a research log, not a maintained tool. It's public so the method, the one validated prediction, and the several results that came back negative can all be read and checked by someone else.
 
-No license — default copyright applies. If you want to reuse any of it, ask.
+MIT licensed — reuse the code, the data, or the method freely. Attribution is appreciated but not required.
+
+One caveat if you build on the numbers: the extracted papers are third-party work, quoted and summarized under fair use. The MIT license covers this repo's code and its derived data, not the source papers.
