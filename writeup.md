@@ -1,6 +1,6 @@
 # Method Scanner: finding shared mechanisms across ML papers with a local LLM
 
-Kat László · 2026-08-24 → 2026-08-25 · 23 phases + 2 live tests + 1 experimental validation · 58-paper corpus
+Kat Laszlo · 2026-08-24 → 2026-08-25 · 23 phases + 2 live tests + 1 experimental validation · 58-paper corpus
 
 ## Summary
 

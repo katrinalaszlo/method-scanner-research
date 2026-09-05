@@ -2,7 +2,7 @@
 
 ## Finding shared mechanisms across ML papers, and testing one of them
 
-Kat László · August 2026 · 23 phases · 58-paper corpus · one experimental validation
+Kat Laszlo · August 2026 · 23 phases · 58-paper corpus · one experimental validation
 
 ---
 

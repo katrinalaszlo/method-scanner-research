@@ -1,71 +1,161 @@
 # Method Scanner
 
-**Finding shared mechanisms across ML papers by ignoring what they're called.**
+**Comparing machine-learning papers by what their methods actually do, instead of by what they're called.**
 
-Kat László · August 2026 · 30 phases · 58-paper core corpus + two outcome benchmarks
+Kat Laszlo · August 2026 · 30 phases · 58-paper core corpus + three outcome benchmarks
 
 ---
 
-Methods are named by lineage — *Kalman filter*, *JEPA*, *predictive coding*, *reinforcement learning* — and lineage is a poor guide to what a method actually does. Two papers from different families can run nearly the same inner loop; two under one label can share no update rule at all.
+## The problem
 
-This project strips papers to their machinery and compares that instead. A local 8B model reads a paper's **method section** (not its abstract) and reduces it to typed operations of the form `operation@object` — `predict@state`, `correct@parameter`, `sample@trajectory`. Papers are then compared on those sets.
+Methods in machine learning get named after their family tree — *Kalman filter*, *JEPA*, *predictive coding*, *reinforcement learning*. Those names tell you where a method came from, not what it does.
+
+That turns out to matter. Two papers filed under completely different names can run nearly the same loop inside. Two papers under the *same* name can share almost nothing. "Predictive coding" covers both a 1999 model of the visual cortex and a 2022 replacement for backpropagation. "Reinforcement learning" covers methods with no update rule in common.
+
+So if you want to know whether two methods are really related, the name is close to useless. You have to read the machinery.
+
+## What this does
+
+It reads the machinery automatically.
+
+An AI model running locally on a laptop reads the section of a paper where the authors explain their actual method — not the abstract — and rewrites it as a list of things the method *does*. Each item is a verb plus the thing the verb acts on:
+
+```
+predict @ state          (guess where a physical system will be next)
+correct @ parameter      (adjust the model's weights)
+sample @ trajectory      (draw a possible path through the future)
+```
+
+Papers are then compared by how much these lists overlap. Same lists, same machinery — regardless of what the papers call themselves.
+
+Doing this reliably took most of the project. Details are in `writeup_final.md`; the short version is in **How it works** below.
 
 ## The main finding
 
-**The object separates mechanisms; the operation does not.** Nearly every paper in the corpus "predicts" something, so `predict` on its own carries no information. But `predict@state`, `predict@latent` and `predict@parameter` are three unrelated activities. Under that lens most lineage labels split into two mechanism families or dissolved entirely.
+**The verb tells you nothing. The object tells you everything.**
 
-The pipeline recovers two real cross-field bridges (self-supervised latent prediction ↔ predictive coding as a learning rule; particle filters ↔ Kalman-style state estimation) and refuses the one most people assume holds (Kalman filtering ↔ predictive coding).
+Almost every paper in the corpus "predicts" something, so knowing that a method predicts is worthless on its own. But predicting *a physical state*, predicting *an internal representation*, and predicting *a model's own weights* are three unrelated activities that happen to share a word. Once you separate them, the picture changes completely.
 
-## The test
+Under that lens, most family names fall apart. Papers filed under one label split into two unrelated groups, or scatter entirely.
 
-A similarity score is cheap. So one match the scanner produced — between a robotics planner (Diffuser) and an image-generation sampler (DDIM) — was turned into a pre-registered quantitative prediction: *DDIM's deterministic sampler at 5–10× fewer denoising steps keeps Diffuser's D4RL return within ~5%.*
+The method also finds two genuine connections across fields that nobody had drawn — self-supervised learning and predictive coding turn out to share a learning rule, and particle filters turn out to share machinery with Kalman-style state estimation — and it **rejects** the one connection most people assume is real: Kalman filtering and predictive coding. They look similar because they use the same words. They don't do the same thing.
 
-45 episodes, three seeds, three environments, paired against the same-seed baseline. The prediction **held at 2×** on every environment, **landed on the 5% threshold to the decimal at 4×**, and **failed at 10×**. One thing the scanner did not predict showed up in the data — on walker2d the deterministic sampler is worse at full step count — and is reported as an open observation rather than folded into the result.
+## Testing it for real
 
-The claim is not the speedup. It is that a pipeline reading text produced a falsifiable engineering prediction whose bounds the experiment confirmed.
+Any tool can produce a similarity score. Scores are easy to believe and impossible to check. So the point of the project was to turn one score into something that could be *wrong*.
+
+The scanner matched a robotics paper (**Diffuser**, which plans robot motion) to an image-generation paper (**DDIM**, which makes pictures). Different fields, different conferences, no shared citations. But according to the extracted machinery, they run the same inner loop.
+
+If that's true, then a specific shortcut invented for the image paper should work in the robotics paper. So the prediction was written down **in advance**, with numbers attached:
+
+> DDIM's deterministic sampler, using 5–10× fewer steps, will keep Diffuser's benchmark score within about 5%.
+
+Then it was run: 45 episodes, three random seeds, three simulated robots, each compared against an identical baseline run.
+
+| shortcut | result |
+|---|---|
+| **2× fewer steps** | held on every robot |
+| **4× fewer steps** | landed on the 5% line to the decimal |
+| **10× fewer steps** | failed, as the prediction's upper bound implied |
+
+The data also showed one thing the scanner never predicted: on the walker robot, the deterministic sampler is *worse* than the random one even at full step count. That's reported as an open question rather than quietly folded into the win.
+
+**The claim here is not "this makes Diffuser 4× faster."** The claim is that a program reading English text produced a specific, checkable engineering prediction, and the experiment landed inside the bounds it stated.
 
 ## The follow-up, and where it fails
 
-`outcome_predictor/` asks the harder question: does the extracted structure predict *how well a method performs*, beyond experimental conditions and lineage labels? Mostly **no**, across four pre-registered phases on D4RL, Atari 100k, within-method paired changes, and 25 Papers-with-Code leaderboards. Those negative results are written up at the same length as the positive one.
+The obvious next question: if you can read a method's machinery from its paper, can you predict **how well it will score** before running it?
 
-## Pipeline
+Mostly **no**. Five separate attempts, each written down in advance so the answer couldn't be adjusted afterward:
 
-Four layers. Each is derived from the one below and can be revised without re-running it; raw model output is never overwritten.
+| phase | question asked | answer |
+|---|---|---|
+| **24** | On robot-control benchmarks, does machinery predict the score better than the experimental settings alone? | **No.** Structure added nothing the settings didn't already have. |
+| **25** | Does fixing the statistical model change that? | **Barely.** A small, consistent gain with one predictor; it vanishes entirely with a stronger one — because knowing *which benchmark* a row came from already explains most of the score. |
+| **26** | Same test, second benchmark (Atari games), written down in advance. | **Mixed.** Machinery helped with one predictor, but the plain family label did just as well or better with the other. |
+| **27** | Maybe the extraction was too thin? Re-ran it to pull ~15 items per paper instead of ~4. | **No — and this closes the excuse.** Five times more shared machinery produced the same answer. What structure knows about outcomes is shallow: roughly "what kind of method is this," which the hand-written family label already told you. |
+| **28** | Forget whole methods — if a paper changes *one thing*, does the machinery of that change predict whether the score goes up or down? | **No.** Predicting from the change's structure was no better than guessing the average. |
+| **30** | 900 papers across 25 public leaderboards, ~5,000 head-to-head comparisons: can machinery pick which paper scores higher? | **Only where it can't help.** 87% accurate *within* a leaderboard it has seen, but 60% on a new one — barely above a coin flip. Publication year alone gets 71% and transfers fine. |
 
-| layer | what |
+The reason for the last one is the interesting part: the extracted vocabulary is **task-specific**. Papers about image classification use different operations than papers about object detection. The scanner is reading something real, but its predictive power is trapped inside each field's local dialect and doesn't travel.
+
+These negative results are written up at the same length and care as the positive one. That's deliberate. A tool that only reports its wins isn't measuring anything.
+
+## How it works
+
+Four layers. Each is built from the one below it and can be redone without re-running the expensive parts. Raw model output is never overwritten.
+
+| layer | what happens |
 |---|---|
-| **Extract** | arXiv ID → PDF → `pdftotext` → heading walker finds the method section → `qwen3:8b` via Ollama emits `{operations, loss, failure}` |
-| **Canonicalize** | raw verbs → 23-item controlled vocabulary, by exact match then head verb. Derived at read time, never stored |
-| **Type** | second LLM pass assigns each operation an `object` from a fixed ontology, with a supporting quote |
-| **Compare** | similarity over the resulting tuple sets, per paper and per family |
+| **Extract** | arXiv ID → PDF → plain text → a parser hunts down the real method section (it handles four different PDF layouts and hits ~90% of the time) → a local `qwen3:8b` model returns the list of operations, the loss function, and the stated failure mode |
+| **Canonicalize** | raw verbs are mapped to a fixed 23-word vocabulary, so *forecast* and *predict* stop counting as different things. Computed fresh on every read, never saved — so changing the vocabulary updates the whole corpus instantly and is always reversible |
+| **Type** | a second pass assigns each operation its object (`state`, `latent`, `parameter`, `error`, …) and must quote the sentence that justifies it |
+| **Compare** | overlap between papers, per pair and per family |
+
+**Three things that mattered more than anything else**, all learned the hard way:
+
+- **Examples beat rules.** Telling a small model "do not list *derive*, *formulate*" was simply ignored. Three or four worked examples fixed the same problem immediately.
+- **You must include an example where the answer is "nothing."** Given only examples where a failure mode existed, the model invented one for papers that had none — it copied the example's wording onto unrelated papers. One example with an explicit empty answer cut that to 1 in 30, and a check at read time catches the rest.
+- **Never show the model the vocabulary list.** A closed-vocabulary prompt was tested and rejected: the model started describing the list instead of the paper. A paper that explicitly avoids contrastive learning got labeled `contrast`.
+
+The typing pass is where the signal comes from and also where the noise comes from. Two independent runs agree on 72–84% of items. Family-level results are stable to the second decimal; individual pair scores are not — one re-run can move a single pair to zero. This is stated plainly rather than hidden.
 
 ## Where everything is
 
+**Start here:**
+
+| file | what |
+|---|---|
+| `writeup_final.md` | **the full writeup** — problem, method, corpus, findings, the Diffuser/DDIM experiment, limitations |
+| `findings.md` | every result and every rejected approach, phase by phase, including the ones that didn't work |
+| `progress.md` | session log — what ran, what broke, what got decided |
+| `task_plan.md` | the phase plan |
+
+**The pipeline:**
+
+| file | what |
+|---|---|
+| `app.py` | server + web UI on `:8000`; holds the extractor, the vocabulary, and the read-time checks |
+| `fulltext.py` | arXiv → PDF → method section (`--from` pins a section by hand when the parser guesses wrong) |
+| `semantic_type.py` | the typing pass |
+| `compare.py` | similarity between papers and families |
+| `phase21_inject.py`, `phase22_split.py` | for papers that are deltas on a base method — inherit the base loop, then separate inherited machinery from the paper's own |
+| `families.json`, `semantic_ontology.json` | the family labels and the object list |
+
+**Output:**
+
 | path | what |
 |---|---|
-| `writeup_final.md` | **the full writeup** — problem, pipeline, corpus, findings, the Diffuser/DDIM validation, limitations |
-| `findings.md` | running record of every result and rejected approach, phase by phase |
-| `progress.md` | session log — what was run, what broke, what was decided |
-| `task_plan.md` | phase plan |
-| `app.py` | the pipeline server + UI (`:8000`) |
-| `fulltext.py` | arXiv → PDF → method-section extraction |
-| `semantic_type.py` | the typing pass |
-| `compare.py` | similarity matrices |
-| `results/`, `matrices/` | per-paper records and computed matrices |
-| `phase23/` | the Diffuser/DDIM experiment — patch, sweep scripts, raw run logs, paired results |
-| `outcome_predictor/` | phases 24–30, the outcome-prediction follow-up (see its own README) |
+| `results/` | one record per paper — raw model output, prompt, and typing, kept forever |
+| `matrices/` | every similarity matrix computed, per phase |
+| `similarity_matrix.csv` | paper-vs-paper overlap on **verbs alone** |
+| `semantic_similarity_matrix.csv` | the same on **verb + object** — this is the one that carries the finding |
+| `results_phase*_snapshot/` | records as they stood before each re-extraction, so nothing is lost |
+| `phase23/` | the Diffuser/DDIM experiment — the patch, sweep scripts, raw logs, paired results, plot |
+| `outcome_predictor/` | phases 24–30, the outcome-prediction follow-up (has its own README) |
+| `archive/prototypes/` | dead early scripts, kept only because `findings.md` cites them as evidence |
 
 ## Running it
 
-The core pipeline is Python standard library only. It needs `pdftotext` (poppler) and [Ollama](https://ollama.com) with `qwen3:8b` pulled.
+The core pipeline is **Python standard library only** — no install step. It needs `pdftotext` (from poppler) and [Ollama](https://ollama.com) with `qwen3:8b` pulled.
 
 ```
-python3 app.py        # UI on http://localhost:8000
-python3 fulltext.py   # batch method-section extraction from arXiv IDs
+python3 app.py        # web UI at http://localhost:8000
+python3 fulltext.py   # batch: arXiv IDs in, method sections out
 ```
 
-`outcome_predictor/` additionally needs `numpy`, `scipy`, `scikit-learn` and `pandas`; `phase23/` reproduces the D4RL experiment against an unmodified Diffuser checkout and its own environment (see `phase23/phase23_plan.md`).
+Expect roughly 40 seconds per method section on a laptop.
+
+The follow-up work needs real dependencies:
+
+```
+pip install -r outcome_predictor/requirements.txt
+```
+
+`phase23/` reproduces the robotics experiment against an unmodified Diffuser checkout in its own environment — see `phase23/phase23_plan.md`.
 
 ## Status
 
-Research log, not a maintained tool. It is public so the method, the one positive validation, and the several negative results can be read and checked.
+This is a research log, not a maintained tool. It's public so the method, the one validated prediction, and the several results that came back negative can all be read and checked by someone else.
+
+No license — default copyright applies. If you want to reuse any of it, ask.
